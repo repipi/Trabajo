@@ -1,0 +1,112 @@
+<div class="container">
+    <div class="row">
+
+        <!------------------------------------- FORMULARIO DE BUSQUEDA ------------------------------------------------------>
+        <div class="container">
+            <br>
+            <div class="col-xs-3 well">
+                <form>
+                    <div class="form-group">
+                        <label for="consulta">Consulta:</label>
+                        <div class="checkbox">
+                            <label><input type="checkbox" value="online">On-line</label>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" value="presencial">Presencial</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="precio">Precio:
+                            <input id="precio" type="range" class="slider" value="" data-slider-min="10" data-slider-max="100" data-slider-step="5" data-slider-value="[250,450]"/>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-default">
+                        <span class="glyphicon glyphicon glyphicon-search"></span> Filtrar</button>
+                </form>
+            </div>
+
+            <!-------------------------------- RESULTADOS DEL CUESTIONARIO -------------------------------------------------->
+            <div class="col-xs-8 col-xs-offset-1">
+                <h1>Resultados: </h1>
+
+                <!-- Mostrar en el caso de que no haya resultados -->
+                <div class="well" ng-hide="testSinHacer">
+                    <p>Para poder asignarle al mejor psicólogo para tratar su caso, debe cubrir el siguiente test. Es breve y sencillo, sólamente deberá responder sí o no a las preguntas.</p>
+                    <button type="submit" class="btn btn-default" ng-click="hacer()">Hacer el test</button>
+                </div>
+
+                <!-- Bucle: Muestra la info de cada psicologo que pueda tratar la patologia del paciente -->
+                <div ng-repeat="psicologo in paciente.psicologos" class="row well">
+
+                    <!-- Bloque de info -->
+                    <div class="col-xs-3">
+                        <img ng-src="{{psicologo.imagen}}" class="img_psico">
+                    </div>
+                    <div class="col-xs-5">
+                        <p>{{psicologo.nombre}} <br>
+                            {{psicologo.ncolegiado}} <br>
+                        </p>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span><br><br>
+                        <a href="#/psicologos/{{psicologo.id}}">
+                            <span class="glyphicon  glyphicon-zoom-in"></span>
+                            + info
+                        </a>
+                    </div>
+                    <div class="col-xs-2">
+                        <p>{{psicologo.precio}} €/sesión</p>
+                        <button type="button" class="btn btn-info btn-lg" data-target="#myModal" data-toggle="modal">
+                            <span class="glyphicon glyphicon-envelope"></span>
+                            Contactar</button>
+                    </div>
+
+                    <!--Formulario de contacto: Ventana emergente (overlay)--> 
+                    <div class="modal fade left" id="myModal"> 
+                        <div class="modal-dialog"> 
+                            <div class="modal-content"> 
+                                
+                                <!-- Titulo -->
+                                <div class="modal-header"> 
+                                    <h3 class="pull-left no-margin">Formulario de contacto</h3>
+                                    <button type="button" class="close" data-dismiss="modal" title="Close"><span class="glyphicon glyphicon-remove"></span>
+                                    </button> 
+                                </div> 
+                                
+                                <!-- Cuerpo del formulario -->
+                                <div class="modal-body">
+                                    <form class="form-horizontal"> 
+                                        <div class="form-group"> 
+                                            <label for="message" class="col-sm-3 control-label">
+                                                <span class="required">*</span> Mensaje:</label> 
+                                            <div class="col-sm-9"> 
+                                                <textarea name="message" rows="4" required class="form-control" id="message" placeholder="Comentario"></textarea> 
+                                            </div> 
+                                        </div> 
+                                        <div class="form-group"> 
+                                            <div class="col-sm-offset-3 col-sm-6 col-sm-offset-3"> 
+                                                <button type="submit" id="submit" name="submit" class="btn-lg btn-primary">Enviar</button> 
+                                            </div> 
+                                        </div> 
+                                    </form>
+                                </div>
+                                
+                                <div class="modal-footer"> 
+                                    <div class="col-xs-10 pull-left text-left text-muted"> 
+                                        <small><strong>Política de privacidad:</strong>
+                                            Lorem ipsum dolor sit amet consectetur adipiscing elit. 
+                                            Mauris vitae libero lacus, vel hendrerit nisi! Maecenas quis 
+                                            velit nisl, volutpat viverra felis. Vestibulum luctus mauris 
+                                            sed sem dapibus luctus.</small> 
+                                    </div> 
+                                </div> 
+                            </div> 
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
