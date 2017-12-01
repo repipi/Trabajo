@@ -11,36 +11,35 @@ var pacienteSchema = new Schema(
         password : String,
         localizacion: String,
         telefono : Number,
-        //sintomas : [],
-        //patologia : [],
-        //psicologos : []
+        sintomas : [],
+        patologia : [],
+        psicologos : []
     },
     { 
         collection: 'pacientes' 
     }
 );
 
-//pacienteSchema.methods.findAll = function(req, res) {
-//    var promise = Paciente.find().exec();
-//
-//    promise
-//        .then(function(pacientes) {
-//        res.send(pacientes);
-//    })
-//        .then(function(pacientes) {
-//        console.log('FindAll pacientes: ' + pacientes);
-//        // do something with updated user
-//    })
-//        .catch(function(err){
-//        // just need one of these
-//        res.status(500).send('error FindAll:', err);
-//    });
-//};
-
-pacienteSchema.methods.findAll = function(req, res) {
+pacienteSchema.methods.findAll = function() {
     return new Promise(function(resolve, reject){
         Paciente.find().exec(function(error, results){
             if(error){
+                console.log("Pacientes - Error en findAll");
+                reject({error: error});
+            }else{
+                resolve(results);
+            }
+        });
+    });
+};
+
+pacienteSchema.methods.findOne = function(_id) {
+    return new Promise(function(resolve, reject){
+        var query = {_id: _id};
+
+        Paciente.find(query).exec(function(error, results){
+            if(error){
+                console.log("Pacientes - Error en findOne");
                 reject({error: error});
             }else{
                 resolve(results);

@@ -9,7 +9,11 @@ angular.module('Emozio').controller('PacientesAccesoController', function(Pacien
         }
     });
     
-
+//$scope.pacientes = Paciente.GetAll();
+//    console.log($scope.pacientes);
+//    for(var i=0, l=$scope.pacientes.length; i<l; i++){
+//            console.log(i+"\t"+$scope.pacientes[i].email);
+//        }
 
     /* Funcion de validacion del formulario de acceso */
     $scope.check = function(paciente) { 

@@ -7,31 +7,6 @@ module.exports = function(app) {
     /* Obtiene pacientes */
         .get(function(req, res) {
 
-        //        var paciente = new Paciente();
-        //        paciente.findAll().then(function(all){
-        //            if(all) {
-        //                res.json(all);
-        //            }else {
-        //                res.status(401).send('Error en findAll');
-        //            }
-        //
-        //        }).catch(function (err) {
-        //            res.status(400).send(err);
-        //        });
-
-        //        var paciente = new Paciente();
-        //        paciente.findAll(
-        //            function(all){
-        //                if(all) {
-        //                    res.json(all);
-        //                }else {
-        //                    res.status(401).send('Error en findAll');
-        //                }
-        //            });
-
-        //        var paciente = new Paciente();
-        //        paciente.findAll(req, res);
-
         var paciente = new Paciente();
         var promise = paciente.findAll();
         promise.then(
@@ -40,7 +15,8 @@ module.exports = function(app) {
             },
             function (error){
                 res.status(500).send({error: error});
-            });
+            }
+        );
     })
     /* Crea un paciente */
         .post(function(req, res) {
@@ -53,10 +29,17 @@ module.exports = function(app) {
     app.route('/pacientes/:id')
     /* Obtiene un paciente */
         .get(function(req, res){
-        console.log("aquiiiiii 2");
         var pacId = parseInt(req.params.id, 10);
-        /* Devuelve un objeto JSON Paciente */
-        res.json(Paciente.get(pacId));
+        var paciente = new Paciente();
+        var promise = paciente.findOne(pacId);
+        promise.then(
+            function(data){
+                res.send(data);
+            },
+            function (error){
+                res.status(500).send({error: error});
+            }
+        );
     })
     /* Actualiza un paciente */
         .put(function(req, res) {
