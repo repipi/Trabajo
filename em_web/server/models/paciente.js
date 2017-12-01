@@ -6,7 +6,7 @@ var ObjectId = Schema.Types.ObjectId;
 
 var pacienteSchema = new Schema(
     {
-        //_id : ObjectId,
+        _id : ObjectId,
         email : String,
         password : String,
         localizacion: String,
@@ -20,6 +20,7 @@ var pacienteSchema = new Schema(
     }
 );
 
+/* Funcion all que devuelve a todos los pacientes */
 pacienteSchema.methods.findAll = function() {
     return new Promise(function(resolve, reject){
         Paciente.find().exec(function(error, results){
@@ -33,18 +34,69 @@ pacienteSchema.methods.findAll = function() {
     });
 };
 
-pacienteSchema.methods.findOne = function(_id) {
+/* Funcion get que devuelve a un paciente mediante su id */
+pacienteSchema.methods.findOne = function(id) {
     return new Promise(function(resolve, reject){
-        var query = {_id: _id};
+        var query = {_id: new mongoose.Types.ObjectId(id)};
 
         Paciente.find(query).exec(function(error, results){
             if(error){
-                console.log("Pacientes - Error en findOne");
+                console.log("Pacientes - Error en findOne "+error);
                 reject({error: error});
             }else{
                 resolve(results);
             }
         });
+    });
+};
+
+pacienteSchema.methods.autenticar = function(paciente) {
+        return new Promise(function(resolve, reject){
+
+        var query = {
+            email: paciente.email,
+            password: paciente.password
+        }
+
+       Paciente.find(query).exec(function(error, results){
+           if(error){
+                console.log("Pacientes - Error en autenticar");
+                reject({error: error});
+            }else{
+                resolve(results);
+            }
+       });
+    });
+};
+
+/* Funcion update que actualiza los datos de un paciente */
+pacienteSchema.methods.update = function(paciente) {
+        return new Promise(function(resolve, reject){
+            
+        var query = {
+            _id: paciente._id
+        }
+        
+        var datosUsuario = {
+            $set: {
+                email: paciente.email,
+                password: paciente.password,
+                localizacion: paciente.localizacion,
+                sintomas: paciente.sintomas,
+                patologia: paciente.patologia,
+                psicologos:
+                paciente.psicologos
+            }
+        }
+
+       Paciente.findOneAndUpdate(query, datosUsuario).exec(function(error, results){
+           if(error){
+                console.log("Pacientes - Error en update");
+                reject({error: error});
+            }else{
+                resolve(results);
+            }
+       });
     });
 };
 
