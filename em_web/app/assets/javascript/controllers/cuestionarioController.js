@@ -6,28 +6,25 @@ angular.module('Emozio').controller('CuestionarioController', function(Preguntas
     4 - Devolvemos su pagina de perfil con el array de psicologos */
 
     /*Recuperamos el objeto Paciente con el id que se encuentra en los parametros de ruta*/
-    $scope.paciente=Paciente.get({id:$routeParams.id});
+    Paciente.GetById($routeParams.id).then(function(data){
+        $scope.paciente=Object.values(data.data)[0];
+        //console.log($scope.paciente);
+    });
 
-    $scope.psicologos=Psicologo.query();
+    Psicologo.GetAll().then(function(data){
+        $scope.psicologos=Object.values(data.data);
+        //console.log($scope.psicologos);
+    });
 
-    $scope.patologias = Patologia.query();
+    Patologia.GetAll().then(function(data){
+        $scope.patologias=Object.values(data.data);
+        //console.log($scope.patologias);
+    });
 
-    $scope.preguntas=Preguntas.query();
-
-    /* $scope.mostrarPreg = function(){
-        var numMaxPreg=3;
-        var preg=[];
-
-        setTimeout(function(){ //Se anhade debido a que JS es monohilo
-            for(var j=0, l=$scope.patologias.length; j<l; j++){
-                for(var i=0, m=numMaxPreg; i<m; i++){
-                    preg.push($scope.patologias[j].preguntas[i]);
-                }
-            }
-
-            $scope.preguntas = preg.slice();
-        }, 1000)
-    }*/
+    Preguntas.GetAll().then(function(data){
+        $scope.preguntas=Object.values(data.data);
+        //console.log($scope.preguntas);
+    });
 
     function buscarPatologia(paciente){      
         var patologiaCercana="";
@@ -57,7 +54,6 @@ angular.module('Emozio').controller('CuestionarioController', function(Preguntas
 
         /* Se guarda la patologia en el paciente */
         paciente.patologia=patologiaCercana;
-
     }
 
     /* Funcion que asigna los psicologos que pueden tratar la patologia del paciente */
@@ -74,7 +70,8 @@ angular.module('Emozio').controller('CuestionarioController', function(Preguntas
         }
 
         /* Actualizamos al paciente en la BBDD */
-        Paciente.update(paciente);
+        Paciente.Update(paciente);
+        
     }
 
     /* Funcion que guarda las respuestas del cuestionario */
@@ -95,7 +92,7 @@ angular.module('Emozio').controller('CuestionarioController', function(Preguntas
 
         asignarPsicologo($scope.paciente);
 
-        $location.path("/usuarios/" + $scope.paciente.id);
+        $location.path("/usuarios/" + $scope.paciente._id);
 
     }
 

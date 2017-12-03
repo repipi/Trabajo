@@ -1,55 +1,84 @@
-var _ = require('lodash');
+var mongoose = require('mongoose');
+// set Promise provider to bluebird
+mongoose.Promise = require('bluebird');
+var Schema = mongoose.Schema;
+var ObjectId = Schema.Types.ObjectId;
 
-var psicologos = [
-    /* 1 */
+var psicologoSchema = new Schema(
     {
-        "id": 1,
-        "nombre" : "Alfonso Pena",
-        "edad" : 35,
-        "email" : "alfonso@psico.com",
-        "password" : "1234",
-        "localizacion" : "Santiago",
-        "telefono" : 123456789,
-        "tipo" : "Clinico (PIR)",
-        "ncolegiado" : 123456789,
-        "experiencia" : "Tengo 6 años de experiencia ejerciendo en diferentes clinicas privadas",
-        "formacion" : "Master en Psicopatologia infantil",
-        "terapia" : "Terapia sistemica o familiar",
-        "especialidad" : "Trastorno de estados de animo",
-        "patologias" : ["Depresion", "Sintomas psicoticos"],
-        "imagen" : "/assets/images/alfonso.png"
+        _id : ObjectId,
+        nombre: String,
+        edad: Number,
+        email : String,
+        password : String,
+        localizacion: String,
+        telefono : Number,
+        tipo : String,
+        ncolegiado : String,
+        experiencia : String,
+        formacion : String,
+        terapia : String,
+        especialidad : String,
+        patologias : [],
+        aseguradora : String
     },
+    { 
+        collection: 'psicologos' 
+    }
+);
 
-    /* 2 */
-    {
-        "id": 2,
-        "nombre" : "Maria Alegra",
-        "edad" : 35,
-        "email" : "maria@psico.com",
-        "password" : "1234",
-        "localizacion" : "Santiago",
-        "telefono" : 123456789,
-        "tipo" : "General Sanitaria (Master habilitante)",
-        "ncolegiado" : 234567891,
-        "experiencia" : "Recien titulada",
-        "formacion" : "Formacion en terapias de tercera generacion (ACT, Mindfullnes, etc...)",
-        "terapia" : "Terapia cognitivo-conductual",
-        "patologias" : ["TAD (Transtorno de ansiedad generalizada)"],
-        "imagen" : "/assets/images/maria.png"
-    } 
-];
-
-module.exports = {
-    /* Funcion get que devuelve un psicologo */
-    get: function(id) {
-        return _.find(psicologos, function(psicologo){
-            return psicologo.id === id;
+psicologoSchema.methods.findAll = function() {
+    return new Promise(function(resolve, reject){
+        Psicologo.find().exec(function(error, results){
+            if(error){
+                console.log("Psicologos - Error en findAll");
+                reject({error: error});
+            }else{
+                resolve(results);
+            }
         });
-    },
+    });
+};
 
-    /* Funcion all que devuelve a todos los psicologos */
-    all: function() {
-        return psicologos;
-    }  
+psicologoSchema.methods.findOne = function(id) {
+    return new Promise(function(resolve, reject){
+        var query = {_id: new mongoose.Types.ObjectId(id)};
 
-}
+        Psicologo.find(query).exec(function(error, results){
+            if(error){
+                console.log("Psicologos - Error en findOne "+error);
+                reject({error: error});
+            }else{
+                resolve(results);
+            }
+        });
+    });
+};
+
+var Psicologo = mongoose.model('Psicologo', psicologoSchema);
+
+module.exports = Psicologo;
+
+//var mongo = require('mongodb');
+//
+//module.exports = {
+//    /* Funcion get que devuelve un psicologo */
+//    get: function(_id) {
+//        var collection = mongo.DB.collection('psicologos');
+//
+//        var query = {_id: _id};
+//        collection.find(query).toArray(function(err, docs){
+//            console.log("Psicologos - Error en get: "+err+"\n"+docs);
+//        });
+//    },
+//
+//    /* Funcion all que devuelve a todos los psicologos */
+//    all: function() {
+//        var collection = mongo.DB.collection('psicologos');
+//
+//        collection.find({}).toArray(function(err, docs){
+//            console.log("Psicologos - Error en all: "+err+"\n"+docs);
+//        });
+//    }  
+//
+//}
