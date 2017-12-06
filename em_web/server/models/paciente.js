@@ -11,8 +11,7 @@ var pacienteSchema = new Schema(
         password : String,
         localizacion: String,
         telefono : Number,
-        sintomas : [],
-        patologia : [],
+        diagnostico : [],
         psicologos : []
     },
     { 
@@ -82,10 +81,9 @@ pacienteSchema.methods.update = function(paciente) {
                 email: paciente.email,
                 password: paciente.password,
                 localizacion: paciente.localizacion,
-                sintomas: paciente.sintomas,
-                patologia: paciente.patologia,
                 psicologos:
-                paciente.psicologos
+                paciente.psicologos,
+                diagnostico : paciente.diagnostico
             }
         }
 

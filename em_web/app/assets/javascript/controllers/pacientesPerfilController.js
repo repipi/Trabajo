@@ -3,13 +3,13 @@ angular.module('Emozio').controller('PacientesPerfilController', function(Pacien
     /* Obtenemos el paciente que ha iniciado la sesion */
     Paciente.GetById($routeParams.id).then(function(data){
         $scope.paciente=Object.values(data.data)[0];
-        console.log($scope.paciente);
+        //console.log($scope.paciente);
     });
 
 
     /* Funcion del boton "Hacer el test" */
     $scope.hacer=function(){
         /* Redireccionado al cuestionario */
-        $location.path("cuestionario/"+$scope.paciente._id);   
+        $location.path("cuestionario/" + 1 + "/" + $scope.paciente._id);   
     }
 });

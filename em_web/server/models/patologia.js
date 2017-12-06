@@ -28,6 +28,29 @@ patologiaSchema.methods.findAll = function() {
     });
 };
 
+patologiaSchema.methods.findPreguntas = function() {
+    return new Promise(function(resolve, reject){
+        
+        var query = {};
+        var projection = {
+            "preguntas":{$slice:1}, 
+            "_id":0,
+            "nombre":0,
+            "respuesta":0,
+            "sintomas":0
+        };
+        
+        Patologia.find(query, projection).exec(function(error, results){       
+            if(error){
+                console.log("Patologia - Error en findPreguntas");
+                reject({error: error});
+            }else{
+                resolve(results);
+            }
+        });
+    });
+};
+
 var Patologia = mongoose.model('Patologia', patologiaSchema);
 
 module.exports = Patologia;

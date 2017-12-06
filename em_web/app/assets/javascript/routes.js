@@ -10,7 +10,7 @@ angular.module('Emozio').config(function($routeProvider){
     /* Definimos para cada ruta, su template y su controller */
     
     /* Cuestionario de asignacion */
-    .when('/cuestionario/:id', {
+    .when('/cuestionario/:n/:id', {
       templateUrl: "assets/templates/usuarios/cuestionarioPacientes.html",
       controller: "CuestionarioController"
     })
