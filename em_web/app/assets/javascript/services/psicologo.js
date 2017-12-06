@@ -15,6 +15,9 @@ function Psicologo($http){
         },
         GetById : function (id) {
             return $http.get('/psicologos/'+id);
+        },
+        Filtrar : function (psicologo) {
+            return $http.post('/psicologos/filtrar', psicologo);
         }
     };
 }

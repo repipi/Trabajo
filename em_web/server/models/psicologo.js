@@ -20,7 +20,11 @@ var psicologoSchema = new Schema(
         terapia : String,
         especialidad : String,
         patologias : [],
-        aseguradora : String
+        aseguradora : String,
+        consulta: {
+            online : Boolean,
+            presencial : Boolean
+        }
     },
     { 
         collection: 'psicologos' 
@@ -47,6 +51,26 @@ psicologoSchema.methods.findOne = function(id) {
         Psicologo.find(query).exec(function(error, results){
             if(error){
                 console.log("Psicologos - Error en findOne "+error);
+                reject({error: error});
+            }else{
+                resolve(results);
+            }
+        });
+    });
+};
+
+psicologoSchema.methods.filtrar = function(psicologo){
+    return new Promise(function(resolve, reject){
+        var query = { 
+            $or: [
+                {consulta : psicologo.consulta},
+                {precio : psicologo.precio}
+            ]
+        };
+
+        Psicologo.find(query).exec(function(error, results){
+            if(error){
+                console.log("Psicologos - Error en filtrar "+error);
                 reject({error: error});
             }else{
                 resolve(results);

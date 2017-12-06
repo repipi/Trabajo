@@ -123,7 +123,7 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
 
             /* Se actualiza la informacion del paciente */
             Paciente.Update($scope.paciente);
-            console.log($scope.paciente);
+            //console.log($scope.paciente);
 
             /* Se carga la segunda parte del cuestionario */
             $location.path("/cuestionario/" + 2 + "/" + $routeParams.id);

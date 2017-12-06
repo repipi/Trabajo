@@ -9,18 +9,21 @@
                     <div class="form-group">
                         <label for="consulta">Consulta:</label>
                         <div class="checkbox">
-                            <label><input type="checkbox" value="online">On-line</label>
+                            <label><input type="checkbox" value="online" ng-model="psicologo.consulta.online">On-line</label>
+                            {{psicologo.consulta.online}}
                         </div>
                         <div class="checkbox">
-                            <label><input type="checkbox" value="presencial">Presencial</label>
+                            <label><input type="checkbox" value="presencial" ng-model="psicologo.consulta.presencial">Presencial</label>
+                            {{psicologo.consulta.presencial}}
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="precio">Precio:
-                            <input id="precio" type="range" class="slider" value="" data-slider-min="10" data-slider-max="100" data-slider-step="5" data-slider-value="[250,450]"/>
+                            <input id="precio" type="range" class="slider" value="" data-slider-min="10" data-slider-max="100" data-slider-step="5" data-slider-value="[250,450]" ng-model="psicologo.precio"/>
+                            {{psicologo.consulta.precio}}
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-default">
+                    <button type="submit" class="btn btn-default" ng-click="filtrar(psicologo)">
                         <span class="glyphicon glyphicon glyphicon-search"></span> Filtrar</button>
                 </form>
             </div>
@@ -35,9 +38,10 @@
                 </div>
 
                 <h1>Resultados: </h1>
+                <p>{{mensaje}}</p>
 
                 <!-- Bucle: Muestra la info de cada psicologo que pueda tratar la patologia del paciente -->
-                <div ng-repeat="psicologo in paciente.psicologos" class="row well">
+                <div ng-repeat="psicologo in psicologos" class="row well">
 
                     <!-- Bloque de info -->
                     <div class="col-xs-3">

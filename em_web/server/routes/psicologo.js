@@ -44,5 +44,21 @@ module.exports = function(app) {
             }
         );
     });
+    
+    app.route('/psicologos/filtrar')
+    /* Obtiene psicologos */
+        .post(function(req, res){
+        
+        var psicologo = new Psicologo();
+        var promise = psicologo.filtrar(req.body);
+        promise.then(
+            function(data){
+                res.send(data);
+            },
+            function (error){
+                res.status(500).send({error: error});
+            }
+        );
+    });
 
 };
