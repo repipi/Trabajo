@@ -16,10 +16,9 @@ function Paciente($http){
         },
         Update : function(paciente) {
             return $http.put('/pacientes', paciente);
+        },
+        GetDiagnostico : function(id) {
+            return $http.get('/pacientes/'+id+'/diagnostico');   
         }
-
-        //            service.Login = function (paciente) {
-        //                return $http.post('/pacientes/acceso', paciente);
-        //            }
     };
 }

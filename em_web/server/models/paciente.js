@@ -98,6 +98,31 @@ pacienteSchema.methods.update = function(paciente) {
     });
 };
 
+pacienteSchema.methods.findDiagnostico = function(id) {
+    return new Promise(function(resolve, reject){
+        
+        var query = {_id: new mongoose.Types.ObjectId(id)};
+        var projection = {
+            "_id":0,
+            "email":0,
+            "password":0,
+            "localizacion":0,
+            "telefono":0,
+            "psicologos":0
+        };
+        
+        
+        Paciente.find(query, projection).exec(function(error, results){       
+            if(error){
+                console.log("Patologia - Error en findDiagnostico");
+                reject({error: error});
+            }else{
+                resolve(results);
+            }
+        });
+    });
+};
+
 /*  Mongoose automatically looks for the plural version of your model name */
 var Paciente = mongoose.model('Paciente', pacienteSchema);
 

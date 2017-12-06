@@ -27,13 +27,14 @@
 
             <!-------------------------------- RESULTADOS DEL CUESTIONARIO -------------------------------------------------->
             <div class="col-xs-8 col-xs-offset-1">
-                <h1>Resultados: </h1>
 
                 <!-- Mostrar en el caso de que no haya resultados -->
                 <div class="well" ng-hide="testSinHacer">
                     <p>Para poder asignarle al mejor psicólogo para tratar su caso, debe cubrir el siguiente test. Es breve y sencillo, sólamente deberá responder sí o no a las preguntas.</p>
                     <button type="submit" class="btn btn-default" ng-click="hacer()">Hacer el test</button>
                 </div>
+
+                <h1>Resultados: </h1>
 
                 <!-- Bucle: Muestra la info de cada psicologo que pueda tratar la patologia del paciente -->
                 <div ng-repeat="psicologo in paciente.psicologos" class="row well">
@@ -67,14 +68,14 @@
                     <div class="modal fade left" id="myModal"> 
                         <div class="modal-dialog"> 
                             <div class="modal-content"> 
-                                
+
                                 <!-- Titulo -->
                                 <div class="modal-header"> 
                                     <h3 class="pull-left no-margin">Formulario de contacto</h3>
                                     <button type="button" class="close" data-dismiss="modal" title="Close"><span class="glyphicon glyphicon-remove"></span>
                                     </button> 
                                 </div> 
-                                
+
                                 <!-- Cuerpo del formulario -->
                                 <div class="modal-body">
                                     <form class="form-horizontal"> 
@@ -92,7 +93,7 @@
                                         </div> 
                                     </form>
                                 </div>
-                                
+
                                 <div class="modal-footer"> 
                                     <div class="col-xs-10 pull-left text-left text-muted"> 
                                         <small><strong>Política de privacidad:</strong>

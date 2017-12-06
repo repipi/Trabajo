@@ -8,7 +8,7 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
     /*Recuperamos el objeto Paciente con el id que se encuentra en los parametros de ruta*/
     Paciente.GetById($routeParams.id).then(function(data){
         $scope.paciente=Object.values(data.data)[0];
-        // console.log($scope.paciente);
+        //console.log($scope.paciente);
     });
 
     Psicologo.GetAll().then(function(data){
@@ -21,134 +21,72 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
         //        console.log($scope.patologias.length);
     });
 
-    if($routeParams.n == 1){
-        Patologia.GetPreguntas().then(function(data){
-            var result = Object.values(data.data);
-            var preguntas = [];
+    Paciente.GetDiagnostico($routeParams.id).then(function(data){
+        $scope.diagnostico=Object.values(data.data)[0].diagnostico;
 
-            for(var i=0, l=result.length; i<l; i++){
-                //console.log(result[i].preguntas[0]);
-                preguntas.push(JSON.parse('{ "pregunta" : "'+result[i].preguntas[0]+'", "respuesta" : '+0+'}'));
-            }
+        /* Si no existe diagnostico */
+        if(!$scope.diagnostico.length){
 
-            $scope.preguntas=preguntas;
-            //            console.log($scope.preguntas);
-        });
 
-        $scope.submit="Siguiente";
-    }
+            /* Se recogen las preguntas de todas las patologia */
+            Patologia.GetPreguntas().then(function(data){
 
-    if($routeParams.n == 2) {
-        
-        var preguntas=[];
+                var result = Object.values(data.data);
+                var preguntas = [];
 
-        setTimeout(function(){
-            for(var j=0, m=$scope.paciente.diagnostico.length; j<m; j++){
-                for(var i=1, l=$scope.paciente.diagnostico[j].patologia.preguntas.length; i<l; i++){
-                    preguntas.push(JSON.parse('{ "pregunta" : "'+$scope.paciente.diagnostico[j].patologia.preguntas[i]+'", "respuesta" : '+0+'}'));
+                /* Se recoge la primera pregunta de cada patologia */
+                for(var i=0, l=result.length; i<l; i++){
+                    preguntas.push(JSON.parse('{ "pregunta" : "'+result[i].preguntas[0]+'", "respuesta" : '+0+'}'));
+                }
+
+                /* Se establece el array de preguntas */
+                $scope.preguntas=preguntas;
+            });
+
+            /* Se establece el boton con el nombre de submit */
+            $scope.submit="Siguiente";
+
+        }else{
+
+            var preguntas=[];
+
+            /* Se recogen los diagnosticos correspondientes a cada patologia */
+            for(var j=0, m=$scope.diagnostico.length; j<m; j++){
+                /* Se recogen las preguntas existentes en la patologia de cada diagnostico */
+                for(var i=0, l=$scope.diagnostico[j].patologia.preguntas.length; i<l; i++){
+                    preguntas.push(JSON.parse('{ "pregunta" : "'+$scope.diagnostico[j].patologia.preguntas[i]+'", "respuesta" : '+0+'}'));
                 }
             }
 
+            /* Se establece el array de preguntas */
             $scope.preguntas=preguntas;
-            console.log($scope.preguntas);
 
-        },500);
-
-        //        var preguntas=[];
-        //
-        //        setTimeout(function(){
-        //            //console.log("1");
-        //            for(var i=0, l=$scope.patologias.length; i<l; i++){
-        //                //console.log("2");
-        //                for(var j=0, m=$scope.paciente.diagnostico.length; j<m; j++){
-        //                    //console.log("3");
-        //                    //console.log($scope.patologias[i].nombre+" "+$scope.paciente.diagnostico[j].patologia);
-        //                    if($scope.patologias[i].nombre==$scope.paciente.diagnostico[j].patologia){
-        //                        //console.log("4");
-        //                        for(var k=1, n=$scope.patologias[i].preguntas.length; k<n; k++) {
-        //                            preguntas.push(JSON.parse('{ "pregunta" : "'+$scope.patologias[i].preguntas[k]+'", "respuesta" : '+0+'}'));
-        //                        }
-        //                    }
-        //                }
-        //            }
-        //            //console.log(preguntas);
-        //            $scope.preguntas=preguntas;
-        //            //console.log($scope.preguntas);
-        //        },1000);
-        //
-        //        $scope.submit=="Enviar";
-    }
-
-    function buscarPatologia(paciente){      
-        var patologiaCercana="";
-        var maxActual=-1;
-
-        /* Se recorren todas las patologias */
-        for(var j=0, l=$scope.patologias.length; j<l; j++){
-            var suma=0;
-
-            /* Se suma el resultado de la multiplicacion de los elementos i de los arrays patologia y paciente.sintomas */
-            for (var i=0, m=$scope.paciente.sintomas.length-1; i<m; i++){
-                suma+=$scope.patologias[j].sintomas[i]*$scope.paciente.sintomas[i];
-            }
-
-            /* Si el maxActual es 0, la patologia no esta inicializada */
-            if(maxActual<0){
-                /* Guardamos la primera patologia */ 
-                patologiaCercana=$scope.patologias[j].nombre;
-                /* Guardamos el valor de la suma como maximo actual */
-                maxActual=suma;
-            }else if(maxActual<=suma){ /* Si la suma maxima es menor que la actual, se actualizan los valores */
-                patologiaCercana="";
-                patologiaCercana=$scope.patologias[j].nombre;
-                maxActual=suma;
-            }
+            /* Se establece el boton con el nombre de submit */
+            $scope.submit="Enviar";
         }
-
-        /* Se guarda la patologia en el paciente */
-        paciente.patologia=patologiaCercana;
-    }
+    });
 
     /* Funcion que asigna los psicologos que pueden tratar la patologia del paciente */
     function asignarPsicologo(paciente){
 
         /* Se recorre el array de psicologos */
         for(var i=0, n=$scope.psicologos.length; i<n; i++){
-            /* Si el array de patologias del psicologo contiene la patologia del paciente
+            /* Se recorren los diagnosticos del paciente */
+            for(var j=0, m=paciente.diagnostico.length; j<m; j++){
+                /* Si el array de patologias del psicologo contiene la patologia de ese diagnostico del paciente
             indexOf devuelve -1 si no lo enuentra */
-            if($scope.psicologos[i].patologias.indexOf(paciente.patologia)!=-1){
-                /* Se añade al array de psicologos de mi paciente */
-                paciente.psicologos.push($scope.psicologos[i]);
+                if($scope.psicologos[i].patologias.indexOf(paciente.diagnostico[j].patologia.nombre)!=-1){
+                    /* Se añade al array de psicologos de mi paciente */
+                    paciente.psicologos.push($scope.psicologos[i]);
+                }
             }
         }
 
         /* Actualizamos al paciente en la BBDD */
         Paciente.Update(paciente);
+        //console.log(paciente);
 
     }
-    //
-    //    /* Funcion que guarda las respuestas del cuestionario */
-    //    $scope.check= function(data) { 
-    //        
-    //        /* Para cada una de las respuestas */
-    //        for(var i in data){
-    //            /* Si la respuesta i ha sido marcada como cierta, se almacena como afirmativa */
-    //            if(data[i].SELECTED=="1"){
-    //                $scope.preguntas[i].respuesta=1;
-    //            } else { /* En caso contrario, como negativa */
-    //                $scope.preguntas[i].respuesta=0; 
-    //            }
-    //
-    //            /* Se guardan las respuestas del cuestionario en el array sintomas del paciente */ $scope.paciente.sintomas[i]=$scope.preguntas[i].respuesta;
-    //        }
-    //
-    //        buscarPatologia($scope.paciente);
-    //
-    //        asignarPsicologo($scope.paciente);
-    //
-    //        $location.path("/usuarios/" + $scope.paciente._id);
-    //
-    //    }
 
 
     /* Funcion que guarda las respuestas del cuestionario */
@@ -164,47 +102,62 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
             }
         }
 
-        if($scope.submit=="Siguiente"){
+        /* Si el paciente no tiene diagnostico */
+        if(!$scope.diagnostico.length){
 
+            /* Recorro el numero de patologias: Cada patologia tiene una sola pregunta */
             for(var i=0, l=$scope.patologias.length; i<l; i++){
+                /* Si la pregunta esta marcada */
                 if($scope.preguntas[i].respuesta==1){
-                    $scope.paciente.diagnostico.push(JSON.parse('{ "patologia" : '+JSON.stringify($scope.patologias[i]) +', "porcentaje" : '+0.25+'}'));
+                    /* Introduzco la posible patologia entre los diagnosticos del paciente */
+                    $scope.paciente.diagnostico.push(JSON.parse('{ "patologia" : '+JSON.stringify($scope.patologias[i]) +', "porcentaje" : '+0.50+'}'));
+                    //JSON.stringify($scope.patologias[i].respuesta)
                 } 
             }
 
-            console.log($scope.paciente);
+            /* Para cada diagnostico del paciente */
+            for(var j=0, l=$scope.paciente.diagnostico.length; j<l; j++){
+                /* Se elimina la primera pregunta de las preguntas de la patologia del diagnostico */
+                $scope.paciente.diagnostico[j].patologia.preguntas.splice(0, 1);
+            }
+
+            /* Se actualiza la informacion del paciente */
             Paciente.Update($scope.paciente);
+            console.log($scope.paciente);
 
+            /* Se carga la segunda parte del cuestionario */
             $location.path("/cuestionario/" + 2 + "/" + $routeParams.id);
-            
-             $route.reload();
 
-        } else {
+        }else{
 
-            //      setTimeout(function(){
-            //                console.log("STA 2");
-            //                for(var i=0, l=$scope.patologias.length; i<l; i++){
-            //                    if($scope.preguntas[i].respuesta==1){
-            //                        for(var j=0, m=$scope.paciente.diagnostico.length; j<m; j++) {
-            //                            if($scope.patologias[i].nombre==$scope.paciente.diagnostico[j].patologia){
-            //                                $scope.paciente.diagnostico[j].porcentaje+=$scope.patologias[i].respuesta;
-            //                                if($scope.paciente.diagnostico[j].porcentaje < 0.5){
-            //                                    /* Elimino en el array de diagnostico un elemento desde la posicion j */
-            //                                    $scope.paciente.diagnostico.splice(j, 1);
-            //                                }
-            //                            }
-            //                        }
-            //                    } 
-            //                }
-            //            },2000);
-            //
-            //            //  console.log($scope.paciente);
-            //
-            //            asignarPsicologo($scope.paciente);
+            /* Se recorren los diagnosticos del paciente */
+            for(var i=0, l=$scope.diagnostico.length; i<l; i++){
+                /* Se recorren todas las preguntas (ahora falta la primera) de la patologia de cada diagnostico */
+                for(var j=0, m=$scope.diagnostico[i].patologia.preguntas.length; j<m; j++){
+                    /* Si la pregunta esta marcada */
+                    if($scope.preguntas[j].respuesta==1){
+                        /* Se sumara al porcentaje de ese diagnostico el valor de la respuesta de esa patologia */
+                        $scope.paciente.diagnostico[i].porcentaje=$scope.paciente.diagnostico[i].porcentaje+$scope.diagnostico[i].patologia.respuesta;
+                    }
+                }
+                /* Si el porcentaje de ese diagnostico del paciente es menor que el 70% */
+                if($scope.paciente.diagnostico[i].porcentaje < 0.7){
+                    /* Elimino en el array de diagnosticos ese diagnostico */
+                    $scope.paciente.diagnostico.splice(i, 1);
+                }
+            }
 
-            //            $location.path("/usuarios/" + $scope.paciente._id);
+            /* Se actualiza la informacion del paciente */
+            Paciente.Update($scope.paciente);
+           // console.log($scope.paciente);
+
+
+            /* Se asigna al psicologo que puede tratar ese diagnostico */
+            asignarPsicologo($scope.paciente);
+
+            $location.path("/usuarios/" + $scope.paciente._id);
+
         }
-
     }
 
 });
