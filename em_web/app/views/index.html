@@ -4,71 +4,30 @@
     <head>
         <title>Emozio</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Estilo Bootstrap -->
         <link href='assets/styles/bootstrap.css' rel='stylesheet'> 
-        <link href=assets/styles/main.css rel='stylesheet'>
-        <!-- Libreria estrellas rating -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- Estilo propio de Emozio -->
         <link rel="stylesheet" href="assets/styles/emozio_style.css">
+        <!-- Libreria estrellas rating -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Estilo Semantic UI -->
+        <link rel="stylesheet" type="text/css" href="assets/semantic/dist/semantic.min.css">
     </head>
-    <body>
-
-        <div class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class='navbar-header'>
-
-                    <a href='#/acceso' class='navbar-brand'>Emozio</a>
-                    <button type='button' class='navbar-toggle' data-toggle='collapse'data-target='.navbar-collapse'>
-                        <span class='sr-only'>Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                </div>
-
-                <ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
-                    <li><a href='tickets.html'>Tickets</a></li>
-                    <li><a href='stations.html'>Stations</a></li>
-                    <li>
-                        <a href='about.html' data-target='#' data-toggle='dropdown'>About<span class='caret'></span></a>
-
-                        <ul class='dropdown-menu'>
-                            <li><a href='story.html'>Our Story</a></li>
-                            <li><a href='contact.html'>Contact Us</a></li>
-                            <li class="divider"></li><!--PUT A DIVIDER IN OUR MENU-->
-                            <li><a href='/blog'>Blog</a></li>
-                            <li class="divider"></li>
-                            <li><a href='http://twitter.com/'>Twitter</a></li>
-                            <li><a href='http://facebook.com/'>Facebook</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
+    <body class="template">
 
         <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-        <div ng-view class="container-fluid"></div>
+        <div ng-view></div>
 
         <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-        <div class='footer'>
-            <div class='container'>
-                <h4>Links</h4>
-                <ul class='list-unstyled list-inline'><!--list-unstyled AVOID THE BULLET ICONS
-list-inline PUT THE ITEMS IN THE LIST HORIZONTANLY-->
-                    <li><a href='index.html'>Home</a></li>
-                    <li><a href='tickets.html'>Tickets</a></li>
-                    <li><a href='stations.html'>Stations</a></li>
-                </ul>
-            </div>
-        </div>
 
     </body>
 
     <!-- JS-libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="assets/semantic/dist/semantic.min.js"></script>
+    <script src="assets/semantic/dist/my_semantic.js"></script>
     <script src="assets/javascript/vendor/angular.js"></script>
     <script src="assets/javascript/vendor/angular-route.js"></script>
     <script src="assets/javascript/vendor/angular-resource.js"></script>

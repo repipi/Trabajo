@@ -34,7 +34,8 @@ angular.module('Emozio').controller('PacientesPerfilController', function(Pacien
             } 
             
             if(!psicologosFiltrados.length){
-                $scope.mensaje="No existen resultados para su busqueda";
+                $scope.cuadro_mensaje="jumbotron";
+                $scope.mensaje="No existen resultados para su búsqueda";
             }
 
             $scope.psicologos=psicologosFiltrados;

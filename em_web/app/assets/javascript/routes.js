@@ -4,10 +4,16 @@ angular.module('Emozio').config(function($routeProvider){
   $routeProvider
   
     .when('/', {
-      redirectTo: '/acceso'
+      redirectTo: '/inicio'
     })
     
     /* Definimos para cada ruta, su template y su controller */
+    
+    /* Pagina de inicio */
+    .when('/inicio', {
+      templateUrl: "assets/templates/inicio.html",
+      controller: "PacientesAccesoController"
+    })
     
     /* Cuestionario de asignacion */
     .when('/cuestionario/:n/:id', {

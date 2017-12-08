@@ -1,113 +1,90 @@
-/**************************************************************************************************************************************PERFIL PSICOLOGO************************************************************************************************************************/
+/**************************************IMAGEN PORTADA***********************************************/
 
-/* Estrellas valoracion */ 
-.checked {
-    color: orange;
-}
-
-/* Menu Perfil Psicologo */
-/*!
-* bootstrap-vertical-tabs - v1.1.0
-* https://dbtek.github.io/bootstrap-vertical-tabs
-* 2014-06-06
-* Copyright (c) 2014 Ä°smail Demirbilek
-* License: MIT
-*/
-.tabs-left, .tabs-right {
-    border-bottom: none;
-    padding-top: 2px;
-}
-.tabs-left {
-    border-right: 1px solid #ddd;
-}
-.tabs-right {
-    border-left: 1px solid #ddd;
-}
-.tabs-left>li, .tabs-right>li {
-    float: none;
-    margin-bottom: 2px;
-}
-.tabs-left>li {
-    margin-right: -1px;
-}
-.tabs-right>li {
-    margin-left: -1px;
-}
-.tabs-left>li.active>a,
-.tabs-left>li.active>a:hover,
-.tabs-left>li.active>a:focus {
-    border-bottom-color: #ddd;
-    border-right-color: transparent;
+.portada, .ng-scope{
+    background: url(/assets/images/1869.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 1300px 800px;
+    background-color:rgba(0, 0, 0, 0.3);
+    color: whitesmoke;
 }
 
-.tabs-right>li.active>a,
-.tabs-right>li.active>a:hover,
-.tabs-right>li.active>a:focus {
-    border-bottom: 1px solid #ddd;
-    border-left-color: transparent;
-}
-.tabs-left>li>a {
-    border-radius: 4px 0 0 4px;
-    margin-right: 0;
-    display:block;
-}
-.tabs-right>li>a {
-    border-radius: 0 4px 4px 0;
-    margin-right: 0;
-}
-.vertical-text {
-    margin-top:50px;
-    border: none;
-    position: relative;
-}
-.vertical-text>li {
-    height: 20px;
-    width: 120px;
-    margin-bottom: 100px;
-}
-.vertical-text>li>a {
-    border-bottom: 1px solid #ddd;
-    border-right-color: transparent;
-    text-align: center;
-    border-radius: 4px 4px 0px 0px;
-}
-.vertical-text>li.active>a,
-.vertical-text>li.active>a:hover,
-.vertical-text>li.active>a:focus {
-    border-bottom-color: transparent;
-    border-right-color: #ddd;
-    border-left-color: #ddd;
-}
-.vertical-text.tabs-left {
-    left: -50px;
-}
-.vertical-text.tabs-right {
-    right: -50px;
-}
-.vertical-text.tabs-right>li {
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    transform: rotate(90deg);
-}
-.vertical-text.tabs-left>li {
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    transform: rotate(-90deg);
+.jumbotron {
+    background-color:rgba(0, 0, 0, 0.3); 
 }
 
-/**************************************************************************************************************************************CUESTIONARIO*****************************************************************************************************************************************************************************************************************************************************************/
-
-.img_cuestionario {
-    width: 70%;
-    height: auto;
-    margin: 0 auto;
+.ui.dividing.header, .ui.header {
+    color: whitesmoke;
 }
 
-.img_psico {
+.equipo {
+    color: teal;
+}
+
+.well {
+    border-color: rgba(0, 0, 0, 0); 
+    background-color:rgba(0, 0, 0, 0); 
+}
+
+.pregunta {
+    color: black;
+}
+
+.ui.header.nombre_test {
+    color: teal;
+}
+
+.sin_resultados {
+    color: whitesmoke;
+}
+
+.ui.segment.resultado_psicologo {
+    background-color:rgba(0, 0, 0, 0); 
+}
+
+.ui.segment.info_psicologo {
+    background-color:rgba(0, 0, 0, 0.3); 
+}
+
+.ui.header.nombre_psicologo {
+    color: whitesmoke;
+}
+
+/***********************************************************************************************************************************RESULTADO PACIENTES ******++++*************************************************************************************************************************/
+
+/***********PRECIO FILTRO****************/
+.precio_slider #slidecontainer {
     width: 100%;
-    height: auto;
+}
+
+.precio_slider.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.precio_slider.slider:hover {
+    opacity: 1;
+}
+
+.precio_slider.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: teal;
+    cursor: pointer;
+}
+
+.precio_slider.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: teal;
+    cursor: pointer;
 }

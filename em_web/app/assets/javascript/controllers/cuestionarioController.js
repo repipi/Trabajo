@@ -27,7 +27,6 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
         /* Si no existe diagnostico */
         if(!$scope.diagnostico.length){
 
-
             /* Se recogen las preguntas de todas las patologia */
             Patologia.GetPreguntas().then(function(data){
 
@@ -45,6 +44,8 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
 
             /* Se establece el boton con el nombre de submit */
             $scope.submit="Siguiente";
+            
+            $scope.progress_bar = 0;
 
         }else{
 
@@ -63,8 +64,14 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
 
             /* Se establece el boton con el nombre de submit */
             $scope.submit="Enviar";
+            
+            $scope.progress_bar = 70;
         }
     });
+    
+    /* Establezco el estilo de los botones si o no, por defecto */
+    $scope.press_yes="";
+    $scope.press_no="teal";
 
     /* Funcion que asigna los psicologos que pueden tratar la patologia del paciente */
     function asignarPsicologo(paciente){
@@ -88,7 +95,6 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
 
     }
 
-
     /* Funcion que guarda las respuestas del cuestionario */
     $scope.check= function(data) { 
 
@@ -101,6 +107,14 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
                 $scope.preguntas[i].respuesta=0; 
             }
         }
+
+        /* Se quitan los psicologos y diagnostico existentes */
+        $scope.paciente.psicologos=[];
+        Paciente.Update($scope.paciente);
+        
+        //        for(var i=0, l=$scope.preguntas.length; i<l; i++){
+        //            console.log(i+" "+$scope.preguntas[i].respuesta);   
+        //        }
 
         /* Si el paciente no tiene diagnostico */
         if(!$scope.diagnostico.length){
@@ -149,7 +163,7 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
 
             /* Se actualiza la informacion del paciente */
             Paciente.Update($scope.paciente);
-           // console.log($scope.paciente);
+            // console.log($scope.paciente);
 
 
             /* Se asigna al psicologo que puede tratar ese diagnostico */
