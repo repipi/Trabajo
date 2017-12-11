@@ -50,32 +50,64 @@ pacienteSchema.methods.findOne = function(id) {
 };
 
 pacienteSchema.methods.autenticar = function(paciente) {
-        return new Promise(function(resolve, reject){
+    return new Promise(function(resolve, reject){
 
         var query = {
             email: paciente.email,
             password: paciente.password
         }
 
-       Paciente.find(query).exec(function(error, results){
-           if(error){
+        Paciente.find(query).exec(function(error, results){
+            if(error){
                 console.log("Pacientes - Error en autenticar");
                 reject({error: error});
             }else{
                 resolve(results);
             }
-       });
+        });
+    });
+};
+
+pacienteSchema.methods.darAlta = function(paciente) {
+    return new Promise(function(resolve, reject){
+
+        var query = {github_id: args.id};
+
+        /*Se crea un objeto newUser con los datos pasados por argumento*/
+        var newUser = {
+            /*setOnInsert es llamado por update en el caso de que no exista exactamente el mismo documento (porque ya no hay nada que modificarle)*/
+            $setOnInsert: {
+                github_id: args.id,
+                name: args.displayName || args.username,
+                avatar_url: args['_json'].avatar_url
+            }
+        }
+
+        var options = {
+            upsert: true, //No se va a añadir un nuevo documento, en su lugar devuelve un id al controller para dar lugar a una excepcion (?)
+            returnOriginal: false 
+        }
+
+
+        Paciente.findOneAndUpdate(query).exec(function(error, results){
+            if(error){
+                console.log("Pacientes - Error en autenticar");
+                reject({error: error});
+            }else{
+                resolve(results);
+            }
+        });
     });
 };
 
 /* Funcion update que actualiza los datos de un paciente */
 pacienteSchema.methods.update = function(paciente) {
-        return new Promise(function(resolve, reject){
-            
+    return new Promise(function(resolve, reject){
+
         var query = {
             _id: paciente._id
         }
-        
+
         var datosUsuario = {
             $set: {
                 email: paciente.email,
@@ -87,20 +119,20 @@ pacienteSchema.methods.update = function(paciente) {
             }
         }
 
-       Paciente.findOneAndUpdate(query, datosUsuario).exec(function(error, results){
-           if(error){
+        Paciente.findOneAndUpdate(query, datosUsuario).exec(function(error, results){
+            if(error){
                 console.log("Pacientes - Error en update");
                 reject({error: error});
             }else{
                 resolve(results);
             }
-       });
+        });
     });
 };
 
 pacienteSchema.methods.findDiagnostico = function(id) {
     return new Promise(function(resolve, reject){
-        
+
         var query = {_id: new mongoose.Types.ObjectId(id)};
         var projection = {
             "_id":0,
@@ -110,8 +142,8 @@ pacienteSchema.methods.findDiagnostico = function(id) {
             "telefono":0,
             "psicologos":0
         };
-        
-        
+
+
         Paciente.find(query, projection).exec(function(error, results){       
             if(error){
                 console.log("Patologia - Error en findDiagnostico");

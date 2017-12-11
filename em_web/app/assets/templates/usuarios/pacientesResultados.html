@@ -1,8 +1,29 @@
-<div class="ui borderless inverted menu">
-    <div class="ui container">
-        <!--        <img class="ui mini avatar image" src="/assets/images/emozio_logo.png"><span><h4>Emozio</h4></span>-->
+<nav class='container navbar-inverse' role='navigation' >
+    <div class='navbar-header'>
+        <a href='/#/inicio' class='navbar-brand'>
+            <img class="ui mini avatar image" src="/assets/images/emozio_logo.png">Emozio
+        </a>
+        <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
+            <span class='sr-only'>Toggle navigation</span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+        </button>
     </div>
-</div>
+
+    <ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
+        <li><a href='/#/inicio'>Inicio</a></li>
+        <li><a href='/#/usuarios/{{paciente._id}}'>Resultados</a></li>
+        <li class='dropdown'>
+            <a href='/#/usuarios/{{paciente._id}}' data-target='#' class='dropdown-toggle' data-toggle='dropdown'>Perfil <span class='caret'></span></a>
+            <ul class='dropdown-menu' role='menu'>
+                <li><a href='#'>Modificar mis datos</a></li>
+                <li class='divider'></li>
+                <li><a href='/#/inicio'>Salir</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
 
 <div class="container">
     <div class="row">
@@ -39,9 +60,19 @@
                                 </div>
                             </div>
                             <label>Precio</label>
-                            <input type="range" min="1" max="100" value="50" class="precio_slider slider" id="myRange" ng-model="psicologo.precio">
+                            <div class="ui selection dropdown">
+                                <input type="hidden" name="gender">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Cualquiera</div>
+                                <div class="menu">
+                                    <div class="item" data-value="30">Menos de 30 €</div>
+                                    <div class="item" data-value="50">Entre 30 € y 50 €</div>
+                                    <div class="item" data-value="70">Entre 50 € y 70 €</div>
+                                    <div class="item" data-value="90">Más de 90 €</div>
+                                </div>
+                            </div>
 
-                            <br>
+                            <br>           <br>
 
                             <span id="demo"></span>
 

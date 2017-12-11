@@ -1,13 +1,14 @@
 <div class="ui inverted menu">
     <div class="ui container">
-        <a class="header item">
+        <a class="header item" href="/#/inicio">
             <img class="ui mini avatar image" src="/assets/images/emozio_logo.png"><span><h4>Emozio</h4></span>
         </a>
         <div class="right menu">
-            <div class="ui form">
+            <div class="ui form" novalidate>
                 <div class="inline fields">
                     <div class="field">
                         <input placeholder="Email" type="text" ng-model="paciente.email" required/>
+<!--                        <p ng-show="paciente.email.$invalid && !paciente.email.$pristine" class="help-block">You name is required.</p>-->
                     </div>
                     <div class="field">
                         <input placeholder="Contraseña" type="password" ng-model="paciente.password" required/>
@@ -18,12 +19,12 @@
                         </div>
                     </div>
                     <div class="field">
-                        <div class="ui grey button" href="#/registro">
+                        <div class="ui grey button" href="/#/registro">
                             Registrar
                         </div>
                     </div>
                 </div>
-                <div>{{mensaje_error_acceso}}</div>
+<!--                <div>{{mensaje_error_acceso}}</div>-->
             </div>
         </div>
     </div>

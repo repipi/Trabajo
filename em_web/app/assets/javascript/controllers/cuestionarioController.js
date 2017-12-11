@@ -25,7 +25,7 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
         $scope.diagnostico=Object.values(data.data)[0].diagnostico;
 
         /* Si no existe diagnostico */
-        if(!$scope.diagnostico.length){
+        if(!$scope.diagnostico.length || $scope.paciente.psicologos.length){
 
             /* Se recogen las preguntas de todas las patologia */
             Patologia.GetPreguntas().then(function(data){
