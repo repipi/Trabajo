@@ -1,19 +1,12 @@
 angular.module('Emozio').controller('PacientesAccesoController', function(Paciente, $scope, $location){
 
-    //    Paciente.GetAll().then(function(data){
-    //        $scope.pacientes = Object.values(data.data);
-    //        console.log($scope.pacientes);
-    //        
-    //        for(var i=0, l=$scope.pacientes.length; i<l; i++){
-    //            console.log(i+"\t"+$scope.pacientes[i].email);
-    //        }
-    //    });
+    $scope.mensaje_error_acceso;
 
     /* Funcion de validacion del formulario de acceso */
     $scope.check = function(paciente) { 
 
         var pacienteConectado;
-
+        
         Paciente.Login(paciente).then(function(data){
             pacienteConectado=Object.values(data.data);
 
@@ -21,5 +14,7 @@ angular.module('Emozio').controller('PacientesAccesoController', function(Pacien
                 $location.path("/usuarios/"+pacienteConectado[0]._id);
             }
         });
+        
+        $scope.mensaje_error_acceso="E-mail o contraseña incorrectos";
     }
 });

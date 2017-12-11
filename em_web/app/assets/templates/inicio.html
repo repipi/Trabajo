@@ -10,7 +10,7 @@
                         <input placeholder="Email" type="text" ng-model="paciente.email" required/>
                     </div>
                     <div class="field">
-                        <input placeholder="Contraseña" type="text" ng-model="paciente.password" required/>
+                        <input placeholder="Contraseña" type="password" ng-model="paciente.password" required/>
                     </div>
                     <div class="field">
                         <div class="ui green button" ng-click="check(paciente)">
@@ -23,6 +23,7 @@
                         </div>
                     </div>
                 </div>
+                <div>{{mensaje_error_acceso}}</div>
             </div>
         </div>
     </div>
