@@ -1,6 +1,15 @@
-angular.module('Emozio').controller('PacientesAccesoController', function(Paciente, $scope, $location){
+/* Las dependencias del controller son los argumentos de function */
+angular.module('Emozio').controller('PacientesAccesoController', function(Paciente, $scope, $location, session){
 
     $scope.mensaje_error_acceso;
+    
+    $scope.getSession = function() {
+        return this.session;
+    };
+    
+    $scope.setSession = function(session) {
+        this.session = session;
+    };
 
     /* Funcion de validacion del formulario de acceso */
     $scope.check = function(paciente) { 
