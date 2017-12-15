@@ -8,11 +8,14 @@ function Paciente($http){
         GetAll : function (){
             return $http.get('/pacientes');
         },
-        GetById : function (id) {
-            return $http.get('/pacientes/'+id);
+        GetById : function () {
+            return $http.get('/pacientes');
         },
-        Login : function(paciente) {
+        LogIn : function(paciente) {
             return $http.post('/pacientes/acceso', paciente);
+        },
+        SignUp : function(paciente) {
+            return $http.post('/pacientes/registro', paciente);
         },
         Update : function(paciente) {
             return $http.put('/pacientes', paciente);

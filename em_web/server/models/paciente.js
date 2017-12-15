@@ -3,21 +3,80 @@ var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
+var bcrypt = require('bcrypt-nodejs');
 
+/* pacienteSchema representa la informacion y propiedades contenidas dentro de un objeto de tipo paciente */
+/* unique: Se trata de uno solo;
+        lowercase: Se almacena en minusculas;
+        required: Es obligatorio que el paciente posea este atributo */
 var pacienteSchema = new Schema(
     {
-        _id : ObjectId,
-        email : String,
-        password : String,
-        localizacion: String,
-        telefono : Number,
+        //_id : ObjectId,
+        email : {type: String, unique: true, lowercase: true, required: true },
+        password : {type: String, required: true },
+        localizacion: {type: String, required: true },
+        telefono : {type: Number, required: true },
         diagnostico : [],
         psicologos : []
     },
     { 
-        collection: 'pacientes' 
+        collection: 'pacientes',
+        /* Crea unas propiedades que indican cuando el paciente fue creado y actualizado */
+        timestamp: true
     }
 );
+
+/* pre: Se trata de un metodo que mongoose se va a encargar de invocar antes de que un paciente sea guardado */
+/* Metodo encargado de encriptar la contraseña del usuario */
+//pacienteSchema.pre('save', function(next){
+//    var paciente = this;
+//
+//    /* Si en el paciente no ha sido modificado el campo contraseña, se continua con normalidad */
+//    if(!paciente.isModified('password')){
+//        return next();
+//    }
+//
+//    /* Iteramos 10 veces */
+//    bcrypt.genSalt(10, function(error, salt){
+//        if(error) {
+//            next(error);
+//        }
+//        bcrypt.hash(paciente.password, salt, null, function(error, hash){
+//            if(error) {
+//                next(error);
+//            } 
+//            /* Obtenemos la contraseña generada en nuestro hash */
+//            paciente.password = hash;
+//            next();
+//        })
+//    })
+//})
+
+pacienteSchema.methods.encriptarPassword = function(paciente) {
+
+    /* Iteramos 10 veces */
+    bcrypt.genSalt(10, function(error, salt){
+        if(error) {
+            console.log("Error en la sal");
+        }
+        bcrypt.hash(paciente.password, salt, null, function(error, hash){
+            if(error) {
+                console.log("Error en el hash");
+            } 
+            /* Obtenemos la contraseña generada en nuestro hash */
+            paciente.password = hash;
+        })
+    })
+}
+
+pacienteSchema.methods.compararPassword = function(password, cb){
+    bcrypt.compare(password, this.password, function(error, sonIguales){
+        if(error){
+            return cb(error);
+        } 
+        cb(null, sonIguales);
+    })
+};
 
 /* Funcion all que devuelve a todos los pacientes */
 pacienteSchema.methods.findAll = function() {
@@ -71,32 +130,61 @@ pacienteSchema.methods.autenticar = function(paciente) {
 pacienteSchema.methods.darAlta = function(paciente) {
     return new Promise(function(resolve, reject){
 
-        var query = {github_id: args.id};
+        var query = {email: paciente.email};
 
-        /*Se crea un objeto newUser con los datos pasados por argumento*/
-        var newUser = {
-            /*setOnInsert es llamado por update en el caso de que no exista exactamente el mismo documento (porque ya no hay nada que modificarle)*/
-            $setOnInsert: {
-                github_id: args.id,
-                name: args.displayName || args.username,
-                avatar_url: args['_json'].avatar_url
+        /*Se crea un objeto datosUsuario con los datos pasados por argumento*/
+        var datosUsuario = {};
+
+        bcrypt.genSalt(10, function(error, salt){
+            if(error) {
+                console.log("Error en la sal");
             }
-        }
+            bcrypt.hash(paciente.password, salt, null, function(error, hash){
+                if(error) {
+                    console.log("Error en el hash");
+                } 
+
+                datosUsuario = {
+                    /*setOnInsert es llamado por update en el caso de que no exista exactamente el mismo documento (porque ya no hay nada que modificarle)*/
+                    //                    $setOnInsert: {
+                    email: paciente.email,
+                    /* Obtenemos la contraseña generada en nuestro hash */
+                    password: hash,
+                    localizacion: paciente.localizacion,
+                    psicologos:
+                    [],
+                    diagnostico : []
+                    //                    }
+                }
+            });
+        });
 
         var options = {
             upsert: true, //No se va a añadir un nuevo documento, en su lugar devuelve un id al controller para dar lugar a una excepcion (?)
             returnOriginal: false 
         }
 
-
-        Paciente.findOneAndUpdate(query).exec(function(error, results){
+        Paciente.findOne(query).count().exec(function(error, results){
             if(error){
-                console.log("Pacientes - Error en autenticar");
+                console.log("Pacientes - Error en darAlta");
                 reject({error: error});
-            }else{
-                resolve(results);
+            }
+
+            /* Si no se ha encontrado ningun documento igual */
+            if(results == 0){
+                Paciente.update(query, datosUsuario, options).exec(function(error, results){
+                    if(error){
+                        console.log("Pacientes - Error en darAlta");
+                        reject({error: error});
+                    }else{
+                        resolve(results);
+                    }
+                });
+            } else {
+                resolve("Ya existe");
             }
         });
+
     });
 };
 
@@ -159,89 +247,3 @@ pacienteSchema.methods.findDiagnostico = function(id) {
 var Paciente = mongoose.model('Paciente', pacienteSchema);
 
 module.exports = Paciente;
-
-
-//var mongo = require('mongodb');
-//
-//module.exports = {
-//
-//    /* Funcion get que devuelve a un paciente mediante su email */
-//    get: function(_id) {
-//        var collection = mongo.DB.collection('pacientes');
-//
-//        var query = {_id: _id};
-//        collection.find(query).toArray(function(err, docs){
-//            console.log("Pacientes - Error en get: "+err+"\n"+docs);
-//        });
-//    },
-//
-//    /* Funcion all que devuelve a todos los pacientes */
-//    all: function() {
-//        var collection = mongo.DB.collection('pacientes');
-//
-//        collection.find({}).toArray(function(err, docs){
-//            if(docs.length === 0 || err){
-//                console.log("Pacientes - Error en all: "+err+"\n"+docs);
-//            }
-//        });
-//    },
-//
-//    /* Funcion update que actualiza los datos de un paciente */
-//    update: function(paciente) {
-//        var collection = mongo.DB.collection('pacientes');
-//
-//        var query = {
-//            _id: paciente._id
-//        };
-//
-//        var datosUsuario = {
-//            /* setOnInsert evita insertar innecesariamente, en el caso de que los datos sean los mismos */
-//            $setOnInsert: {
-//                email: paciente.email,
-//                password: paciente.password,
-//                localizacion: paciente.localizacion,
-//                sintomas: paciente.sintomas,
-//                patologia: paciente.patologia,
-//                psicologos:
-//                paciente.psicologos
-//            }
-//        }
-//
-//        collection.findOneAndUpdate(query, datosUsuario, function(err, docs){
-//            console.log("Pacientes - Error en update: "+err+"\n"+docs);
-//        });
-//
-//    },
-//
-//    /* Funcion que crea un nuevo paciente */
-//    create: function(paciente) {
-//        var collection = mongo.DB.collection('pacientes');
-//
-//        var datosUsuario = {
-//            email: paciente.email,
-//            password: paciente.password,
-//            localizacion: paciente.localizacion,
-//            sintomas: paciente.sintomas,
-//            patologia: paciente.patologia,
-//            psicologos:
-//            paciente.psicologos
-//        }
-//
-//        collection.insert(datosUsuario, function(err, docs){
-//            console.log("Pacientes - Error en create: "+err+"\n"+docs);
-//        });
-//    },
-//
-//    autenticar: function(paciente) {
-//        var collection = mongo.DB.collection('pacientes');
-//
-//        var query = {
-//            email: "rgm@gmail.com",
-//            password: "1234"
-//        }
-//
-//        var result= collection.find(query, function(err, docs){
-//            console.log("Pacientes - Error en autenticar: "+err);
-//        });
-//    }
-//}

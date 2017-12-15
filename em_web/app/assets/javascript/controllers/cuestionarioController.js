@@ -169,7 +169,7 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
             /* Se asigna al psicologo que puede tratar ese diagnostico */
             asignarPsicologo($scope.paciente);
 
-            $location.path("/usuarios/" + $scope.paciente._id);
+            $location.path("/usuarios/"+$scope.paciente._id);
 
         }
     }

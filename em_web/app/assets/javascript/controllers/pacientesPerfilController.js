@@ -1,7 +1,7 @@
 angular.module('Emozio').controller('PacientesPerfilController', function(Paciente, Psicologo, $scope, $routeParams, $location){
 
     /* Obtenemos el paciente que ha iniciado la sesion */
-    Paciente.GetById($routeParams.id).then(function(data){
+    Paciente.GetById().then(function(data){
         $scope.paciente=Object.values(data.data)[0];
         $scope.psicologos=$scope.paciente.psicologos;
         //console.log($scope.paciente);
@@ -11,14 +11,14 @@ angular.module('Emozio').controller('PacientesPerfilController', function(Pacien
     /* Funcion del boton "Hacer el test" */
     $scope.hacer=function(){
         /* Redireccionado al cuestionario */
-        $location.path("cuestionario/" + 1 + "/" + $scope.paciente._id);   
+        $location.path("cuestionario/" + 1 + "/" + $scope.paciente._id); 
     }
 
     /* Funcion del boton "Filtrar" */
     $scope.filtrar = function(psicologo) { 
 
         console.log($scope.paciente);
-        
+
         //console.log(psicologo);
 
         Psicologo.Filtrar(psicologo).then(function(data){
@@ -32,7 +32,7 @@ angular.module('Emozio').controller('PacientesPerfilController', function(Pacien
                 }
                 $scope.mensaje="";
             } 
-            
+
             if(!psicologosFiltrados.length){
                 $scope.cuadro_mensaje="jumbotron";
                 $scope.mensaje="No existen resultados para su búsqueda";
