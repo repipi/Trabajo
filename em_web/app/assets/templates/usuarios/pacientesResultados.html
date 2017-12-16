@@ -31,7 +31,7 @@
             <!-- Mostrar en el caso de que no haya resultados -->
             <div class="ui teal inverted segment">
                 <div class="ui text container">
-                    <p>Para poder asignarle al mejor psicólogo para tratar su caso, debe cubrir el siguiente test. Es breve y sencillo, sólamente deberá responder sí o no a las preguntas.</p>
+                    <p>Para poder asignarle al mejor psicólogo para tratar su caso, debe cubrir el siguiente test. Es breve y sencillo, solamente deberá responder sí o no a las preguntas.</p>
                     <button type="submit" class="ui right floated inverted button" ng-click="hacer()"><i class="write icon"></i>Hacer el test</button>
                 </div>
             </div>
@@ -93,7 +93,7 @@
                 </div>
 
                 <div>
-                    <div class="{{cuadro_mensaje}}">
+                    <div class="{{cuadro_mensaje}}" ng-show="!psicologos">
                         <h3 class="sin_resultados">{{mensaje}}</h3>
                     </div>
                 </div>
