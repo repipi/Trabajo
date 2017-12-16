@@ -7,21 +7,21 @@ module.exports = function(app) {
 
     app.route('/pacientes')
     /* Obtiene pacientes */
-        .get(function(req, res) {
-
-        console.log(req.user);
-
-        var paciente = new Paciente();
-        var promise = paciente.findAll();
-        promise.then(
-            function(data){
-                res.send(data);
-            },
-            function (error){
-                res.status(500).send({error: error});
-            }
-        );
-    })
+//        .get(function(req, res) {
+//
+//        console.log(req.user);
+//
+//        var paciente = new Paciente();
+//        var promise = paciente.findAll();
+//        promise.then(
+//            function(data){
+//                res.send(data);
+//            },
+//            function (error){
+//                res.status(500).send({error: error});
+//            }
+//        );
+//    })
 
     //    app.get('/pacienteInfo', passportConfig.estaAutenticado, function(req, res){
     //    res.json(req.user);
@@ -41,11 +41,11 @@ module.exports = function(app) {
         );
     });
 
-    app.route('/pacientes/:id')
+    app.route('/pacientes')
     /* Obtiene un paciente */
         .get(function(req, res){
         var paciente = new Paciente();
-        var promise = paciente.findOne(req.params.id);
+        var promise = paciente.findOne(req.user._id);
         promise.then(
             function(data){
                 res.send(data);
@@ -102,11 +102,11 @@ module.exports = function(app) {
         req.logout("Logout exitoso");
     });
 
-    app.route('/pacientes/:id/diagnostico')
+    app.route('/pacientes/diagnostico')
     /* Obtiene el diagnostico de un paciente */
         .get(function(req, res){
         var paciente = new Paciente();
-        var promise = paciente.findDiagnostico(req.params.id);
+        var promise = paciente.findDiagnostico(req.user._id);
         promise.then(
             function(data){
                 res.send(data);

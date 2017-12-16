@@ -8,9 +8,11 @@
                 <div class="inline fields">
                     <div class="field">
                         <input placeholder="Email" type="text" ng-model="paciente.email" required/>
+                        <div class="ui pointing label" ng-show="form.email.$touched && form.email.$invalid">Por favor, introduzca un e-mail. </div>
                     </div>
                     <div class="field">
                         <input placeholder="Contraseña" type="password" ng-model="paciente.password" required/>
+                        <div class="ui pointing label" ng-show="form.password.$touched && form.password.$invalid">Por favor, introduzca una contraseña. </div>
                     </div>
                     <div class="field">
                         <div class="ui green button" ng-click="check(paciente)">
@@ -35,42 +37,49 @@
             <div class="column">
                 <h2 class="ui image header">
                     <div class="content">
-                        <h1 class="ui header">Registro</h1>
+                        <h1 class="ui teal header">Registro</h1>
                     </div>
                 </h2>
-                <form class="ui large form">
+                <form name="form" class="ui large form">
                     <div class="ui stacked secondary  segment">
                         <div class="field">
                             <div class="ui left icon input">
                                 <i class="user icon"></i>
-                                <input type="text" name="email" placeholder="E-mail" ng-model="paciente.email" required>
+                                <input type="email" name="email" placeholder="E-mail" ng-model="paciente.email" required>
                             </div>
+                            <div class="ui pointing label" ng-show="form.email.$touched && form.email.$invalid">Por favor, introduzca un e-mail. </div>
+                            <div class="ui red pointing label" ng-show="form.email.$error.email">El formato del e-mail es incorrecto. </div>
                         </div>
                         <div class="field">
                             <div class="ui left icon input">
                                 <i class="lock icon"></i>
                                 <input type="password" name="password" placeholder="Contraseña" ng-model="paciente.password" required>
                             </div>
+                            <div class="ui pointing label" ng-show="form.password.$touched && form.password.$invalid">Por favor, introduzca una contraseña. </div>
                         </div>
                         <div class="field">
                             <div class="ui left icon input">
                                 <i class="marker icon"></i>
                                 <input type="text" name="localizacion" placeholder="Localización" ng-model="paciente.localizacion" required>
                             </div> 
+                            <div class="ui pointing label" ng-show="form.localizacion.$touched && form.localizacion.$invalid">Por favor, introduzca una localización. </div>
                         </div>
                         <div class="field">
                             <div class="ui left icon input">
                                 <i class="call icon"></i>
                                 <input type="tel" name="telefono" placeholder="Teléfono" ng-pattern="\d{9,9}" ng-model="paciente.telefono" required>
                             </div> 
+                            <div class="ui pointing label" ng-show="form.telefono.$touched && form.telefono.$invalid">Por favor, introduzca un teléfono. </div>
+                            <div class="ui red pointing label" ng-show="form.telefono.dirty && form.telefono.$invalid">El formato del teléfono es incorrecto. </div>
                         </div>
                         <div class="field">
                             <div class="ui left icon input">
                                 <div class="ui checkbox">
                                     <!--Se ha marcado por defecto el checkbox para que sea mas comodo para el usuario -->
                                     <div class="ui checkbox">
-                                        <input type="checkbox" id="term_cond" checked required>
+                                        <input type="checkbox" name="term_cond" id="term_cond" checked required>
                                         <label>Acepto las políticas de privacidad y los términos y condiciones de uso</label>
+                                        <div class="ui pointing label" ng-show="form.term_cond.$touched && !term_cond">Por favor, introduzca un teléfono. </div>
                                     </div>                                
                                 </div>
                             </div> 

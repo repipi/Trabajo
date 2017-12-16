@@ -13,7 +13,7 @@ angular.module('Emozio').controller('PacientesAccesoController', function(Pacien
             pacienteConectado=Object.values(data.data);
 
             if(pacienteConectado!=null){
-                $location.path("/usuarios/"+pacienteConectado[0]._id);
+                $location.path("/usuarios");
             }
         });
         

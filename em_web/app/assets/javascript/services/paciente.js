@@ -20,8 +20,8 @@ function Paciente($http){
         Update : function(paciente) {
             return $http.put('/pacientes', paciente);
         },
-        GetDiagnostico : function(id) {
-            return $http.get('/pacientes/'+id+'/diagnostico');   
+        GetDiagnostico : function() {
+            return $http.get('/pacientes/diagnostico');   
         }
     };
 }

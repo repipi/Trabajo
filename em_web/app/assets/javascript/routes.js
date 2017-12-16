@@ -16,13 +16,13 @@ angular.module('Emozio').config(function($routeProvider){
     })
     
     /* Cuestionario de asignacion */
-    .when('/cuestionario/:n/:id', {
+    .when('/cuestionario/:n', {
       templateUrl: "assets/templates/usuarios/cuestionarioPacientes.html",
       controller: "CuestionarioController"
     })
     
     /* Perfil de usuarios */
-    .when('/usuarios/:id', {
+    .when('/usuarios', {
       templateUrl: "assets/templates/usuarios/pacientesResultados.html",
       controller: "PacientesPerfilController"
     })

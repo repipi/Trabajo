@@ -6,7 +6,7 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
     4 - Devolvemos su pagina de perfil con el array de psicologos */
 
     /*Recuperamos el objeto Paciente con el id que se encuentra en los parametros de ruta*/
-    Paciente.GetById($routeParams.id).then(function(data){
+    Paciente.GetById().then(function(data){
         $scope.paciente=Object.values(data.data)[0];
         //console.log($scope.paciente);
     });
@@ -21,7 +21,7 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
         //        console.log($scope.patologias.length);
     });
 
-    Paciente.GetDiagnostico($routeParams.id).then(function(data){
+    Paciente.GetDiagnostico().then(function(data){
         $scope.diagnostico=Object.values(data.data)[0].diagnostico;
 
         /* Si no existe diagnostico */
@@ -140,7 +140,7 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
             //console.log($scope.paciente);
 
             /* Se carga la segunda parte del cuestionario */
-            $location.path("/cuestionario/" + 2 + "/" + $routeParams.id);
+            $location.path("/cuestionario/" + 2);
 
         }else{
 
@@ -169,7 +169,7 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
             /* Se asigna al psicologo que puede tratar ese diagnostico */
             asignarPsicologo($scope.paciente);
 
-            $location.path("/usuarios/"+$scope.paciente._id);
+            $location.path("/usuarios");
 
         }
     }

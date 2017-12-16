@@ -11,7 +11,7 @@ angular.module('Emozio').controller('PacientesPerfilController', function(Pacien
     /* Funcion del boton "Hacer el test" */
     $scope.hacer=function(){
         /* Redireccionado al cuestionario */
-        $location.path("cuestionario/" + 1 + "/" + $scope.paciente._id); 
+        $location.path("cuestionario/" + 1); 
     }
 
     /* Funcion del boton "Filtrar" */
