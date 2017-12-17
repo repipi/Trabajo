@@ -61,19 +61,39 @@ psicologoSchema.methods.findOne = function(id) {
 
 psicologoSchema.methods.filtrar = function(psicologo){
     return new Promise(function(resolve, reject){
+        var equivalencia = "";
+
+        if (psicologo.precio==30) {
+            equivalencia=JSON.parse('{ "$lt" : '+psicologo.precio+'}');
+        } else if (psicologo.precio==50 || psicologo.precio==70) {
+            equivalencia=JSON.parse('{ "$gt" : '+psicologo.precio-20+', "$lt": '+psicologo.precio+'}');
+        } else if (psicologo.precio==90) {
+            equivalencia=JSON.parse('{ "$gt" : '+psicologo.precio-20+'}');
+        } else if (psicologo.precio=="Cualquiera"){
+            equivalencia="";
+        }
+        
+        if(psicologo.seguro=="Cualquiera"){
+            psicologo.seguro="";
+        }
+
         var query = { 
             $or: [
                 {consulta : psicologo.consulta},
-                {precio : psicologo.precio}
+                {precio : equivalencia},
+                {seguro : psicologo.seguro}
             ]
         };
 
+        console.log(query);
+        
         Psicologo.find(query).exec(function(error, results){
             if(error){
                 console.log("Psicologos - Error en filtrar "+error);
                 reject({error: error});
             }else{
                 resolve(results);
+                //console.log(results);
             }
         });
     });
@@ -82,27 +102,3 @@ psicologoSchema.methods.filtrar = function(psicologo){
 var Psicologo = mongoose.model('Psicologo', psicologoSchema);
 
 module.exports = Psicologo;
-
-//var mongo = require('mongodb');
-//
-//module.exports = {
-//    /* Funcion get que devuelve un psicologo */
-//    get: function(_id) {
-//        var collection = mongo.DB.collection('psicologos');
-//
-//        var query = {_id: _id};
-//        collection.find(query).toArray(function(err, docs){
-//            console.log("Psicologos - Error en get: "+err+"\n"+docs);
-//        });
-//    },
-//
-//    /* Funcion all que devuelve a todos los psicologos */
-//    all: function() {
-//        var collection = mongo.DB.collection('psicologos');
-//
-//        collection.find({}).toArray(function(err, docs){
-//            console.log("Psicologos - Error en all: "+err+"\n"+docs);
-//        });
-//    }  
-//
-//}

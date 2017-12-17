@@ -26,32 +26,6 @@ var pacienteSchema = new Schema(
     }
 );
 
-/* pre: Se trata de un metodo que mongoose se va a encargar de invocar antes de que un paciente sea guardado */
-/* Metodo encargado de encriptar la contraseña del usuario */
-//pacienteSchema.pre('save', function(next){
-//    var paciente = this;
-//
-//    /* Si en el paciente no ha sido modificado el campo contraseña, se continua con normalidad */
-//    if(!paciente.isModified('password')){
-//        return next();
-//    }
-//
-//    /* Iteramos 10 veces */
-//    bcrypt.genSalt(10, function(error, salt){
-//        if(error) {
-//            next(error);
-//        }
-//        bcrypt.hash(paciente.password, salt, null, function(error, hash){
-//            if(error) {
-//                next(error);
-//            } 
-//            /* Obtenemos la contraseña generada en nuestro hash */
-//            paciente.password = hash;
-//            next();
-//        })
-//    })
-//})
-
 pacienteSchema.methods.encriptarPassword = function(paciente) {
 
     /* Iteramos 10 veces */
@@ -229,6 +203,31 @@ pacienteSchema.methods.findDiagnostico = function(id) {
             "localizacion":0,
             "telefono":0,
             "psicologos":0
+        };
+
+
+        Paciente.find(query, projection).exec(function(error, results){       
+            if(error){
+                console.log("Patologia - Error en findDiagnostico");
+                reject({error: error});
+            }else{
+                resolve(results);
+            }
+        });
+    });
+};
+
+pacienteSchema.methods.findPsicologos = function(id) {
+    return new Promise(function(resolve, reject){
+
+        var query = {_id: new mongoose.Types.ObjectId(id)};
+        var projection = {
+            "_id":0,
+            "email":0,
+            "password":0,
+            "localizacion":0,
+            "telefono":0,
+            "diagnostico":0
         };
 
 

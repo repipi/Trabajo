@@ -1,14 +1,23 @@
-<div class="ui inverted menu">
-    <div class="ui container">
-        <a class="header item" href="/#/inicio">
-            <img class="ui mini avatar image" src="/assets/images/emozio_logo.png"><span><h4>Emozio</h4></span>
+<!---------------------------------------------------------------------------------------------------------------------------------- BARRA DE NAVEGACION --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<nav class='container navbar-inverse' role='navigation' >
+    <div class='navbar-header'>
+        <a href='/#/inicio' class='navbar-brand logo'>
+            <img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
         </a>
+        <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
+            <span class='sr-only'>Toggle navigation</span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+        </button>
+    </div>
+
+    <ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
         <div class="right menu">
             <div class="ui form" novalidate>
                 <div class="inline fields">
                     <div class="field">
                         <input placeholder="Email" type="text" ng-model="paciente.email" required/>
-<!--                        <p ng-show="paciente.email.$invalid && !paciente.email.$pristine" class="help-block">You name is required.</p>-->
                     </div>
                     <div class="field">
                         <input placeholder="Contraseña" type="password" ng-model="paciente.password" required/>
@@ -24,18 +33,17 @@
                         </a>
                     </div>
                 </div>
-<!--                <div>{{mensaje_error_acceso}}</div>-->
+                <!--                <div>{{mensaje_error_acceso}}</div>-->
             </div>
-        </div>
-    </div>
-</div>
+        </div>  
+    </ul>
+</nav>
 
-<!--<div class="ui main text container">-->
-
+<!---------------------------------------------------------------------------------------------------------------------------------- INFORMACION DE PORTADA ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 <div class="portada">
     <div class="row">
         <div class="ui container">
-            <div class="jumbotron">
+            <div class="jumbotron titulo">
                 <h1>Psicólogos a medida</h1>      
                 <h2>Buscamos al mejor psicólogo para tratar tu caso</h2>
             </div>
@@ -47,10 +55,10 @@
             <div class="ui stackable grid">
                 <div class="two column row">
                     <div class="column">
-                        <div class="ui container">
-                            <div class="ui dividing header">
-                                <h2><i class="circular inverted teal settings icon"></i>¿Cómo funciona?</h2>
-                            </div>
+                        <div class="ui container titulo">
+                            <h2 class="titulo">
+                                <i class="white settings icon"></i>¿Cómo funciona?
+                            </h2>
                             <p>
                                 Para poder asignarle al mejor psicólogo para tratar su caso, debe cubrir nuestro test validado científicamente. La cualificación y experiencia de nuestros psicólogos está indivualmente acreditada mediante sus certificaciones profesionales.
                             </p>
@@ -58,9 +66,9 @@
                     </div>
                     <div class="column">
                         <div class="ui container">
-                            <div class="ui dividing header">
-                                <h2><i class="circular inverted teal users icon"></i>¿Quiénes somos?</h2>
-                            </div>
+                            <h2 class="titulo">
+                                <i class="white users icon"></i>¿Quiénes somos?
+                            </h2>
                             <div class="ui horizontal list">
                                 <div class="ui item">
                                     <img class="ui mini circular image" src="/assets/images/alfonso.png">
@@ -85,6 +93,8 @@
 </div>
 
 <div class="jumbotron"></div>
+
+<!---------------------------------------------------------------------------------------------------------------------------------- INFORMACION DE CONTACTO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <div class='ui inverted vertical footer segment'>
     <div class='container'>
@@ -128,6 +138,6 @@
 
 <style type="text/css">
     .ui.form .inline.fields {
-        margin: 0.5em;
+        margin: 1.7em;
     }
 </style>

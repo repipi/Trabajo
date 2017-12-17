@@ -116,5 +116,20 @@ module.exports = function(app) {
             }
         );
     });
+    
+    app.route('/pacientes/psicologos')
+    /* Obtiene el diagnostico de un paciente */
+        .get(function(req, res){
+        var paciente = new Paciente();
+        var promise = paciente.findPsicologos(req.user._id);
+        promise.then(
+            function(data){
+                res.send(data);
+            },
+            function (error){
+                res.status(500).send({error: error});
+            }
+        );
+    });
 
 };

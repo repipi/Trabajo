@@ -22,6 +22,9 @@ function Paciente($http){
         },
         GetDiagnostico : function() {
             return $http.get('/pacientes/diagnostico');   
+        },
+        GetPsicologos : function() {
+            return $http.get('/pacientes/psicologos');   
         }
     };
 }

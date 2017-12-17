@@ -1,7 +1,8 @@
+<!---------------------------------------------------------------------------------------------------------------------------------- BARRA DE NAVEGACION --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <nav class='container navbar-inverse' role='navigation' >
     <div class='navbar-header'>
-        <a href='/#/inicio' class='navbar-brand'>
-            <img class="ui mini avatar image" src="/assets/images/emozio_logo.png">Emozio
+        <a href='/#/inicio' class='navbar-brand logo'>
+            <img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
         </a>
         <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
             <span class='sr-only'>Toggle navigation</span>
@@ -12,70 +13,92 @@
     </div>
 
     <ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
-        <li><a href='/#/inicio'>Inicio</a></li>
-        <li><a href='/#/usuarios'>Resultados</a></li>
+        <li><a href='/#/inicio' class="navegacion">Inicio</a></li>
+        <li><a href='/#/usuarios' class="navegacion">Resultados</a></li>
         <li class='dropdown'>
-            <a href='/#/usuarios/{{paciente._id}}' data-target='#' class='dropdown-toggle' data-toggle='dropdown'>Perfil <span class='caret'></span></a>
+            <a href='/#/usuarios/{{paciente._id}}' data-target='#' class="dropdown-toggle navegacion" data-toggle='dropdown'>Perfil <span class='caret'></span></a>
             <ul class='dropdown-menu' role='menu'>
-                <li><a href='#'>Modificar mis datos</a></li>
+                <li><a href='#' class="navegacion">Modificar mis datos</a></li>
                 <li class='divider'></li>
-                <li><a href='/#/inicio'>Salir</a></li>
+                <li><a href='/#/inicio' class="navegacion">Salir</a></li>
             </ul>
         </li>
     </ul>
 </nav>
 
+<!---------------------------------------------------------------------------------------------------------------------------------- HACER EL TEST --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="container">
+
     <div class="row">
-        <div class="ui basic segment">
-            <!-- Mostrar en el caso de que no haya resultados -->
-            <div class="ui teal inverted segment">
-                <div class="ui text container">
+        <div class="col-xs-10 col-xs-offset-1">
+            <div class="ui white message">
+                <div class="ui container">
                     <p>Para poder asignarle al mejor psicólogo para tratar su caso, debe cubrir el siguiente test. Es breve y sencillo, solamente deberá responder sí o no a las preguntas.</p>
-                    <button type="submit" class="ui right floated inverted button" ng-click="hacer()"><i class="write icon"></i>Hacer el test</button>
+                    <button type="submit" class="ui right floated teal button" ng-click="hacer()"> <i class="ui center write icon"></i> Hacer el test</button>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="row">
 
-        <!------------------------------------- FORMULARIO DE BUSQUEDA ------------------------------------------------------>
+        <!--------------------------------------------------------------------------------------------------------------------------FILTRO ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
         <div class="container">
             <br>
-            <div class="col-xs-3">
+            <div class="col-xs-3 col-xs-offset-1">
                 <div class="ui container">
                     <div class="ui form segment">
                         <div class="grouped fields">
                             <label>Consulta</label>
                             <div class="field">
                                 <div class="ui slider checkbox">
-                                    <input type="radio" name="throughput" checked="checked" ng-model="psicologo.consulta.presencial">
+                                    <input type="radio" name="consulta" checked="checked" value="presencial" ng-model="psicologo.consulta">
                                     <label>Presencial</label>
                                 </div>
                             </div>
                             <div class="field">
                                 <div class="ui slider checkbox">
-                                    <input type="radio" name="throughput" ng-model="psicologo.consulta.online">
+                                    <input type="radio" name="consulta" value="online" ng-model="psicologo.consulta">
                                     <label>On-line</label>
                                 </div>
                             </div>
-                            <label>Precio</label>
-                            <div class="ui selection dropdown">
-                                <input type="hidden" name="gender">
-                                <i class="dropdown icon"></i>
-                                <div class="default text">Cualquiera</div>
-                                <div class="menu">
-                                    <div class="item" data-value="30">Menos de 30 €</div>
-                                    <div class="item" data-value="50">Entre 30 € y 50 €</div>
-                                    <div class="item" data-value="70">Entre 50 € y 70 €</div>
-                                    <div class="item" data-value="90">Más de 90 €</div>
-                                </div>
+                            <div class="field">
+                                <label>Precio</label>
+                                <select class="ui compact selection dropdown" ng-model="psicologo.precio">
+                                    <i class="dropdown icon"></i>
+                                    <div class="menu">
+                                        <option class="item" value="">Cualquiera</option>
+                                        <option class="item" value="30">Menos de 30 €</option>
+                                        <option class="item" value="50">Entre 30 € y 50 €</option>
+                                        <option class="item" value="70">Entre 50 € y 70 €</option>
+                                        <option class="item" value="90">Más de 70 €</option>
+                                    </div>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label>Seguro médico</label>
+                                <select class="ui compact selection dropdown" ng-model="psicologo.seguro">
+                                    <i class="dropdown icon"></i>
+                                    <div class="menu">
+                                        <option class="item" data-value="">Cualquiera</option>
+                                        <option class="item" data-value="Adeslas">Adeslas</option>
+                                        <option class="item" data-value="Allianz">Allianz</option>
+                                        <option class="item" data-value="AXA">AXA</option>
+                                        <option class="item" data-value="DKV">DKV</option>
+                                        <option class="item" data-value="Mapfre">Mapfre</option>
+                                        <option class="item" data-value="Mutua">Mutua</option>
+                                        <option class="item" data-value="Sanitas">Sanitas</option>
+                                        <option class="item" data-value="Santa Lucía">Santa Lucía</option>
+                                    </div>
+                                </select>
                             </div>
 
-                            <br>           <br>
-
                             <span id="demo"></span>
-
+                            <p style="color: black;">
+                                Consulta {{psicologo.consulta}}<br>
+                                Precio {{psicologo.precio}}<br>
+                                Seguro {{psicologo.seguro}}
+                            </p>
                             <button type="submit" class="fluid ui teal button" ng-click="filtrar(psicologo)">
                                 <i class="icon search"></i>  Filtrar</button>
                         </div>
@@ -83,17 +106,15 @@
                 </div>
             </div>
 
-            <!-------------------------------- RESULTADOS DEL CUESTIONARIO -------------------------------------------------->
-            <div class="col-xs-8 col-xs-offset-1">                
+            <!---------------------------------------------------------------------------------------------------------------------- RESULTADOS CUESTIONARIO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+            <div class="col-xs-7">                
 
-                <div class="ui dividing header">
-                    <i class="bar chart icon"></i>
-                    <div class="content">Resultados:
-                    </div>
-                </div>
+                <h2 class="titulo">
+                    <i class="bar chart icon"></i>Resultados:
+                </h2>
 
                 <div>
-                    <div class="{{cuadro_mensaje}}" ng-show="!psicologos">
+                    <div class="{{cuadro_mensaje}}">
                         <h3 class="sin_resultados">{{mensaje}}</h3>
                     </div>
                 </div>
@@ -102,7 +123,7 @@
                 <div class="ui link cards">
                     <!-- Bucle: Muestra la info de cada psicologo que pueda tratar la patologia del paciente -->
                     <div ng-repeat="psicologo in psicologos">
-                        <div class="ui segment resultado_psicologo">
+                        <div class="ui content resultado_psicologo">
                             <div class="ui card" >
                                 <div class="image">
                                     <!--                                <img ng-src="{{psicologo.imagen}}">-->
@@ -142,7 +163,7 @@
         </div>
     </div>
 
-    <!--Formulario de contacto: Ventana emergente (overlay)--> 
+    <!-------------------------------------------------------------------------------------------------------------------------- FORMULARIO DE CONTACTO: Ventana emergente - overlay ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
     <div class="modal fade left" id="myModal"> 
         <div class="modal-dialog"> 
             <div class="modal-content"> 
@@ -185,13 +206,3 @@
         </div> 
     </div>
 </div>
-
-<script>
-    var slider = document.getElementById("myRange");
-    var output = document.getElementById("demo");
-    output.innerHTML = slider.value;
-
-    slider.oninput = function() {
-        output.innerHTML = this.value;
-    }
-</script>

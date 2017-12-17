@@ -1,31 +1,63 @@
-/**************************************IMAGEN PORTADA***********************************************/
+/******************************************************************************************************************************** IMAGEN PORTADA *********************************************************************************************************************************/
 
 .portada, .ng-scope{
-    background: url(/assets/images/1869.jpg) no-repeat center center fixed; 
+    /*    background: url(/assets/images/1869.jpg) no-repeat center center fixed; */
+    background: url(/assets/images/images_prueba/6197.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: 1300px 800px;
-    background-color:rgba(0, 0, 0, 0.3);
     color: whitesmoke;
 }
 
 .jumbotron {
-    background-color:rgba(0, 0, 0, 0.3); 
-}
-
-.ui.dividing.header, .ui.header {
-    color: whitesmoke;
-}
-
-.equipo {
-    color: teal;
+    background-color:rgba(0, 0, 0, 0.0); 
 }
 
 .well {
     border-color: rgba(0, 0, 0, 0); 
     background-color:rgba(0, 0, 0, 0); 
 }
+
+.logo {
+    font-family: 'Montserrat';
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+.navbar-brand.logo {
+    color: white;
+}
+
+.navbar-brand.logo:hover {
+    color: teal;
+}
+
+.navegacion {
+    margin-top: 1.7em;
+    color: white;
+    font-size: 15px;
+}
+
+.navegacion:hover {
+    color: teal;
+}
+
+/*********************************************************************************************************************************** PAGINA DE INICIO ***********************************************************************************************************************************/
+
+.jumbotron.titulo h1, .jumbotron.titulo h2, .titulo {
+    color: white;
+}
+
+.jumbotron.titulo h1 {
+    font-family: 'Merriweather';
+}
+
+.equipo {
+    color: black;
+}
+
+/*********************************++++************************************+++++++*******************++++++************************** CUESTIONARIO ***********************************************************************************************************************************/
 
 .pregunta {
     color: black;
@@ -34,6 +66,8 @@
 .ui.header.nombre_test {
     color: teal;
 }
+
+/*********************************************************************************************************************************** PERFIL PACIENTE ***********************************************************************************************************************************/
 
 .sin_resultados {
     color: whitesmoke;
@@ -49,6 +83,18 @@
 
 .ui.header.nombre_psicologo {
     color: whitesmoke;
+}
+
+.jumbotron.sin_resultados {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.hacer_test {
+    color: black;
+}
+
+.resultado_psicologo {
+    margin: 10px;
 }
 
 /***********************************************************************************************************************************RESULTADO PACIENTES ******++++*************************************************************************************************************************/

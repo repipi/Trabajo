@@ -1,7 +1,8 @@
+<!---------------------------------------------------------------------------------------------------------------------------------- BARRA DE NAVEGACION --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <nav class='container navbar-inverse' role='navigation' >
     <div class='navbar-header'>
-        <a href='/#/inicio' class='navbar-brand'>
-            <img class="ui mini avatar image" src="/assets/images/emozio_logo.png">Emozio
+        <a href='/#/inicio' class='navbar-brand logo'>
+            <img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
         </a>
         <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
             <span class='sr-only'>Toggle navigation</span>
@@ -12,14 +13,14 @@
     </div>
 
     <ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
-        <li><a href='/#/inicio'>Inicio</a></li>
-        <li><a href='/#/usuarios'>Resultados</a></li>
+        <li><a href='/#/inicio' class="navegacion">Inicio</a></li>
+        <li><a href='/#/usuarios' class="navegacion">Resultados</a></li>
         <li class='dropdown'>
-            <a href='/#/usuarios' data-target='#' class='dropdown-toggle' data-toggle='dropdown'>Perfil <span class='caret'></span></a>
+            <a href='/#/usuarios/{{paciente._id}}' data-target='#' class="dropdown-toggle navegacion" data-toggle='dropdown'>Perfil <span class='caret'></span></a>
             <ul class='dropdown-menu' role='menu'>
-                <li><a href='#'>Modificar mis datos</a></li>
+                <li><a href='#' class="navegacion">Modificar mis datos</a></li>
                 <li class='divider'></li>
-                <li><a href='/#/inicio'>Salir</a></li>
+                <li><a href='/#/inicio' class="navegacion">Salir</a></li>
             </ul>
         </li>
     </ul>
@@ -27,7 +28,8 @@
 
 <div class='ui container'>
 
-    <!---------------------------------------------- TITULO ------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------------------------------ TITULO--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
             <div class="ui center aligned container">
@@ -43,11 +45,10 @@
     </div>
     <br>
 
-    <!--------------------------------------------- CONSEJOS ------------------------------------------------------------>
+    <!------------------------------------------------------------------------------------------------------------------------------ CONSEJOS ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
     <div class="row">
         <div class="ui container">
             <div class="col-sm-6 col-sm-offset-3">
-                <!--                    <div class="ui relaxed horizontal list">-->
                 <div class="ui center aligned grid">
                     <div class="five wide column">
                         <div class="ui center aligned items">
@@ -78,21 +79,15 @@
                     </div>
                 </div>
             </div>
-            <!--                </div>-->
         </div>
     </div>
     <br>
 
-    <!---------------------------------------- BARRA DE PROGRESO --------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------------------------------ BARRA DE PROGRESO --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
     <div class="ui container">
         <div class="row">
             <div class="col-sm-6 col-sm-offset-3">
                 <div class="item">
-                    <!--
-<div class="ui yellow progress" data-percent="74" id="example1">
-<div class="bar"></div>
-</div>
--->
                     <div class="progress">
                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
                              aria-valuenow="{{progress_bar}}" aria-valuemin="0" aria-valuemax="100" style="width:{{progress_bar}}%">
@@ -104,7 +99,7 @@
         </div>
     </div>
 
-    <!-----------------------------------------------------FORMULARIO--------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------------------------------ CUESTIONARIO -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
     <form>
         <div class="form-group" data-ng-init="mostrarPreg()"> <!-- Se define el grupo de elementos que conforman el formulario -->
             <div ng-repeat="pregunta in preguntas"> <!-- Cada columna sera un elemento pregunta del array de preguntas el cual se obtiene del controlador -->
@@ -115,7 +110,6 @@
                                 <!-- Identificamos el elemento como formulario checklist -->
                                 <!-- Para cada elemento seleccionado como cierto, a la pregunta se le añade el atributo SELECTED
 ng-true-value es el valor que toma cuando esta seleccionado, y ng-false-value cuando esta deseleccinado-->
-                                <!--                        <input class="form-check-input position-fluid" type="checkbox" id="blankCheckbox" ng-model="pregunta.SELECTED"  ng-true-value="1" ng-false-value="0"/>-->
                                 <!-- Imprimimos el campo pregunta del objeto pregunta -->
                                 <div class="field">
 
