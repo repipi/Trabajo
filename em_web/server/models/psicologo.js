@@ -61,39 +61,72 @@ psicologoSchema.methods.findOne = function(id) {
 
 psicologoSchema.methods.filtrar = function(psicologo){
     return new Promise(function(resolve, reject){
-        var equivalencia = "";
+        var query = {};
+
+        var precio, consulta, seguro;
+
+        console.log(psicologo);
 
         if (psicologo.precio==30) {
-            equivalencia=JSON.parse('{ "$lt" : '+psicologo.precio+'}');
-        } else if (psicologo.precio==50 || psicologo.precio==70) {
-            equivalencia=JSON.parse('{ "$gt" : '+psicologo.precio-20+', "$lt": '+psicologo.precio+'}');
+            precio={ $lte : 30 };
+        } else if (psicologo.precio==50) {
+            precio={ $gte : 30, $lte: 50};
+        } else if (psicologo.precio==70) {
+            precio={ $gte : 50, $lte: 70};
         } else if (psicologo.precio==90) {
-            equivalencia=JSON.parse('{ "$gt" : '+psicologo.precio-20+'}');
-        } else if (psicologo.precio=="Cualquiera"){
-            equivalencia="";
-        }
-        
-        if(psicologo.seguro=="Cualquiera"){
-            psicologo.seguro="";
+            precio={ $gte : 70};
+        } else if (psicologo.precio=="" || psicologo.precio==null){
+            precio = { $exists: true };
         }
 
-        var query = { 
-            $or: [
-                {consulta : psicologo.consulta},
-                {precio : equivalencia},
-                {seguro : psicologo.seguro}
-            ]
-        };
-
-        console.log(query);
+        console.log(seguro);
         
+        if(psicologo.seguro=="" || psicologo.seguro==null){
+            seguro = { $exists: true };
+        } else {
+            seguro = psicologo.seguro;
+        }
+
+        if(psicologo.consulta=="" || psicologo.consulta==null){
+            query = {
+                consulta: { $exists: true },
+                precio : precio,
+                aseguradora : seguro
+            };
+        } else if (psicologo.consulta=="presencial") {
+            query = {
+                $and : [
+                    {$or: [{consulta: { online: false, presencial: true }}, {consulta: {online: true, presencial:true}}]},
+                    {precio : precio},
+                    {aseguradora : seguro}
+                ]};
+        } else if (psicologo.consulta=="online") {
+            query = {
+                $and : [
+                    {$or: [{consulta: { online: true, presencial: false }}, {consulta: {online: true, presencial:true}}]},
+                    {precio : precio},
+                    {aseguradora : seguro}
+                ]};
+        }
+
+//        console.log(JSON.stringify(consulta));
+        //        console.log(JSON.stringify(precio));
+        //        console.log(JSON.stringify(seguro));
+
+//        query = {
+//            precio : precio,
+//            aseguradora : seguro
+//        };
+
+        console.log(JSON.stringify(query));
+
         Psicologo.find(query).exec(function(error, results){
             if(error){
                 console.log("Psicologos - Error en filtrar "+error);
                 reject({error: error});
             }else{
                 resolve(results);
-                //console.log(results);
+                            console.log(results);
             }
         });
     });

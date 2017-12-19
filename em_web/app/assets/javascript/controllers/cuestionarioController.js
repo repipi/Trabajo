@@ -34,6 +34,12 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
 
             /* Si no existe diagnostico */
             if(!$scope.diagnostico.length || $scope.paciente.psicologos.length){
+                /* Se inicializa su diagnostico y array de psicologos */
+                $scope.paciente.diagnostico=[];
+                $scope.diagnostico=[];
+                $scope.paciente.psicologos=[];
+                /* Se actualiza el paciente con los arrays anteriores reseteados */
+                Paciente.Update($scope.paciente);
 
                 /* Se recogen las preguntas de todas las patologia */
                 Patologia.GetPreguntas().then(function(data){
