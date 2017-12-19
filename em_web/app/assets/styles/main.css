@@ -1,7 +1,0 @@
-/*WE'LL CREATE ALL OF OUR CUSTOMIZATIONS HERE. NEVER IN THE STANDART LIBRARIES*/
-/*ICONS HAVE THE SIZE OF THE FONT SPECIFIED IN BOOTSTRAP*/
-
-.features .glyphicon{ /*ALL THE glyphicon IN features WILL BE AFFECTED*/
-    font-size: 32px;
-    color:red;
-}
