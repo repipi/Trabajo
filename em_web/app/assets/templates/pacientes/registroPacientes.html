@@ -17,10 +17,16 @@
             <div class="ui form" novalidate>
                 <div class="inline fields">
                     <div class="field">
-                        <input placeholder="Email" type="text" ng-model="paciente.email" required/>
+                        <div class="ui left icon input">
+                            <i class="mail icon"></i>
+                            <input placeholder="Email" type="text" ng-model="paciente.email" required/>
+                        </div>
                     </div>
                     <div class="field">
-                        <input placeholder="Contraseña" type="password" ng-model="paciente.password" required/>
+                        <div class="ui left icon input">
+                            <i class="lock icon"></i>
+                            <input placeholder="Contraseña" type="password" ng-model="paciente.password" required/>
+                        </div>
                     </div>
                     <div class="field">
                         <div class="ui green button" ng-click="check(paciente)">
@@ -40,7 +46,7 @@
 </nav>
 
 <!---------------------------------------------------------------------------------------------------------------------------------- FORMULARIO DE REGISTRO ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
-<div class='container'>
+<div class='container' ng-init="initAutocomplete()">
     <div class="row">
         <div class="ui middle aligned center aligned grid">
             <div class="column">
@@ -51,14 +57,16 @@
                 </h2>
                 <form name="form" class="ui large form">
                     <div class="ui stacked secondary  segment">
+                        <!---------------------------------------------------------------------------------------------------------- EMAIL ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
                         <div class="field">
                             <div class="ui left icon input">
-                                <i class="user icon"></i>
+                                <i class="mail icon"></i>
                                 <input type="email" name="email" placeholder="E-mail" ng-model="paciente.email" required>
                             </div>
                             <div class="ui pointing label" ng-show="form.email.$touched && form.email.$invalid">Por favor, introduzca un e-mail. </div>
                             <div class="ui red pointing label" ng-show="form.email.$error.email">El formato del e-mail es incorrecto. </div>
                         </div>
+                        <!---------------------------------------------------------------------------------------------------------- PASSWORD ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
                         <div class="field">
                             <div class="ui left icon input">
                                 <i class="lock icon"></i>
@@ -66,21 +74,24 @@
                             </div>
                             <div class="ui pointing label" ng-show="form.password.$touched && form.password.$invalid">Por favor, introduzca una contraseña. </div>
                         </div>
-                        <div class="field">
+                        <!---------------------------------------------------------------------------------------------------------- LOCALIZACION ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <div class="field" id="locationField">
                             <div class="ui left icon input">
                                 <i class="marker icon"></i>
-                                <input type="text" name="localizacion" placeholder="Localización" ng-model="paciente.localizacion" required>
-                            </div> 
+                                <input id="autocomplete" name="localizacion" placeholder="Localización" ng-focus="geolocate()" type="text" required>
+                            </div>
                             <div class="ui pointing label" ng-show="form.localizacion.$touched && form.localizacion.$invalid">Por favor, introduzca una localización. </div>
                         </div>
+                        <!---------------------------------------------------------------------------------------------------------- TELEFONO ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
                         <div class="field">
                             <div class="ui left icon input">
                                 <i class="call icon"></i>
-                                <input type="tel" name="telefono" placeholder="Teléfono" ng-pattern="\d{9,9}" ng-model="paciente.telefono" required>
+                                <input type="tel" name="telefono" placeholder="Teléfono" ng-model="paciente.telefono" required>
                             </div> 
                             <div class="ui pointing label" ng-show="form.telefono.$touched && form.telefono.$invalid">Por favor, introduzca un teléfono. </div>
                             <div class="ui red pointing label" ng-show="form.telefono.dirty && form.telefono.$invalid">El formato del teléfono es incorrecto. </div>
                         </div>
+                        <!---------------------------------------------------------------------------------------------------------- POLITICAS --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
                         <div class="field">
                             <div class="ui left icon input">
                                 <div class="ui checkbox">
@@ -93,16 +104,17 @@
                                 </div>
                             </div> 
                         </div>
-                        <div class="ui fluid large teal submit button" ng-click="check(paciente)">Registrar</div>
+                        <div class="ui fluid large teal submit button" ng-click="check(paciente)">Enviar</div>
                     </div>
 
                     <div class="ui error message"></div>
 
                     <div class="ui message">
-                        ¿Eres un profesional de la psicología? <a href="https://s.codepen.io/voltron2112/debug/PqrEPM?">Contactar</a>
+                        ¿Eres un profesional de la psicología? <a href="#/registro/psicologos">Contactar</a>
                     </div>
 
                 </form>
+
             </div>
         </div>
     </div>
@@ -124,4 +136,11 @@
     .ui.form .inline.fields {
         margin: 1.7em;
     }
+    /* Always set the map height explicitly to define the size of the div
+    * element that contains the map. */
+    #map {
+        height: 0;
+    }
 </style>
+
+<!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAam1F5oAmyFBUmi9A39nWu5Fo_S1tmtOI&libraries=places&callback=initAutocomplete" async defer></script>-->

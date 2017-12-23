@@ -2,18 +2,23 @@ angular.module('Emozio').controller('PacientesPerfilController', function(Pacien
 
     /* Obtenemos el paciente que ha iniciado la sesion */
     Paciente.GetById().then(function(data){
-        $scope.paciente=Object.values(data.data)[0];
-        $scope.psicologos=$scope.paciente.psicologos.slice();
+        if(!data.data) {
+            $location.path("/");
+        } else {
+            $scope.paciente=Object.values(data.data)[0];
+            //        console.log($scope.paciente);  
+            $scope.psicologos=$scope.paciente.psicologos.slice();
 
-        /* Si el paciente no tiene diagnostico, no existen resultados */
-        if(!$scope.paciente.diagnostico.length){
-            $scope.cuadro_mensaje="jumbotron";
-            $scope.mensaje="No hay resultados actualmente";
-        } else { /* Si el paciente tiene diagnostico */
-            /* Pero al paciente no se le han asignado psicologos (los resultados no son concluyentes) */
-            if(!$scope.psicologos.length){
+            /* Si el paciente no tiene diagnostico, no existen resultados */
+            if(!$scope.paciente.diagnostico.length){
                 $scope.cuadro_mensaje="jumbotron";
-                $scope.mensaje="Los resultados no han sido concluyentes";
+                $scope.mensaje="No hay resultados actualmente";
+            } else { /* Si el paciente tiene diagnostico */
+                /* Pero al paciente no se le han asignado psicologos (los resultados no son concluyentes) */
+                if(!$scope.psicologos.length){
+                    $scope.cuadro_mensaje="jumbotron";
+                    $scope.mensaje="Los resultados no han sido concluyentes";
+                }
             }
         }
 
@@ -101,5 +106,11 @@ angular.module('Emozio').controller('PacientesPerfilController', function(Pacien
         $scope.cuadro_mensaje="";
         $scope.mensaje="";
         $scope.psicologos=$scope.paciente.psicologos.slice();
+    }
+
+    /* Funcion salir que cierra la sesion */
+    $scope.salir=function(){
+        Paciente.Salir();
+        $location.path("inicio"); 
     }
 });

@@ -7,13 +7,15 @@ var Paciente = require('../models/paciente');
 passport.serializeUser(function(paciente, done){
     /* null porque no ha ocurrido ningun error 
     Passport utiliza el _id para hacer el match entre la sesion y el objeto paciente */
+    console.log("serializing " + paciente.username);
     done(null, paciente._id);
 })
 
 /* Metodo que devuelve el paciente al que corresponde un _id */
 passport.deserializeUser(function(id, done){
     Paciente.findById(id, function(error, paciente){
-        done(error, paciente);
+        console.log("deserializing " + id);
+        done(null, paciente);
     })
 })
 
@@ -49,8 +51,11 @@ passport.use(new LocalStrategy(
 
 exports.estaAutenticado = function (req, res, next){
     if(req.isAuthenticated()){
+        console.log("Esta autenticado");
         return next();
     }
     /* EL usuario no esta autorizado para acceder a este recurso */
-    res.status(401).send('Tienes que hacer login para acceder a este recurso');
+    //    res.status(401).send('Tienes que hacer login para acceder a este recurso');
+    req.session.error = 'Please sign in!';
+    res.redirect('/');
 }

@@ -7,8 +7,12 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
 
     /* Recuperamos al paciente */
     Paciente.GetById().then(function(data){
-        $scope.paciente=Object.values(data.data)[0];
-        //console.log($scope.paciente);
+        if(!data.data) {
+            $location.path("/");
+        } else {
+            $scope.paciente=Object.values(data.data)[0];
+            //        console.log($scope.paciente);  
+        }
     });
 
     /* Recuperamos el array de psicologos */
@@ -29,59 +33,63 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
 
         /* Recuperamos el paciente */
         Paciente.GetById().then(function(data){
-            $scope.paciente=Object.values(data.data)[0];
-            //console.log($scope.paciente);
+            if(!data.data) {
+                $location.path("/");
+            } else {
+                $scope.paciente=Object.values(data.data)[0];
+                //        console.log($scope.paciente);  
 
-            /* Si no existe diagnostico */
-            if(!$scope.diagnostico.length || $scope.paciente.psicologos.length){
-                /* Se inicializa su diagnostico y array de psicologos */
-                $scope.paciente.diagnostico=[];
-                $scope.diagnostico=[];
-                $scope.paciente.psicologos=[];
-                /* Se actualiza el paciente con los arrays anteriores reseteados */
-                Paciente.Update($scope.paciente);
+                /* Si no existe diagnostico */
+                if(!$scope.diagnostico.length || $scope.paciente.psicologos.length){
+                    /* Se inicializa su diagnostico y array de psicologos */
+                    $scope.paciente.diagnostico=[];
+                    $scope.diagnostico=[];
+                    $scope.paciente.psicologos=[];
+                    /* Se actualiza el paciente con los arrays anteriores reseteados */
+                    Paciente.Update($scope.paciente);
 
-                /* Se recogen las preguntas de todas las patologia */
-                Patologia.GetPreguntas().then(function(data){
+                    /* Se recogen las preguntas de todas las patologia */
+                    Patologia.GetPreguntas().then(function(data){
 
-                    var result = Object.values(data.data);
-                    var preguntas = [];
+                        var result = Object.values(data.data);
+                        var preguntas = [];
 
-                    /* Se recoge la primera pregunta de cada patologia */
-                    for(var i=0, l=result.length; i<l; i++){
-                        preguntas.push(JSON.parse('{ "pregunta" : "'+result[i].preguntas[0]+'", "respuesta" : '+0+'}'));
+                        /* Se recoge la primera pregunta de cada patologia */
+                        for(var i=0, l=result.length; i<l; i++){
+                            preguntas.push(JSON.parse('{ "pregunta" : "'+result[i].preguntas[0]+'", "respuesta" : '+0+'}'));
+                        }
+
+                        /* Se establece el array de preguntas */
+                        $scope.preguntas=preguntas;
+                    });
+
+                    /* Se establece el boton con el nombre de submit */
+                    $scope.submit="Siguiente";
+
+                    /* La barra de progreso esta vacia */
+                    $scope.progress_bar = 0;
+
+                }else{
+
+                    var preguntas=[];
+
+                    /* Se recogen los diagnosticos correspondientes a cada patologia */
+                    for(var j=0, m=$scope.diagnostico.length; j<m; j++){
+                        /* Se recogen las preguntas existentes en la patologia de cada diagnostico */
+                        for(var i=0, l=$scope.diagnostico[j].patologia.preguntas.length; i<l; i++){
+                            preguntas.push(JSON.parse('{ "pregunta" : "'+$scope.diagnostico[j].patologia.preguntas[i]+'", "respuesta" : '+0+'}'));
+                        }
                     }
 
                     /* Se establece el array de preguntas */
                     $scope.preguntas=preguntas;
-                });
 
-                /* Se establece el boton con el nombre de submit */
-                $scope.submit="Siguiente";
+                    /* Se establece el boton con el nombre de submit */
+                    $scope.submit="Enviar";
 
-                /* La barra de progreso esta vacia */
-                $scope.progress_bar = 0;
-
-            }else{
-
-                var preguntas=[];
-
-                /* Se recogen los diagnosticos correspondientes a cada patologia */
-                for(var j=0, m=$scope.diagnostico.length; j<m; j++){
-                    /* Se recogen las preguntas existentes en la patologia de cada diagnostico */
-                    for(var i=0, l=$scope.diagnostico[j].patologia.preguntas.length; i<l; i++){
-                        preguntas.push(JSON.parse('{ "pregunta" : "'+$scope.diagnostico[j].patologia.preguntas[i]+'", "respuesta" : '+0+'}'));
-                    }
+                    /* La barra de progreso esta al 70% */
+                    $scope.progress_bar = 70;
                 }
-
-                /* Se establece el array de preguntas */
-                $scope.preguntas=preguntas;
-
-                /* Se establece el boton con el nombre de submit */
-                $scope.submit="Enviar";
-
-                /* La barra de progreso esta al 70% */
-                $scope.progress_bar = 70;
             }
 
         });

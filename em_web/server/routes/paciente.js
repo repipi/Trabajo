@@ -7,21 +7,21 @@ module.exports = function(app) {
 
     app.route('/pacientes')
     /* Obtiene pacientes */
-//        .get(function(req, res) {
-//
-//        console.log(req.user);
-//
-//        var paciente = new Paciente();
-//        var promise = paciente.findAll();
-//        promise.then(
-//            function(data){
-//                res.send(data);
-//            },
-//            function (error){
-//                res.status(500).send({error: error});
-//            }
-//        );
-//    })
+    //        .get(function(req, res) {
+    //
+    //        console.log(req.user);
+    //
+    //        var paciente = new Paciente();
+    //        var promise = paciente.findAll();
+    //        promise.then(
+    //            function(data){
+    //                res.send(data);
+    //            },
+    //            function (error){
+    //                res.status(500).send({error: error});
+    //            }
+    //        );
+    //    })
 
     //    app.get('/pacienteInfo', passportConfig.estaAutenticado, function(req, res){
     //    res.json(req.user);
@@ -44,16 +44,20 @@ module.exports = function(app) {
     app.route('/pacientes')
     /* Obtiene un paciente */
         .get(function(req, res){
-        var paciente = new Paciente();
-        var promise = paciente.findOne(req.user._id);
-        promise.then(
-            function(data){
-                res.send(data);
-            },
-            function (error){
-                res.status(500).send({error: error});
-            }
-        );
+        if(!req.user) {
+            res.send(null);
+        } else {
+            var paciente = new Paciente();
+            var promise = paciente.findOne(req.user._id);
+            promise.then(
+                function(data){
+                    res.send(data);
+                },
+                function (error){
+                    res.status(500).send({error: error});
+                }
+            );
+        }
     });
 
     app.route('/pacientes/registro')
@@ -99,7 +103,15 @@ module.exports = function(app) {
 
     app.route('/pacientes/cierre')
         .post(passportConfig.estaAutenticado, function(req, res){
-        req.logout("Logout exitoso");
+        req.session.destroy(function (err) {
+            if(err) {
+                console.log("Error al cerrar")
+            } else {
+                res.redirect('/'); //Inside a callback… bulletproof!
+            }
+
+        });
+        //        req.logout("Logout exitoso");
     });
 
     app.route('/pacientes/diagnostico')
@@ -116,7 +128,7 @@ module.exports = function(app) {
             }
         );
     });
-    
+
     app.route('/pacientes/psicologos')
     /* Obtiene el diagnostico de un paciente */
         .get(function(req, res){

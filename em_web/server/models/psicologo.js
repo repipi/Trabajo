@@ -3,14 +3,15 @@ var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
+var bcrypt = require('bcrypt-nodejs');
 
 var psicologoSchema = new Schema(
     {
         _id : ObjectId,
         nombre: String,
         edad: Number,
-        email : String,
-        password : String,
+        email : {type: String, unique: true, lowercase: true, required: true },
+        password : {type: String, required: true },
         localizacion: String,
         telefono : Number,
         tipo : String,
@@ -30,6 +31,34 @@ var psicologoSchema = new Schema(
         collection: 'psicologos' 
     }
 );
+
+psicologoSchema.methods.compararPassword = function(password, cb){
+    bcrypt.compare(password, this.password, function(error, sonIguales){
+        if(error){
+            return cb(error);
+        } 
+        cb(null, sonIguales);
+    })
+};
+
+psicologoSchema.methods.autenticar = function(paciente) {
+    return new Promise(function(resolve, reject){
+
+        var query = {
+            email: paciente.email,
+            password: paciente.password
+        }
+
+        Psicologo.find(query).exec(function(error, results){
+            if(error){
+                console.log("Psicologos - Error en autenticar");
+                reject({error: error});
+            }else{
+                resolve(results);
+            }
+        });
+    });
+};
 
 psicologoSchema.methods.findAll = function() {
     return new Promise(function(resolve, reject){
@@ -113,11 +142,6 @@ psicologoSchema.methods.filtrar = function(psicologo){
         //        console.log(JSON.stringify(precio));
         //        console.log(JSON.stringify(seguro));
 
-//        query = {
-//            precio : precio,
-//            aseguradora : seguro
-//        };
-
         console.log(JSON.stringify(query));
 
         Psicologo.find(query).exec(function(error, results){
@@ -126,7 +150,7 @@ psicologoSchema.methods.filtrar = function(psicologo){
                 reject({error: error});
             }else{
                 resolve(results);
-                            console.log(results);
+                console.log(results);
             }
         });
     });

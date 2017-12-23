@@ -25,6 +25,9 @@ function Paciente($http){
         },
         GetPsicologos : function() {
             return $http.get('/pacientes/psicologos');   
+        }, 
+        Salir : function() {
+            return $http.post('/pacientes/cierre');
         }
     };
 }
