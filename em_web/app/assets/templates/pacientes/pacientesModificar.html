@@ -53,6 +53,40 @@
 							<input type="email" name="email" placeholder="E-mail" ng-model="paciente.email" required>
 						</div>
 					</div>
+					<!---------------------------------------------------------------------------------------------------------- GENERO ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+					<div class="field" id="genero">
+						<select class="ui compact selection dropdown" name="genero" ng-model="paciente.genero">
+							<i class="dropdown icon"></i>
+							<div class="menu">
+								<option class="item" value="">Selecciona tu género</option>
+								<option class="item" value="Femenino">Femenino</option>
+								<option class="item" value="Masculino">Masculino</option>
+								<option class="item" value="Agénero">Agénero</option>
+								<option class="item" value="Andrógino">Andrógino</option>
+								<option class="item" value="Berdache">Berdache</option>
+								<option class="item" value="Bigénero">Bigénero</option>
+								<option class="item" value="Género fluido">Género fluido</option>
+								<option class="item" value="Género no-binario">Género no-binario</option>
+								<option class="item" value="Hijra">Hijra</option>
+								<option class="item" value="Hombre transexual">Hombre transexual</option>
+								<option class="item" value="Intersexual">Intersexual</option>
+								<option class="item" value="Mujer transexual">Mujer transexual</option>
+								<option class="item" value="Pangénero">Pangénero</option>
+								<option class="item" value="Transgénero femenino">Transgénero femenino</option>
+								<option class="item" value="Transgénero masculino">Transgénero masculino</option>
+								<option class="item" value="Transexual">Transexual</option>		
+							</div>
+						</select>
+					</div>
+					<!----------------------------------------------------------------------------------------------------------FECHA NACIMIENTO ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+					<div class="field">
+						<div class="ui calendar" id="edad">
+							<div class="ui input left icon">
+								<i class="calendar icon"></i>
+								<input type="text" name="edad" placeholder="Fecha de nacimiento" ng-model="paciente.edad">
+							</div>
+						</div>
+					</div>
 					<!---------------------------------------------------------------------------------------------------------- LOCALIZACION ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 					<div class="field" id="locationField">
 						<div class="ui left icon input">
@@ -89,7 +123,7 @@
 			</div>
 		</div>
 		<div class="col-xs-5 col-xs-offset-1">
-			<div name="change_form" class="ui large form">
+			<div id="password_form" class="ui large form">
 				<div class="ui stacked secondary  segment">
 					<div class="ui header">
 						<p>Modificar contraseña</p>

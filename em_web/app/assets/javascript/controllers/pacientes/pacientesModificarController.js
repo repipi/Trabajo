@@ -57,7 +57,7 @@ angular.module('Emozio').controller('PacientesModificarController', function(Pac
 		$scope.geolocate();
 	});
 
-	/* Validacion de formulario de registro */
+	/* Validacion de formulario de modificacion de datos */
 	$('#change_form').form({
 		on : 'blur',
 		inline: 'true',
@@ -75,6 +75,24 @@ angular.module('Emozio').controller('PacientesModificarController', function(Pac
 					}
 				]
 			},      
+			genero : {
+				identifier : 'genero',
+				rules : [
+					{
+						type : 'empty',
+						prompt : 'Por favor, introduce tu género.'
+					}
+				]
+			},
+			edad : {
+				identifier : 'edad',
+				rules : [
+					{
+						type : 'empty',
+						prompt : 'Por favor, introduce tu fecha de nacimiento.'
+					}
+				]
+			},
 			localizacion : {
 				identifier : 'localizacion',
 				rules : [
@@ -121,13 +139,13 @@ angular.module('Emozio').controller('PacientesModificarController', function(Pac
 		}
 	}); 
 
-	/* Validacion de formulario de registro */
+	/* Validacion de formulario de modificacion de contraseña */
 	$('#password_form').form({
 		on : 'blur',
 		inline: 'true',
 		fields : {    
 			passwordActual: {
-				identifier: 'passwordNueva',
+				identifier: 'passwordActual',
 				rules: [
 					{
 						type: 'empty',
@@ -149,15 +167,26 @@ angular.module('Emozio').controller('PacientesModificarController', function(Pac
 					{
 						type: 'minLength[8]',
 						prompt: 'La contraseña debe tener mínimo 8 carácteres.'
-					}, 
-					{
-						type: 'regExp[^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$]',
-						prompt: 'La contraseña debe contener al menos una minúscula, una mayúscula y un dígito.'
 					}
+					//					, 
+					//					{
+					//						type: 'regExp[^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$]',
+					//						prompt: 'La contraseña debe contener al menos una minúscula, una mayúscula y un dígito.'
+					//					}
 				]
 			}
 		}
 	}); 
+
+	/* Edad paciente */
+	var edad;
+
+	$('#edad').calendar({
+		type: 'date',
+		onChange: function (date, text) {
+			edad = text;
+		}
+	});
 
 	/* Funcion de cambio de datos del usuario */
 	$scope.cambiarDatos = function(paciente) { 
@@ -167,14 +196,25 @@ angular.module('Emozio').controller('PacientesModificarController', function(Pac
 
 		var nuevoPaciente = {
 			email: paciente.email,
+			password: paciente.password,
+			genero: paciente.genero,
+			edad: edad,
 			localizacion: place.name,
 			telefono: paciente.telefono            
 		};
+		//			console.log(nuevoPaciente);
 
 		if($('#change_form').form('is valid')) {
 
 			/* Se guarda el objeto paciente del formulario. Despues, */
-			Paciente.Update(paciente).then(function(data){
+			Paciente.Update({
+				email: paciente.email,
+				password: paciente.password,
+				genero: paciente.genero,
+				edad: edad,
+				localizacion: place.name,
+				telefono: paciente.telefono            
+			}).then(function(data){
 				if(data.data) {
 					$scope.msj_exito_datos=true;	
 					$scope.msj_error_datos=false;

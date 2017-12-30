@@ -118,6 +118,8 @@ module.exports = function(app) {
 		//        https://deivijt.com/blog/como-enviar-emails-con-nodejs-y-nodemailer/
 		//		https://thepandeysoni.org/2016/06/12/nodemailer-service-in-node.js-using-SMTP-and-xoauth2/
 
+		console.log(req.body);
+		
 		/* Para enviar un email, se define un transporter con los datos de la cuenta de correo */
 		var transporter = nodemailer.createTransport(smtpTransport ({
 			service: 'Gmail',

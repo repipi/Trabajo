@@ -1,4 +1,4 @@
-angular.module('Emozio').controller('PsicologosPerfilController', function(Psicologo, Paciente, $scope, $routeParams){
+angular.module('Emozio').controller('PsicologosPerfilController', function(Psicologo, Paciente, $scope, $routeParams, $location, $window){
 
 	/* Tomamos al psicologo indicado en los parametros */
 	Psicologo.GetByParams($routeParams.id).then(function(data){
@@ -29,5 +29,19 @@ angular.module('Emozio').controller('PsicologosPerfilController', function(Psico
 			$scope.nav_gen=true;
 		}
 	});
+
+	/* Funcion salir que cierra la sesion */
+	$scope.salir=function(){
+		Paciente.GetById().then(function(data){
+			if(!data.data || data.data=='') {
+				Psicologo.Salir();
+			} else {
+				Paciente.Salir();
+			}
+		});
+		$location.path("inicio");
+		/* Parche para cuando sales del perfil del psicologo */
+		$window.location.reload(); 
+	}
 
 });

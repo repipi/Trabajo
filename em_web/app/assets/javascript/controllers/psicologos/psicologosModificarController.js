@@ -58,14 +58,18 @@ angular.module('Emozio').controller('PsicologosModificarController', function(Pa
 	/************************************************************************************************************************** Validacion de formularios **********************************************************************************************************************************/
 
 	/* Validacion de formulario de registro */
+	/* Validacion de formulario de registro */
 	$('#register_form_2').form({
 		on : 'blur',
 		inline: 'true',
 		fields : {
 			nombre : {
 				identifier : 'nombre',
-				optional: true,
 				rules : [
+					{
+						type : 'empty',
+						prompt : 'Por favor, introduce tu nombre.'
+					},
 					{
 						type : 'regExp[^[a-zA-ZÀ-ÿ\u00f1\u00d1 ,.;:¿?¡!()]+$]',
 						prompt : 'El formato del nombre es incorrecto.'
@@ -76,20 +80,36 @@ angular.module('Emozio').controller('PsicologosModificarController', function(Pa
 					}
 				]
 			},
-			edad : {
-				identifier : 'edad',
-				optional: true,
+			genero : {
+				identifier : 'genero',
 				rules : [
 					{
-						type : 'integer[18..100]',
-						prompt : 'Debe ser mayor de edad.'
+						type : 'empty',
+						prompt : 'Por favor, introduce tu género.'
 					}
+				]
+			},
+			edad : {
+				identifier : 'edad',
+				rules : [
+					{
+						type : 'empty',
+						prompt : 'Por favor, introduce tu fecha de nacimiento.'
+					}
+					//					,
+					//					{
+					//						type : 'integer[18..100]',
+					//						prompt : 'Debe ser mayor de edad.'
+					//					}
 				]
 			},
 			email : {
 				identifier : 'email',
-				optional: true,
 				rules : [
+					{
+						type : 'empty',
+						prompt : 'Por favor, introduce un e-mail.'
+					},
 					{
 						type: 'email',
 						prompt: 'El formato del e-mail es incorrecto.'
@@ -102,14 +122,20 @@ angular.module('Emozio').controller('PsicologosModificarController', function(Pa
 			},
 			localizacion : {
 				identifier : 'localizacion',
-				optional: true,
 				rules : [
+					{
+						type : 'empty',
+						prompt : 'Por favor, introduce una localización.'
+					}
 				]
 			},
 			telefono : {
 				identifier : 'telefono',
-				optional: true,
 				rules : [
+					{
+						type : 'empty',
+						prompt : 'Por favor, introduce un teléfono.'
+					},
 					{
 						type : 'exactLength[9]',
 						prompt : 'El formato del teléfono es incorrecto.'
@@ -118,16 +144,15 @@ angular.module('Emozio').controller('PsicologosModificarController', function(Pa
 			},
 			term_cond : {
 				identifier  : 'term_cond',
-				optional: true,
 				rules: [
 					{
 						type   : 'checked',
-						prompt : 'Por favor, debe indicar que acepta los términos y condiciones de uso.'
+						prompt : 'Por favor, debes indicar que aceptas los términos y condiciones de uso.'
 					}
 				]
 			}
 		}
-	}); 
+	});  
 
 	$('#register_form_3').form({
 		on : 'blur',
@@ -241,7 +266,22 @@ angular.module('Emozio').controller('PsicologosModificarController', function(Pa
 			$scope.estado_2 = 'disabled';
 			$scope.estado_3 = 'disabled';
 
-			Psicologo.SignUp(psicologo);
+			var infoPsicologo = {
+				nombre: psicologo.nombre,
+				genero : psicologo.genero,
+				edad: edad,
+				email : psicologo.email,
+				localizacion: place.name,
+				telefono : psicologo.telefono,
+				ncolegiado : psicologo.ncolegiado,
+				experiencia : psicologo.experiencia,
+				formacion : psicologo.formacion,
+				terapia : psicologo.terapia,
+				especialidad : psicologo.especialidad,
+				patologias : psicologo.patologias
+			};
+
+			Psicologo.SignUp(infoPsicologo);
 
 			$scope.msj_exito = true;
 			//			}

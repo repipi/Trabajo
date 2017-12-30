@@ -78,6 +78,10 @@ angular.module('Emozio').controller('PacientesRegistroController', function(Paci
 					{
 						type: 'email',
 						prompt: 'El formato del e-mail es incorrecto.'
+					},
+					{
+						type: 'maxLength[50]',
+						prompt: 'Demasiados carácteres.'
 					}
 				]
 			},      
@@ -87,6 +91,10 @@ angular.module('Emozio').controller('PacientesRegistroController', function(Paci
 					{
 						type: 'empty',
 						prompt: 'Por favor, introduce una contraseña.'
+					},
+					{
+						type: 'maxLength[50]',
+						prompt: 'Demasiados carácteres.'
 					}
 				]
 			}
@@ -129,11 +137,12 @@ angular.module('Emozio').controller('PacientesRegistroController', function(Paci
 					{
 						type: 'minLength[8]',
 						prompt: 'La contraseña debe tener mínimo 8 carácteres.'
-					}, 
-					{
-						type: 'regExp[^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$]',
-						prompt: 'La contraseña debe contener al menos una minúscula, una mayúscula y un dígito.'
 					}
+					//					, 
+					//					{
+					//						type: 'regExp[^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$]',
+					//						prompt: 'La contraseña debe contener al menos una minúscula, una mayúscula y un dígito.'
+					//					}
 				]
 			},
 			genero : {
@@ -235,20 +244,28 @@ angular.module('Emozio').controller('PacientesRegistroController', function(Paci
 		/* Indicamos que se esta tratando de enviar */
 		$scope.isSubmitting = true;
 
-		var nuevoPaciente = {
-			email: paciente.email,
-			password: paciente.password,
-			genero: paciente.genero,
-			edad: edad,
-			localizacion: place.name,
-			telefono: paciente.telefono            
-		};
-
-		//		console.log(nuevoPaciente);
-
 		if($('#register_form').form('is valid')) {
+
+			var nuevoPaciente = {
+				email: paciente.email,
+				password: paciente.password,
+				genero: paciente.genero,
+				edad: edad,
+				localizacion: place.name,
+				telefono: paciente.telefono            
+			};
+
+//			console.log(nuevoPaciente);
+
 			/* Se guarda el objeto paciente del formulario. Despues, */
-			Paciente.SignUp(paciente).then(function(){
+			Paciente.SignUp({
+				email: paciente.email,
+				password: paciente.password,
+				genero: paciente.genero,
+				edad: edad,
+				localizacion: place.name,
+				telefono: paciente.telefono            
+			}).then(function(){
 				/* Se redirecciona al perfil del paciente */
 				$location.path("/usuarios");
 			}); 	

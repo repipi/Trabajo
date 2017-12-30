@@ -129,9 +129,13 @@ pacienteSchema.methods.darAlta = function(paciente) {
 					localizacion: paciente.localizacion,
 					psicologos:
 					[],
-					diagnostico : []
+					diagnostico : [],
+					genero : paciente.genero,
+					edad : paciente.edad
 					//                    }
 				}
+				
+				console.log(datosUsuario);
 			});
 		});
 
@@ -179,7 +183,9 @@ pacienteSchema.methods.update = function(paciente) {
 				localizacion: paciente.localizacion,
 				psicologos:
 				paciente.psicologos,
-				diagnostico : paciente.diagnostico
+				diagnostico : paciente.diagnostico,
+				genero : paciente.genero,
+				edad : paciente.edad
 			}
 		}
 
@@ -254,7 +260,9 @@ pacienteSchema.methods.findDiagnostico = function(id) {
 			"password":0,
 			"localizacion":0,
 			"telefono":0,
-			"psicologos":0
+			"psicologos":0,
+			"genero":0,
+			"edad":0
 		};
 
 
@@ -279,7 +287,9 @@ pacienteSchema.methods.findPsicologos = function(id) {
 			"password":0,
 			"localizacion":0,
 			"telefono":0,
-			"diagnostico":0
+			"diagnostico":0,
+			"genero":0,
+			"edad":0
 		};
 
 

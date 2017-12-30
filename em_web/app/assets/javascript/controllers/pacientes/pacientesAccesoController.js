@@ -1,6 +1,6 @@
 /* Las dependencias del controller son los argumentos de function */
 angular.module('Emozio').controller('PacientesAccesoController', function(Paciente, Psicologo, $scope, $location, $window){
-
+	
 	/* Validacion de formulario de registro */
 	$('#access_form').form({
 		on : 'blur',
@@ -16,6 +16,10 @@ angular.module('Emozio').controller('PacientesAccesoController', function(Pacien
 					{
 						type: 'email',
 						prompt: 'El formato del e-mail es incorrecto.'
+					},
+					{
+						type: 'maxLength[50]',
+						prompt: 'Demasiados carácteres.'
 					}
 				]
 			},      
@@ -25,6 +29,10 @@ angular.module('Emozio').controller('PacientesAccesoController', function(Pacien
 					{
 						type: 'empty',
 						prompt: 'Por favor, introduzca una contraseña.'
+					},
+					{
+						type: 'maxLength[50]',
+						prompt: 'Demasiados carácteres.'
 					}
 				]
 			}

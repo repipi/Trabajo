@@ -39,14 +39,14 @@
 					<i class="address card outline icon"></i>
 					<div class="content">
 						<div class="title">Información personal</div>
-						<div class="description">Necesitamos sus datos para contactar con usted</div>
+						<div class="description">Necesitamos tus datos para contactar contigo</div>
 					</div>
 				</div>
 				<div class="{{estado_3}} step paso_3">
 					<i class="info icon"></i>
 					<div class="content">
 						<div class="title">Información profesional</div>
-						<div class="description">Háblenos sobre su formación y experiencia profesional</div>
+						<div class="description">Háblanos sobre tu formación y experiencia profesional</div>
 					</div>
 				</div>
 			</div>
@@ -62,11 +62,38 @@
 									<input type="text" name="nombre" placeholder="Nombre" ng-model="psicologo.nombre">
 								</div>
 							</div>
-							<!----------------------------------------------------------------------------------------------------------EDAD ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+							<!---------------------------------------------------------------------------------------------------------- GENERO ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+							<div class="field" id="genero">
+								<select class="ui compact selection dropdown" name="genero" ng-model="psicologo.genero">
+									<i class="dropdown icon"></i>
+									<div class="menu">
+										<option class="item" value="">Selecciona tu género</option>
+										<option class="item" value="Femenino">Femenino</option>
+										<option class="item" value="Masculino">Masculino</option>
+										<option class="item" value="Agénero">Agénero</option>
+										<option class="item" value="Andrógino">Andrógino</option>
+										<option class="item" value="Berdache">Berdache</option>
+										<option class="item" value="Bigénero">Bigénero</option>
+										<option class="item" value="Género fluido">Género fluido</option>
+										<option class="item" value="Género no-binario">Género no-binario</option>
+										<option class="item" value="Hijra">Hijra</option>
+										<option class="item" value="Hombre transexual">Hombre transexual</option>
+										<option class="item" value="Intersexual">Intersexual</option>
+										<option class="item" value="Mujer transexual">Mujer transexual</option>
+										<option class="item" value="Pangénero">Pangénero</option>
+										<option class="item" value="Transgénero femenino">Transgénero femenino</option>
+										<option class="item" value="Transgénero masculino">Transgénero masculino</option>
+										<option class="item" value="Transexual">Transexual</option>		
+									</div>
+								</select>
+							</div>
+							<!----------------------------------------------------------------------------------------------------------FECHA NACIMIENTO ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 							<div class="field">
-								<div class="ui left icon input">
-									<i class="birthday icon"></i>
-									<input type="number" name="edad" placeholder="Edad" ng-model="psicologo.edad">
+								<div class="ui calendar" id="edad">
+									<div class="ui input left icon">
+										<i class="calendar icon"></i>
+										<input type="text" name="edad" ng-model="psicologo.edad" placeholder="Fecha de nacimiento">
+									</div>
 								</div>
 							</div>
 							<!----------------------------------------------------------------------------------------------------------EMAIL ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -91,13 +118,15 @@
 								</div> 
 							</div>
 							<!---------------------------------------------------------------------------------------------------------- POLITICAS DE PRIVACIDAD ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--
 							<div class="field">
-								<!--Se ha marcado por defecto el checkbox para que sea mas comodo para el usuario -->
+								Se ha marcado por defecto el checkbox para que sea mas comodo para el usuario 
 								<div class="ui checkbox">
 									<input type="checkbox" name="term_cond" id="term_cond" checked>
 									<label>Acepto los términos y condiciones de uso</label>
 								</div>
 							</div>
+-->
 							<div class="ui fluid large teal submit button" ng-click="changeStep(psicologo)">Siguiente</div>
 						</div>
 

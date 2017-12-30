@@ -107,6 +107,10 @@ angular.module('Emozio').controller('PsicologosRegistroController', function(Pac
 					{
 						type: 'email',
 						prompt: 'El formato del e-mail es incorrecto.'
+					},
+					{
+						type: 'maxLength[50]',
+						prompt: 'Demasiados carácteres.'
 					}
 				]
 			},      
@@ -116,6 +120,10 @@ angular.module('Emozio').controller('PsicologosRegistroController', function(Pac
 					{
 						type: 'empty',
 						prompt: 'Por favor, introduce una contraseña.'
+					},
+					{
+						type: 'maxLength[50]',
+						prompt: 'Demasiados carácteres.'
 					}
 				]
 			}
