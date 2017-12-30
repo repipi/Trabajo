@@ -7,7 +7,7 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
 
     /* Recuperamos al paciente */
     Paciente.GetById().then(function(data){
-        if(!data.data) {
+        if(!data.data || data.data=='') {
             $location.path("/");
         } else {
             $scope.paciente=Object.values(data.data)[0];

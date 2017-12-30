@@ -1,6 +1,36 @@
-<!---------------------------------------------------------------------------------------------------------------------------------- BARRA DE NAVEGACION --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------- BARRA DE NAVEGACION PACIENTE -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-<nav class='container navbar-inverse' role='navigation' >
+<nav class='container navbar-inverse' ng-show='nav_gen' role='navigation' >
+	<div class='navbar-header'>
+		<a href='#/inicio' class='navbar-brand logo'>
+			<img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
+		</a>
+		<button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
+			<span class='sr-only'>Toggle navigation</span>
+			<span class='icon-bar'></span>
+			<span class='icon-bar'></span>
+			<span class='icon-bar'></span>
+		</button>
+	</div>
+
+	<ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
+		<li><a href='#/inicio' class="navegacion">Inicio</a></li>
+		<li><a href='#/usuarios' class="navegacion">Resultados</a></li>
+		<li class="dropdown navegacion">
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#/psicologos/{{psicologo._id}}">Perfil
+				<span class="caret"></span></a>
+			<ul class="dropdown-menu navegacion_transparente">
+				<li><a href='#/usuarios/modificar'>Modificar mis datos</a></li>
+				<li class='divider'></li>
+				<li><a ng-click="salir()">Salir</a></li>
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+<!---------------------------------------------------------------------------------------------------------------------------------- BARRA DE NAVEGACION PSICOLOGO-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<nav class='container navbar-inverse' ng-show='nav_psico' role='navigation' >
     <div class='navbar-header'>
         <a href='#/inicio' class='navbar-brand logo'>
             <img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
@@ -15,18 +45,20 @@
 
     <ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
         <li><a href='#/inicio' class="navegacion">Inicio</a></li>
-        <li><a href='#/usuarios' class="navegacion">Resultados</a></li>
-        <li class="dropdown navegacion">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#/usuarios">Perfil
+        <li><a href='#/mail' class="navegacion">Mis solicitudes</a></li>
+        <li class="dropdown navegacion seleccionado">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#/piscologos/{{psicologo._id}}">Perfil
                 <span class="caret"></span></a>
             <ul class="dropdown-menu navegacion_transparente">
-                <li><a href='#/usuarios/modificar'>Modificar mis datos</a></li>
+				<li><a href="#/piscologos/{{psicologo._id}}">Cómo me ven</a></li>
+                <li><a href='#/psicologos/modificar'>Modificar mis datos</a></li>
                 <li class='divider'></li>
-                <li><a href='#/inicio'>Salir</a></li>
+                <li><a ng-click="salir()">Salir</a></li>
             </ul>
         </li>
     </ul>
 </nav>
+
 
 <div class='ui container'>
 

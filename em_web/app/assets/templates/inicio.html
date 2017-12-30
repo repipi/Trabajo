@@ -1,7 +1,91 @@
-<!---------------------------------------------------------------------------------------------------------------------------------- BARRA DE NAVEGACION --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-<nav class='container navbar-inverse' role='navigation' >
+<!---------------------------------------------------------------------------------------------------------------------------------- BARRA DE NAVEGACION DE ACCESO --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<nav class='container navbar-inverse' ng-show='nav_acceso' role='navigation' >
+	<div class="col-sm-6 col-xs-2">
+		<div class='navbar-header'>
+			<a href='#/inicio' class='navbar-brand logo'>
+				<img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
+			</a>
+			<button type='button' id="acceso_nav" class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
+				<span class='sr-only'>Toggle navigation</span>
+				<span class='icon-bar'></span>
+				<span class='icon-bar'></span>
+				<span class='icon-bar'></span>
+			</button>
+		</div>
+	</div>
+
+	<div class="col-sm-6 col-xs-10">
+		<ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
+			<div class="right menu">
+				<div id="menu_fijo">
+					<form id="access_form" class="ui form">
+						<div class="fields">
+							<div class="field">
+								<div class="ui fixed left icon input">
+									<i class="mail icon"></i>
+									<input placeholder="Email" name="email" type="text" ng-model="paciente.email" required/>
+								</div>
+							</div>
+							<div class="field">
+								<div class="ui fixed left icon input">
+									<i class="lock icon"></i>
+									<input placeholder="Contraseña" name="password" type="password" ng-model="paciente.password" required/>
+								</div>
+							</div>
+							<div class="field">
+								<div class="ui green button" ng-click="check(paciente)">
+									Acceder
+								</div>
+								<a class="ui pointing red label" ng-show="msj_error">E-mail o <br> contraseña <br> incorrectos.</a>
+							</div>
+							<div class="field">
+								<a class="ui grey button" href="/#/registro">
+									Registrar
+								</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>  
+		</ul>
+	</div>
+</nav>
+
+<!---------------------------------------------------------------------------------------------------------------------------------- BARRA DE NAVEGACION PACIENTE -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<nav class='container navbar-inverse' ng-show='nav_gen' role='navigation' >
+	<div class='navbar-header'>
+		<a href='#/inicio' class='navbar-brand logo'>
+			<img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
+		</a>
+		<button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
+			<span class='sr-only'>Toggle navigation</span>
+			<span class='icon-bar'></span>
+			<span class='icon-bar'></span>
+			<span class='icon-bar'></span>
+		</button>
+	</div>
+
+	<ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
+		<li><a href='#/inicio' class="navegacion seleccionado">Inicio</a></li>
+		<li><a href='#/usuarios' class="navegacion">Resultados</a></li>
+		<li class="dropdown navegacion">
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#/inicio">Perfil
+				<span class="caret"></span></a>
+			<ul class="dropdown-menu navegacion_transparente">
+				<li><a href='#/usuarios/modificar'>Modificar mis datos</a></li>
+				<li class='divider'></li>
+				<li><a ng-click="salir()">Salir</a></li>
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+<!---------------------------------------------------------------------------------------------------------------------------------- BARRA DE NAVEGACION PSICOLOGO-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<nav class='container navbar-inverse' ng-show='nav_psico' role='navigation' >
     <div class='navbar-header'>
-        <a href='/#/inicio' class='navbar-brand logo'>
+        <a href='#/inicio' class='navbar-brand logo'>
             <img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
         </a>
         <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
@@ -13,146 +97,130 @@
     </div>
 
     <ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
-        <div class="right menu">
-            <form name="form" class="ui form">
-                <div class="inline fields">
-                    <div class="field">
-                        <div class="ui left icon input">
-                            <i class="mail icon"></i>
-                            <input placeholder="Email" type="text" ng-model="paciente.email" required/>
-                            <div class="ui red pointing label" ng-show="form.email.$error.email">El formato del e-mail es incorrecto. </div>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <div class="ui left icon input">
-                            <i class="lock icon"></i>
-                            <input placeholder="Contraseña" type="password" ng-model="paciente.password" required/>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <div class="ui green button" ng-click="check(paciente)">
-                            Acceder
-                        </div>
-                    </div>
-                    <div class="field">
-                        <a class="ui grey button" href="/#/registro">
-                            Registrar
-                        </a>
-                    </div>
-                </div>
-
-                <div>{{mensaje_error_acceso}}</div>
-
-                <!--
-<div class="ui error message">
-<div class="header">Acción No Permitida</div>
-<p>La casilla de correo provista ya está siendo utilizada y únicamente puede existir un usuario con esa casilla.</p>
-</div>
--->
-            </form>
-        </div>  
+        <li><a href='#/inicio' class="navegacion seleccionado">Inicio</a></li>
+        <li><a href='#/mail' class="navegacion">Mis solicitudes</a></li>
+        <li class="dropdown navegacion">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#/inicio">Perfil
+                <span class="caret"></span></a>
+            <ul class="dropdown-menu navegacion_transparente">
+				<li><a href='#/psicologos/{{psicologo._id}}'>Cómo me ven</a></li>
+                <li><a href='#/psicologos/modificar'>Modificar mis datos</a></li>
+                <li class='divider'></li>
+                <li><a ng-click="salir()">Salir</a></li>
+            </ul>
+        </li>
     </ul>
 </nav>
 
 <!---------------------------------------------------------------------------------------------------------------------------------- INFORMACION DE PORTADA ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 <div class="portada">
-    <div class="row">
-        <div class="ui container">
-            <div class="jumbotron titulo">
-                <h1>Psicólogos a medida</h1>      
-                <h2>Buscamos al mejor psicólogo para tratar tu caso</h2>
-            </div>
-        </div>
-    </div>
+	<div class="row">
+		<div class="ui container">
+			<div class="jumbotron titulo">
+				<h1>Psicólogos a medida</h1>      
+				<h2>Buscamos al mejor psicólogo para tratar tu caso</h2>
+			</div>
+		</div>
+	</div>
 
-    <div class="row">
-        <div class="ui container">
-            <div class="ui stackable grid">
-                <div class="two column row">
-                    <div class="column">
-                        <div class="ui container titulo">
-                            <h2 class="titulo">
-                                <i class="white settings icon"></i>¿Cómo funciona?
-                            </h2>
-                            <p>
-                                Para poder asignarle al mejor psicólogo para tratar su caso, debe cubrir nuestro test validado científicamente. La cualificación y experiencia de nuestros psicólogos está indivualmente acreditada mediante sus certificaciones profesionales.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui container">
-                            <h2 class="titulo">
-                                <i class="white users icon"></i>¿Quiénes somos?
-                            </h2>
-                            <div class="ui horizontal list">
-                                <div class="ui item">
-                                    <img class="ui mini circular image" src="/assets/images/alfonso.png">
-                                    <div class="content">
-                                        <h4 class="equipo">Bruno Rodríguez</h4>Psicologia</div>
-                                </div>
-                                <div class="ui item">
-                                    <img class="ui mini circular image" src="/assets/images/maria.png">
-                                    <div class="content">
-                                        <h4 class="equipo">Raquel Gil</h4>Ingeniería informática</div>
-                                </div>
-                            </div>
-                            <p>
-                                Nuestro equipo promotor está compuesto por dos jóvenes emprendedores que gracias a su vocación hacia la aportación de soluciones en el campo de la salud mental, y la adecuada combinación entre sus experiencias y estudios, ha dado lugar a nuestro proyecto Emozio.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="row">
+		<div class="ui container">
+			<div class="ui stackable grid">
+				<div class="two column row">
+					<div class="column">
+						<div class="ui container titulo">
+							<h2 class="titulo">
+								<i class="white settings icon"></i>¿Cómo funciona?
+							</h2>
+							<p>
+								Para poder asignarte al mejor psicólogo para tratar tu caso, debes cubrir nuestro test validado científicamente. La cualificación y experiencia de nuestros psicólogos está indivualmente acreditada mediante sus certificaciones profesionales.
+							</p>
+						</div>
+					</div>
+					<div class="column">
+						<div class="ui container">
+							<h2 class="titulo">
+								<i class="white users icon"></i>¿Quiénes somos?
+							</h2>
+							<div class="ui horizontal list">
+								<div class="ui item">
+									<img class="ui mini circular image" src="/assets/images/alfonso.png">
+									<div class="content">
+										<h4 class="equipo">Bruno Rodríguez</h4>Psicologia</div>
+								</div>
+								<div class="ui item">
+									<img class="ui mini circular image" src="/assets/images/maria.png">
+									<div class="content">
+										<h4 class="equipo">Raquel Gil</h4>Ingeniería informática</div>
+								</div>
+							</div>
+							<p>
+								Nuestro equipo promotor está compuesto por dos jóvenes emprendedores que gracias a su vocación hacia la aportación de soluciones en el campo de la salud mental, y la adecuada combinación entre sus experiencias y estudios, ha dado lugar a nuestro proyecto Emozio.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
+<div class="jumbotron"></div>
 <div class="jumbotron"></div>
 
 <!---------------------------------------------------------------------------------------------------------------------------------- INFORMACION DE CONTACTO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-<div class='ui inverted vertical footer segment'>
-    <div class='container'>
-        <div class='row'>
-            <div class='col-sm-4'>
-                <h4>Nuestras redes sociales</h4>
-                <button class="ui circular facebook icon button">
-                    <i class="facebook icon"></i>
-                </button>
-                <button class="ui circular twitter icon button">
-                    <i class="twitter icon"></i>
-                </button>
-                <button class="ui circular linkedin icon button">
-                    <i class="linkedin icon"></i>
-                </button>
-                <button class="ui circular google plus icon button">
-                    <i class="google plus icon"></i>
-                </button>
-            </div>
+<div class="footer">
+	<div class='ui inverted vertical footer segment'>
+		<div class='container'>
+			<div class='row'>
+				<div class='col-sm-4'>
+					<h4>Nuestras redes sociales</h4>
+					<button class="ui circular facebook icon button">
+						<i class="facebook icon"></i>
+					</button>
+					<button class="ui circular twitter icon button">
+						<i class="twitter icon"></i>
+					</button>
+					<button class="ui circular linkedin icon button">
+						<i class="linkedin icon"></i>
+					</button>
+					<button class="ui circular google plus icon button">
+						<i class="google plus icon"></i>
+					</button>
+				</div>
 
-            <div class='col-sm-8'>
-                <h4>Contacta con nosotros</h4>
-                <div class="ui relaxed horizontal list">
-                    <div class="item">
-                        <i class='glyphicon glyphicon-globe'></i> Santiago de Compostela
-                    </div>
-                    <div class="item">
-                        <i class='glyphicon glyphicon-phone'></i> 687954165
-                    </div>
-                    <div class="item">
-                        <i class='glyphicon glyphicon-envelope'></i> <a href='mailto:#'> emozio.info@gmail.com</a>
-                    </div>
-                    <div class="ui right floated item">
-                        <p>Emozio &copy;2017</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+				<div class='col-sm-8'>
+					<h4>Contacta con nosotros</h4>
+					<div class="ui relaxed horizontal list">
+						<div class="item">
+							<i class='glyphicon glyphicon-globe'></i> Santiago de Compostela
+						</div>
+						<div class="item">
+							<i class='glyphicon glyphicon-phone'></i> 687954165
+						</div>
+						<div class="item">
+							<i class='glyphicon glyphicon-envelope'></i> 
+							<a href='mailto:#'> emozio.info@gmail.com</a>
+						</div>
+						<div class="ui right floated item">
+							<p>Emozio &copy;2017</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <style type="text/css">
-    .ui.form .inline.fields {
-        margin: 1.7em;
-    }
+	#access_nav {
+		margin-top: 8em;
+	}
+	#access_form {
+		margin: 2em;
+	}
+	#menu_fijo {
+		width: 50%;
+	}
 </style>

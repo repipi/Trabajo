@@ -2,7 +2,7 @@ angular.module('Emozio').controller('PacientesPerfilController', function(Pacien
 
     /* Obtenemos el paciente que ha iniciado la sesion */
     Paciente.GetById().then(function(data){
-        if(!data.data) {
+        if(!data.data || data.data == '') {
             $location.path("/");
         } else {
             $scope.paciente=Object.values(data.data)[0];

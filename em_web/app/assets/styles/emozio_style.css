@@ -1,144 +1,175 @@
 /******************************************************************************************************************************** IMAGEN PORTADA *********************************************************************************************************************************/
 
-.portada, .ng-scope{
-    /*    background: url(/assets/images/1869.jpg) no-repeat center center fixed; */
-    background: url(/assets/images/images_prueba/6197.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: 1300px 800px;
-    color: whitesmoke;
+.portada, .ng-scope, body {
+	/*    background: url(/assets/images/1869.jpg) no-repeat center center fixed; */
+	background: url(/assets/images/images_prueba/6197.jpg) no-repeat center center fixed !important;
+	-webkit-background-size: cover !important;
+	-moz-background-size: cover !important;
+	-o-background-size: cover !important;
+	color: whitesmoke;
+}
+
+.footer {
+	background-color: black;
 }
 
 .jumbotron {
-    background-color:rgba(0, 0, 0, 0.0); 
+	background-color:rgba(0, 0, 0, 0.0); 
 }
 
 .well {
-    border-color: rgba(0, 0, 0, 0); 
-    background-color:rgba(0, 0, 0, 0); 
+	border-color: rgba(0, 0, 0, 0); 
+	background-color:rgba(0, 0, 0, 0); 
 }
 
 .logo {
-    font-family: 'Montserrat';
-    font-size: 30px;
-    margin-bottom: 50px;
+	font-family: 'Montserrat';
+	font-size: 30px;
+	margin-bottom: 50px;
 }
 
 .navbar-brand.logo {
-    color: white;
+	color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+	color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+	color: black;
+	font-style: border;
 }
 
 .navbar-brand.logo:hover {
-    color: teal;
+	color: teal;
 }
 
 .navegacion {
-    margin-top: 1.7em;
-    color: white;
-    font-size: 15px;
+	margin-top: 1.7em;
+	font-size: 15px;
 }
 
-.navegacion:hover {
-    color: teal;
+.navegacion.seleccionado {
+	margin-top: 1.6em;
+	font-weight: bolder;
+	font-size: 17px;
+}
+
+#term_cond_modal {
+	color: black;
+}
+
+#term_cond_modal .modal-header {
+	background-color: teal;
+}
+
+#term_cond_modal h4 {
+	color:white;
 }
 
 /*********************************************************************************************************************************** PAGINA DE INICIO ***********************************************************************************************************************************/
 
 .jumbotron.titulo h1, .jumbotron.titulo h2, .titulo {
-    color: white;
+	color: white;
 }
 
 .jumbotron.titulo h1 {
-    font-family: 'Merriweather';
+	font-family: 'Merriweather';
 }
 
 .equipo {
-    color: black;
+	color: black;
 }
 
 /*********************************++++************************************+++++++*******************++++++************************** CUESTIONARIO ***********************************************************************************************************************************/
 
 .pregunta {
-    color: black;
+	color: black;
 }
 
 .ui.header.nombre_test {
-    color: teal;
+	color: teal;
 }
 
 /*********************************************************************************************************************************** PERFIL PACIENTE ***********************************************************************************************************************************/
 
 .sin_resultados {
-    color: whitesmoke;
+	color: whitesmoke;
 }
 
 .ui.segment.resultado_psicologo {
-    background-color:rgba(0, 0, 0, 0); 
+	background-color:rgba(0, 0, 0, 0); 
 }
 
 .ui.segment.info_psicologo {
-    background-color:rgba(0, 0, 0, 0.3); 
+	background-color:rgba(0, 0, 0, 0.3); 
 }
 
 .ui.header.nombre_psicologo {
-    color: whitesmoke;
+	color: whitesmoke;
 }
 
 .jumbotron.sin_resultados {
-    background-color: rgba(0, 0, 0, 0.1);
+	background-color: rgba(0, 0, 0, 0.1);
 }
 
 .hacer_test {
-    color: black;
+	color: black;
 }
 
 .resultado_psicologo {
-    margin: 10px;
+	margin: 10px;
 }
 
 .filtro {
-    min-width: 200px;
+	min-width: 200px;
 }
 
 .filtro select {
-    font-size: 98%;
+	font-size: 98%;
 }
 
 /***********************************************************************************************************************************RESULTADO PACIENTES ******++++*************************************************************************************************************************/
 
 /***********PRECIO FILTRO****************/
 .precio_slider #slidecontainer {
-    width: 100%;
+	width: 100%;
 }
 
 .precio_slider.slider {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 25px;
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
+	-webkit-appearance: none;
+	width: 100%;
+	height: 25px;
+	background: #d3d3d3;
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
 }
 
 .precio_slider.slider:hover {
-    opacity: 1;
+	opacity: 1;
 }
 
 .precio_slider.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    background: teal;
-    cursor: pointer;
+	-webkit-appearance: none;
+	appearance: none;
+	width: 25px;
+	height: 25px;
+	background: teal;
+	cursor: pointer;
 }
 
 .precio_slider.slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    background: teal;
-    cursor: pointer;
+	width: 25px;
+	height: 25px;
+	background: teal;
+	cursor: pointer;
+}
+
+/**************************************************************************************************************************************** REGISTRO PACIENTES ***************************************************************************************************************************************/
+#genero {
+	font-size: 91%;
+	font-family: "Lato";
 }

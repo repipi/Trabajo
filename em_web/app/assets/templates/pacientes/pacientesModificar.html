@@ -1,133 +1,140 @@
 <!---------------------------------------------------------------------------------------------------------------------------------- BARRA DE NAVEGACION --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <nav class='container navbar-inverse' role='navigation' >
-    <div class='navbar-header'>
-        <a href='#/inicio' class='navbar-brand logo'>
-            <img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
-        </a>
-        <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
-            <span class='sr-only'>Toggle navigation</span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-        </button>
-    </div>
+	<div class='navbar-header'>
+		<a href='#/inicio' class='navbar-brand logo'>
+			<img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
+		</a>
+		<button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
+			<span class='sr-only'>Toggle navigation</span>
+			<span class='icon-bar'></span>
+			<span class='icon-bar'></span>
+			<span class='icon-bar'></span>
+		</button>
+	</div>
 
-    <ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
-        <li><a href='#/inicio' class="navegacion">Inicio</a></li>
-        <li><a href='#/usuarios' class="navegacion">Resultados</a></li>
-        <li class="dropdown navegacion">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#/usuarios/modificar">Perfil
-                <span class="caret"></span></a>
-            <ul class="dropdown-menu navegacion_transparente">
-                <li><a href='#/usuarios/modificar'>Modificar mis datos</a></li>
-                <li class='divider'></li>
-                <li><a ng-click="salir()">Salir</a></li>
-            </ul>
-        </li>
-    </ul>
+	<ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
+		<li><a href='#/inicio' class="navegacion">Inicio</a></li>
+		<li><a href='#/usuarios' class="navegacion">Resultados</a></li>
+		<li class="dropdown navegacion seleccionado">
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#/usuarios/modificar">Perfil
+				<span class="caret"></span></a>
+			<ul class="dropdown-menu navegacion_transparente">
+				<li><a href='#/usuarios/modificar'>Modificar mis datos</a></li>
+				<li class='divider'></li>
+				<li><a ng-click="salir()">Salir</a></li>
+			</ul>
+		</li>
+	</ul>
 </nav>
 
 <!---------------------------------------------------------------------------------------------------------------------------------- MODIFICAR DATOS ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class='container'>
-    <div class="row">
-        <h2 class="ui image header">
-            <div class="content">
-                <h1 class="ui teal header">Modificar datos</h1>
-            </div>
-        </h2>
-    </div>
-    <div class="row">
-        <div class="col-xs-5">
-            <form name="form" class="ui large form">
-                <div class="ui stacked secondary  segment">
-                    <div class="ui header">
-                        <p>Modificar datos personales</p>
-                    </div>
-                    <div class="field">
-                        <div class="ui left icon input">
-                            <i class="user icon"></i>
-                            <input type="email" name="email" placeholder="E-mail" ng-model="paciente.email" value="{{paciente.email}}" required>
-                        </div>
-                        <div class="ui pointing label" ng-show="form.email.$touched && form.email.$invalid">Por favor, introduzca un e-mail. </div>
-                        <div class="ui red pointing label" ng-show="form.email.$error.email">El formato del e-mail es incorrecto. </div>
-                    </div>
-                    <div class="field">
-                        <div class="ui left icon input">
-                            <i class="marker icon"></i>
-                            <input type="text" name="localizacion" placeholder="Localización" ng-model="paciente.localizacion" value="{{paciente.localizacion}}" required>
-                        </div> 
-                        <div class="ui pointing label" ng-show="form.localizacion.$touched && form.localizacion.$invalid">Por favor, introduzca una localización. </div>
-                    </div>
-                    <div class="field">
-                        <div class="ui left icon input">
-                            <i class="call icon"></i>
-                            <input type="tel" name="telefono" placeholder="Teléfono" ng-model="paciente.telefono" value="{{paciente.telefono}}" required>
-                        </div> 
-                        <div class="ui pointing label" ng-show="form.telefono.$touched && form.telefono.$invalid">Por favor, introduzca un teléfono. </div>
-                        <div class="ui red pointing label" ng-show="form.telefono.dirty && form.telefono.$invalid">El formato del teléfono es incorrecto. </div>
-                    </div>
-<!--
-                    <div class="field">
-                        <div class="ui left icon input">
-                            <div class="ui checkbox">
-                                Se ha marcado por defecto el checkbox para que sea mas comodo para el usuario 
-                                <div class="ui checkbox">
-                                    <input type="checkbox" name="term_cond" id="term_cond" checked required>
-                                    <label>Acepto las políticas de privacidad y los términos y condiciones de uso</label>
-                                    <div class="ui pointing label" ng-show="form.term_cond.$touched && !term_cond">Por favor, introduzca un teléfono. </div>
-                                </div>                                
-                            </div>
-                        </div> 
-                    </div>
--->
-                    <div class="ui fluid large teal submit button" ng-click="check(paciente)">Modificar perfil</div>
-                </div>
-
-                <div class="ui error message"></div>
-            </form>
-        </div>
-        <div class="col-xs-5 col-xs-offset-1">
-            <form name="form" class="ui large form">
-                <div class="ui stacked secondary  segment">
-                    <div class="ui header">
-                        <p>Modificar contraseña</p>
-                    </div>
-                    <div class="field">
-                        <label>Contraseña actual: </label>
-                        <div class="ui left icon input">
-                            <i class="lock icon"></i>
-                            <input type="password" name="password" placeholder="Contraseña" ng-model="paciente.password" required>
-                        </div>
-                        <div class="ui pointing label" ng-show="form.password.$touched && form.password.$invalid">Por favor, introduzca una contraseña. </div>
-                        <label>Nueva contraseña: </label>
-                        <div class="ui left icon input">
-                            <i class="lock icon"></i>
-                            <input type="password" name="password" placeholder="Contraseña" ng-model="paciente.password" required>
-                        </div>
-                        <div class="ui pointing label" ng-show="form.password.$touched && form.password.$invalid">Por favor, introduzca una contraseña. </div>
-                    </div>
-                    <div class="ui fluid large teal submit button" ng-click="check(paciente)">Modificar contraseña</div>
-                </div>
-            </form>
-        </div>
-    </div>
+<div class='container' ng-init="initAutocomplete()">
+	<div class="row">
+		<h2 class="ui image header">
+			<!--
+<div class="content">
+<h1 class="ui teal header">Modificar datos</h1>
 </div>
-<div class="row">
-    <div class="well"></div>
+-->
+		</h2>
+	</div>
+	<div class="row">
+		<div class="col-xs-5">
+			<div id="change_form" class="ui large form">
+				<div class="ui stacked secondary  segment">
+					<div class="ui header">
+						<p>Modificar datos personales</p>
+					</div>
+					<!---------------------------------------------------------------------------------------------------------- EMAIL ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+					<div class="field">
+						<div class="ui left icon input">
+							<i class="mail icon"></i>
+							<input type="email" name="email" placeholder="E-mail" ng-model="paciente.email" required>
+						</div>
+					</div>
+					<!---------------------------------------------------------------------------------------------------------- LOCALIZACION ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+					<div class="field" id="locationField">
+						<div class="ui left icon input">
+							<i class="marker icon"></i>
+							<input id="autocomplete" name="localizacion" placeholder="Localización" ng-focus="geolocate()" type="text" ng-model="paciente.localizacion" required>
+						</div>
+					</div>
+					<!---------------------------------------------------------------------------------------------------------- TELEFONO ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+					<div class="field">
+						<div class="ui left icon input">
+							<i class="call icon"></i>
+							<input type="tel" name="telefono" placeholder="Teléfono" ng-model="paciente.telefono" required>
+						</div> 
+					</div>
+					<!---------------------------------------------------------------------------------------------------------- POLITICAS --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+					<!--
+<div class="required field">
+<div class="ui checkbox">
+<input type="checkbox" name="term_cond" checked>
+<label>Acepto los términos y condiciones de uso</label>
+</div>
+</div>
+-->
+					<div class="ui fluid large teal submit button" ng-click="cambiarDatos(paciente)">Enviar</div>
+					<div class="ui positive message" ng-show="msj_exito_datos">
+						<i class="close icon"></i>
+						<div class="header"> Datos modificados con éxito. </div>
+					</div>
+					<div class="ui negative message" ng-show="msj_error_datos">
+						<i class="close icon"></i>
+						<div class="header"> Los datos no se han modificado. </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-5 col-xs-offset-1">
+			<div name="change_form" class="ui large form">
+				<div class="ui stacked secondary  segment">
+					<div class="ui header">
+						<p>Modificar contraseña</p>
+					</div>
+					<div class="field">
+						<label>Contraseña actual: </label>
+						<div class="ui left icon input">
+							<i class="lock icon"></i>
+							<input type="password" name="passwordActual" placeholder="Contraseña" ng-model="paciente.passwordActual" required>
+						</div>
+					</div>
+					<div class="field">
+						<label>Nueva contraseña: </label>
+						<div class="ui left icon input">
+							<i class="lock icon"></i>
+							<input type="password" name="passwordNueva" placeholder="Contraseña" ng-model="paciente.passwordNueva" required>
+						</div>
+					</div>
+
+					<div class="ui fluid large teal submit button" ng-click="cambiarPassword(paciente)">Modificar contraseña</div>
+					<div class="ui positive message" ng-show="msj_exito_password">
+						<i class="close icon"></i>
+						<div class="header"> Contraseña modificada con éxito. </div>
+					</div>
+					<div class="ui negative message" ng-show="msj_error_password">
+						<i class="close icon"></i>
+						<div class="header"> Los datos no se han modificado. </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <style type="text/css">
-    body > .grid {
-        height: 100%;
-    }
-    .column {
-        max-width: 450px;
-    }
-    .well {
-        margin-bottom: 15%;
-    }
-    .ui.form .inline.fields {
-        margin: 1.7em;
-    }
+	body > .grid {
+		height: 100%;
+	}
+	.column {
+		max-width: 450px;
+	}
+	.well {
+		margin-bottom: 15%;
+	}
+	.ui.form .inline.fields {
+		margin: 1.7em;
+	}
 </style>

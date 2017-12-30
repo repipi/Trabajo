@@ -2809,6 +2809,20 @@
         "sshpk": "1.13.1"
       }
     },
+    "httpntlm": {
+      "version": "1.6.1",
+      "resolved": "https://registry.npmjs.org/httpntlm/-/httpntlm-1.6.1.tgz",
+      "integrity": "sha1-rQFScUOi6Hc8+uapb1hla7UqNLI=",
+      "requires": {
+        "httpreq": "0.4.24",
+        "underscore": "1.7.0"
+      }
+    },
+    "httpreq": {
+      "version": "0.4.24",
+      "resolved": "https://registry.npmjs.org/httpreq/-/httpreq-0.4.24.tgz",
+      "integrity": "sha1-QzX/2CzZaWaKOUZckprGHWOTYn8="
+    },
     "iconv-lite": {
       "version": "0.4.19",
       "resolved": "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.19.tgz",
@@ -3959,6 +3973,34 @@
       "resolved": "https://registry.npmjs.org/nodemailer/-/nodemailer-4.4.1.tgz",
       "integrity": "sha512-1bnszJJXatcHJhLpxQ1XMkLDjCjPKvGKMtRQ73FOsoNln3UQjddEQmz6fAwM3aj0GtQ3dQX9qtMHPelz63GU7A=="
     },
+    "nodemailer-fetch": {
+      "version": "1.6.0",
+      "resolved": "https://registry.npmjs.org/nodemailer-fetch/-/nodemailer-fetch-1.6.0.tgz",
+      "integrity": "sha1-ecSQihwPXzdbc/6IjamCj23JY6Q="
+    },
+    "nodemailer-shared": {
+      "version": "1.1.0",
+      "resolved": "https://registry.npmjs.org/nodemailer-shared/-/nodemailer-shared-1.1.0.tgz",
+      "integrity": "sha1-z1mU4v0mjQD1zw+nZ6CBae2wfsA=",
+      "requires": {
+        "nodemailer-fetch": "1.6.0"
+      }
+    },
+    "nodemailer-smtp-transport": {
+      "version": "2.7.4",
+      "resolved": "https://registry.npmjs.org/nodemailer-smtp-transport/-/nodemailer-smtp-transport-2.7.4.tgz",
+      "integrity": "sha1-DYmvAZoUSkgP2OzJmZfZ+DjxNoU=",
+      "requires": {
+        "nodemailer-shared": "1.1.0",
+        "nodemailer-wellknown": "0.1.10",
+        "smtp-connection": "2.12.0"
+      }
+    },
+    "nodemailer-wellknown": {
+      "version": "0.1.10",
+      "resolved": "https://registry.npmjs.org/nodemailer-wellknown/-/nodemailer-wellknown-0.1.10.tgz",
+      "integrity": "sha1-WG24EB2zDLRDjrVGc3pBqtDPE9U="
+    },
     "nopt": {
       "version": "1.0.10",
       "resolved": "https://registry.npmjs.org/nopt/-/nopt-1.0.10.tgz",
@@ -4992,6 +5034,11 @@
         "yamljs": "0.3.0"
       }
     },
+    "semantic-ui-calendar": {
+      "version": "0.0.8",
+      "resolved": "https://registry.npmjs.org/semantic-ui-calendar/-/semantic-ui-calendar-0.0.8.tgz",
+      "integrity": "sha1-rhZQTk2AFsrFupoArYzNSkMN4+8="
+    },
     "semver": {
       "version": "5.4.1",
       "resolved": "https://registry.npmjs.org/semver/-/semver-5.4.1.tgz",
@@ -5074,6 +5121,15 @@
       "version": "1.0.1",
       "resolved": "https://registry.npmjs.org/sliced/-/sliced-1.0.1.tgz",
       "integrity": "sha1-CzpmK10Ewxd7GSa+qCsD+Dei70E="
+    },
+    "smtp-connection": {
+      "version": "2.12.0",
+      "resolved": "https://registry.npmjs.org/smtp-connection/-/smtp-connection-2.12.0.tgz",
+      "integrity": "sha1-1275EnyyPCJZ7bHoNJwujV4tdME=",
+      "requires": {
+        "httpntlm": "1.6.1",
+        "nodemailer-shared": "1.1.0"
+      }
     },
     "sntp": {
       "version": "1.0.9",
@@ -5447,8 +5503,7 @@
     "underscore": {
       "version": "1.7.0",
       "resolved": "https://registry.npmjs.org/underscore/-/underscore-1.7.0.tgz",
-      "integrity": "sha1-a7rwh3UA02vjTsqlhODbn+8DUgk=",
-      "dev": true
+      "integrity": "sha1-a7rwh3UA02vjTsqlhODbn+8DUgk="
     },
     "underscore.string": {
       "version": "2.2.1",
@@ -5714,6 +5769,11 @@
       "version": "0.0.3",
       "resolved": "https://registry.npmjs.org/wrench-sui/-/wrench-sui-0.0.3.tgz",
       "integrity": "sha1-1hoSAwwf2NZxs90VqmyeD83E4sg="
+    },
+    "xoauth2": {
+      "version": "1.2.0",
+      "resolved": "https://registry.npmjs.org/xoauth2/-/xoauth2-1.2.0.tgz",
+      "integrity": "sha1-8u76wRRyyXHqO8RuVU60sSMhRuU="
     },
     "xtend": {
       "version": "4.0.1",

@@ -14,8 +14,8 @@
     </div>
 
     <ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
-        <li><a href='#/inicio' class="navegacion">Inicio</a></li>
-        <li><a href='#/usuarios' class="navegacion">Resultados</a></li>
+        <li class="navegacion"><a href='#/inicio'>Inicio</a></li>
+        <li class="navegacion seleccionado"><a href='#/usuarios'>Resultados</a></li>
         <li class="dropdown navegacion">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#/usuarios">Perfil
                 <span class="caret"></span></a>
@@ -35,7 +35,7 @@
         <div class="col-xs-10 col-xs-offset-1">
             <div class="ui white message">
                 <div class="ui container">
-                    <p>Para poder asignarle al mejor psicólogo para tratar su caso, debe cubrir el siguiente test. Es breve y sencillo, solamente deberá responder sí o no a las preguntas.</p>
+                    <p>Para poder sugerirte al mejor psicólogo para tratar tu caso, ayúdanos cubriendo el siguiente test. Es breve y sencillo, solamente deberás responder sí o no a las preguntas.</p>
                     <button type="submit" class="ui right floated teal button" ng-click="hacer()"> <i class="ui center write icon"></i> Hacer el test</button>
                 </div>
             </div>
@@ -165,16 +165,6 @@ Seguro {{psicologo.seguro}}
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="container">
-        <div class="well">
-        </div>
-        <div class="well">
-        </div>
-        <div class="well">
-        </div>
-    </div>
-</div>
 
 <!-------------------------------------------------------------------------------------------------------------------------- FORMULARIO DE CONTACTO: Ventana emergente - overlay ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="modal fade left" id="myModal"> 
@@ -217,5 +207,4 @@ Seguro {{psicologo.seguro}}
             </div> 
         </div> 
     </div> 
-</div>
 </div>

@@ -20,6 +20,9 @@ function Paciente($http){
         Update : function(paciente) {
             return $http.put('/pacientes', paciente);
         },
+		ChangePassword : function(paciente) {
+			return $http.put('/pacientes/changePassword', paciente);
+		},
         GetDiagnostico : function() {
             return $http.get('/pacientes/diagnostico');   
         },

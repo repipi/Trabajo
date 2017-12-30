@@ -1,62 +1,73 @@
 <!DOCTYPE html>
 <!-- Se incorpora la app Emozio y el castellano como idioma -->
 <html ng-app="Emozio" lang="es">
-    <head>
-        <title>Emozio</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <!-- Estilo Bootstrap -->
-        <link href='assets/styles/bootstrap.css' rel='stylesheet'> 
-        <!-- Estilo propio de Emozio -->
-        <link rel="stylesheet" href="assets/styles/emozio_style.css">
-        <!-- Libreria estrellas rating -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <!-- Estilo Semantic UI -->
-        <link rel="stylesheet" type="text/css" href="assets/semantic/dist/semantic.min.css">
-        <!-- Font Google -->
-        <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'> <!--Titulo-->
-        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> <!--Emozio-->
-    </head>
-    <body class="template">
+	<head>
+		<title>Emozio</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- Estilo Bootstrap -->
+		<link href='assets/styles/bootstrap.css' rel='stylesheet'> 
+		<!-- Estilo propio de Emozio -->
+		<link rel="stylesheet" href="assets/styles/emozio_style.css">
+		<!-- Libreria estrellas rating -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- Estilo Semantic UI -->
+		<link rel="stylesheet" type="text/css" href="assets/semantic/dist/semantic.min.css">
+		<!-- Font Google -->
+		<link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'> <!--Titulo-->
+		<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> <!--Emozio-->
+		<!-- Calendar -->
+		<!--		<link rel="stylesheet" href="../node_modules/semantic-ui-calendar/dist/calendar.min.css" />-->
+		<link href="https://cdn.rawgit.com/mdehoog/Semantic-UI-Calendar/76959c6f7d33a527b49be76789e984a0a407350b/dist/calendar.min.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body class="template">
 
-        <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+		<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-        <div ng-view></div>
+		<div ng-view></div>
 
-        <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+		<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-    </body>
+	</body>
 
-    <!-- JS-libraries -->
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-            crossorigin="anonymous"></script>
-    <script src="assets/semantic/dist/semantic.min.js"></script>
-    <script src="assets/javascript/vendor/angular.js"></script>
-    <script src="assets/javascript/vendor/angular-route.js"></script>
-    <script src="assets/javascript/vendor/angular-resource.js"></script>
-    <script src="assets/javascript/vendor/bootstrap.js"></script>
-    <script type="text/javascript" src="assets/styles/emozio_style.js"></script>
-    <!-- Google Place API Web Service -->
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAam1F5oAmyFBUmi9A39nWu5Fo_S1tmtOI&libraries=places" async defer></script>
+	<!-- JS-libraries -->
+	<!--
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+crossorigin="anonymous"></script>
+-->
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+			crossorigin="anonymous"></script>
+	<script src="assets/semantic/dist/semantic.min.js"></script>
+	<script src="assets/javascript/vendor/angular.js"></script>
+	<script src="assets/javascript/vendor/angular-route.js"></script>
+	<script src="assets/javascript/vendor/angular-resource.js"></script>
+	<script src="assets/javascript/vendor/bootstrap.js"></script>
+	<!-- Google Place API Web Service -->
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAam1F5oAmyFBUmi9A39nWu5Fo_S1tmtOI&libraries=places" async defer></script>
+	<!-- Calendar -->
+	<!--	<script type="text/javascript" src="../node_modules/semantic-ui-calendar/dist/calendar.min.js"></script>-->
+	<!--	<script src="https://github.com/Aldair91/Semantic-UI-spanish-datepicker/blob/master/datepicker_espanol.js"></script>-->
+	<script src="https://cdn.rawgit.com/mdehoog/Semantic-UI-Calendar/76959c6f7d33a527b49be76789e984a0a407350b/dist/calendar.min.js"></script>
 
-    <!-- App -->
-    <script src="assets/javascript/app.js"></script>
-    <script src="assets/javascript/routes.js"></script>
+	<!-- App -->
+	<script src="assets/javascript/app.js"></script>
+	<script src="assets/javascript/routes.js"></script>
 
-    <!-- Directives -->
+	<!-- Directives -->
 
-    <!-- Controllers -->
-    <script src="assets/javascript/controllers/pacientes/cuestionarioController.js"></script>
-    <script src="assets/javascript/controllers/pacientes/pacientesPerfilController.js"></script>
-    <script src="assets/javascript/controllers/pacientes/pacientesRegistroController.js"></script>
-    <script src="assets/javascript/controllers/pacientes/pacientesAccesoController.js"></script>
-    <script src="assets/javascript/controllers/psicologos/psicologosPerfilController.js"></script>
-    <script src="assets/javascript/controllers/pacientes/pacientesModificarController.js"></script>
-    <script src="assets/javascript/controllers/psicologos/psicologosMailController.js"></script>
-    <script src="assets/javascript/controllers/psicologos/psicologosRegistroController.js"></script>
+	<!-- Controllers -->
+	<script src="assets/javascript/controllers/pacientes/cuestionarioController.js"></script>
+	<script src="assets/javascript/controllers/pacientes/pacientesPerfilController.js"></script>
+	<script src="assets/javascript/controllers/pacientes/pacientesRegistroController.js"></script>
+	<script src="assets/javascript/controllers/pacientes/pacientesAccesoController.js"></script>
+	<script src="assets/javascript/controllers/psicologos/psicologosPerfilController.js"></script>
+	<script src="assets/javascript/controllers/pacientes/pacientesModificarController.js"></script>
+	<script src="assets/javascript/controllers/psicologos/psicologosMailController.js"></script>
+	<script src="assets/javascript/controllers/psicologos/psicologosRegistroController.js"></script>
+	<script src="assets/javascript/controllers/psicologos/psicologosModificarController.js"></script>
 
-    <!-- Services -->
-    <script src="assets/javascript/services/paciente.js"></script>
-    <script src="assets/javascript/services/patologia.js"></script>
-    <script src="assets/javascript/services/psicologo.js"></script>
+	<!-- Services -->
+	<script src="assets/javascript/services/paciente.js"></script>
+	<script src="assets/javascript/services/patologia.js"></script>
+	<script src="assets/javascript/services/psicologo.js"></script>
 
 </html>
