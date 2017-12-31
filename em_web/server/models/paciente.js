@@ -134,7 +134,7 @@ pacienteSchema.methods.darAlta = function(paciente) {
 					edad : paciente.edad
 					//                    }
 				}
-				
+
 				console.log(datosUsuario);
 			});
 		});
@@ -269,6 +269,22 @@ pacienteSchema.methods.findDiagnostico = function(id) {
 		Paciente.find(query, projection).exec(function(error, results){       
 			if(error){
 				console.log("Patologia - Error en findDiagnostico");
+				reject({error: error});
+			}else{
+				resolve(results);
+			}
+		});
+	});
+};
+
+pacienteSchema.methods.darBaja = function(id) {
+	return new Promise(function(resolve, reject){
+
+		var query = {_id: new mongoose.Types.ObjectId(id)};
+
+		Paciente.findOne(query).remove(function(error, results){    
+			if(error){
+				console.log("Paciente - Error en darBaja");
 				reject({error: error});
 			}else{
 				resolve(results);

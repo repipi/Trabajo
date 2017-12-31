@@ -1,4 +1,4 @@
-angular.module('Emozio').controller('PsicologosModificarController', function(Paciente, Psicologo, $scope, $routeParams, $location){
+angular.module('Emozio').controller('PsicologosModificarController', function(Paciente, Psicologo, $scope, $routeParams, $location, $window){
 
 	/* Recuperamos al psicologo */
 	Psicologo.GetById().then(function(data){
@@ -289,6 +289,13 @@ angular.module('Emozio').controller('PsicologosModificarController', function(Pa
 		}
 
 	}  
+
+	/* Funcion de darse de baja */
+	$scope.baja=function(){
+		Psicologo.DarBaja();
+		$location.path("inicio"); 
+		$window.location.reload();
+	}
 
 	/* Funcion salir que cierra la sesion */
 	$scope.salir=function(){

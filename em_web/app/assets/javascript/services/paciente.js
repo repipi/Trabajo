@@ -26,6 +26,9 @@ function Paciente($http){
         GetDiagnostico : function() {
             return $http.get('/pacientes/diagnostico');   
         },
+		DarBaja : function() {
+            return $http.post('/pacientes/baja');   
+        },
         GetPsicologos : function() {
             return $http.get('/pacientes/psicologos');   
         }, 

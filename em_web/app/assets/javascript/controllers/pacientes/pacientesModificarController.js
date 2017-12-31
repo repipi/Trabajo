@@ -1,4 +1,4 @@
-angular.module('Emozio').controller('PacientesModificarController', function(Paciente, $scope, $location){
+angular.module('Emozio').controller('PacientesModificarController', function(Paciente, $scope, $location, $window){
 
 	/* Obtenemos el paciente que ha iniciado la sesion */
 	Paciente.GetById().then(function(data){
@@ -249,6 +249,13 @@ angular.module('Emozio').controller('PacientesModificarController', function(Pac
 			}); 
 
 		}
+	}
+
+	/* Funcion de darse de baja */
+	$scope.baja=function(){
+		Paciente.DarBaja();
+		$location.path("inicio"); 
+		$window.location.reload();
 	}
 
 	/* Funcion salir que cierra la sesion */

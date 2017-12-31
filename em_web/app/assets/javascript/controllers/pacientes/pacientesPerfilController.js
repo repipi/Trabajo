@@ -1,4 +1,4 @@
-angular.module('Emozio').controller('PacientesPerfilController', function(Paciente, Psicologo, $scope, $location){
+angular.module('Emozio').controller('PacientesPerfilController', function(Paciente, Psicologo, $scope, $location, $window){
 
     /* Obtenemos el paciente que ha iniciado la sesion */
     Paciente.GetById().then(function(data){
@@ -28,6 +28,7 @@ angular.module('Emozio').controller('PacientesPerfilController', function(Pacien
     $scope.hacer=function(){
         /* Redireccionado al cuestionario */
         $location.path("cuestionario/" + 1); 
+		$window.location.reload();
     }
 
     /* Funcion del boton "Filtrar" */

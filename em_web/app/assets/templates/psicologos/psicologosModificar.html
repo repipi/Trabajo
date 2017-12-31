@@ -118,14 +118,14 @@
 								</div> 
 							</div>
 							<!---------------------------------------------------------------------------------------------------------- POLITICAS DE PRIVACIDAD ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!--
-							<div class="field">
-								Se ha marcado por defecto el checkbox para que sea mas comodo para el usuario 
-								<div class="ui checkbox">
-									<input type="checkbox" name="term_cond" id="term_cond" checked>
-									<label>Acepto los términos y condiciones de uso</label>
-								</div>
-							</div>
+							<!--
+<div class="field">
+Se ha marcado por defecto el checkbox para que sea mas comodo para el usuario 
+<div class="ui checkbox">
+<input type="checkbox" name="term_cond" id="term_cond" checked>
+<label>Acepto los términos y condiciones de uso</label>
+</div>
+</div>
 -->
 							<div class="ui fluid large teal submit button" ng-click="changeStep(psicologo)">Siguiente</div>
 						</div>
@@ -178,11 +178,34 @@
 					<p>Pronto nos pondremos en contacto con usted para confirmar el registro.</p>
 				</div>
 			</div>
+			<div class="ui large form baja_btn">
+				<div class="ui segment">
+					<div class="ui fluid large teal submit button" data-target="#baja_modal" data-toggle="modal">Darme de baja</div>
+				</div>
+			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="well">
+</div>
 
+<!---------------------------------------------------------------------------------------------------------------------------------------CONFIRMACION DE DARSE DE BAJA ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="ui container">
+	<div class="modal fade" id="baja_modal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">¿Estás seguros de que quieres continuar?</h4>
+				</div>
+				<div class="modal-body">
+					Si cierras tu cuenta, perderás todos tus datos.
+				</div>
+				<div class="modal-footer">
+					<div class="ui green button" ng-click="baja()">Continuar</div>
+					<div class="ui grey button"  class="close" data-dismiss="modal" aria-label="Close">Cancelar</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

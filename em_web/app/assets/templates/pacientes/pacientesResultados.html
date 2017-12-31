@@ -1,102 +1,103 @@
 <!---------------------------------------------------------------------------------------------------------------------------------- BARRA DE NAVEGACION --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <nav class='container navbar-inverse' role='navigation' >
-    <div class='navbar-header'>
-        <a href='#/inicio' class='navbar-brand logo'>
-            <img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
-        </a>
-        <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
-            <span class='sr-only'>Toggle navigation</span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-        </button>
-    </div>
+	<div class='navbar-header'>
+		<a href='#/inicio' class='navbar-brand logo'>
+			<img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
+		</a>
+		<button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
+			<span class='sr-only'>Toggle navigation</span>
+			<span class='icon-bar'></span>
+			<span class='icon-bar'></span>
+			<span class='icon-bar'></span>
+		</button>
+	</div>
 
-    <ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
-        <li class="navegacion"><a href='#/inicio'>Inicio</a></li>
-        <li class="navegacion seleccionado"><a href='#/usuarios'>Resultados</a></li>
-        <li class="dropdown navegacion">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#/usuarios">Perfil
-                <span class="caret"></span></a>
-            <ul class="dropdown-menu navegacion_transparente">
-                <li><a href='#/usuarios/modificar'>Modificar mis datos</a></li>
-                <li class='divider'></li>
-                <li><a ng-click="salir()">Salir</a></li>
-            </ul>
-        </li>
-    </ul>
+	<ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
+		<li class="navegacion"><a href='#/inicio'>Inicio</a></li>
+		<li class="navegacion seleccionado"><a href='#/usuarios'>Resultados</a></li>
+		<li class="dropdown navegacion">
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#/usuarios">Perfil
+				<span class="caret"></span></a>
+			<ul class="dropdown-menu navegacion_transparente">
+				<li><a href='#/usuarios/modificar'>Modificar mis datos</a></li>
+				<li class='divider'></li>
+				<li><a ng-click="salir()">Salir</a></li>
+			</ul>
+		</li>
+	</ul>
 </nav>
 
 <!---------------------------------------------------------------------------------------------------------------------------------- HACER EL TEST --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="container">
 
-    <div class="row">
-        <div class="col-xs-10 col-xs-offset-1">
-            <div class="ui white message">
-                <div class="ui container">
-                    <p>Para poder sugerirte al mejor psicólogo para tratar tu caso, ayúdanos cubriendo el siguiente test. Es breve y sencillo, solamente deberás responder sí o no a las preguntas.</p>
-                    <button type="submit" class="ui right floated teal button" ng-click="hacer()"> <i class="ui center write icon"></i> Hacer el test</button>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="row">
+		<div class="col-xs-10 col-xs-offset-1">
+			<div class="ui white message">
+				<div class="ui container">
+					<p>Para poder sugerirte al mejor psicólogo para tratar tu caso, ayúdanos cubriendo el siguiente test. Es breve y sencillo, solamente deberás responder sí o no a las preguntas.</p>
+					<!--					<button type="submit" class="ui right floated teal button" ng-click="hacer()"> <i class="ui center write icon"></i> Hacer el test</button>-->
+					<button type="submit" class="ui right floated teal button" data-target="#aviso_modal" data-toggle="modal"> <i class="ui center write icon"></i> Hacer el test</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <div class="row">
+	<div class="row">
 
-        <!--------------------------------------------------------------------------------------------------------------------------FILTRO ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
-        <br>
-        <div class="col-xs-3 col-xs-offset-1">
-            <div class="ui container filtro">
-                <div class="ui form segment">
-                    <div class="grouped fields">
-                        <label>Consulta</label>
-                        <div class="field">
-                            <div class="ui slider checkbox">
-                                <input type="radio" name="consulta" checked="checked" value="presencial" ng-model="psicologo.consulta">
-                                <label>Presencial</label>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="ui slider checkbox">
-                                <input type="radio" name="consulta" value="online" ng-model="psicologo.consulta">
-                                <label>On-line</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label>Precio</label>
-                        <select class="ui compact selection dropdown" ng-model="psicologo.precio">
-                            <i class="dropdown icon"></i>
-                            <div class="menu">
-                                <option class="item" value="">Cualquiera</option>
-                                <option class="item" value="30">Menos de 30 €</option>
-                                <option class="item" value="50">Entre 30 € y 50 €</option>
-                                <option class="item" value="70">Entre 50 € y 70 €</option>
-                                <option class="item" value="90">Más de 70 €</option>
-                            </div>
-                        </select>
-                    </div>
-                    <div class="field">
-                        <label>Seguro médico</label>
-                        <select class="ui compact selection dropdown" ng-model="psicologo.seguro">
-                            <i class="dropdown icon"></i>
-                            <div class="menu">
-                                <option class="item" value="">Cualquiera</option>
-                                <option class="item" value="Adeslas">Adeslas</option>
-                                <option class="item" value="Allianz">Allianz</option>
-                                <option class="item" value="AXA">AXA</option>
-                                <option class="item" value="DKV">DKV</option>
-                                <option class="item" value="Mapfre">Mapfre</option>
-                                <option class="item" value="Mutua">Mutua</option>
-                                <option class="item" value="Sanitas">Sanitas</option>
-                                <option class="item" value="Santa Lucía">Santa Lucía</option>
-                            </div>
-                        </select>
-                    </div>
+		<!--------------------------------------------------------------------------------------------------------------------------FILTRO ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+		<br>
+		<div class="col-xs-3 col-xs-offset-1">
+			<div class="ui container filtro">
+				<div class="ui form segment">
+					<div class="grouped fields">
+						<label>Consulta</label>
+						<div class="field">
+							<div class="ui slider checkbox">
+								<input type="radio" name="consulta" checked="checked" value="presencial" ng-model="psicologo.consulta">
+								<label>Presencial</label>
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui slider checkbox">
+								<input type="radio" name="consulta" value="online" ng-model="psicologo.consulta">
+								<label>On-line</label>
+							</div>
+						</div>
+					</div>
+					<div class="field">
+						<label>Precio</label>
+						<select class="ui compact selection dropdown" ng-model="psicologo.precio">
+							<i class="dropdown icon"></i>
+							<div class="menu">
+								<option class="item" value="">Cualquiera</option>
+								<option class="item" value="30">Menos de 30 €</option>
+								<option class="item" value="50">Entre 30 € y 50 €</option>
+								<option class="item" value="70">Entre 50 € y 70 €</option>
+								<option class="item" value="90">Más de 70 €</option>
+							</div>
+						</select>
+					</div>
+					<div class="field">
+						<label>Seguro médico</label>
+						<select class="ui compact selection dropdown" ng-model="psicologo.seguro">
+							<i class="dropdown icon"></i>
+							<div class="menu">
+								<option class="item" value="">Cualquiera</option>
+								<option class="item" value="Adeslas">Adeslas</option>
+								<option class="item" value="Allianz">Allianz</option>
+								<option class="item" value="AXA">AXA</option>
+								<option class="item" value="DKV">DKV</option>
+								<option class="item" value="Mapfre">Mapfre</option>
+								<option class="item" value="Mutua">Mutua</option>
+								<option class="item" value="Sanitas">Sanitas</option>
+								<option class="item" value="Santa Lucía">Santa Lucía</option>
+							</div>
+						</select>
+					</div>
 
-                    <span id="demo"></span>
-                    <!--
+					<span id="demo"></span>
+					<!--
 
 <p style="color: black;">
 Consulta {{psicologo.consulta}}<br>
@@ -104,107 +105,130 @@ Precio {{psicologo.precio}}<br>
 Seguro {{psicologo.seguro}}
 </p>
 -->
-                    <div class="field">
-                        <button type="submit" class="fluid ui teal button" ng-click="filtrar(psicologo)">
-                            <i class="icon search"></i>  Filtrar</button>
-                    </div>
-                    <div class="field">
-                        <button type="submit" class="fluid ui gray button" ng-click="recuperarMisResultados()">
-                            <p> <i class="bar chart icon"></i> Mis resultados </p> </button>
-                        <!--
+					<div class="field">
+						<button type="submit" class="fluid ui teal button" ng-click="filtrar(psicologo)">
+							<i class="icon search"></i>  Filtrar</button>
+					</div>
+					<div class="field">
+						<button type="submit" class="fluid ui gray button" ng-click="recuperarMisResultados()">
+							<p> <i class="bar chart icon"></i> Mis resultados </p> </button>
+						<!--
 <button type="submit" class="fluid ui labeled icon gray button" ng-click="recuperarMisResultados()">
 <i class="left arrow icon"></i> <p> <i class="bar chart icon"></i> Mis resultados </p> </button>
 -->
-                    </div>
-                </div>
-            </div>
-        </div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <!---------------------------------------------------------------------------------------------------------------------- RESULTADOS CUESTIONARIO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->               
-        <div class="col-xs-8"> 
-            <h2 class="titulo">
-                <i class="bar chart icon"></i>Mis resultados:
-            </h2>
+		<!---------------------------------------------------------------------------------------------------------------------- RESULTADOS CUESTIONARIO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->               
+		<div class="col-xs-8"> 
+			<h2 class="titulo">
+				<i class="bar chart icon"></i>Mis resultados:
+			</h2>
 
-            <div>
-                <div class="{{cuadro_mensaje}}">
-                    <h3 class="sin_resultados">{{mensaje}}</h3>
-                </div>
-            </div>
+			<div>
+				<div class="{{cuadro_mensaje}}">
+					<h3 class="sin_resultados">{{mensaje}}</h3>
+				</div>
+			</div>
 
-            <!-- Bloque de info -->
-            <div class="ui link cards">
-                <!-- Bucle: Muestra la info de cada psicologo que pueda tratar la patologia del paciente -->
-                <div ng-repeat="psicologo in psicologos">
-                    <div class="ui content resultado_psicologo">
-                        <div class="ui card" >
-                            <div class="image">
-                                <!--                                <img ng-src="{{psicologo.imagen}}">-->
-                                <img ng-src="{{psicologo.foto}}">{{psicologo.foto}}
-                            </div>
-                            <div class="content">
-                                <a class="header" href="#/psicologos/{{psicologo._id}}">{{psicologo.nombre}}</a>
-                                <div class="ui star rating" data-rating="3"></div>
-                                <div class="meta">
-                                    <a>Nº colegiado: {{psicologo.ncolegiado}}</a>
-                                </div>
-                                <div class="description">{{psicologo.experiencia}} </div>
-                            </div>
-                            <div class="extra content">
-                                <span class="right floated">{{psicologo.precio}} <i class="euro icon"></i>/ sesion</span>
-                                <span><i class="marker icon"></i>{{psicologo.localizacion}} </span>
-                            </div>
+			<!-- Bloque de info -->
+			<div class="ui link cards">
+				<!-- Bucle: Muestra la info de cada psicologo que pueda tratar la patologia del paciente -->
+				<div ng-repeat="psicologo in psicologos">
+					<div class="ui content resultado_psicologo">
+						<div class="ui card" >
+							<div class="image">
+								<!--                                <img ng-src="{{psicologo.imagen}}">-->
+								<img ng-src="{{psicologo.foto}}">{{psicologo.foto}}
+							</div>
+							<div class="content">
+								<a class="header" href="#/psicologos/{{psicologo._id}}">{{psicologo.nombre}}</a>
+								<div class="ui star rating" data-rating="3"></div>
+								<div class="meta">
+									<a>Nº colegiado: {{psicologo.ncolegiado}}</a>
+								</div>
+								<div class="description">{{psicologo.experiencia}} </div>
+							</div>
+							<div class="extra content">
+								<span class="right floated">{{psicologo.precio}} <i class="euro icon"></i>/ sesion</span>
+								<span><i class="marker icon"></i>{{psicologo.localizacion}} </span>
+							</div>
 
-                            <button type="button" class="ui teal bottom attached button" data-target="#myModal" data-toggle="modal">
-                                <i class="icon mail"></i> 
-                                Contactar</button>
-                        </div>
-                    </div>  
-                </div>
-            </div>
-        </div>
-    </div>
+							<button type="button" class="ui teal bottom attached button" data-target="#myModal" data-toggle="modal">
+								<i class="icon mail"></i> 
+								Contactar</button>
+						</div>
+					</div>  
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <!-------------------------------------------------------------------------------------------------------------------------- FORMULARIO DE CONTACTO: Ventana emergente - overlay ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="modal fade left" id="myModal"> 
-    <div class="modal-dialog"> 
-        <div class="modal-content"> 
+	<div class="modal-dialog"> 
+		<div class="modal-content"> 
 
-            <!-- Titulo -->
-            <div class="modal-header"> 
-                <h3 class="pull-left no-margin">Formulario de contacto</h3>
-                <button type="button" class="close" data-dismiss="modal" title="Close"><span class="glyphicon glyphicon-remove"></span>
-                </button> 
-            </div> 
+			<!-- Titulo -->
+			<div class="modal-header"> 
+				<h3 class="pull-left no-margin">Formulario de contacto</h3>
+				<button type="button" class="close" data-dismiss="modal" title="Close"><span class="glyphicon glyphicon-remove"></span>
+				</button> 
+			</div> 
 
-            <!-- Cuerpo del formulario -->
-            <div class="modal-body">
-                <form class="form-horizontal"> 
-                    <div class="form-group"> 
-                        <label for="message" class="col-sm-3 control-label">
-                            <span class="required">*</span> Mensaje:</label> 
-                        <div class="col-sm-9"> 
-                            <textarea name="message" rows="4" required class="form-control" id="message" placeholder="Comentario"></textarea> 
-                        </div> 
-                    </div> 
-                    <div class="form-group"> 
-                        <div class="col-sm-offset-3 col-sm-6 col-sm-offset-3"> 
-                            <button type="submit" id="submit" name="submit" class="btn-lg btn-primary">Enviar</button> 
-                        </div> 
-                    </div> 
-                </form>
-            </div>
+			<!-- Cuerpo del formulario -->
+			<div class="modal-body">
+				<form class="form-horizontal"> 
+					<div class="form-group"> 
+						<label for="message" class="col-sm-3 control-label">
+							<span class="required">*</span> Mensaje:</label> 
+						<div class="col-sm-9"> 
+							<textarea name="message" rows="4" required class="form-control" id="message" placeholder="Comentario"></textarea> 
+						</div> 
+					</div> 
+					<div class="form-group"> 
+						<div class="col-sm-offset-3 col-sm-6 col-sm-offset-3"> 
+							<button type="submit" id="submit" name="submit" class="btn-lg btn-primary">Enviar</button> 
+						</div> 
+					</div> 
+				</form>
+			</div>
 
-            <div class="modal-footer"> 
-                <div class="col-xs-10 pull-left text-left text-muted"> 
-                    <small><strong>Política de privacidad:</strong>
-                        Lorem ipsum dolor sit amet consectetur adipiscing elit. 
-                        Mauris vitae libero lacus, vel hendrerit nisi! Maecenas quis 
-                        velit nisl, volutpat viverra felis. Vestibulum luctus mauris 
-                        sed sem dapibus luctus.</small> 
-                </div> 
-            </div> 
-        </div> 
-    </div> 
+			<div class="modal-footer"> 
+				<div class="col-xs-10 pull-left text-left text-muted"> 
+					<small><strong>Política de privacidad:</strong>
+						Lorem ipsum dolor sit amet consectetur adipiscing elit. 
+						Mauris vitae libero lacus, vel hendrerit nisi! Maecenas quis 
+						velit nisl, volutpat viverra felis. Vestibulum luctus mauris 
+						sed sem dapibus luctus.</small> 
+				</div> 
+			</div> 
+		</div> 
+	</div> 
+</div>
+
+<!---------------------------------------------------------------------------------------------------------------------------------------CONFIRMACION DE SOBREESCRIBIR RESULTADOS TEST ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="ui container">
+	<div class="modal fade" id="aviso_modal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">¿Estás seguros de que quieres continuar?</h4>
+				</div>
+				<div class="modal-body">
+					Si ya has realizado el test, tus resultados actuales se perderán.
+				</div>
+				<div class="modal-footer">
+					<div class="ui green button" ng-click="hacer()">Continuar</div>
+					<div class="ui grey button"  class="close" data-dismiss="modal" aria-label="Close">Cancelar</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

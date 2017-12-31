@@ -28,8 +28,8 @@ module.exports = function(app) {
 	/* Obtiene psicologos */
 		.get(function(req, res){
 
-//		console.log(req.user);
-		
+		//		console.log(req.user);
+
 		if(!req.user) {
 			res.send(null);
 		} else {
@@ -106,7 +106,7 @@ module.exports = function(app) {
 				console.log("Error al cerrar")
 			} else {
 				console.log("cierro");
-				res.redirect('#/inicio'); //Inside a callback… bulletproof!
+				res.redirect(''); //Inside a callback… bulletproof!
 			}
 
 		});
@@ -119,7 +119,7 @@ module.exports = function(app) {
 		//		https://thepandeysoni.org/2016/06/12/nodemailer-service-in-node.js-using-SMTP-and-xoauth2/
 
 		console.log(req.body);
-		
+
 		/* Para enviar un email, se define un transporter con los datos de la cuenta de correo */
 		var transporter = nodemailer.createTransport(smtpTransport ({
 			service: 'Gmail',
@@ -191,6 +191,31 @@ module.exports = function(app) {
 			// Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@blurdybloop.com>
 			// Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 		});
+	});
+
+	app.route('/psicologos/baja')
+	/* Elimina un psicologo de la BBDD */
+		.post(function(req, res){
+		var psicologo = new Psicologo();
+		var promise = psicologo.darBaja(req.user._id);
+		promise.then(
+			function(){
+				console.log("Elimino la cuenta");
+				req.session.destroy(function (err) {
+					req.logout("Logout exitoso");
+					if(err) {
+						console.log("Error al cerrar")
+					} else {
+						console.log("Cierro la sesion");
+						res.redirect('inicio'); //Inside a callback… bulletproof!
+					}
+
+				});
+			},
+			function (error){
+				res.status(500).send({error: error});
+			}
+		);
 	});
 
 };

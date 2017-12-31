@@ -12,14 +12,17 @@ function Psicologo($http){
 			return $http.get('/psicologo');
 		},
 		GetByParams : function (id) {
-            return $http.get('/psicologos/'+id);
-        },
+			return $http.get('/psicologos/'+id);
+		},
 		Filtrar : function (psicologo) {
 			return $http.post('/psicologos/filtrar', psicologo);
 		},
 		SignUp : function (psicologo) {
 			return $http.post('/psicologos/registro', psicologo);
 		}, 
+		DarBaja : function() {
+			return $http.post('/psicologos/baja');   
+		},
 		Salir : function() {
 			return $http.post('/psicologos/cierre');
 		}

@@ -50,11 +50,11 @@ module.exports = function(app) {
 			var promise = paciente.findOne(req.user._id);
 			promise.then(
 				function(data){
-//					console.log("hay" + data);
+					//					console.log("hay" + data);
 					res.send(data);
 				},
 				function (error){
-//					console.log("error");
+					//					console.log("error");
 					res.status(500).send({error: error});
 				}
 			);
@@ -133,7 +133,8 @@ module.exports = function(app) {
 			if(err) {
 				console.log("Error al cerrar")
 			} else {
-				res.redirect('#/inicio'); //Inside a callback… bulletproof!
+				console.log("Cierro la sesion");
+				//res.redirect(''); //Inside a callback… bulletproof!
 			}
 
 		});
@@ -147,6 +148,31 @@ module.exports = function(app) {
 		promise.then(
 			function(data){
 				res.send(data);
+			},
+			function (error){
+				res.status(500).send({error: error});
+			}
+		);
+	});
+
+	app.route('/pacientes/baja')
+	/* Elimina un paciente de la BBDD */
+		.post(function(req, res){
+		var paciente = new Paciente();
+		var promise = paciente.darBaja(req.user._id);
+		promise.then(
+			function(){
+				console.log("Elimino la cuenta");
+				req.session.destroy(function (err) {
+					req.logout("Logout exitoso");
+					if(err) {
+						console.log("Error al cerrar")
+					} else {
+						console.log("Cierro la sesion");
+						//res.redirect(''); //Inside a callback… bulletproof!
+					}
+
+				});
 			},
 			function (error){
 				res.status(500).send({error: error});

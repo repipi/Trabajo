@@ -30,15 +30,15 @@
 
 <!---------------------------------------------------------------------------------------------------------------------------------- MODIFICAR DATOS ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class='container' ng-init="initAutocomplete()">
-	<div class="row">
-		<h2 class="ui image header">
-			<!--
+	<!--
+<div class="row">
+<h2 class="ui image header">		
 <div class="content">
 <h1 class="ui teal header">Modificar datos</h1>
 </div>
+</h2>
+</div>
 -->
-		</h2>
-	</div>
 	<div class="row">
 		<div class="col-xs-5">
 			<div id="change_form" class="ui large form">
@@ -152,6 +152,34 @@
 						<i class="close icon"></i>
 						<div class="header"> Los datos no se han modificado. </div>
 					</div>
+				</div>
+			</div>
+			<div class="ui large form baja_btn">
+				<div class="ui segment">
+					<div class="ui fluid large teal submit button" data-target="#baja_modal" data-toggle="modal">Darme de baja</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!---------------------------------------------------------------------------------------------------------------------------------------CONFIRMACION DE DARSE DE BAJA ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="ui container">
+	<div class="modal fade" id="baja_modal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">¿Estás seguros de que quieres continuar?</h4>
+				</div>
+				<div class="modal-body">
+					Si cierras tu cuenta, perderás todos tus datos.
+				</div>
+				<div class="modal-footer">
+					<div class="ui green button" ng-click="baja()">Continuar</div>
+					<div class="ui grey button"  class="close" data-dismiss="modal" aria-label="Close">Cancelar</div>
 				</div>
 			</div>
 		</div>
