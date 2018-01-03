@@ -20,6 +20,9 @@ function Psicologo($http){
 		SignUp : function (psicologo) {
 			return $http.post('/psicologos/registro', psicologo);
 		}, 
+		Comentar : function(psicologo) {
+            return $http.put('/psicologos/comentarios', psicologo);
+        },
 		DarBaja : function() {
 			return $http.post('/psicologos/baja');   
 		},

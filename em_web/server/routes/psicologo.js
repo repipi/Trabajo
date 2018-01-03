@@ -218,4 +218,18 @@ module.exports = function(app) {
 		);
 	});
 
+	app.route('/psicologos/comentarios')
+		.put(function(req, res){
+		var psicologo = new Psicologo();
+		var promise = psicologo.updateComentarios(req.body);
+		promise.then(
+			function(data){
+				res.send(data);
+			},
+			function (error){
+				res.status(500).send({error: error});
+			}
+		);
+	});
+
 };

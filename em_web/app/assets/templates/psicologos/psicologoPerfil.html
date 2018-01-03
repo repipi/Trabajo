@@ -31,165 +31,235 @@
 <!---------------------------------------------------------------------------------------------------------------------------------- BARRA DE NAVEGACION PSICOLOGO-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <nav class='container navbar-inverse' ng-show='nav_psico' role='navigation' >
-    <div class='navbar-header'>
-        <a href='#/inicio' class='navbar-brand logo'>
-            <img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
-        </a>
-        <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
-            <span class='sr-only'>Toggle navigation</span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-        </button>
-    </div>
+	<div class='navbar-header'>
+		<a href='#/inicio' class='navbar-brand logo'>
+			<img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
+		</a>
+		<button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
+			<span class='sr-only'>Toggle navigation</span>
+			<span class='icon-bar'></span>
+			<span class='icon-bar'></span>
+			<span class='icon-bar'></span>
+		</button>
+	</div>
 
-    <ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
-        <li><a href='#/inicio' class="navegacion">Inicio</a></li>
-        <li><a href='#/mail' class="navegacion">Mis solicitudes</a></li>
-        <li class="dropdown navegacion seleccionado">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#/piscologos/{{psicologo._id}}">Perfil
-                <span class="caret"></span></a>
-            <ul class="dropdown-menu navegacion_transparente">
-				<li><a href="#/piscologos/{{psicologo._id}}">Cómo me ven</a></li>
-                <li><a href='#/psicologos/modificar'>Modificar mis datos</a></li>
-                <li class='divider'></li>
-                <li><a ng-click="salir()">Salir</a></li>
-            </ul>
-        </li>
-    </ul>
+	<ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
+		<li><a href='#/inicio' class="navegacion">Inicio</a></li>
+		<li><a href='#/mail' class="navegacion">Mis solicitudes</a></li>
+		<li class="dropdown navegacion seleccionado">
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#/psicologos/{{psicologo._id}}">Perfil
+				<span class="caret"></span></a>
+			<ul class="dropdown-menu navegacion_transparente">
+				<li><a href="#/psicologos/{{psicologo._id}}">Cómo me ven</a></li>
+				<li><a href='#/psicologos/modificar'>Modificar mis datos</a></li>
+				<li class='divider'></li>
+				<li><a ng-click="salir()">Salir</a></li>
+			</ul>
+		</li>
+	</ul>
 </nav>
 
 
 <div class='ui container'>
 
-    <!------------------------------------------------------------------------------------------------------------------------------ INFORMACION GENERAL DEL PSICOLOGO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <div class="row">
-        <div class="col-xs-8 col-xs-offset-2">
+	<!------------------------------------------------------------------------------------------------------------------------------ INFORMACION GENERAL DEL PSICOLOGO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+	<div class="row">
+		<div class="col-xs-8 col-xs-offset-2">
 
-            <div class="ui segment info_psicologo">
-                <div class="ui container" >
-                    <div class="col-xs-6">
-                        <div class="ui left floated small image">
-                            <img ng-src="{{psicologo.foto}}">
-                        </div>
-                        <h2 class="ui header nombre_psicologo">{{psicologo.nombre}}</h2>
-                        <!--                                    <div class="ui left floated  star rating" data-rating="3"></div>-->
-                        <a>Nº colegiado: {{psicologo.ncolegiado}}</a>
-                        <br>
-                        <span><i class="marker icon"></i>{{psicologo.localizacion}} </span>
-                    </div>
-                    <div class="col-xs-6">
-                        <div class="ui extra content">
-                            <span class="ui right aligned container"><h1>{{psicologo.precio}} <i class="euro icon"></i>/ sesión</h1></span>
-                            <br>
-                            <button type="button" class="ui right floated big teal button" data-target="#myModal" data-toggle="modal">
-                                <i class="icon mail"></i> 
-                                Contactar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+			<div class="ui segment info_psicologo">
+				<div class="ui container" >
+					<div class="col-xs-6">
+						<div class="ui left floated small image">
+							<img ng-src="{{psicologo.foto}}">
+						</div>
+						<h2 class="ui header nombre_psicologo">{{psicologo.nombre}}</h2>
+						<!--                                    <div class="ui left floated  star rating" data-rating="3"></div>-->
+						<a>Nº colegiado: {{psicologo.ncolegiado}}</a>
+						<br>
+						<span><i class="marker icon"></i>{{psicologo.localizacion}} </span>
+					</div>
+					<div class="col-xs-6">
+						<div class="ui extra content">
+							<span class="ui right aligned container"><h1>{{psicologo.precio}} <i class="euro icon"></i>/ sesión</h1></span>
+							<br>
+							<button type="button" class="ui right floated big teal button" data-target="#contacto_modal" data-toggle="modal">
+								<i class="icon mail"></i> 
+								Contactar
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-            <!---------------------------------------------------------------------------------------------------------------------- FORMULARIO DE CONTACTO: Ventana emergente - overlay ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <div class="modal fade left" id="myModal"> 
-                <div class="modal-dialog"> 
-                    <div class="modal-content"> 
+	<!---------------------------------------------------------------------------------------------------------------------- FORMULARIO DE CONTACTO: Ventana emergente - overlay ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+	<div class="ui container">
+		<div class="modal fade" id="contacto_modal">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
 
-                        <!-- Titulo -->
-                        <div class="modal-header"> 
-                            <h3 class="pull-left no-margin">Formulario de contacto</h3>
-                            <button type="button" class="close" data-dismiss="modal" title="Close"><span class="glyphicon glyphicon-remove"></span>
-                            </button> 
-                        </div> 
+					<!-- Titulo -->
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title">Formulario de contacto</h4>
+					</div>
 
-                        <!-- Cuerpo del formulario -->
-                        <div class="modal-body">
-                            <form class="form-horizontal"> 
-                                <div class="form-group"> 
-                                    <label for="message" class="col-sm-3 control-label">
-                                        <span class="required">*</span> Mensaje:</label> 
-                                    <div class="col-sm-9"> 
-                                        <textarea name="message" rows="4" required class="form-control" id="message" placeholder="Comentario"></textarea> 
-                                    </div> 
-                                </div> 
-                                <div class="form-group"> 
-                                    <div class="col-sm-offset-3 col-sm-6 col-sm-offset-3"> 
-                                        <button type="submit" id="submit" name="submit" class="btn-lg btn-primary">Enviar</button> 
-                                    </div> 
-                                </div> 
-                            </form>
-                        </div>
+					<!-- Cuerpo del formulario -->
+					<div class="modal-body">
+						<div class="ui form"> 
+							<div class="required field"> 
+								<label>Mensaje</label> 
+								<textarea name="message" rows="4" required class="form-control" id="message" placeholder="Escribe un mensaje"></textarea> 
+							</div>
+							<div class="required field"> 
+								<label>¿Cuando te vendría mejor tener la cita?</label> 
+								<textarea name="message" rows="4" required class="form-control" id="message" placeholder="¿Que días tienes disponibles? ¿Que franja horaria no podría ser?"></textarea> 
+							</div> 
+						</div>
+					</div>
 
-                        <div class="modal-footer"> 
-                            <div class="col-xs-10 pull-left text-left text-muted"> 
-                                <small><strong>Política de privacidad:</strong>
-                                    Lorem ipsum dolor sit amet consectetur adipiscing elit. 
-                                    Mauris vitae libero lacus, vel hendrerit nisi! Maecenas quis 
-                                    velit nisl, volutpat viverra felis. Vestibulum luctus mauris 
-                                    sed sem dapibus luctus.</small> 
-                            </div> 
-                        </div> 
-                    </div> 
-                </div> 
-            </div>
-        </div>
-    </div>
 
-    <!------------------------------------------------------------------------------------------------------------------------------ INFORMACION ESPECIALIZADA DEL PSICOLOGO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+					<!--
+<div class="col-xs-10 pull-left text-left text-muted"> 
+<small><strong>Aviso:</strong>
+Lorem ipsum dolor sit amet consectetur adipiscing elit. 
+Mauris vitae libero lacus, vel hendrerit nisi! Maecenas quis 
+velit nisl, volutpat viverra felis. Vestibulum luctus mauris 
+sed sem dapibus luctus.</small> 
+</div> 
+-->
 
-    <div class='row features'>
+					<div class="modal-footer">
+						<div class="ui green button" ng-click="">Enviar</div>
+						<div class="ui grey button"  class="close" data-dismiss="modal" aria-label="Close">Cancelar</div>
+					</div>
+				</div> 
+			</div> 
+		</div>
+	</div>
 
-        <div class='col-sm-4 col-sm-offset-2'>
-            <div class="ui teal fluid card">
-                <div class="content">
-                    <div class="header">Formación</div>
-                    <div class="description">
-                        <p>{{psicologo.formacion}}</p>
-                    </div>
-                </div>
-            </div>
+	<!------------------------------------------------------------------------------------------------------------------------------ INFORMACION ESPECIALIZADA DEL PSICOLOGO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-            <div class="ui teal fluid card">
-                <div class="content">
-                    <div class="header">Experiencia</div>
-                    <div class="description">
-                        <p>{{psicologo.experiencia}}</p>
-                    </div>
-                </div>
-            </div>
+	<div id="info_sec"></div>
+	
+	<div class='row'>
 
-            <div class="ui teal fluid card">
-                <div class="content">
-                    <div class="header">Especialidad</div>
-                    <div class="description">
-                        <p>{{psicologo.especialidad}}</p>
-                    </div>
-                </div>
-            </div>
+		<div class='col-sm-4 col-sm-offset-2'>
+			<div class="ui teal fluid card">
+				<div class="content">
+					<div class="header">Formación</div>
+					<div class="description">
+						<p>{{psicologo.formacion}}</p>
+					</div>
+				</div>
+			</div>
 
-            <div class="ui teal fluid card">
-                <div class="content">
-                    <div class="header">Terapias</div>
-                    <div class="description">
-                        <p>{{psicologo.terapia}}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+			<div class="ui teal fluid card">
+				<div class="content">
+					<div class="header">Experiencia</div>
+					<div class="description">
+						<p>{{psicologo.experiencia}}</p>
+					</div>
+				</div>
+			</div>
 
-        <!---------------------------------------------------------------------------------------------------------------------- COMENTARIOS ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+			<div class="ui teal fluid card">
+				<div class="content">
+					<div class="header">Especialidad</div>
+					<div class="description">
+						<p>{{psicologo.especialidad}}</p>
+					</div>
+				</div>
+			</div>
 
-        <div class='col-sm-4'>
-            <h1>Comentarios</h1>
-        </div>
+			<div class="ui teal fluid card">
+				<div class="content">
+					<div class="header">Terapias</div>
+					<div class="description">
+						<p>{{psicologo.terapia}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <!--        COMENTARIOS-->
-        <!--        https://semantic-ui.com/views/comment.html-->
-    </div>
+		<!---------------------------------------------------------------------------------------------------------------------- COMENTARIOS ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-    <div class="row">
-        <div class="well"></div>
-    </div>
+		<div class='col-sm-4'>
+			<div class="ui comments segment">
+				<h3 class="ui teal dividing header">Comentarios y valoraciones</h3>
+				<div ng-repeat="comentario in comentarios" >
+					<div class="comment" id="comentario">
+						<div class="content">
+							<!--							<a class="author">Elliot Fu</a>-->
+							<div class="metadata">
+								<span class="date">{{comentario.fechaComentario}}</span> 
+							</div>
+							<div class="ui star rating valoraciones" ng-init="iniciarRating(comentario.valoracion)"></div>
+							<div class="text">
+								<p>{{comentario.texto}}</p>
+							</div>
+							<div class="actions" ng-hide="paciente||comentario.respuesta">
+								<a class="reply" ng-click="actFormRespuesta(false)" ng-hide="formRespuesta">Responder</a>
+								<form class="ui reply form" ng-show="formRespuesta">
+									<div class="field">
+										<textarea rows="1" ng-model="respuesta"></textarea>
+									</div>
+									<div class="ui teal fluid submit icon button" ng-click="enviarRespuesta(comentario, respuesta); actFormRespuesta(true)"><i class="icon edit"></i>Enviar respuesta</div>
+								</form>
+							</div>
+						</div>
+
+						<div class="comments" ng-show="comentario.respuesta">
+							<div class="comment">
+								<a class="avatar">
+									<img src="{{psicologo.foto}}">
+								</a>
+								<div class="content">
+									<a class="author">{{psicologo.nombre}}</a>
+									<div class="metadata">
+										<span class="date">{{comentario.fechaRespuesta}}</span>
+									</div>
+									<div class="text">{{comentario.respuesta}}</div>
+
+									<!--
+<div class="actions">
+<a class="reply">Reply</a>
+</div>
+-->
+
+								</div>
+							</div>
+						</div>
+
+						<div class="ui divider"></div>
+
+					</div>
+				</div>
+				<div class="ui borderless menu">
+					<a class="item" id="paginacion" ng-click="mostrarComentarios(numPag)" ng-repeat="numPag in paginas">{{numPag}}</a>
+				</div>
+				<form class="ui reply form" ng-show="paciente">
+					<div class="field">
+						<label>Comentario</label>
+						<textarea rows="2" ng-model="mensaje.texto" placeholder="Escribe aquí tu comentario"></textarea>
+					</div>
+					<div class="field">
+						<label>Valoración <div class="ui star rating"></div></label>
+					</div>
+					<div class="ui teal fluid submit icon button" ng-click="enviarComentario(mensaje)"><i class="icon edit"></i> Añadir commentario</div>
+					<div class="ui positive message" ng-show="msj_exito">
+						<i class="close icon"></i>
+						<div class="header"> Tu comentario ha sido publicado. </div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!--        COMENTARIOS-->
+	<!--        https://semantic-ui.com/views/comment.html-->
 
 </div>

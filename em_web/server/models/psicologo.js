@@ -26,7 +26,8 @@ var psicologoSchema = new Schema(
 		consulta: {
 			online : Boolean,
 			presencial : Boolean
-		}
+		},
+		comentarios : []
 	},
 	{ 
 		collection: 'psicologos' 
@@ -168,6 +169,29 @@ psicologoSchema.methods.filtrar = function(psicologo){
 			}else{
 				resolve(results);
 				console.log(results);
+			}
+		});
+	});
+};
+
+/* Funcion añadir comentarios psicologo */
+psicologoSchema.methods.updateComentarios = function(psicologo) {
+	return new Promise(function(resolve, reject){
+
+		var query = {
+			_id: psicologo._id
+		}
+
+		var datosComentarios = {
+			comentarios: psicologo.comentarios
+		}
+
+		Psicologo.findOneAndUpdate(query, datosComentarios).exec(function(error, results){
+			if(error){
+				console.log("Pacientes - Error en updateComentarios");
+				reject({error: error});
+			}else{
+				resolve(results);
 			}
 		});
 	});
