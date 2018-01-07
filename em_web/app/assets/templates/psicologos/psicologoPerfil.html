@@ -16,6 +16,7 @@
 	<ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
 		<li><a href='#/inicio' class="navegacion">Inicio</a></li>
 		<li><a href='#/usuarios' class="navegacion">Resultados</a></li>
+		<li><a href='#/usuarios/mail' class="navegacion">Mis solicitudes</a></li>
 		<li class="dropdown navegacion">
 			<a class="dropdown-toggle" data-toggle="dropdown" href="#/psicologos/{{psicologo._id}}">Perfil
 				<span class="caret"></span></a>
@@ -66,34 +67,34 @@
 	<div class="row">
 		<div class="col-xs-8 col-xs-offset-2">
 
-			<div class="ui segment info_psicologo">
+			<div class="ui segment" id="info_psicologo">
 				<div class="ui container" >
 					<div class="col-xs-6">
 						<div class="ui left floated small image">
 							<img ng-src="{{psicologo.foto}}">
 						</div>
-						<h2 class="ui header nombre_psicologo">{{psicologo.nombre}}</h2>
-						<!--                                    <div class="ui left floated  star rating" data-rating="3"></div>-->
-						<a>Nº colegiado: {{psicologo.ncolegiado}}</a>
-						<br>
-						<span><i class="marker icon"></i>{{psicologo.localizacion}} </span>
+						<div class="ui right floated">
+							<h2 class="ui header nombre_psicologo">{{psicologo.nombre}}</h2>
+							<div class="ui right floated huge star rating" ng-init="iniciarRating(psicologo.estrellas)"></div> 
+							<p><br><i class="certificate icon"></i> {{psicologo.ncolegiado}}<br>
+								<i class="marker icon"></i>{{psicologo.localizacion}} </p>
+						</div>
 					</div>
 					<div class="col-xs-6">
-						<div class="ui extra content">
-							<span class="ui right aligned container"><h1>{{psicologo.precio}} <i class="euro icon"></i>/ sesión</h1></span>
-							<br>
-							<button type="button" class="ui right floated big teal button" data-target="#contacto_modal" data-toggle="modal">
-								<i class="icon mail"></i> 
-								Contactar
-							</button>
-						</div>
+						<!--						<div class="ui extra content">-->
+						<!--						<span class="ui right aligned container"><h1>{{psicologo.precio}} <i class="euro icon"></i>/ sesión</h1></span>-->
+						<!--						</div>-->
+						<button type="button" class="ui right floated big teal button" data-target="#contacto_modal" data-toggle="modal">
+							<i class="icon mail"></i> 
+							Contactar
+						</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<!---------------------------------------------------------------------------------------------------------------------- FORMULARIO DE CONTACTO: Ventana emergente - overlay ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+	<!-------------------------------------------------------------------------------------------------------------------------- FORMULARIO DE CONTACTO: Ventana emergente - overlay ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 	<div class="ui container">
 		<div class="modal fade" id="contacto_modal">
 			<div class="modal-dialog" role="document">
@@ -104,23 +105,26 @@
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
-						<h4 class="modal-title">Formulario de contacto</h4>
+						<h4 class="modal-title">Pedir cita</h4>
 					</div>
 
 					<!-- Cuerpo del formulario -->
 					<div class="modal-body">
-						<div class="ui form"> 
+						<div class="ui form" id="contacto_form"> 
 							<div class="required field"> 
 								<label>Mensaje</label> 
-								<textarea name="message" rows="4" required class="form-control" id="message" placeholder="Escribe un mensaje"></textarea> 
+								<textarea name="mensaje" rows="4" required class="form-control" placeholder="Escribe un mensaje" ng-model="mensaje.texto"></textarea> 
 							</div>
 							<div class="required field"> 
-								<label>¿Cuando te vendría mejor tener la cita?</label> 
-								<textarea name="message" rows="4" required class="form-control" id="message" placeholder="¿Que días tienes disponibles? ¿Que franja horaria no podría ser?"></textarea> 
+								<label>Preferencias horarias</label> 
+								<textarea name="preferencias" rows="4" required class="form-control" placeholder="¿Cuando te vendría bien tener la cita? ¿Que días tienes disponibles? ¿Que franja horaria no podría ser?" ng-model="mensaje.preferencias"></textarea> 
 							</div> 
 						</div>
+						<div class="ui positive message" ng-show="msj_exito_contacto">
+							<i class="close icon"></i>
+							<div class="header"> Hemos enviado tu mensaje al psicólogo. </div>
+						</div>
 					</div>
-
 
 					<!--
 <div class="col-xs-10 pull-left text-left text-muted"> 
@@ -133,7 +137,7 @@ sed sem dapibus luctus.</small>
 -->
 
 					<div class="modal-footer">
-						<div class="ui green button" ng-click="">Enviar</div>
+						<div class="ui green button" ng-click="enviarMensaje(mensaje)">Enviar</div>
 						<div class="ui grey button"  class="close" data-dismiss="modal" aria-label="Close">Cancelar</div>
 					</div>
 				</div> 
@@ -144,13 +148,13 @@ sed sem dapibus luctus.</small>
 	<!------------------------------------------------------------------------------------------------------------------------------ INFORMACION ESPECIALIZADA DEL PSICOLOGO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 	<div id="info_sec"></div>
-	
+
 	<div class='row'>
 
 		<div class='col-sm-4 col-sm-offset-2'>
 			<div class="ui teal fluid card">
 				<div class="content">
-					<div class="header">Formación</div>
+					<div class="ui teal header">Formación</div>
 					<div class="description">
 						<p>{{psicologo.formacion}}</p>
 					</div>
@@ -159,7 +163,7 @@ sed sem dapibus luctus.</small>
 
 			<div class="ui teal fluid card">
 				<div class="content">
-					<div class="header">Experiencia</div>
+					<div class="ui teal header">Experiencia</div>
 					<div class="description">
 						<p>{{psicologo.experiencia}}</p>
 					</div>
@@ -168,7 +172,7 @@ sed sem dapibus luctus.</small>
 
 			<div class="ui teal fluid card">
 				<div class="content">
-					<div class="header">Especialidad</div>
+					<div class="ui teal header">Especialidad</div>
 					<div class="description">
 						<p>{{psicologo.especialidad}}</p>
 					</div>
@@ -177,7 +181,7 @@ sed sem dapibus luctus.</small>
 
 			<div class="ui teal fluid card">
 				<div class="content">
-					<div class="header">Terapias</div>
+					<div class="ui teal header">Terapias</div>
 					<div class="description">
 						<p>{{psicologo.terapia}}</p>
 					</div>
@@ -190,7 +194,7 @@ sed sem dapibus luctus.</small>
 		<div class='col-sm-4'>
 			<div class="ui comments segment">
 				<h3 class="ui teal dividing header">Comentarios y valoraciones</h3>
-				<div ng-repeat="comentario in comentarios" >
+				<div ng-repeat="comentario in comentarios | orderBy : 'fechaComentario' : true" >
 					<div class="comment" id="comentario">
 						<div class="content">
 							<!--							<a class="author">Elliot Fu</a>-->
@@ -201,8 +205,11 @@ sed sem dapibus luctus.</small>
 							<div class="text">
 								<p>{{comentario.texto}}</p>
 							</div>
+<!--							<div class="actions"  ng-hide="paciente||comentario.respuesta">-->
+								<!--								 ng-click="actFormRespuesta($index, comentarios)" -->
+<!--								<a class="reply" ng-hide="formRespuesta"  ng-click="actFormRespuesta(true)">Responder</a>-->
 							<div class="actions" ng-hide="paciente||comentario.respuesta">
-								<a class="reply" ng-click="actFormRespuesta(false)" ng-hide="formRespuesta">Responder</a>
+								<a class="reply" ng-click="actFormRespuesta(false)" ng-hide="formRespuesta">{{formRespuesta}}Responder</a>
 								<form class="ui reply form" ng-show="formRespuesta">
 									<div class="field">
 										<textarea rows="1" ng-model="respuesta"></textarea>
@@ -223,13 +230,6 @@ sed sem dapibus luctus.</small>
 										<span class="date">{{comentario.fechaRespuesta}}</span>
 									</div>
 									<div class="text">{{comentario.respuesta}}</div>
-
-									<!--
-<div class="actions">
-<a class="reply">Reply</a>
-</div>
--->
-
 								</div>
 							</div>
 						</div>

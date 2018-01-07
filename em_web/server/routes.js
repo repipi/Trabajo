@@ -89,5 +89,6 @@ app.get('/', function(req, res){
 require('./routes/paciente')(app); // paciente routes
 require('./routes/patologia')(app); // patologia routes
 require('./routes/psicologo')(app); // psicologo routes
+require('./routes/mensaje')(app); // mensaje routes
 
 module.exports = app;

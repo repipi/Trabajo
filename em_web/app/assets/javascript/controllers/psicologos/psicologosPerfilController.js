@@ -76,19 +76,30 @@ angular.module('Emozio').controller('PsicologosPerfilController', function(Psico
 
 	/* Funcion que muestra u oculta el formulario de respuesta del psicologo. Por defecto, oculto */
 	//	$scope.formRespuesta=false;
-	$scope.actFormRespuesta = function(estado) {
-		console.log("formRespuesta : "+ estado);
-		if(estado==false){
-			$scope.formRespuesta=true;
-		} else {
-			$scope.formRespuesta=false;
-		}
+	//	$scope.actFormRespuesta = function(estado) {
+	//		console.log("formRespuesta : "+ estado);
+	//		if(estado==false){
+	//			$scope.formRespuesta=true;
+	//		} else {
+	//			$scope.formRespuesta=false;
+	//		}
+	//	}
+
+	$scope.actFormRespuesta = function(position) {	
+		angular.forEach($scope.comentarios, function(formRespuesta, index) {
+			if (position == index) {
+				formRespuesta = true;
+			} else {
+				formRespuesta = false;
+			}
+			//console.log(formRespuesta);
+		});
 	}
 
 	/* Funcion que envia la respuesta del psicologo al comentario */
 	$scope.enviarRespuesta = function(comentario, respuesta){
-
-		comentario.fechaRespuesta = "hoy";
+		var fecha = new Date();
+		comentario.fechaRespuesta =  ("0" + fecha.getDate()).slice(-2) + "/" + ("0" + (fecha.getMonth() + 1)).slice(-2) + "/" + fecha.getFullYear() + "; " + (fecha.getHours()<10?'0':'') + fecha.getHours() + ":" + (fecha.getMinutes()<10?'0':'') + fecha.getMinutes() + ":" + (fecha.getSeconds()<10?'0':'') + fecha.getSeconds();
 		comentario.respuesta = respuesta;
 
 		for(var i=0, l=$scope.comentarios; i<l; i++){
@@ -108,12 +119,11 @@ angular.module('Emozio').controller('PsicologosPerfilController', function(Psico
 
 		if (comentario!=null) {
 			var fecha = new Date();
-
-			comentario.fechaComentario = fecha.getDate() + "/" + (fecha.getMonth() +1) + "/" + fecha.getFullYear() + "; " + fecha.getHours() + ":" + fecha.getMinutes() + ":" + fecha.getSeconds();
+			comentario.fechaComentario =  ("0" + fecha.getDate()).slice(-2) + "/" + ("0" + (fecha.getMonth() + 1)).slice(-2) + "/" + fecha.getFullYear() + "; " + (fecha.getHours()<10?'0':'') + fecha.getHours() + ":" + (fecha.getMinutes()<10?'0':'') + fecha.getMinutes() + ":" + (fecha.getSeconds()<10?'0':'') + fecha.getSeconds();
 			comentario._idPaciente = $scope.paciente._id;
 			comentario._idComentario = comentario.fechaComentario + comentario._idPaciente;
 			console.log(comentario);
-			
+
 			comentario.valoracion = valoracion;
 
 			$scope.psicologo.comentarios.push(comentario);

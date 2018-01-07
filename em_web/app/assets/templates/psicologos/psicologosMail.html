@@ -46,53 +46,206 @@
 	<div class="row">
 		<div class="col-xs-3">
 			<div class="ui vertical menu">
-				<a class="active teal item">Recibidos <div class="ui teal left pointing label">1</div>
+				<a class="{{pendientes}}" ng-click="cambiarMenu(1)">Pendientes <div class="ui teal left pointing label">{{numMsjPendientes}}</div>
 				</a>
-				<a class="item">Spam <div class="ui label">51</div>
+				<a class="{{aceptadas}}" ng-click="cambiarMenu(2)">Aceptadas <div class="ui teal left pointing label">{{numMsjAceptados}}</div>
 				</a>
-				<a class="item">Updates <div class="ui label">1</div>
+				<a class="{{rechazadas}}" ng-click="cambiarMenu(3)">Rechazadas <div class="ui teal left pointing label">{{numMsjRechazados}}</div>
 				</a>
-				<div class="item">
-					<div class="ui transparent icon input">
-						<input type="text" placeholder="Buscar correo...">
-						<i class="search icon"></i>
-					</div>
-				</div>
+			</div>
+			<div ng-repeat="mensaje in mensajes">
+				<div class="jumbotron"></div>
+				<div class="jumbotron"></div>
 			</div>
 		</div>
 
-		<div class="col-xs-9">
-			<div class="ui cards">
-				<div class="ui card">
-					<div class="content">
-<!--						<img class="right floated mini ui image" src="/images/avatar/large/elliot.jpg">-->
-						<div class="header">Elliot Fu </div>
-						<div class="meta">Amigos de Veronika </div>
-						<div class="description">Elliot requested permission to view your contact details </div>
-					</div>
-					<div class="extra content">
-						<div class="ui two buttons">
-							<div class="ui basic green button">Approve</div>
-							<div class="ui basic red button">Declinar</div>
+<!--
+		<div class="jumbotron" ng-show="sin_mensajes">
+			<h3 class="sin_resultados">No hay solicitudes</h3>
+		</div>
+-->
+
+		<div ng-repeat="mensaje in mensajes">
+
+			<div class="col-xs-5">
+				<div class="ui cards">
+					<div class="ui fluid card">
+						<div class="content" id="mensaje">
+							<div class="ui orange top right attached label" ng-hide="mensaje.mensajePsicologo">Pendiente de respuesta</div>
+							<div class="ui green top right attached label" ng-show="mensaje.acepta">Aceptada</div>
+							<div class="ui red top right attached label" ng-show="mensaje.rechaza">Rechazada</div>
+							<div class="meta"> {{mensaje.mensajePaciente.fecha}} </div>
+							<h2 class="ui sub header">Mensaje </h2>
+							<div class="description"> {{mensaje.mensajePaciente.texto}} </div>
+							<h2 class="ui sub header">Preferencias </h2>
+							<div class="description"> {{mensaje.mensajePaciente.preferencias}} </div>
+							<br>
+						</div>
+						<div class="content" id="respuesta" ng-show="mensaje.mensajePsicologo">
+							<div class="meta"> {{mensaje.mensajePsicologo.fecha}} </div>
+							<h2 class="ui sub header">Respuesta </h2>
+							<div class="description"> {{mensaje.mensajePsicologo.comentario}} </div>
+							<h2 class="ui sub header" ng-hide="mensaje.rechaza">Cita </h2>
+							<div class="description" ng-hide="mensaje.rechaza"> <i class="calendar icon"></i> {{mensaje.mensajePsicologo.fechaCita}} </div>
+						</div>
+						<div class="extra content" id="mensaje" ng-hide="mensaje.mensajePsicologo">
+							<div class="ui two buttons">
+								<button class="ui basic green button" ng-click="mensajeSeleccionado(mensaje)" data-target="#acepta_modal" data-toggle="modal">Aceptar</button>
+								<button class="ui basic red button" ng-click="mensajeSeleccioando(mensaje)" data-target="#declina_modal" data-toggle="modal">Declinar</button>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="ui card">
-					<div class="content">
-<!--						<img class="right floated mini ui image" src="/images/avatar/large/jenny.jpg">-->
-						<div class="header">Jenny Hess </div>
-						<div class="meta">Nuevo Miembro </div>
-						<div class="description">Jenny wants to add you to the group <b>best friends</b> </div>
-					</div>
-					<div class="extra content">
-						<div class="ui two buttons">
-							<div class="ui basic green button">Approve</div>
-							<div class="ui basic red button">Declinar</div>
+				<div class="well"></div>
+			</div>
+			<div class="col-xs-3">
+				<div class="ui cards">
+					<div class="card">
+						<div class="content">
+							<div class="meta"> {{mensaje.paciente.genero}} </div>
+							<div class="meta"> <i class="birthday icon"></i> {{mensaje.paciente.edad}} </div>
+							<div class="meta"> <i class="marker icon"></i> {{mensaje.paciente.localizacion}} </div>
+						</div>
+						<div class="extra content">
+							<h4 class="ui teal header">Diagnóstico</h4>
+							<table class="ui very basic collapsing table">
+								<!--
+<thead>
+<tr>
+<th class="ui teal">Patología</th>
+<th class="ui teal">%</th>
+</tr>
+</thead>
+-->
+								<tbody>
+									<tr ng-repeat="diagnostico in mensaje.paciente.diagnostico" >
+										<td id="tabla_diagnostico">
+											<h5 class="ui header">{{diagnostico.patologia.nombre}} </h5>
+										</td>
+										<td id="tabla_diagnostico">
+											<h5 class="ui header">{{diagnostico.porcentaje}}%</h5>
+										</td>
+									</tr>
+								</tbody> 
+							</table>
+						</div>
+						<div class="extra content" ng-show="mensaje.acepta">
+							<!-- Datos ocultos -->
+							<h4 class="ui teal header">Datos de contacto</h4>
+							<p><i class="mail icon"></i> {{mensaje.paciente.email}}</p>
+							<p><i class="call icon"></i> {{mensaje.paciente.telefono}}</p>
 						</div>
 					</div>
 				</div>
+				<div class="well"></div>
 			</div>
 		</div>
+	</div>
+</div>
+
+<!-------------------------------------------------------------------------------------------------------------------------- FORMULARIO DE ACEPTAR LA CITA: Ventana emergente - overlay ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="ui container">
+	<div class="modal fade" id="acepta_modal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+
+				<!-- Titulo -->
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">Aceptar la cita</h4>
+				</div>
+
+				<!-- Cuerpo del formulario -->
+				<div class="modal-body">
+					<div class="ui form" id="acepta_form"> 
+						<div class="required field"> 
+							<label>Mensaje</label> 
+							<textarea name="mensaje" rows="4" required class="form-control" placeholder="Escribe un mensaje" ng-model="mensaje.texto"></textarea> 
+						</div>
+						<div class="required field"> 
+							<p><label>Dale una cita</label> <i class="help circle icon link" id="ayuda_cita" data-content="Pasos: 
+								1. Selecciona el día del mes.
+								2. Selecciona la hora. 
+								3. Selecciona los minutos." data-variation="wide"></i></p>
+							<div class="ui calendar" id="cita" name="cita">
+								<div class="ui input left icon">
+									<i class="calendar icon"></i>
+									<input type="text" placeholder="Fecha y hora" ng-model="mensaje.fechaCita">
+								</div>
+							</div>
+						</div> 
+					</div>
+					<div class="ui positive message" ng-show="msj_exito_contacto">
+						<i class="close icon"></i>
+						<div class="header"> Hemos enviado la cita al paciente. </div>
+					</div>
+				</div>
+
+				<!--
+<div class="col-xs-10 pull-left text-left text-muted"> 
+<small><strong>Aviso:</strong>
+Lorem ipsum dolor sit amet consectetur adipiscing elit. 
+Mauris vitae libero lacus, vel hendrerit nisi! Maecenas quis 
+velit nisl, volutpat viverra felis. Vestibulum luctus mauris 
+sed sem dapibus luctus.</small> 
+</div> 
+-->
+
+				<div class="modal-footer">
+					<div class="ui green button" ng-click="enviarMensaje(mensaje)">Enviar</div>
+					<div class="ui grey button"  class="close" data-dismiss="modal" aria-label="Close">Cancelar</div>
+				</div>
+			</div> 
+		</div> 
+	</div>
+</div>
+
+<!-------------------------------------------------------------------------------------------------------------------------- FORMULARIO DE DECLINAR LA CITA: Ventana emergente - overlay ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="ui container">
+	<div class="modal fade" id="declina_modal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+
+				<!-- Titulo -->
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">Declinar la cita</h4>
+				</div>
+
+				<!-- Cuerpo del formulario -->
+				<div class="modal-body">
+					<div class="ui form" id="rechaza_form"> 
+						<div class="required field"> 
+							<label>Motivo</label> 
+							<textarea name="mensaje" rows="4" required class="form-control" placeholder="Escribe un mensaje" ng-model="mensaje.texto"></textarea> 
+						</div>
+					</div>
+					<div class="ui positive message" ng-show="msj_exito_contacto">
+						<i class="close icon"></i>
+						<div class="header"> Hemos enviado el mensaje al paciente. </div>
+					</div>
+				</div>
+
+				<!--
+<div class="col-xs-10 pull-left text-left text-muted"> 
+<small><strong>Aviso:</strong>
+Lorem ipsum dolor sit amet consectetur adipiscing elit. 
+Mauris vitae libero lacus, vel hendrerit nisi! Maecenas quis 
+velit nisl, volutpat viverra felis. Vestibulum luctus mauris 
+sed sem dapibus luctus.</small> 
+</div> 
+-->
+
+				<div class="modal-footer">
+					<div class="ui green button" ng-click="enviarRechazo(mensaje)">Enviar</div>
+					<div class="ui grey button"  class="close" data-dismiss="modal" aria-label="Close">Cancelar</div>
+				</div>
+			</div> 
+		</div> 
 	</div>
 </div>
 

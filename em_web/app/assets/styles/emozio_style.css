@@ -227,3 +227,50 @@
 #info_sec {
 	margin-top: 10px;
 }
+
+#info_psicologo {
+	background-color: rgba(0,128,128, 0.7);
+}
+
+/************************************************************************************************************************** MAIL PSICOLOGO ***************************************************************************************************************************/
+#mensaje {
+	background-color: whitesmoke;
+	color: black;
+}
+
+#respuesta {
+	background-color: rgba(0,128,128, 0.5);
+}
+
+#respuesta .description {
+	color: white;
+}
+
+#acepta_modal {
+	color: black;
+}
+
+#acepta_modal .modal-header {
+	background-color: teal;
+}
+
+#acepta_modal h4 {
+	color:white;
+}
+
+#declina_modal {
+	color: black;
+}
+
+#declina_modal .modal-header {
+	background-color: teal;
+}
+
+#declina_modal h4 {
+	color:white;
+}
+
+#tabla_diagnostico {
+	background-color: white;
+	color: black;
+}

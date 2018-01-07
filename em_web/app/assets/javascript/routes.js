@@ -45,10 +45,22 @@ angular.module('Emozio').config(function($routeProvider){
 		controller: "PacientesModificarController"
 	})
 
+	/* Peticiones enviadas por el paciente */
+		.when('/usuarios/mail', {
+		templateUrl: "assets/templates/pacientes/pacientesMail.html",
+		controller: "PacientesMailController"
+	})
+
 	/* Modificar datos del psicologo */
 		.when('/psicologos/modificar', {
 		templateUrl: "assets/templates/psicologos/psicologosModificar.html",
 		controller: "PsicologosModificarController"
+	})
+
+	/* Calendario psicologos */
+		.when('/psicologos/calendario', {
+		templateUrl: "assets/templates/psicologos/psicologoCalendario.html",
+		controller: "PsicologosCalendarioController"
 	})
 
 	/* Perfil de psicologos */

@@ -1,0 +1,108 @@
+<!---------------------------------------------------------------------------------------------------------------------------------- BARRA DE NAVEGACION --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<nav class='container navbar-inverse' role='navigation' >
+	<div class='navbar-header'>
+		<a href='#/inicio' class='navbar-brand logo'>
+			<img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
+		</a>
+		<button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
+			<span class='sr-only'>Toggle navigation</span>
+			<span class='icon-bar'></span>
+			<span class='icon-bar'></span>
+			<span class='icon-bar'></span>
+		</button>
+	</div>
+
+	<ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
+		<li><a href='#/inicio' class="navegacion">Inicio</a></li>
+		<li><a href='#/usuarios' class="navegacion">Resultados</a></li>
+		<li><a href='#/usuarios/mail' class="navegacion seleccionado">Mis solicitudes</a></li>
+		<li class="dropdown navegacion">
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#/usuarios/mail">Perfil
+				<span class="caret"></span></a>
+			<ul class="dropdown-menu navegacion_transparente">
+				<li><a href='#/usuarios/modificar'>Modificar mis datos</a></li>
+				<li class='divider'></li>
+				<li><a ng-click="salir()">Salir</a></li>
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+<div class="container">
+
+	<div class="row">
+
+		<div class="col-xs-3">
+			<div class="ui vertical menu">
+				<a class="{{pendientes}}" ng-click="cambiarMenu(1)">Pendientes <div class="ui teal left pointing label">{{numMsjPendientes}}</div>
+				</a>
+				<a class="{{aceptadas}}" ng-click="cambiarMenu(2)">Aceptadas <div class="ui teal left pointing label">{{numMsjAceptados}}</div>
+				</a>
+				<a class="{{rechazadas}}" ng-click="cambiarMenu(3)">Rechazadas <div class="ui teal left pointing label">{{numMsjRechazados}}</div>
+				</a>
+			</div>
+			<div ng-repeat="mensaje in mensajes">
+				<div class="jumbotron"></div>
+				<div class="jumbotron"></div>
+			</div>
+		</div>
+
+<!--
+		<div class="jumbotron" ng-show="sin_mensajes">
+			<h3 class="sin_resultados">No hay solicitudes</h3>
+		</div>
+-->
+
+		<div ng-repeat="mensaje in mensajes">
+
+			<div class="col-xs-5">
+				<div class="ui cards">
+					<div class="ui fluid card">
+						<div class="content" id="mensaje">
+							<div class="ui orange top right attached label" ng-hide="mensaje.mensajePsicologo">Pendiente de respuesta</div>
+							<div class="ui green top right attached label" ng-show="mensaje.acepta">Aceptada</div>
+							<div class="ui red top right attached label" ng-show="mensaje.rechaza">Rechazada</div>
+							<div class="meta"> {{mensaje.mensajePaciente.fecha}} </div>
+							<h2 class="ui sub header">Mensaje </h2>
+							<div class="description"> {{mensaje.mensajePaciente.texto}} </div>
+							<h2 class="ui sub header">Preferencias </h2>
+							<div class="description"> {{mensaje.mensajePaciente.preferencias}} </div>
+							<br>
+						</div>
+						<div class="content" id="respuesta" ng-show="mensaje.mensajePsicologo">
+							<div class="meta"> {{mensaje.mensajePsicologo.fecha}} </div>
+							<h2 class="ui sub header">Respuesta </h2>
+							<div class="description"> {{mensaje.mensajePsicologo.comentario}} </div>
+							<h2 class="ui sub header" ng-hide="mensaje.rechaza">Cita </h2>
+							<div class="description" ng-hide="mensaje.rechaza"> <i class="calendar icon"></i> {{mensaje.mensajePsicologo.fechaCita}} </div>
+						</div>
+					</div>
+				</div>
+				<div class="well"></div>
+			</div>
+			<div class="col-xs-3">
+				<div class="ui cards">
+					<div class="card">
+						<div class="content">
+							<img class="right floated tiny ui image" src="{{mensaje.psicologo.foto}}">
+							<div class="header"> {{mensaje.psicologo.nombre}} </div> <br>
+							<div class="meta"><i class="birthday icon"></i> {{mensaje.psicologo.edad}}</div>
+							<div class="meta"> {{mensaje.psicologo.genero}} </div>
+							<div class="meta">  <i class="marker icon"></i> {{mensaje.psicologo.localizacion}} </div>
+							<!--						<div class="description"> {{mensaje.psicologo.horario}} </div>-->
+						</div>
+						<div class="extra content" ng-show="mensaje.acepta">
+							<!-- Datos ocultos -->
+							<h4 class="ui teal header">Datos de contacto</h4>
+							<p><i class="mail icon"></i> {{mensaje.psicologo.email}}</p>
+							<p><i class="call icon"></i> {{mensaje.psicologo.telefono}}</p>
+						</div>
+						<a class="ui teal bottom attached button" href="#/psicologos/{{mensaje._idPsicologo}}">Perfil psicólogo</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

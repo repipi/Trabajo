@@ -191,6 +191,9 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
 					if($scope.paciente.diagnostico[i].porcentaje < 0.5){
 						/* Elimino en el array de diagnosticos ese diagnostico */
 						$scope.paciente.diagnostico.splice(i, 1);
+					} else {
+						/* Se redondea a 2 decimales */
+						$scope.paciente.diagnostico[i].porcentaje = Math.round($scope.paciente.diagnostico[i].porcentaje * 100) / 100;
 					}
 				}
 

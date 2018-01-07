@@ -16,6 +16,7 @@
 	<ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
 		<li class="navegacion"><a href='#/inicio'>Inicio</a></li>
 		<li class="navegacion seleccionado"><a href='#/usuarios'>Resultados</a></li>
+		<li><a href='#/usuarios/mail' class="navegacion">Mis solicitudes</a></li>
 		<li class="dropdown navegacion">
 			<a class="dropdown-toggle" data-toggle="dropdown" href="#/usuarios">Perfil
 				<span class="caret"></span></a>
@@ -129,7 +130,7 @@ Seguro {{psicologo.seguro}}
 
 			<div>
 				<div class="{{cuadro_mensaje}}">
-					<h3 class="sin_resultados">{{mensaje}}</h3>
+					<h3 class="sin_resultados">{{mensajeResultados}}</h3>
 				</div>
 			</div>
 
@@ -145,20 +146,18 @@ Seguro {{psicologo.seguro}}
 							</div>
 							<div class="content">
 								<a class="header" href="#/psicologos/{{psicologo._id}}">{{psicologo.nombre}}</a>
-								<div class="ui star rating" data-rating="3"></div>
-								<div class="meta">
-									<a>Nº colegiado: {{psicologo.ncolegiado}}</a>
-								</div>
+								<div class="ui right floated star rating valoraciones" ng-init="iniciarRating(psicologo.estrellas)"></div>
+								<div class="meta"><i class="certificate icon"></i> {{psicologo.ncolegiado}} </div>
 								<div class="description">{{psicologo.experiencia}} </div>
 							</div>
 							<div class="extra content">
-								<span class="right floated">{{psicologo.precio}} <i class="euro icon"></i>/ sesion</span>
+								<span class="right floated">{{psicologo.precio}} <i class="euro icon"></i>/ sesión</span>
 								<span><i class="marker icon"></i>{{psicologo.localizacion}} </span>
 							</div>
 
-							<button type="button" id="contactar" class="ui teal bottom attached button" data-target="#contacto_modal" data-toggle="modal" data-id="psicologo._id">
-								<i class="icon mail"></i> 
-								Contactar</button>
+							<button type="button" id="contactar" class="ui teal bottom attached button" data-target="#contacto_modal" data-toggle="modal" data-id="psicologo._id" ng-click="psicologoSeleccionado(psicologo)">
+								<i class="calendar outline icon"></i>
+								Pedir cita</button>
 						</div>
 					</div>  
 				</div>
@@ -178,20 +177,24 @@ Seguro {{psicologo.seguro}}
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title">Formulario de contacto</h4>
+					<h4 class="modal-title">Pedir cita</h4>
 				</div>
 
 				<!-- Cuerpo del formulario -->
 				<div class="modal-body">
-					<div class="ui form"> 
+					<div class="ui form" id="contacto_form"> 
 						<div class="required field"> 
 							<label>Mensaje</label> 
 							<textarea name="mensaje" rows="4" required class="form-control" placeholder="Escribe un mensaje" ng-model="mensaje.texto"></textarea> 
 						</div>
 						<div class="required field"> 
-							<label>¿Cuando te vendría mejor tener la cita?</label> 
-							<textarea name="preferencias" rows="4" required class="form-control" placeholder="¿Que días tienes disponibles? ¿Que franja horaria no podría ser?" ng-model="mensaje.preferencias"></textarea> 
+							<label>Preferencias horarias</label> 
+							<textarea name="preferencias" rows="4" required class="form-control" placeholder="¿Cuando te vendría bien tener la cita? ¿Que días tienes disponibles? ¿Que franja horaria no podría ser?" ng-model="mensaje.preferencias"></textarea> 
 						</div> 
+					</div>
+					<div class="ui positive message" ng-show="msj_exito_contacto">
+						<i class="close icon"></i>
+						<div class="header"> Hemos enviado tu mensaje al psicólogo. </div>
 					</div>
 				</div>
 

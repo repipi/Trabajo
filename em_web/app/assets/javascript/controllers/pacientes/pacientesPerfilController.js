@@ -11,18 +11,38 @@ angular.module('Emozio').controller('PacientesPerfilController', function(Pacien
 
 			/* Si el paciente no tiene diagnostico, no existen resultados */
 			if(!$scope.paciente.diagnostico.length){
-				$scope.cuadro_mensaje="jumbotron";
-				$scope.mensaje="No hay resultados actualmente";
+				$scope.cuadro_mensajeResultados="jumbotron";
+				$scope.mensajeResultados="No hay resultados actualmente";
 			} else { /* Si el paciente tiene diagnostico */
 				/* Pero al paciente no se le han asignado psicologos (los resultados no son concluyentes) */
 				if(!$scope.psicologos.length){
-					$scope.cuadro_mensaje="jumbotron";
-					$scope.mensaje="Los resultados no han sido concluyentes";
+					$scope.cuadro_mensajeResultados="jumbotron";
+					$scope.mensajeResultados="Los resultados no han sido concluyentes";
 				}
 			}
 		}
 
 	});
+
+	/* Activamos el rating */
+	var valoracion = 0;
+	$(".rating").rating({
+		initialRating: 0,
+		maxRating: 5,
+		onRate: function (rating) {
+			valoracion = rating;
+		}
+	});
+
+	$scope.iniciarRating = function(val){
+		$(".valoraciones").rating({
+			initialRating: val,
+			maxRating: 5
+		});
+
+		/* Ponemos las valoraciones de solo lectura */
+		$(".valoraciones").rating('disable');
+	}
 
 	/* Funcion del boton "Hacer el test" */
 	$scope.hacer=function(){
@@ -115,13 +135,80 @@ angular.module('Emozio').controller('PacientesPerfilController', function(Pacien
 	//		$("#psicologoId").val(psicologoId);
 	//	});
 
+	/* Validacion de formulario de registro */
+	$('#contacto_form').form({
+		on : 'blur',
+		inline: 'false',
+		fields : {
+			mensaje : {
+				identifier : 'mensaje',
+				rules : [
+					{
+						type : 'empty',
+						prompt : 'Por favor, introduce un mensaje.'
+					},
+					{
+						type: 'maxLength[500]',
+						prompt: 'Demasiados carácteres.'
+					}
+				]
+			},      
+			preferencias: {
+				identifier: 'preferencias',
+				rules: [
+					{
+						type: 'empty',
+						prompt: 'Por favor, introduce tus preferencias.'
+					},
+					{
+						type: 'maxLength[300]',
+						prompt: 'Demasiados carácteres.'
+					}
+				]
+			}
+		}
+	}); 
+
+	/* Establece cual es el psicologo que ha sido seleccionado */
+	$scope.psicologo = {};
+	$scope.psicologoSeleccionado = function(psicologo) {
+		$scope.psicologo._id = psicologo._id;
+
+		Psicologo.GetByParams($scope.psicologo._id).then(function(data){
+			$scope.psicologo=Object.values(data.data)[0];
+		});
+	}
+
+	$scope.msj_exito_contacto = false;
 	$scope.enviarMensaje = function(mensaje) {
-		var fecha = new Date();
-		mensaje.fecha = fecha.getDate() + "/" + (fecha.getMonth() +1) + "/" + fecha.getFullYear() + "; " + fecha.getHours() + ":" + fecha.getMinutes() + ":" + fecha.getSeconds();
-		mensaje._idPsicologo = "5a0c11f3665533169c64fa54";
-		console.log(mensaje);
-		
-		Mensaje.SendMsg(mensaje);
+
+		if($('#contacto_form').form('is valid')) {
+
+			var mensajeEnviado = {
+				psicologo : {
+					_id : $scope.psicologo._id,
+					nombre : $scope.psicologo.nombre,
+					genero : $scope.psicologo.genero,
+					edad : $scope.psicologo.edad,
+					email : $scope.psicologo.email,
+					telefono : $scope.psicologo.telefono,
+					localizacion : $scope.psicologo.localizacion,
+					foto : $scope.psicologo.foto
+				},
+				texto : mensaje.texto,
+				preferencias : mensaje.preferencias
+			}
+
+			Mensaje.SendMsg(mensajeEnviado);
+
+			$scope.msj_exito_contacto = true;
+
+			setTimeout(function(){
+				$location.path("/usuarios"); 
+				$window.location.reload();
+			}, 1000);
+
+		}
 	}
 
 	/* Funcion salir que cierra la sesion */

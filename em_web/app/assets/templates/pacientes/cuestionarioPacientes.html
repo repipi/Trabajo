@@ -1,149 +1,150 @@
 <!---------------------------------------------------------------------------------------------------------------------------------- BARRA DE NAVEGACION --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <nav class='container navbar-inverse' role='navigation' >
-    <div class='navbar-header'>
-        <a href='#/inicio' class='navbar-brand logo'>
-            <img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
-        </a>
-        <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
-            <span class='sr-only'>Toggle navigation</span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-        </button>
-    </div>
+	<div class='navbar-header'>
+		<a href='#/inicio' class='navbar-brand logo'>
+			<img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
+		</a>
+		<button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
+			<span class='sr-only'>Toggle navigation</span>
+			<span class='icon-bar'></span>
+			<span class='icon-bar'></span>
+			<span class='icon-bar'></span>
+		</button>
+	</div>
 
-    <ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
-        <li><a href='#/inicio' class="navegacion">Inicio</a></li>
-        <li><a href='#/usuarios' class="navegacion">Resultados</a></li>
-        <li class="dropdown navegacion">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#/cuestionario/1">Perfil
-                <span class="caret"></span></a>
-            <ul class="dropdown-menu navegacion_transparente">
-                <li><a href='#/usuarios/modificar'>Modificar mis datos</a></li>
-                <li class='divider'></li>
-                <li><a ng-click="salir()">Salir</a></li>
-            </ul>
-        </li>
-    </ul>
+	<ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
+		<li><a href='#/inicio' class="navegacion">Inicio</a></li>
+		<li><a href='#/usuarios' class="navegacion">Resultados</a></li>
+		<li><a href='#/usuarios/mail' class="navegacion">Mis solicitudes</a></li>
+		<li class="dropdown navegacion">
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#/cuestionario/1">Perfil
+				<span class="caret"></span></a>
+			<ul class="dropdown-menu navegacion_transparente">
+				<li><a href='#/usuarios/modificar'>Modificar mis datos</a></li>
+				<li class='divider'></li>
+				<li><a ng-click="salir()">Salir</a></li>
+			</ul>
+		</li>
+	</ul>
 </nav>
 
 <div class='ui container'>
 
-    <!------------------------------------------------------------------------------------------------------------------------------ TITULO--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+	<!------------------------------------------------------------------------------------------------------------------------------ TITULO--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-<!--
-    <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
-            <div class="ui center aligned container">
-                <div class="ui one column grid">
-                    <div class="one column row">
-                        <div class="column">
-                            <h1 class="ui header nombre_test">Test de asignación</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
+	<!--
+<div class="row">
+<div class="col-sm-6 col-sm-offset-3">
+<div class="ui center aligned container">
+<div class="ui one column grid">
+<div class="one column row">
+<div class="column">
+<h1 class="ui header nombre_test">Test de asignación</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
 -->
 
-    <!------------------------------------------------------------------------------------------------------------------------------ CONSEJOS ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
-    <div class="row">
-        <div class="ui container">
-            <div class="col-sm-6 col-sm-offset-3">
-                <div class="ui center aligned grid">
-                    <div class="five wide column">
-                        <div class="ui center aligned items">
-                            <div class="ui tiny image">
-                                <img src="/assets/images/reloj.png">
-                            </div>
-                            <br>
-                            <div class="center aligned content">Menos de 30 minutos</div>
-                        </div>
-                    </div>
-                    <div class="five wide column">
-                        <div class="ui center aligned item">
-                            <div class="ui tiny image">
-                                <img src="/assets/images/angel_emoji.png">
-                            </div>
-                            <br>
-                            <div class="center aligned content">Responde honestamente</div>
-                        </div>
-                    </div>
-                    <div class="five wide column">
-                        <div class="ui center aligned item">
-                            <div class="ui tiny image">
-                                <img src="/assets/images/diana.png">
-                            </div>
-                            <br>
-                            <div class="center aligned content">Sé preciso</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
+	<!------------------------------------------------------------------------------------------------------------------------------ CONSEJOS ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+	<div class="row">
+		<div class="ui container">
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="ui center aligned grid">
+					<div class="five wide column">
+						<div class="ui center aligned items">
+							<div class="ui tiny image">
+								<img src="/assets/images/reloj.png">
+							</div>
+							<br>
+							<div class="center aligned content">Menos de 30 minutos</div>
+						</div>
+					</div>
+					<div class="five wide column">
+						<div class="ui center aligned item">
+							<div class="ui tiny image">
+								<img src="/assets/images/angel_emoji.png">
+							</div>
+							<br>
+							<div class="center aligned content">Responde honestamente</div>
+						</div>
+					</div>
+					<div class="five wide column">
+						<div class="ui center aligned item">
+							<div class="ui tiny image">
+								<img src="/assets/images/diana.png">
+							</div>
+							<br>
+							<div class="center aligned content">Sé preciso</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
 
-    <!------------------------------------------------------------------------------------------------------------------------------ BARRA DE PROGRESO --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <div class="ui container">
-        <div class="row">
-            <div class="col-sm-6 col-sm-offset-3">
-                <div class="item">
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
-                             aria-valuenow="{{progress_bar}}" aria-valuemin="0" aria-valuemax="100" style="width:{{progress_bar}}%">
-                            {{progress_bar}}% completado
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<!------------------------------------------------------------------------------------------------------------------------------ BARRA DE PROGRESO --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+	<div class="ui container">
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="item">
+					<div class="progress">
+						<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+							 aria-valuenow="{{progress_bar}}" aria-valuemin="0" aria-valuemax="100" style="width:{{progress_bar}}%">
+							{{progress_bar}}% completado
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <!------------------------------------------------------------------------------------------------------------------------------ CUESTIONARIO -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <form>
-        <div class="form-group" data-ng-init="mostrarPreg()"> <!-- Se define el grupo de elementos que conforman el formulario -->
-            <div ng-repeat="pregunta in preguntas"> <!-- Cada columna sera un elemento pregunta del array de preguntas el cual se obtiene del controlador -->
-                <div class="ui container">
-                    <div class="ui form">
-                        <div class="ui fields"> 
-                            <div class="col-sm-6 col-sm-offset-3"> <!-- Definimos el tamaño, formato y color de la caja -->
-                                <!-- Identificamos el elemento como formulario checklist -->
-                                <!-- Para cada elemento seleccionado como cierto, a la pregunta se le añade el atributo SELECTED
+	<!------------------------------------------------------------------------------------------------------------------------------ CUESTIONARIO -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+	<form>
+		<div class="form-group" data-ng-init="mostrarPreg()"> <!-- Se define el grupo de elementos que conforman el formulario -->
+			<div ng-repeat="pregunta in preguntas"> <!-- Cada columna sera un elemento pregunta del array de preguntas el cual se obtiene del controlador -->
+				<div class="ui container">
+					<div class="ui form">
+						<div class="ui fields"> 
+							<div class="col-sm-6 col-sm-offset-3"> <!-- Definimos el tamaño, formato y color de la caja -->
+								<!-- Identificamos el elemento como formulario checklist -->
+								<!-- Para cada elemento seleccionado como cierto, a la pregunta se le añade el atributo SELECTED
 ng-true-value es el valor que toma cuando esta seleccionado, y ng-false-value cuando esta deseleccinado-->
-                                <!-- Imprimimos el campo pregunta del objeto pregunta -->
-                                <div class="field">
+								<!-- Imprimimos el campo pregunta del objeto pregunta -->
+								<div class="field">
 
-                                    <div class="ui fluid card">
-                                        <div class="content">
-                                            <h5 class="pregunta"><i class="large teal help icon"></i> {{pregunta.pregunta}}</h5>
-                                        </div>
-                                        <div class="ui bottom attached fluid buttons" ng-model="pregunta.SELECTED">
-                                            <button class="ui {{press_yes}} button"  ng-click='pregunta.SELECTED=1;press_yes="teal";press_no=""'>Si</button>
-                                            <div class="or"  data-text="o"></div>
-                                            <button class="ui {{press_no}} button" ng-click='pregunta.SELECTED=0;press_yes="";press_no="teal"'>No</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-sm-offset-3">
-                <!-- Boton Enviar que ejecuta la funcion check(preguntas) con su accionamiento -->
-                <div class="ui animated fluid teal button" tabindex="0" ng-click="check(preguntas)">
-                    <div class="visible content">{{submit}}</div>
-                    <div class="hidden content">
-                        <i class="white right arrow icon"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br><br>
-    </form>
+									<div class="ui fluid card">
+										<div class="content">
+											<h5 class="pregunta"><i class="large teal help icon"></i> {{pregunta.pregunta}}</h5>
+										</div>
+										<div class="ui bottom attached fluid buttons" ng-model="pregunta.SELECTED">
+											<button class="ui {{press_yes}} button"  ng-click='pregunta.SELECTED=1;press_yes="teal";press_no=""'>Si</button>
+											<div class="or"  data-text="o"></div>
+											<button class="ui {{press_no}} button" ng-click='pregunta.SELECTED=0;press_yes="";press_no="teal"'>No</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-sm-offset-3">
+				<!-- Boton Enviar que ejecuta la funcion check(preguntas) con su accionamiento -->
+				<div class="ui animated fluid teal button" tabindex="0" ng-click="check(preguntas)">
+					<div class="visible content">{{submit}}</div>
+					<div class="hidden content">
+						<i class="white right arrow icon"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+	</form>
 
 </div>
