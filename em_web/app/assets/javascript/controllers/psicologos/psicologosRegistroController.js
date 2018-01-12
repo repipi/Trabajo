@@ -2,11 +2,12 @@ angular.module('Emozio').controller('PsicologosRegistroController', function(Pac
 
 	/* Recuperamos al paciente para comprobar que tiene la sesion iniciada */
 	Paciente.GetById().then(function(data){
-		if(!data.data) {
+		if(!data.data) {  /* Si el paciente no ha iniciado la sesion, no se obtendra */
 			/* Validacion de formulario de registro */
 			$('#access_form').form({
-				on : 'blur',
-				inline: 'false',
+				on : 'blur', /* Cada elemento se evalua por separado */
+				inline: 'false', /* Los mensajes de validacion no se disponen en linea */
+				/* Campos a validar: Identificador y reglas a evaluar */
 				fields : {
 					email : {
 						identifier : 'email',
@@ -32,34 +33,34 @@ angular.module('Emozio').controller('PsicologosRegistroController', function(Pac
 					}
 				}
 			}); 
-		} else {
-			$location.path("/inicio");
+		} else { /* Si no */
+			$location.path("/inicio"); /* Se redirige a la pagina de inicio */
 		}
 	});
 
-	/******************************************************************************************************************************* Google Place API Web Service *********************************************************************************************************************************/
+	/* Google Place API Web Service */
 	var autocomplete;   
 	var place;
 
+	/* Funcion que inicializa el autocompletado de Google */
 	$scope.initAutocomplete = function() {
-
-		// Create the autocomplete object, restricting the search to geographical
-		// location types.
+		/* Se crea el objeto de autocompletado, restringiendolo la busqueda a los tipos geograficos */
 		autocomplete = new google.maps.places.Autocomplete(
-			/** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-			{ types: ['(cities)'],
-			 componentRestrictions: {country: "es"}});
+			(document.getElementById('autocomplete')),
+			{ types: ['(cities)'], /* Se buscaran ciudades */
+			 componentRestrictions: {country: "es"}}); /* Restringidas dentro de España */
 
-		// When the user selects an address from the dropdown, populate the address
-		// fields in the form.
+		/* Cuando el usuario selecciona una opcion del desplegable, se ejecuta la funcion indicada */
 		autocomplete.addListener('place_changed', fillInAddress);
 
+		/* Funcion que recupera el lugar escogido en el autocompletado */
 		function fillInAddress() {
-			// Get the place details from the autocomplete object.
+			/* Toma los detalles del lugar del objeto de autocompletado */
 			place = autocomplete.getPlace();
 		}
 	}
 
+	/* Funcion que establece los valores de geolocalizacion */
 	$scope.geolocate = function() {
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function(position) {
@@ -76,26 +77,28 @@ angular.module('Emozio').controller('PsicologosRegistroController', function(Pac
 		}
 	}
 
+	/* Cuando se apunta al elemento autocomplete, se inicia la funcion geolocate */
 	$("#autocomplete").focus(function() {
 		$scope.geolocate();
 	});
 
-	/* Edad paciente */
-	var edad;
+	var edad; /* Edad del paciente */
 
+	/* Se genera el calendario */
 	$('#edad').calendar({
-		type: 'date',
-		onChange: function (date, text) {
-			edad = text;
+		type: 'date', /* El tipo es una fecha */
+		onChange: function (date, text) { /* Cuando se rellena el campo */
+			edad = text; /* Se establece que la edad es el contenido */
 		}
 	});
 
 	/************************************************************************************************************************** Validacion de formularios **********************************************************************************************************************************/
 
-	/* Validacion de formulario de registro */
+	/* Validacion de formulario de acceso */
 	$('#access_form').form({
-		on : 'blur',
-		inline: 'false',
+		on : 'blur', /* Cada elemento se evalua por separado */
+		inline: 'false', /* Los mensajes de validacion no se disponen en linea */
+		/* Campos a validar: Identificador y reglas a evaluar */
 		fields : {
 			email : {
 				identifier : 'email',
@@ -130,10 +133,11 @@ angular.module('Emozio').controller('PsicologosRegistroController', function(Pac
 		}
 	}); 
 
-	/* Validacion de formulario de registro */
+	/* Validacion de formulario de registro - Parte 2 */
 	$('#register_form_2').form({
-		on : 'blur',
-		inline: 'true',
+		on : 'blur', /* Cada elemento se evalua por separado */
+		inline: 'true', /* Los mensajes de validacion se disponen en linea */
+		/* Campos a validar: Identificador y reglas a evaluar */
 		fields : {
 			nombre : {
 				identifier : 'nombre',
@@ -168,11 +172,11 @@ angular.module('Emozio').controller('PsicologosRegistroController', function(Pac
 						type : 'empty',
 						prompt : 'Por favor, introduce tu fecha de nacimiento.'
 					}
-//					,
-//					{
-//						type : 'integer[18..100]',
-//						prompt : 'Debe ser mayor de edad.'
-//					}
+					//					,
+					//					{
+					//						type : 'integer[18..100]',
+					//						prompt : 'Debe ser mayor de edad.'
+					//					}
 				]
 			},
 			email : {
@@ -226,9 +230,11 @@ angular.module('Emozio').controller('PsicologosRegistroController', function(Pac
 		}
 	}); 
 
+	/* Validacion de formulario de registro - Parte 3 */
 	$('#register_form_3').form({
-		on : 'blur',
-		inline: 'true',
+		on : 'blur', /* Cada elemento se evalua por separado */
+		inline: 'true', /* Los mensajes de validacion se disponen en linea */
+		/* Campos a validar: Identificador y reglas a evaluar */
 		fields : {
 			ncolegiado : {
 				identifier : 'ncolegiado',
@@ -297,6 +303,7 @@ angular.module('Emozio').controller('PsicologosRegistroController', function(Pac
 			}
 		}
 	}); 
+
 	/**********************************************************************************************************************************Formulario de acceso **********************************************************************************************************************************/
 
 	/* Se establece el mensaje de control de acceso */
@@ -311,17 +318,15 @@ angular.module('Emozio').controller('PsicologosRegistroController', function(Pac
 		Paciente.LogIn(paciente).then(function(data){
 			pacienteConectado=Object.values(data.data);
 
-			//			console.log("psico conectado");
-
 			/* Si existe el paciente en cuestion, se reconduce a su pagina de resultados */
 			if (pacienteConectado!=null) {
-				$scope.msj_error=false;
+				$scope.msj_error=false; /* Se oculta el mensaje de error */
 
 				/* Si se trata de un psicologo */
 				if(data.data.formacion!=null){
-					$location.path("/mail");
+					$location.path("/mail"); /* Se redirige a la pagina de la bandeja de entrada */
 				} else { /* Si es un paciente */
-					$location.path("/usuarios");
+					$location.path("/usuarios"); /* Se redirige a la pagina de perfil del paciente */
 				}
 			}
 
@@ -332,44 +337,46 @@ angular.module('Emozio').controller('PsicologosRegistroController', function(Pac
 	}
 	/**********************************************************************************************************************************Formulario de registro **********************************************************************************************************************************/
 
-	/* Se establecen las vistas */
+	/* Se establecen las vistas al cargar la pagina */
 	if ($scope.paso_1 == null && $scope.paso_2 == null && $scope.paso_3 == null) {
-		$scope.msj_exito = false;
-		$scope.paso_1 = true;
-		$scope.paso_2 = false;
-		$scope.paso_3 = false;
-		$scope.estado_1 = 'active';		
+		$scope.msj_exito = false; /* Se oculta el mensaje de exito */
+		$scope.paso_1 = true; /* Se muestra el paso 1 */
+		$scope.paso_2 = false; /* Se oculta el paso 2 */
+		$scope.paso_3 = false; /* Se oculta el paso 3 */
+		$scope.estado_1 = 'active';	/* Se muestra el panel del estado 1 */
 	}
 
 	/* Cambiar paso */
 	$scope.changeStep = function (psicologo) { 
 
-		if ($scope.paso_1 == true && $scope.paso_2 == false && $scope.paso_3 == false) {
+		if ($scope.paso_1 == true && $scope.paso_2 == false && $scope.paso_3 == false) { /* Si estamos en el paso 1 */
 
+			/* Si el formulario de registro de la parte 2 y 3 no estan validadas */
 			if(!$('#register_form_2').form('is valid')&&!$('#register_form_3').form('is valid')){
 
 				$scope.paso_1 = false;
-				$scope.paso_2 = true;
+				$scope.paso_2 = true; /* Pasamos al paso 2 */
 				$scope.paso_3 = false;
 				$scope.estado_1 = 'disabled';
 				$scope.estado_2 = 'active';
 
 			} else {
 
-				$scope.paso_1 = true;
+				$scope.paso_1 = true; /* Permanecemos en el paso 1 */
 				$scope.paso_2 = false;
 				$scope.paso_3 = false;
 				$scope.estado_1 = 'active';	
 
 			}
 
-		} else if ($scope.paso_1 == false && $scope.paso_2 == true && $scope.paso_3 == false) {
+		} else if ($scope.paso_1 == false && $scope.paso_2 == true && $scope.paso_3 == false) { /* Si estamos en el paso 2 */
 
+			/* Si el formulario de registro de la parte 2 esta validada, y la 3 no */
 			if($('#register_form_2').form('is valid')&&!$('#register_form_3').form('is valid')){
 
 				$scope.paso_1 = false;
 				$scope.paso_2 = false;
-				$scope.paso_3 = true;
+				$scope.paso_3 = true; /* Pasamos al paso 3 */
 				$scope.estado_1 = 'disabled';
 				$scope.estado_2 = 'disabled';
 				$scope.estado_3 = 'active';
@@ -377,17 +384,19 @@ angular.module('Emozio').controller('PsicologosRegistroController', function(Pac
 			} else {
 
 				$scope.paso_1 = false;
-				$scope.paso_2 = true;
+				$scope.paso_2 = true; /* Permanecemos en el paso 2 */
 				$scope.paso_3 = false;
 				$scope.estado_1 = 'disabled';
 				$scope.estado_2 = 'active';
 
 			}
 
-		} else if ($scope.paso_1 == false && $scope.paso_2 == false && $scope.paso_3 == true) {
+		} else if ($scope.paso_1 == false && $scope.paso_2 == false && $scope.paso_3 == true) { /* Si estamos en el paso 3 */
 
+			/* Si el formulario de registro de la parte 2 y 3 estan validadas */
 			if($('#register_form_2').form('is valid')&&$('#register_form_3').form('is valid')){
 
+				/* Ocultamos todos los pasos */
 				$scope.paso_1 = false;
 				$scope.paso_2 = false;
 				$scope.paso_3 = false;
@@ -395,6 +404,7 @@ angular.module('Emozio').controller('PsicologosRegistroController', function(Pac
 				$scope.estado_2 = 'disabled';
 				$scope.estado_3 = 'disabled';
 
+				/* Establecemos la informacion del psicologo */
 				var infoPsicologo = {
 					nombre: psicologo.nombre,
 					genero : psicologo.genero,
@@ -410,8 +420,10 @@ angular.module('Emozio').controller('PsicologosRegistroController', function(Pac
 					patologias : psicologo.patologias
 				};
 
+				/* "Damos de alta al psicologo" */
 				Psicologo.SignUp(infoPsicologo);
 
+				/* Se muestra un mensaje de exito */
 				$scope.msj_exito = true;
 			}
 

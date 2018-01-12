@@ -3,11 +3,13 @@ angular.module('Emozio').config(function($routeProvider){
 
 	$routeProvider
 
+	/* Definimos para cada ruta ($location.path), su template y su controller 
+	when - Añade una nueva definicion de ruta al $route service */
+
+	/* Ruta por defecto */
 		.when('/', {
 		redirectTo: '/inicio'
 	})
-
-	/* Definimos para cada ruta, su template y su controller */
 
 	/* Pagina de inicio */
 		.when('/inicio', {
@@ -73,6 +75,11 @@ angular.module('Emozio').config(function($routeProvider){
 		.when('/mail', {
 		templateUrl: "assets/templates/psicologos/psicologosMail.html",
 		controller: "PsicologosMailController"
+	})
+
+	/* En cualquier otro caso: Cuando no se conoce la ruta, se redirige a la pagina de inicio */
+		.otherwise({
+		redirectTo: '/'
 	}); //SIEMPRE ; AL FINAL
 
 });

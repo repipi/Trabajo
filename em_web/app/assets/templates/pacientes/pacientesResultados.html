@@ -1,4 +1,4 @@
-<!---------------------------------------------------------------------------------------------------------------------------------- BARRA DE NAVEGACION --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- BARRA DE NAVEGACION PACIENTES ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 
 <nav class='container navbar-inverse' role='navigation' >
 	<div class='navbar-header'>
@@ -29,24 +29,23 @@
 	</ul>
 </nav>
 
-<!---------------------------------------------------------------------------------------------------------------------------------- HACER EL TEST --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="container">
+<!-- HACER EL TEST ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="container-fluid">
 
-	<div class="row">
-		<div class="col-xs-10 col-xs-offset-1">
-			<div class="ui white message">
-				<div class="ui container">
-					<p>Para poder sugerirte al mejor psicólogo para tratar tu caso, ayúdanos cubriendo el siguiente test. Es breve y sencillo, solamente deberás responder sí o no a las preguntas.</p>
-					<!--					<button type="submit" class="ui right floated teal button" ng-click="hacer()"> <i class="ui center write icon"></i> Hacer el test</button>-->
-					<button type="submit" class="ui right floated teal button" data-target="#aviso_modal" data-toggle="modal"> <i class="ui center write icon"></i> Hacer el test</button>
-				</div>
+	<div class="row" id="main_test">
+		<div class="col-xs-3 col-xs-offset-1">
+			<button type="submit" class="ui teal big button" data-target="#aviso_modal" data-toggle="modal"> <i class="ui center write icon"></i> Hacer el test</button>
+		</div>
+		<div class="col-xs-6">
+			<div class="ui container">
+				<p>Para poder sugerirte al mejor psicólogo para tratar tu caso, ayúdanos cubriendo el siguiente test. Es breve y sencillo, solamente deberás responder sí o no a las preguntas.</p>
 			</div>
 		</div>
 	</div>
 
 	<div class="row">
 
-		<!--------------------------------------------------------------------------------------------------------------------------FILTRO ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+		<!-- FILTRO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 		<br>
 		<div class="col-xs-3 col-xs-offset-1">
 			<div class="ui container filtro">
@@ -98,14 +97,6 @@
 					</div>
 
 					<span id="demo"></span>
-					<!--
-
-<p style="color: black;">
-Consulta {{psicologo.consulta}}<br>
-Precio {{psicologo.precio}}<br>
-Seguro {{psicologo.seguro}}
-</p>
--->
 					<div class="field">
 						<button type="submit" class="fluid ui teal button" ng-click="filtrar(psicologo)">
 							<i class="icon search"></i>  Filtrar</button>
@@ -113,16 +104,12 @@ Seguro {{psicologo.seguro}}
 					<div class="field">
 						<button type="submit" class="fluid ui gray button" ng-click="recuperarMisResultados()">
 							<p> <i class="bar chart icon"></i> Mis resultados </p> </button>
-						<!--
-<button type="submit" class="fluid ui labeled icon gray button" ng-click="recuperarMisResultados()">
-<i class="left arrow icon"></i> <p> <i class="bar chart icon"></i> Mis resultados </p> </button>
--->
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<!---------------------------------------------------------------------------------------------------------------------- RESULTADOS CUESTIONARIO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->               
+		<!-- RESULTADOS CUESTIONARIO ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>               
 		<div class="col-xs-8"> 
 			<h2 class="titulo">
 				<i class="bar chart icon"></i>Mis resultados:
@@ -140,19 +127,18 @@ Seguro {{psicologo.seguro}}
 				<div ng-repeat="psicologo in psicologos">
 					<div class="ui content resultado_psicologo">
 						<div class="ui card" >
-							<div class="image">
-								<!--                                <img ng-src="{{psicologo.imagen}}">-->
+							<div class="blurring dimmable image">
 								<img ng-src="{{psicologo.foto}}">{{psicologo.foto}}
 							</div>
 							<div class="content">
 								<a class="header" href="#/psicologos/{{psicologo._id}}">{{psicologo.nombre}}</a>
 								<div class="ui right floated star rating valoraciones" ng-init="iniciarRating(psicologo.estrellas)"></div>
-								<div class="meta"><i class="certificate icon"></i> {{psicologo.ncolegiado}} </div>
+								<div class="meta"><i class="certificate teal icon"></i> {{psicologo.ncolegiado}} </div>
 								<div class="description">{{psicologo.experiencia}} </div>
 							</div>
 							<div class="extra content">
-								<span class="right floated">{{psicologo.precio}} <i class="euro icon"></i>/ sesión</span>
-								<span><i class="marker icon"></i>{{psicologo.localizacion}} </span>
+								<span class="right floated">{{psicologo.precio}} € / sesión</span>
+								<span><i class="marker teal icon"></i>{{psicologo.localizacion}} </span>
 							</div>
 
 							<button type="button" id="contactar" class="ui teal bottom attached button" data-target="#contacto_modal" data-toggle="modal" data-id="psicologo._id" ng-click="psicologoSeleccionado(psicologo)">
@@ -166,7 +152,7 @@ Seguro {{psicologo.seguro}}
 	</div>
 </div>
 
-<!-------------------------------------------------------------------------------------------------------------------------- FORMULARIO DE CONTACTO: Ventana emergente - overlay ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- FORMULARIO DE CONTACTO: Ventana emergente - overlay -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="ui container">
 	<div class="modal fade" id="contacto_modal">
 		<div class="modal-dialog" role="document">
@@ -198,16 +184,6 @@ Seguro {{psicologo.seguro}}
 					</div>
 				</div>
 
-				<!--
-<div class="col-xs-10 pull-left text-left text-muted"> 
-<small><strong>Aviso:</strong>
-Lorem ipsum dolor sit amet consectetur adipiscing elit. 
-Mauris vitae libero lacus, vel hendrerit nisi! Maecenas quis 
-velit nisl, volutpat viverra felis. Vestibulum luctus mauris 
-sed sem dapibus luctus.</small> 
-</div> 
--->
-
 				<div class="modal-footer">
 					<div class="ui green button" ng-click="enviarMensaje(mensaje)">Enviar</div>
 					<div class="ui grey button"  class="close" data-dismiss="modal" aria-label="Close">Cancelar</div>
@@ -217,7 +193,7 @@ sed sem dapibus luctus.</small>
 	</div>
 </div>
 
-<!---------------------------------------------------------------------------------------------------------------------------------------CONFIRMACION DE SOBREESCRIBIR RESULTADOS TEST ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- CONFIRMACION DE SOBREESCRIBIR RESULTADOS TEST -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="ui container">
 	<div class="modal fade" id="aviso_modal">
 		<div class="modal-dialog" role="document">

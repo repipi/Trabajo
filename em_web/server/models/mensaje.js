@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
-// set Promise provider to bluebird
 mongoose.Promise = require('bluebird');
 var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
 
+/* Schema del objeto Mensaje */
 var mensajeSchema = new Schema(
 	{
 		_id : ObjectId,
@@ -40,17 +40,19 @@ var mensajeSchema = new Schema(
 		}
 	},
 	{ 
-		collection: 'mensajes' 
+		collection: 'mensajes' /* Pertenece a la coleccion Mensajes */
 	}
 );
 
+/* Metodo que crea y guarda el mensaje de un paciente */
 mensajeSchema.methods.crearMensajePaciente = function(mensajePaciente, paciente) {
 	return new Promise(function(resolve, reject){
 
+		/* Formato de la fecha de hoy */
 		var fecha = new Date();
 		var textoFecha = ("0" + fecha.getDate()).slice(-2) + "/" + ("0" + (fecha.getMonth() + 1)).slice(-2) + "/" + fecha.getFullYear() + "; " + (fecha.getHours()<10?'0':'') + fecha.getHours() + ":" + (fecha.getMinutes()<10?'0':'') + fecha.getMinutes() + ":" + (fecha.getSeconds()<10?'0':'') + fecha.getSeconds();
 
-		/*Se crea un objeto mensaje con los datos pasados por argumento*/
+		/* Se crea un JSON mensaje con los datos pasados por argumento */
 		var mensaje = { 
 			paciente : {
 				_id : new mongoose.Types.ObjectId(paciente._id),
@@ -80,11 +82,13 @@ mensajeSchema.methods.crearMensajePaciente = function(mensajePaciente, paciente)
 			}
 		}
 
+		/* Se establecen las opciones */
 		var options = {
-			upsert: true, //No se va a añadir un nuevo documento, en su lugar devuelve un id al controller para dar lugar a una excepcion (?)
-			returnOriginal: false 
+			upsert: true, /* En el caso de que no exista, se crea */
+			returnOriginal: false /* No se devuelve el que ha sido modificado */
 		}
 
+		/* Se actualiza o guarda el mensaje en la coleccion de Mensajes */ 
 		Mensaje.update(mensaje, mensaje, options).exec(function(error, results){
 			if(error){
 				console.log("Mensajes - Error en crearMensajePaciente");
@@ -97,17 +101,20 @@ mensajeSchema.methods.crearMensajePaciente = function(mensajePaciente, paciente)
 	});
 };
 
-/* Funcion que actualiza el hilo con el mensaje de respuesta del psicologo */
+/* Metodo que actualiza el  mensaje de respuesta del psicologo */
 mensajeSchema.methods.crearMensajePsicologo = function(mensajePsicologo) {
 	return new Promise(function(resolve, reject){
 
+		/* Formato de la fecha de hoy */
 		var fecha = new Date();
 		var textoFecha = ("0" + fecha.getDate()).slice(-2) + "/" + ("0" + (fecha.getMonth() + 1)).slice(-2) + "/" + fecha.getFullYear() + "; " + (fecha.getHours()<10?'0':'') + fecha.getHours() + ":" + (fecha.getMinutes()<10?'0':'') + fecha.getMinutes() + ":" + (fecha.getSeconds()<10?'0':'') + fecha.getSeconds();
 
+		/* Consulta sobre el documento */
 		var query = {
 			_id : new mongoose.Types.ObjectId(mensajePsicologo._id)
 		}
 
+		/* Se crea un JSON mensaje con los datos pasados por argumento */
 		var mensaje = {
 			$set: {
 				acepta : mensajePsicologo.acepta,
@@ -120,28 +127,30 @@ mensajeSchema.methods.crearMensajePsicologo = function(mensajePsicologo) {
 			}
 		}
 
+		/* Se busca el documento que cumpla la consulta y se actualiza con los datos proporcionados por el JSON mensaje */
 		Mensaje.findOneAndUpdate(query, mensaje).exec(function(error, results){
 			if(error){
 				console.log("Mensajes - Error en crearMensajePsicologo: "+error);
 				reject({error: error});
 			}else{
-				console.log(results);
-				console.log("aquiii");
 				resolve(results);
 			}
 		});
 	});
 };
 
-/* Funcion que devuelve todos los mensajes pendientes de un psicologo */
+/* Metodo que devuelve todos los mensajes pendientes de un psicologo */
 mensajeSchema.methods.findMsgPsicoPend = function(psicologo) {
 	return new Promise(function(resolve, reject){
+
+		/* Consulta sobre el documento */
 		var query = {
 			'psicologo._id' : new mongoose.Types.ObjectId(psicologo._id),
 			acepta: false,
 			rechaza: false
 		};
 
+		/* Devuelve el array de documentos de la coleccion Mensajes que cumplan la consulta ordenados por la mensajePaciente.fecha en orden descendente */
 		Mensaje.find(query).sort( { 'mensajePaciente.fecha' : -1 } ).exec(function(error, results){
 			if(error){
 				console.log("Mensajes - Error en findMsgPsicoPend "+error);
@@ -153,15 +162,18 @@ mensajeSchema.methods.findMsgPsicoPend = function(psicologo) {
 	});
 };
 
-/* Funcion que devuelve todos los mensajes aceptados de un psicologo */
+/* Metodo que devuelve todos los mensajes aceptados de un psicologo */
 mensajeSchema.methods.findMsgPsicoAcepta = function(psicologo) {
 	return new Promise(function(resolve, reject){
+
+		/* Consulta sobre el documento */
 		var query = {
 			'psicologo._id' : new mongoose.Types.ObjectId(psicologo._id),
 			acepta: true,
 			rechaza: false
 		};
 
+		/* Devuelve el array de documentos de la coleccion Mensajes que cumplan la consulta ordenados por la mensajePaciente.fecha en orden descendente */
 		Mensaje.find(query).sort( { 'mensajePaciente.fecha' : -1 } ).exec(function(error, results){
 			if(error){
 				console.log("Mensajes - Error en findMsgPsicoAcepta "+error);
@@ -173,15 +185,18 @@ mensajeSchema.methods.findMsgPsicoAcepta = function(psicologo) {
 	});
 };
 
-/* Funcion que devuelve todos los mensajes rechazados de un psicologo */
+/* Metodo que devuelve todos los mensajes rechazados de un psicologo */
 mensajeSchema.methods.findMsgPsicoRech = function(psicologo) {
 	return new Promise(function(resolve, reject){
+
+		/* Consulta sobre el documento */
 		var query = {
 			'psicologo._id' : new mongoose.Types.ObjectId(psicologo._id),
 			acepta: false,
 			rechaza: true
 		};
 
+		/* Devuelve el array de documentos de la coleccion Mensajes que cumplan la consulta ordenados por la mensajePaciente.fecha en orden descendente */
 		Mensaje.find(query).sort( { 'mensajePaciente.fecha' : -1 } ).exec(function(error, results){
 			if(error){
 				console.log("Mensajes - Error en findMsgPsicoRech "+error);
@@ -193,15 +208,18 @@ mensajeSchema.methods.findMsgPsicoRech = function(psicologo) {
 	});
 };
 
-/* Funcion que devuelve todos los mensajes pendientes de un paciente */
+/* Metodo que devuelve todos los mensajes pendientes de un paciente */
 mensajeSchema.methods.findMsgPacPend = function(paciente) {
 	return new Promise(function(resolve, reject){
+
+		/* Consulta sobre el documento */
 		var query = {
 			'paciente._id' : new mongoose.Types.ObjectId(paciente._id),
 			acepta: false,
 			rechaza: false
 		};	
 
+		/* Devuelve el array de documentos de la coleccion Mensajes que cumplan la consulta ordenados por la mensajePaciente.fecha en orden descendente */
 		Mensaje.find(query).sort( { 'mensajePaciente.fecha' : -1 } ).exec(function(error, results){
 			if(error){
 				console.log("Mensajes - Error en findMsgPacRech "+error);
@@ -213,15 +231,18 @@ mensajeSchema.methods.findMsgPacPend = function(paciente) {
 	});
 };
 
-/* Funcion que devuelve todos los mensajes aceptados de un paciente */
+/* Metodo que devuelve todos los mensajes aceptados de un paciente */
 mensajeSchema.methods.findMsgPacAcepta = function(paciente) {
 	return new Promise(function(resolve, reject){
+
+		/* Consulta sobre el documento */
 		var query = {
 			'paciente._id' : new mongoose.Types.ObjectId(paciente._id),
 			acepta: true,
 			rechaza: false
 		};
 
+		/* Devuelve el array de documentos de la coleccion Mensajes que cumplan la consulta ordenados por la mensajePaciente.fecha en orden descendente */
 		Mensaje.find(query).sort( { 'mensajePaciente.fecha' : -1 } ).exec(function(error, results){
 			if(error){
 				console.log("Mensajes - Error en findMsgPacAcepta "+error);
@@ -233,14 +254,17 @@ mensajeSchema.methods.findMsgPacAcepta = function(paciente) {
 	});
 };
 
-/* Funcion que devuelve todos los mensajes rechazados de un paciente */
+/* Metodo que devuelve todos los mensajes rechazados de un paciente */
 mensajeSchema.methods.findMsgPacRech = function(paciente) {
 	return new Promise(function(resolve, reject){
+
+		/* Consulta sobre el documento */
 		var query = {
 			'paciente._id' : new mongoose.Types.ObjectId(paciente._id),
 			acepta: false,
 			rechaza: true};
 
+		/* Devuelve el array de documentos de la coleccion Mensajes que cumplan la consulta ordenados por la mensajePaciente.fecha en orden descendente */
 		Mensaje.find(query).sort( { 'mensajePaciente.fecha' : -1 } ).exec(function(error, results){
 			if(error){
 				console.log("Mensajes - Error en findMsgPacRech "+error);

@@ -9,7 +9,7 @@ const xoauth2 = require('xoauth2');
 module.exports = function(app) {
 
 	app.route('/psicologos')
-	/* Obtiene psicologos */
+	/* Obtiene a todos los psicologos */
 		.get(function(req, res){
 
 		var psicologo = new Psicologo();
@@ -25,10 +25,8 @@ module.exports = function(app) {
 	});
 
 	app.route('/psicologo')
-	/* Obtiene psicologos */
+	/* Obtiene al psicologo que tiene iniciada la sesion */
 		.get(function(req, res){
-
-		//		console.log(req.user);
 
 		if(!req.user) {
 			res.send(null);
@@ -48,7 +46,7 @@ module.exports = function(app) {
 
 
 	app.route('/psicologos/:id')
-	/* Obtiene un psicologo */
+	/* Obtiene al psicologo indicado por parametros */
 		.get(function(req, res){
 		var psicologo = new Psicologo();
 		var promise = psicologo.findOne(req.params.id);
@@ -63,7 +61,7 @@ module.exports = function(app) {
 	});
 
 	app.route('/psicologos/filtrar')
-	/* Obtiene psicologos */
+	/* Filtra los psicologos mediante los datos del psicologo especificado por parametros */
 		.post(function(req, res){
 
 		var psicologo = new Psicologo();
@@ -78,27 +76,8 @@ module.exports = function(app) {
 		);
 	});
 
-	app.route('/psicologos/acceso')
-		.post(function(req, res, next){
-		//        passport.authenticate('local', function(error, psicologo, info){
-		//            if(error){
-		//                return next(error);
-		//            }
-		//            /* SI no encontramos al psicologo en la BBDD */
-		//            if(!psicologo) {
-		//                //                return res.status(400).send('Email o contraseña no validos');
-		//                //return res.send('Email o contraseña no validos');
-		//                return res.send(null);
-		//            }else{
-		//                req.login(psicologo, {}, function(err) {
-		//                    if (err) { return next(err) };
-		//                    return res.json(psicologo);
-		//                });
-		//            }
-		//        })(req, res, next);//Funcion que devuelve passport y que debe ser invocada de esta forma
-	});
-
 	app.route('/psicologos/cierre')
+	/* Cierra la sesion del psicologo que tiene iniciada la sesion */
 		.post(passportConfig.estaAutenticado, function(req, res){
 		req.session.destroy(function (err) {
 			req.logout("Logout exitoso");
@@ -113,6 +92,7 @@ module.exports = function(app) {
 	});
 
 	app.route('/psicologos/registro')
+	/* Registra e inicia la sesion del psicologo especificado por parametros */
 		.post(function(req, res, next){
 		//        Como configurar correctamente el correo
 		//        https://deivijt.com/blog/como-enviar-emails-con-nodejs-y-nodemailer/
@@ -194,7 +174,7 @@ module.exports = function(app) {
 	});
 
 	app.route('/psicologos/baja')
-	/* Elimina un psicologo de la BBDD */
+	/* Da de baja y cierra la sesion del psicologo que tiene iniciada la sesion */
 		.post(function(req, res){
 		var psicologo = new Psicologo();
 		var promise = psicologo.darBaja(req.user._id);
@@ -219,6 +199,7 @@ module.exports = function(app) {
 	});
 
 	app.route('/psicologos/comentarios')
+	/* Guarda los comentarios y respuestas del psicologo que tiene iniciada la sesion*/
 		.put(function(req, res){
 		var psicologo = new Psicologo();
 		var promise = psicologo.updateComentarios(req.body);

@@ -1,13 +1,13 @@
 var mongoose = require('mongoose');
-// set Promise provider to bluebird
 mongoose.Promise = require('bluebird');
 var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
 
+/* Schema del objeto Patologia */
 var patologiaSchema = new Schema(
     {
         _id : ObjectId,
-        nombre: String,
+        nombre: {type: String, required: true },
         sintomas : []
     },
     { 
@@ -15,8 +15,10 @@ var patologiaSchema = new Schema(
     }
 );
 
+/* Metodo que devuelve a todas las patologias */
 patologiaSchema.methods.findAll = function() {
     return new Promise(function(resolve, reject){
+		/* Devuelve un array con todos los documentos de la coleccion Patologias */
         Patologia.find().exec(function(error, results){
             if(error){
                 console.log("Patologia - Error en findAll");
@@ -28,10 +30,14 @@ patologiaSchema.methods.findAll = function() {
     });
 };
 
+/* Metodo que devuelve a todas las preguntas de todas las patologias */
 patologiaSchema.methods.findPreguntas = function() {
     return new Promise(function(resolve, reject){
         
+			/* Consulta sobre el documento */
         var query = {};
+		
+		/* Se especifica la proyeccion que se quiere obtener. Los campos indicados con 0s no se devuelven */
         var projection = {
             "preguntas":{$slice:1}, 
             "_id":0,
@@ -40,6 +46,7 @@ patologiaSchema.methods.findPreguntas = function() {
             "sintomas":0
         };
         
+		/* Devuelve un array con todos los documentos de la coleccion Patologias que cumplen la consulta */
         Patologia.find(query, projection).exec(function(error, results){       
             if(error){
                 console.log("Patologia - Error en findPreguntas");

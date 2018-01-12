@@ -1,4 +1,4 @@
-<!---------------------------------------------------------------------------------------------------------------------------------- BARRA DE NAVEGACION PSICOLOGO-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- BARRA DE NAVEGACION PSICOLOGO ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 
 <nav class='container navbar-inverse' role='navigation' >
 	<div class='navbar-header'>
@@ -15,9 +15,10 @@
 
 	<ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
 		<li><a href='#/inicio' class="navegacion">Inicio</a></li>
-		<li><a href='#/mail' class="navegacion seleccionado">Mis solicitudes</a></li>
+		<li><a href='#/mail' class="navegacion">Mis solicitudes</a></li>
+		<li><a href='#/psicologos/calendario' class="navegacion seleccionado">Calendario</a></li>
 		<li class="dropdown navegacion">
-			<a class="dropdown-toggle" data-toggle="dropdown" href="#/mail">Perfil
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#/psicologos/calendario">Perfil
 				<span class="caret"></span></a>
 			<ul class="dropdown-menu navegacion_transparente">
 				<li><a href="#/psicologos/{{psicologo._id}}">Cómo me ven</a></li>
@@ -29,7 +30,7 @@
 	</ul>
 </nav>
 
-<!---------------------------------------------------------------------------------------------------------------------------------- CALENDARIO --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- CALENDARIO ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <div class="container">
 	<div class="row">
@@ -41,4 +42,62 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="ui container">
+		<div class="modal fade" id="evento_modal">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+
+					<!-- Titulo -->
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4>Evento seleccionado</h4>
+					</div>
+
+					<!-- Cuerpo del formulario -->
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-xs-8">
+								<div class="ui cards">
+									<div class="ui fluid card">
+										<div class="content">
+											<div class="meta" id="mensaje_mensajePaciente_fecha"> </div>
+											<div class="ui green top right attached label">Aceptada</div>
+											<h2 class="ui sub header">Mensaje </h2>
+											<div class="description" id="mensaje_mensajePaciente_texto"></div>
+											<h2 class="ui sub header">Preferencias </h2>
+											<div class="description" id="mensaje_mensajePaciente_preferencias"></div>
+											<br>
+										</div>
+										<div class="content" id="respuesta">
+											<div class="meta" id="mensaje_mensajePsicologo_fecha"></div>
+											<h2 class="ui sub header">Respuesta </h2>
+											<div class="description" id="mensaje_mensajePsicologo_comentario"></div>
+											<h2 class="ui sub header">Cita </h2>
+											<i class="calendar icon"></i> <div class="description" id="mensaje_mensajePsicologo_fechaCita"></div>  
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-4">
+								<div class="ui cards">
+									<div class="card">
+										<div class="extra content">
+											<!-- Datos ocultos -->
+											<h4 class="ui teal header">Datos de contacto</h4>
+											<i class="mail icon"></i> <p id="mensaje_paciente_email"></p>
+											<i class="call icon"></i> <p id="mensaje_paciente_telefono"></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> 
+			</div> 
+		</div>
+	</div>
 </div>
+

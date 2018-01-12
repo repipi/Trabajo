@@ -1,4 +1,4 @@
-<!---------------------------------------------------------------------------------------------------------------------------------- BARRA DE NAVEGACION DE ACCESO --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- BARRA DE NAVEGACION DE ACCESO ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 <nav class='container navbar-inverse' role='navigation' >
 	<div class="col-sm-6 col-xs-2">
 		<div class='navbar-header'>
@@ -51,11 +51,11 @@
 	</div>
 </nav>
 
-<!---------------------------------------------------------------------------------------------------------------------------------- FORMULARIO DE REGISTRO ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+<!-- FORMULARIO DE REGISTRO ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class='container' ng-init="initAutocomplete()">
 	<div class="row">
 		<div class="col-xs-8 col-xs-offset-2">
-			<!------------------------------------------------------------------------------------------------------------------ 3 STEPS ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+			<!-- 2 STEPS ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 			<div class="ui three top attached steps">
 				<div class="{{estado_1}} step paso_1">
 					<i class="alarm outline icon"></i>
@@ -84,23 +84,22 @@ QUE VAMOS A HACER CON ELLOS
 				</div>
 			</div>
 			<div class="ui attached segment">
-				<!--------------------------------------------------------------------------------------------------------------STEP 1 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+				<!-- STEP 1 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 				<div ng-show="paso_1">
 					<div class="ui fluid large teal submit button" ng-click="changeStep(null)">Siguiente</div>
 				</div>
-
-				<!-----------------------------------------------------------------------------------------------------------STEP 2 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+				<!-- STEP 2 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 				<div ng-show="paso_2">
 					<div id="register_form_2" class="ui large form">
 						<div class="ui stacked secondary  segment">
-							<!----------------------------------------------------------------------------------------------------------NOMBRE ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+							<!-- NOMBRE ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 							<div class="field">
 								<div class="ui left icon input">
 									<i class="user icon"></i>
 									<input type="text" name="nombre" placeholder="Nombre" ng-model="psicologo.nombre" required>
 								</div>
 							</div>
-							<!---------------------------------------------------------------------------------------------------------- GENERO ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+							<!-- GENERO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 							<div class="field" id="genero">
 								<select class="ui compact selection dropdown" name="genero" ng-model="psicologo.genero">
 									<i class="dropdown icon"></i>
@@ -125,7 +124,7 @@ QUE VAMOS A HACER CON ELLOS
 									</div>
 								</select>
 							</div>
-							<!----------------------------------------------------------------------------------------------------------FECHA NACIMIENTO ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+							<!-- FECHA NACIMIENTO ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 							<div class="field">
 								<div class="ui calendar" id="edad">
 									<div class="ui input left icon">
@@ -134,28 +133,28 @@ QUE VAMOS A HACER CON ELLOS
 									</div>
 								</div>
 							</div>
-							<!----------------------------------------------------------------------------------------------------------EMAIL ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+							<!-- EMAIL ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 							<div class="field">
 								<div class="ui left icon input">
 									<i class="mail icon"></i>
 									<input type="email" name="email" placeholder="E-mail" ng-model="psicologo.email" required>
 								</div>
 							</div>
-							<!---------------------------------------------------------------------------------------------------------- LOCALIZACION ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+							<!-- LOCALIZACION ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 							<div class="field" id="locationField">
 								<div class="ui left icon input">
 									<i class="marker icon"></i>
 									<input id="autocomplete" name="localizacion" placeholder="Localización" ng-focus="geolocate()" type="text" required>
 								</div>
 							</div>
-							<!---------------------------------------------------------------------------------------------------------- TELEFONO -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+							<!-- TELEFONO --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 							<div class="field">
 								<div class="ui left icon input">
 									<i class="call icon"></i>
 									<input type="tel" name="telefono" placeholder="Teléfono" ng-model="psicologo.telefono" required>
 								</div> 
 							</div>
-							<!---------------------------------------------------------------------------------------------------------- POLITICAS DE PRIVACIDAD ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+							<!-- TERMINOS Y CONDICIONES DE USO ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 							<div class="required field">
 								<!--Se ha marcado por defecto el checkbox para que sea mas comodo para el usuario -->
 								<div class="ui checkbox">
@@ -168,39 +167,38 @@ QUE VAMOS A HACER CON ELLOS
 
 					</div>
 				</div>
-				<!-----------------------------------------------------------------------------------------------------------STEP 3 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+				<!-- STEP 3 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 				<div ng-show="paso_3">
 					<div id="register_form_3" class="ui large form">
 						<div class="ui stacked secondary  segment">
-							<!---------------------------------------------------------------------------------------------------------- Nº COLEGIADO ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+							<!-- Nº COLEGIADO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 							<div class="required field">
 								<div class="ui left icon input">
 									<i class="certificate icon"></i>
 									<input type="text" name="ncolegiado" placeholder="Número de colegiado" ng-model="psicologo.ncolegiado" required>
 								</div>
 							</div>
-							<!---------------------------------------------------------------------------------------------------------- EXPERIENCIA PROFESIONAL ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+							<!-- EXPERIENCIA PROFESIONAL ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 							<div class="required field">                  
 								<label>Experiencia profesional</label>
 								<textarea name="experiencia" rows="2" placeholder="Introduzca una breve descripción de su experiencia profesional." ng-model="psicologo.experiencia"> </textarea>
 							</div>
-							<!---------------------------------------------------------------------------------------------------------- FORMACION ACADEMICA ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+							<!-- FORMACION ACADEMICA ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 							<div class="required field">
 								<label>Formación académica</label>
 								<textarea name="formacion" rows="2" placeholder="Introduzca títulos, cursos o acreditaciones académicas." ng-model="psicologo.formacion" required></textarea>
 							</div>
-							<!---------------------------------------------------------------------------------------------------------- TERAPIAS -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+							<!-- TERAPIAS --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 							<div class="required field">
 								<label>Terapias que realiza</label>
 								<textarea name="terapia" rows="2" placeholder="Introduzca los distintos tipos de terapia." ng-model="psicologo.terapia" required></textarea>
 							</div>
-							<!---------------------------------------------------------------------------------------------------------- PATOLOGIAS -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+							<!-- PATOLOGIAS ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 							<div class="required field">
 								<label>Patologías</label>
 								<textarea name="patologias" rows="2" placeholder="Introduzca las patologías que trata." ng-model="psicologo.patologias" required></textarea>
 							</div>
-
-							<!---------------------------------------------------------------------------------------------------------- ESPECIALIDAD ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+							<!-- ESPECIALIDAD ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 							<div class="field">
 								<label>Otros datos de interés</label>
 								<textarea name="especialidad" rows="2" placeholder="Introduzca alguna información que considere de interés. Por ejemplo, ¿está especializado en algún campo?" ng-model="psicologo.especialidad" required></textarea>
@@ -218,7 +216,7 @@ QUE VAMOS A HACER CON ELLOS
 	</div>
 </div>
 
-<!-------------------------------------------------------------------------------------------------------------------------------------- TERMINOS Y CONDICIONES DE USO: Ventana emergente - overlay ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--  TERMINOS Y CONDICIONES DE USO: Ventana emergente - overlay  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="ui container">
 	<div class="modal fade" id="term_cond_modal">
 		<div class="modal-dialog" role="document">
@@ -230,13 +228,77 @@ QUE VAMOS A HACER CON ELLOS
 					<h4 class="modal-title">Términos y condiciones de uso</h4>
 				</div>
 				<div class="modal-body">
-					Texto del modal
+					<ul class="smooth-scroll list-unstyled">
+						<li>
+							<div class="ui container">
+								<h4 class="ui teal header">1. Introducción</h4>Las presentes condiciones generales de uso de la página web, regulan los términos y condiciones de acceso y uso de www.emozio.com, propiedad de Emozio S.L. con Código de Identificación Fiscal número F12345678, en adelante, Emozio, que el usuario del Portal deberá de leer y aceptar para usar todos los servicios e información que se facilitan desde el portal. El mero acceso y/o utilización del portal, de todos o parte de sus contenidos y/o servicios significa la plena aceptación de las presentes condiciones generales de uso. 
+
+							</div>
+						</li>
+						<br>
+						<li>
+							<div class="ui container">
+								<h4 class="ui teal header">2. Condiciones de uso</h4>Las presentes condiciones generales de uso del portal regulan el acceso y la utilización del portal, incluyendo los contenidos y los servicios puestos a disposición de los usuarios en y/o a través del portal, bien por el portal, bien por sus usuarios, bien por terceros. No obstante, el acceso y la utilización de ciertos contenidos y/o servicios puede encontrarse sometido a determinadas condiciones específicas.
+
+							</div>
+						</li>
+						<br>
+						<li>
+							<div class="ui container">
+								<h4 class="ui teal header">3. Modificaciones</h4>La empresa se reserva la facultad de modificar en cualquier momento las condiciones generales de uso del portal. En todo caso, se recomienda que consulte periódicamente los presentes términos de uso del portal, ya que pueden ser modificados.
+							</div>
+						</li>
+						<br>
+						<li>
+							<div class="ui container">
+								<h4 class="ui teal header">4. Obligaciones del Usuario</h4>El usuario deberá respetar en todo momento los términos y condiciones establecidos en las presentes condiciones generales de uso del portal. De forma expresa el usuario manifiesta que utilizará el portal de forma diligente y asumiendo cualquier responsabilidad que pudiera derivarse del incumplimiento de las normas. <br>
+
+								Así mismo, el usuario no podrá utilizar el portal para transmitir, almacenar, divulgar promover o distribuir datos o contenidos que sean portadores de virus o cualquier otro código informático, archivos o programas diseñados para interrumpir, destruir o perjudicar el funcionamiento de cualquier programa o equipo informático o de telecomunicaciones.
+							</div>
+						</li>
+						<br>
+						<li>
+							<div class="ui container">
+								<h4 class="ui teal header">5. Responsabilidad del portal</h4>El usuario conoce y acepta que el portal no otorga ninguna garantía de cualquier naturaleza, ya sea expresa o implícita, sobre los datos, contenidos, información y servicios que se incorporan y ofrecen desde el Portal. <br><br>
+
+								Exceptuando los casos que la Ley imponga expresamente lo contrario, y exclusivamente con la medida y extensión en que lo imponga, el Portal no garantiza ni asume responsabilidad alguna respecto a los posibles daños y perjuicios causados por el uso y utilización de la información, datos y servicios del Portal. <br><br>
+
+								En todo caso, el Portal excluye cualquier responsabilidad por los daños y perjuicios que puedan deberse a la información y/o servicios prestados o suministrados por terceros diferentes de la Empresa. Toda responsabilidad será del tercero ya sea proveedor o colaborador. <br>
+
+							</div>
+						</li>
+						<br>
+						<li>
+							<div class="ui container">
+								<h4 class="ui teal header">6. Propiedad intelectual e industrial</h4>Todos los contenidos, marcas, logos, dibujos, documentación, programas informáticos o cualquier otro elemento susceptible de protección por la legislación de propiedad intelectual o industrial, que sean accesibles en el portal corresponden exclusivamente a la empresa o a sus legítimos titulares y quedan expresamente reservados todos los derechos sobre los mismos. Queda expresamente prohibida la creación de enlaces de hipertexto (links) a cualquier elemento integrante de las páginas web del Portal sin la autorización de la empresa, siempre que no sean a una página web del Portal que no requiera identificación o autenticación para su acceso, o el mismo esté restringido. <br><br>
+
+								En cualquier caso, el portal se reserva todos los derechos sobre los contenidos, información datos y servicios que ostente sobre los mismos. El portal no concede ninguna licencia o autorización de uso al usuario sobre sus contenidos, datos o servicios, distinta de la que expresamente se detalle en las presentes condiciones generales de uso del portal. <br><br>
+
+								Algunos de los vectores e imágenes del presente Portal pertenecen a terceros, por lo que su autoría y procedencia irá citada a continuación:
+
+								<ul>
+									<li><a href='https://www.freepik.es/vector-gratis/coleccion-de-avatares-de-equipo-de-negocios-en-diseno-plano_869566.htm'>Imágenes</a></li>
+									<li><a href='https://formaldocs.com/2014/12/Modelo-de-condiciones-de-uso-de-una-pagina-web'>Textos jurídicos</a></li>
+								</ul>
+
+							</div>
+						</li>
+						<br>
+						<li>
+							<div class="ui container">
+								<h4 class="ui teal header">7. Legislación aplicable, jurisdicción competente y notificaciones</h4>Las presentes condiciones se rigen y se interpretan de acuerdo con las Leyes de España. Para cualquier reclamación serán competentes los juzgados y tribunales de la Comunidad Autónoma de Galicia. Todas las notificaciones, requerimientos, peticiones y otras comunicaciones que el Usuario desee efectuar a la Empresa titular del Portal deberán realizarse por escrito y se entenderá que han sido correctamente realizadas cuando hayan sido recibidas en la siguiente dirección emozio.info@gmail.com
+
+							</div>
+						</li>
+						<br>
+					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
+<!-- ESTILO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <style type="text/css">
 	body > .grid {
 		height: 100%;
@@ -246,11 +308,6 @@ QUE VAMOS A HACER CON ELLOS
 	}
 	.well {
 		margin-bottom: 15%;
-	}
-	/* Always set the map height explicitly to define the size of the div
-	* element that contains the map. */
-	#map {
-		height: 0;
 	}
 	.ui.form .inline.fields {
 		margin: 1.7em;

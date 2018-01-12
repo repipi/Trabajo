@@ -1,40 +1,40 @@
 angular.module('Emozio').controller('PsicologosModificarController', function(Paciente, Psicologo, $scope, $routeParams, $location, $window){
 
-	/* Recuperamos al psicologo */
-	Psicologo.GetById().then(function(data){
-		if(!data.data || data.data=='') {
-			$location.path("/");
+	/* Se comprueba que el psicologo ha iniciado la sesion */
+	Psicologo.GetById().then(function(data){ /* Recuperamos al psicologo */
+		if(!data.data || data.data=='') { /* Si el psicologo no ha iniciado la sesion, no se obtendra */
+			$location.path("/"); /* Se redirige a la pagina de inicio */
 		} else {
 			$scope.psicologo=Object.values(data.data)[0];
-			$scope.nav_acceso=false;
-			$scope.nav_psico=true;
-			$scope.nav_gen=false;
+			$scope.nav_acceso=false; /* Se oculta el menu de acceso */
+			$scope.nav_psico=true; /* Se muestra el menu del psicologo */
+			$scope.nav_gen=false; /* Se oculta el menu generico */
 		}
 	});
 
-	/******************************************************************************************************************************* Google Place API Web Service *********************************************************************************************************************************/
+	/* Google Place API Web Service */
 	var autocomplete;   
 	var place;
 
+	/* Funcion que inicializa el autocompletado de Google */
 	$scope.initAutocomplete = function() {
-
-		// Create the autocomplete object, restricting the search to geographical
-		// location types.
+		/* Se crea el objeto de autocompletado, restringiendolo la busqueda a los tipos geograficos */
 		autocomplete = new google.maps.places.Autocomplete(
-			/** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-			{ types: ['(cities)'],
-			 componentRestrictions: {country: "es"}});
+			(document.getElementById('autocomplete')),
+			{ types: ['(cities)'], /* Se buscaran ciudades */
+			 componentRestrictions: {country: "es"}}); /* Restringidas dentro de España */
 
-		// When the user selects an address from the dropdown, populate the address
-		// fields in the form.
+		/* Cuando el usuario selecciona una opcion del desplegable, se ejecuta la funcion indicada */
 		autocomplete.addListener('place_changed', fillInAddress);
 
+		/* Funcion que recupera el lugar escogido en el autocompletado */
 		function fillInAddress() {
-			// Get the place details from the autocomplete object.
+			/* Toma los detalles del lugar del objeto de autocompletado */
 			place = autocomplete.getPlace();
 		}
 	}
 
+	/* Funcion que establece los valores de geolocalizacion */
 	$scope.geolocate = function() {
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function(position) {
@@ -51,17 +51,18 @@ angular.module('Emozio').controller('PsicologosModificarController', function(Pa
 		}
 	}
 
+	/* Cuando se apunta al elemento autocomplete, se inicia la funcion geolocate */
 	$("#autocomplete").focus(function() {
 		$scope.geolocate();
 	});
 
 	/************************************************************************************************************************** Validacion de formularios **********************************************************************************************************************************/
 
-	/* Validacion de formulario de registro */
-	/* Validacion de formulario de registro */
+	/* Validacion de formulario de registro - Parte 2 */
 	$('#register_form_2').form({
-		on : 'blur',
-		inline: 'true',
+		on : 'blur', /* Cada elemento se evalua por separado */
+		inline: 'true', /* Los mensajes de validacion se disponen en linea */
+		/* Campos a validar: Identificador y reglas a evaluar */
 		fields : {
 			nombre : {
 				identifier : 'nombre',
@@ -154,9 +155,11 @@ angular.module('Emozio').controller('PsicologosModificarController', function(Pa
 		}
 	});  
 
+	/* Validacion de formulario de registro - Parte 3 */
 	$('#register_form_3').form({
-		on : 'blur',
-		inline: 'true',
+		on : 'blur', /* Cada elemento se evalua por separado */
+		inline: 'true', /* Los mensajes de validacion se disponen en linea */
+		/* Campos a validar: Identificador y reglas a evaluar */
 		fields : {
 			ncolegiado : {
 				identifier : 'ncolegiado',
@@ -213,59 +216,39 @@ angular.module('Emozio').controller('PsicologosModificarController', function(Pa
 
 	/********************************************************************************************************************************** Formulario de registro **********************************************************************************************************************************/
 
-	/* Se establecen las vistas */
+	/* Se establecen las vistas al cargar la pagina */
 	if ($scope.paso_2 == null && $scope.paso_3 == null) {
-		$scope.msj_exito = false;
-		$scope.paso_2 = true;
-		$scope.paso_3 = false;
-		$scope.estado_2 = 'active';		
+		$scope.msj_exito = false; /* Se oculta el mensaje de exito */
+		$scope.paso_2 = true; /* Se muestra el paso 2 */
+		$scope.paso_3 = false; /* Se oculta el paso 3 */
+		$scope.estado_2 = 'active';	/* Se muestra el panel del estado 2 */
 	}
 
 	/* Cambiar paso */
 	$scope.changeStep = function (psicologo) { 
 
-		if ($scope.paso_2 == false && $scope.paso_3 == false) {
+		if ($scope.paso_2 == false && $scope.paso_3 == false) { /* Si estamos en el paso 1 */
 
-			//if(!$('#register_form_2').form('is valid')&&!$('#register_form_3').form('is valid')){
-
-			$scope.paso_2 = true;
+			$scope.paso_2 = true; /* Pasamos al paso 2 */
 			$scope.paso_3 = false;
 			$scope.estado_2 = 'active';
 
-			//			} else {
-			//
-			//				$scope.paso_1 = true;
-			//				$scope.paso_2 = false;
-			//				$scope.paso_3 = false;
-			//
-			//			}
-
-		} else if ($scope.paso_2 == true && $scope.paso_3 == false) {
-
-			//			if($('#register_form_2').form('is valid')&&!$('#register_form_3').form('is valid')){
-
+		} else if ($scope.paso_2 == true && $scope.paso_3 == false) { /* Si estamos en el paso 2 */
 
 			$scope.paso_2 = false;
-			$scope.paso_3 = true;
+			$scope.paso_3 = true; /* Pasamos al paso 3 */
 			$scope.estado_2 = 'disabled';
 			$scope.estado_3 = 'active';
 
-			//			} else {
-			//
-			//				$scope.paso_2 = true;
-			//				$scope.paso_3 = false;
-			//				$scope.estado_2 = 'active';
-			//			}
+		} else if ($scope.paso_2 == false && $scope.paso_3 == true) { /* Si estamos en el paso 3 */
 
-		} else if ($scope.paso_2 == false && $scope.paso_3 == true) {
-
-			//			if($('#register_form_2').form('is valid')&&$('#register_form_3').form('is valid')){
-
+			/* Ocultamos todos los pasos */
 			$scope.paso_2 = false;
 			$scope.paso_3 = false;
 			$scope.estado_2 = 'disabled';
 			$scope.estado_3 = 'disabled';
 
+			/* Establecemos la informacion del psicologo */
 			var infoPsicologo = {
 				nombre: psicologo.nombre,
 				genero : psicologo.genero,
@@ -281,10 +264,11 @@ angular.module('Emozio').controller('PsicologosModificarController', function(Pa
 				patologias : psicologo.patologias
 			};
 
+			/* "Damos de alta al psicologo" */
 			Psicologo.SignUp(infoPsicologo);
 
+			/* Se muestra un mensaje de exito */
 			$scope.msj_exito = true;
-			//			}
 
 		}
 
@@ -292,15 +276,15 @@ angular.module('Emozio').controller('PsicologosModificarController', function(Pa
 
 	/* Funcion de darse de baja */
 	$scope.baja=function(){
-		Psicologo.DarBaja();
-		$location.path("inicio"); 
-		$window.location.reload();
+		Psicologo.DarBaja(); /* Se da de baja al psicologo */
+		$location.path("inicio");  /* Se redirige a la pagina de inicio */
+		$window.location.reload(); /* Se recarga la pagina */
 	}
 
 	/* Funcion salir que cierra la sesion */
 	$scope.salir=function(){
-		Psicologo.Salir();
-		$location.path("inicio"); 
+		Psicologo.Salir(); /* Se cierra la sesion del psicologo */
+		$location.path("inicio"); /* Se redirige a la pagina de inicio */
 	}
 
 });

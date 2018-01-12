@@ -25,24 +25,25 @@ angular.module('Emozio').controller('PacientesRegistroController', function(Paci
 	var autocomplete;   
 	var place;
 
+	/* Funcion que inicializa el autocompletado de Google */
 	$scope.initAutocomplete = function() {
-		// Create the autocomplete object, restricting the search to geographical
-		// location types.
+		/* Se crea el objeto de autocompletado, restringiendolo la busqueda a los tipos geograficos */
 		autocomplete = new google.maps.places.Autocomplete(
-			/** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-			{ types: ['(cities)'],
-			 componentRestrictions: {country: "es"}});
+			(document.getElementById('autocomplete')),
+			{ types: ['(cities)'], /* Se buscaran ciudades */
+			 componentRestrictions: {country: "es"}}); /* Restringidas dentro de España */
 
-		// When the user selects an address from the dropdown, populate the address
-		// fields in the form.
+		/* Cuando el usuario selecciona una opcion del desplegable, se ejecuta la funcion indicada */
 		autocomplete.addListener('place_changed', fillInAddress);
 
+		/* Funcion que recupera el lugar escogido en el autocompletado */
 		function fillInAddress() {
-			// Get the place details from the autocomplete object.
+			/* Toma los detalles del lugar del objeto de autocompletado */
 			place = autocomplete.getPlace();
 		}
 	}
 
+	/* Funcion que establece los valores de geolocalizacion */
 	$scope.geolocate = function() {
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function(position) {
@@ -59,14 +60,16 @@ angular.module('Emozio').controller('PacientesRegistroController', function(Paci
 		}
 	}
 
+	/* Cuando se apunta al elemento autocomplete, se inicia la funcion geolocate */
 	$("#autocomplete").focus(function() {
 		$scope.geolocate();
 	});
 
-	/* Validacion de formulario de registro */
+	/* Validacion de formulario de acceso */
 	$('#access_form').form({
-		on : 'blur',
-		inline: 'false',
+		/* Cada elemento se evalua por separado */
+		inline: 'false', /* Los mensajes de validacion no se disponen en linea */
+		/* Campos a validar: Identificador y reglas a evaluar */
 		fields : {
 			email : {
 				identifier : 'email',
@@ -103,8 +106,9 @@ angular.module('Emozio').controller('PacientesRegistroController', function(Paci
 
 	/* Validacion de formulario de registro */
 	$('#register_form').form({
-		on : 'blur',
-		inline: 'true',
+		/* Cada elemento se evalua por separado */
+		inline: 'true', /* Los mensajes de validacion se disponen en linea */
+		/* Campos a validar: Identificador y reglas a evaluar */
 		fields : {
 			email : {
 				identifier : 'email',
@@ -197,17 +201,17 @@ angular.module('Emozio').controller('PacientesRegistroController', function(Paci
 		}
 	}); 
 
-	/* Edad paciente */
-	var edad;
+	var edad; /* Edad del paciente */
 
+	/* Se genera el calendario */
 	$('#edad').calendar({
-		type: 'date',
-		onChange: function (date, text) {
-			edad = text;
+		type: 'date', /* El tipo es una fecha */
+		onChange: function (date, text) { /* Cuando se rellena el campo */
+			edad = text; /* Se establece que la edad es el contenido */
 		}
 	});
 
-	/* Se establece el mensaje de control de acceso */
+	/* Se oculta el mensaje de control de acceso */
 	$scope.msj_error=false;
 
 	/* Funcion de validacion del formulario de acceso */
@@ -219,17 +223,15 @@ angular.module('Emozio').controller('PacientesRegistroController', function(Paci
 		Paciente.LogIn(paciente).then(function(data){
 			pacienteConectado=Object.values(data.data);
 
-			//			console.log("psico conectado");
-
 			/* Si existe el paciente en cuestion, se reconduce a su pagina de resultados */
 			if (pacienteConectado!=null) {
 				$scope.msj_error=false;
 
 				/* Si se trata de un psicologo */
 				if(data.data.formacion!=null){
-					$location.path("/mail");
+					$location.path("/mail"); /* Se redirige a la pagina de la bandeja de entrada */
 				} else { /* Si es un paciente */
-					$location.path("/usuarios");
+					$location.path("/usuarios"); /* Se redirige a la pagina de perfil */
 				}
 			}
 
@@ -244,20 +246,10 @@ angular.module('Emozio').controller('PacientesRegistroController', function(Paci
 		/* Indicamos que se esta tratando de enviar */
 		$scope.isSubmitting = true;
 
+		/* Si el formulario de registro se ha validado correctamente */
 		if($('#register_form').form('is valid')) {
 
-			var nuevoPaciente = {
-				email: paciente.email,
-				password: paciente.password,
-				genero: paciente.genero,
-				edad: edad,
-				localizacion: place.name,
-				telefono: paciente.telefono            
-			};
-
-//			console.log(nuevoPaciente);
-
-			/* Se guarda el objeto paciente del formulario. Despues, */
+			/* Se guarda el objeto paciente del formulario */
 			Paciente.SignUp({
 				email: paciente.email,
 				password: paciente.password,
@@ -265,7 +257,7 @@ angular.module('Emozio').controller('PacientesRegistroController', function(Paci
 				edad: edad,
 				localizacion: place.name,
 				telefono: paciente.telefono            
-			}).then(function(){
+			}).then(function(){ /* Seguidamente */
 				/* Se redirecciona al perfil del paciente */
 				$location.path("/usuarios");
 			}); 	

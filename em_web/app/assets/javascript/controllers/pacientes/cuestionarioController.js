@@ -5,26 +5,25 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
     3 - Le asignamos a los psicologos que pueden tratar su patologia. 
     4 - Devolvemos su pagina de perfil con el array de psicologos */
 
-	/* Recuperamos al paciente */
-	Paciente.GetById().then(function(data){
-		if(!data.data || data.data=='') {
-			$location.path("/");
+	/************************************************************************************************************************************************  SERVICES ***********************+++++++++++*****+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/
+	
+	/* Se comprueba que el paciente ha iniciado la sesion */
+	Paciente.GetById().then(function(data){ /* Recuperamos al paciente */
+		if(!data.data || data.data=='') { /* Si el paciente no ha iniciado la sesion, no se obtendra */
+			$location.path("/"); /* Se redirige a la pagina de inicio */
 		} else {
 			$scope.paciente=Object.values(data.data)[0];
-			//        console.log($scope.paciente);  
 		}
 	});
 
 	/* Recuperamos el array de psicologos */
 	Psicologo.GetAll().then(function(data){
 		$scope.psicologos=Object.values(data.data);
-		//        console.log($scope.psicologos);
 	});
 
 	/* Recuperamos el array de patologias */
 	Patologia.GetAll().then(function(data){
 		$scope.patologias=Object.values(data.data);
-		//        console.log($scope.patologias.length);
 	});
 
 	/* Recuperamos el diagnostico del paciente */
@@ -32,29 +31,29 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
 		$scope.diagnostico=Object.values(data.data)[0].diagnostico;
 
 		/* Recuperamos el paciente */
-		Paciente.GetById().then(function(data){
-			if(!data.data) {
-				$location.path("/");
+		Paciente.GetById().then(function(data){ 
+			if(!data.data) { /* Si el paciente no ha iniciado la sesion, no se obtendra */
+				$location.path("/");  /* Se redirige a la pagina de inicio */
 			} else {
 				$scope.paciente=Object.values(data.data)[0];
-				//        console.log($scope.paciente);  
-
-				/* Si no existe diagnostico */
+			
+				/* Si no existe diagnostico o el paciente no tiene psicologos */
 				if(!$scope.diagnostico.length || $scope.paciente.psicologos.length){
 					/* Se inicializa su diagnostico y array de psicologos */
 					$scope.paciente.diagnostico=[];
 					$scope.diagnostico=[];
 					$scope.paciente.psicologos=[];
+					
 					/* Se actualiza el paciente con los arrays anteriores reseteados */
 					Paciente.Update($scope.paciente);
 
 					/* Se recogen las preguntas de todas las patologia */
 					Patologia.GetPreguntas().then(function(data){
 
-						var result = Object.values(data.data);
-						var preguntas = [];
+						var result = Object.values(data.data); /* Array de patologias */
+						var preguntas = []; /* Array que contiene todas las patologias */
 
-						/* Se recoge la primera pregunta de cada patologia */
+						/* Se recoge la primera pregunta de cada patologia y se inicializa su respuesta a 0 */
 						for(var i=0, l=result.length; i<l; i++){
 							preguntas.push(JSON.parse('{ "pregunta" : "'+result[i].preguntas[0]+'", "respuesta" : '+0+'}'));
 						}
@@ -71,11 +70,11 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
 
 				}else{
 
-					var preguntas=[];
+					var preguntas=[]; /* Array que contiene todas las patologias */
 
 					/* Se recogen los diagnosticos correspondientes a cada patologia */
 					for(var j=0, m=$scope.diagnostico.length; j<m; j++){
-						/* Se recogen las preguntas existentes en la patologia de cada diagnostico */
+						/* Se recogen las preguntas existentes en la patologia de cada diagnostico y se inicializa su respuesta a 0 */
 						for(var i=0, l=$scope.diagnostico[j].patologia.preguntas.length; i<l; i++){
 							preguntas.push(JSON.parse('{ "pregunta" : "'+$scope.diagnostico[j].patologia.preguntas[i]+'", "respuesta" : '+0+'}'));
 						}
@@ -99,6 +98,8 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
 	/* Establezco el estilo de los botones si o no, por defecto */
 	$scope.press_yes="";
 	$scope.press_no="teal";
+	
+	/************************************************************************************************************************************************ FUNCIONES ************************************************************************************************************************************************/
 
 	/* Funcion que asigna los psicologos que pueden tratar la patologia del paciente */
 	function asignarPsicologo(paciente){
@@ -218,12 +219,14 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
 
 	/* Funcion salir que cierra la sesion */
 	$scope.salir=function(){
-		Paciente.GetById().then(function(data){
-			if(!data.data || data.data=='') {
-				Psicologo.Salir();
-			} else {
-				Paciente.Salir();
+		/* Se comprueba que el paciente ha iniciado la sesion */
+		Paciente.GetById().then(function(data){ /* Recuperamos al paciente */
+			if(!data.data || data.data=='') { /* Si no existe, se trata de un psicologo */
+				Psicologo.Salir(); /* Se cierra la sesion del psicologo */
+			} else { /* Si lo es */
+				Paciente.Salir(); /* Se cierra la sesion del paciente */
 			}
+			/* Se redirige a la pagina de inicio */
 			$location.path("inicio"); 
 		});
 

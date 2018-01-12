@@ -35,8 +35,8 @@ module.exports = function(app) {
 	});
 
 	app.route('/mensajes/verMsjPendPsico')
+	/* Obtiene los mensajes pendientes de responder por un psicologo */
 		.get(function(req, res){
-
 		var mensaje = new Mensaje();
 		var promise = mensaje.findMsgPsicoPend(req.user);
 		promise.then(
@@ -50,6 +50,7 @@ module.exports = function(app) {
 	});
 
 	app.route('/mensajes/verMsjAceptPsico')
+	/* Obtiene los hilos de mensajes aceptados por un psicologo */
 		.get(function(req, res){
 
 		var mensaje = new Mensaje();
@@ -65,6 +66,7 @@ module.exports = function(app) {
 	});
 
 	app.route('/mensajes/verMsjRechPsico')
+	/* Obtiene los hilos de mensajes rechazados por un psicologo */
 		.get(function(req, res){
 
 		var mensaje = new Mensaje();
@@ -80,6 +82,7 @@ module.exports = function(app) {
 	});
 
 	app.route('/mensajes/verMsjPendPac')
+	/* Obtiene los mensajes pendientes de responder por psicologos escritos por el paciente */
 		.get(function(req, res){
 
 		var mensaje = new Mensaje();
@@ -95,6 +98,7 @@ module.exports = function(app) {
 	});
 
 	app.route('/mensajes/verMsjAceptPac')
+	/* Obtiene los hilos de mensajes aceptados por psicologos pertenecientes al paciente */
 		.get(function(req, res){
 
 		var mensaje = new Mensaje();
@@ -110,6 +114,7 @@ module.exports = function(app) {
 	});
 
 	app.route('/mensajes/verMsjRechPac')
+	/* Obtiene los hilos de mensajes rechazados por psicologos pertenecientes al paciente */
 		.get(function(req, res){
 
 		var mensaje = new Mensaje();
@@ -125,6 +130,7 @@ module.exports = function(app) {
 	});
 
 	app.route('/mensajes/verMsjPacientes')
+	/* Obtiene todos los mensajes de un paciente */
 		.get(function(req, res){
 
 		var mensaje = new Mensaje();

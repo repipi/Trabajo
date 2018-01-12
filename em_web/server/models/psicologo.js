@@ -1,10 +1,10 @@
 var mongoose = require('mongoose');
-// set Promise provider to bluebird
 mongoose.Promise = require('bluebird');
 var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
 var bcrypt = require('bcrypt-nodejs');
 
+/* Schema del objeto Psicologo */
 var psicologoSchema = new Schema(
 	{
 		_id : ObjectId,
@@ -34,7 +34,9 @@ var psicologoSchema = new Schema(
 	}
 );
 
+/* Metodo que verifique una contraseña */
 psicologoSchema.methods.compararPassword = function(password, cb){
+	/* Comprobar una contraseña con su hash */
 	bcrypt.compare(password, this.password, function(error, sonIguales){
 		if(error){
 			return cb(error);
@@ -43,27 +45,10 @@ psicologoSchema.methods.compararPassword = function(password, cb){
 	})
 };
 
-psicologoSchema.methods.autenticar = function(paciente) {
-	return new Promise(function(resolve, reject){
-
-		var query = {
-			email: paciente.email,
-			password: paciente.password
-		}
-
-		Psicologo.find(query).exec(function(error, results){
-			if(error){
-				console.log("Psicologos - Error en autenticar");
-				reject({error: error});
-			}else{
-				resolve(results);
-			}
-		});
-	});
-};
-
+/* Metodo que devuelve a todos los psicologos */
 psicologoSchema.methods.findAll = function() {
 	return new Promise(function(resolve, reject){
+		/* Devuelve un array con todos los documentos de la coleccion Psicologos */
 		Psicologo.find().exec(function(error, results){
 			if(error){
 				console.log("Psicologos - Error en findAll");
@@ -75,11 +60,14 @@ psicologoSchema.methods.findAll = function() {
 	});
 };
 
+/* Metodo que da de baja a un psicologo */
 psicologoSchema.methods.darBaja = function(id) {
 	return new Promise(function(resolve, reject){
 
+		/* Consulta sobre el documento */
 		var query = {_id: new mongoose.Types.ObjectId(id)};
 
+		/* Devuelve el primer documento de la coleccion Psicologos que cumplen la consulta. Posteriormente, lo borra. */
 		Psicologo.findOne(query).remove(function(error, results) {    
 			if(error){
 				console.log("Psicologo - Error en darBaja");
@@ -91,10 +79,14 @@ psicologoSchema.methods.darBaja = function(id) {
 	});
 };
 
+/* Metodo que devuelve a un psicologo mediante su id */
 psicologoSchema.methods.findOne = function(id) {
 	return new Promise(function(resolve, reject){
+
+		/* Consulta sobre el documento */
 		var query = {_id: new mongoose.Types.ObjectId(id)};
 
+		/* Devuelve un array con todos los documentos de la coleccion Psicologos que cumplen la consulta */
 		Psicologo.find(query).exec(function(error, results){
 			if(error){
 				console.log("Psicologos - Error en findOne "+error);
@@ -106,14 +98,14 @@ psicologoSchema.methods.findOne = function(id) {
 	});
 };
 
+/* Metodo que devuelve los psicologos que se corresponden con la informacion pasada por parametros */
 psicologoSchema.methods.filtrar = function(psicologo){
 	return new Promise(function(resolve, reject){
-		var query = {};
+		var query = {}; 	/* Consulta sobre el documento */
 
-		var precio, consulta, seguro;
+		var precio, consulta, seguro; /* Campos a filtrar */
 
-		console.log(psicologo);
-
+		/* Se formatean los rangos de precios */
 		if (psicologo.precio==30) {
 			precio={ $lte : 30 };
 		} else if (psicologo.precio==50) {
@@ -126,14 +118,14 @@ psicologoSchema.methods.filtrar = function(psicologo){
 			precio = { $exists: true };
 		}
 
-		console.log(seguro);
-
+		/* Se formatea el seguro */
 		if(psicologo.seguro=="" || psicologo.seguro==null){
 			seguro = { $exists: true };
 		} else {
 			seguro = psicologo.seguro;
 		}
 
+		/* Se formatea la consulta y se define la query en base al tipo de consulta */
 		if(psicologo.consulta=="" || psicologo.consulta==null){
 			query = {
 				consulta: { $exists: true },
@@ -142,7 +134,7 @@ psicologoSchema.methods.filtrar = function(psicologo){
 			};
 		} else if (psicologo.consulta=="presencial") {
 			query = {
-				$and : [
+				$and : [ 
 					{$or: [{consulta: { online: false, presencial: true }}, {consulta: {online: true, presencial:true}}]},
 					{precio : precio},
 					{aseguradora : seguro}
@@ -156,36 +148,33 @@ psicologoSchema.methods.filtrar = function(psicologo){
 				]};
 		}
 
-		//        console.log(JSON.stringify(consulta));
-		//        console.log(JSON.stringify(precio));
-		//        console.log(JSON.stringify(seguro));
-
-		console.log(JSON.stringify(query));
-
+		/* Devuelve un array con todos los documentos de la coleccion Psicologos que cumplen la consulta */
 		Psicologo.find(query).exec(function(error, results){
 			if(error){
 				console.log("Psicologos - Error en filtrar "+error);
 				reject({error: error});
 			}else{
 				resolve(results);
-				console.log(results);
 			}
 		});
 	});
 };
 
-/* Funcion añadir comentarios psicologo */
+/* Metodo para añadir comentarios al psicologo */
 psicologoSchema.methods.updateComentarios = function(psicologo) {
 	return new Promise(function(resolve, reject){
 
+		/* Consulta sobre el documento */
 		var query = {
 			_id: psicologo._id
 		}
 
+		/* Se crea un JSON datosComentarios con los datos pasados por argumento */
 		var datosComentarios = {
 			comentarios: psicologo.comentarios
 		}
 
+		/* Busca un documento que cumpla la consulta y lo actualiza con los datos de usuario pasados por parametros */
 		Psicologo.findOneAndUpdate(query, datosComentarios).exec(function(error, results){
 			if(error){
 				console.log("Pacientes - Error en updateComentarios");

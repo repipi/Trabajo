@@ -42,7 +42,7 @@
 }
 
 .navbar-brand.logo:hover {
-	color: teal;
+	color: rgba(0,128,128, 0.7);
 }
 
 .navegacion {
@@ -61,11 +61,17 @@
 }
 
 #term_cond_modal .modal-header {
-	background-color: teal;
+	background-color: rgba(0,128,128, 0.7);
 }
 
 #term_cond_modal h4 {
 	color:white;
+}
+
+#term_cond_modal .modal-body {
+	color: rgba(0,0,0,0.8);
+	height: 500px;
+	overflow-y: scroll;
 }
 
 /*********************************************************************************************************************************** PAGINA DE INICIO ***********************************************************************************************************************************/
@@ -89,7 +95,7 @@
 }
 
 .ui.header.nombre_test {
-	color: teal;
+	color: rgba(0,128,128, 0.7);
 }
 
 /*********************************************************************************************************************************** PERFIL PACIENTE ***********************************************************************************************************************************/
@@ -135,7 +141,7 @@
 }
 
 #aviso_modal .modal-header {
-	background-color: teal;
+	background-color: rgba(0,128,128, 0.7);
 }
 
 #aviso_modal h4 {
@@ -147,11 +153,32 @@
 }
 
 #contacto_modal .modal-header {
-	background-color: teal;
+	background-color: rgba(0,128,128, 0.7);
 }
 
 #contacto_modal h4 {
 	color:white;
+}
+
+#main_test {
+	padding-bottom: 20px;
+	padding-top: 20px;
+	/*	background-color: rgba(255, 255, 255, 0.5);*/
+	background-color: rgba(0,128,128, 0.4);
+	font-size: 125%;
+	font-family: 'Montserrat';
+	/*	color: rgba(0,128,128, 0.7);*/
+	color: white;
+	font-weight: bold;
+}
+
+#main_test button {
+	margin-top: 10px;
+	margin-left: 20px;
+	padding-left: 20%;
+	padding-right: 20%;
+	background-color: white; 
+	color: rgb(0,128,128);
 }
 
 /***********************************************************************************************************************************RESULTADO PACIENTES ******++++*************************************************************************************************************************/
@@ -181,14 +208,14 @@
 	appearance: none;
 	width: 25px;
 	height: 25px;
-	background: teal;
+	background: rgba(0,128,128, 0.7);
 	cursor: pointer;
 }
 
 .precio_slider.slider::-moz-range-thumb {
 	width: 25px;
 	height: 25px;
-	background: teal;
+	background: rgba(0,128,128, 0.7);
 	cursor: pointer;
 }
 
@@ -208,7 +235,7 @@
 }
 
 #baja_modal .modal-header {
-	background-color: teal;
+	background-color: rgba(0,128,128, 0.7);
 }
 
 #baja_modal h4 {
@@ -232,6 +259,14 @@
 	background-color: rgba(0,128,128, 0.7);
 }
 
+#comentarios {
+	margin-top: 20px;
+}
+
+#respuesta_modal {
+	color: black;
+}
+
 /************************************************************************************************************************** MAIL PSICOLOGO ***************************************************************************************************************************/
 #mensaje {
 	background-color: whitesmoke;
@@ -251,7 +286,7 @@
 }
 
 #acepta_modal .modal-header {
-	background-color: teal;
+	background-color: rgba(0,128,128, 0.7);
 }
 
 #acepta_modal h4 {
@@ -263,7 +298,7 @@
 }
 
 #declina_modal .modal-header {
-	background-color: teal;
+	background-color: rgba(0,128,128, 0.7);
 }
 
 #declina_modal h4 {
@@ -273,4 +308,34 @@
 #tabla_diagnostico {
 	background-color: white;
 	color: black;
+}
+
+/****************************** CALENDARIO *********************************/
+#calendar {
+	color: white;
+	font-family: 'Lato';
+}
+
+#calendar a {
+	color: white;
+}
+
+.fc-today {
+	background-color : rgba(255, 255, 255, 0.2);
+}
+
+.full-calendar-month td.today {
+	color: white;
+}
+
+#evento_modal {
+	color: black;
+}
+
+#evento_modal .modal-header {
+	background-color: rgba(0,128,128, 0.7);
+}
+
+#evento_modal h4 {
+	color:white;
 }

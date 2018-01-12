@@ -1,4 +1,4 @@
-<!---------------------------------------------------------------------------------------------------------------------------------- BARRA DE NAVEGACION PACIENTE -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- BARRA DE NAVEGACION PACIENTE ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <nav class='container navbar-inverse' ng-show='nav_gen' role='navigation' >
 	<div class='navbar-header'>
@@ -29,8 +29,7 @@
 	</ul>
 </nav>
 
-<!---------------------------------------------------------------------------------------------------------------------------------- BARRA DE NAVEGACION PSICOLOGO-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
+<!-- BARRA DE NAVEGACION PSICOLOGO ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 <nav class='container navbar-inverse' ng-show='nav_psico' role='navigation' >
 	<div class='navbar-header'>
 		<a href='#/inicio' class='navbar-brand logo'>
@@ -47,6 +46,7 @@
 	<ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
 		<li><a href='#/inicio' class="navegacion">Inicio</a></li>
 		<li><a href='#/mail' class="navegacion">Mis solicitudes</a></li>
+		<li><a href='#/psicologos/calendario' class="navegacion">Calendario</a></li>
 		<li class="dropdown navegacion seleccionado">
 			<a class="dropdown-toggle" data-toggle="dropdown" href="#/psicologos/{{psicologo._id}}">Perfil
 				<span class="caret"></span></a>
@@ -63,38 +63,184 @@
 
 <div class='ui container'>
 
-	<!------------------------------------------------------------------------------------------------------------------------------ INFORMACION GENERAL DEL PSICOLOGO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 	<div class="row">
-		<div class="col-xs-8 col-xs-offset-2">
 
-			<div class="ui segment" id="info_psicologo">
-				<div class="ui container" >
-					<div class="col-xs-6">
-						<div class="ui left floated small image">
-							<img ng-src="{{psicologo.foto}}">
-						</div>
-						<div class="ui right floated">
-							<h2 class="ui header nombre_psicologo">{{psicologo.nombre}}</h2>
-							<div class="ui right floated huge star rating" ng-init="iniciarRating(psicologo.estrellas)"></div> 
-							<p><br><i class="certificate icon"></i> {{psicologo.ncolegiado}}<br>
-								<i class="marker icon"></i>{{psicologo.localizacion}} </p>
+		<div class="ui grid">
+
+			<!-- TARJETA INFORMACION GENERAL PSICOLOGO ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+			<div class="four wide column">
+				<div class="ui card">
+					<div class="blurring dimmable image">
+						<img src="{{psicologo.foto}}">
+					</div>
+					<div class="content">
+						<div class="header">{{psicologo.nombre}}</div>
+						<div class="ui right floated star rating valoraciones" ng-init="iniciarRating(psicologo.estrellas)"></div>
+						<div class="meta"><i class="certificate teal icon"></i> {{psicologo.ncolegiado}} </div>
+						<div class="description"><i class="treatment teal icon"></i> {{psicologo.aseguradora}} </div>
+						<div class="description"><i class="marker teal icon"></i>{{psicologo.localizacion}} </div>
+					</div>
+					<div class="extra content">
+						<span class="right floated">{{psicologo.precio}} € / sesión</span>
+					</div>
+					<button type="button" id="contactar" class="ui teal bottom attached button" data-target="#contacto_modal" data-toggle="modal" data-id="psicologo._id" ng-click="psicologoSeleccionado(psicologo)">
+						<i class="calendar outline icon"></i>
+						Pedir cita</button>
+				</div>
+			</div>
+			<!-- TARJETA INFORMACION ESPECIFICA PSICOLOGO ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+			<div class="twelve wide column">
+				<div class='col-sm-6'>
+					<div class="ui teal fluid card">
+						<div class="content">
+							<div class="ui teal header">Formación</div>
+							<div class="description">
+								<p>{{psicologo.formacion}}</p>
+							</div>
 						</div>
 					</div>
-					<div class="col-xs-6">
-						<!--						<div class="ui extra content">-->
-						<!--						<span class="ui right aligned container"><h1>{{psicologo.precio}} <i class="euro icon"></i>/ sesión</h1></span>-->
-						<!--						</div>-->
-						<button type="button" class="ui right floated big teal button" data-target="#contacto_modal" data-toggle="modal">
-							<i class="icon mail"></i> 
-							Contactar
-						</button>
+
+					<div class="ui teal fluid card">
+						<div class="content">
+							<div class="ui teal header">Experiencia</div>
+							<div class="description">
+								<p>{{psicologo.experiencia}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='col-sm-6'>
+					<div class="ui teal fluid card">
+						<div class="content">
+							<div class="ui teal header">Especialidad</div>
+							<div class="description">
+								<p>{{psicologo.especialidad}}</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="ui teal fluid card">
+						<div class="content">
+							<div class="ui teal header">Terapias</div>
+							<div class="description">
+								<p>{{psicologo.terapia}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- COMENTARIOS Y VALORACIONES --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+				<div class="col-xs-12">
+					<div class="ui segment" id="comentarios">
+						<div class="ui fluid comments">
+							<h3 class="ui teal dividing header">Comentarios y valoraciones</h3>
+							<div ng-repeat="comentario in comentarios | orderBy : 'fechaComentario' : true" >
+								<div class="comment" id="comentario">
+									<div class="content">
+										<div class="metadata">
+											<span class="date">{{comentario.fechaComentario}}</span> 
+										</div>
+										<div class="ui star rating valoraciones" ng-init="iniciarRating(comentario.valoracion)"></div>
+										<div class="text">
+											<p>{{comentario.texto}}</p>
+										</div>
+										<div class="actions"  ng-hide="paciente||comentario.respuesta">
+											<a class="reply" data-target="#respuesta_modal" data-toggle="modal" data-id="comentario._id" ng-click="comentarioSeleccionado(comentario)">Responder</a>
+										</div>
+									</div>
+
+									<div class="comments" ng-show="comentario.respuesta">
+										<div class="comment">
+											<a class="avatar">
+												<img src="{{psicologo.foto}}">
+											</a>
+											<div class="content">
+												<a class="author">{{psicologo.nombre}}</a>
+												<div class="metadata">
+													<span class="date">{{comentario.fechaRespuesta}}</span>
+												</div>
+												<div class="text">{{comentario.respuesta}}</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="ui divider"></div>
+
+								</div>
+							</div>
+							<div class="ui borderless menu">
+								<a class="item" id="paginacion" ng-click="mostrarComentarios(numPag)" ng-repeat="numPag in paginas">{{numPag}}</a>
+							</div>
+							<!-- FORMULARIO ENVIO MENSAJES ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+							<form class="ui reply form" ng-show="paciente">
+								<div class="field">
+									<label>Comentario</label>
+									<textarea rows="2" ng-model="mensaje.texto" placeholder="Escribe aquí tu comentario"></textarea>
+								</div>
+								<div class="field">
+									<label>Valoración <div class="ui star rating"></div></label>
+								</div>
+								<div class="ui teal fluid submit icon button" ng-click="enviarComentario(mensaje)"><i class="icon edit"></i> Añadir commentario</div>
+								<div class="ui positive message" ng-show="msj_exito">
+									<i class="close icon"></i>
+									<div class="header"> Tu comentario ha sido publicado. </div>
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<!-------------------------------------------------------------------------------------------------------------------------- FORMULARIO DE CONTACTO: Ventana emergente - overlay ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+	<!-- FORMULARIO DE RESPUESTA: Ventana emergente - overlay ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+	<div class="ui container">
+		<div class="modal fade" id="respuesta_modal">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+
+					<!-- Titulo -->
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="ui teal header">Responder</h4>
+					</div>
+
+					<!-- Cuerpo del formulario -->
+					<div class="modal-body">
+						<div class="ui fluid comments">
+							<div class="comment" id="comentario">
+								<div class="content">
+									<div class="metadata">
+										<span class="date">{{comentario.fechaComentario}}</span> 
+									</div>
+									<div class="ui star rating valoraciones" ng-init="iniciarRating(comentario.valoracion)"></div>
+									<div class="text">
+										<p>{{comentario.texto}}</p>
+									</div>
+									<div class="actions">
+										<form class="ui reply form">
+											<div class="field">
+												<textarea rows="1" ng-model="respuesta"></textarea>
+											</div>
+											<div class="ui teal fluid submit icon button" ng-click="enviarRespuesta(comentario, respuesta)"><i class="icon edit"></i>Enviar respuesta</div>
+										</form>
+										<div class="ui positive message" ng-show="msj_exito_respuesta">
+											<i class="close icon"></i>
+											<div class="header"> Se ha publicado tu respuesta. </div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> 
+			</div> 
+		</div>
+	</div>
+
+	<!-- FORMULARIO DE CONTACTO: Ventana emergente - overlay -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 	<div class="ui container">
 		<div class="modal fade" id="contacto_modal">
 			<div class="modal-dialog" role="document">
@@ -126,16 +272,6 @@
 						</div>
 					</div>
 
-					<!--
-<div class="col-xs-10 pull-left text-left text-muted"> 
-<small><strong>Aviso:</strong>
-Lorem ipsum dolor sit amet consectetur adipiscing elit. 
-Mauris vitae libero lacus, vel hendrerit nisi! Maecenas quis 
-velit nisl, volutpat viverra felis. Vestibulum luctus mauris 
-sed sem dapibus luctus.</small> 
-</div> 
--->
-
 					<div class="modal-footer">
 						<div class="ui green button" ng-click="enviarMensaje(mensaje)">Enviar</div>
 						<div class="ui grey button"  class="close" data-dismiss="modal" aria-label="Close">Cancelar</div>
@@ -144,122 +280,5 @@ sed sem dapibus luctus.</small>
 			</div> 
 		</div>
 	</div>
-
-	<!------------------------------------------------------------------------------------------------------------------------------ INFORMACION ESPECIALIZADA DEL PSICOLOGO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-	<div id="info_sec"></div>
-
-	<div class='row'>
-
-		<div class='col-sm-4 col-sm-offset-2'>
-			<div class="ui teal fluid card">
-				<div class="content">
-					<div class="ui teal header">Formación</div>
-					<div class="description">
-						<p>{{psicologo.formacion}}</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="ui teal fluid card">
-				<div class="content">
-					<div class="ui teal header">Experiencia</div>
-					<div class="description">
-						<p>{{psicologo.experiencia}}</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="ui teal fluid card">
-				<div class="content">
-					<div class="ui teal header">Especialidad</div>
-					<div class="description">
-						<p>{{psicologo.especialidad}}</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="ui teal fluid card">
-				<div class="content">
-					<div class="ui teal header">Terapias</div>
-					<div class="description">
-						<p>{{psicologo.terapia}}</p>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!---------------------------------------------------------------------------------------------------------------------- COMENTARIOS ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-		<div class='col-sm-4'>
-			<div class="ui comments segment">
-				<h3 class="ui teal dividing header">Comentarios y valoraciones</h3>
-				<div ng-repeat="comentario in comentarios | orderBy : 'fechaComentario' : true" >
-					<div class="comment" id="comentario">
-						<div class="content">
-							<!--							<a class="author">Elliot Fu</a>-->
-							<div class="metadata">
-								<span class="date">{{comentario.fechaComentario}}</span> 
-							</div>
-							<div class="ui star rating valoraciones" ng-init="iniciarRating(comentario.valoracion)"></div>
-							<div class="text">
-								<p>{{comentario.texto}}</p>
-							</div>
-<!--							<div class="actions"  ng-hide="paciente||comentario.respuesta">-->
-								<!--								 ng-click="actFormRespuesta($index, comentarios)" -->
-<!--								<a class="reply" ng-hide="formRespuesta"  ng-click="actFormRespuesta(true)">Responder</a>-->
-							<div class="actions" ng-hide="paciente||comentario.respuesta">
-								<a class="reply" ng-click="actFormRespuesta(false)" ng-hide="formRespuesta">{{formRespuesta}}Responder</a>
-								<form class="ui reply form" ng-show="formRespuesta">
-									<div class="field">
-										<textarea rows="1" ng-model="respuesta"></textarea>
-									</div>
-									<div class="ui teal fluid submit icon button" ng-click="enviarRespuesta(comentario, respuesta); actFormRespuesta(true)"><i class="icon edit"></i>Enviar respuesta</div>
-								</form>
-							</div>
-						</div>
-
-						<div class="comments" ng-show="comentario.respuesta">
-							<div class="comment">
-								<a class="avatar">
-									<img src="{{psicologo.foto}}">
-								</a>
-								<div class="content">
-									<a class="author">{{psicologo.nombre}}</a>
-									<div class="metadata">
-										<span class="date">{{comentario.fechaRespuesta}}</span>
-									</div>
-									<div class="text">{{comentario.respuesta}}</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="ui divider"></div>
-
-					</div>
-				</div>
-				<div class="ui borderless menu">
-					<a class="item" id="paginacion" ng-click="mostrarComentarios(numPag)" ng-repeat="numPag in paginas">{{numPag}}</a>
-				</div>
-				<form class="ui reply form" ng-show="paciente">
-					<div class="field">
-						<label>Comentario</label>
-						<textarea rows="2" ng-model="mensaje.texto" placeholder="Escribe aquí tu comentario"></textarea>
-					</div>
-					<div class="field">
-						<label>Valoración <div class="ui star rating"></div></label>
-					</div>
-					<div class="ui teal fluid submit icon button" ng-click="enviarComentario(mensaje)"><i class="icon edit"></i> Añadir commentario</div>
-					<div class="ui positive message" ng-show="msj_exito">
-						<i class="close icon"></i>
-						<div class="header"> Tu comentario ha sido publicado. </div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-
-	<!--        COMENTARIOS-->
-	<!--        https://semantic-ui.com/views/comment.html-->
 
 </div>
