@@ -25,103 +25,135 @@
     </calendar>
   </calendars>
   <tasks>
-    <task id="1" name="Formaci&#xF3;n" note="" work="176400" start="20171016T000000Z" end="20171024T150000Z" work-start="20171016T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
-    <task id="2" name="Fase inicial" note="" work="151200" start="20171024T150000Z" end="20171108T150000Z" work-start="20171025T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+    <task id="1" name="Fase inicial" note="" work="403200" start="20171016T000000Z" end="20171108T150000Z" work-start="20171016T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="2" name="Formaci&#xF3;n" note="" work="252000" start="20171016T000000Z" end="20171027T150000Z" work-start="20171016T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="3" name="Gesti&#xF3;n " note="" work="75600" start="20171027T150000Z" end="20171108T150000Z" work-start="20171030T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="2" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="4" name="An&#xE1;lisis" note="" work="75600" start="20171027T150000Z" end="20171108T150000Z" work-start="20171030T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="3" type="SS"/>
+        </predecessors>
+      </task>
+      <task id="5" name="Fin &quot;Fase Inicial&quot;" note="" work="0" start="20171108T150000Z" end="20171108T150000Z" work-start="20171108T150000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="4" type="FS"/>
+        </predecessors>
+      </task>
+    </task>
+    <task id="6" name="Fase incremental" note="" work="1008000" start="20171108T150000Z" end="20180103T150000Z" work-start="20171109T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
       <predecessors>
-        <predecessor id="1" predecessor-id="1" type="FS"/>
+        <predecessor id="1" predecessor-id="5" type="FS"/>
       </predecessors>
-      <task id="3" name="An&#xE1;lisis" note="" work="151200" start="20171024T150000Z" end="20171108T150000Z" work-start="20171025T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
-      <task id="4" name="Fin &quot;Fase Inicial&quot;" note="" work="0" start="20171108T150000Z" end="20171108T150000Z" work-start="20171108T150000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
-        <predecessors>
-          <predecessor id="1" predecessor-id="3" type="FS"/>
-        </predecessors>
+      <task id="7" name="Incremento 1: Cuestionario" note="" work="504000" start="20171108T150000Z" end="20171206T150000Z" work-start="20171109T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <task id="8" name="Dise&#xF1;o" note="" work="50400" start="20171108T150000Z" end="20171110T150000Z" work-start="20171109T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="5" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="9" name="Implementaci&#xF3;n" note="" work="327600" start="20171110T150000Z" end="20171129T150000Z" work-start="20171113T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="8" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="10" name="Pruebas" note="" work="75600" start="20171129T150000Z" end="20171204T150000Z" work-start="20171130T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="9" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="11" name="Revisi&#xF3;n" note="" work="50400" start="20171204T150000Z" end="20171206T150000Z" work-start="20171205T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="10" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="12" name="Fin &quot;Incremento 1: Cuestionario&quot;" note="" work="0" start="20171206T150000Z" end="20171206T150000Z" work-start="20171206T150000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="11" type="FS"/>
+          </predecessors>
+        </task>
       </task>
-    </task>
-    <task id="5" name="Incremento 1: Cuestionario" note="" work="504000" start="20171108T150000Z" end="20171206T150000Z" work-start="20171109T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-      <task id="6" name="Dise&#xF1;o" note="" work="50400" start="20171108T150000Z" end="20171110T150000Z" work-start="20171109T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-        <predecessors>
-          <predecessor id="1" predecessor-id="3" type="FS"/>
-        </predecessors>
-      </task>
-      <task id="7" name="Implementaci&#xF3;n" note="" work="327600" start="20171110T150000Z" end="20171129T150000Z" work-start="20171113T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-        <predecessors>
-          <predecessor id="1" predecessor-id="6" type="FS"/>
-        </predecessors>
-      </task>
-      <task id="8" name="Pruebas" note="" work="75600" start="20171129T150000Z" end="20171204T150000Z" work-start="20171130T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-        <predecessors>
-          <predecessor id="1" predecessor-id="7" type="FS"/>
-        </predecessors>
-      </task>
-      <task id="9" name="Revisi&#xF3;n" note="" work="50400" start="20171204T150000Z" end="20171206T150000Z" work-start="20171205T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-        <predecessors>
-          <predecessor id="1" predecessor-id="8" type="FS"/>
-        </predecessors>
-      </task>
-      <task id="10" name="Fin &quot;Incremento 1: Cuestionario&quot;" note="" work="0" start="20171206T150000Z" end="20171206T150000Z" work-start="20171206T150000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
-        <predecessors>
-          <predecessor id="1" predecessor-id="9" type="FS"/>
-        </predecessors>
-      </task>
-    </task>
-    <task id="11" name="Incremento 2: Gesti&#xF3;n usuarios" note="" work="252000" start="20171206T150000Z" end="20171220T150000Z" work-start="20171207T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-      <task id="12" name="Dise&#xF1;o" note="" work="50400" start="20171206T150000Z" end="20171208T150000Z" work-start="20171207T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-        <predecessors>
-          <predecessor id="1" predecessor-id="9" type="FS"/>
-        </predecessors>
-      </task>
-      <task id="13" name="Implementaci&#xF3;n" note="" work="126000" start="20171208T150000Z" end="20171215T150000Z" work-start="20171211T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="13" name="Incremento 2: Gesti&#xF3;n usuarios" note="" work="252000" start="20171206T150000Z" end="20171220T150000Z" work-start="20171207T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <predecessors>
           <predecessor id="1" predecessor-id="12" type="FS"/>
         </predecessors>
+        <task id="14" name="Dise&#xF1;o" note="" work="50400" start="20171206T150000Z" end="20171208T150000Z" work-start="20171207T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="11" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="15" name="Implementaci&#xF3;n" note="" work="126000" start="20171208T150000Z" end="20171215T150000Z" work-start="20171211T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="14" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="16" name="Pruebas" note="" work="50400" start="20171215T150000Z" end="20171219T150000Z" work-start="20171218T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="15" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="17" name="Revisi&#xF3;n" note="" work="25200" start="20171219T150000Z" end="20171220T150000Z" work-start="20171220T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="16" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="18" name="Fin &quot;Incremento 2: Gesti&#xF3;n usuarios&quot;" note="" work="0" start="20171220T150000Z" end="20171220T150000Z" work-start="20171220T150000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="17" type="FS"/>
+          </predecessors>
+        </task>
       </task>
-      <task id="14" name="Pruebas" note="" work="50400" start="20171215T150000Z" end="20171219T150000Z" work-start="20171218T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="19" name="Incremento 3: Comunicaci&#xF3;n" note="" work="252000" start="20171220T150000Z" end="20180103T150000Z" work-start="20171221T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <predecessors>
-          <predecessor id="1" predecessor-id="13" type="FS"/>
+          <predecessor id="1" predecessor-id="11" type="FS"/>
         </predecessors>
+        <task id="20" name="Dise&#xF1;o" note="" work="50400" start="20171220T150000Z" end="20171222T150000Z" work-start="20171221T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="17" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="21" name="Implementaci&#xF3;n" note="" work="126000" start="20171222T150000Z" end="20171229T150000Z" work-start="20171225T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="20" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="22" name="Pruebas" note="" work="50400" start="20171229T150000Z" end="20180102T150000Z" work-start="20180101T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="21" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="23" name="Revisi&#xF3;n" note="" work="25200" start="20180102T150000Z" end="20180103T150000Z" work-start="20180103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="22" type="FS"/>
+          </predecessors>
+        </task>
+        <task id="24" name="Fin &quot;Incremento 3: Comunicaci&#xF3;n&quot;" note="" work="0" start="20180103T150000Z" end="20180103T150000Z" work-start="20180103T150000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+          <predecessors>
+            <predecessor id="1" predecessor-id="23" type="FS"/>
+          </predecessors>
+        </task>
       </task>
-      <task id="15" name="Revisi&#xF3;n" note="" work="25200" start="20171219T150000Z" end="20171220T150000Z" work-start="20171220T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="25" name="Fin &quot;Fase incremental&quot;" note="" work="0" start="20180103T150000Z" end="20180103T150000Z" work-start="20180103T150000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
         <predecessors>
-          <predecessor id="1" predecessor-id="14" type="FS"/>
-        </predecessors>
-      </task>
-      <task id="16" name="Fin &quot;Incremento 2: Gesti&#xF3;n usuarios&quot;" note="" work="0" start="20171220T150000Z" end="20171220T150000Z" work-start="20171220T150000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
-        <predecessors>
-          <predecessor id="1" predecessor-id="15" type="FS"/>
+          <predecessor id="1" predecessor-id="24" type="FS"/>
         </predecessors>
       </task>
     </task>
-    <task id="17" name="Incremento 3: Comunicaci&#xF3;n" note="" work="252000" start="20171220T150000Z" end="20180103T150000Z" work-start="20171221T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-      <task id="18" name="Dise&#xF1;o" note="" work="50400" start="20171220T150000Z" end="20171222T150000Z" work-start="20171221T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-        <predecessors>
-          <predecessor id="1" predecessor-id="15" type="FS"/>
-        </predecessors>
-      </task>
-      <task id="19" name="Implementaci&#xF3;n" note="" work="126000" start="20171222T150000Z" end="20171229T150000Z" work-start="20171225T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-        <predecessors>
-          <predecessor id="1" predecessor-id="18" type="FS"/>
-        </predecessors>
-      </task>
-      <task id="20" name="Pruebas" note="" work="50400" start="20171229T150000Z" end="20180102T150000Z" work-start="20180101T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-        <predecessors>
-          <predecessor id="1" predecessor-id="19" type="FS"/>
-        </predecessors>
-      </task>
-      <task id="21" name="Revisi&#xF3;n" note="" work="25200" start="20180102T150000Z" end="20180103T150000Z" work-start="20180103T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-        <predecessors>
-          <predecessor id="1" predecessor-id="20" type="FS"/>
-        </predecessors>
-      </task>
-      <task id="22" name="Fin &quot;Incremento 3: Comunicaci&#xF3;n&quot;" note="" work="0" start="20180103T150000Z" end="20180103T150000Z" work-start="20180103T150000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
-        <predecessors>
-          <predecessor id="1" predecessor-id="21" type="FS"/>
-        </predecessors>
-      </task>
-    </task>
-    <task id="23" name="Documentaci&#xF3;n" note="" work="302400" start="20180103T150000Z" end="20180119T150000Z" work-start="20180104T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+    <task id="26" name="Fase final" note="" work="252000" start="20180103T150000Z" end="20180117T150000Z" work-start="20180104T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
       <predecessors>
-        <predecessor id="1" predecessor-id="21" type="FS"/>
+        <predecessor id="1" predecessor-id="25" type="FS"/>
       </predecessors>
+      <task id="27" name="Documentaci&#xF3;n" note="" work="252000" start="20180103T150000Z" end="20180117T150000Z" work-start="20180104T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="23" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="28" name="Fin &quot;Fase final&quot;" note="" work="0" start="20180117T150000Z" end="20180117T150000Z" work-start="20180117T150000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="27" type="FS"/>
+        </predecessors>
+      </task>
     </task>
   </tasks>
   <resource-groups/>
@@ -129,24 +161,25 @@
     <resource id="1" name="Raquel" short-name="" type="1" units="0" email="" note="" std-rate="0"/>
   </resources>
   <allocations>
+    <allocation task-id="2" resource-id="1" units="100"/>
+    <allocation task-id="3" resource-id="1" units="100"/>
+    <allocation task-id="27" resource-id="1" units="100"/>
     <allocation task-id="23" resource-id="1" units="100"/>
+    <allocation task-id="22" resource-id="1" units="100"/>
     <allocation task-id="21" resource-id="1" units="100"/>
     <allocation task-id="20" resource-id="1" units="100"/>
     <allocation task-id="19" resource-id="1" units="100"/>
-    <allocation task-id="18" resource-id="1" units="100"/>
     <allocation task-id="17" resource-id="1" units="100"/>
+    <allocation task-id="16" resource-id="1" units="100"/>
     <allocation task-id="15" resource-id="1" units="100"/>
     <allocation task-id="14" resource-id="1" units="100"/>
     <allocation task-id="13" resource-id="1" units="100"/>
-    <allocation task-id="12" resource-id="1" units="100"/>
     <allocation task-id="11" resource-id="1" units="100"/>
+    <allocation task-id="10" resource-id="1" units="100"/>
     <allocation task-id="9" resource-id="1" units="100"/>
-    <allocation task-id="8" resource-id="1" units="100"/>
     <allocation task-id="7" resource-id="1" units="100"/>
-    <allocation task-id="5" resource-id="1" units="100"/>
-    <allocation task-id="6" resource-id="1" units="100"/>
-    <allocation task-id="3" resource-id="1" units="100"/>
-    <allocation task-id="2" resource-id="1" units="100"/>
+    <allocation task-id="8" resource-id="1" units="100"/>
+    <allocation task-id="4" resource-id="1" units="100"/>
     <allocation task-id="1" resource-id="1" units="100"/>
   </allocations>
 </project>
