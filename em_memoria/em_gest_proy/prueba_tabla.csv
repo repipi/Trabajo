@@ -1,0 +1,14 @@
+CU-016,Dar alta psicólogos
+Actor principal,Administrador
+Objetivo en contexto,El administrador dará de alta a los psicólogos que hayan enviado el formulario de registro.
+Precondiciones,"El psicólogo que se va a dar de alta, ha de haber cubierto el formulario de registro."
+Disparador,El administrador desea actualizar la colección de psicólogos de la base de datos.
+Escenario,El administrador añade la información del psicólogo a la base de datos.
+Excepciones,-
+Prioridad,"Moderada
+Puede implementarse después de las funciones básicas."
+Disponibilidad,En el segundo incremento
+Frecuencia de uso,Puntualmente
+Canal del actor,"A través de un navegador con acceso a internet, y una herramienta de gestión de bases de datos."
+Dependencias (con los requisitos),"RI-003
+RI-002"

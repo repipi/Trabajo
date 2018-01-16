@@ -1,0 +1,120 @@
+% This file was converted to LaTeX by Writer2LaTeX ver. 1.4
+% see http://writer2latex.sourceforge.net for more info
+\documentclass{article}
+\usepackage[ascii]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb,amsfonts,textcomp}
+\usepackage{array}
+\usepackage{supertabular}
+\usepackage{hhline}
+\makeatletter
+\newcommand\arraybslash{\let\\\@arraycr}
+\makeatother
+\setlength\tabcolsep{1mm}
+\renewcommand\arraystretch{1.3}
+\title{}
+\begin{document}
+\subsection{GESTI\'ON DE LA CONFIGURACI\'ON}
+
+\bigskip
+
+La gesti\'on de la configuraci\'on del software es un conjunto de actividades dise\~nadas para administrar el cambio mediante la identificaci\'on de los productos de trabajo con potencial de cambio, las relacines entre ellos, la definici\'on de mecanismos para administrar diferentes versiones de los mismos y el control de los cambios impuestos, as\'i como la auditor\'ia y reporte de los cambios realizados CITA PRESSMAN
+
+
+\bigskip
+
+\subsection{1. L\'inea base}
+El IEEE (IEEE Std. No. 610.12-1990) indica que una especificaci\'on o producto que se revis\'o formalmente y con el que se estuvo de acuerdo, servir\'a como base para un mayor desarrollo y que cambia s\'olo a trav\'es de procedimientos de control de cambio formal.
+
+Las l\'ineas base de nuestro proyecto son fundamentalmente el enunciado del alcance del proyecto y los requisitos software.
+
+
+\bigskip
+
+\subsection{1.2. Creaci\'on de l\'ineas base}
+Como nuestro proyecto se desarrolla de manera incremental, la l\'inea base del segundo incremento, ser\'a tanto el enunciado del alcance del proyecto, los requisitos software asociados a dicho incremento y finalmente, el c\'odigo resultado del incremento 1. De forma an\'aloga ser\'ia para el caso del incremento 3, que tendr\'ia como l\'inea base adicional el c\'odigo resultado del incremento 2.
+
+
+\bigskip
+
+\subsection[2. Repositorio para la gesti\'on de la configuraci\'on]{2. Repositorio para la gesti\'on de la configuraci\'on}
+Un repositorio es el conjunto de mecanismos y estructuras de datos que permiten administrar el cambio de forma efectiva, asegurando la integridad, posibilidad de compartir e integrar datos. Para lograr estas capacidades, el repositorio se define como un metamodelo que determina c\'omo se almacena la informaci\'on en el repositorio, c\'omo pueden acceder las herramientas a los datos, cu\'an bien puede mantenerse la seguridad e integridad de los datos y cu\'an f\'acilmente puede extenderse el modelo existente para alojar nuevas necesidades. CITA PRESSMAN
+
+\subsection{2.1. Repositorio escogido}
+Este proyecto se encuentra almacenado en un repositorio GitHub que es una plataforma de desarrollo colaborativo de software para \textbf{alojar proyectos }usando el sistema de control de versiones Git. Git nos permitir\'a tener una copia del repositorio del proyecto en local y otra en remoto. El proyecto en local sufrir\'a constantes modificaciones, que una vez validadas, se guardar\'an en el remoto.
+
+
+\bigskip
+
+\subsection{2.2. Metamodelo}
+La estructura de informaci\'on que se encuentra en el repositorio viene definida de la siguiente forma:
+
+\begin{center}
+\tablefirsthead{}
+\tablehead{}
+\tabletail{}
+\tablelasttail{}
+\begin{supertabular}{m{5.467cm}|m{5.467cm}|m{5.467cm}|}
+\hline
+\multicolumn{2}{|m{11.134cm}|}{Carpeta} &
+Descripci\'on del contenido\\\hline
+\multicolumn{2}{|m{11.134cm}|}{em\_diagramas} &
+Contiene el archivo de StarUML que contiene todos los diagramas del proyecto: Casos de uso, modelo de datos, patr\'on MVC...\\\hline
+\multicolumn{1}{|m{5.467cm}|}{em\_memoria} &
+em\_analisis &
+Contiene todos los archivos referentes al an\'alisis.\\\hline
+ &
+em\_anexos &
+Contiene todos los anexos de la memoria del proyecto.\\\hhline{~--}
+ &
+em\_dise\~no &
+Contiene todos los archivos referentes al dise\~no.\\\hhline{~--}
+ &
+em\_gest\_proy &
+Contiene todos los archivos referentes a la gesti\'on del proyecto.\\\hhline{~--}
+ &
+em\_introducci\'on &
+Contiene la introducci\'on de la memoria del proyecto.\\\hhline{~--}
+ &
+em\_memoria\_final &
+Se trata del documento en LaTeX que contiene la memoria a entregar.\\\hhline{~--}
+ &
+em\_plan\_pruebas &
+Contiene todos los archivos referentes al plan de pruebas.\\\hhline{~--}
+\multicolumn{2}{|m{11.134cm}|}{em\_mockup} &
+Contiene el mockup hecho con Pencil de la plataforma web.\\\hline
+\multicolumn{2}{|m{11.134cm}|}{em\_web} &
+Contiene todos los archivos que constituyen el c\'odigo fuente de la plataforma web.\\\hline
+\end{supertabular}
+\end{center}
+
+\bigskip
+
+Dentro de cada carpeta o subcarpeta, los archivos aparecen con un nombre descriptivo. Por ejemplo, en la subcarpeta de em\_memoria llamada em\_gest\_proy se encuentra gest\_costes.odt que es el archivo correspondiente a la subsecci\'on de costes de la secci\'on de gesti\'on del proyecto que habr\'a en la memoria final.
+
+
+\bigskip
+
+\subsection[3. Sistema de gesti\'on de la configuraci\'on]{3. Sistema de gesti\'on de la configuraci\'on}
+La estructura del repositorio est\'a distribuida del siguiente modo:
+
+\begin{enumerate}
+\item Master: Contendr\'a la \'ultima versi\'on validada del c\'odigo fuente, es decir, tras pasar las pruebas del incremento 1, contendr\'a el c\'odigo fuente del incremento 1, y as\'i, sucesivamente.
+\item Branches:
+
+\begin{enumerate}
+\item memoria\_branch: Contendr\'a los commits de las distintas versiones de la memoria del proyecto.
+\item diagrama\_branch: Contendr\'a los commits de las distintas versiones de los diagramas de la plataforma.
+\item mockup\_branch: Contendr\'a los commits de las distintas versiones del mockup de la plataforma.
+\item cuestionario\_branch, usuarios\_branch, contacto\_branch: Contendr\'an respectivamente, los commits del c\'odigo fuente asociado a los incrementos 1, 2 y 3.
+
+Antes de comenzar un incremento, se crea una branch de master y se implementan las funcionalidades pertenecientes a ese incremento. Una vez realizada su fase de pruebas, se har\'a un merge de esa branch con el master, y posteriormente, se elimina.
+\end{enumerate}
+\end{enumerate}
+
+\bigskip
+
+https://github.com/Hispano/Guia-sobre-Git-Github-y-Metodologia-de-Desarrollo-de-Software-usando-Git-y-Github
+\end{document}
