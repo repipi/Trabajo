@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.1.12)  14 JAN 2018 11:47
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.1.12)  17 JAN 2018 21:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -682,7 +682,55 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.25 \bibitem{pmbok}
+l.24 \bibitem{sommerville}
+                           Sommerville blabla
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.24 \bibitem{sommerville}
+                           Sommerville blabla
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.24 \bibitem{sommerville}
+                           Sommerville blabla
+I'm forgetting what you said and using zero instead.
+
+\bibcite{sommerville}{0}
+Missing character: There is no S in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.27 \bibitem{pmbok}
                      PMBOK blablabla
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -690,7 +738,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 <argument> \@listctr 
                      
-l.25 \bibitem{pmbok}
+l.27 \bibitem{pmbok}
                      PMBOK blablabla
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -701,7 +749,7 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.25 \bibitem{pmbok}
+l.27 \bibitem{pmbok}
                      PMBOK blablabla
 I'm forgetting what you said and using zero instead.
 
@@ -727,7 +775,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.27 \bibitem{github}
+l.29 \bibitem{github}
                       GitHub
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -735,7 +783,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 <argument> \@listctr 
                      
-l.27 \bibitem{github}
+l.29 \bibitem{github}
                       GitHub
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -746,7 +794,7 @@ and I'll forget about whatever was undefined.
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.27 \bibitem{github}
+l.29 \bibitem{github}
                       GitHub
 I'm forgetting what you said and using zero instead.
 
@@ -764,7 +812,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.29 \end{thebibliography}
+l.31 \end{thebibliography}
                           
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
