@@ -109,6 +109,16 @@
       "resolved": "https://registry.npmjs.org/angular/-/angular-1.6.6.tgz",
       "integrity": "sha1-/Vo8+0N844LYVO4BEgeXl4Uny2Q="
     },
+    "angular-resource": {
+      "version": "1.6.8",
+      "resolved": "https://registry.npmjs.org/angular-resource/-/angular-resource-1.6.8.tgz",
+      "integrity": "sha512-Vx97FiunDEWlrKFwaSH3O8/S7krWarWme1Tj88a58EJSD2RSGgHPvbD4YXvzZHk9yqitUr/t1f+6UzYLge5o/g=="
+    },
+    "angular-route": {
+      "version": "1.6.8",
+      "resolved": "https://registry.npmjs.org/angular-route/-/angular-route-1.6.8.tgz",
+      "integrity": "sha512-6PlZVc9SRkzYdinL8urilbA/6RmbKdaGrgAKWo2XXgblOHLxguWcYcqYXPUdlMVbMYZuubI+OzTXMa2zol18AQ=="
+    },
     "ansi-escapes": {
       "version": "2.0.0",
       "resolved": "https://registry.npmjs.org/ansi-escapes/-/ansi-escapes-2.0.0.tgz",

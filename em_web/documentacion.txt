@@ -1,6 +1,0 @@
-1- Se crea el archivo views/index.html
-2- Se define el modulo de la aplicacion en assets/javascript/app.js
-3- Definir distintas rutas en assets/javascript/routes.js
-4- Definimos el modulo de la aplicacion con ng-app en el index.html
-5- Creamos los controladores en assets/javascript/controllers/... y los añadimos al final del index.html
-6- Se crea la factory que creara los recursos del objeto Usuario
