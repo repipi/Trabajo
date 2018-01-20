@@ -64,7 +64,7 @@ La estructura de descomposición de tareas viene representada en la figura \ref{
 
 \begin{figure}[htbp] 
     \centering
-    \includegraphics[width=1\textwidth]{figuras/edt.eps}
+    \includegraphics[width=1\textwidth]{figuras/edt_v1_en.png}
     \caption{Estructura de descomposición de tareas del proyecto}
     \label{fig:edt}
 \end{figure}	
@@ -161,12 +161,16 @@ A lo largo de esta memoria cada tarea realizada, estará definida dentro del con
 \section{Planificación temporal}
 La previsión temporal del presente proyecto estaba comprendido entre el 16 de octubre de 2017 y el 21 de enero de 2018, con un trabajo de seis horas diarias. La estimación temporal en tareas, y la asignación de las mismas a los recursos, se puede observar en el diagrama de Gantt \ref{fig:gantt}.
 
+\begin{landscape}
+
 \begin{figure}[htbp] 
     \centering
-    \includegraphics[width=1\textwidth]{figuras/gantt.eps}
+    \includegraphics[height=\textwidth,keepaspectratio]{figuras/gantt_v2_en.png}
     \caption{Diagrama de Gantt}
     \label{fig:gantt}
 \end{figure}	
+
+\end{landscape}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -195,8 +199,6 @@ La estructura de información que se encuentra en el repositorio viene definida 
 
 \begin{table}[htpb]
 \centering
-\caption{Metamodelo}
-\label{tab_metamodelo}
 \begin{tabularx}{\textwidth}{|l|l|X|}
 \hline
 \multicolumn{2}{|c|}{Carpeta}                     & \multicolumn{1}{c|}{Descripción del contenido}                                                                             \\ \hline
@@ -211,6 +213,8 @@ La estructura de información que se encuentra en el repositorio viene definida 
 \multicolumn{2}{|X|}{em\_mockup}                  & Contiene el mockup hecho con Pencil de la plataforma web.                                                                  \\ \hline
 \multicolumn{2}{|X|}{em\_web}                     & Contiene todos los archivos que constituyen el código fuente de la plataforma web.                                         \\ \hline
 \end{tabularx}
+\caption{Metamodelo}
+\label{tab_metamodelo}
 \end{table}
 
 Dentro de cada carpeta o subcarpeta, los archivos aparecen con un nombre descriptivo. Por ejemplo, en la subcarpeta de \texttt{em\_memoria} llamada \texttt{em\_gest\_proy} se encuentra \texttt{gest\_costes.odt} que es el archivo correspondiente a la subsección de costes de la sección de gestión del proyecto que habrá en la memoria final.
@@ -262,8 +266,6 @@ La \textbf{probabilidad} representa la expectativa de ocurrencia real del riesgo
 
 \begin{table}[htpb]
 \centering
-\caption{Valoración del impacto}
-\label{tab_impacto}
 \begin{tabular}{|l|l|}
 \hline
 \multicolumn{2}{|c|}{Valoración del impacto}                                                  \\ \hline
@@ -272,12 +274,12 @@ La \textbf{probabilidad} representa la expectativa de ocurrencia real del riesgo
 Entre 10\% y 20 \%                                             & Medio                        \\ \hline
 \textless= 10\%                                                & Bajo                         \\ \hline
 \end{tabular}
+\caption{Valoración del impacto}
+\label{tab_impacto}
 \end{table}
 
 \begin{table}[htpb]
 \centering
-\caption{Valoración de la probabilidad}
-\label{tab_probabilidad}
 \begin{tabular}{|l|l|}
 \hline
 \multicolumn{2}{|c|}{Valoración de la probabilidad} \\ \hline
@@ -286,14 +288,14 @@ Entre 10\% y 20 \%                                             & Medio          
 Entre 30\% y 80\% (muy probable)  & Media         \\ \hline
 \textless= 30\% (poco probable)   & Baja         \\ \hline
 \end{tabular}
+\caption{Valoración de la probabilidad}
+\label{tab_probabilidad}
 \end{table}
 
 Si vinculamos la probabilidad de ocurrencia de cada riesgo con su impacto sobre los objetivos del proyecto en caso de que ocurra dicho riesgo, podemos obtener la matriz que representa el nivel de exposición al riesgo (dado por el producto del impacto por la probabilidad). Esta matriz \ref{tab_riesgo} determinará la gestión de los riesgos del proyecto.
 
 \begin{table}[htpb]
 \centering
-\caption{Nivel de exposición al riesgo}
-\label{tab_riesgo}
 \begin{tabular}{|l|l|l|l|l|}
 \hline
 \multicolumn{5}{|c|}{Nivel de exposición al riesgo}                         \\ \hline
@@ -303,6 +305,8 @@ Si vinculamos la probabilidad de ocurrencia de cada riesgo con su impacto sobre 
                              & Medio    & Alto      & Medio     & Bajo      \\ \cline{2-5} 
                              & Bajo     & Medio     & Bajo      & Bajo      \\ \hline
 \end{tabular}
+\caption{Nivel de exposición al riesgo}
+\label{tab_riesgo}
 \end{table}
 
 \subsection{Identificación de riesgos}
@@ -310,8 +314,6 @@ Tras identificar los riesgos por medio  de revisión de la documentación, torme
 
 \begin{table}[htpb]
 \centering
-\caption{Registro de riesgos}
-\label{tab_reg_riesgos}
 \begin{tabularx}{\textwidth}{|l|X|X|}
 \hline
 \multicolumn{1}{|c|}{Identificador} & \multicolumn{1}{c|}{Nombre}                        & \multicolumn{1}{c|}{Descripción}                                                                                                                                                              \\ \hline
@@ -324,6 +326,8 @@ RSG-006                             & Caída de la red proveedora de Internet   
 RSG-007                             & Fallo de suministro eléctrico                      & Un fallo del suministro eléctrico  puede causar retrasos en la planificación o pérdida deinformación.                                                                                         \\ \hline
 RSG-008                             & Ataques maliciosos en el equipo de trabajo         & Un ataque malicioso en el equipo de trabajo puede significar que existe una brecha de seguridad en el sistema por lo que existe un posible robado de datos o incluso pérdidas de información. \\ \hline
 \end{tabularx}
+\caption{Registro de riesgos}
+\label{tab_reg_riesgos}
 \end{table}
 
 \subsection{Análisis cualitativo de riesgos}
@@ -331,8 +335,6 @@ Mediante el análisis cualitativo de los riesgos podemos evaluar la prioridad de
 
 \begin{table}[htpb]
 \centering
-\caption{Evaluación de los riesgos}
-\label{tab_eval_riesgos}
 \begin{tabularx}{\textwidth}{|l|X|l|l|l|}
 \hline
 \multicolumn{1}{|c|}{Identificador} & \multicolumn{1}{c|}{Nombre}                        & \multicolumn{1}{c|}{Probabilidad} & \multicolumn{1}{c|}{Impacto} & \multicolumn{1}{c|}{Exposición} \\ \hline
@@ -345,14 +347,14 @@ RSG-006                             & Caída de la red proveedora de Internet   
 RSG-007                             & Fallo de suministro eléctrico                      & Baja                              & Alto                         & Medio                           \\ \hline
 RSG-008                             & Ataques maliciosos en el equipo de trabajo         & Baja                              & Alto                         & Medio                           \\ \hline
 \end{tabularx}
+\caption{Evaluación de los riesgos}
+\label{tab_eval_riesgos}
 \end{table}
 
 La matriz de exposición de los riesgos \ref{tab_mat_exp_riesgo} da a conocer las prioridades de acción en el caso de que se materializasen los riesgos.
 
 \begin{table}[htpb]
 \centering
-\caption{Matriz de exposición de los riesgos}
-\label{tab_mat_exp_riesgo}
 \begin{tabular}{|c|c|l|l|l|}
 \hline
 \multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{3}{c|}{Probabilidad}                                                                                                      \\ \cline{3-5} 
@@ -361,6 +363,8 @@ La matriz de exposición de los riesgos \ref{tab_mat_exp_riesgo} da a conocer la
                              & Medio    & RSG-002                   &                            & RSG-005                                                                       \\ \cline{2-5} 
                              & Bajo     &                           &                            &                                                                               \\ \hline
 \end{tabular}
+\caption{Matriz de exposición de los riesgos}
+\label{tab_mat_exp_riesgo}
 \end{table}
 
 \subsection{Plan de respuesta a los riesgos}
@@ -372,8 +376,6 @@ Debido a que sólo existe una persona a cargo del proyecto, ésta será la respo
 
 \begin{table}[htpb]
 \centering
-\caption{Plan de respuesta RSG-001}
-%\label{my-label}
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
 RSG-001              & Práctica deficiente de la gestión de proyectos                                                                      \\ \hline
@@ -381,13 +383,13 @@ Acción de prevención & Mitigar. Se asegurará que la persona encargada de la g
 Indicador            & La persona encargada de la gestión no efectúa adecuadamente los procesos a seguir.                                  \\ \hline
 Acción de corrección & Se dedicarán más horas de trabajo a la gestión de proyectos.                                                        \\ \hline
 \end{tabularx}
+\caption{Plan de respuesta RSG-001}
+%\label{my-label}
 \end{table}
 
 
 \begin{table}[htpb]
 \centering
-\caption{Plan de respuesta RSG-002}
-%\label{my-label}
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
 RSG-002              & Dependencia de participantes externos                                                                                                                                                                  \\ \hline
@@ -395,13 +397,13 @@ Acción de prevención & Aceptar. Debido a la imprevisión que supone estar a ex
 Indicador            & Ausencia o falta de respuesta por parte de un stakeholder.                                                                                                                                             \\ \hline
 Acción de correccion & Se procederá a abordar las distintas tareas de forma ficticia o en último recurso se obviarán.                                                                                                        \\ \hline
 \end{tabularx}
+\caption{Plan de respuesta RSG-002}
+%\label{my-label}
 \end{table}
 
 
 \begin{table}[htpb]
 \centering
-\caption{Plan de respuesta RSG-003}
-%\label{my-label}
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
 RSG-003              & Falta de experiencia en las tecnologías utilizadas                                                                \\ \hline
@@ -409,13 +411,13 @@ Acción de prevención & Mitigar. Se formará al trabajador en las tecnologías 
 Indicador            & El trabajador desconoce cómo implementar determinada funcionalidad                                                \\ \hline
 Acción de correccion & Se pausará por un determinado tiempo el desarrollo y se estudiará lo necesario para poder continuar.              \\ \hline
 \end{tabularx}
+\caption{Plan de respuesta RSG-003}
+%\label{my-label}
 \end{table}
 
 
 \begin{table}[htpb]
 \centering
-\caption{Plan de respuesta RSG-004}
-%\label{my-label}
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
 RSG-004              & Pérdida de información                                                                                                  \\ \hline
@@ -423,13 +425,13 @@ Acción de prevención & Evitar. Se harán volcados del trabajo realizado en el 
 Indicador            & Los últimos cambios efectuados no están reflejados en los archivos de trabajo ni en la última versión del respositorio. \\ \hline
 Acción de corrección & Se repartirá el número de horas de trabajo correspondiente a esa parte durante el próximo periodo de la planificación.  \\ \hline
 \end{tabularx}
+\caption{Plan de respuesta RSG-004}
+%\label{my-label}
 \end{table}
 
 
 \begin{table}[htpb]
 \centering
-\caption{Plan de respuesta RSG-005}
-%\label{my-label}
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
 RSG-005              & Retraso en la planificación temporal                                                                                                                                                     \\ \hline
@@ -437,13 +439,13 @@ Acción de prevención & Aceptar. Debido a que se puede producir un retraso en l
 Indicador            & Surge una enfermedad o un asunto personal.                                                                                                                                               \\ \hline
 Acción de corrección & Se reubicará la carga de trabajo prevista y que no haya sido realizada a lo largo del periodo que vaya a continuación.                                                                   \\ \hline
 \end{tabularx}
+\caption{Plan de respuesta RSG-005}
+%\label{my-label}
 \end{table}
 
 
 \begin{table}[htpb]
 \centering
-\caption{Plan de respuesta RSG-006}
-%\label{my-label}
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
 RSG-006              & Caída de la red proveedora de Internet                                                                                                                                                                 \\ \hline
@@ -451,13 +453,13 @@ Acción de prevención & Mitigar. Se dispondrá de una red alternativa a la que 
 Indicador            & Falla la conexión a Internet o no se encuentra la red.                                                                                                                                                 \\ \hline
 Acción de corrección & Se procederá a buscar una red alternativa. Por ejemplo, en el caso de estar trabajando con la conexión WiFi y que ésta sufra una caída, proceder a conectarnos a la red móvil del \textit{smartphone} personal. \\ \hline
 \end{tabularx}
+\caption{Plan de respuesta RSG-006}
+%\label{my-label}
 \end{table}
 
 
 \begin{table}[htpb]
 \centering
-\caption{Plan de respuesta RSG-007}
-%\label{my-label}
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
 RSG-007              & Fallo de suministro eléctrico                                                                                                                                 \\ \hline
@@ -465,13 +467,13 @@ Acción de prevención & Aceptar. Si el fallo de suministro eléctrico causa una
 Indicador            & El ordenador se queda sin suministro eléctrico de forma repentina tras una subida de tensión.                                                                 \\ \hline
 Acción de corrección & Se rehará el trabajo a partir de la última versión guardada.                                                                                                  \\ \hline
 \end{tabularx}
+\caption{Plan de respuesta RSG-007}
+%\label{my-label}
 \end{table}
 
 
 \begin{table}[htpb]
 \centering
-\caption{Plan de respuesta RSG-008}
-%\label{my-label}
 \begin{tabularx}{\textwidth}{|X|l|}
 \hline
 RSG-008              & Ataques maliciosos en el equipo de trabajo                                                                                                                                                              \\ \hline
@@ -479,6 +481,8 @@ Acción de prevención & Evitar. No descargar recursos de fuentes no fiables, no
 Indicador            & Fallos desconocidos hasta el momento en el sistema, pérdida de información, comportamiento sospechosos del funcionamiento del ordenador...                                                              \\ \hline
 Acción de corrección & Se hará un formateo del sistema y se recuperarán los últimos cambios, de ser afectados, de la última versión del repositorio.                                                                           \\ \hline
 \end{tabularx}
+\caption{Plan de respuesta RSG-008}
+%\label{my-label}
 \end{table}
 
 

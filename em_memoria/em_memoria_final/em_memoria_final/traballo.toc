@@ -1,0 +1,24 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {0.1}An\IeC {\'a}lisis}{1}{section.0.1}
+\contentsline {subsection}{\numberline {0.1.1}Casos de uso}{1}{subsection.0.1.1}
+\contentsline {subsubsection}{Actores del sistema}{1}{subsection.0.1.1}
+\contentsline {subsubsection}{Especificaci\IeC {\'o}n de casos de uso}{1}{table.0.1}
+\contentsline {subsubsection}{Diagrama de casos de uso}{20}{table.0.21}
+\contentsline {subsection}{\numberline {0.1.2}Modelado de datos}{20}{subsection.0.1.2}
+\contentsline {subsubsection}{\IeC {\textquestiondown }Por qu\IeC {\'e} MongoDB?}{21}{subsection.0.1.2}
+\contentsline {subsubsection}{Comparativa MongoDB con SQL}{21}{subsection.0.1.2}
+\contentsline {subsubsection}{Modelo de datos NoSQL}{22}{subsection.0.1.2}
+\contentsline {subsubsection}{Modelo entidad-relaci\IeC {\'o}n (MER)}{22}{figure.0.2}
+\contentsline {subsubsection}{Diccionario de datos}{22}{figure.0.3}
+\contentsline {paragraph}{Colecciones\ref {fig:dic_datos_colecciones}}{22}{figure.0.3}
+\contentsline {paragraph}{BSON de los documentos\ref {fig:dic_datos_BSON_1}\ref {fig:dic_datos_BSON_2}\ref {fig:dic_datos_BSON_3}\ref {fig:dic_datos_BSON_4}}{22}{table.0.22}
+\contentsline {subsection}{\numberline {0.1.3}An\IeC {\'a}lisis de requisitos}{24}{subsection.0.1.3}
+\contentsline {subsubsection}{Requisitos de informaci\IeC {\'o}n}{24}{table.0.28}
+\contentsline {subsubsection}{Requisitos funcionales}{24}{table.0.31}
+\contentsline {subsubsection}{Requisitos no funcionales}{34}{table.0.39}
+\contentsline {subsubsection}{Matrices de rastreabilidad}{35}{table.0.41}
+\contentsline {paragraph}{Matriz de rastreabilidad: RF / RI\ref {mat_rast_rf_ri}}{35}{table.0.41}
+\contentsline {paragraph}{Matriz de rastreabilidad: CU / RF\ref {mat_rast_cu_rf}}{35}{table.0.42}
+\contentsline {subsection}{\numberline {0.1.4}Algoritmo de \textit {matching}}{35}{subsection.0.1.4}
+\contentsline {paragraph}{Un ejemplo pr\IeC {\'a}ctico\ref {ej_alg_match}}{37}{equation.0.1.1}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{39}{figure.0.4}

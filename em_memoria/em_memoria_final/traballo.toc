@@ -1,8 +1,0 @@
-\select@language {spanish}
-\contentsline {section}{\numberline {0.1}An\IeC {\'a}lisis}{1}{section.0.1}
-\contentsline {subsection}{\numberline {0.1.1}Casos de uso}{1}{subsection.0.1.1}
-\contentsline {subsubsection}{Actores del sistema}{1}{section*.4}
-\contentsline {subsubsection}{Especificaci\IeC {\'o}n de casos de uso}{1}{section*.5}
-\contentsline {subsubsection}{Diagrama de casos de uso}{17}{section*.6}
-\contentsline {subsection}{\numberline {0.1.2}Modelado de datos}{17}{subsection.0.1.2}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{18}{subsection.0.1.2}
