@@ -30,7 +30,9 @@ angular.module('Emozio').controller('PsicologosCalendarioController', function(P
 				today:    'hoy',
 				month:    'mes',
 				week:     'semana',
-				day:      'día'
+				day:      'día',
+				prev:	  '<',
+				next:	  '>'
 			},
 			firstDay : 1, /* Empieza el lunes */
 			dayNames : ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'], /* Nombres de los dias */
@@ -44,19 +46,41 @@ angular.module('Emozio').controller('PsicologosCalendarioController', function(P
 			themeSystem:'bootstrap3', /* Establece el tipo de tema */
 			eventColor: '#ffffff', /* Establece el color del fondo de los eventos */
 			eventTextColor: '#008080', /* Establece el color del texto de los eventos */
-			eventClick: function (selectedEvent) { /* Funcion llamada al hacer click en un evento */
-				$scope.mensaje = Object.values(selectedEvent.data)[0][0];
-				$("#mensaje_mensajePaciente_fecha").html($scope.mensaje.mensajePaciente.fecha);
-				$("#mensaje_mensajePaciente_texto").html($scope.mensaje.mensajePaciente.texto);
-				$("#mensaje_mensajePaciente_preferencias").html($scope.mensaje.mensajePaciente.preferencias);
-				$("#mensaje_mensajePsicologo_fecha").html($scope.mensaje.mensajePsicologo.fecha);
-				$("#mensaje_mensajePsicologo_comentario").html($scope.mensaje.mensajePsicologo.comentario);
-				$("#mensaje_mensajePsicologo_fechaCita").html($scope.mensaje.mensajePsicologo.fechaCita);
-				$("#mensaje_paciente_email").html($scope.mensaje.paciente.email);
-				$("#mensaje_paciente_telefono").html($scope.mensaje.paciente.telefono);
-				$('#evento_modal').modal('show'); 
+			//			eventClick: function (selectedEvent) { /* Funcion llamada al hacer click en un evento */
+			//				$scope.mensaje = Object.values(selectedEvent.data)[0][0];
+			//				
+			//				$("#mensaje_mensajePaciente_fecha").html($scope.mensaje.mensajePaciente.fecha);
+			//				$("#mensaje_mensajePaciente_texto").html($scope.mensaje.mensajePaciente.texto);
+			//				$("#mensaje_mensajePaciente_preferencias").html($scope.mensaje.mensajePaciente.preferencias);
+			//				$("#mensaje_mensajePsicologo_fecha").html($scope.mensaje.mensajePsicologo.fecha);
+			//				$("#mensaje_mensajePsicologo_comentario").html($scope.mensaje.mensajePsicologo.comentario);
+			//				$("#mensaje_mensajePsicologo_fechaCita").html($scope.mensaje.mensajePsicologo.fechaCita);
+			//				$("#mensaje_paciente_email").html($scope.mensaje.paciente.email);
+			//				$("#mensaje_paciente_telefono").html($scope.mensaje.paciente.telefono);
+			//				$('#evento_modal').modal('show'); 
+			//
+			//			},
+			eventClick: function (calEvent) {
+				for(var i=0, l=$scope.mensajesCalendario.length; i<l; i++) {
+					if(calEvent.start._i == $scope.mensajesCalendario[i].start) {
+						console.log($scope.mensajesCalendario[i].start);
 
+						$scope.mensaje=$scope.mensajesAceptados[i];
+
+						$("#mensaje_mensajePaciente_fecha").html($scope.mensaje.mensajePaciente.fecha);
+						$("#mensaje_mensajePaciente_texto").html($scope.mensaje.mensajePaciente.texto);
+						$("#mensaje_mensajePaciente_preferencias").html($scope.mensaje.mensajePaciente.preferencias);
+						$("#mensaje_mensajePsicologo_fecha").html($scope.mensaje.mensajePsicologo.fecha);
+						$("#mensaje_mensajePsicologo_comentario").html($scope.mensaje.mensajePsicologo.comentario);
+						$("#mensaje_mensajePsicologo_fechaCita").html($scope.mensaje.mensajePsicologo.fechaCita);
+						$("#mensaje_paciente_email").html($scope.mensaje.paciente.email);
+						$("#mensaje_paciente_telefono").html($scope.mensaje.paciente.telefono);
+						$('#evento_modal').modal('show'); 
+						break;
+					}
+				}
 			},
+
 			height: 600 /* Establece la altura del calendario */
 		});
 
@@ -83,15 +107,20 @@ angular.module('Emozio').controller('PsicologosCalendarioController', function(P
 			$('#calendar').fullCalendar('renderEvent', cita, true);
 		}
 
+		$scope.mensajesCalendario = [];
+		for(var i=0, l=citas.length; i<l; i++){
+			$scope.mensajesCalendario.push(citas[i]);
+		}
+
 		//		console.log($('#calendar').fullCalendar('clientEvents'));
+
 	});
-
-
 
 	/* Funcion salir que cierra la sesion */
 	$scope.salir=function(){
 		Psicologo.Salir(); /* Se cierra la sesion del psicologo */
 		$location.path("inicio"); /* Se redirige a la pagina de inicio */
+		$window.location.reload();  /* Se recarga la pagina actual */
 	}
 
 });

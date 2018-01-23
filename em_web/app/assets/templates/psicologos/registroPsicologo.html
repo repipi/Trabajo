@@ -62,10 +62,6 @@
 					<div class="content">
 						<div class="title">Información del proceso</div>
 						<div class="description">Te contamos cómo es nuestro proceso de selección</div>
-						<!--
-PALABRERIO IMPORTANTE QUE DEBEN SABER LOS PSICOLOGOS SOBRE LOS DATOS RECOGIDOS
-QUE VAMOS A HACER CON ELLOS
--->
 					</div>
 				</div>
 				<div class="{{estado_2}} step paso_2">
@@ -86,6 +82,21 @@ QUE VAMOS A HACER CON ELLOS
 			<div class="ui attached segment">
 				<!-- STEP 1 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 				<div ng-show="paso_1">
+					<div class="ui container" id="info_proc_selec">
+						<p><br>
+							El sello de calidad de Emozio es nuestra cartera de psicólogos:  
+							Seleccionamos personalmente a cada uno de nuestos psicólogos.<br><br>
+							Nuestro equipo evalúa cada una de las peticiones que nos llegan para validar que la información recibida es correcta. <br><br>
+							Para pertenecer a Emozio te sugerimos que continúes este formulario:
+						</p>
+						<ol>
+							<li>Necesitamos conocer algunos de tus datos personales para poder ponernos en contacto contigo: Nombre, correo electrónico, teléfono, edad...</li>
+							<li>¿Cuál es tu experiencia profesional? ¿Y tu formación? ¿Estás colegiado?</li>
+						</ol>
+						<p>
+							Una vez comprobada tu candidatura nos pondremos en contacto contigo para hacerte una pequeña entrevista. <br><br>
+						</p>
+					</div>
 					<div class="ui fluid large teal submit button" ng-click="changeStep(null)">Siguiente</div>
 				</div>
 				<!-- STEP 2 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->

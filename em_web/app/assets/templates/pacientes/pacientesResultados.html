@@ -30,15 +30,16 @@
 </nav>
 
 <!-- HACER EL TEST ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-<div class="container-fluid">
+<div class="container-fluid" id="perfil_paciente">
 
 	<div class="row" id="main_test">
 		<div class="col-xs-3 col-xs-offset-1">
-			<button type="submit" class="ui teal big button" data-target="#aviso_modal" data-toggle="modal"> <i class="ui center write icon"></i> Hacer el test</button>
+			<button type="submit" class="ui fluid teal button" data-target="#aviso_modal" data-toggle="modal"> <i class="ui center write icon"></i> Hacer el test</button>
 		</div>
-		<div class="col-xs-6">
+		<div class="col-xs-7">
 			<div class="ui container">
 				<p>Para poder sugerirte al mejor psicólogo para tratar tu caso, ayúdanos cubriendo el siguiente test. Es breve y sencillo, solamente deberás responder sí o no a las preguntas.</p>
+				{{psicologo.diagnostico}}
 			</div>
 		</div>
 	</div>
@@ -47,7 +48,7 @@
 
 		<!-- FILTRO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 		<br>
-		<div class="col-xs-3 col-xs-offset-1">
+		<div class="col-xs-2 col-xs-offset-1">
 			<div class="ui container filtro">
 				<div class="ui form segment">
 					<div class="grouped fields">
@@ -98,11 +99,11 @@
 
 					<span id="demo"></span>
 					<div class="field">
-						<button type="submit" class="fluid ui teal button" ng-click="filtrar(psicologo)">
+						<button id="filtro_button" type="submit" class="fluid ui teal button" ng-click="filtrar(psicologo)">
 							<i class="icon search"></i>  Filtrar</button>
 					</div>
 					<div class="field">
-						<button type="submit" class="fluid ui gray button" ng-click="recuperarMisResultados()">
+						<button id="filtro_button" type="submit" class="fluid ui gray button" ng-click="recuperarMisResultados()">
 							<p> <i class="bar chart icon"></i> Mis resultados </p> </button>
 					</div>
 				</div>
@@ -110,10 +111,12 @@
 		</div>
 
 		<!-- RESULTADOS CUESTIONARIO ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>               
-		<div class="col-xs-8"> 
-			<h2 class="titulo">
-				<i class="bar chart icon"></i>Mis resultados:
-			</h2>
+		<div class="col-xs-6"> 
+			<!--
+<h2 class="titulo">
+<i class="bar chart icon"></i>Mis resultados:
+</h2>
+-->
 
 			<div>
 				<div class="{{cuadro_mensaje}}">
@@ -124,30 +127,30 @@
 			<!-- Bloque de info -->
 			<div class="ui link cards">
 				<!-- Bucle: Muestra la info de cada psicologo que pueda tratar la patologia del paciente -->
-				<div ng-repeat="psicologo in psicologos">
-					<div class="ui content resultado_psicologo">
-						<div class="ui card" >
-							<div class="blurring dimmable image">
-								<img ng-src="{{psicologo.foto}}">{{psicologo.foto}}
-							</div>
-							<div class="content">
-								<a class="header" href="#/psicologos/{{psicologo._id}}">{{psicologo.nombre}}</a>
-								<div class="ui right floated star rating valoraciones" ng-init="iniciarRating(psicologo.estrellas)"></div>
-								<div class="meta"><i class="certificate teal icon"></i> {{psicologo.ncolegiado}} </div>
-								<div class="description">{{psicologo.experiencia}} </div>
-							</div>
-							<div class="extra content">
-								<span class="right floated">{{psicologo.precio}} € / sesión</span>
-								<span><i class="marker teal icon"></i>{{psicologo.localizacion}} </span>
-							</div>
+				<div class="ui card" ng-repeat="psicologo in psicologos">
+					<div class="blurring dimmable image">
+						<img ng-src="{{psicologo.foto}}">
+					</div>
+					<div class="content" id="perfil_psicologo_contenido">
+						<a class="header" href="#/psicologos/{{psicologo._id}}">{{psicologo.nombre}}</a>
+<!--						<div class="ui right floated star rating valoraciones" ng-init="iniciarRating(psicologo.estrellas)"></div>-->
+						<div class="ui right floated meta">{{psicologo.estrellas}}<i class="yellow star icon"></i> </div>
+						<div class="meta"><i class="certificate teal icon"></i> {{psicologo.ncolegiado}} </div>
+						<div class="description">{{psicologo.experiencia}} </div>
+					</div>
+					<div class="extra content" id="perfil_psicologo_contenido">
+						<span class="right floated">{{psicologo.precio}} € / sesión</span>
+						<span><i class="marker teal icon"></i>{{psicologo.localizacion}} </span>
+					</div>
 
-							<button type="button" id="contactar" class="ui teal bottom attached button" data-target="#contacto_modal" data-toggle="modal" data-id="psicologo._id" ng-click="psicologoSeleccionado(psicologo)">
-								<i class="calendar outline icon"></i>
-								Pedir cita</button>
-						</div>
-					</div>  
+					<button type="button" id="contactar" class="ui teal bottom attached button" data-target="#contacto_modal" data-toggle="modal" data-id="psicologo._id" ng-click="psicologoSeleccionado(psicologo)">
+						<i class="calendar outline icon"></i>
+						Pedir cita</button>
 				</div>
 			</div>
+		</div>
+		<div class="col-xs-2">
+			<div class="ui wide skyscraper test ad" id="publi_perfil" data-text="Rascacielos ancho"></div>
 		</div>
 	</div>
 </div>
@@ -157,7 +160,7 @@
 	<div class="modal fade" id="contacto_modal">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
-
+				
 				<!-- Titulo -->
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -167,7 +170,7 @@
 				</div>
 
 				<!-- Cuerpo del formulario -->
-				<div class="modal-body">
+				<div class="modal-body" ng-model="psicologo">
 					<div class="ui form" id="contacto_form"> 
 						<div class="required field"> 
 							<label>Mensaje</label> 
@@ -177,6 +180,21 @@
 							<label>Preferencias horarias</label> 
 							<textarea name="preferencias" rows="4" required class="form-control" placeholder="¿Cuando te vendría bien tener la cita? ¿Que días tienes disponibles? ¿Que franja horaria no podría ser?" ng-model="mensaje.preferencias"></textarea> 
 						</div> 
+						<div class="grouped inline fields">
+							<label>Consulta</label>
+							<div class="field" ng-show="psicologo.consulta.presencial">
+								<div class="ui slider checkbox">
+									<input type="radio" name="consulta" checked="checked" value="Presencial" ng-model="mensaje.consulta">
+									<label>Presencial</label>
+								</div>
+							</div>
+							<div class="field" ng-show="psicologo.consulta.online">
+								<div class="ui slider checkbox">
+									<input type="radio" name="consulta" value="Online" ng-model="mensaje.consulta">
+									<label>On-line</label>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="ui positive message" ng-show="msj_exito_contacto">
 						<i class="close icon"></i>

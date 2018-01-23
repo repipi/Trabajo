@@ -6,7 +6,7 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
     4 - Devolvemos su pagina de perfil con el array de psicologos */
 
 	/************************************************************************************************************************************************  SERVICES ***********************+++++++++++*****+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++/
-	
+
 	/* Se comprueba que el paciente ha iniciado la sesion */
 	Paciente.GetById().then(function(data){ /* Recuperamos al paciente */
 		if(!data.data || data.data=='') { /* Si el paciente no ha iniciado la sesion, no se obtendra */
@@ -36,14 +36,14 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
 				$location.path("/");  /* Se redirige a la pagina de inicio */
 			} else {
 				$scope.paciente=Object.values(data.data)[0];
-			
+
 				/* Si no existe diagnostico o el paciente no tiene psicologos */
 				if(!$scope.diagnostico.length || $scope.paciente.psicologos.length){
 					/* Se inicializa su diagnostico y array de psicologos */
 					$scope.paciente.diagnostico=[];
 					$scope.diagnostico=[];
 					$scope.paciente.psicologos=[];
-					
+
 					/* Se actualiza el paciente con los arrays anteriores reseteados */
 					Paciente.Update($scope.paciente);
 
@@ -55,7 +55,7 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
 
 						/* Se recoge la primera pregunta de cada patologia y se inicializa su respuesta a 0 */
 						for(var i=0, l=result.length; i<l; i++){
-							preguntas.push(JSON.parse('{ "pregunta" : "'+result[i].preguntas[0]+'", "respuesta" : '+0+'}'));
+							preguntas.push(JSON.parse('{ "pregunta" : "'+result[i].preguntas[0]+'", "respuesta" : '+0+', "nombre" : "'+result[i].nombre+'"}'));
 						}
 
 						/* Se establece el array de preguntas */
@@ -76,7 +76,7 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
 					for(var j=0, m=$scope.diagnostico.length; j<m; j++){
 						/* Se recogen las preguntas existentes en la patologia de cada diagnostico y se inicializa su respuesta a 0 */
 						for(var i=0, l=$scope.diagnostico[j].patologia.preguntas.length; i<l; i++){
-							preguntas.push(JSON.parse('{ "pregunta" : "'+$scope.diagnostico[j].patologia.preguntas[i]+'", "respuesta" : '+0+'}'));
+							preguntas.push(JSON.parse('{ "pregunta" : "'+$scope.diagnostico[j].patologia.preguntas[i]+'", "respuesta" : '+0+', "nombre" : "'+$scope.diagnostico[j].patologia.nombre+'"}'));
 						}
 					}
 
@@ -98,7 +98,7 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
 	/* Establezco el estilo de los botones si o no, por defecto */
 	$scope.press_yes="";
 	$scope.press_no="teal";
-	
+
 	/************************************************************************************************************************************************ FUNCIONES ************************************************************************************************************************************************/
 
 	/* Funcion que asigna los psicologos que pueden tratar la patologia del paciente */
@@ -181,9 +181,9 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
 				/* Se recorren los diagnosticos del paciente */
 				for(var i=0, l=$scope.diagnostico.length; i<l; i++){
 					/* Se recorren todas las preguntas (ahora falta la primera) de la patologia de cada diagnostico */
-					for(var j=0, m=$scope.diagnostico[i].patologia.preguntas.length; j<m; j++){
+					for(var j=0, m=$scope.preguntas.length; j<m; j++){
 						/* Si la pregunta esta marcada */
-						if($scope.preguntas[j].respuesta==1){
+						if($scope.preguntas[j].respuesta==1 && $scope.preguntas[j].nombre == $scope.diagnostico[i].patologia.nombre){
 							/* Se sumara al porcentaje de ese diagnostico el valor de la respuesta de esa patologia */
 							$scope.paciente.diagnostico[i].porcentaje=$scope.paciente.diagnostico[i].porcentaje+$scope.diagnostico[i].patologia.respuesta;
 						}
@@ -194,8 +194,10 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
 						$scope.paciente.diagnostico.splice(i, 1);
 					} else {
 						/* Se redondea a 2 decimales */
-						$scope.paciente.diagnostico[i].porcentaje = Math.round($scope.paciente.diagnostico[i].porcentaje * 100) / 100;
+						$scope.paciente.diagnostico[i].porcentaje = Math.round($scope.paciente.diagnostico[i].porcentaje * 1000) / 10;
 					}
+
+					console.log($scope.paciente.diagnostico[i].porcentaje);
 				}
 
 				/* Se actualiza la informacion del paciente */
@@ -228,6 +230,7 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
 			}
 			/* Se redirige a la pagina de inicio */
 			$location.path("inicio"); 
+			$window.location.reload();  /* Se recarga la pagina actual */
 		});
 
 	}

@@ -21,6 +21,10 @@ function Psicologo($http){
 		Filtrar : function (psicologo) {
 			return $http.post('/psicologos/filtrar', psicologo);
 		},
+		/* Actualiza los datos del psicologo especificado por parametros */
+		Update : function(psicologo) {
+			return $http.put('/psicologo', psicologo);
+		},
 		/* Registra e inicia la sesion del psicologo especificado por parametros */
 		SignUp : function (psicologo) {
 			return $http.post('/psicologos/registro', psicologo);

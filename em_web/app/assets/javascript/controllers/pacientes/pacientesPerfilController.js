@@ -77,11 +77,13 @@ angular.module('Emozio').controller('PacientesPerfilController', function(Pacien
 
 		/* Si el paciente no tiene psicologos asignados, no se hace nada */
 		if($scope.psicologos){
-
+			
 			/* Se filtra a los psicologos asignados al paciente en funcion de los datos obtenidos en el formulario */
 			Psicologo.Filtrar(psicologo).then(function(data){
 				var psicologosFiltrados=Object.values(data.data);
 
+				console.log(psicologosFiltrados);
+				
 				/* Si se obtienen resultados: Hay coincidencias con los parametros escogidos */
 				if(psicologosFiltrados.length){
 
@@ -206,7 +208,8 @@ angular.module('Emozio').controller('PacientesPerfilController', function(Pacien
 					foto : $scope.psicologo.foto
 				},
 				texto : mensaje.texto,
-				preferencias : mensaje.preferencias
+				preferencias : mensaje.preferencias,
+				consulta : mensaje.consulta
 			}
 
 			/* Se guarda el mensaje enviado */
@@ -228,5 +231,6 @@ angular.module('Emozio').controller('PacientesPerfilController', function(Pacien
 	$scope.salir=function(){
 		Paciente.Salir(); /* Se cierra la sesion del paciente */
 		$location.path("inicio"); /* Se redirige a la pagina de inicio */
+		$window.location.reload();  /* Se recarga la pagina actual */
 	}
 });

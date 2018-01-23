@@ -16,6 +16,8 @@ angular.module('Emozio').controller('PacientesMailController', function(Paciente
 		$scope.mensajes  = $scope.mensajesPendientes.slice(); 
 		if (!$scope.mensajes.length) { /* Si no hay mensajes mostrados */
 			$scope.sin_mensajes = true; /* Se muestra el aviso de que no hay mensajes */
+		} else {
+			$scope.sin_mensajes = false; /* Oculta el aviso de que no hay mensajes */
 		}
 		$scope.numMsjPendientes = $scope.mensajesPendientes.length; /* Se guarda el numero de mensajes pendientes */
 	});
@@ -31,6 +33,12 @@ angular.module('Emozio').controller('PacientesMailController', function(Paciente
 		$scope.mensajesRechazados=Object.values(data.data);
 		$scope.numMsjRechazados = $scope.mensajesRechazados.length; /* Se guarda el numero de mensajes rechazados */
 	});
+	
+	$scope.mensaje = {}; /* Mensaje seleccionado */
+	/* Funcion que establece cual es el mensaje que ha sido seleccionado */
+	$scope.mensajeSeleccionado = function(mensaje) {
+		$scope.mensaje = mensaje;
+	}
 
 	/* Estados del menu al iniciar la pagina: La opcion de los mensajes pendientes esta activada y el resto desactivadas */
 	$scope.pendientes="active teal item";
@@ -61,6 +69,7 @@ angular.module('Emozio').controller('PacientesMailController', function(Paciente
 	$scope.salir=function(){
 		Paciente.Salir(); /* Se cierra la sesion del paciente */
 		$location.path("inicio"); /* Se redirige a la pagina de inicio */
+		$window.location.reload();  /* Se recarga la pagina actual */
 	}
 
 });

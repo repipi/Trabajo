@@ -43,6 +43,8 @@ angular.module('Emozio').controller('PsicologosMailController', function(Psicolo
 		/* Si no hay mensajes, se muestra un aviso */
 		if (!$scope.mensajes.length) {
 			$scope.sin_mensajes = true;
+		} else {
+			$scope.sin_mensajes = false;
 		}
 	});
 
@@ -147,53 +149,58 @@ angular.module('Emozio').controller('PsicologosMailController', function(Psicolo
 	/* Funcion que envia un mensaje de aceptacion a la peticion del paciente que ha enviado el mensaje seleccionado */
 	$scope.enviarMensaje = function(mensaje) {
 
-		//		if($('#contacto_form').form('is valid')) {
+		if($('#acepta_form').form('is valid')) {
 
-		/* Se establecen los datos del mensaje */
-		mensaje.fechaCita = cita;
-		mensaje.acepta = true;
-		mensaje.rechaza = false;
-		mensaje._id = $scope.mensaje._id;
+			/* Se establecen los datos del mensaje */
+			mensaje.fechaCita = cita;
+			mensaje.acepta = true;
+			mensaje.rechaza = false;
+			mensaje._id = $scope.mensaje._id;
 
-		/* Se guarda el mensaje de respuesta del psicologo */
-		Mensaje.SendMsgPsico(mensaje);
+			/* Se guarda el mensaje de respuesta del psicologo */
+			Mensaje.SendMsgPsico(mensaje);
 
-		/* Se muestra un mensaje de exito */
-		$scope.msj_exito_contacto = true;
+			/* Se muestra un mensaje de exito */
+			$scope.msj_exito_contacto = true;
 
-		/* Tras un segundo, la ventana se recarga: Desaparece el modal */
-		setTimeout(function(){
-			$location.path("/mail"); /* Se redirige a la pagina de la bandeja de entrada */
-			$window.location.reload(); /* Se recarga la pagina actual */
-		}, 1000);
+			/* Tras un segundo, la ventana se recarga: Desaparece el modal */
+			setTimeout(function(){
+				$location.path("/mail"); /* Se redirige a la pagina de la bandeja de entrada */
+				$window.location.reload(); /* Se recarga la pagina actual */
+			}, 1000);
+		}
 
 	}
 
 	/* Funcion que envia un mensaje de rechazo a la peticion del paciente que ha enviado el mensaje seleccionado */
 	$scope.enviarRechazo = function(mensaje) {
 
-		/* Se establecen los datos del mensaje */
-		mensaje.acepta = false;
-		mensaje.rechaza = true;
-		mensaje._id = $scope.mensaje._id;
+		if($('#rechaza_form').form('is valid')) {
 
-		/* Se guarda el mensaje de respuesta del psicologo */
-		Mensaje.SendMsgPsico(mensaje);
+			/* Se establecen los datos del mensaje */
+			mensaje.acepta = false;
+			mensaje.rechaza = true;
+			mensaje._id = $scope.mensaje._id;
 
-		/* Se muestra un mensaje de exito */
-		$scope.msj_exito_contacto = true;
+			/* Se guarda el mensaje de respuesta del psicologo */
+			Mensaje.SendMsgPsico(mensaje);
 
-		/* Tras un segundo, la ventana se recarga: Desaparece el modal */
-		setTimeout(function(){
-			$location.path("/mail"); /* Se redirige a la pagina de la bandeja de entrada */
-			$window.location.reload(); /* Se recarga la pagina actual */
-		}, 1000);
+			/* Se muestra un mensaje de exito */
+			$scope.msj_exito_contacto = true;
+
+			/* Tras un segundo, la ventana se recarga: Desaparece el modal */
+			setTimeout(function(){
+				$location.path("/mail"); /* Se redirige a la pagina de la bandeja de entrada */
+				$window.location.reload(); /* Se recarga la pagina actual */
+			}, 1000);
+		}
 	}
 
 	/* Funcion salir que cierra la sesion */
 	$scope.salir=function(){
 		Psicologo.Salir(); /* Se cierra la sesion del psicologo */
 		$location.path("inicio"); /* Se redirige a la pagina de inicio */
+		$window.location.reload();  /* Se recarga la pagina actual */
 	}
 
 });

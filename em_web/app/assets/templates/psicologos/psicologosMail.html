@@ -43,20 +43,23 @@
 				<a class="{{rechazadas}}" ng-click="cambiarMenu(3)">Rechazadas <div class="ui teal left pointing label">{{numMsjRechazados}}</div>
 				</a>
 			</div>
+
+			<div id="publi_mail" class="ui wide skyscraper test ad" data-text="Rascacielos ancho"></div>
+
 			<div ng-repeat="mensaje in mensajes">
 				<div class="jumbotron"></div>
 				<div class="jumbotron"></div>
 			</div>
 		</div>
 
-<!--
+
 		<div class="jumbotron" ng-show="sin_mensajes">
 			<h3 class="sin_resultados">No hay solicitudes</h3>
 		</div>
--->
+
 
 		<!-- MENSAJES MOSTRADOS ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-		<div ng-repeat="mensaje in mensajes">
+		<div id="mensaje_hilo" ng-repeat="mensaje in mensajes">
 
 			<!-- MENSAJE ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 			<div class="col-xs-5">
@@ -71,6 +74,8 @@
 							<div class="description"> {{mensaje.mensajePaciente.texto}} </div>
 							<h2 class="ui sub header">Preferencias </h2>
 							<div class="description"> {{mensaje.mensajePaciente.preferencias}} </div>
+							<h2 class="ui sub header">Lugar de la consulta </h2> 
+							<div class="description"> {{mensaje.mensajePaciente.consulta}} </div>
 							<br>
 						</div>
 						<div class="content" id="respuesta" ng-show="mensaje.mensajePsicologo">
@@ -90,13 +95,13 @@
 				</div>
 				<div class="well"></div>
 			</div>
-			
+
 			<!-- REMITENTE -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 			<div class="col-xs-3">
 				<div class="ui cards">
 					<div class="card">
 						<div class="content">
-							<div class="meta"> {{mensaje.paciente.genero}} </div>
+							<div class="meta"> <i class="user outline icon"></i> {{mensaje.paciente.genero}} </div>
 							<div class="meta"> <i class="birthday icon"></i> {{mensaje.paciente.edad}} </div>
 							<div class="meta"> <i class="marker icon"></i> {{mensaje.paciente.localizacion}} </div>
 						</div>

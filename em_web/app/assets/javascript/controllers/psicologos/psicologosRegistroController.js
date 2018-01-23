@@ -328,7 +328,7 @@ angular.module('Emozio').controller('PsicologosRegistroController', function(Pac
 				} else { /* Si es un paciente */
 					$location.path("/usuarios"); /* Se redirige a la pagina de perfil del paciente */
 				}
-			}
+			} 
 
 		});
 

@@ -263,6 +263,7 @@ angular.module('Emozio').controller('PacientesModificarController', function(Pac
 			}
 			/* Se redirige a la pagina de inicio */
 			$location.path("inicio"); 
+			$window.location.reload();  /* Se recarga la pagina actual */
 		});
 
 	}

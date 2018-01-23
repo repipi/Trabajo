@@ -6,7 +6,7 @@ var ObjectId = Schema.Types.ObjectId;
 /* Schema del objeto Mensaje */
 var mensajeSchema = new Schema(
 	{
-		_id : ObjectId,
+		_id : {type: ObjectId, unique: true, required: true },
 		paciente : {
 			_id : {type: ObjectId, unique: true, required: true },
 			genero : {type: String, required: true },
@@ -31,7 +31,8 @@ var mensajeSchema = new Schema(
 		mensajePaciente : {
 			fecha : {type: String, required: true },
 			preferencias : {type: String, required: true },
-			texto : {type: String, required: true }
+			texto : {type: String, required: true },
+			consulta : {type: String, required: true }
 		},
 		mensajePsicologo : {
 			fecha : {type: String, required: true },
@@ -47,6 +48,8 @@ var mensajeSchema = new Schema(
 /* Metodo que crea y guarda el mensaje de un paciente */
 mensajeSchema.methods.crearMensajePaciente = function(mensajePaciente, paciente) {
 	return new Promise(function(resolve, reject){
+		
+//		¡Hola, Cristina! \nEs la primera vez que utilizo la página. Me gustaría quedar contigo porque tengo problemas de insomnio. Hace semanas que no duermo bien, y en el trabajo no rindo.\n\nMuchas gracias.\n\nUn saludo,\nRebeca.
 
 		/* Formato de la fecha de hoy */
 		var fecha = new Date();
@@ -78,7 +81,8 @@ mensajeSchema.methods.crearMensajePaciente = function(mensajePaciente, paciente)
 			mensajePaciente : {
 				fecha : textoFecha,
 				preferencias : mensajePaciente.preferencias,
-				texto : mensajePaciente.texto
+				texto : mensajePaciente.texto,
+				consulta : mensajePaciente.consulta
 			}
 		}
 

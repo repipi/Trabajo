@@ -88,6 +88,18 @@
 	color: black;
 }
 
+/**********************************************************************************************************************************
+REGISTRO
+**********************************************************************************************************************************/
+#info_proc_selec {
+	color: grey;
+	margin-bottom: 15px;
+	padding-left: 50px;
+	padding-right: 50px;
+	text-align: justify;
+	font-size: 105%;
+}
+
 /*********************************++++************************************+++++++*******************++++++************************** CUESTIONARIO ***********************************************************************************************************************************/
 
 .pregunta {
@@ -99,6 +111,29 @@
 }
 
 /*********************************************************************************************************************************** PERFIL PACIENTE ***********************************************************************************************************************************/
+
+#perfil_paciente {
+	font-size: 80%;
+}
+
+/*
+#perfil_paciente button {
+font-size: 90%;
+}
+*/
+
+.ui.link.cards .ui.card {
+	margin-right: 10px;
+	width: 30%;
+}
+
+.ui.link.cards .ui.card button {
+	font-size: 120%;
+}
+
+#perfil_psicologo_contenido {
+	background-color: whitesmoke;
+}
 
 .sin_resultados {
 	color: whitesmoke;
@@ -124,16 +159,21 @@
 	color: black;
 }
 
-.resultado_psicologo {
-	margin: 10px;
-}
-
 .filtro {
 	min-width: 200px;
 }
 
 .filtro select {
-	font-size: 98%;
+	font-size: 85%;
+	font-family: "Lato";
+}
+
+.filtro field {
+	font-size: 80%;
+}
+
+#filtro_button {
+	font-size: 88%;
 }
 
 #aviso_modal {
@@ -161,8 +201,8 @@
 }
 
 #main_test {
-	padding-bottom: 20px;
-	padding-top: 20px;
+	padding-bottom: 25px;
+	padding-top: 25px;
 	/*	background-color: rgba(255, 255, 255, 0.5);*/
 	background-color: rgba(0,128,128, 0.4);
 	font-size: 125%;
@@ -173,12 +213,18 @@
 }
 
 #main_test button {
-	margin-top: 10px;
+	/*	margin-top: 5px;*/
 	margin-left: 20px;
 	padding-left: 20%;
 	padding-right: 20%;
 	background-color: white; 
 	color: rgb(0,128,128);
+}
+
+#main_test p {
+	/*	margin-left: 25px;*/
+	margin-right: 20px;
+	text-align: justify;
 }
 
 /***********************************************************************************************************************************RESULTADO PACIENTES ******++++*************************************************************************************************************************/
@@ -267,18 +313,87 @@
 	color: black;
 }
 
+#comentar_modal .modal-header {
+	background-color: rgba(0,128,128, 0.7);
+}
+
+#comentar_modal h4 {
+	color:white;
+}
+
 /************************************************************************************************************************** MAIL PSICOLOGO ***************************************************************************************************************************/
 #mensaje {
-	background-color: whitesmoke;
+	/*	background-color: whitesmoke;*/
 	color: black;
+/*	line-height: 90%;*/
+}
+
+#mensaje h2 {
+	margin-top: 5%;
+}
+
+#mensaje .meta {
+	font-size: 85%;
+	color: grey;
+}
+
+#mensaje .description {
+	color: grey;
+}
+
+#mensaje_hilo {
+	width: 90%;
+	font-size: 90%;
 }
 
 #respuesta {
-	background-color: rgba(0,128,128, 0.5);
+	/*	background-color: rgba(0,128,128, 0.5);*/
+	line-height: 85%;
+}
+
+#respuesta h2 {
+	margin-top: 5%;
 }
 
 #respuesta .description {
-	color: white;
+	color: grey;
+}
+
+#respuesta .meta {
+	font-size: 85%;
+	color: grey;
+}
+
+#respuesta button {
+	margin-top: 10px;
+}
+
+#remitente {
+	margin-bottom: 30px;
+}
+
+#remitente h4 {
+	line-height: 75%;
+}
+
+#remitente p {
+	line-height: 75%;	
+}
+
+#remitente img {
+	width: 30%;
+}
+
+#remitente_foto {
+	margin-bottom: -5%;
+}
+
+#mensaje_modal .modal-header {
+	background-color: rgba(0,128,128, 0.7);
+}
+
+#mensaje_modal h4 {
+	color:white;
 }
 
 #acepta_modal {
@@ -310,6 +425,19 @@
 	color: black;
 }
 
+#publi_perfil  {
+	margin-left: 20px;
+}
+
+#publi_mail {
+	margin-left: 20px;
+}
+
+.ui.panorama.test.ad {
+	margin-top: 25px;
+	margin-left: 50px;
+}
+
 /****************************** CALENDARIO *********************************/
 #calendar {
 	color: white;
@@ -338,4 +466,13 @@
 
 #evento_modal h4 {
 	color:white;
+}
+
+#mensaje_paciente_email, #mensaje_paciente_telefono {
+	font-family: "Lato";
+	line-height: 150%;
+}
+
+#publi_calendario {
+	margin-bottom: 25px;
 }

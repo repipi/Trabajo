@@ -34,7 +34,7 @@
 	<div class="row">
 
 		<!-- MENU MAIL -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-		
+
 		<div class="col-xs-3">
 			<div class="ui vertical menu">
 				<a class="{{pendientes}}" ng-click="cambiarMenu(1)">Pendientes <div class="ui teal left pointing label">{{numMsjPendientes}}</div>
@@ -44,26 +44,29 @@
 				<a class="{{rechazadas}}" ng-click="cambiarMenu(3)">Rechazadas <div class="ui teal left pointing label">{{numMsjRechazados}}</div>
 				</a>
 			</div>
+
+			<div id="publi_mail" class="ui wide skyscraper test ad" data-text="Rascacielos ancho"></div>
+
 			<div ng-repeat="mensaje in mensajes">
 				<div class="jumbotron"></div>
-				<div class="jumbotron"></div>
 			</div>
+
 		</div>
 
-<!--
+
 		<div class="jumbotron" ng-show="sin_mensajes">
 			<h3 class="sin_resultados">No hay solicitudes</h3>
 		</div>
--->
+
 
 		<!-- MENSAJES MOSTRADOS ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-		<div ng-repeat="mensaje in mensajes">
+		<div id="mensaje_hilo" ng-repeat="mensaje in mensajes">
 
 			<!-- MENSAJE ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 			<div class="col-xs-5">
 				<div class="ui cards">
 					<div class="ui fluid card">
-						<div class="content" id="mensaje">
+						<div class="content" id="mensaje" ng-hide="mensaje.mensajePsicologo">
 							<div class="ui orange top right attached label" ng-hide="mensaje.mensajePsicologo">Pendiente de respuesta</div>
 							<div class="ui green top right attached label" ng-show="mensaje.acepta">Aceptada</div>
 							<div class="ui red top right attached label" ng-show="mensaje.rechaza">Rechazada</div>
@@ -72,44 +75,85 @@
 							<div class="description"> {{mensaje.mensajePaciente.texto}} </div>
 							<h2 class="ui sub header">Preferencias </h2>
 							<div class="description"> {{mensaje.mensajePaciente.preferencias}} </div>
+							<h2 class="ui sub header">Lugar de la consulta </h2> 
+							<div class="description"> {{mensaje.mensajePaciente.consulta}} </div>
 							<br>
 						</div>
+
 						<div class="content" id="respuesta" ng-show="mensaje.mensajePsicologo">
+							<div class="ui orange top right attached label" ng-hide="mensaje.mensajePsicologo">Pendiente de respuesta</div>
+							<div class="ui green top right attached label" ng-show="mensaje.acepta">Aceptada</div>
+							<div class="ui red top right attached label" ng-show="mensaje.rechaza">Rechazada</div>
 							<div class="meta"> {{mensaje.mensajePsicologo.fecha}} </div>
 							<h2 class="ui sub header">Respuesta </h2>
 							<div class="description"> {{mensaje.mensajePsicologo.comentario}} </div>
 							<h2 class="ui sub header" ng-hide="mensaje.rechaza">Cita </h2>
 							<div class="description" ng-hide="mensaje.rechaza"> <i class="calendar icon"></i> {{mensaje.mensajePsicologo.fechaCita}} </div>
+							<button type="button" id="mensaje" class="ui right floated bottom button" data-target="#mensaje_modal" data-toggle="modal" data-id="mensaje" ng-click="mensajeSeleccionado(mensaje)">Mi petición</button>
 						</div>
 					</div>
 				</div>
 				<div class="well"></div>
 			</div>
-			
+
 			<!-- REMITENTE -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-			
+
 			<div class="col-xs-3">
 				<div class="ui cards">
-					<div class="card">
-						<div class="content">
+					<div class="card" id="remitente">
+						<div class="content" id="remitente_foto">
 							<img class="right floated tiny ui image" src="{{mensaje.psicologo.foto}}">
-							<div class="header"> {{mensaje.psicologo.nombre}} </div> <br>
-							<div class="meta"><i class="birthday icon"></i> {{mensaje.psicologo.edad}}</div>
-							<div class="meta"> {{mensaje.psicologo.genero}} </div>
+							<div class="header"> {{mensaje.psicologo.nombre}} </div> 
 							<div class="meta">  <i class="marker icon"></i> {{mensaje.psicologo.localizacion}} </div>
-							<!--						<div class="description"> {{mensaje.psicologo.horario}} </div>-->
 						</div>
 						<div class="extra content" ng-show="mensaje.acepta">
 							<!-- Datos ocultos -->
 							<h4 class="ui teal header">Datos de contacto</h4>
 							<p><i class="mail icon"></i> {{mensaje.psicologo.email}}</p>
 							<p><i class="call icon"></i> {{mensaje.psicologo.telefono}}</p>
+							<p ng-show="mensaje.mensajePaciente.consulta=='Presencial'"><i class="address book icon"> {{mensaje.psicologo.direccion}}</i></p>
 						</div>
-						<a class="ui teal bottom attached button" href="#/psicologos/{{mensaje._idPsicologo}}">Perfil psicólogo</a>
+						<a class="ui teal bottom attached button" href="#/psicologos/{{mensaje.psicologo._id}}">Perfil psicólogo</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
+</div>
+
+<!-- MENSAJE ENVIADO: Ventana emergente - overlay -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="ui container">
+	<div class="modal fade" id="mensaje_modal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+
+				<!-- Titulo -->
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">Mensaje enviado</h4>
+				</div>
+
+				<!-- Cuerpo del formulario -->
+				<div class="modal-body">
+					<div class="content" id="mensaje">
+						<div class="meta"> {{mensaje.mensajePaciente.fecha}} </div>
+						<h2 class="ui sub header">Mensaje </h2>
+						<div class="description"> {{mensaje.mensajePaciente.texto}} </div>
+						<h2 class="ui sub header">Preferencias </h2>
+						<div class="description"> {{mensaje.mensajePaciente.preferencias}} </div>
+						<h2 class="ui sub header">Lugar de la consulta </h2> 
+						<div class="description"> {{mensaje.mensajePaciente.consulta}} </div>
+						<br>
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<div class="ui green button"  class="close" data-dismiss="modal" aria-label="Close">Vale</div>
+				</div>
+			</div> 
+		</div> 
+	</div>
 </div>

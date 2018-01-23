@@ -6,9 +6,8 @@ var ObjectId = Schema.Types.ObjectId;
 /* Schema del objeto Patologia */
 var patologiaSchema = new Schema(
     {
-        _id : ObjectId,
-        nombre: {type: String, required: true },
-        sintomas : []
+        _id : {type: ObjectId, unique: true, required: true },
+        nombre: {type: String, required: true }
     },
     { 
         collection: 'patologias' 
@@ -42,8 +41,7 @@ patologiaSchema.methods.findPreguntas = function() {
             "preguntas":{$slice:1}, 
             "_id":0,
             "nombre":0,
-            "respuesta":0,
-            "sintomas":0
+            "respuesta":0
         };
         
 		/* Devuelve un array con todos los documentos de la coleccion Patologias que cumplen la consulta */

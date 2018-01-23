@@ -10,7 +10,7 @@ var bcrypt = require('bcrypt-nodejs');
    required: Es obligatorio que el paciente posea este atributo */
 var pacienteSchema = new Schema(
 	{
-		_id : ObjectId,
+		_id : {type: ObjectId, unique: true, required: true },
 		nombre : {type: String, required: true },
 		email : {type: String, unique: true, lowercase: true, required: true },
 		password : {type: String, required: true },
@@ -83,7 +83,8 @@ pacienteSchema.methods.darAlta = function(paciente) {
 					psicologos:	[],
 					diagnostico : [],
 					genero : paciente.genero,
-					edad : paciente.edad
+					edad : paciente.edad,
+					telefono : paciente.telefono
 				}
 			});
 		});

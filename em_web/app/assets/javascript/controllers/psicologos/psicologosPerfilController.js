@@ -33,29 +33,33 @@ angular.module('Emozio').controller('PsicologosPerfilController', function(Psico
 	});
 
 	/* Comentarios del psicologo */
-	var comentarios = []; 
+	//	var comentarios = []; 
 	$scope.comentarios = [];
-	$scope.paginas = []; /* Lista de paginas de los comentarios */
-	var numPag=0; /* Numero de pagina de los comentarios */
+	//	$scope.paginas = []; /* Lista de paginas de los comentarios */
+	//	var numPag=0; /* Numero de pagina de los comentarios */
 
 	/* Tomamos al psicologo indicado en los parametros */
 	Psicologo.GetByParams($routeParams.id).then(function(data){
 		$scope.psicologo=Object.values(data.data)[0];
-		comentarios = $scope.psicologo.comentarios;
+		$scope.comentarios = $scope.psicologo.comentarios;
+		//		comentarios = $scope.psicologo.comentarios;
 
-		/* Se mostraran los primeros 4 comentarios del psicologo */
-		for(var i=0, l=4; i<l; i++){
-			$scope.comentarios.push(comentarios[i]);
-		}
+		//		/* Se mostraran los primeros 4 comentarios del psicologo */
+		//		for(var i=0, l=4; i<l; i++){
+		//			$scope.comentarios.push(comentarios[i]);
+		//		}
 
 		/* Por cada 4 comentarios, el numero de pagina se incrementa a 1 */
-		for(var i=0, l=comentarios.length; i<l; i+=4){
-			numPag++;
-			$scope.paginas.push(numPag); /* El numero de pagina en cuestion se añade a la lista de numeros de paginas */
-		}
+		//		for(var i=0, l=comentarios.length; i<l; i+=4){
+		//			numPag++;
+		//			$scope.paginas.push(numPag); /* El numero de pagina en cuestion se añade a la lista de numeros de paginas */
+		//		}
+
 	});
 
 	$scope.iniciarRating = function(val){
+		console.log(val);
+
 		$(".valoraciones").rating({
 			initialRating: val,
 			maxRating: 5
@@ -134,11 +138,20 @@ angular.module('Emozio').controller('PsicologosPerfilController', function(Psico
 			/* Se añade el comentario en el array de comentarios del psicologo */
 			$scope.psicologo.comentarios.push(comentario);
 
+			var mediaValoraciones = 0;
+			for(var i=0, l=$scope.psicologo.comentarios.length; i<l; i++) {
+				mediaValoraciones+=$scope.psicologo.comentarios[i].valoracion;
+			}
+			mediaValoraciones=mediaValoraciones/$scope.psicologo.comentarios.length;
+			$scope.psicologo.estrellas=Math.round(mediaValoraciones);
+
 			/* Se guarda el comentario del psicologo */
 			Psicologo.Comentar($scope.psicologo);	
 
 			/* Se muestra un mensaje de exito */
 			$scope.msj_exito = true;
+
+			$window.location.reload();  /* Se recarga la pagina actual */
 		}
 
 	}

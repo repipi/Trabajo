@@ -7,7 +7,7 @@ var bcrypt = require('bcrypt-nodejs');
 /* Schema del objeto Psicologo */
 var psicologoSchema = new Schema(
 	{
-		_id : ObjectId,
+		_id :  {type: ObjectId, unique: true, required: true },
 		nombre: {type: String, required: true },
 		genero : {type: String, required: true },
 		edad: {type: String, required: true },
@@ -98,6 +98,42 @@ psicologoSchema.methods.findOne = function(id) {
 	});
 };
 
+/* Metodo que actualiza los datos de un psicologo */
+psicologoSchema.methods.update = function(psicologo) {
+	return new Promise(function(resolve, reject){
+
+		/* Consulta sobre el documento */
+		var query = {
+			_id: psicologo._id
+		}
+
+		/* Se crea un JSON datosUsuario con los datos pasados por argumento */
+		var datosUsuario = {
+			$set: { /* Reemplaza el valor de un campo por el valor especificado */
+				estrellas: psicologo.estrellas
+			}
+		}
+
+		/* Especificacion de opciones */
+		var options = {
+			upsert: true, /* Si no existe, se crea un nuevo documento */
+			returnOriginal: false /* No devuelve el documento que ha sido modificado */
+		}
+		
+		console.log(datosUsuario);
+
+		/* Busca un documento que cumpla la consulta y lo actualiza con los datos de usuario pasados por parametros */
+		Psicologo.findOneAndUpdate(query, datosUsuario, options).exec(function(error, results){
+			if(error){
+				console.log("Psicologo - Error en update");
+				reject({error: error});
+			}else{
+				resolve(results);
+			}
+		});
+	});
+};
+
 /* Metodo que devuelve los psicologos que se corresponden con la informacion pasada por parametros */
 psicologoSchema.methods.filtrar = function(psicologo){
 	return new Promise(function(resolve, reject){
@@ -148,6 +184,9 @@ psicologoSchema.methods.filtrar = function(psicologo){
 				]};
 		}
 
+		console.log(psicologo);
+		console.log(JSON.stringify(query));
+
 		/* Devuelve un array con todos los documentos de la coleccion Psicologos que cumplen la consulta */
 		Psicologo.find(query).exec(function(error, results){
 			if(error){
@@ -155,6 +194,7 @@ psicologoSchema.methods.filtrar = function(psicologo){
 				reject({error: error});
 			}else{
 				resolve(results);
+				console.log(results);
 			}
 		});
 	});
@@ -171,7 +211,8 @@ psicologoSchema.methods.updateComentarios = function(psicologo) {
 
 		/* Se crea un JSON datosComentarios con los datos pasados por argumento */
 		var datosComentarios = {
-			comentarios: psicologo.comentarios
+			comentarios: psicologo.comentarios,
+			estrellas: psicologo.estrellas
 		}
 
 		/* Busca un documento que cumpla la consulta y lo actualiza con los datos de usuario pasados por parametros */

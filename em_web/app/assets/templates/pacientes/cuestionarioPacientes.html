@@ -86,27 +86,35 @@
 	</div>
 
 	<!-- CUESTIONARIO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-	<form>
-		<div class="form-group" data-ng-init="mostrarPreg()"> <!-- Se define el grupo de elementos que conforman el formulario -->
-			<div ng-repeat="pregunta in preguntas"> <!-- Cada columna sera un elemento pregunta del array de preguntas el cual se obtiene del controlador -->
-				<div class="ui container">
-					<div class="ui form">
-						<div class="ui fields"> 
-							<div class="col-sm-6 col-sm-offset-3"> <!-- Definimos el tamaño, formato y color de la caja -->
-								<!-- Identificamos el elemento como formulario checklist -->
-								<!-- Para cada elemento seleccionado como cierto, a la pregunta se le añade el atributo SELECTED
-ng-true-value es el valor que toma cuando esta seleccionado, y ng-false-value cuando esta deseleccinado-->
-								<!-- Imprimimos el campo pregunta del objeto pregunta -->
-								<div class="field">
+	<div class="row">
+		<div class="col-sm-1 col-sm-offset-1">
+			<div class="ui wide skyscraper test ad" data-text="Rascacielos ancho"></div>
+		</div>
 
-									<div class="ui fluid card">
-										<div class="content">
-											<h5 class="pregunta"><i class="large teal help icon"></i> {{pregunta.pregunta}}</h5>
-										</div>
-										<div class="ui bottom attached fluid buttons" ng-model="pregunta.SELECTED">
-											<button class="ui {{press_yes}} button"  ng-click='pregunta.SELECTED=1;press_yes="teal";press_no=""'>Si</button>
-											<div class="or"  data-text="o"></div>
-											<button class="ui {{press_no}} button" ng-click='pregunta.SELECTED=0;press_yes="";press_no="teal"'>No</button>
+		<div class="col-sm-6 col-sm-offset-1">
+			<form>
+				<div class="form-group" data-ng-init="mostrarPreg()"> <!-- Se define el grupo de elementos que conforman el formulario -->
+					<div ng-repeat="pregunta in preguntas"> <!-- Cada columna sera un elemento pregunta del array de preguntas el cual se obtiene del controlador -->
+						<div class="ui container">
+							<div class="ui form">
+								<div class="ui fields"> 
+									<div class="col-sm-12"> 
+										<!-- Identificamos el elemento como formulario checklist -->
+										<!-- Para cada elemento seleccionado como cierto, a la pregunta se le añade el atributo SELECTED
+ng-true-value es el valor que toma cuando esta seleccionado, y ng-false-value cuando esta deseleccinado-->
+										<!-- Imprimimos el campo pregunta del objeto pregunta -->
+										<div class="field">
+
+											<div class="ui fluid card">
+												<div class="content">
+													<h5 class="pregunta"><i class="large teal help icon"></i> {{pregunta.pregunta}}</h5>
+												</div>
+												<div class="ui bottom attached fluid buttons" ng-model="pregunta.SELECTED">
+													<button class="ui {{press_yes}} button"  ng-click='pregunta.SELECTED=1;press_yes="teal";press_no=""'>Si</button>
+													<div class="or"  data-text="o"></div>
+													<button class="ui {{press_no}} button" ng-click='pregunta.SELECTED=0;press_yes="";press_no="teal"'>No</button>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -114,18 +122,23 @@ ng-true-value es el valor que toma cuando esta seleccionado, y ng-false-value cu
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="col-sm-6 col-sm-offset-3">
-				<!-- Boton Enviar que ejecuta la funcion check(preguntas) con su accionamiento -->
-				<div class="ui animated fluid teal button" tabindex="0" ng-click="check(preguntas)">
-					<div class="visible content">{{submit}}</div>
-					<div class="hidden content">
-						<i class="white right arrow icon"></i>
+				<div class="col-sm-12">
+					<!-- Boton Enviar que ejecuta la funcion check(preguntas) con su accionamiento -->
+					<div class="ui animated fluid teal button" tabindex="0" ng-click="check(preguntas)">
+						<div class="visible content">{{submit}}</div>
+						<div class="hidden content">
+							<i class="white right arrow icon"></i>
+						</div>
 					</div>
+					<br><br>
 				</div>
-			</div>
+			</form>
 		</div>
-		<br><br>
-	</form>
+
+		<div class="col-sm-1">
+			<div class="ui wide skyscraper test ad" id="publi_cuestionario" data-text="Rascacielos ancho"></div>
+		</div>
+
+	</div>
 
 </div>

@@ -235,10 +235,10 @@ angular.module('Emozio').controller('PacientesRegistroController', function(Paci
 				}
 			}
 
-		});
+			/* Se avisa de que los datos no son correctos */
+			$scope.msj_error=true;	
 
-		/* Se avisa de que los datos no son correctos */
-		$scope.msj_error=true;	
+		});
 	}
 
 	/* Funcion check que valida el cuestionario de registro */

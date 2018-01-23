@@ -285,6 +285,7 @@ angular.module('Emozio').controller('PsicologosModificarController', function(Pa
 	$scope.salir=function(){
 		Psicologo.Salir(); /* Se cierra la sesion del psicologo */
 		$location.path("inicio"); /* Se redirige a la pagina de inicio */
+		$window.location.reload();  /* Se recarga la pagina actual */
 	}
 
 });
