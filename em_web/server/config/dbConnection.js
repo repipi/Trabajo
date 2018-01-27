@@ -5,21 +5,21 @@ module.exports = function() {
 	
 	var options = {
 		useMongoClient: true,
-		autoIndex: false, // Don't build indexes
-		reconnectTries: Number.MAX_VALUE, // Never stop trying to reconnect
-		reconnectInterval: 500, // Reconnect every 500ms
-		poolSize: 10, // Maintain up to 10 socket connections
-		// If not connected, return errors immediately rather than waiting for reconnect
+		autoIndex: false, // No crear index
+		reconnectTries: Number.MAX_VALUE, // Nunca para de reintentar conectarse
+		reconnectInterval: 500, // Reconexion cada 500ms
+		poolSize: 10, // Mantener una conexion de 10 sockets
+		// Si no se conecta, devuelve un error inmediatamente antes de tratar de reconectarse
 		bufferMaxEntries: 0
 	};
 
-	/* Se determina que mongoose utilice las mismas promise que NodeJS */
+	/* Se determina que Mongoose utilice las mismas promise que NodeJS */
 	mongoose.Promise = global.Promise;
 
 	// Se conecta la BBDD
 	mongoose.connect(MONGO_URL, options, function(err, res) {
 		if(err) {
-			console.log('ERROR: connecting to Database. ' + err);
+			console.log('ERROR: Reconectando a la BBDD. ' + err);
 		}else{
 			console.log("Conectado a la BBDD");
 		}
@@ -27,7 +27,7 @@ module.exports = function() {
 
 	var db = mongoose.connection;
 	/* Si sucede un error, mostrarlo */
-	db.on('error', console.error.bind(console, 'connection error:'));
+	db.on('error', console.error.bind(console, 'Error de conexion:'));
 	db.once('open', function() {
 		console.log("Con exito");
 	});

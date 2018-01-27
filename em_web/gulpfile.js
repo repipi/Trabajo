@@ -14,13 +14,6 @@ devBuild = (process.env.NODE_ENV !== 'production'),
 	build: 'build/'
 };
 
-//gulp.task('diagram', function(){
-//    gulp.src('/home/rach/Documentos/TFG/diagramas/arch_diagram/*')
-//        .pipe(ngGraph({
-//            dest: '/home/rach/Documentos/architecture'
-//        }));
-//});
-
 gulp.task('diagram', function(){
     gulp.src(['/home/rach/Documentos/TFG/em_repository/em_web/app/assets/javascript/controllers/pacientes/*.js', '/home/rach/Documentos/TFG/em_repository/em_web/app/assets/javascript/controllers/psicologos/*.js', '/home/rach/Documentos/TFG/em_repository/em_web/app/assets/javascript/factories/*.js', '/home/rach/Documentos/TFG/em_repository/em_web/app/assets/javascript/*.js'])
         .pipe(ngGraph({

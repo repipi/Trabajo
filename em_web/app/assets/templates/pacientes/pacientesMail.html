@@ -3,9 +3,9 @@
 <nav class='container navbar-inverse' role='navigation' >
 	<div class='navbar-header'>
 		<a href='#/inicio' class='navbar-brand logo'>
-			<img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
+			<img class="ui tiny avatar image"  alt="Logo Emozio" src="/assets/images/emozio_logo.png">Emozio
 		</a>
-		<button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
+		<button type='button' aria-label="Botón menú"  class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
 			<span class='sr-only'>Toggle navigation</span>
 			<span class='icon-bar'></span>
 			<span class='icon-bar'></span>
@@ -45,7 +45,9 @@
 				</a>
 			</div>
 
-			<div id="publi_mail" class="ui wide skyscraper test ad" data-text="Rascacielos ancho"></div>
+			<div id="publi_mail" class="ui wide skyscraper test ad">
+				<img src="/assets/images/prueba1.png" alt="">
+			</div>
 
 			<div ng-repeat="mensaje in mensajes">
 				<div class="jumbotron"></div>
@@ -89,7 +91,7 @@
 							<div class="description"> {{mensaje.mensajePsicologo.comentario}} </div>
 							<h2 class="ui sub header" ng-hide="mensaje.rechaza">Cita </h2>
 							<div class="description" ng-hide="mensaje.rechaza"> <i class="calendar icon"></i> {{mensaje.mensajePsicologo.fechaCita}} </div>
-							<button type="button" id="mensaje" class="ui right floated bottom button" data-target="#mensaje_modal" data-toggle="modal" data-id="mensaje" ng-click="mensajeSeleccionado(mensaje)">Mi petición</button>
+							<button type="button" aria-label="Cerrar" id="mensaje" class="ui right floated bottom button" data-target="#mensaje_modal" data-toggle="modal" data-id="mensaje" ng-click="mensajeSeleccionado(mensaje)">Mi petición</button>
 						</div>
 					</div>
 				</div>
@@ -102,7 +104,7 @@
 				<div class="ui cards">
 					<div class="card" id="remitente">
 						<div class="content" id="remitente_foto">
-							<img class="right floated tiny ui image" src="{{mensaje.psicologo.foto}}">
+							<img alt="Foto del psicólogo" class="right floated tiny ui image" src="{{mensaje.psicologo.foto}}">
 							<div class="header"> {{mensaje.psicologo.nombre}} </div> 
 							<div class="meta">  <i class="marker icon"></i> {{mensaje.psicologo.localizacion}} </div>
 						</div>
@@ -113,7 +115,7 @@
 							<p><i class="call icon"></i> {{mensaje.psicologo.telefono}}</p>
 							<p ng-show="mensaje.mensajePaciente.consulta=='Presencial'"><i class="address book icon"> {{mensaje.psicologo.direccion}}</i></p>
 						</div>
-						<a class="ui teal bottom attached button" href="#/psicologos/{{mensaje.psicologo._id}}">Perfil psicólogo</a>
+						<a class="ui gray bottom attached button" href="#/psicologos/{{mensaje.psicologo._id}}">Perfil psicólogo</a>
 					</div>
 				</div>
 			</div>
@@ -130,7 +132,7 @@
 
 				<!-- Titulo -->
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<button type="button" aria-label="Cerrar" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 					<h4 class="modal-title">Mensaje enviado</h4>

@@ -3,9 +3,9 @@
 <nav class='container navbar-inverse' role='navigation' >
 	<div class='navbar-header'>
 		<a href='#/inicio' class='navbar-brand logo'>
-			<img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
+			<img class="ui tiny avatar image"  alt="Logo Emozio"  src="/assets/images/emozio_logo.png">Emozio
 		</a>
-		<button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
+		<button type='button' aria-label="Botón menú"  class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
 			<span class='sr-only'>Toggle navigation</span>
 			<span class='icon-bar'></span>
 			<span class='icon-bar'></span>
@@ -39,7 +39,7 @@
 					<div class="five wide column">
 						<div class="ui center aligned items">
 							<div class="ui tiny image">
-								<img src="/assets/images/reloj.png">
+								<img alt="" src="/assets/images/reloj.png">
 							</div>
 							<br>
 							<div class="center aligned content">Menos de 30 minutos</div>
@@ -48,7 +48,7 @@
 					<div class="five wide column">
 						<div class="ui center aligned item">
 							<div class="ui tiny image">
-								<img src="/assets/images/angel_emoji.png">
+								<img alt="" src="/assets/images/angel_emoji.png">
 							</div>
 							<br>
 							<div class="center aligned content">Responde honestamente</div>
@@ -57,7 +57,7 @@
 					<div class="five wide column">
 						<div class="ui center aligned item">
 							<div class="ui tiny image">
-								<img src="/assets/images/diana.png">
+								<img alt="" src="/assets/images/diana.png">
 							</div>
 							<br>
 							<div class="center aligned content">Sé preciso</div>
@@ -88,7 +88,9 @@
 	<!-- CUESTIONARIO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 	<div class="row">
 		<div class="col-sm-1 col-sm-offset-1">
-			<div class="ui wide skyscraper test ad" data-text="Rascacielos ancho"></div>
+			<div class="ui wide skyscraper test ad" data-text="Rascacielos ancho">
+				<img src="/assets/images/prueba1.png" alt="" id="publi_cuestionario">
+			</div>
 		</div>
 
 		<div class="col-sm-6 col-sm-offset-1">
@@ -110,9 +112,9 @@ ng-true-value es el valor que toma cuando esta seleccionado, y ng-false-value cu
 													<h5 class="pregunta"><i class="large teal help icon"></i> {{pregunta.pregunta}}</h5>
 												</div>
 												<div class="ui bottom attached fluid buttons" ng-model="pregunta.SELECTED">
-													<button class="ui {{press_yes}} button"  ng-click='pregunta.SELECTED=1;press_yes="teal";press_no=""'>Si</button>
+													<button aria-label="Contestar sí a la pregunta" class="ui {{press_yes}} button"  ng-click='pregunta.SELECTED=1;press_yes="teal";press_no=""'>Si</button>
 													<div class="or"  data-text="o"></div>
-													<button class="ui {{press_no}} button" ng-click='pregunta.SELECTED=0;press_yes="";press_no="teal"'>No</button>
+													<button aria-label="Contestar no a la pregunta" class="ui {{press_no}} button" ng-click='pregunta.SELECTED=0;press_yes="";press_no="teal"'>No</button>
 												</div>
 											</div>
 										</div>
@@ -136,7 +138,9 @@ ng-true-value es el valor que toma cuando esta seleccionado, y ng-false-value cu
 		</div>
 
 		<div class="col-sm-1">
-			<div class="ui wide skyscraper test ad" id="publi_cuestionario" data-text="Rascacielos ancho"></div>
+			<div class="ui wide skyscraper test ad">
+				<img src="/assets/images/prueba1.png" alt="" id="publi_cuestionario">
+			</div>
 		</div>
 
 	</div>

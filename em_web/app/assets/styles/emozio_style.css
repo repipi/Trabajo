@@ -2,7 +2,7 @@
 
 .portada, .ng-scope, body {
 	/*    background: url(/assets/images/1869.jpg) no-repeat center center fixed; */
-	background: url(/assets/images/images_prueba/6197.jpg) no-repeat center center fixed !important;
+	background: url(/assets/images/6197.jpg) no-repeat center center fixed !important;
 	-webkit-background-size: cover !important;
 	-moz-background-size: cover !important;
 	-o-background-size: cover !important;
@@ -92,7 +92,7 @@
 REGISTRO
 **********************************************************************************************************************************/
 #info_proc_selec {
-	color: grey;
+	color: rgba(0, 0, 0, 0.8);
 	margin-bottom: 15px;
 	padding-left: 50px;
 	padding-right: 50px;
@@ -133,6 +133,11 @@ font-size: 90%;
 
 #perfil_psicologo_contenido {
 	background-color: whitesmoke;
+	color: rgba(0, 0, 0, 0.8);
+}
+
+#perfil_psicologo_contenido .meta {
+	color: rgba(0, 0, 0, 0.8);
 }
 
 .sin_resultados {
@@ -288,6 +293,12 @@ font-size: 90%;
 	color:white;
 }
 
+#publi_modif_pac {
+	margin-left: 15%;
+	width: 62%;
+	height: auto;
+}
+
 /**************************************************************************************************************************** PERFIL PSICOLOGO ****************************************************************************************************************************/
 #comentario {
 	background-color: white;
@@ -321,11 +332,17 @@ font-size: 90%;
 	color:white;
 }
 
+#responder {
+	color: cadetblue;
+	font-weight: bolder;
+	/*	text-decoration: underline;*/
+}
+
 /************************************************************************************************************************** MAIL PSICOLOGO ***************************************************************************************************************************/
 #mensaje {
 	/*	background-color: whitesmoke;*/
 	color: black;
-/*	line-height: 90%;*/
+	/*	line-height: 90%;*/
 }
 
 #mensaje h2 {
@@ -334,7 +351,7 @@ font-size: 90%;
 
 #mensaje .meta {
 	font-size: 85%;
-	color: grey;
+	color: rgba(0, 0, 0, 0.8);
 }
 
 #mensaje .description {
@@ -361,7 +378,7 @@ font-size: 90%;
 
 #respuesta .meta {
 	font-size: 85%;
-	color: grey;
+	color: rgba(0, 0, 0, 0.8);
 }
 
 #respuesta button {
@@ -370,6 +387,12 @@ font-size: 90%;
 
 #remitente {
 	margin-bottom: 30px;
+}
+#remitente .meta {
+	color: rgba(0, 0, 0, 0.8);
+}
+#remitente .meta i {
+	color: teal;
 }
 
 #remitente h4 {
@@ -386,6 +409,13 @@ font-size: 90%;
 
 #remitente_foto {
 	margin-bottom: -5%;
+}
+
+#remitente_paciente .meta {
+	color: rgba(0, 0, 0, 0.8);
+}
+#remitente_paciente .meta i {
+	color: teal;
 }
 
 #mensaje_modal .modal-header {
@@ -474,5 +504,8 @@ font-size: 90%;
 }
 
 #publi_calendario {
-	margin-bottom: 25px;
+	margin-left: 20%;
+	margin-bottom: 30px;
+	width: 62%;
+	height: auto;
 }

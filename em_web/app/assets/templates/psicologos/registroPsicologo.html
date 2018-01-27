@@ -3,9 +3,9 @@
 	<div class="col-sm-6 col-xs-2">
 		<div class='navbar-header'>
 			<a href='#/inicio' class='navbar-brand logo'>
-				<img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
+				<img class="ui tiny avatar image" alt="Logo Emozio" src="/assets/images/emozio_logo.png">Emozio
 			</a>
-			<button type='button' id="acceso_nav" class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
+			<button type='button' aria-label="Botón menú" id="acceso_nav" class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
 				<span class='sr-only'>Toggle navigation</span>
 				<span class='icon-bar'></span>
 				<span class='icon-bar'></span>
@@ -15,7 +15,7 @@
 	</div>
 
 	<div class="col-sm-6 col-xs-10">
-		<ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
+		<div class='nav navbar-nav navbar-right collapse navbar-collapse'>
 			<div class="right menu">
 				<div id="menu_fijo">
 					<form id="access_form" class="ui form">
@@ -23,13 +23,13 @@
 							<div class="field">
 								<div class="ui fixed left icon input">
 									<i class="mail icon"></i>
-									<input placeholder="Email" name="email" type="text" ng-model="usuario.email" required/>
+									<input placeholder="Email" aria-label="E-mail" name="email" type="text" ng-model="usuario.email" required/>
 								</div>
 							</div>
 							<div class="field">
 								<div class="ui fixed left icon input">
 									<i class="lock icon"></i>
-									<input placeholder="Contraseña" name="password" type="password" ng-model="usuario.password" required/>
+									<input placeholder="Contraseña" aria-label="Contraseña" name="password" type="password" ng-model="usuario.password" required/>
 								</div>
 							</div>
 							<div class="field">
@@ -47,7 +47,7 @@
 					</form>
 				</div>
 			</div>  
-		</ul>
+		</div>
 	</div>
 </nav>
 
@@ -107,7 +107,7 @@
 							<div class="field">
 								<div class="ui left icon input">
 									<i class="user icon"></i>
-									<input type="text" name="nombre" placeholder="Nombre" ng-model="psicologo.nombre" required>
+									<input type="text" aria-label="Nombre" name="nombre" placeholder="Nombre" ng-model="psicologo.nombre" required>
 								</div>
 							</div>
 							<!-- GENERO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -140,7 +140,7 @@
 								<div class="ui calendar" id="edad">
 									<div class="ui input left icon">
 										<i class="birthday icon"></i>
-										<input type="text" name="edad" ng-model="psicologo.edad" placeholder="Fecha de nacimiento">
+										<input type="text" aria-label="Fecha de nacimiento" name="edad" ng-model="psicologo.edad" placeholder="Fecha de nacimiento">
 									</div>
 								</div>
 							</div>
@@ -148,21 +148,21 @@
 							<div class="field">
 								<div class="ui left icon input">
 									<i class="mail icon"></i>
-									<input type="email" name="email" placeholder="E-mail" ng-model="psicologo.email" required>
+									<input type="email" aria-label="E-mail" name="email" placeholder="E-mail" ng-model="psicologo.email" required>
 								</div>
 							</div>
 							<!-- LOCALIZACION ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 							<div class="field" id="locationField">
 								<div class="ui left icon input">
 									<i class="marker icon"></i>
-									<input id="autocomplete" name="localizacion" placeholder="Localización" ng-focus="geolocate()" type="text" required>
+									<input id="autocomplete" aria-label="Localización" name="localizacion" placeholder="Localización" ng-focus="geolocate()" type="text" required>
 								</div>
 							</div>
 							<!-- TELEFONO --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 							<div class="field">
 								<div class="ui left icon input">
 									<i class="call icon"></i>
-									<input type="tel" name="telefono" placeholder="Teléfono" ng-model="psicologo.telefono" required>
+									<input type="tel" aria-label="Teléfono" name="telefono" placeholder="Teléfono" ng-model="psicologo.telefono" required>
 								</div> 
 							</div>
 							<!-- TERMINOS Y CONDICIONES DE USO ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -186,33 +186,33 @@
 							<div class="required field">
 								<div class="ui left icon input">
 									<i class="certificate icon"></i>
-									<input type="text" name="ncolegiado" placeholder="Número de colegiado" ng-model="psicologo.ncolegiado" required>
+									<input type="text" aria-label="Número de colegiado" name="ncolegiado" placeholder="Número de colegiado" ng-model="psicologo.ncolegiado" required>
 								</div>
 							</div>
 							<!-- EXPERIENCIA PROFESIONAL ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 							<div class="required field">                  
 								<label>Experiencia profesional</label>
-								<textarea name="experiencia" rows="2" placeholder="Introduzca una breve descripción de su experiencia profesional." ng-model="psicologo.experiencia"> </textarea>
+								<textarea name="experiencia" aria-label="Experiencia" rows="2" placeholder="Introduzca una breve descripción de su experiencia profesional." ng-model="psicologo.experiencia"> </textarea>
 							</div>
 							<!-- FORMACION ACADEMICA ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 							<div class="required field">
 								<label>Formación académica</label>
-								<textarea name="formacion" rows="2" placeholder="Introduzca títulos, cursos o acreditaciones académicas." ng-model="psicologo.formacion" required></textarea>
+								<textarea name="formacion" aria-label="Formación" rows="2" placeholder="Introduzca títulos, cursos o acreditaciones académicas." ng-model="psicologo.formacion" required></textarea>
 							</div>
 							<!-- TERAPIAS --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 							<div class="required field">
 								<label>Terapias que realiza</label>
-								<textarea name="terapia" rows="2" placeholder="Introduzca los distintos tipos de terapia." ng-model="psicologo.terapia" required></textarea>
+								<textarea name="terapia" aria-label="Terapia" rows="2" placeholder="Introduzca los distintos tipos de terapia." ng-model="psicologo.terapia" required></textarea>
 							</div>
 							<!-- PATOLOGIAS ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 							<div class="required field">
 								<label>Patologías</label>
-								<textarea name="patologias" rows="2" placeholder="Introduzca las patologías que trata." ng-model="psicologo.patologias" required></textarea>
+								<textarea name="patologias" aria-label="Patologías" rows="2" placeholder="Introduzca las patologías que trata." ng-model="psicologo.patologias" required></textarea>
 							</div>
 							<!-- ESPECIALIDAD ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 							<div class="field">
 								<label>Otros datos de interés</label>
-								<textarea name="especialidad" rows="2" placeholder="Introduzca alguna información que considere de interés. Por ejemplo, ¿está especializado en algún campo?" ng-model="psicologo.especialidad" required></textarea>
+								<textarea name="especialidad" aria-label="Especialidad" rows="2" placeholder="Introduzca alguna información que considere de interés. Por ejemplo, ¿está especializado en algún campo?" ng-model="psicologo.especialidad" required></textarea>
 							</div>
 							<div class="ui fluid large teal submit button" ng-click="changeStep(psicologo)">Enviar</div>
 						</div>
@@ -233,7 +233,7 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<button type="button" aria-label="Cerrar" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 					<h4 class="modal-title">Términos y condiciones de uso</h4>

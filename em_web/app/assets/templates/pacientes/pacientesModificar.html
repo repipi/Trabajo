@@ -3,9 +3,9 @@
 <nav class='container navbar-inverse' role='navigation' >
 	<div class='navbar-header'>
 		<a href='#/inicio' class='navbar-brand logo'>
-			<img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
+			<img class="ui tiny avatar image"  alt="Logo Emozio"  src="/assets/images/emozio_logo.png">Emozio
 		</a>
-		<button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
+		<button type='button' aria-label="Botón menú"  class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
 			<span class='sr-only'>Toggle navigation</span>
 			<span class='icon-bar'></span>
 			<span class='icon-bar'></span>
@@ -45,12 +45,12 @@
 					<div class="field">
 						<div class="ui left icon input">
 							<i class="mail icon"></i>
-							<input type="email" name="email" placeholder="E-mail" ng-model="paciente.email" required>
+							<input type="email" aria-label="E-mail" name="email" placeholder="E-mail" ng-model="paciente.email" required>
 						</div>
 					</div>
 					<!-- GENERO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 					<div class="field" id="genero">
-						<select class="ui compact selection dropdown" name="genero" ng-model="paciente.genero">
+						<select aria-label="Género" class="ui compact selection dropdown" name="genero" ng-model="paciente.genero">
 							<i class="dropdown icon"></i>
 							<div class="menu">
 								<option class="item" value="">Selecciona tu género</option>
@@ -78,7 +78,7 @@
 						<div class="ui calendar" id="edad">
 							<div class="ui input left icon">
 								<i class="birthday icon"></i>
-								<input type="text" name="edad" placeholder="Fecha de nacimiento" ng-model="paciente.edad">
+								<input type="text" aria-label="Edad" name="edad" placeholder="Fecha de nacimiento" ng-model="paciente.edad">
 							</div>
 						</div>
 					</div>
@@ -86,18 +86,18 @@
 					<div class="field" id="locationField">
 						<div class="ui left icon input">
 							<i class="marker icon"></i>
-							<input id="autocomplete" name="localizacion" placeholder="Localización" ng-focus="geolocate()" type="text" ng-model="paciente.localizacion" required>
+							<input id="autocomplete" aria-label="Localización" name="localizacion" placeholder="Localización" ng-focus="geolocate()" type="text" ng-model="paciente.localizacion" required>
 						</div>
 					</div>
 					<!-- TELEFONO --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 					<div class="field">
 						<div class="ui left icon input">
 							<i class="call icon"></i>
-							<input type="tel" name="telefono" placeholder="Teléfono" ng-model="paciente.telefono" required>
+							<input type="tel" aria-label="Teléfono" name="telefono" placeholder="Teléfono" ng-model="paciente.telefono" required>
 						</div> 
 					</div>
 					<!-- POLITICAS -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-					<div class="ui fluid large teal submit button" ng-click="cambiarDatos(paciente)">Modificar datos</div>
+					<div class="ui fluid large gray submit button" ng-click="cambiarDatos(paciente)">Modificar datos</div>
 					<div class="ui positive message" ng-show="msj_exito_datos">
 						<i class="close icon"></i>
 						<div class="header"> Datos modificados con éxito. </div>
@@ -123,7 +123,7 @@
 						<label>Contraseña actual</label>
 						<div class="ui left icon input">
 							<i class="lock icon"></i>
-							<input type="password" name="passwordActual" placeholder="Contraseña" ng-model="paciente.passwordActual" required>
+							<input type="password" aria-label="Contraseña actual" name="passwordActual" placeholder="Contraseña" ng-model="paciente.passwordActual" required>
 						</div>
 					</div>
 					<!-- PASSWORD NUEVA --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -131,11 +131,11 @@
 						<label>Nueva contraseña</label>
 						<div class="ui left icon input">
 							<i class="lock icon"></i>
-							<input type="password" name="passwordNueva" placeholder="Contraseña" ng-model="paciente.passwordNueva" required>
+							<input type="password" aria-label="Nueva contraseña" name="passwordNueva" placeholder="Contraseña" ng-model="paciente.passwordNueva" required>
 						</div>
 					</div>
 
-					<div class="ui fluid large teal submit button" ng-click="cambiarPassword(paciente)">Modificar contraseña</div>
+					<div class="ui fluid large gray submit button" ng-click="cambiarPassword(paciente)">Modificar contraseña</div>
 					<div class="ui positive message" ng-show="msj_exito_password">
 						<i class="close icon"></i>
 						<div class="header"> Contraseña modificada con éxito. </div>
@@ -148,13 +148,15 @@
 			</div>
 			<div class="ui large form baja_btn">
 				<div class="ui segment">
-					<div class="ui fluid large teal submit button" data-target="#baja_modal" data-toggle="modal">Darme de baja</div>
+					<div class="ui fluid large gray submit button" data-target="#baja_modal" data-toggle="modal">Darme de baja</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="row">
-		<div class="ui panorama test ad" data-text="Panorama"></div>
+		<div class="ui panorama test ad" id="publi_modif_pac">
+			<img src="/assets/images/prueba2.png" alt="">
+		</div>
 	</div>
 </div>
 
@@ -164,7 +166,7 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<button type="button" aria-label="Cerrar" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 					<h4 class="modal-title">¿Estás seguros de que quieres continuar?</h4>

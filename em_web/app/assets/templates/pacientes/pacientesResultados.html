@@ -3,9 +3,9 @@
 <nav class='container navbar-inverse' role='navigation' >
 	<div class='navbar-header'>
 		<a href='#/inicio' class='navbar-brand logo'>
-			<img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
+			<img class="ui tiny avatar image"  alt="Logo Emozio" src="/assets/images/emozio_logo.png">Emozio
 		</a>
-		<button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
+		<button type='button' aria-label="Botón menú"  class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
 			<span class='sr-only'>Toggle navigation</span>
 			<span class='icon-bar'></span>
 			<span class='icon-bar'></span>
@@ -34,7 +34,7 @@
 
 	<div class="row" id="main_test">
 		<div class="col-xs-3 col-xs-offset-1">
-			<button type="submit" class="ui fluid teal button" data-target="#aviso_modal" data-toggle="modal"> <i class="ui center write icon"></i> Hacer el test</button>
+			<button type="submit" aria-label="Hacer el test" class="ui fluid teal button" data-target="#aviso_modal" data-toggle="modal"> <i class="ui center write icon"></i> Hacer el test</button>
 		</div>
 		<div class="col-xs-7">
 			<div class="ui container">
@@ -55,20 +55,20 @@
 						<label>Consulta</label>
 						<div class="field">
 							<div class="ui slider checkbox">
-								<input type="radio" name="consulta" checked="checked" value="presencial" ng-model="psicologo.consulta">
+								<input type="radio" aria-label="Consulta presencial" name="consulta" checked="checked" value="presencial" ng-model="psicologo.consulta">
 								<label>Presencial</label>
 							</div>
 						</div>
 						<div class="field">
 							<div class="ui slider checkbox">
-								<input type="radio" name="consulta" value="online" ng-model="psicologo.consulta">
+								<input type="radio" aria-label="Consulta on-line" name="consulta" value="online" ng-model="psicologo.consulta">
 								<label>On-line</label>
 							</div>
 						</div>
 					</div>
 					<div class="field">
 						<label>Precio</label>
-						<select class="ui compact selection dropdown" ng-model="psicologo.precio">
+						<select aria-label="Precio" class="ui compact selection dropdown" ng-model="psicologo.precio">
 							<i class="dropdown icon"></i>
 							<div class="menu">
 								<option class="item" value="">Cualquiera</option>
@@ -81,7 +81,7 @@
 					</div>
 					<div class="field">
 						<label>Seguro médico</label>
-						<select class="ui compact selection dropdown" ng-model="psicologo.seguro">
+						<select aria-label="Seguro médico" class="ui compact selection dropdown" ng-model="psicologo.seguro">
 							<i class="dropdown icon"></i>
 							<div class="menu">
 								<option class="item" value="">Cualquiera</option>
@@ -99,11 +99,11 @@
 
 					<span id="demo"></span>
 					<div class="field">
-						<button id="filtro_button" type="submit" class="fluid ui teal button" ng-click="filtrar(psicologo)">
+						<button aria-label="Filtrar por los criterios" id="filtro_button" type="submit" class="fluid ui teal button" ng-click="filtrar(psicologo)">
 							<i class="icon search"></i>  Filtrar</button>
 					</div>
 					<div class="field">
-						<button id="filtro_button" type="submit" class="fluid ui gray button" ng-click="recuperarMisResultados()">
+						<button aria-label="Volver a mis resultados" id="mis_resultados_button" type="submit" class="fluid ui gray button" ng-click="recuperarMisResultados()">
 							<p> <i class="bar chart icon"></i> Mis resultados </p> </button>
 					</div>
 				</div>
@@ -129,11 +129,11 @@
 				<!-- Bucle: Muestra la info de cada psicologo que pueda tratar la patologia del paciente -->
 				<div class="ui card" ng-repeat="psicologo in psicologos">
 					<div class="blurring dimmable image">
-						<img ng-src="{{psicologo.foto}}">
+						<img alt="Foto del psicólogo" ng-src="{{psicologo.foto}}">
 					</div>
 					<div class="content" id="perfil_psicologo_contenido">
 						<a class="header" href="#/psicologos/{{psicologo._id}}">{{psicologo.nombre}}</a>
-<!--						<div class="ui right floated star rating valoraciones" ng-init="iniciarRating(psicologo.estrellas)"></div>-->
+						<!--						<div class="ui right floated star rating valoraciones" ng-init="iniciarRating(psicologo.estrellas)"></div>-->
 						<div class="ui right floated meta">{{psicologo.estrellas}}<i class="yellow star icon"></i> </div>
 						<div class="meta"><i class="certificate teal icon"></i> {{psicologo.ncolegiado}} </div>
 						<div class="description">{{psicologo.experiencia}} </div>
@@ -143,14 +143,16 @@
 						<span><i class="marker teal icon"></i>{{psicologo.localizacion}} </span>
 					</div>
 
-					<button type="button" id="contactar" class="ui teal bottom attached button" data-target="#contacto_modal" data-toggle="modal" data-id="psicologo._id" ng-click="psicologoSeleccionado(psicologo)">
+					<button aria-label="Pedir cita" type="button" id="contactar" class="ui gray bottom attached button" data-target="#contacto_modal" data-toggle="modal" data-id="psicologo._id" ng-click="psicologoSeleccionado(psicologo)">
 						<i class="calendar outline icon"></i>
 						Pedir cita</button>
 				</div>
 			</div>
 		</div>
 		<div class="col-xs-2">
-			<div class="ui wide skyscraper test ad" id="publi_perfil" data-text="Rascacielos ancho"></div>
+			<div class="ui wide skyscraper test ad" id="publi_perfil">
+				<img src="/assets/images/prueba1.png" alt="">
+			</div>
 		</div>
 	</div>
 </div>
@@ -160,10 +162,10 @@
 	<div class="modal fade" id="contacto_modal">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
-				
+
 				<!-- Titulo -->
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<button type="button" aria-label="Cerrar" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 					<h4 class="modal-title">Pedir cita</h4>
@@ -184,13 +186,13 @@
 							<label>Consulta</label>
 							<div class="field" ng-show="psicologo.consulta.presencial">
 								<div class="ui slider checkbox">
-									<input type="radio" name="consulta" checked="checked" value="Presencial" ng-model="mensaje.consulta">
+									<input type="radio" aria-label="Consulta presencial" name="consulta" checked="checked" value="Presencial" ng-model="mensaje.consulta">
 									<label>Presencial</label>
 								</div>
 							</div>
 							<div class="field" ng-show="psicologo.consulta.online">
 								<div class="ui slider checkbox">
-									<input type="radio" name="consulta" value="Online" ng-model="mensaje.consulta">
+									<input type="radio" aria-label="Consulta on-line" name="consulta" value="Online" ng-model="mensaje.consulta">
 									<label>On-line</label>
 								</div>
 							</div>
@@ -217,7 +219,7 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<button type="button" aria-label="Cerrar" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 					<h4 class="modal-title">¿Estás seguros de que quieres continuar?</h4>

@@ -119,7 +119,7 @@ psicologoSchema.methods.update = function(psicologo) {
 			upsert: true, /* Si no existe, se crea un nuevo documento */
 			returnOriginal: false /* No devuelve el documento que ha sido modificado */
 		}
-		
+
 		console.log(datosUsuario);
 
 		/* Busca un documento que cumpla la consulta y lo actualiza con los datos de usuario pasados por parametros */
@@ -171,21 +171,18 @@ psicologoSchema.methods.filtrar = function(psicologo){
 		} else if (psicologo.consulta=="presencial") {
 			query = {
 				$and : [ 
-					{$or: [{consulta: { online: false, presencial: true }}, {consulta: {online: true, presencial:true}}]},
+					{$or: [{consulta: { online: false, presencial: true }}, {consulta: {online: true, presencial:true}}, {consulta: { presencial: true, online: false}}, {consulta: {presencial:true, online: true}}]},
 					{precio : precio},
 					{aseguradora : seguro}
 				]};
 		} else if (psicologo.consulta=="online") {
 			query = {
 				$and : [
-					{$or: [{consulta: { online: true, presencial: false }}, {consulta: {online: true, presencial:true}}]},
+					{$or: [{consulta: { online: true, presencial: false }}, {consulta: {online: true, presencial:true}}, {consulta: { presencial: false, online: true}}, {consulta: {presencial:true, online: true}}]},
 					{precio : precio},
 					{aseguradora : seguro}
 				]};
 		}
-
-		console.log(psicologo);
-		console.log(JSON.stringify(query));
 
 		/* Devuelve un array con todos los documentos de la coleccion Psicologos que cumplen la consulta */
 		Psicologo.find(query).exec(function(error, results){
@@ -194,7 +191,6 @@ psicologoSchema.methods.filtrar = function(psicologo){
 				reject({error: error});
 			}else{
 				resolve(results);
-				console.log(results);
 			}
 		});
 	});
@@ -211,17 +207,28 @@ psicologoSchema.methods.updateComentarios = function(psicologo) {
 
 		/* Se crea un JSON datosComentarios con los datos pasados por argumento */
 		var datosComentarios = {
-			comentarios: psicologo.comentarios,
-			estrellas: psicologo.estrellas
+			$set: {
+				estrellas: psicologo.estrellas,
+				comentarios: psicologo.comentarios
+			}
 		}
 
+		/* Especificacion de opciones */
+		var options = {
+			upsert: true, /* Si no existe, se crea un nuevo documento */
+			returnOriginal: false /* No devuelve el documento que ha sido modificado */
+		}
+		
+		console.log(datosComentarios);
+		
 		/* Busca un documento que cumpla la consulta y lo actualiza con los datos de usuario pasados por parametros */
-		Psicologo.findOneAndUpdate(query, datosComentarios).exec(function(error, results){
+		Psicologo.findOneAndUpdate(query, datosComentarios, options).exec(function(error, results){
 			if(error){
 				console.log("Pacientes - Error en updateComentarios");
 				reject({error: error});
 			}else{
 				resolve(results);
+				console.log(results);
 			}
 		});
 	});

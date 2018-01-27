@@ -57,6 +57,50 @@ angular.module('Emozio').controller('PsicologosPerfilController', function(Psico
 
 	});
 
+	/* Validacion del formulario para responder */
+	$('#responder_form').form({
+		on : 'blur', /* Cada elemento se evalua por separado */
+		inline: 'false', /* Los mensajes de validacion no se disponen en linea */
+		/* Campos a validar: Identificador y reglas a evaluar */
+		fields : {
+			comentario : {
+				identifier : 'comentario',
+				rules : [
+					{
+						type : 'empty',
+						prompt : 'Por favor, introduce un comentario.'
+					},
+					{
+						type: 'maxLength[500]',
+						prompt: 'Demasiados carácteres.'
+					}
+				]
+			}
+		}
+	}); 
+
+	/* Validacion del formulario para comentar */
+	$('#comentar_form').form({
+		on : 'blur', /* Cada elemento se evalua por separado */
+		inline: 'false', /* Los mensajes de validacion no se disponen en linea */
+		/* Campos a validar: Identificador y reglas a evaluar */
+		fields : {
+			comentario : {
+				identifier : 'comentario',
+				rules : [
+					{
+						type : 'empty',
+						prompt : 'Por favor, introduce un comentario.'
+					},
+					{
+						type: 'maxLength[500]',
+						prompt: 'Demasiados carácteres.'
+					}
+				]
+			}
+		}
+	}); 
+
 	$scope.iniciarRating = function(val){
 		console.log(val);
 
@@ -94,64 +138,75 @@ angular.module('Emozio').controller('PsicologosPerfilController', function(Psico
 
 	/* Funcion que envia la respuesta del psicologo al comentario seleccionado */
 	$scope.enviarRespuesta = function(comentario, respuesta){
-		/* Se formatea la fecha de hoy */
-		var fecha = new Date();
-		comentario.fechaRespuesta =  ("0" + fecha.getDate()).slice(-2) + "/" + ("0" + (fecha.getMonth() + 1)).slice(-2) + "/" + fecha.getFullYear() + "; " + (fecha.getHours()<10?'0':'') + fecha.getHours() + ":" + (fecha.getMinutes()<10?'0':'') + fecha.getMinutes() + ":" + (fecha.getSeconds()<10?'0':'') + fecha.getSeconds();
-		/* Se establece la respuesta al comentario */
-		comentario.respuesta = respuesta;
 
-		for(var i=0, l=$scope.comentarios; i<l; i++){
-			if($scope.comentarios[i].fechaComentario==comentario.fechaComentario && $scope.comentarios[i]._idPaciente==comentario._idPaciente){
-				$scope.psicologo.comentarios.splice(i, 1);
+		if($('#responder_form').form('is valid')) {
+
+			console.log(comentario);
+
+			/* Se formatea la fecha de hoy */
+			var fecha = new Date();
+			comentario.fechaRespuesta =  ("0" + fecha.getDate()).slice(-2) + "/" + ("0" + (fecha.getMonth() + 1)).slice(-2) + "/" + fecha.getFullYear() + "; " + (fecha.getHours()<10?'0':'') + fecha.getHours() + ":" + (fecha.getMinutes()<10?'0':'') + fecha.getMinutes() + ":" + (fecha.getSeconds()<10?'0':'') + fecha.getSeconds();
+			/* Se establece la respuesta al comentario */
+			comentario.respuesta = respuesta;
+
+			for(var i=0, l=$scope.comentarios; i<l; i++){
+				if($scope.comentarios[i].fechaComentario==comentario.fechaComentario && $scope.comentarios[i]._idPaciente==comentario._idPaciente){
+					//$scope.psicologo.comentarios.splice(i, 1);
+					$scope.psicologo.comentarios[i] = comentario;
+				}
 			}
+
+			/* Se añade el comentario en el array de comentarios del psicologo */
+			//$scope.psicologo.comentarios.push(comentario);
+
+			/* Se guarda el comentario del psicologo */
+			Psicologo.Comentar($scope.psicologo);
+
+			/* Se muestra un mensaje de exito */
+			$scope.msj_exito_respuesta = true;
+
+			/* Tras un segundo, la ventana se recarga: Desaparece el modal */
+			setTimeout(function(){
+				$location.path("/mail"); /* Se redirige a la pagina de la bandeja de entrada */
+				$window.location.reload(); /* Se recarga la pagina actual */
+			}, 1000);
+
 		}
-
-		/* Se añade el comentario en el array de comentarios del psicologo */
-		$scope.psicologo.comentarios.push(comentario);
-
-		/* Se guarda el comentario del psicologo */
-		Psicologo.Comentar($scope.psicologo);
-
-		/* Se muestra un mensaje de exito */
-		$scope.msj_exito_respuesta = true;
-
-		/* Tras un segundo, la ventana se recarga: Desaparece el modal */
-		setTimeout(function(){
-			$location.path("/mail"); /* Se redirige a la pagina de la bandeja de entrada */
-			$window.location.reload(); /* Se recarga la pagina actual */
-		}, 1000);
 
 	}
 
 	/* Funcion que añade un comentario al array de comentarios del psicologo */
 	$scope.enviarComentario = function(comentario){
 
-		if (comentario!=null) { /* Si el comentario no es nulo */
-			/* Se formatea la fecha de hoy */
-			var fecha = new Date();
-			comentario.fechaComentario =  ("0" + fecha.getDate()).slice(-2) + "/" + ("0" + (fecha.getMonth() + 1)).slice(-2) + "/" + fecha.getFullYear() + "; " + (fecha.getHours()<10?'0':'') + fecha.getHours() + ":" + (fecha.getMinutes()<10?'0':'') + fecha.getMinutes() + ":" + (fecha.getSeconds()<10?'0':'') + fecha.getSeconds();
-			/* Se establece el id del paciente, del comentario; y la valoracion */
-			comentario._idPaciente = $scope.paciente._id;
-			comentario._idComentario = comentario.fechaComentario + comentario._idPaciente;
-			comentario.valoracion = valoracion;
+		if($('#comentar_form').form('is valid')) {
 
-			/* Se añade el comentario en el array de comentarios del psicologo */
-			$scope.psicologo.comentarios.push(comentario);
+			if (comentario!=null) { /* Si el comentario no es nulo */
+				/* Se formatea la fecha de hoy */
+				var fecha = new Date();
+				comentario.fechaComentario =  ("0" + fecha.getDate()).slice(-2) + "/" + ("0" + (fecha.getMonth() + 1)).slice(-2) + "/" + fecha.getFullYear() + "; " + (fecha.getHours()<10?'0':'') + fecha.getHours() + ":" + (fecha.getMinutes()<10?'0':'') + fecha.getMinutes() + ":" + (fecha.getSeconds()<10?'0':'') + fecha.getSeconds();
+				/* Se establece el id del paciente, del comentario; y la valoracion */
+				comentario._idPaciente = $scope.paciente._id;
+				comentario._idComentario = comentario.fechaComentario + comentario._idPaciente;
+				comentario.valoracion = valoracion;
 
-			var mediaValoraciones = 0;
-			for(var i=0, l=$scope.psicologo.comentarios.length; i<l; i++) {
-				mediaValoraciones+=$scope.psicologo.comentarios[i].valoracion;
+				/* Se añade el comentario en el array de comentarios del psicologo */
+				$scope.psicologo.comentarios.push(comentario);
+
+				var mediaValoraciones = 0;
+				for(var i=0, l=$scope.psicologo.comentarios.length; i<l; i++) {
+					mediaValoraciones+=$scope.psicologo.comentarios[i].valoracion;
+				}
+				mediaValoraciones=mediaValoraciones/$scope.psicologo.comentarios.length;
+				$scope.psicologo.estrellas=Math.round(mediaValoraciones);
+
+				/* Se guarda el comentario del psicologo */
+				Psicologo.Comentar($scope.psicologo);	
+
+				/* Se muestra un mensaje de exito */
+				$scope.msj_exito = true;
+
+				$window.location.reload();  /* Se recarga la pagina actual */
 			}
-			mediaValoraciones=mediaValoraciones/$scope.psicologo.comentarios.length;
-			$scope.psicologo.estrellas=Math.round(mediaValoraciones);
-
-			/* Se guarda el comentario del psicologo */
-			Psicologo.Comentar($scope.psicologo);	
-
-			/* Se muestra un mensaje de exito */
-			$scope.msj_exito = true;
-
-			$window.location.reload();  /* Se recarga la pagina actual */
 		}
 
 	}

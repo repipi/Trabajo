@@ -3,9 +3,9 @@
 <nav class='container navbar-inverse' ng-show='nav_gen' role='navigation' >
 	<div class='navbar-header'>
 		<a href='#/inicio' class='navbar-brand logo'>
-			<img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
+			<img class="ui tiny avatar image" alt="Logo Emozio" src="/assets/images/emozio_logo.png">Emozio
 		</a>
-		<button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
+		<button type='button' aria-label="Botón menú"  class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
 			<span class='sr-only'>Toggle navigation</span>
 			<span class='icon-bar'></span>
 			<span class='icon-bar'></span>
@@ -33,9 +33,9 @@
 <nav class='container navbar-inverse' ng-show='nav_psico' role='navigation' >
 	<div class='navbar-header'>
 		<a href='#/inicio' class='navbar-brand logo'>
-			<img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
+			<img class="ui tiny avatar image" alt="Logo Emozio" src="/assets/images/emozio_logo.png">Emozio
 		</a>
-		<button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
+		<button type='button' aria-label="Botón menú"  class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
 			<span class='sr-only'>Toggle navigation</span>
 			<span class='icon-bar'></span>
 			<span class='icon-bar'></span>
@@ -71,9 +71,9 @@
 			<div class="four wide column">
 				<div class="ui card">
 					<div class="blurring dimmable image">
-						<img src="{{psicologo.foto}}">
+						<img alt="Foto del psicólogo" src="{{psicologo.foto}}">
 					</div>
-					<div class="content">
+					<div class="content" id="perfil_psicologo_contenido">
 						<div class="header">{{psicologo.nombre}}</div>
 						<!--						<div class="ui right floated star rating valoraciones" ng-init="iniciarRating(psicologo.estrellas)"></div>-->
 						<div class="ui right floated meta">{{psicologo.estrellas}}<i class="yellow star icon"></i> </div>
@@ -84,16 +84,16 @@
 						<div class="description" ng-show="psicologo.gabinete"><i class="ui teal users icon"></i> {{psicologo.gabinete}} </div>
 						<div class="description"><i class="marker teal icon"></i>{{psicologo.localizacion}} </div>
 					</div>
-					<div class="extra content">
+					<div class="extra content" id="perfil_psicologo_contenido">
 						<span class="right floated">{{psicologo.precio}} € / sesión</span>
 					</div>
-					<button type="button" id="contactar" class="ui teal bottom attached button" data-target="#contacto_modal" data-toggle="modal" data-id="psicologo._id" ng-click="psicologoSeleccionado(psicologo)">
+					<button type="button" aria-label="Pedir cita" id="contactar" class="ui gray bottom attached button" data-target="#contacto_modal" data-toggle="modal" data-id="psicologo._id" ng-click="psicologoSeleccionado(psicologo)" ng-show="paciente">
 						<i class="calendar outline icon"></i>
 						Pedir cita</button>
 				</div>
 			</div>
 			<!-- TARJETA INFORMACION ESPECIFICA PSICOLOGO ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-			<div class="twelve wide column">
+			<div class="twelve wide column" >
 				<div class='col-sm-6'>
 					<div class="ui teal fluid card">
 						<div class="content">
@@ -136,10 +136,10 @@
 				<!-- COMENTARIOS Y VALORACIONES --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 				<div class="col-xs-9">
 					<div class="ui segment" id="comentarios">
-						<button ng-show="paciente" type="button" id="comentar" class="ui right floated teal button" data-target="#comentar_modal" data-toggle="modal">
+						<button aria-label="Comentar sobre el psicólogo" ng-show="paciente" type="button" id="comentar" class="ui right floated teal button" data-target="#comentar_modal" data-toggle="modal">
 							<i class="comment icon"></i> 
 							Comentar</button>
-						
+
 						<!--							<h3 class="ui teal header">Comentarios y valoraciones</h3>-->
 						<p ng-show="paciente"><br></p>
 						<div class="ui fluid comments">
@@ -155,15 +155,15 @@
 										<div class="text">
 											<p>{{comentario.texto}}</p>
 										</div>
-										<div class="actions"  ng-hide="paciente||comentario.respuesta">
-											<a class="reply" data-target="#respuesta_modal" data-toggle="modal" data-id="comentario._id" ng-click="comentarioSeleccionado(comentario)">Responder</a>
+										<br>
+										<div class="ui bottom actions"  ng-hide="paciente||comentario.respuesta">
+											<a class="reply" id="responder" data-target="#respuesta_modal" data-toggle="modal" data-id="comentario._id" ng-click="comentarioSeleccionado(comentario)">Responder</a>
 										</div>
 									</div>
-
 									<div class="comments" ng-show="comentario.respuesta">
 										<div class="comment">
 											<a class="avatar">
-												<img src="{{psicologo.foto}}">
+												<img alt="Foto del psicólogo" src="{{psicologo.foto}}">
 											</a>
 											<div class="content">
 												<a class="author">{{psicologo.nombre}}</a>
@@ -206,7 +206,9 @@
 				</div>
 				<div class="col-xs-3">
 					<br>
-					<div id="publi_mail" class="ui wide skyscraper test ad" data-text="Rascacielos ancho"></div>
+					<div id="publi_mail" class="ui wide skyscraper test ad">
+						<img src="/assets/images/prueba1.png" alt="">
+					</div>
 				</div>
 			</div>
 		</div>
@@ -220,7 +222,7 @@
 
 					<!-- Titulo -->
 					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<button type="button" aria-label="Cerrar" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 						<h4 class="ui teal header">Responder</h4>
@@ -242,9 +244,9 @@
 										<p>{{comentario.texto}}</p>
 									</div>
 									<div class="actions">
-										<form class="ui reply form">
+										<form class="ui reply form" id="responder_form">
 											<div class="field">
-												<textarea rows="1" ng-model="respuesta"></textarea>
+												<textarea name="comentario" rows="1" ng-model="respuesta"></textarea>
 											</div>
 											<div class="ui teal fluid submit icon button" ng-click="enviarRespuesta(comentario, respuesta)"><i class="icon edit"></i>Enviar respuesta</div>
 										</form>
@@ -270,7 +272,7 @@
 
 					<!-- Titulo -->
 					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<button type="button" aria-label="Cerrar" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 						<h4 class="ui header">Comentar</h4>
@@ -278,10 +280,10 @@
 
 					<!-- Cuerpo del formulario -->
 					<div class="modal-body">
-						<form class="ui reply form" ng-show="paciente">
+						<form class="ui reply form" ng-show="paciente" id="comentar_form">
 							<div class="field">
 								<label>Comentario</label>
-								<textarea rows="2" ng-model="mensaje.texto" placeholder="Escribe aquí tu comentario"></textarea>
+								<textarea rows="2" name="comentario" ng-model="mensaje.texto" placeholder="Escribe aquí tu comentario"></textarea>
 							</div>
 							<div class="field">
 								<label>Valoración <div class="ui star rating"></div></label>
@@ -307,7 +309,7 @@
 
 					<!-- Titulo -->
 					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<button type="button" aria-label="Cerrar" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 						<h4 class="modal-title">Pedir cita</h4>
@@ -328,13 +330,13 @@
 								<label>Consulta</label>
 								<div class="field" ng-show="psicologo.consulta.presencial">
 									<div class="ui slider checkbox">
-										<input type="radio" name="consulta" checked="checked" value="presencial" ng-model="mensaje.consulta">
+										<input aria-label="Consulta presencial" type="radio" name="consulta" checked="checked" value="presencial" ng-model="mensaje.consulta">
 										<label>Presencial</label>
 									</div>
 								</div>
 								<div class="field" ng-show="psicologo.consulta.online">
 									<div class="ui slider checkbox">
-										<input type="radio" name="consulta" value="online" ng-model="mensaje.consulta">
+										<input aria-label="Consulta on-line" type="radio" name="consulta" value="online" ng-model="mensaje.consulta">
 										<label>On-line</label>
 									</div>
 								</div>

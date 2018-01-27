@@ -3,9 +3,9 @@
 	<div class="col-sm-6 col-xs-2">
 		<div class='navbar-header'>
 			<a href='#/inicio' class='navbar-brand logo'>
-				<img class="ui tiny avatar image" src="/assets/images/emozio_logo.png">Emozio
+				<img class="ui tiny avatar image"  alt="Logo Emozio" src="/assets/images/emozio_logo.png">Emozio
 			</a>
-			<button type='button' id="acceso_nav" class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
+			<button type='button' aria-label="Botón menú"  id="acceso_nav" class='navbar-toggle collapsed' data-toggle='collapse' data-target='.navbar-collapse'>
 				<span class='sr-only'>Toggle navigation</span>
 				<span class='icon-bar'></span>
 				<span class='icon-bar'></span>
@@ -15,7 +15,7 @@
 	</div>
 
 	<div class="col-sm-6 col-xs-10">
-		<ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
+		<div class='nav navbar-nav navbar-right collapse navbar-collapse'>
 			<div class="right menu">
 				<div id="menu_fijo">
 					<form id="access_form" class="ui form">
@@ -23,13 +23,13 @@
 							<div class="field">
 								<div class="ui fixed left icon input">
 									<i class="mail icon"></i>
-									<input placeholder="Email" name="email" type="text" ng-model="usuario.email" required/>
+									<input aria-label="E-mail" placeholder="Email" name="email" type="text" ng-model="usuario.email" required/>
 								</div>
 							</div>
 							<div class="field">
 								<div class="ui fixed left icon input">
 									<i class="lock icon"></i>
-									<input placeholder="Contraseña" name="password" type="password" ng-model="usuario.password" required/>
+									<input aria-label="Contraseña" placeholder="Contraseña" name="password" type="password" ng-model="usuario.password" required/>
 								</div>
 							</div>
 							<div class="field">
@@ -47,7 +47,7 @@
 					</form>
 				</div>
 			</div>  
-		</ul>
+		</div>
 	</div>
 </nav>
 
@@ -67,19 +67,19 @@
 						<div class="field">
 							<div class="ui left icon input">
 								<i class="mail icon"></i>
-								<input type="email" name="email" placeholder="E-mail" ng-model="paciente.email" required>
+								<input aria-label="E-mail" type="email" name="email" placeholder="E-mail" ng-model="paciente.email" required>
 							</div>
 						</div>
 						<!-- PASSWORD --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 						<div class="field">
 							<div class="ui left icon input">
 								<i class="lock icon"></i>
-								<input type="password" name="password" placeholder="Contraseña" ng-model="paciente.password" required>
+								<input aria-label="Contraseña" type="password" name="password" placeholder="Contraseña" ng-model="paciente.password" required>
 							</div>
 						</div>
 						<!-- GENERO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 						<div class="field" id="genero">
-							<select class="ui compact selection dropdown" name="genero" ng-model="paciente.genero">
+							<select aria-label="Género" class="ui compact selection dropdown" name="genero" ng-model="paciente.genero">
 								<i class="dropdown icon"></i>
 								<div class="menu">
 									<option class="item" value="">Selecciona tu género</option>
@@ -107,7 +107,7 @@
 							<div class="ui calendar" id="edad">
 								<div class="ui input left icon">
 									<i class="birthday icon"></i>
-									<input type="text" name="edad" placeholder="Fecha de nacimiento">
+									<input aria-label="Edad" type="text" name="edad" placeholder="Fecha de nacimiento">
 								</div>
 							</div>
 						</div>
@@ -115,20 +115,20 @@
 						<div class="field" id="locationField">
 							<div class="ui left icon input">
 								<i class="marker icon"></i>
-								<input id="autocomplete" name="localizacion" placeholder="Localización" ng-focus="geolocate()" type="text" required>
+								<input aria-label="Localización" id="autocomplete" name="localizacion" placeholder="Localización" ng-focus="geolocate()" type="text" required>
 							</div>
 						</div>
 						<!-- TELEFONO --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 						<div class="field">
 							<div class="ui left icon input">
 								<i class="call icon"></i>
-								<input type="tel" name="telefono" placeholder="Teléfono" ng-model="paciente.telefono" required>
+								<input aria-label="Teléfono" type="tel" name="telefono" placeholder="Teléfono" ng-model="paciente.telefono" required>
 							</div> 
 						</div>
 						<!-- POLITICAS -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 						<div class="required field">
 							<div class="ui checkbox">
-								<input type="checkbox" name="term_cond" checked>
+								<input aria-label="Acepto los términos y condiciones" type="checkbox" name="term_cond" checked>
 								<label>Acepto los <a href="" data-target="#term_cond_modal" data-toggle="modal">términos y condiciones de uso</a></label>
 							</div>
 						</div>
@@ -155,7 +155,7 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<button type="button" aria-label="Cerrar" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 					<h4 class="modal-title">Términos y condiciones de uso</h4>

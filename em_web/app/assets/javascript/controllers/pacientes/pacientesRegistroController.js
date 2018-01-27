@@ -43,7 +43,7 @@ angular.module('Emozio').controller('PacientesRegistroController', function(Paci
 		}
 	}
 
-	/* Funcion que establece los valores de geolocalizacion */
+	/* Funcion que establece los valores de geolocalizacion: Encuentra la ubicacion del usuario */
 	$scope.geolocate = function() {
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function(position) {
@@ -51,10 +51,10 @@ angular.module('Emozio').controller('PacientesRegistroController', function(Paci
 					lat: position.coords.latitude,
 					lng: position.coords.longitude
 				};
-				var circle = new google.maps.Circle({
-					center: geolocation,
-					radius: position.coords.accuracy
-				});
+//				var circle = new google.maps.Circle({
+//					center: geolocation,
+//					radius: position.coords.accuracy
+//				});
 				//autocomplete.setBounds(circle.getBounds());
 			});
 		}

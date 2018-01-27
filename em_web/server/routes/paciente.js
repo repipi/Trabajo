@@ -121,7 +121,7 @@ module.exports = function(app) {
 			req.session.destroy(function (err) {
 				req.logout("Logout exitoso");
 				if(err) {
-					console.log("Error al cerrar")
+					console.log("Error al cerrar"+ err)
 				} else {
 					console.log("Cierro la sesion");
 				}
