@@ -1,0 +1,816 @@
+\chapter{Implementación}
+
+En las secciones siguientes se mencionarán los aspectos más relevantes de la implementación.\newline
+
+\section{Implementación del primer incremento}
+El primer incremento fue la primera toma de contacto con la tecnología utilizada tras la formación.\newline
+
+
+
+Los requisitos implementados en el primer incremento son los asociados a la parte del cuestionario de emparejamiento:
+
+
+
+\begin{itemize}
+\item RF-005: Emparejamiento 
+\item RF-006: Filtrado de los resultados en base a distintos criterios
+\item RNF-002: Tiempo de respuesta de asignación
+\end{itemize}
+
+
+
+Las tareas más trascendentales realizadas en este incremento son las descritas a continuación:
+
+
+ 
+\paragraph*{Configuración Angular}
+Todos los archivos Angular utilizados deben importarse en la \textit{root view} (app/views/index.html en el proyecto): Librerías JavaScript, app.js, route.js, controllers y factories.\newline
+
+
+
+Para indicar a la aplicación que se trata de una aplicación Angular se debe especificar en la etiqueta <html> de la \textit{root view} (app/views/index.html) de la siguiente forma:
+
+
+
+\medskip
+\begin{lstlisting}
+<html ng-app="Emozio"> </html>
+\end{lstlisting}
+
+
+
+Se define el módulo principal de la aplicación en el archivo app/assets/javascript/app.js:
+
+
+
+\medskip
+\begin{lstlisting}
+angular.module('Emozio', ['ngRoute', 'ngResource']);
+\end{lstlisting}
+
+
+
+Entre corchetes se encuentran las dependencias que tiene nuestro módulo Emozio:
+
+
+
+\begin{itemize}
+\item \texttt{ngRoute}: Permite a la aplicación convertirse en una SPA, permitiendo la navegación ente distintas páginas sin necesidad de recargar. W3 angular-routing
+\item \texttt{ngResource}: Permite crear objetos para interactuar con los datos RESTful del lado servidor. El objeto devuelto tiene métodos de acción que proporcionan comportamiento sin necesidad de interactuar con el servicio \$http a bajo nivel. Las acciones por defecto son:
+\end{itemize}
+
+
+\medskip
+\begin{lstlisting}
+{ 'get':    {method:'GET'}, 
+  'save':   {method:'POST'}, 
+  'query':  {method:'GET', isArray:true}, 
+  'remove': {method:'DELETE'}, 
+  'delete': {method:'DELETE'} };
+\end{lstlisting}
+
+
+
+Llamar a estos métodos invoca a \$http con el método http especificado, destino y parámetros.
+
+
+
+Para indicar al \$routeProvider dónde mostrar las templates se utiliza la siguiente directiva: \texttt{<div ui-view></div>}
+
+
+ 
+\paragraph*{Implementación de las \textit{templates} y \textit{controllers} de los requisitos. Éstos se encuentran dentro del directorio app/assets.}
+
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textit{\textbf{Template}}           & \textit{\textbf{Controller}}        \\ \hline
+pacientes/cuestionarioPacientes.html & pacientes/cuestionarioController.js \\ \hline
+pacientes/pacientesResultados.html   & pacientes/perfilController.js       \\ \hline
+\end{tabular}
+%\caption{My caption}
+%\label{my-label}
+\end{table}
+
+
+ 
+\paragraph*{Creación de las \textit{factories}, \textit{routes} y \textit{models} de: Paciente, Psicologo y Patologia.}
+
+
+ 
+\paragraph*{Configuración de la conexión con la BBDD en un archivo aparte: server/config/dbConnection.js}
+
+
+
+\medskip
+\begin{lstlisting}
+var MONGO_URL = 'mongodb://localhost:27017/emozio';
+\end{lstlisting}
+
+
+
+
+Se define la URL de la base de datos a la que se conecta la app.
+
+
+
+\medskip
+\begin{lstlisting}
+	var options = {
+		useMongoClient: true,
+		autoIndex: false, // No crear index
+		reconnectTries: Number.MAX_VALUE, // Nunca para de reintentar conectarse
+		reconnectInterval: 500, // Reconexion cada 500ms
+		poolSize: 10, // Mantener una conexion de 10 sockets
+		// Si no se conecta, devuelve un error inmediatamente antes de tratar de reconectarse
+		bufferMaxEntries: 0
+	};
+\end{lstlisting}
+
+
+
+Se establecen las opciones de conexión.
+
+
+
+\medskip
+\begin{lstlisting}
+mongoose.Promise = global.Promise;
+\end{lstlisting}
+
+
+
+Se declara que las \textit{promise} que va a utilizar Mongoose son las globales proporcionadas por Bluebird. En la base de datos utilizamos las \textit{promise} definidas e implementadas en la librería Bluebird.
+
+
+
+\medskip
+\begin{lstlisting}
+mongoose.connect(MONGO_URL, options, function(err, res) {
+	if(err) {
+		console.log('ERROR: Reconectando a la BBDD. ' + err);
+	}else{
+		console.log("Conectado a la BBDD");
+	}
+});
+\end{lstlisting}
+
+
+
+Función de conexión de Mongoose a la base de datos con las opciones especificadas.
+
+
+
+\medskip
+\begin{lstlisting}
+	var db = mongoose.connection;
+	/* Si sucede un error, mostrarlo */
+	db.on('error', console.error.bind(console, 'Error de conexion:'));
+	db.once('open', function() {
+		console.log("Con exito");
+	});
+\end{lstlisting}
+
+
+
+Se abren las conexiones a la base de datos.
+
+
+ 
+\paragraph*{Configuración ExpressJS en server/expressConfig.js}
+
+
+\medskip
+\begin{lstlisting}
+app.use("/", express.static("app/"));
+\end{lstlisting}
+
+
+Con express.static se especifican los directorios donde se encuentran los archivos que Express va a leer. Facilita el acceso a los \textit{assets} (bienes) de la carpeta app desde el servidor. Lo que nos permite tener la parte cliente separada del servidor. 
+
+
+\medskip
+\begin{lstlisting}
+app.set('views', __dirname + '/../app/views');
+\end{lstlisting}
+
+
+Define que las routes a las templates se rendericen con el render method dentro del directorio views.
+
+
+\medskip
+\begin{lstlisting}
+app.use(bodyParser.urlencoded({ extended: true }));
+\end{lstlisting}
+
+
+Especifica que los datos recogidos de un formulario se pasen a través del método \textit{post}.
+
+
+\medskip
+\begin{lstlisting}
+app.use(bodyParser.json());
+\end{lstlisting}
+
+
+Mediante el paquete Body-parser, podemos tratar los objetos en formato JSON sin necesidad de manipularlos, o cambiar su tipo.
+
+ 
+\paragraph*{Especificación del arranque del servidor y se establece cuál es la vista raíz en el archivo routes.js. También, se vinculan todos los archivos que va utilizar el servidor: Archivos de configuración, de conexiones al modelo...}
+
+
+\medskip
+\begin{lstlisting}
+var app = express();
+\end{lstlisting}
+
+
+Se inicializa el servidor express.
+
+
+\medskip
+\begin{lstlisting}
+	app.get('/', function(req, res){
+		res.sendfile('index.html', {root: app.settings.views});
+	});
+\end{lstlisting}
+
+
+Express establece cuál va a ser la \textit{view} raíz (\textit{root}) enviada tras el inicio del servidor.
+
+
+Además, se importan los archivos de server/routes que sirven como \textit{endpoint} (punto medio) entre la parte cliente y servidor, de esta forma durante la implementación, logramos mantener la parte del \textit{frontend} independiente del \textit{backend} haciéndola funcional.
+
+
+\section{Implementación del segundo incremento}
+Los requisitos implementados en el segundo incremento son los asociados a la parte de la gestión de usuarios:
+
+
+\begin{itemize}
+\item RF-001: Acceso usuarios
+\item RF-002: Registro
+\item RF-003: Baja
+\item RF-004: Modificación de los datos
+\item RNF-001: Encriptado de datos
+\end{itemize}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textit{\textbf{Template}}           & \textit{\textbf{Controller}}        \\ \hline
+inicio.html & pacientes/pacientesAccesoController.js \\ \hline
+pacientes/registroPacientes.html   & pacientes/pacientesRegistroController.js       \\ \hline
+pacientes/pacientesModificar.html   & pacientes/pacientesModificarController.js
+       \\ \hline
+psicologos/psicologosModificar.html      & psicologos/psicologosModificarController.js       \\ \hline
+psicologos/registroPsicologo.html         & psicologos/psicologosRegistroController.js
+       \\ \hline
+\end{tabular}
+%\caption{My caption}
+%\label{my-label}
+\end{table}
+
+ 
+\paragraph*{Gestión de sesiones de usuario con PassportJS y Express-session.}
+\textit{La configuración de PassportJS se realizó en el directorio server/config/passport.js}
+
+
+Las credenciales utilizadas para autenticar a un usuario sólo son transmitidas durante la petición de acceso (\textit{login request}). Si la autenticación se realiza con éxito, la sesión será establecida y mantenida vía una cookie en el navegador del usuario.
+Cualquier petición posterior no contendrá las credenciales, únicamente la \textit{cookie} que identifica la sesión. 
+Para poder gestionar las sesiones de acceso (\textit{login sessions}), Passport \textit{serialize} y \textit{deserialize} instancias de usuario.
+
+
+\medskip
+\begin{lstlisting}
+passport.serializeUser(function(usuarios, done){
+	done(null, usuarios._id);
+})
+\end{lstlisting}
+
+
+Sólo el ID de usuario es “creado” en la sesión, manteniendo mínima la cantidad de datos guardados. Cuando las siguientes peticiones sean recibidas, este ID será el utilizado para encontrar al usuario, el cual fue guardado en \texttt{req.user}.
+
+
+\medskip
+\begin{lstlisting}
+passport.deserializeUser(function(id, done){
+	Paciente.findById(id, function(error, usuario){
+		if(usuario!=null){
+			done(null, usuario);
+		} else {
+			Psicologo.findById(id, function(error, usuario){
+				done(null, usuario);
+			});
+		}
+	});
+})
+\end{lstlisting}
+
+\texttt{deserializeUser()} es invocado en cada petición por \texttt{passport.session}. Permite cargar información adicional a la información de usuario en cada petición; este objeto está asociado a la petición como \texttt{req.user} haciéndolo accesible en la gestión de peticiones.
+
+
+\medskip
+\begin{lstlisting}
+passport.use(new LocalStrategy(    
+	{
+		usernameField: 'email',
+		passwordField: 'password'
+	},
+	function (username, password, done) {   
+		Paciente.findOne({email: username}, function(error, paciente){
+			if(!paciente){
+				//                return done(null, false, {message: 'Este email: '+email+'no esta registrado'});
+				Psicologo.findOne({email: username}, function(error, psicologo){
+					if(!psicologo) {
+						return done(null, false, {message: 'Este email: '+username+'no esta registrado'});
+					} else {
+						psicologo.compararPassword(password, function(error, sonIguales){
+							if(sonIguales){
+								return done(null, psicologo);
+							} else {
+								return done(null, false, {message: 'La contrasena no es valida'});
+							}
+						});
+					}
+				});
+			} else {
+				paciente.compararPassword(password, function(error, sonIguales){
+					if(sonIguales){
+						return done(null, paciente);
+					} else {
+						return done(null, false, {message: 'La contrasena no es valida'});
+					}
+				});
+			}
+		});
+	}
+));
+\end{lstlisting}
+
+
+Para poder utilizar la autenticación por \texttt{username}  y \texttt{password}, Passport utiliza el mecanismo proporcionado por su módulo passport-local. 
+\begin{itemize}
+\item \texttt{UsernameField} y \texttt{PassworfField} son los obtenidos del cuerpo de la petición (\texttt{req.body}) recibida cuando un usuario quiere acceder.
+\item Se busca al paciente que posea esos datos; y se pueden dar dos casos:
+\begin{itemize}
+\item Si no existe, se busca al psicólogo que posea esos datos:
+\begin{itemize}
+\item Si no existe: El usuario no está registrado.
+\item Si existe: Se comprueba que la contraseña sea la misma a la introducida. Si son iguales, el acceso es correcto. Si no, la contraseña no es válida.
+\end{itemize}
+\item Si existe: Se comprueba que la contraseña sea la misma a la introducida. Si son iguales, el acceso es correcto. Si no, la contraseña no es válida.
+\end{itemize}
+\end{itemize}
+
+
+\medskip
+\begin{lstlisting}
+exports.estaAutenticado = function (req, res, next){
+	if(req.isAuthenticated()){
+		return next();
+	}
+	req.session.error = 'Please sign in!';
+	res.redirect('/');
+}
+\end{lstlisting}
+
+
+Función que comprueba si el usuario que está realizando una petición, está autenticado.
+
+
+En la route de Pacientes del directorio server/routes/paciente.js:
+
+
+\medskip
+\begin{lstlisting}
+app.route('/pacientes/acceso')
+		.post(function(req, res, next){
+		setTimeout(function(){
+			passport.authenticate('local', function(error, paciente, info){
+				if(error){
+					return next(error);
+				}
+				if(!paciente) {
+					return null;
+				}else{
+					req.login(paciente, {}, function(err) {
+						if (err) { 
+							return null;
+						};
+						return res.json(paciente);
+					});
+				}
+			})(req, res, next); //Funcion que devuelve passport y que debe ser invocada de esta forma
+		}, 50);
+	});
+\end{lstlisting}
+
+
+El formulario de acceso es enviado por el servidor a través del método POST. Utilizando \texttt{authenticate()} es como gestionamos la petición de acceso: En el caso de que el paciente exista, hacemos el \texttt{login}.
+
+
+\paragraph*{La configuración de Express-session se realizó en el directorio server/config/session.js}
+
+
+\medskip
+\begin{lstlisting}
+	app.use(session({
+		/* Se utiliza para firmar el ID de sesion de la cookie*/
+		secret: 'ESTO ES SECRETO',
+		/* Por cada llamada realizada al servidor, la sesion se guardara en la BBDD */
+		resave: true,
+		/* Cuando se realiza la llamada por primera vez, guarda un objeto vacio con informacion de esa session */
+		saveUninitialized: true,
+		store: new MongoStore({
+			url: MONGO_URL,
+			/* Si sucede un error, trata de volver a conectarse */
+			autoReconnect: true
+		})
+	}));
+\end{lstlisting}
+
+
+Se establecen las opciones de la sesión que será utilizada en la aplicación. Cada sesión es guardada en la base de datos a modo de registro, aunque por el momento no es un funcionamiento relevante para nuestra aplicación.
+
+
+\medskip
+\begin{lstlisting}
+	app.use(passport.initialize());
+\end{lstlisting}
+
+
+Se inicializa PassportJS.
+
+
+\medskip
+\begin{lstlisting}
+	app.use(passport.session());
+\end{lstlisting}
+
+
+Se determina que passport utilice las sesiones.
+
+
+\paragraph*{Encriptación bcrypt de las contraseñas}
+En la aplicación, el paquete bcrypt es utilizado para encriptar las contraseñas de usuario.
+
+
+Uno de los casos donde es necesario utilizar bcrypt es cuando es necesaria la comparación de contraseñas en el inicio de sesión. Se hace por medio de la siguiente función:
+
+
+\medskip
+\begin{lstlisting}
+	/* Comprobar una contrasena con su hash */ 
+	bcrypt.compare(password, this.password, function(error, sonIguales){ 
+		if(error){ 
+			return cb(error); 
+		} 
+		cb(null, sonIguales); 
+	}) 
+\end{lstlisting}
+
+Compara la contraseña con la que está tratando de acceder el usuario después de cifrarla con el hash que existe actualmente en la base de datos. El hash que se encuentra en la base de datos tiene almacenados el coste, la sal y la contraseña, por lo que bcrypt sabe cómo cifrar la nueva contraseña introducida.
+
+
+\textit{Un ejemplo práctico:}
+El hash introducido en la base de datos podría ser el siguiente:
+\texttt{\$2a\$10\$vI8aWBnW3fID.ZQ4/zo1G.q1lRps.9cGLcZEiGDMVr5yUP1KUOYTa}
+
+
+Este hash contiene tres cadenas concatenadas con el símbolo ``\$'':
+\begin{itemize}
+\item \texttt{2a} identifica la versión del algoritmo bcrypt utilizado.
+\item \texttt{10} es el factor de coste: Se han utilizado $2^{10}$ iteraciones de la función de derivación de la key.
+\item \texttt{vI8aWBnW3fID.ZQ4/zo1G.q1lRps.9cGLcZEiGDMVr5yUP1KUOYT0a} son la sal y la contraseña cifrados, concatenados y codificados en Base64. Los 22 primeros caracteres codificados en un valor para la sal de 16-byte. El resto de caracteres son la contraseña cifrada que va a ser comparada durante la autenticación.
+\end{itemize}
+
+
+Otro de los casos donde es necesario utilizar bcrypt es al dar de alta a un usuario.
+
+
+\medskip
+\begin{lstlisting}
+	bcrypt.genSalt(10, function(error, salt){
+		if(error) {
+			console.log("Error en la sal");
+		}
+		bcrypt.hash(paciente.password, salt, null, function(error, hash){
+			if(error) {
+			console.log("Error en el hash");
+			} 
+		});
+	});
+\end{lstlisting}
+
+
+Primero se genera la sal con un factor de coste 10, y después, se crea el hash con la contraseña que ha introducido el paciente y la sal. Este hash será almacenado en la base de datos.
+
+
+\paragraph*{Google Maps JavaScript API para el autocompletado de la localización en los formularios de registro y modificación.}
+Para autocompletar las localizaciones introducidas por el usuario tanto en el formulario de registro como en el de modificación, se ha utilizado la Autocompletado para direcciones y términos búsqueda de Google Maps JavaScript API. 
+
+
+Por ejemplo, en el formulario de registro de usuarios de la \textit{template} pacientes/registroPacientes.html, fue incorporado al código HTML de la siguiente forma:
+
+
+\medskip
+\begin{lstlisting}
+	<div class="field" id="locationField">
+		<div class="ui left icon input">
+			<i class="marker icon"></i>
+			<input id="autocomplete" name="localizacion" placeholder="Localizacion" ng-focus="geolocate()" type="text" required>
+		</div>
+	</div>
+\end{lstlisting}
+
+
+Donde ng-focus ng-focus es una directiva que indica que cuando el input esté señalado, se ejecute la función \texttt{geolocate()}.
+
+
+La función \texttt{geolocate} se encuentra en pacientes/pacientesRegistroController.js y viene definida por Google de la siguiente forma:
+
+
+\medskip
+\begin{lstlisting}
+	$scope.geolocate = function() {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(function(position) {
+				var geolocation = {
+					lat: position.coords.latitude,
+					lng: position.coords.longitude
+				};
+			});
+		}
+	}
+\end{lstlisting}
+
+
+Esta función, simplemente toma la ubicación donde se sitúa el usuario en ese momento. \$scope se utiliza para pasar la función del \textit{controller} a la \textit{template}.
+
+
+Por otra parte, la página se encuentra contenida bajo la siguiente etiqueta:
+
+
+\medskip
+\begin{lstlisting}
+<div class='container' ng-init="initAutocomplete()">...</div>
+\end{lstlisting}
+
+
+La directiva ng-init ng-init evalúa \texttt{initAutocomplete()} al inicializar la aplicación.
+
+
+La función \texttt{initAutocomplete} se encuentra en el \textit{controller}.
+
+
+\medskip
+\begin{lstlisting}
+	$scope.initAutocomplete = function() {
+		autocomplete = new google.maps.places.Autocomplete(
+			(document.getElementById('autocomplete')),
+			{ types: ['(cities)'], /* Se buscaran ciudades */
+			 componentRestrictions: {country: "es"}}); /* Restringidas dentro de Espana */
+
+		/* Cuando el usuario selecciona una opcion del desplegable, se ejecuta la funcion indicada */
+		autocomplete.addListener('place_changed', fillInAddress);
+
+		/* Funcion que recupera el lugar escogido en el autocompletado */
+		function fillInAddress() {
+			/* Toma los detalles del lugar del objeto de autocompletado */
+			place = autocomplete.getPlace();
+		}
+	}
+\end{lstlisting}
+
+
+\texttt{google.maps.places.Autocomplete} crea un objeto tomando como argumentos el \texttt{input} donde se quiere autocompletar y una serie de opciones. Para la aplicación, se han restringido las opciones a ciudades españolas.
+
+
+\paragraph*{Nodemailer.js}
+Cuando un psicólogo cubre el formulario de registro, sus datos son mandados al correo electrónico de Emozio para poder valorarlos antes de formar parte de nuestra base de datos. Para enviar los e-mails se ha utilizado Nodemailer. Algunas particularidades son descritas a continuación.
+
+
+\medskip
+\begin{lstlisting}
+	var transporter = nodemailer.createTransport({ 
+		service: 'gmail', 
+		auth: { 
+			user: 'emozio.info@gmail.com', 
+			pass: '*******************' 
+		} 
+	});
+\end{lstlisting}
+
+
+Se crea un objeto transporter utilizado en el trasporte por defecto SMTP. SMTP es el transporte utilizado en Nodemailer para el envío de mensajes, pero también, es el protocolo utilizado por diferentes \textit{host} de \textit{email}.
+
+
+\medskip
+\begin{lstlisting}
+	var mailOptions = { 
+		from: 'emozio.info@gmail.com', 
+		to: 'emozio.info@gmail.com', 
+		subject: 'Emozio Web - Nuevo psicologo', 
+		generateTextFromHTML: true,
+		html: /*Aqui iria el codigo HTML */
+	};
+\end{lstlisting}
+
+
+Se especifican las opciones de \textit{email} que se quieren enviar.
+
+
+\medskip
+\begin{lstlisting}
+	transporter.sendMail(mailOptions, (error, info) => { 
+		if (error) { 
+			return console.log(error); 
+		} 
+		console.log('Message sent: %s', info.messageId); 
+	});
+\end{lstlisting}
+
+
+Se envía el \textit{email} con la función \texttt{sendMail} a través del \texttt{transporter}. 
+
+
+\paragraph*{Validación de formularios con SemanticUI}
+Para la validación de formularios se utilizó SemanticUI que funciona de la siguiente forma:
+
+
+En la \textit{template}, se han de tener todos los campos de formulario corréctamente nombrados y añadir un identificador a la etiqueta \texttt{<form>}.
+
+
+En el \textit{controller}, existe un objeto especial al que se le pueden pasar la lista de elementos del formulario a validar, las reglas que ha de cumplir cada campo y los mensajes de error en cada caso.
+
+
+En el código de la aplicación, un ejemplo podría ser:
+
+
+\medskip
+\begin{lstlisting}
+	$('#access_form').form({ 
+		on : 'blur', /* Cada elemento se evalua por separado */ 
+		inline: 'false', /* Los mensajes de validacion no se disponen en linea */ 
+		/* Campos a validar: Identificador y reglas a evaluar */ 
+		fields : { 
+			email : { 
+				identifier : 'email', 
+				rules : [ 
+					{ 
+						type : 'empty', 
+						prompt : 'Por favor, introduzca un e-mail.' 
+					}, 
+					{ 
+						type: 'email', 
+						prompt: 'El formato del e-mail es incorrecto.' 
+					}, 
+					{ 
+						type: 'maxLength[50]', 
+						prompt: 'Demasiados caracteres.' 
+					} 
+				] 
+			},      
+			password: { 
+				identifier: 'password', 
+				rules: [ 
+					{ 
+						type: 'empty', 
+						prompt: 'Por favor, introduzca una contrasena.' 
+					}, 
+					{ 
+						type: 'maxLength[50]', 
+						prompt: 'Demasiados caracteres.' 
+					} 
+				] 
+			} 
+		} 
+	}); 
+\end{lstlisting}
+
+
+Los campos a validar en el formulario de acceso a la plataforma son email y password.
+
+
+Para email, las reglas de validación son:
+\begin{itemize}
+\item El campo no debe estar vacío.
+\item El formato debe ser de tipo email.
+\item La logitud máxima de carácteres permitidos es 50.
+\end{itemize}
+
+
+Para password, las reglas de validación son:
+\begin{itemize}
+\item El campo no debe estar vacío.
+\item La logitud máxima de carácteres permitidos es 50.
+\end{itemize}
+
+
+\section{Implementación del tercer incremento}
+Los requisitos implementados en el segundo incremento son los asociados a la parte de la comunicación:
+
+
+\begin{itemize}
+\item RF-007: Contacto del paciente con el psicólogo
+\item RF-008: Valoración del psicólogo por parte del paciente
+\end{itemize}
+
+
+Además, aunque en primera instancia no estuviese contemplado, surgió la idea de gestionar la comunicación como un sistema de citas. Por ello, se incorporó a posteriori un calendario mensual donde el psicólogo pudiese ver las citas que tiene agendadas con una vista por mes, por semana y por día.
+
+
+Las tareas más trascendentales realizadas en este incremento son las descritas a continuación:
+
+
+\paragraph*{Implementación de las \textit{templates} y \textit{controllers} de los requisitos. Éstos se encuentran dentro del directorio app/assets.}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textit{\textbf{Template}}           & \textit{\textbf{Controller}}        \\ \hline
+pacientes/pacientesMail.html & pacientes/pacientesMailController.js \\ \hline
+psicologos/psicologosMail.html   & psicologos/psicologosMailController.js       \\ \hline
+psicologos/psicologoCalendario.html  & psicologos/psicologosCalendarioController.js
+       \\ \hline
+\end{tabular}
+%\caption{My caption}
+%\label{my-label}
+\end{table}
+
+
+\paragraph*{Creación de la \textit{factories}, \textit{routes} y \textit{models} de Mensaje.}
+
+
+\paragraph*{Visualización de las citas agendadas por medio de FullCalendar}
+En la \textit{template} psicologoCalendario.html, el calendario es dispuesto de la siguiente forma:
+
+
+\medskip
+\begin{lstlisting}
+<div id="calendar" ui-calendar ng-model="eventSources"></div>
+\end{lstlisting}
+
+
+Este elemento es gestionado por el psicologosCalendarioController.js.
+
+
+\medskip
+\begin{lstlisting}
+	$('#calendar').fullCalendar({
+		header: { /* Opciones de la barra de herramientas */
+				left: 'prev,next today', /* A la izquierda: Anterior, siguiente y hoy */
+				center: 'title', /* En el centro: Nombre del mes */
+				right: 'month,basicWeek,basicDay' /* A la derecha: Mes, semana y dia */
+			},
+			buttonText : { /* Nombre que aparece en las opciones de la barra de herramientas */
+				today:    'hoy',
+				month:    'mes',
+				week:     'semana',
+				day:      'dia',
+				prev:	  '<',
+				next:	  '>'
+			},
+			firstDay : 1, /* Empieza el lunes */
+			dayNames : ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'], /* Nombres de los dias */
+			dayNamesShort : ['Dom.', 'Lun.', 'Mart.', 'Mierc.', 'Juev.', 'Vier.', 'Sab.'], /* Nombres abreviados de los dias */
+			monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'], /* Nombres de los meses */
+			monthNamesShort: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'], /* Nombres abreviados de los meses */
+			navLinks: true, /* Permite navegar entre las distintas vistas: Mes, semana y dia */
+			editable: true, /* Los eventos pueden ser modificados */
+			eventLimit: true, /* Numero de eventos mostrados en un dia limitado */
+			theme: true, /* Activa el tema */
+			themeSystem:'bootstrap3', /* Establece el tipo de tema */
+			eventColor: '#ffffff', /* Establece el color del fondo de los eventos */
+			eventTextColor: '#008080', /* Establece el color del texto de los eventos */
+			eventClick: function (calEvent) { . . . },
+
+			height: 600 /* Establece la altura del calendario */
+		});
+\end{lstlisting}
+
+
+Para meter los eventos en el calendario se utiliza la función fullcalendar con el argumento \texttt{renderEvent}.
+
+
+\medskip
+\begin{lstlisting}
+$('#calendar').fullCalendar('renderEvent', cita, true);
+\end{lstlisting}
+
+
+\begin{itemize}
+\item Se inicializa el calendario.
+\item Opciones mostradas en los botones del calendario.
+\item Traducción de los mensajes de los botones (que traen por defecto) al castellano.
+\item Indica el día donde comienza la semana.
+\item Traducción de los días, abreviaturas de los días, meses y abreviaturas de los meses al castellano.
+\item Función que se ejecuta cuando se hace \textit{click} en un evento y lo muestra.
+\end{itemize}

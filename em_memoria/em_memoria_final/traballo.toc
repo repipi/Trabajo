@@ -1,0 +1,5 @@
+\select@language {spanish}
+\contentsline {chapter}{\numberline {1}Implementaci\IeC {\'o}n}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Implementaci\IeC {\'o}n del primer incremento}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Implementaci\IeC {\'o}n del segundo incremento}{4}{section.1.2}
+\contentsline {section}{\numberline {1.3}Implementaci\IeC {\'o}n del tercer incremento}{12}{section.1.3}
