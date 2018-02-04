@@ -1,19 +1,26 @@
 \chapter{Gestión del proyecto}
 
+En este capítulo se detallan las metodologías de la gestión de proyectos que se han seguido en este trabajo presentes en el PMBOK\cite{pmbok}.
+
+
+Las siguientes secciones describen el alcance del proyecto, la metodología de desarrollo, la planificación temporal, la gestión de la configuración, la gestión de costes y la gestión de riesgos.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Alcance del proyecto}
 
-Según el PMBOK \cite{pmbok} se trata del trabajo realizado para entregar un producto, servicio o resultado con las funciones y características especificadas. La línea base del proyecto, consistirá en el eunciado del alcance, la estructura de desglose de trabajo (EDT/WBS) y el diccionario EDT/WBS asociado.
+Según el PMBOK\cite{pmbok} se trata del trabajo realizado para entregar un producto, servicio o resultado con las funciones y características especificadas. La línea base del proyecto, consistirá en el enunciado del alcance, la estructura de desglose de trabajo (EDT/WBS) y el diccionario EDT/WBS asociado.
 
 \subsection{Enunciado del alcance}
-La joven startup Emozio necesita una plataforma web para llevar a cabo su modelo de negocio, el cual consiste en la asignación del psicólogo más adecuado para tratar la patología de un paciente. 
-Como se trata de una startup que ha surgido de forma reciente, todavía precisan validar y afianzar su propuesta de valor para lanzarla al mercado. Por tanto, su requisito primordial es disponer de un producto mínimo viable que les permita mostrar su propuesta a su público objetivo.
+Como promotora de la \textit{startup} Emozio, necesito una plataforma web que de viabilidad a mi modelo de negocio, el cual consiste en la asignación del psicólogo más adecuado para tratar la patología de un paciente. 
 
 
-Para desempeñar la característica principal del producto, se precisará de un cuestionario que evalúe los síntomas del paciente, caracterizando así la posible patología que este presenta. Una vez realizado el cuestionario, la plataforma dará como resultado del mismo a un listado de psicólogos que podrían tratar esa patología. Además, éste resultado podrá ser filtrado por distintos campos, como el precio, el seguro de salud, si se trata de una cita presencial u online, entre otros. 
+Como somos una \textit{startup} que ha surgido de forma reciente, todavía preciso validar y afianzar mi propuesta de valor para lanzarla al mercado. Por tanto, el requisito primordial es disponer de un producto mínimo viable que me permita mostrar esta propuesta a mi público objetivo.
+
+
+Para desempeñar el producto mínimo viable necesito desarrollar una plataforma \textit{web} en la que pueda identificar una o varias posibles patologías en un determinado paciente. Una vez conocida la patología y el porcentaje de la misma en la caracterización del paciente, la plataforma le emparejará a un listado de psicólogos que podrían tratar una o varias de sus  patologías. Además, estos psicólogos podrán ser filtrados por distintos campos, como el precio, el seguro de salud, si se trata de una cita presencial u \textit{online}, entre otros. 
 
 
 A su vez, debe permitir al paciente ponerse en contacto con el psicólogo del listado por el que desea ser atendido. Este mensaje de contacto, podrá visualizarlo el psicólogo a través de su bandeja de entrada. 
@@ -29,17 +36,17 @@ Las condiciones que deben cumplirse para que el proyecto sea aceptado son:
 
 \begin{itemize}
 \item Entrega en plazo de todos los entregables.
-\item Realización de los requisitos establecidos.
+\item Realización de los requisitos esperados que tengan mayor prioridad.
 \end{itemize}
 
 \subsection{Entregables del proyecto}
 Se deberá hacer entrega de:
 
 \begin{itemize}
-\item Tres copias en papel de la memoria
+\item Tres copias en papel de la memoria, junto con el manual de instalación y los manuales de usuario
 \item Una copia en soporte digital de:
 	\begin{itemize}
-		\item La memoria
+		\item La memoria, junto con el manual de instalación y los manuales de usuario
 		\item El código fuente
 		\item El ejecutable
 	\end{itemize}
@@ -54,7 +61,7 @@ Las exclusiones aplicadas al proyecto son:
 \end{itemize}
 
 \subsection{Restricciones del proyecto}
-El alcance de este proyecto sólo abarcará a lo que se corresponde con el producto mínimo viable de lo que será la plataforma real de Emozio, y que servirá como punto de partida para la implementación de la misma. Su pretensión no se trata de realizar el desarrollo completo de la aplicación con todas sus características totalmente funcionales, sino realizar una primera aproximación a la misma.
+El alcance de este proyecto sólo abarcará el producto mínimo viable de lo que será la plataforma real de Emozio, y que servirá como punto de partida para la implementación de la misma. Su pretensión no se trata de realizar el desarrollo completo de la aplicación con todas sus características totalmente funcionales, sino realizar una primera aproximación a la misma.
 
 \subsection{Supuestos del proyecto}
 Asumimos que al tratarse de un producto mínimo viable, no se podrá estimar el crecimiento del sistema tanto a nivel de funcionalidades como en el contenido de la base de datos, por lo que no se podrá preveer cómo será la escalabilidad real del sistema.
@@ -74,7 +81,7 @@ El proyecto está dividido en tres fases: Inicial, incremental y final. Éstas s
 
 \begin{itemize}[label={}]
 \item \textbf{Fase inicial}
-Compuesta por la formación en las principales tecnologías utilizadas (\textit{Stack MEAN framework}), la elaboración de la gestión del proyecto y un primer ánalisis inicial del producto.
+Compuesta por la formación en las principales tecnologías utilizadas (\textit{Stack MEAN framework}), la elaboración de la gestión del proyecto y un primer análisis inicial del producto.
 \item \textbf{Fase incremental}
 Se encuentra dividida entre los tres incrementos que se van a realizar, cada uno con sus respectivas tareas: Diseño, implementación, pruebas y revisión.
 \item \textbf{Fase final}
@@ -85,7 +92,7 @@ En ella se elaborará toda la documentación final del proyecto que se va a pres
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Metogología de desarrollo}
+\section{Metodología de desarrollo}
 Una metodología de desarrollo de software en ingeniería de software es un marco de trabajo usado para estructurar, planificar y controlar el proceso de desarrollo en sistemas de información.
 
 
@@ -94,15 +101,15 @@ Según Pressman\cite{pressman}, cualquier proceso del software ágil se caracter
 \begin{itemize}
 \item Es difícil predecir que requerimientos de software persistirán y cuales cambiarán o pronosticar como cambiaron las prioridades del cliente a medida que avanza el proyecto.
 \item En muchos tipos de software el diseño y la construcción de ejecutarse en forma simultánea de modo que los modelos de diseño se prueban a medida que se crean.
-\item El análisis , el diseño, la construcción y las pruebas no son tan predecibles como nos gustaría.
+\item El análisis, el diseño, la construcción y las pruebas no son tan predecibles como nos gustaría.
 \end{itemize} 
 
 
-Las principales motivaciones para utilizar este tipo de metología se trataban de:
+Las principales motivaciones para utilizar este tipo de metodología se trataban de:
 
 \begin{itemize}
-\item Inicialmente, se desconocía tanto el algoritmo que se iba a utilizar para el emparejamiento, así como la caracterización de los pacientes y psicólogos; y la información que era necesario almacenar en la base datos.
-\item No tenía total disponibilidad de mi \textit{stakeholder} el cuál me iba a proporcionar el \textit{feedback} e información necesaria del sistema.
+\item Inicialmente, se desconocía mucha información: Como el algoritmo que se iba a utilizar para el emparejamiento, como la caracterización de los pacientes y psicólogos, como la información que era necesario almacenar en la base datos\dots
+\item Existía la posibilidad de que el psicólogo experto, mi principal \textit{stakeholder} el cuál me iba a proporcionar el \textit{feedback} e información necesaria del sistema, me pidiese cambios repentinos al descubrir nueva información relevante a cerca del emparejamiento.
 \item Por otra parte, sí se tenían claro los subsistemas que se requerían dentro de la plataforma.
 \item Como se trata de un proyecto que surge de un estado del arte, necesitábamos gran margen para introducir cambios y poder integrarlos.
 \item La inexperiencia en las tecnologías utilizadas podrían suponer que hubiese continuos cambios en el diseño y el código de la plataforma.
@@ -146,7 +153,7 @@ Según la planificación prevista, estará comprendido entre el 7 de diciembre y
 \textbf{Incremento 3}
 
 
-El último incremento es el qué involucra al subsistema de comunicación. 
+El último incremento es el subsistema de comunicación. 
 
 
 Siguiendo la planificación temporal realizada, durará desde el 21 de diciembre hasta el 3 de enero.
@@ -177,13 +184,13 @@ La previsión temporal del presente proyecto estaba comprendido entre el 16 de o
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Gestión de la configuración}
-La gestión de la configuración del software es un conjunto de actividades diseñadas para administrar el cambio mediante la identificación de los productos de trabajo con potencial de cambio, las relacines entre ellos, la definición de mecanismos para administrar diferentes versiones de los mismos y el control de los cambios impuestos, así como la auditoría y reporte de los cambios realizados\cite{pressman}.
+La gestión de la configuración del software es un conjunto de actividades diseñadas para administrar el cambio mediante la identificación de los productos de trabajo con potencial de cambio, las relaciones entre ellos, la definición de mecanismos para administrar diferentes versiones de los mismos y el control de los cambios impuestos, así como la auditoría y reporte de los cambios realizados\cite{pressman}.
 
 \subsection{Línea base}
 El IEEE (IEEE Std. No. 610.12-1990) indica que una especificación o producto que se revisó formalmente y con el que se estuvo de acuerdo, servirá como base para un mayor desarrollo y que cambia sólo a través de procedimientos de control de cambio formal.
 
 
-Las líneas base de nuestro proyecto son fundamentalmente el enunciado del alcance del proyecto y los requisitos software.
+Las líneas base de nuestro proyecto son fundamentalmente el enunciado del alcance del proyecto, los requisitos \textit{software}, el diseño y el código del anterior incremento (si existe).
 
 \subsubsection{Creación de líneas base}
 Como nuestro proyecto se desarrolla de manera incremental, la línea base del segundo incremento, será tanto el enunciado del alcance del proyecto, los requisitos software asociados a dicho incremento y finalmente, el código resultado del incremento 1. De forma análoga sería para el caso del incremento 3, que tendría como línea base adicional el código resultado del incremento 2.
@@ -195,13 +202,13 @@ Un repositorio es el conjunto de mecanismos y estructuras de datos que permiten 
 Este proyecto se encuentra almacenado en un repositorio GitHub que es una plataforma de desarrollo colaborativo de software para alojar proyectos usando el sistema de control de versiones Git\cite{github}. Git nos permitirá tener una copia del repositorio del proyecto en local y otra en remoto. El proyecto en local sufrirá constantes modificaciones, que una vez validadas, se guardarán en el remoto.
 
 \subsubsection{Metamodelo}
-La estructura de información que se encuentra en el repositorio viene definida en la figura \ref{tab_metamodelo}.
+La estructura de información que se encuentra en el repositorio viene definida en la tabla \ref{tab_metamodelo}.
 
 \begin{table}[htpb]
 \centering
 \begin{tabularx}{\textwidth}{|l|l|X|}
 \hline
-\multicolumn{2}{|c|}{Carpeta}                     & \multicolumn{1}{c|}{Descripción del contenido}                                                                             \\ \hline
+\rowcolor[gray]{0.9}\multicolumn{2}{|c|}{\textbf{Carpeta}}                     & \multicolumn{1}{c|}{\textbf{Descripción del contenido}}                                                                             \\ \hline
 \multicolumn{2}{|X|}{em\_diagramas}               & Contiene el archivo de StarUML que contiene todos los diagramas del proyecto: Casos de uso, modelo de datos, patrón MVC... \\ \hline
 \multirow{7}{*}{em\_memoria} & em\_analisis       & Contiene todos los archivos referentes al análisis.                                                                        \\ \cline{2-3} 
                              & em\_anexos         & Contiene todos los anexos de la memoria del proyecto.                                                                      \\ \cline{2-3} 
@@ -234,8 +241,8 @@ Contendrá la última versión validada del código fuente, es decir, tras pasar
 	\item \textbf{mockup\_branch}
 	Contendrá los commits de las distintas versiones del mockup de la plataforma.
 	\item \textbf{cuestionario\_branch, usuarios\_branch y contacto\_branch}
-	Contendrán respectivamente, los commits del código fuente asociado a los incrementos 1, 2 y 3.
-	Antes de comenzar un incremento, se crea una branch de master y se implementan las funcionalidades pertenecientes a ese incremento. Una vez realizada su fase de pruebas, se hará un merge de esa branch con el master, y posteriormente, se elimina.
+	Contendrán respectivamente, los \textit{commits} del código fuente asociado a los incrementos 1, 2 y 3.
+	Antes de comenzar un incremento, se crea una \textit{branch} de \textit{master} y se implementan las funcionalidades pertenecientes a ese incremento. Una vez realizada su fase de pruebas, se hará un \textit{merge} de esa \textit{branch} con el \textit{master}, y posteriormente, se elimina.
 	\end{itemize}
 \end{enumerate}
 
@@ -256,7 +263,7 @@ Contendrá la última versión validada del código fuente, es decir, tras pasar
 El riesgo de un proyecto es un evento o condición incierta que, de producirse, tiene un efecto positivo o negativo en uno o más de los objetivos del proyecto. Éste, puede tener una o más causas, y de materializarse, uno o más impactos\cite{pmbok}.
 
 
-Para poder preveer estas consecuencias, se debe llevar un registro de los posibles riesgos que pueden acontecer. Así, una vez identificados y analizados, podemos planificar las respuestas para los mismos.
+Para poder prevenir estas consecuencias, se debe llevar un registro de los posibles riesgos que pueden acontecer. Así, una vez identificados y analizados, podemos planificar las respuestas para los mismos.
 
 
 Para poder definir la probabilidad e impacto de la materialización de un riesgo, se deben definir las escalas correspondientes a los mismos. Para poder medir la probabilidad e impacto que puede tener un riesgo se han creado las tablas \ref{tab_probabilidad} y \ref{tab_impacto}.
@@ -268,8 +275,8 @@ La \textbf{probabilidad} representa la expectativa de ocurrencia real del riesgo
 \centering
 \begin{tabular}{|l|l|}
 \hline
-\multicolumn{2}{|c|}{Valoración del impacto}                                                  \\ \hline
-\multicolumn{1}{|c|}{Repercusión en Plazo / Esfuerzo / Costes} & \multicolumn{1}{c|}{Impacto} \\ \hline
+\rowcolor[gray]{0.9}\multicolumn{2}{|c|}{\textbf{Valoración del impacto}}                                                  \\ \hline
+\multicolumn{1}{|c|}{\textbf{Repercusión en Plazo / Esfuerzo / Costes}} & \multicolumn{1}{c|}{\textbf{Impacto}} \\ \hline
 \textgreater= 20\%                                             & Alto                         \\ \hline
 Entre 10\% y 20 \%                                             & Medio                        \\ \hline
 \textless= 10\%                                                & Bajo                         \\ \hline
@@ -282,8 +289,8 @@ Entre 10\% y 20 \%                                             & Medio          
 \centering
 \begin{tabular}{|l|l|}
 \hline
-\multicolumn{2}{|c|}{Valoración de la probabilidad} \\ \hline
-\multicolumn{1}{|c|}{Ocurrencia del Riesgo}             & \multicolumn{1}{c|}{Probabilidad}  \\ \hline
+\rowcolor[gray]{0.9}\multicolumn{2}{|c|}{\textbf{Valoración de la probabilidad}} \\ \hline
+\multicolumn{1}{|c|}{\textbf{Ocurrencia del Riesgo}}             & \multicolumn{1}{c|}{\textbf{Probabilidad}}  \\ \hline
 \textgreater= 80\% (casi segura)  & Alta          \\ \hline
 Entre 30\% y 80\% (muy probable)  & Media         \\ \hline
 \textless= 30\% (poco probable)   & Baja         \\ \hline
@@ -298,10 +305,10 @@ Si vinculamos la probabilidad de ocurrencia de cada riesgo con su impacto sobre 
 \centering
 \begin{tabular}{|l|l|l|l|l|}
 \hline
-\multicolumn{5}{|c|}{Nivel de exposición al riesgo}                         \\ \hline
-\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{3}{c|}{Probabilidad} \\ \cline{3-5} 
+\rowcolor[gray]{0.9}\multicolumn{5}{|c|}{\textbf{Nivel de exposición al riesgo}}                         \\ \hline
+\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{3}{c|}{\textbf{Probabilidad}} \\ \cline{3-5} 
 \multicolumn{2}{|l|}{}                  & Alta      & Media     & Baja      \\ \hline
-\multirow{3}{*}{Impacto}     & Alto     & Alto      & Alto      & Medio     \\ \cline{2-5} 
+\multirow{3}{*}{\textbf{Impacto}}     & Alto     & Alto      & Alto      & Medio     \\ \cline{2-5} 
                              & Medio    & Alto      & Medio     & Bajo      \\ \cline{2-5} 
                              & Bajo     & Medio     & Bajo      & Bajo      \\ \hline
 \end{tabular}
@@ -316,7 +323,7 @@ Tras identificar los riesgos por medio  de revisión de la documentación, torme
 \centering
 \begin{tabularx}{\textwidth}{|l|X|X|}
 \hline
-\multicolumn{1}{|c|}{Identificador} & \multicolumn{1}{c|}{Nombre}                        & \multicolumn{1}{c|}{Descripción}                                                                                                                                                              \\ \hline
+\rowcolor[gray]{0.9}\multicolumn{1}{|c|}{\textbf{Identificador}} & \multicolumn{1}{c|}{\textbf{Nombre}}                        & \multicolumn{1}{c|}{\textbf{Descripción}}                                                                                                                                                              \\ \hline
 RSG-001                             & Práctica deficiente de la gestión de proyectos     & Se produce una práctica deficiente en la gestión de proyectos debido a la inexperiencia.                                                                                                      \\ \hline
 RSG-002                             & Dependencia de participantes externos              & Existe dependencia de participantes externos fuera del ámbito de control directo del proyecto como el tutor que guía el proyecto o el experto psicólogo.                                      \\ \hline
 RSG-003                             & Falta de experiencia en las tecnologías utilizadas & La inexperiencia en las tecnologías utilizadas puede repercutir en la planificación prevista del proyecto.                                                                                    \\ \hline
@@ -337,7 +344,7 @@ Mediante el análisis cualitativo de los riesgos podemos evaluar la prioridad de
 \centering
 \begin{tabularx}{\textwidth}{|l|X|l|l|l|}
 \hline
-\multicolumn{1}{|c|}{Identificador} & \multicolumn{1}{c|}{Nombre}                        & \multicolumn{1}{c|}{Probabilidad} & \multicolumn{1}{c|}{Impacto} & \multicolumn{1}{c|}{Exposición} \\ \hline
+\rowcolor[gray]{0.9}\multicolumn{1}{|c|}{\textbf{Identificador}} & \multicolumn{1}{c|}{\textbf{Nombre}}                        & \multicolumn{1}{c|}{\textbf{Probabilidad}} & \multicolumn{1}{c|}{\textbf{Impacto}} & \multicolumn{1}{c|}{\textbf{Exposición}} \\ \hline
 RSG-001                             & Práctica deficiente de la gestión de proyectos     & Media                             & Alto                         & Alto                            \\ \hline
 RSG-002                             & Dependencia de participantes externos              & Alta                              & Medio                        & Alto                            \\ \hline
 RSG-003                             & Falta de experiencia en las tecnologías utilizadas & Alta                              & Alto                         & Alto                            \\ \hline
@@ -357,7 +364,7 @@ La matriz de exposición de los riesgos \ref{tab_mat_exp_riesgo} da a conocer la
 \centering
 \begin{tabular}{|c|c|l|l|l|}
 \hline
-\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{3}{c|}{Probabilidad}                                                                                                      \\ \cline{3-5} 
+\rowcolor[gray]{0.9}\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{3}{c|}{\textbf{Probabilidad}}                                                                                                      \\ \cline{3-5} 
 \multicolumn{2}{|l|}{}                  & \multicolumn{1}{c|}{Alta} & \multicolumn{1}{c|}{Media} & \multicolumn{1}{c|}{Baja}                                                     \\ \hline
 \multirow{3}{*}{Impacto}     & Alto     & RSG-003                   & RSG-001                    & \begin{tabular}[c]{@{}l@{}}RSG-004\\ RSG-006\\ RSG-007\\ RSG-008\end{tabular} \\ \cline{2-5} 
                              & Medio    & RSG-002                   &                            & RSG-005                                                                       \\ \cline{2-5} 
@@ -368,7 +375,7 @@ La matriz de exposición de los riesgos \ref{tab_mat_exp_riesgo} da a conocer la
 \end{table}
 
 \subsection{Plan de respuesta a los riesgos}
-Con la planificación de respuesta a los riesgos se busca desarrollar opciones y acciones para mejorar las oportunidades y reducir las amenazas a los objetivos del proyecto. Las respuestas a los riesgos deben adecuarse a laimportancia del riesgo, ser rentables con relación al desafía a cumplir,  realistas dentro del contexto del proyecto y a cargo de una persona responsable \cite{pmbok}.
+Con la planificación de respuesta a los riesgos se busca desarrollar opciones y acciones para mejorar las oportunidades y reducir las amenazas a los objetivos del proyecto. Las respuestas a los riesgos deben adecuarse a la importancia del riesgo, ser rentables con relación al desafía a cumplir,  realistas dentro del contexto del proyecto y a cargo de una persona responsable \cite{pmbok}.
 
 
 Debido a que sólo existe una persona a cargo del proyecto, ésta será la responsable de acatar las medidas oportunas.
@@ -378,7 +385,7 @@ Debido a que sólo existe una persona a cargo del proyecto, ésta será la respo
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-RSG-001              & Práctica deficiente de la gestión de proyectos                                                                      \\ \hline
+\rowcolor[gray]{0.9}\textbf{RSG-001}              & \textbf{Práctica deficiente de la gestión de proyectos} \\ \hline
 Acción de prevención & Mitigar. Se asegurará que la persona encargada de la gestión de proyectos se forme específicamente en dicho ámbito. \\ \hline
 Indicador            & La persona encargada de la gestión no efectúa adecuadamente los procesos a seguir.                                  \\ \hline
 Acción de corrección & Se dedicarán más horas de trabajo a la gestión de proyectos.                                                        \\ \hline
@@ -392,10 +399,10 @@ Acción de corrección & Se dedicarán más horas de trabajo a la gestión de pr
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-RSG-002              & Dependencia de participantes externos                                                                                                                                                                  \\ \hline
-Acción de prevención & Aceptar. Debido a la imprevisión que supone estar a expensas de otro stakeholder del proyecto se acepta la posible aparición del riesgo y se trata de continuar con el normal desarrollo del proyecto. \\ \hline
-Indicador            & Ausencia o falta de respuesta por parte de un stakeholder.                                                                                                                                             \\ \hline
-Acción de correccion & Se procederá a abordar las distintas tareas de forma ficticia o en último recurso se obviarán.                                                                                                        \\ \hline
+\rowcolor[gray]{0.9}\textbf{RSG-002}              & \textbf{Dependencia de participantes externos}                                                                                                                                                                  \\ \hline
+Estrategia & Minimizar. Debido a la imprevisión que supone estar a expensas de otro \textit{stakeholder} del proyecto se plantea mover las reuniones agendadas. \\ \hline
+Indicador            & Ausencia o falta de respuesta por parte de un \textit{stakeholder}.                                                                                                                                             \\ \hline
+Acción de corrección & Se procederá a abordar las distintas tareas de forma ficticia o en último recurso se obviarán.                                                                                                        \\ \hline
 \end{tabularx}
 \caption{Plan de respuesta RSG-002}
 %\label{my-label}
@@ -406,10 +413,10 @@ Acción de correccion & Se procederá a abordar las distintas tareas de forma fi
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-RSG-003              & Falta de experiencia en las tecnologías utilizadas                                                                \\ \hline
-Acción de prevención & Mitigar. Se formará al trabajador en las tecnologías utilizadas antes de comenzar con el desarrollo del proyecto. \\ \hline
+\rowcolor[gray]{0.9}\textbf{RSG-003}              & \textbf{Falta de experiencia en las tecnologías utilizadas}                                                                \\ \hline
+Estrategia & Mitigar. Se formará al trabajador en las tecnologías utilizadas antes de comenzar con el desarrollo del proyecto. \\ \hline
 Indicador            & El trabajador desconoce cómo implementar determinada funcionalidad                                                \\ \hline
-Acción de correccion & Se pausará por un determinado tiempo el desarrollo y se estudiará lo necesario para poder continuar.              \\ \hline
+Acción de corrección & Se pausará por un determinado tiempo el desarrollo y se estudiará lo necesario para poder continuar.              \\ \hline
 \end{tabularx}
 \caption{Plan de respuesta RSG-003}
 %\label{my-label}
@@ -420,9 +427,9 @@ Acción de correccion & Se pausará por un determinado tiempo el desarrollo y se
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-RSG-004              & Pérdida de información                                                                                                  \\ \hline
-Acción de prevención & Evitar. Se harán volcados del trabajo realizado en el respositorio de forma periódica de al menos dos días de trabajo.  \\ \hline
-Indicador            & Los últimos cambios efectuados no están reflejados en los archivos de trabajo ni en la última versión del respositorio. \\ \hline
+\rowcolor[gray]{0.9}\textbf{RSG-004}              & \textbf{Pérdida de información}                                                                                                  \\ \hline
+Estrategia & Acción preventiva. Se harán volcados del trabajo realizado en el repositorio de forma periódica de al menos dos días de trabajo.  \\ \hline
+Indicador            & Los últimos cambios efectuados no están reflejados en los archivos de trabajo ni en la última versión del repositorio. \\ \hline
 Acción de corrección & Se repartirá el número de horas de trabajo correspondiente a esa parte durante el próximo periodo de la planificación.  \\ \hline
 \end{tabularx}
 \caption{Plan de respuesta RSG-004}
@@ -434,8 +441,8 @@ Acción de corrección & Se repartirá el número de horas de trabajo correspond
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-RSG-005              & Retraso en la planificación temporal                                                                                                                                                     \\ \hline
-Acción de prevención & Aceptar. Debido a que se puede producir un retraso en la planificación temporal por causas ajenas al proyecto, se aceptará este hecho y se tratará de continuar con la mayor normalidad. \\ \hline
+\rowcolor[gray]{0.9}\textbf{RSG-005}              & \textbf{Retraso en la planificación temporal}                                                                                                                                                     \\ \hline
+Estrategia & Minimizar. Debido a que se puede producir un retraso en la planificación temporal por causas ajenas al proyecto, se recuperarán las horas perdidas reubicándolas en la planificación temporal. \\ \hline
 Indicador            & Surge una enfermedad o un asunto personal.                                                                                                                                               \\ \hline
 Acción de corrección & Se reubicará la carga de trabajo prevista y que no haya sido realizada a lo largo del periodo que vaya a continuación.                                                                   \\ \hline
 \end{tabularx}
@@ -448,8 +455,8 @@ Acción de corrección & Se reubicará la carga de trabajo prevista y que no hay
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-RSG-006              & Caída de la red proveedora de Internet                                                                                                                                                                 \\ \hline
-Acción de prevención & Mitigar. Se dispondrá de una red alternativa a la que usamos de forma habitual.                                                                                                                        \\ \hline
+\rowcolor[gray]{0.9}\textbf{RSG-006}              & \textbf{Caída de la red proveedora de Internet}                                                                                                                                                                 \\ \hline
+Estrategia & Mitigar. Se dispondrá de una red alternativa a la que usamos de forma habitual.                                                                                                                        \\ \hline
 Indicador            & Falla la conexión a Internet o no se encuentra la red.                                                                                                                                                 \\ \hline
 Acción de corrección & Se procederá a buscar una red alternativa. Por ejemplo, en el caso de estar trabajando con la conexión WiFi y que ésta sufra una caída, proceder a conectarnos a la red móvil del \textit{smartphone} personal. \\ \hline
 \end{tabularx}
@@ -462,8 +469,8 @@ Acción de corrección & Se procederá a buscar una red alternativa. Por ejemplo
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-RSG-007              & Fallo de suministro eléctrico                                                                                                                                 \\ \hline
-Acción de prevención & Aceptar. Si el fallo de suministro eléctrico causa una pérdida del trabajo realizado, se asumen las consecuencias y se procede a partir de la última versión. \\ \hline
+\rowcolor[gray]{0.9}\textbf{RSG-007}              & \textbf{Fallo de suministro eléctrico                                                                                                                                } \\ \hline
+Estrategia & Minimizar. Se procede a hacer copias de seguridad de forma periódica. Si el fallo de suministro eléctrico causa una pérdida del trabajo realizado, se retoma el trabajo a partir de la última copia de seguridad existente. \\ \hline
 Indicador            & El ordenador se queda sin suministro eléctrico de forma repentina tras una subida de tensión.                                                                 \\ \hline
 Acción de corrección & Se rehará el trabajo a partir de la última versión guardada.                                                                                                  \\ \hline
 \end{tabularx}
@@ -476,8 +483,8 @@ Acción de corrección & Se rehará el trabajo a partir de la última versión g
 \centering
 \begin{tabularx}{\textwidth}{|X|l|}
 \hline
-RSG-008              & Ataques maliciosos en el equipo de trabajo                                                                                                                                                              \\ \hline
-Acción de prevención & Evitar. No descargar recursos de fuentes no fiables, no utilizar el ordenador de trabajo como ordenador personal, no dejar la sesión abierta en caso de ausencia y que ésta posea contraseña de acceso. \\ \hline
+\rowcolor[gray]{0.9}\textbf{RSG-008}              & \textbf{Ataques maliciosos en el equipo de trabajo}                                                                                                                                                              \\ \hline
+Estrategia & Evitar. No descargar recursos de fuentes no fiables, no utilizar el ordenador de trabajo como ordenador personal, no dejar la sesión abierta en caso de ausencia y que ésta posea contraseña de acceso. \\ \hline
 Indicador            & Fallos desconocidos hasta el momento en el sistema, pérdida de información, comportamiento sospechosos del funcionamiento del ordenador...                                                              \\ \hline
 Acción de corrección & Se hará un formateo del sistema y se recuperarán los últimos cambios, de ser afectados, de la última versión del repositorio.                                                                           \\ \hline
 \end{tabularx}

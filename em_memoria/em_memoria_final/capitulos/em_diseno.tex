@@ -19,9 +19,9 @@ En nuestra plataforma, tenemos dos tipos de perfiles: Los pacientes\ref{perf_pac
 
 \begin{table}[htpb]
 \centering
-\begin{tabular}{|l|l|}
+\begin{tabularx}{\textwidth}{|X|X|}
 \hline
-\multicolumn{2}{|c|}{\textbf{Pacientes}}                                                                                                                                                                               \\ \hline
+\rowcolor[gray]{0.9}\multicolumn{2}{|c|}{\textbf{Pacientes}}                                                                                                                                                                               \\ \hline
 \textbf{Demografía}                                & España                                                                                                                                                            \\ \hline
 \textbf{Edad}                                      & Mayores de 16 años                                                                                                                                                \\ \hline
 \textbf{Experiencia laboral}                       & Estudios mínimos                                                                                                                                                  \\ \hline
@@ -29,7 +29,7 @@ En nuestra plataforma, tenemos dos tipos de perfiles: Los pacientes\ref{perf_pac
 \multirow{2}{*}{\textbf{Necesidades e intereses}}  & Buscar al psicólogo más adecuado para tratar su problemática.                                                                                                     \\ \cline{2-2} 
                                                    & Reducir las preocupaciones de aquellas poblaciones que no puedan acudir físicamente a una consulta por motivos de desplazamiento, urgencias, estigmas sociales... \\ \hline
 \textbf{¿Cuándo y dónde utilizaran este servicio?} & Cuando surja la necesidad de contactar con un psicólogo y a través de un ordenador.                                                                               \\ \hline
-\end{tabular}
+\end{tabularx}
 \caption{Perfil paciente}
 \label{perf_pac}
 \end{table}
@@ -37,16 +37,16 @@ En nuestra plataforma, tenemos dos tipos de perfiles: Los pacientes\ref{perf_pac
 
 \begin{table}[htpb]
 \centering
-\begin{tabular}{|l|l|}
+\begin{tabularx}{\textwidth}{|X|X|}
 \hline
-\multicolumn{2}{|c|}{\textbf{Psicólogos}}                                                                                                                                 \\ \hline
+\rowcolor[gray]{0.9}\multicolumn{2}{|c|}{\textbf{Psicólogos}}                                                                                                                                 \\ \hline
 \textbf{Demografía}                                & España                                                                                                               \\ \hline
 \textbf{Edad}                                      & Mayoría de edad                                                                                                      \\ \hline
 \textbf{Experiencia laboral}                       & Estudios superiores                                                                                                  \\ \hline
-\textbf{Contexto profesional}                      & Psicólogos con especialidad clínica o sanitaria que estean colegiados para el ejercicio de la actividad profesional. \\ \hline
+\textbf{Contexto profesional}                      & Psicólogos con especialidad clínica o sanitaria que estén colegiados para el ejercicio de la actividad profesional. \\ \hline
 \textbf{Necesidades e intereses}                   & Conseguir un flujo constante de pacientes.                                                                           \\ \hline
 \textbf{¿Cuándo y dónde utilizaran este servicio?} & Periódicamente y a través de un ordenador.                                                                           \\ \hline
-\end{tabular}
+\end{tabularx}
 \caption{Perfil psicólogo}
 \label{perf_psic}
 \end{table}
@@ -132,7 +132,7 @@ Por tanto, los sistemas deben ser usables y accesibles para que la inmensa mayor
 El diseño universal es la estrategia que tiene como objetivo diseñar productos y servicios que puedan se utilizados por el mayor número de personas, considerando que existe una amplia variedad de habilidades humanas y no una habilidad media, sin necesidad de llevar a cabo una adaptación o diseñi especializado, simplificando la vida de todas las personas con independencia de su edad, talla o capacidad\cite{ekberg}.
 
 
-En la práctica, esto supone un auténtico reto, por lo que el diseño para todos acaba equivaliendo a diseño para “la mayoría”. Aquí es donde se entra a valorar la posibilidad de añadir productos de apoyo para que pueda ser utilizado por las minorías.
+En la práctica, esto supone un auténtico reto, por lo que el diseño para todos acaba equivaliendo a diseño para ``la mayoría''. Aquí es donde se entra a valorar la posibilidad de añadir productos de apoyo para que pueda ser utilizado por las minorías.
 
 
 En España hay leyes que tratan de combatir con este tipo de discriminación como la Ley 51/2005, de 2 de diciembre, de igualdad de oportunidades, no discriminación y accesibilidad universal de las personas con discapacidad. Por otra parte, AENOR posee la norma UNE 139803:2012. Requisitos de Accesibilidad para contenidos en la web\cite{aenor_req_acces}.
@@ -156,7 +156,7 @@ El sistema debe hablar el lenguaje de los usuarios, utilizando convenciones del 
 \item Control y libertad para el usuario
 Los usuarios eligen a veces funciones del sistema por error y necesitan una salida del estado indeseado sin tener que pasar por un diálogo extendido.
 \item Consistencia y estándares
-Se deben seguir las normas y convencios de la plataforma para las que se implementa el sistema.
+Se deben seguir las normas y convenios de la plataforma para las que se implementa el sistema.
 \item Ayuda a los usuarios para reconocimiento, diagnóstico y recuperación de errores
 Los mensajes de error deben expresarse en un lenguaje claro y explicativo.
 \item Prevención de errores
@@ -187,7 +187,7 @@ Para definir las rutas de navegación que permiten a los usuarios acceder al con
 
 
 \subsection{Semántica de la navegación}
-Se define a partir del rol que toma un actor dentro de un caso de uso, ya que cada actor tiene distintos requisitos de navegación. A medida que un usuario interactúa con la web, encuentra una serie de unidades semánticas de navegación (USN) que son un conjunto de estructuras de información y navegación relacionadas que colaboran para el cumplimiento de un subconjunto de requisitos de dicho usuario”.
+Se define a partir del rol que toma un actor dentro de un caso de uso, ya que cada actor tiene distintos requisitos de navegación. A medida que un usuario interactúa con la web, encuentra una serie de unidades semánticas de navegación (USN) que son un conjunto de estructuras de información y navegación relacionadas que colaboran para el cumplimiento de un subconjunto de requisitos de dicho usuario.
 
 
 Una USN está compuesta por un conjunto de elementos de navegación llamados formas de navegar (FdN) que representan la mejor ruta de navegación para lograr una meta específica. Está formada por un conjunto de nodos de navegación conectados por vínculos, que en algún pueden tratarse de otra USN.
@@ -200,7 +200,7 @@ Para cada caso de uso, se procede a diseñar su USN. Las correspondencias se pue
 \centering
 \begin{tabular}{|l|l|}
 \hline
-\textbf{Caso de uso}    & \textbf{Unidad semántica de navegación} \\ \hline
+\rowcolor[gray]{0.9}\textbf{Caso de uso}    & \textbf{Unidad semántica de navegación} \\ \hline
 CU-001                  & USN-001 (Paciente)                      \\ \hline
 CU-002                  & USN-002                                 \\ \hline
 CU-003                  & USN-003                                 \\ \hline
@@ -364,7 +364,7 @@ Angular permite fácilmente construir aplicaciones web, ya que combina declarati
 NodeJS es un entorno de ejecución para JavaScript construido con el motor de JavaScript V8 de Chrome. Node.js usa un modelo de operaciones entrada/salida sin bloqueo (asíncrono) y orientado a eventos, que lo hace liviano y eficiente, ya que nunca se bloquea. 
 
 
-Node está diseñado sin hilos, este presenta un bucle de eventos como un entorno en vez de una librería. Node simplemente ingresa el bucle de eventos después de ejecutar el script de entrada. Node sale del bucle de eventos cuando no hay más callbacks que ejecutar\cite{node_acerca}.
+Node está diseñado sin hilos, este presenta un bucle de eventos como un entorno en vez de una librería. Node simplemente ingresa el bucle de eventos después de ejecutar el \textit{script} de entrada. Node sale del bucle de eventos cuando no hay más callbacks que ejecutar\cite{node_acerca}.
 \end{itemize}
 
 
@@ -389,7 +389,7 @@ HTML, que significa Lenguaje de Marcado para Hipertextos (HyperText Markup Langu
 
 
 \subsubsection{JavaScript}
-Es un lenguaje ligero e interpretado, orientado a objetos con funciones de primera clase, más conocido como el lenguaje de script para páginas web, pero también usado en muchos entornos sin navegador, tales como node.js.
+Es un lenguaje ligero e interpretado, orientado a objetos con funciones de primera clase, más conocido como el lenguaje de \textit{script} para páginas web, pero también usado en muchos entornos sin navegador, tales como node.js.
 
 
 Es un lenguaje script multi-paradigma, basado en prototipos\footnote{La programación basada en prototipos es un estilo de programación orientada a objetos que reutiliza comportamientos de objetos existentes.}, dinámico, soporta estilos de programación funcional, orientada a objetos e imperativa\cite{javascript_mozilla}.
@@ -494,21 +494,21 @@ Las herramientas utilizadas en este trabajo fueron:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Seguridad}
 \subsection{¿Qué es Bcrypt?}
-Niels Provos y David Maxieres diseñaron Bcrypt, una función de hashing de contraseñas basado en el tipo de cifrado Blowfish. Es empleado en algunas distribuciones de Linux por defecto. 
+Niels Provos y David Maxieres diseñaron Bcrypt, una función de \textit{hashing} de contraseñas basado en el tipo de cifrado Blowfish. Es empleado en algunas distribuciones de Linux por defecto. 
 
 
-Cuando se genera un hash asociado a la contraseña por lo general los algoritmos comunes (md5, sha-1,…) incorporan un valor de salt, este fragmento se emplea para generar dicho hash, de esta forma se consigue que dos contraseñas iguales que generarían el mismo hash no lo hagan, algo muy importante para luchar contra ataques de fuerza bruta, así como para dificultar los ataques de Rainbow table.
+Cuando se genera un \textit{hash} asociado a la contraseña por lo general los algoritmos comunes (md5, sha-1,…) incorporan un valor de \textit{salt}, este fragmento se emplea para generar dicho \textit{hash}, de esta forma se consigue que dos contraseñas iguales que generarían el mismo \textit{hash} no lo hagan, algo muy importante para luchar contra ataques de fuerza bruta, así como para dificultar los ataques de Rainbow table.
 
 
-Los ataque de Rainbow table son efectivos cuando las contraseñas son hasheadas de la misma manera, de esta forma para dos contraseñas iguales el hash sería el mismo. Así es como surge el salt, añadir un hash a cada contraseña nos devuelve dos hashes distintos para la misma contraseña. Es importante evitar la reutilización de salt. Sin embargo no es suficiente el uso de salt para el almacenamiento de contraseñas debido a que salt pasa a ser inútil para ataques de fuerza bruta o de diccionario.
+Los ataque de Rainbow table son efectivos cuando las contraseñas son ``hasheadas'' de la misma manera, de esta forma para dos contraseñas iguales el hash sería el mismo. Así es como surge el \textit{salt}, añadir un \textit{hash} a cada contraseña nos devuelve dos \textit{hashes} distintos para la misma contraseña. Es importante evitar la \textit{reutilización} de \textit{salt}. Sin embargo no es suficiente el uso de \textit{salt} para el almacenamiento de contraseñas debido a que \textit{salt} pasa a ser inútil para ataques de fuerza bruta o de diccionario.
 
 
 \subsection{Ventajas de Bcrypt}
-En este punto es donde entra Bcrypt, para solucionar el problema en el que nos hallamos debemos hablar del número de iteraciones. Esto mejora a los hashes comunes gracias a su lentitud. ¿Qué quiere decir esto? Empleando una variante de cifrado Blowfish se introduce un factor de trabajo que permite controlar el coste de la función hash. Mediante este factor Bcrypt se actualiza de acuerdo a la ley de Moore con la evolución de la tecnología.
+En este punto es donde entra Bcrypt, para solucionar el problema en el que nos hallamos debemos hablar del número de iteraciones. Esto mejora a los \textit{hashes} comunes gracias a su lentitud. ¿Qué quiere decir esto? Empleando una variante de cifrado Blowfish se introduce un factor de trabajo que permite controlar el coste de la función \textit{hash}. Mediante este factor Bcrypt se actualiza de acuerdo a la ley de Moore con la evolución de la tecnología.
 
 
 Para verlo más concretamente podemos ver la tabla de comparación siguiente, y recalcar que aunque las contraseñas no requieran de una protección tan elevada, gracias al factor de trabajo la optimización de bcrypt se consigue con un buen equilibrio entre velocidad y seguridad. El sacrificio de un poco de rendimiento se traduce en un aumento de la seguridad. 
-Esta tabla muestra una prueba de la fuerza de bcrypt, que ha sido lanzado en un clúster de 25 GPU para la rotura de contraseñas en hash, han resultado los siguientes datos:
+Esta tabla muestra una prueba de la fuerza de bcrypt, que ha sido lanzado en un clúster de 25 GPU para la rotura de contraseñas en \textit{hash}, han resultado los siguientes datos:
 
 
 \begin{itemize}
@@ -536,10 +536,10 @@ Esta tabla muestra una prueba de la fuerza de bcrypt, que ha sido lanzado en un 
 
 
 \subsection{Funcionamiento}
-La librería bcrypt nos permite crear el hash de una contraseña mediante saltRounds, este valor nos da control sobre el factor de coste de procesado de datos. A mayor valor de SaltRound mayor coste de cálculo del hash asociado a una contraseña.  Por defecto este valor viene situado en 10. 
+La librería bcrypt nos permite crear el \textit{hash} de una contraseña mediante \textit{saltRounds}, este valor nos da control sobre el factor de coste de procesado de datos. A mayor valor de \textit{saltRound} mayor coste de cálculo del \textit{hash} asociado a una contraseña.  Por defecto este valor viene situado en 10. 
 
 
-En el caso del registro de usuario se envía la contraseña y el valor del parámetro SaltRounds a la librería para que la cifre, esta nos devuelve el hash asociado a la contraseña en el usuario de la base de datos. Cuando el usuario quiere entrar la contraseña introducida se cifra, para ello se busca el salt asociado al usuario de la base de datos. Una vez cifrada con el salt se comparan los hashes. La librería nos devuelve un booleano que indica si las contraseñas coinciden o no, con lo cual podemos dejar entrar el usuario o devolver un error.
+En el caso del registro de usuario se envía la contraseña y el valor del parámetro \textit{saltRounds} a la librería para que la cifre, esta nos devuelve el \textit{hash} asociado a la contraseña en el usuario de la base de datos. Cuando el usuario quiere entrar la contraseña introducida se cifra, para ello se busca el \textit{salt} asociado al usuario de la base de datos. Una vez cifrada con el \textit{salt} se comparan los \textit{hashes}. La librería nos devuelve un booleano que indica si las contraseñas coinciden o no, con lo cual podemos dejar entrar el usuario o devolver un error.
 
 
 \subsection{Cifrado Blowfish}
@@ -554,7 +554,7 @@ Bruce Schneier en 1993 diseña un codificador de bloques simétricos de 64 bits,
 \section{Diseño de la arquitectura}
 
 \subsection{SPA}
-\textit{Single page aplication}, de ahora en adelante SPA, es una aplicación o sitio web que cabe en una sóla página web con el objeto de proveer una experiencia de usuario más fluída y una interfaz más enriquecida. Una de las ventajas de este tipo de aplicaciones es que son capaces de actualizar una parte de la interfaz, sin necesidad de enviar o recibir una petición de full-page.
+\textit{Single page aplication}, de ahora en adelante SPA, es una aplicación o sitio web que cabe en una sóla página web con el objeto de proveer una experiencia de usuario más fluida y una interfaz más enriquecida. Una de las ventajas de este tipo de aplicaciones es que son capaces de actualizar una parte de la interfaz, sin necesidad de enviar o recibir una petición de \textit{full-page}.
 
 
 \subsection{Particularidades de JavaScript}
@@ -567,16 +567,16 @@ Para poder entender cuáles son las diferencias entre un lenguaje orientado a ob
 
 \begin{table}[htpb]
 \centering
-\begin{tabular}{|l|l|}
+\begin{tabularx}{\textwidth}{|X|X|}
 \hline
-\textbf{Basados en clases (Java)}                                                                                                                                       & \textbf{Basados en prototipos (JavaScript)}                                                                                                                                                  \\ \hline
+\rowcolor[gray]{0.9}\textbf{Basados en clases (Java)}                                                                                                                                       & \textbf{Basados en prototipos (JavaScript)}                                                                                                                                                  \\ \hline
 La clase y su instancia son entidades distintas                                                                                                                         & Todos los objetos pueden heredar de otro objeto                                                                                                                                              \\ \hline
 Define una clase en la definición de clase; se instancia una clase con los métodos constructores.                                                                       & Define y crea un conjunto de objetos con funciones constructoras.                                                                                                                            \\ \hline
 Se crea un objeto con el operador new.                                                                                                                                  & Igual.                                                                                                                                                                                       \\ \hline
 Se construye una jerarquía de objetos utilizando la definición de las clases para definir subclases de clases existentes.                                               & Se construye una jerarquía de objetos mediante la asignación de un objeto como el prototipo asociado a una función constructor.                                                              \\ \hline
 Se heredan propiedades siguiendo la cadena de clases.                                                                                                                   & Se heredan propiedades siguiendo la cadena de prototipos.                                                                                                                                    \\ \hline
 La definición de una clase especifica todas las propiedades de todas las instancias de esa clase. No se pueden añadir propiedades dinámicamente en tiempo de ejecución. & El conjunto inicial de propiedades lo determina la función constructor o el prototipo. Se pueden añadir y quitar propiedades dinámicamente a objetos específicos o a un conjunto de objetos. \\ \hline
-\end{tabular}
+\end{tabularx}
 \caption{Comparativa Java y JavaScript}
 \label{java-js}
 \end{table}
@@ -595,12 +595,12 @@ Una \textit{callback} es una función que es pasada como argumento a otra funci�
 Las \textit{callbacks} pueden ser vistas como una forma de ``\textit{continuation-passing style}'' (CPS), cuyo control es pasado explícitamente de forma continuada, en el caso de las \textit{callback} es pasado como argumento representando una continuación.
 
 
-JavaScript utiliza un modelo \textit{event-driven} con un único hilo de ejecución. Programar con \textit{callbacks} es especialmente útil cuando el llamador no quiere esperar hasta que la llamada se complete. Para conseguirlo, la operación no bloqueante (\textit{non-blocking operation}) es agendada (\textit{scheduled}) como una \textit{callback} y el hilo principal continua su síncrona ejecución. Cuando la operación se completa, un mensaje es encolado en una cola de tareas según la \textit{callback} que lo provee. El bucle de eventos (event loop) en JavaScript prioriza que el hilo ejecute la pila de llamadas primero; cuando la pila está vacía, el bucle de eventos desencola un mensaje para la cola de tareas y ejecuta la correspondiente función \textit{callback}.
-En JavaScript, las \textit{callbacks} pueden llamarse “funciones” o “funciones anónimas”.
+JavaScript utiliza un modelo \textit{event-driven} con un único hilo de ejecución. Programar con \textit{callbacks} es especialmente útil cuando el llamador no quiere esperar hasta que la llamada se complete. Para conseguirlo, la operación no bloqueante (\textit{non-blocking operation}) es agendada (\textit{scheduled}) como una \textit{callback} y el hilo principal continua su síncrona ejecución. Cuando la operación se completa, un mensaje es encolado en una cola de tareas según la \textit{callback} que lo provee. El bucle de eventos (\textit{event loop}) en JavaScript prioriza que el hilo ejecute la pila de llamadas primero; cuando la pila está vacía, el bucle de eventos desencola un mensaje para la cola de tareas y ejecuta la correspondiente función \textit{callback}.
+En JavaScript, las \textit{callbacks} pueden llamarse ``funciones'' o ``funciones anónimas''.
 En el proyecto, para gestionar las \textit{callbacks} se han utilizado promises. Las \textit{promise} son una extensión del lenguaje JavaScript \cite{keheliyagallabaalimesbahivanbeschastnikh2015}.
 
 
-Una \textit{promise} es un \textit{proxy} para un valor no necesariamente conocido en el momento que es creada. Permite asociar manejadores que actuarán asincrónicamente sobre un eventual valor en caso de éxito, o la razón del fallo. Esto permite que métodos asíncronos devuelvan valores como si fueran síncronos: en vez de inmediatamente retornar el valor final, el método asíncrono devuelve una \textit{promise} y suministra su valor en algún momento en el futuro\cite{promise_objeto}. Al objeto le enganchas las funciones \textit{callback}, en vez de pasar funciones \textit{callback} a una función\cite{promise_mozilla}. Nos permiten mejorar la legibilidad de nuestro código y evitar tener que pasar el contenido de las funciones directamente como argumentos a nuestra llamada. Las \textit{promise} en JavaScript sirven para evitar el ``\textit{callback-hell}''que surge de llamar a una función asíncrona en JavaScript. 
+Una \textit{promise} es un \textit{proxy} para un valor no necesariamente conocido en el momento que es creada. Permite asociar manejadores que actuarán asincrónicamente sobre un eventual valor en caso de éxito, o la razón del fallo. Esto permite que métodos asíncronos devuelvan valores como si fueran síncronos: en vez de inmediatamente retornar el valor final, el método asíncrono devuelve una \textit{promise} y suministra su valor en algún momento en el futuro\cite{promise_objeto}. Al objeto le enganchas las funciones \textit{callback}, en vez de pasar funciones \textit{callback} a una función\cite{promise_mozilla}. Nos permiten mejorar la legibilidad de nuestro código y evitar tener que pasar el contenido de las funciones directamente como argumentos a nuestra llamada. Las \textit{promise} en JavaScript sirven para evitar el ``\textit{callback-hell}'' que surge de llamar a una función asíncrona en JavaScript. 
 
 
 \subsubsection{Implementando patrones de diseño con JavaScript}
@@ -635,7 +635,7 @@ Los componentes de los patrones MVVM son:
 
 
 \begin{itemize}
-\item Modelo: Representa los datos específicos del dominio o información con la que nuestra aplicación debe trabajar. Almacena información, pero comunmente no posee ningún tipo de comportamiento. No formatean la información ni influencian en cómo los datos aparecen en el navegador, ya que no es su responsabilidad.
+\item Modelo: Representa los datos específicos del dominio o información con la que nuestra aplicación debe trabajar. Almacena información, pero comúnmente no posee ningún tipo de comportamiento. No formatean la información ni influencian en cómo los datos aparecen en el navegador, ya que no es su responsabilidad.
 \item Vista: Es la única parte de la aplicación con la que el usuario interactúa. Contiene la información obtenida de la sincronización entre la vista y el modelo (\textit{data binding}\cite{data_binding_w3s}), los eventos y comportamientos. Es una interfaz de usuario interactiva que representa el estado de la VistaModelo. La vista no es la encargada de gestionar su estado, sólo se mantiene sincronizada con la VistaModelo.
 \item VistaModelo: Se puede considerar como un Controlador especializado que actúa como un conversor de datos. Transforma la información del Modelo en la información de la Vista\cite{fernandomonteiro2014}. 
 \end{itemize}
@@ -779,21 +779,21 @@ A continuación, se describen (por orden de aparición) los distintos directorio
 
 \begin{itemize}
 \item app
-Contiene la parte frontend de la aplicación.
+Contiene la parte \textit{frontend} de la aplicación.
 \item assets
 Contiene algunos de los recursos de la aplicación.
 \item images
 Contiene las imágenes utilizadas en la aplicación.
 \item javascript
-Contiene todos los archivos JavaScript de la parte frontend de la aplicación.
+Contiene todos los archivos JavaScript de la parte \textit{frontend} de la aplicación.
 \item app.js
 Es nuestro fichero de inicio.
 \item controllers
-Contiene los controllers de los templates.
+Contiene los \textit{controllers} de los \textit{templates}.
 \item routes.js
 Archivo que determina el enrutado de nuestra aplicación.
 \item factories
-Contiene los factories.
+Contiene los \textit{factories}.
 \item vendor
 Contiene algunas librerías JavaScript utilizadas en la aplicación.
 \item semantic
@@ -801,7 +801,7 @@ Contiene todos los archivos del paquete semantic-ui.
 \item styles
 Contiene algunas librerías CSS utilizadas en la aplicación.
 \item templates
-Contiene los templates de la aplicación.
+Contiene los \textit{templates} de la aplicación.
 \item views
 Contiene la view de nuestra aplicación.
 \item app.js
@@ -817,7 +817,7 @@ Archivo que describe brevemente la aplicación.
 \item semantic.json
 Archivo que contiene configuraciones de compilación para Gulp.
 \item server
-Contiene la parte backend de la aplicación.
+Contiene la parte \textit{backend} de la aplicación.
 \item config
 Contiene ficheros de configuración de la aplicación.
 \item expressConfig.js
@@ -839,4 +839,49 @@ Archivo que configura los módulos y enrutamiento de la aplicación.
 \end{figure}	
 
 \section{Diagramas}
+Para una mayor comprensión de la composición del sistema, se han desarrollado diferentes tipos de diagramas.
 
+
+En la figura \ref{fig:mvc_mvvm_sist} se muestra cómo interactúa el sistema a grandes rasgos a través del patrón MVC-MVVM. No se trata de un diagrama de clases, pero sirve para tener visión general de los distintos elementos que componen el sistema. En amarillo, aparecen elementos de Angular utilizados y se podrían interpretar como los patrones (en azul) que se indican a su lado.
+
+
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[width=1\textwidth]{figuras/diagrama/MVC.png}
+    \caption{Patrón MVC-MVVM}
+    \label{fig:mvc_mvvm_sist}
+\end{figure}	
+
+
+En la figura \ref{fig:data_mapper}, se muestra cómo se implementa la capa de datos \textit{Data mapper} con ayuda de los \textit{schemas} y funciones propias de la librería \textit{Moongoose}.
+
+
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[width=1\textwidth]{figuras/diagrama/Schema_data_mapper.png}
+    \caption{Data mapper}
+    \label{fig:data_mapper}
+\end{figure}	
+
+
+Para ejemplificar las interacciones entre los distintos componentes del sistema, se han creado dos diagramas de secuencia: Uno referente al caso de uso CU-003 Realizar cuestionario\ref{fig:diag_sec_cu003} y otro del CU-005 Contactar psicólogo\ref{fig:diag_sec_cu005}.
+
+
+\begin{landscape}
+
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[height=0.8\textwidth,keepaspectratio]{figuras/diagrama/SDRealizarCuestionario.png}
+    \caption{Diagrama de secuencia del CU-003}
+    \label{fig:diag_sec_cu003}
+\end{figure}	
+
+\end{landscape}
+
+
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[width=1\textwidth]{figuras/diagrama/SDContactarPsicologo.png}
+    \caption{Diagrama de secuencia del CU-005}
+    \label{fig:diag_sec_cu005}
+\end{figure}	

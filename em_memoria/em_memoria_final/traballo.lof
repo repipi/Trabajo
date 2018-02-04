@@ -1,2 +1,37 @@
 \select@language {spanish}
 \addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Estructura de descomposici\IeC {\'o}n de tareas del proyecto}}{5}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagrama de Gantt}}{9}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagrama de casos de uso}}{21}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Modelo de datos MongoDB}}{42}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Modelo entidad-relaci\IeC {\'o}n}}{42}{figure.2.5}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Ejemplo algoritmo de \textit {matching}}}{57}{figure.2.6}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces USN-001}}{66}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces USN-002}}{66}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces USN-003}}{67}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces USN-004}}{67}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces USN-005}}{68}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces USN-006}}{68}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces USN-007}}{69}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces USN-008}}{69}{figure.3.8}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces USN-009}}{70}{figure.3.9}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces USN-010}}{70}{figure.3.10}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces USN-011 (Paciente)}}{71}{figure.3.11}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces USN-011 (Psic\IeC {\'o}logo)}}{71}{figure.3.12}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces USN-012}}{71}{figure.3.13}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Mapa de navegaci\IeC {\'o}n}}{72}{figure.3.14}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Mean STACK - MVC y MVVM}}{83}{figure.3.15}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Esquema \textit {data-binding}}}{85}{figure.3.16}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces \textit {Proxy pattern}\cite {stoyanstefanov2010}}}{87}{figure.3.17}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Estructura de directorios}}{89}{figure.3.18}
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Patr\IeC {\'o}n MVC-MVVM}}{90}{figure.3.19}
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Data mapper}}{91}{figure.3.20}
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Diagrama de secuencia del CU-003}}{92}{figure.3.21}
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Diagrama de secuencia del CU-005}}{93}{figure.3.22}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

@@ -1,0 +1,1025 @@
+\chapter{Pruebas}
+
+\section{Pruebas de contenido}
+
+Se evalúa el diseño del contenido buscando errores de tipo:
+
+\begin{itemize}
+\item \textbf{Sintáctico}
+
+
+En este grupo se encuentran errores de estructura de las oraciones, faltas de ortografía, vocabulario, puntuación y gramática. Estos se pueden tratar con ayuda de un corrector ortográfico\cite{ortografo}.
+
+
+\item \textbf{Semántico}
+
+
+Los errores se producen por falta de sentido en las oraciones, inconsistencias, incorrecciones e ambigüedades.
+
+
+
+La manera de tratar este tipo de errores podría ser mediante la formulación de las siguientes preguntas:
+\begin{itemize}
+\item ¿La información es realmente precisa?
+\item ¿La información es concisa y puntual?
+\item ¿La disposición del contenido es fácil de comprender para el usuario?
+\item ¿La información situada dentro de un objeto de contenido puede encontrarse con facilidad?
+\item ¿Se proporcionaron referencias adecuadas para toda la información derivada de otras fuentes?
+\item ¿La información presentada es consistente con la información presentada en otros objetos de contenido?
+\item ¿El contenido no es ofensivo, confuso o abre la puerta a demandas?
+\item ¿El contenido no infringe derechos de autor o nombres comerciales existentes?
+\item ¿El contenido incluye vínculos internos que complementan el contenido existente? ¿Los vínculos son correctos?
+\item ¿El estilo estético del contenido no entra en conflicto con el estilo estético de la interfaz?
+	
+\end{itemize}
+
+	
+
+\item \textbf{De organización o estructura de contenido}
+
+
+El error consiste en que los objetos existentes dentro del contenido no se corresponden con los que dicen ser. Por ejemplo, el objeto x muestra la foto del objeto y.
+Para identificarlos se debe revisar detenidamente la página.
+
+
+
+En nuestro caso, nuestra plataforma web se encuentra conectada a una base de datos generando objetos de contenido dinámico creados en tiempo real, por lo que se deben hacer pruebas ejecutables para descubrir errores de contenido rastreables derivados de las consultas realizadas. Por tanto, se hará una prueba de cada consulta cliente-servidor a la base de datos que deberán cumplir que:
+\begin{itemize}
+\item La información pasada entre cliente y servidor es válida.
+\item Se formatean correctamente los datos recogidos del usuario.
+\item Se formatean correctamente los datos mostrados al usuario.
+\end{itemize}
+
+\end{itemize}
+
+
+\subsection{Incremento 1}
+
+
+Se evaluará cada tipo de error por página. Las pruebas de contenido del incremento 1 son PC-001, PC-002, PC-003, PC-004, PC-005 y PC-006.
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PC-001}                                  & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se comprueba que no existen errores sintácticos  en los textos de la página con ayuda de un corrector ortográfico.}} \\ \hline
+\textbf{Tipo de error}                          & \multicolumn{2}{l|}{Sintáctico}                                                                                                                  \\ \hline
+\multirow{3}{*}{\textbf{Evaluación por página}} & inicio.html                                                                      & Correcta                                                      \\ \cline{2-3} 
+                                                & pacientesResultados.html                                                         & Correcta                                                      \\ \cline{2-3} 
+                                                & cuestionarioPacientes.html                                                       & Correcta                                                      \\ \hline
+\end{tabularx}
+\caption{PC-001}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PC-002}                                  & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se comprueba que no existen errores semánticos en los textos de la página mediante la revisión y respuesta de las preguntas en cuestión.}} \\ \hline
+\textbf{Tipo de error}                          & \multicolumn{2}{l|}{Semántico}                                                                                                                                         \\ \hline
+\multirow{3}{*}{\textbf{Evaluación por página}} & inicio.html                                                                                 & Correcta                                                                 \\ \cline{2-3} 
+                                                & pacientesResultados.html                                                                    & Correcta                                                                 \\ \cline{2-3} 
+                                                & cuestionarioPacientes.html                                                                  & Correcta                                                                 \\ \hline
+\end{tabularx}
+\caption{PC-002}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PC-003}                                  & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se comprueba que la estructura y contenido de los objetos existentes en la página es correcta mediante revisión manual.}} \\ \hline
+\textbf{Tipo de error}                          & \multicolumn{2}{l|}{De organización o estructura de contenido}                                                                                        \\ \hline
+\multirow{3}{*}{\textbf{Evaluación por página}} & inicio.html                                                                        & Correcta                                                         \\ \cline{2-3} 
+                                                & pacientesResultados.html                                                           & Correcta                                                         \\ \cline{2-3} 
+                                                & cuestionarioPacientes.html                                                         & Correcta                                                         \\ \hline
+\end{tabularx}
+\caption{PC-003}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PC-004}                                  & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se comprueba que el contenido obtenido de la base de datos cumple que la información pasada entre cliente y servidor es válida.}} \\ \hline
+\textbf{Tipo de error}                          & \multicolumn{2}{l|}{Del contenido obtenido de la base de datos}                                                                                               \\ \hline
+\multirow{2}{*}{\textbf{Evaluación por página}} & pacientesResultados.html                                                               & Correcta                                                             \\ \cline{2-3} 
+                                                & cuestionarioPacientes.html                                                             & Correcta                                                             \\ \hline
+\end{tabularx}
+\caption{PC-004}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PC-005}                                  & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se comprueba que el contenido obtenido de la base de datos cumple que se formatean correctamente los datos recogidos del usuario.}} \\ \hline
+\textbf{Tipo de error}                          & \multicolumn{2}{l|}{Del contenido obtenido de la base de datos}                                                                                                 \\ \hline
+\multirow{2}{*}{\textbf{Evaluación por página}} & pacientesResultados.html                                                                & Correcta                                                              \\ \cline{2-3} 
+                                                & cuestionarioPacientes.html                                                              & Correcta                                                              \\ \hline
+\end{tabularx}
+\caption{PC-005}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PC-006}                                  & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se comprueba que el contenido obtenido de la base de datos cumple que se formatean correctamente los datos mostrados al usuario.}} \\ \hline
+\textbf{Tipo de error}                          & \multicolumn{2}{l|}{Del contenido obtenido de la base de datos}                                                                                                \\ \hline
+\multirow{2}{*}{\textbf{Evaluación por página}} & pacientesResultados.html                                                                & Correcta                                                             \\ \cline{2-3} 
+                                                & cuestionarioPacientes.html                                                              & Correcta                                                             \\ \hline
+\end{tabularx}
+\caption{PC-006}
+%\label{my-label}
+\end{table}
+
+
+\subsection{Incremento 2}
+
+
+Se evaluará cada tipo de error por página. Las pruebas de contenido del incremento 2 son PC-007, PC-008, PC-009, PC-010, PC-011 y PC-012.
+
+
+Se evaluará cada tipo de error por página:
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PC-007}                                  & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se comprueba que no existen errores sintácticos  en los textos de la página con ayuda de un corrector ortográfico.}} \\ \hline
+\textbf{Tipo de error}                          & \multicolumn{2}{l|}{Sintáctico}                                                                                                                  \\ \hline
+\multirow{5}{*}{\textbf{Evaluación por página}} & pacientesModificar.html                                                         & Correcto                                                       \\ \cline{2-3} 
+                                                & registroPacientes.html                                                          & Correcto                                                       \\ \cline{2-3} 
+                                                & psicologoPerfil.html                                                            & Correcto                                                       \\ \cline{2-3} 
+                                                & psicologosModificar.html                                                        & Correcto                                                       \\ \cline{2-3} 
+                                                & registroPsicologo.html                                                          & Correcto                                                       \\ \hline
+\end{tabularx}
+\caption{PC-007}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PC-008}                                  & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se comprueba que no existen errores semánticos en los textos de la página mediante la revisión y respuesta de las preguntas en cuestión.}} \\ \hline
+\textbf{Tipo de error}                          & \multicolumn{2}{l|}{Semántico}                                                                                                                                         \\ \hline
+\multirow{5}{*}{\textbf{Evaluación por página}} & pacientesModificar.html                                                                    & Correcto                                                                  \\ \cline{2-3} 
+                                                & registroPacientes.html                                                                     & Correcto                                                                  \\ \cline{2-3} 
+                                                & psicologoPerfil.html                                                                       & Correcto                                                                  \\ \cline{2-3} 
+                                                & psicologosModificar.html                                                                   & Correcto                                                                  \\ \cline{2-3} 
+                                                & registroPsicologo.html                                                                     & Correcto                                                                  \\ \hline
+\end{tabularx}
+\caption{PC-008}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PC-009}                                  & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se comprueba que la estructura y contenido de los objetos existentes en la página es correcta mediante revisión manual.}} \\ \hline
+\textbf{Tipo de error}                          & \multicolumn{2}{l|}{De organización o estructura de contenido}                                                                                        \\ \hline
+\multirow{5}{*}{\textbf{Evaluación por página}} & pacientesModificar.html                                                           & Correcto                                                          \\ \cline{2-3} 
+                                                & registroPacientes.html                                                            & Correcto                                                          \\ \cline{2-3} 
+                                                & psicologoPerfil.html                                                              & Correcto                                                          \\ \cline{2-3} 
+                                                & psicologosModificar.html                                                          & Correcto                                                          \\ \cline{2-3} 
+                                                & registroPsicologo.html                                                            & Correcto                                                          \\ \hline
+\end{tabularx}
+\caption{PC-009}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PC-010}                                  & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se comprueba que el contenido obtenido de la base de datos cumple que la información pasada entre cliente y servidor es válida.}} \\ \hline
+\textbf{Tipo de error}                          & \multicolumn{2}{l|}{Del contenido obtenido de la base de datos}                                                                                               \\ \hline
+\multirow{5}{*}{\textbf{Evaluación por página}} & pacientesModificar.html                                                               & Correcto                                                              \\ \cline{2-3} 
+                                                & registroPacientes.html                                                                & Correcto                                                              \\ \cline{2-3} 
+                                                & psicologoPerfil.html                                                                  & Correcto                                                              \\ \cline{2-3} 
+                                                & psicologosModificar.html                                                              & Correcto                                                              \\ \cline{2-3} 
+                                                & registroPsicologo.html                                                                & Correcto                                                              \\ \hline
+\end{tabularx}
+\caption{PC-010}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PC-011}                                  & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se comprueba que el contenido obtenido de la base de datos cumple que se formatean correctamente los datos recogidos del usuario.}} \\ \hline
+\textbf{Tipo de error}                          & \multicolumn{2}{l|}{Del contenido obtenido de la base de datos}                                                                                                 \\ \hline
+\multirow{5}{*}{\textbf{Evaluación por página}} & pacientesModificar.html                                                                & Correcto                                                               \\ \cline{2-3} 
+                                                & registroPacientes.html                                                                 & Correcto                                                               \\ \cline{2-3} 
+                                                & psicologoPerfil.html                                                                   & Correcto                                                               \\ \cline{2-3} 
+                                                & psicologosModificar.html                                                               & Correcto                                                               \\ \cline{2-3} 
+                                                & registroPsicologo.html                                                                 & Correcto                                                               \\ \hline
+\end{tabularx}
+\caption{PC-011}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PC-012}                                  & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se comprueba que el contenido obtenido de la base de datos cumple que se formatean correctamente los datos mostrados al usuario.}} \\ \hline
+\textbf{Tipo de error}                          & \multicolumn{2}{l|}{Del contenido obtenido de la base de datos}                                                                                                \\ \hline
+\multirow{5}{*}{\textbf{Evaluación por página}} & pacientesModificar.html                                                                & Correcto                                                              \\ \cline{2-3} 
+                                                & registroPacientes.html                                                                 & Correcto                                                              \\ \cline{2-3} 
+                                                & psicologoPerfil.html                                                                   & Correcto                                                              \\ \cline{2-3} 
+                                                & psicologosModificar.html                                                               & Correcto                                                              \\ \cline{2-3} 
+                                                & registroPsicologo.html                                                                 & Correcto                                                              \\ \hline
+\end{tabularx}
+\caption{PC-012}
+%\label{my-label}
+\end{table}
+
+
+\subsection{Incremento 3}
+
+
+Se evaluará cada tipo de error por página. Las pruebas de contenido del incremento 3 son PC-013, PC-014, PC-015, PC-016, PC-017 y PC-018.
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PC-013}                                  & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se comprueba que no existen errores sintácticos  en los textos de la página con ayuda de un corrector ortográfico.}} \\ \hline
+\textbf{Tipo de error}                          & \multicolumn{2}{l|}{Sintáctico}                                                                                                                  \\ \hline
+\multirow{4}{*}{\textbf{Evaluación por página}} & pacientesMail.html                                                              & Correcto                                                       \\ \cline{2-3} 
+                                                & psicologosMail.html                                                             & Correcto                                                       \\ \cline{2-3} 
+                                                & psicologoCalendario.html                                                        & Correcto                                                       \\ \cline{2-3} 
+                                                & psicologoPerfil.html                                                            & Correcto                                                       \\ \hline
+\end{tabularx}
+\caption{PC-013}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PC-014}                                  & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se comprueba que no existen errores semánticos en los textos de la página mediante la revisión y respuesta de las preguntas en cuestión.}} \\ \hline
+\textbf{Tipo de error}                          & \multicolumn{2}{l|}{Semántico}                                                                                                                                         \\ \hline
+\multirow{4}{*}{\textbf{Evaluación por página}} & pacientesMail.html                                                                         & Correcto                                                                  \\ \cline{2-3} 
+                                                & psicologosMail.html                                                                        & Correcto                                                                  \\ \cline{2-3} 
+                                                & psicologoCalendario.html                                                                   & Correcto                                                                  \\ \cline{2-3} 
+                                                & psicologoPerfil.html                                                                       & Correcto                                                                  \\ \hline
+\end{tabularx}
+\caption{PC-014}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PC-015}                                  & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se comprueba que la estructura y contenido de los objetos existentes en la página es correcta mediante revisión manual.}} \\ \hline
+\textbf{Tipo de error}                          & \multicolumn{2}{l|}{De organización o estructura de contenido}                                                                                        \\ \hline
+\multirow{4}{*}{\textbf{Evaluación por página}} & pacientesMail.html                                                                & Correcto                                                          \\ \cline{2-3} 
+                                                & psicologosMail.html                                                               & Correcto                                                          \\ \cline{2-3} 
+                                                & psicologoCalendario.html                                                          & Correcto                                                          \\ \cline{2-3} 
+                                                & psicologoPerfil.html                                                              & Correcto                                                          \\ \hline
+\end{tabularx}
+\caption{PC-015}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PC-016}                                  & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se comprueba que el contenido obtenido de la base de datos cumple que la información pasada entre cliente y servidor es válida.}} \\ \hline
+\textbf{Tipo de error}                          & \multicolumn{2}{l|}{Del contenido obtenido de la base de datos}                                                                                               \\ \hline
+\multirow{4}{*}{\textbf{Evaluación por página}} & pacientesMail.html                                                                    & Correcto                                                              \\ \cline{2-3} 
+                                                & psicologosMail.html                                                                   & Correcto                                                              \\ \cline{2-3} 
+                                                & psicologoCalendario.html                                                              & Correcto                                                              \\ \cline{2-3} 
+                                                & psicologoPerfil.html                                                                  & Correcto                                                              \\ \hline
+\end{tabularx}
+\caption{PC-016}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PC-017}                                  & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se comprueba que el contenido obtenido de la base de datos cumple que se formatean correctamente los datos recogidos del usuario.}} \\ \hline
+\textbf{Tipo de error}                          & \multicolumn{2}{l|}{Del contenido obtenido de la base de datos}                                                                                                 \\ \hline
+\multirow{4}{*}{\textbf{Evaluación por página}} & pacientesMail.html                                                                     & Correcto                                                               \\ \cline{2-3} 
+                                                & psicologosMail.html                                                                    & Correcto                                                               \\ \cline{2-3} 
+                                                & psicologoCalendario.html                                                               & Correcto                                                               \\ \cline{2-3} 
+                                                & psicologoPerfil.html                                                                   & Correcto                                                               \\ \hline
+\end{tabularx}
+\caption{PC-017}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PC-018}                                  & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se comprueba que el contenido obtenido de la base de datos cumple que se formatean correctamente los datos mostrados al usuario.}} \\ \hline
+\textbf{Tipo de error}                          & \multicolumn{2}{l|}{Del contenido obtenido de la base de datos}                                                                                                \\ \hline
+\multirow{4}{*}{\textbf{Evaluación por página}} & pacientesMail.html                                                                     & Correcto                                                              \\ \cline{2-3} 
+                                                & psicologosMail.html                                                                    & Correcto                                                              \\ \cline{2-3} 
+                                                & psicologoCalendario.html                                                               & Correcto                                                              \\ \cline{2-3} 
+                                                & psicologoPerfil.html                                                                   & Correcto                                                              \\ \hline
+\end{tabularx}
+\caption{PC-018}
+%\label{my-label}
+\end{table}
+
+
+\section{Pruebas de interfaz}
+
+
+La estrategia global consiste en encontrar errores relacionados con mecanismos de interfaz específicos, con la semántica de navegación de la interfaz, con la funcionalidad de la plataforma web o con el despliegue de su contenido. Los pasos que se van a seguir son:
+
+\begin{itemize}
+\item Se prueban las características de la interfaz para garantizar que las reglas de diseño, estética y contenido visual estén disponibles sin error para el usuario mediante una revisión visual.
+\item Los componentes de la interfaz se prueban de manera análoga a una prueba de unidad (verificación).
+
+
+
+Para encontrar los errores, se realizarán las siguientes pruebas en función del componente de la interfaz:
+
+
+\begin{itemize}
+\item Vínculos
+
+
+
+Se construye una lista con todos los vínculos y se ejecuta cada uno individualmente.
+
+
+
+\item Formularios
+
+
+
+Se comprueban las siguientes preguntas:
+
+
+\begin{itemize}
+
+\item Las etiquetas identifican correctamente los campos dentro del formulario.
+\item Los campos obligatorios se identifican visualmente para el usuario. 
+\item El servidor recibe toda la información contenida dentro del formulario, y ningún dato se pierde en la transmisión entre cliente y servidor. 
+\item Se usan valores por defecto adecuados cuando el usuario no selecciona de un menú desplegable o conjunto de botones. 
+\item Las funciones del navegador, como el retroceso, no corrompen la entrada de datos en el formulario. 
+\item Los guiones que realizan la comprobación de errores en los datos ingresados funcionan de manera adecuada y proporcionan mensajes de error significativos. 
+\item Los campos del formulario tienen ancho y tipos de datos adecuados. 
+\item El formulario establece salvaguardas adecuadas que prohíben que el usuario ingrese cadenas de texto más largas que cierto máximo predefinido. 
+\item Todas las opciones para menús desplegables se ordenan y especifican en forma significativa para el usuario final. 
+\item Las características de auto completado del navegador no conducen a errores en la entrada de datos. 
+\end{itemize}
+
+\item Ventanas pop-up
+
+
+Se plantean las siguientes cuestiones:
+
+
+
+\begin{itemize}
+
+\item El pop-up tiene el tamaño y posición adecuadas. 
+\item El pop-up no cubre la ventana de la webapp original 
+\item El diseño estético del pop-up es consistente con el diseño estético de la interfaz. 
+\item Las barras de desplazamiento y otros elementos similares se ubican y funcionan de manera adecuada.
+\end{itemize}
+\end{itemize}
+\item Se realizan pruebas de usabilidad.
+
+
+Se evalúa el grado en el cual los usuarios pueden interactuar efectivamente con la webapp y el grado en que la webapp guía las acciones de usuario, proporciona retroalimentación significativa y refuerza un enfoque de interacción consistente, haciéndola amigable y facilitando la vida del usuario.
+
+
+En este caso, a pesar de que el ingeniero es quién contribuye al diseño de las pruebas de usabilidad, será una tercera persona quién las ejecute.
+
+
+Para realizar este tipo de pruebas, se fijan distintas categorías y objetivos de prueba, y se plantean preguntas en relación a las mismas. En las pruebas se ve reflejado la media de los resultados del test de usabilidad.
+
+\item Se realizan pruebas de accesibilidad
+
+
+Finalmente, se realiza una prueba de accesibilidad para garantizar que la plataforma es accesible para la mayoría de su público, aunque sea a través de productos de apoyo. La prueba de usabilidad se realizó a través de la herramienta para desarrolladores de Google Chrome Audits que analiza varios aspectos referentes a la accesibilidad:
+
+\begin{itemize}
+\item Si el contraste de color es satisfactorio.
+\item Los atributos HTML son utilizados corréctamente.
+\item Los atributos ARIA siguen las mejores prácticas para mejorar la experiencia de usuario que usan productos de apoyo, como un lector de pantalla.
+\item Los elementos tienen nombres discernibles:
+\item Los botones tienen nombre accesible.
+\item Los links tienen nombre accesible.
+\item Los elementos describen bien el contenido.
+\item Los elementos están bien estructurados.
+\item El lenguaje de la página está corréctamente especificado.
+\item Las etiquetas meta están usadas de manera apropiada.
+\end{itemize}
+
+
+Para cada página analizada, se documentará las acciones a realizar para corregir los matices producidos.
+
+
+En cada uno de los incrementos se ha ido afianzando la accesibilidad de la aplicación. Los resultados mostrados son los referentes al último incremento.
+\end{itemize}
+
+
+\subsection{Incremento 1}
+
+Las pruebas de interfaz realizadas en el incremento 1 son PI-001, PI-002, PI-003 y PI-004.
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PI-001}                                  & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se prueban las características de la interfaz para garantizar que las reglas de diseńo, estética y contenido visual estén disponibles sin error para el usuario mediante una revisión visual.}} \\ \hline
+\multirow{3}{*}{\textbf{Evaluación por página}} & inicio.html                                                                                                           & Correcta                                                                                            \\ \cline{2-3} 
+                                                & pacientesResultados.html                                                                                              & Correcta                                                                                            \\ \cline{2-3} 
+                                                & cuestionarioPacientes.html                                                                                            & Correcta                                                                                            \\ \hline
+\end{tabularx}
+\caption{PI-001}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PI-002}                                  & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se realiza una prueba de unidad concreta (verificación) para cada componente de la interfaz.}} \\ \hline
+\multirow{2}{*}{\textbf{Evaluación por página}} & pacientesResultados.html                                              & Correcta                                           \\ \cline{2-3} 
+                                                & cuestionarioPacientes.html                                            & Correcta                                           \\ \hline
+\end{tabularx}
+\caption{PI-002}
+%\label{my-label}
+\end{table}
+
+
+\subsection{Incremento 2}
+
+Las pruebas de interfaz realizadas en el incremento 2 son PI-005, PI-006, PI-007 y PI-008.
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PI-005}                                  & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se prueban las características de la interfaz para garantizar que las reglas de diseńo, estética y contenido visual estén disponibles sin error para el usuario mediante una revisión visual.}} \\ \hline
+\multirow{5}{*}{\textbf{Evaluación por página}} & pacientesModificar.html                                                                                              & Correcto                                                                                             \\ \cline{2-3} 
+                                                & registroPacientes.html                                                                                               & Correcto                                                                                             \\ \cline{2-3} 
+                                                & psicologoPerfil.html                                                                                                 & Correcto                                                                                             \\ \cline{2-3} 
+                                                & psicologosModificar.html                                                                                             & Correcto                                                                                             \\ \cline{2-3} 
+                                                & registroPsicologo.html                                                                                               & Correcto                                                                                             \\ \hline
+\end{tabularx}
+\caption{PI-005}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PI-006}                                  & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se realiza una prueba de unidad concreta (verificación) para cada componente de la interfaz.}} \\ \hline
+\multirow{7}{*}{\textbf{Evaluación por página}} & pacientesModificar.html                                              & Correcta                                            \\ \cline{2-3} 
+                                                & registroPacientes.html                                               & Correcta                                            \\ \cline{2-3} 
+                                                & psicologoPerfil.html                                                 & Correcta                                            \\ \cline{2-3} 
+                                                & psicologosModificar.html                                             & Correcta                                            \\ \cline{2-3} 
+                                                & registroPsicologo.html                                               & Correcta                                            \\ \cline{2-3} 
+                                                & pacientesResultados.html                                             & Correcta                                            \\ \cline{2-3} 
+                                                & inicio.html                                                          & Correcta                                            \\ \hline
+\end{tabularx}
+\caption{PI-006}
+%\label{my-label}
+\end{table}
+
+
+\subsection{Incremento 3}
+
+Las pruebas de interfaz realizadas en el incremento 3 son PI-009, PI-010, PI-011, PI-012 y PI-013.
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PI-009}                                  & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se prueban las características de la interfaz para garantizar que las reglas de diseńo, estética y contenido visual estén disponibles sin error para el usuario mediante una revisión visual.}} \\ \hline
+\multirow{4}{*}{\textbf{Evaluación por página}} & pacientesMail.html                                                                                                   & Correcto                                                                                             \\ \cline{2-3} 
+                                                & psicologosMail.html                                                                                                  & Correcto                                                                                             \\ \cline{2-3} 
+                                                & psicologoPerfil.html                                                                                                 & Correcto                                                                                             \\ \cline{2-3} 
+                                                & psicologoCalendario.html                                                                                             & Correcto                                                                                             \\ \hline
+\end{tabularx}
+\caption{PI-009}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PI-010}                                  & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se realiza una prueba de unidad concreta (verificación) para cada componente de la interfaz. Anexo}} \\ \hline
+\multirow{4}{*}{\textbf{Evaluación por página}} & pacientesMail.html                                                      & Correcto                                               \\ \cline{2-3} 
+                                                & psicologosMail.html                                                     & Correcto                                               \\ \cline{2-3} 
+                                                & psicologoPerfil.html                                                    & Correcto                                               \\ \cline{2-3} 
+                                                & psicologoCalendario.html                                                & Correcto                                               \\ \hline
+\end{tabularx}
+\caption{PI-010}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|l|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PI-011}                           & \multicolumn{2}{l|}{\textbf{Prueba de usabilidad de los pacientes}}                                                                       \\ \hline
+\textbf{Categoría}                        & \textbf{Pregunta}                                                                                                   & \textbf{Evaluación} \\ \hline
+\multirow{6}{*}{\textbf{Interactividad}}  & ¿El sitio web es fácil de utilizar?                                                                                 & 4,33 (De acuerdo)   \\ \cline{2-3} 
+                                          & ¿La navegación en la página web es fácil e intuitiva?                                                               & 4 (De acuerdo)      \\ \cline{2-3} 
+                                          & ¿Ha sido fácil encontrar las características en los menús?                                                          & 4 (De acuerdo)      \\ \cline{2-3} 
+                                          & ¿Los mecanismos de interacción (por ejemplo, menús desplegables, botones, punteros) son fáciles de entender y usar? & 3,67 (De acuerdo)   \\ \cline{2-3} 
+                                          & ¿Las características, funciones y contenido importantes pueden usarse de forma oportuna?                            & 4,67 (De acuerdo)   \\ \cline{2-3} 
+                                          & Utilizar el programa ha sido...                                                                                     & 1 (Difícil)         \\ \hline
+\multirow{4}{*}{\textbf{Plantilla}}       & ¿Encuentras lo que buscas de forma rápida en la página web?                                                         & 4,67 (De acuerdo)   \\ \cline{2-3} 
+                                          & ¿Necesitarías consultar un manual para el uso de la página?                                                         & 1,33 (De acuerdo)   \\ \cline{2-3} 
+                                          & ¿Te has sentido seguro al usar el sitio web?                                                                        & 3,33 (De acuerdo)   \\ \cline{2-3} 
+                                          & ¿Los contenidos de la página web están bien estructurados?                                                          & 4 (De acuerdo)      \\ \hline
+\multirow{4}{*}{\textbf{Legibilidad}}     & ¿El texto está bien escrito y es comprensible?                                                                      & 3 (De acuerdo)      \\ \cline{2-3} 
+                                          & Comprender los mensajes ha sido...                                                                                  & 1,33 (Difícil)      \\ \cline{2-3} 
+                                          & ¿La información en la página está dispuesta de forma clara?                                                         & 4,33 (De acuerdo)   \\ \cline{2-3} 
+                                          & La recuperación de errores ha sido...                                                                               & 1,67 (Difícil)      \\ \hline
+\multirow{2}{*}{\textbf{Estética}}        & ¿La plantilla, color, fuente y características relacionadas facilitan el uso?                                       & 4,67 (De acuerdo)   \\ \cline{2-3} 
+                                          & ¿Los usuarios “se sienten cómodos” con la apariencia y el sentimiento que transmite la webapp?                      & 4,67 (De acuerdo)   \\ \hline
+\multirow{5}{*}{\textbf{Personalización}} & Contestar el test ha sido...                                                                                        & 1 (Difícil)         \\ \cline{2-3} 
+                                          & Filtrar los resultados del test ha sido...                                                                          & 2 (Difícil)         \\ \cline{2-3} 
+                                          & Pedir una cita al psicólogo es...                                                                                   & 2 (Difícil)         \\ \cline{2-3} 
+                                          & Registrarse en la plataforma es...                                                                                  & 1 (Difícil)         \\ \cline{2-3} 
+                                          & ¿La información mostrada sobre el psicólogo me resulta de utilidad?                                                 & 3,33 (De acuerdo)   \\ \hline
+\end{tabularx}
+\caption{PI-011}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|l|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PI-012}                           & \multicolumn{2}{l|}{\textbf{Prueba de usabilidad psicólogos}}                                                                             \\ \hline
+\textbf{Categoría}                        & \textbf{Pregunta}                                                                                                   & \textbf{Evaluación} \\ \hline
+\multirow{6}{*}{\textbf{Interactividad}}  & ¿El sitio web es fácil de utilizar?                                                                                 & 4,5 (De acuerdo)    \\ \cline{2-3} 
+                                          & ¿La navegación en la página web es fácil e intuitiva?                                                               & 4,5 (De acuerdo)    \\ \cline{2-3} 
+                                          & ¿Ha sido fácil encontrar las características en los menús?                                                          & 5 (De acuerdo)      \\ \cline{2-3} 
+                                          & ¿Los mecanismos de interacción (por ejemplo, menús desplegables, botones, punteros) son fáciles de entender y usar? & 5 (De acuerdo)      \\ \cline{2-3} 
+                                          & ¿Las características, funciones y contenido importantes pueden usarse de forma oportuna?                            & 4 (De acuerdo)      \\ \cline{2-3} 
+                                          & Utilizar el programa ha sido...                                                                                     & 1 (Difícil)         \\ \hline
+\multirow{4}{*}{\textbf{Plantilla}}       & ¿Encuentras lo que buscas de forma rápida en la página web?                                                         & 4 (De acuerdo)      \\ \cline{2-3} 
+                                          & ¿Necesitarías consultar un manual para el uso de la página?                                                         & 1 (De acuerdo)      \\ \cline{2-3} 
+                                          & ¿Te has sentido seguro al usar el sitio web?                                                                        & 4 (De acuerdo)      \\ \cline{2-3} 
+                                          & ¿Los contenidos de la página web están bien estructurados?                                                          & 3,5 (De acuerdo)    \\ \hline
+\multirow{4}{*}{\textbf{Legibilidad}}     & ¿El texto está bien escrito y es comprensible?                                                                      & 4 (De acuerdo)      \\ \cline{2-3} 
+                                          & Comprender los mensajes ha sido...                                                                                  & 1,5 (Difícil)       \\ \cline{2-3} 
+                                          & ¿La información en la página está dispuesta de forma clara?                                                         & 3,5 (De acuerdo)    \\ \cline{2-3} 
+                                          & La recuperación de errores ha sido...                                                                               & 2,5 (Difícil)       \\ \hline
+\multirow{2}{*}{\textbf{Estética}}        & ¿La plantilla, color, fuente y características relacionadas facilitan el uso?                                       & 5 (De acuerdo)      \\ \cline{2-3} 
+                                          & ¿Los usuarios “se sienten cómodos” con la apariencia y el sentimiento que transmite la webapp?                      & 3,5 (De acuerdo)    \\ \hline
+\multirow{2}{*}{\textbf{Personalización}} & Dar respuesta a las peticiones de los pacientes ha sido...                                                          & 1 (Difícil)         \\ \cline{2-3} 
+                                          & Consultar el calendario de citas ha sido...                                                                         & 1 (Difícil)         \\ \hline
+\end{tabularx}
+\caption{PI-012}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PI-013}            & \textbf{Prueba de accesibilidad} \\ \hline
+\textbf{Página}            & \textbf{Evaluación}              \\ \hline
+inicio.html                & 97\%                             \\ \hline
+pacientesResultados.html   & 94\%                             \\ \hline
+cuestionarioPacientes.html & 97\%                             \\ \hline
+pacientesModificar.html    & 100\%                            \\ \hline
+pacientesMail.html         & 94\%                             \\ \hline
+registroPacientes.html     & 97\%                             \\ \hline
+registroPsicologos.html    & 97\%                             \\ \hline
+psicologosMail.html        & 94\%                             \\ \hline
+perfilPsicologo.html       & 94\%                             \\ \hline
+psicologoCalendario.html   & 100\%                            \\ \hline
+\end{tabularx}
+\caption{PI-013}
+%\label{my-label}
+\end{table}
+
+
+\section{Pruebas de navegación}
+
+
+Existen dos tipos de prueba de navegación:
+
+\begin{itemize}
+\item Prueba de la sintaxis de navegación
+
+
+
+Se prueba cada uno de los mecanismos de navegación de la siguiente forma:
+
+
+\begin{itemize}
+\item Redirecciones
+
+
+Gestionan que el usuario introduzca una URL inexistente.  Por tanto, se prueban URLs incorrectas y todas redirigen a la página de inicio.
+
+\item Marcas de página
+
+
+La webapp debe asegurarse de que el título de página al extraerse sea significativo al crear la marca.
+
+\item Mapa de sitio
+
+
+Proporciona una tabla de contenido completa para todas las páginas web. Se debe probar cada vínculo de entrada del mapa de sitio.
+
+
+
+En nuestra plataforma no va a existir mapa del sitio, puesto que todos los servicios se pueden acceder desde cualquier página del sitio web.
+
+
+\end{itemize}
+
+\item Prueba de la semántica de navegación.
+
+
+Para cada USN se deben contestar a las siguientes preguntas:
+
+
+\begin{itemize}
+
+\item ¿La USN se logra en su totalidad sin error? 
+\item ¿Todo nodo de navegación (definido por una USN) se alcanza dentro del contexto de las rutas de navegación definidas por la USN? 
+\item ¿Existe un mecanismo (distinto a la flecha ``retroceso'' del navegador) para regresar al nodo de navegación anterior y al comienzo de la ruta de navegación? 
+\item ¿Los mecanismos de navegación dentro de un gran nodo de navegación (es decir, una página web grande) funcionan de manera adecuada? 
+\item Si una función debe ejecutarse en un nodo y el usuario elige no proporcionar entrada, ¿el resto de la USN puede completarse? 
+\item Si una función debe ejecutarse en un nodo y ocurre un error en el procesamiento de la función, ¿la USN puede completarse?
+\item ¿Los nombres de nodo son significativos para los usuarios finales? 
+\item ¿El usuario entiende su ubicación dentro de la arquitectura de contenido conforme se ejecuta la USN?
+\end{itemize}
+\end{itemize}
+
+\subsection{Incremento 1}
+
+
+Como es necesaria la correcta implementación de la gestión de usuarios del incremento 2 para que las USN sean ejecutadas en su totalidad, se posponen la USN-003, USN-004, USN-008 y USN-009 correspondientes a los casos de uso del incremento 1. 
+La ejecución de las pruebas correspondientes se realizarán durante las pruebas del incremento 2.
+
+
+
+\subsection{Incremento 2}
+
+Las pruebas de navegación realizadas en el incremento 1 son PN-001 y PN-002
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PN-001}                       & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se evalúa la correcta ejecución de la navegación para cada una de las USN del incremento 1.}} \\ \hline
+\multirow{4}{*}{\textbf{Evaluación}} & USN-003                                                     & Correcto                                                    \\ \cline{2-3} 
+                                     & USN-004                                                     & Correcto                                                    \\ \cline{2-3} 
+                                     & USN-008                                                     & Correcto                                                    \\ \cline{2-3} 
+                                     & USN-009                                                     & Correcto                                                    \\ \hline
+\end{tabularx}
+\caption{PN-001}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PN-002}                       & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se evalúa la correcta ejecución de la navegación para cada una de las USN del incremento 2.}} \\ \hline
+\multirow{4}{*}{\textbf{Evaluación}} & USN-001                                                     & Correcto                                                    \\ \cline{2-3} 
+                                     & USN-002                                                     & Correcto                                                    \\ \cline{2-3} 
+                                     & USN-006                                                     & Correcto                                                    \\ \cline{2-3} 
+                                     & USN-010                                                     & Correcto                                                    \\ \hline
+\end{tabularx}
+\caption{PN-002}
+%\label{my-label}
+\end{table}
+
+
+\subsection{Incremento 3}
+
+Las pruebas de navegación realizadas en el incremento 3 son PN-005 y PN-006.
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PN-003}                       & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se prueban los mecanismos de navegación.}}                                           \\ \hline
+\multirow{4}{*}{\textbf{Evaluación}} & Redirecciones                & Correcto                                                                          \\ \cline{2-3} 
+                                     & Marcas de página             & Aceptable -- Se identifica correctamente la página pero de forma no significativa. \\ \cline{2-3} 
+                                     & Mapa de sitio                & No aplica                                                                         \\ \cline{2-3} 
+                                     & Motores de búsqueda internos & No aplica                                                                         \\ \hline
+\end{tabularx}
+\caption{PN-003}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PN-004}                       & \multicolumn{2}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Se evalúa la correcta ejecución de la navegación para cada una de las USN del incremento 3.}} \\ \hline
+\multirow{4}{*}{\textbf{Evaluación}} & USN-005                                                     & Correcta                                                    \\ \cline{2-3} 
+                                     & USN-007                                                     & Correcta                                                    \\ \cline{2-3} 
+                                     & USN-011                                                     & Correcta                                                    \\ \cline{2-3} 
+                                     & USN-012                                                     & Correcta                                                    \\ \hline
+\end{tabularx}
+\caption{PN-004}
+%\label{my-label}
+\end{table}
+
+\section{Prueba de componente}
+
+Cada componente se prueba dentro del contexto de un caso de uso de forma análoga a la prueba de validación,.es decir, para cada requisito. Para algunas pruebas, se probará una opción que pueda conducir a error para estudiar cómo es la gestión del mismo (prueba del error forzado), y otra opción, que produzca un éxito.
+
+
+\subsection{Incremento 1}
+
+Las pruebas de componente realizadas en el incremento 1 son PCo-001 y PCo-002.
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PCo-001}                                     & \textbf{Prueba del requisito RF-005}                                                                                                                                                                                                                                               \\ \hline
+\textbf{Descripción del requisito}                 & Se garantizará al paciente el emparejamiento con el psicólogo más adecuado para tratar su caso. Cualquier paciente registrado en la plataforma podrá especificar sus síntomas a través de un cuestionario asignándole al menos un psicólogo al paciente tras conocer su patología. \\ \hline
+\multirow{3}{*}{\textbf{Descripción de la prueba}} & 1. El paciente selecciona``Hacer el test'' en su página de resultados.                                                                                                                                                                                                              \\ \cline{2-2} 
+                                                   & 2. El paciente cubre sí o no a las respuestas del test.                                                                                                                                                                                                                            \\ \cline{2-2} 
+                                                   & 3. El paciente envía el cuestionario al pulsar el botón ``Enviar''.                                                                                                                                                                                                                  \\ \hline
+\multirow{2}{*}{\textbf{Criterios de paso/fallo}}  & El sistema guardará las patologías identificadas en el paciente, así como los psicólogos que pueden tratarlo.                                                                                                                                                                      \\ \cline{2-2} 
+                                                   & La aplicación muestra en la página de resultados del paciente al listado de psicólogos que le pueden tratar.                                                                                                                                                                       \\ \hline
+\textbf{Estado}                                    & Correcto                                                                                                                                                                                                                                                                           \\ \hline
+\end{tabularx}
+\caption{PCo-001}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PCo-002}                                     & \textbf{Prueba del requisito RF-006}                                                                                                                                                                  \\ \hline
+\textbf{Descripción del requisito}                  & Cualquier paciente, que haya obtenido resultados concluyentes en el cuestionario, podrá  filtrarlos en base a distintos criterios como las características geográficas, el precio o su seguro médico. \\ \hline
+\multirow{3}{*}{\textbf{Descripción de la prueba}} & 1. El paciente ha resuelto el test previamente y tiene resultados válidos.                                                                                                                            \\ \cline{2-2} 
+                                                   & 2. Se cubren los campos del cuestionario.                                                                                                                                                             \\ \cline{2-2} 
+                                                   & 3. Se selecciona el botón ``Filtrar''
+\\ \hline
+\textbf{Criterios de paso/fallo}                   & Se mostrará al usuario los psicólogos que pueden tratarle filtrados por las preferencias de búsqueda indicadas.                                                                                       \\ \hline
+\textbf{Estado}                                    & Correcto                                                                                                                                                                                              \\ \hline
+\end{tabularx}
+\caption{PCo-002}
+%\label{my-label}
+\end{table}
+
+
+\subsection{Incremento 2}
+
+Las pruebas de componente realizadas en el incremento 2 son PCo-003, PCo-004, PCo-005 y PCo-006.
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PCo-003}                                     & \textbf{Prueba del requisito RF-001}                                                                                                                            \\ \hline
+\textbf{Descripción del requisito}                 & Cualquier usuario registrado en la plataforma podrá acceder a la plataforma a través de la página de acceso.                                                    \\ \hline
+\multirow{4}{*}{\textbf{Descripción de la prueba}} & 1: Se pueden dar los siguientes casos:                                                                                                                          \\ \cline{2-2} 
+                                                   & 1.1. El usuario cubre el formulario de la página de inicio y le da a ``Acceder''
+\\ \cline{2-2} 
+                                                   & 1.2. ídem desde la página de registro de pacientes                                                                                                              \\ \cline{2-2} 
+                                                   & 1.3. Ídem desde la página de registro de psicólogos                                                                                                             \\ \hline
+\multirow{2}{*}{\textbf{Criterios de paso/fallo}}  & Paso: El sistema autenticará al usuario con éxito y le mostrará su página principal (los resultados para el paciente y la bandeja de entrada para el psicólogo). \\ \cline{2-2} 
+                                                   & Fallo: El sistema no podrá autenticar al usuario, permanecerá en la página actual y mostrará un mensaje de error.                                               \\ \hline
+\textbf{Estado}                                    & Correcto                                                                                                                                                        \\ \hline
+\end{tabularx}
+\caption{PCo-003}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PCo-004}                                    & \textbf{Prueba del requisito RF-002}                                                                                                                                                                                                                                                                                                     \\ \hline
+\textbf{Descripción del requisito}                & Cualquier usuario podrá acceder a los servicios de la plataforma tras haber cubierto el formulario de registro.                                                                                                                                                                                                                          \\ \hline
+\textbf{Descripción de la prueba}                 & El usuario cubre el formulario de registro (dependiendo de su perfil paciente o psicólogo) y lo enviará.                                                                                                                                                                                                                                  \\ \hline
+\multirow{3}{*}{\textbf{Criterios de paso/fallo}}  & Si el usuario es un paciente. \\ 
+                                                   & Paso: El sistema guardará los datos del paciente en la BBDD, lo autenticará y le mostrará su página de resultados. \\ 
+                                                   & Fallo: El sistema no registrará los datos del formulario, permanecerá en la página actual y mostrará un mensaje de error.  \\ \cline{2-2}
+                                                   & Si el usuario es un psicólogo. \\ 
+                                                   &                                              Paso: El sistema enviará un correo electrónico a la cuenta de correo,encargada de validar todas las peticiones de alta de psicólogo.\\ 
+                                                   & Fallo: El sistema no registrará los datos del formulario, permanecerá en la página actual y mostrará un mensaje de error. \\ \hline
+\textbf{Estado}                                   & Correcto                                                                                                                                                                                                                                                                                                                                 \\ \hline
+\end{tabularx}
+\caption{PCo-004}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PCo-005}                     & \textbf{Prueba del requisito RF-003}                                                                                 \\ \hline
+\textbf{Descripción del requisito} & Cualquier usuario registrado en la plataforma podrá darse de baja de la plataforma.                                  \\ \hline
+\textbf{Descripción de la prueba}  & El usuario pulsa el botón ``Darme de Baja'' y posteriormente también, el de ``Continuar'' la baja.                      \\ \hline
+\textbf{Criterios de paso/fallo}   & El sistema eliminará al usuario de la base de datos, y le mostrará a éste la página principal con la sesión cerrada. \\ \hline
+\textbf{Estado}                    & Correcto                                                                                                             \\ \hline
+\end{tabularx}
+\caption{PCo-005}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PCo-006}                                     & \textbf{Prueba del requisito RF-004}                                                                                                                                                                                                                                                                                                     \\ \hline
+\textbf{Descripción del requisito}                 & Cualquier usuario registrado en la plataforma podrá modificar sus datos de usuario.                                                                                                                                                                                                                                                      \\ \hline
+\multirow{2}{*}{\textbf{Descripción de la prueba}} & 1.El usuario cubrirá el formulario de modificación de datos correspondiente.                                                                                                                                                                                                                                                             \\ \cline{2-2} 
+                                                   & 2. El usuario seleccionará el botón ``Enviar'' .                                                                                                                                                                                                                                                                                            \\ \hline
+\multirow{2}{*}{\textbf{Criterios de paso/fallo}}  & Si el usuario es un paciente: \\
+& Paso: El sistema modificará los datos del paciente en la BBDD y le mostrará un mensaje de éxito.\\
+& Fallo: El sistema no registrará los datos del formulario, permanecerá en la página actual y mostrará un mensaje de error.\\ \cline{2-2} 
+                                                   & Si el usuario es un psicólogo: \\
+                                                   & Paso: El sistema enviará un correo electrónico a la cuenta de correo encargada de validar todas las peticiones de alta de psicólogo.\\ 
+                                                   & Fallo: El sistema no registrará los datos del formulario, permanecerá en la página actual y mostrará un mensaje de error.\\ \hline
+\textbf{Estado}                                    & Correcto                                                                                                                                                                                                                                                                                                                                 \\ \hline
+\end{tabularx}
+\caption{PCo-006}
+%\label{my-label}
+\end{table}
+
+
+\subsection{Incremento 3}
+
+Las pruebas de componente realizadas en el incremento 3 son PCo-007 y PCo-008.
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PCo-007}                                     & \textbf{Prueba del requisito RF-007}                                                                                \\ \hline
+\textbf{Descripción del requisito}                 & El paciente podrá contactar con cualquiera de los psicólogos que le fueron asignados tras realizar el cuestionario. \\ \hline
+\multirow{2}{*}{\textbf{Descripción de la prueba}} & 1. El paciente cubrirá el formulario de contacto del psicólogo que haya seleccionado.                               \\ \cline{2-2} 
+                                                   & 2. El paciente seleccionará el botón ``Enviar''.
+\\ \hline
+\textbf{Criterios de paso/fallo}                   & El sistema enviará un mensaje al psicólogo en cuestión, y mostrará un mensaje de éxito.                             \\ \hline
+\textbf{Estado}                                    & Correcto                                                                                                            \\ \hline
+\end{tabularx}
+\caption{PCo-007}
+%\label{my-label}
+\end{table}
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PCo-008}                                     & \textbf{Prueba del requisito RF-008}                                                           \\ \hline
+\textbf{Descripción del requisito}                 & El paciente podrá valorar al psicólogo que le haya atendido.                                   \\ \hline
+\multirow{2}{*}{\textbf{Descripción de la prueba}} & 1. El paciente enviará su valoración a través de un formulario.                                \\ \cline{2-2} 
+                                                   & 2. El paciente seleccionará el botón ``Enviar''.
+\\ \hline
+\textbf{Criterios de paso/fallo}                   & El sistema publicará la valoración en el perfil del psicólogo, y mostrará un mensaje de éxito. \\ \hline
+\textbf{Estado}                                    & Correcto                                                                                       \\ \hline
+\end{tabularx}
+\caption{PCo-008}
+%\label{my-label}
+\end{table}
+
+%\section{Pruebas de configuración, seguridad y rendimiento}
+\section{Pruebas seguridad y rendimiento}
+
+
+%\subsection{Prueba de configuración}
+%
+%
+%La variabilidad e inestabilidad del hardware, sistemas operativos, navegadores, capacidad de almacenamiento, velocidades de comunicación de red, y otros factores, son difíciles de predecir para cada usuario. Aún así, la configuración para un usuario puede cambiar de manera regular dando como resultado a errores sutiles y significativos que marquen la diferencia entre las experiencias de cada usuario.
+%
+%
+%
+%La prueba consistiría en en probar un conjunto de probables configuraciones en los lados cliente y servidor para garantizar que la experiencia de usuario sea la misma en todos ellos y que aislará errores que puedan ser específicos de una configuración particular.
+
+
+\subsection{Prueba de seguridad}
+
+
+Las \textit{webapps} y los entornos en los lados cliente y servidor donde se albergan representan un blanco atractivo para \textit{hackers} externos, empleados internos, competidores deshonestos y para quien quiera robar información sensible, modificar contenido maliciosamente, degradar el rendimiento, deshabilitar la funcionalidad o  avergonzar a una persona, organización o negocio.
+
+
+
+Para proteger las posibles vulnerabilidades que puedan producirse en nuestra plataforma se han implantado los siguientes elementos de seguridad:
+
+
+\begin{itemize}
+\item Autenticación: La autenticación es la capacidad de demostrar que un usuario es realmente quién dicha persona asegura ser.
+
+
+
+La autenticación en la plataforma web se asegura por medio de e-mail y contraseña de usuario.
+
+
+\item Encriptado: Limitado es un mecanismo de codificación que protege los datos sensibles de forma que hace imposible leerlos por quienes tienen intenciones maliciosas.
+
+
+El requisito no funcional RNF-001: Encriptado de datos del proyecto pretende asegurar la seguridad y el cifrado de datos. Las contraseñas en la aplicación se protegen mediante el cifrado Blowfish gracias a la librería Bcrypt. La prueba de este requisito PS-001 buscará acreditar de que se está realizando el encriptado de forma correcta, pero no tratará de comprobar la resistencia del cifrado en sí.
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PS-001}                                     & \textbf{Prueba del requisito RF-008}                                                           \\ \hline
+\textbf{Descripción del requisito}                 & El paciente podrá valorar al psicólogo que le haya atendido.                                   \\ \hline
+\multirow{2}{*}{\textbf{Descripción de la prueba}} & 1. El paciente enviará su valoración a través de un formulario.                                \\ \cline{2-2} 
+                                                   & 2. El paciente seleccionará el botón ``Enviar''.                                                 \\ \hline
+\textbf{Criterios de paso/fallo}                   & El sistema publicará la valoración en el perfil del psicólogo, y mostrará un mensaje de éxito. \\ \hline
+\textbf{Estado}                                    & Correcto                                                                                       \\ \hline
+\end{tabularx}
+\caption{PS-001}
+%\label{my-label}
+\end{table}
+
+
+\end{itemize}
+
+
+\subsection{Prueba de rendimiento}
+
+
+Las pruebas de rendimiento se usan para descubrir problemas de rendimiento que pueden ser resultado de: Falta de recursos en el lado servidor, red con ancho de banda inadecuada, capacidades de base de datos, capacidades de sistema operativo deficientes o débiles, funcionalidad de \textit{webapp} pobremente diseñada y otros conflictos de \textit{hardware} o software que pueden conducir al rendimiento cliente-servidor degradado. La intención es: 
+
+
+\begin{itemize}
+\item Comprender como responde el sistema conforme aumenta la carga (usuarios número de transacciones o volumen de datos global) 
+\item Recopilar mediciones que conducirán a modificaciones de diseño para mejorar el rendimiento.
+
+
+En el proyecto el requisito no funcional RNF-002: Tiempo de respuesta de asignación perseguía dar una respuesta rápida al usuario cuando se dieran los resultados del algoritmo de asignación. La prueba para cerciorar que se cumple dicho requisito es la PR-001.
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{PR-001}                     & \textbf{Prueba del requisito RNF-002}                                                                                                                                      \\ \hline
+\textbf{Descripción del requisito} & El paciente tras enviar las respuestas del cuestionario los resultados de asignación de psicólogo del mismo deberán tener un tiempo de respuesta de como máximo 5 segundos. \\ \hline
+\textbf{Descripción de la prueba}  & Se medirá con una herramienta el tiempo de respuesta de la página.                                                                                                         \\ \hline
+\textbf{Criterios de paso/fallo}   & La prueba se superará si el tiempo de respuesta ha sido inferior a o igual a 5 segundos. En caso contrario fallará.                                                        \\ \hline
+\textbf{Estado}                    & Correcto                                                                                                                                                                   \\ \hline
+\end{tabularx}
+\caption{PR-001}
+%\label{my-label}
+\end{table}
+
+\end{itemize}

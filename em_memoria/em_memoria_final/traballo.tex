@@ -37,7 +37,20 @@
 \usepackage{titlesec}
 \usepackage{pdflscape}
 \usepackage{listings}
+\usepackage{pdfpages}
+\usepackage{xcolor}
+\usepackage{colortbl}
 
+\definecolor{gray75}{gray}{.9}
+
+% minimizar fragmentado de listados
+\lstnewenvironment{listing}[1][]
+{\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
+
+\lstdefinestyle{consola}
+{basicstyle=\scriptsize\bf\ttfamily,
+backgroundcolor=\color{gray75},
+}
 
 \usepackage{color}
 \definecolor{lightgray}{rgb}{.9,.9,.9}
@@ -77,10 +90,10 @@
 
 \begin{document}
 
-%\include{capitulos/titulo}
-%\cleardoublepage
-%\include{capitulos/certificacion} % paxina de certificación (optativa)
-%\cleardoublepage
+\include{capitulos/titulo}
+\cleardoublepage
+\include{capitulos/certificacion} % paxina de certificación (optativa)
+\cleardoublepage
 %\include{capitulos/agradecementos} % paxina de agradecementos (optativa) 
 %\cleardoublepage
 %\include{capitulos/resumo} % páxina de resumo (optativa) 
@@ -96,23 +109,26 @@
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \pagestyle{headings}
-%\include{capitulos/introducion}
-%\cleardoublepage
+%INTRODUCCION
+\include{capitulos/introducion}
+\cleardoublepage
 %GESTIÓN DEL PROYECTO
-%\include{capitulos/em_gest_proy}
-%\cleardoublepage
+\include{capitulos/em_gest_proy}
+\cleardoublepage
 %ANÁLISIS
-%\include{capitulos/em_analisis}
-%\cleardoublepage
+\include{capitulos/em_analisis}
+\cleardoublepage
 %DISEÑO
-%\include{capitulos/em_diseno}
-%\cleardoublepage
+\include{capitulos/em_diseno}
+\cleardoublepage
 %IMPLEMENTACIÓN
 \include{capitulos/em_implem}
 \cleardoublepage
 %PRUEBAS
-%\include{capitulos/cap4}
-%\cleardoublepage
+\include{capitulos/em_pruebas}
+\cleardoublepage
+\include{capitulos/conclusion}
+\cleardoublepage
 %\include{capitulos/exemplos}
 % Engadir os capitulos que fagan falta
 %
@@ -120,14 +136,12 @@
 %\include{capitulos/conclusions}
 
 % Aquí empezan os apéndices
-%\appendix
-%\cleardoublepage
-%\include{capitulos/apendicea}
-%\cleardoublepage
-%\include{capitulos/apendiceb}
-%\cleardoublepage
-%\include{capitulos/licenza}
-%\cleardoublepage
+\appendix
+\cleardoublepage
+\include{capitulos/apendice_pruebas}
+\cleardoublepage
+\include{capitulos/apendice_man_instalacion}
+\cleardoublepage
 %\include{capitulos/bibliografia}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

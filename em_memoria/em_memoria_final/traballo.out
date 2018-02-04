@@ -1,4 +1,103 @@
-\BOOKMARK [0][-]{chapter.1}{Implementaci\363n}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Implementaci\363n del primer incremento}{chapter.1}% 2
-\BOOKMARK [1][-]{section.1.2}{Implementaci\363n del segundo incremento}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.3}{Implementaci\363n del tercer incremento}{chapter.1}% 4
+\BOOKMARK [0][-]{chapter.1}{Introduci\363n}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Contexto}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Objetivos}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{Estructura de la memoria}{chapter.1}% 4
+\BOOKMARK [0][-]{chapter.2}{Gesti\363n del proyecto}{}% 5
+\BOOKMARK [1][-]{section.2.1}{Alcance del proyecto}{chapter.2}% 6
+\BOOKMARK [2][-]{subsection.2.1.1}{Enunciado del alcance}{section.2.1}% 7
+\BOOKMARK [2][-]{subsection.2.1.2}{Criterios de aceptaci\363n}{section.2.1}% 8
+\BOOKMARK [2][-]{subsection.2.1.3}{Entregables del proyecto}{section.2.1}% 9
+\BOOKMARK [2][-]{subsection.2.1.4}{Exclusiones del proyecto}{section.2.1}% 10
+\BOOKMARK [2][-]{subsection.2.1.5}{Restricciones del proyecto}{section.2.1}% 11
+\BOOKMARK [2][-]{subsection.2.1.6}{Supuestos del proyecto}{section.2.1}% 12
+\BOOKMARK [2][-]{subsection.2.1.7}{Estructura de descomposici\363n de tareas \(EDT/WBS\) del proyecto}{section.2.1}% 13
+\BOOKMARK [1][-]{section.2.2}{Metodolog\355a de desarrollo}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.3}{Planificaci\363n temporal}{chapter.2}% 15
+\BOOKMARK [1][-]{section.2.4}{Gesti\363n de la configuraci\363n}{chapter.2}% 16
+\BOOKMARK [2][-]{subsection.2.4.1}{L\355nea base}{section.2.4}% 17
+\BOOKMARK [2][-]{subsection.2.4.2}{Repositorio para la gesti\363n de la configuraci\363n}{section.2.4}% 18
+\BOOKMARK [2][-]{subsection.2.4.3}{Sistema de gesti\363n de la configuraci\363n}{section.2.4}% 19
+\BOOKMARK [1][-]{section.2.5}{Gesti\363n de costes}{chapter.2}% 20
+\BOOKMARK [1][-]{section.2.6}{Gesti\363n de riesgos}{chapter.2}% 21
+\BOOKMARK [2][-]{subsection.2.6.1}{Plan de gesti\363n de riesgos}{section.2.6}% 22
+\BOOKMARK [2][-]{subsection.2.6.2}{Identificaci\363n de riesgos}{section.2.6}% 23
+\BOOKMARK [2][-]{subsection.2.6.3}{An\341lisis cualitativo de riesgos}{section.2.6}% 24
+\BOOKMARK [2][-]{subsection.2.6.4}{Plan de respuesta a los riesgos}{section.2.6}% 25
+\BOOKMARK [1][-]{section.2.7}{An\341lisis}{chapter.2}% 26
+\BOOKMARK [2][-]{subsection.2.7.1}{Casos de uso}{section.2.7}% 27
+\BOOKMARK [2][-]{subsection.2.7.2}{Modelado de datos}{section.2.7}% 28
+\BOOKMARK [2][-]{subsection.2.7.3}{An\341lisis de requisitos}{section.2.7}% 29
+\BOOKMARK [2][-]{subsection.2.7.4}{Algoritmo de matching}{section.2.7}% 30
+\BOOKMARK [0][-]{chapter.3}{Dise\361o}{}% 31
+\BOOKMARK [1][-]{section.3.1}{Dise\361o de la interfaz}{chapter.3}% 32
+\BOOKMARK [2][-]{subsection.3.1.1}{Principios de dise\361o de la experiencia de usuario}{section.3.1}% 33
+\BOOKMARK [2][-]{subsection.3.1.2}{Principios de dise\361o de la interfaz de usuario}{section.3.1}% 34
+\BOOKMARK [2][-]{subsection.3.1.3}{Fuentes y tipograf\355a}{section.3.1}% 35
+\BOOKMARK [2][-]{subsection.3.1.4}{Interacci\363n persona-ordenador}{section.3.1}% 36
+\BOOKMARK [2][-]{subsection.3.1.5}{Mockup}{section.3.1}% 37
+\BOOKMARK [1][-]{section.3.2}{Dise\361o de la navegaci\363n}{chapter.3}% 38
+\BOOKMARK [2][-]{subsection.3.2.1}{Sem\341ntica de la navegaci\363n}{section.3.2}% 39
+\BOOKMARK [2][-]{subsection.3.2.2}{Sintaxis de navegaci\363n}{section.3.2}% 40
+\BOOKMARK [1][-]{section.3.3}{Tecnolog\355as utilizadas}{chapter.3}% 41
+\BOOKMARK [2][-]{subsection.3.3.1}{Frameworks}{section.3.3}% 42
+\BOOKMARK [2][-]{subsection.3.3.2}{Lenguajes de programaci\363n}{section.3.3}% 43
+\BOOKMARK [2][-]{subsection.3.3.3}{ Modules}{section.3.3}% 44
+\BOOKMARK [2][-]{subsection.3.3.4}{Librer\355as}{section.3.3}% 45
+\BOOKMARK [2][-]{subsection.3.3.5}{ Middleware}{section.3.3}% 46
+\BOOKMARK [1][-]{section.3.4}{Herramientas utilizadas}{chapter.3}% 47
+\BOOKMARK [1][-]{section.3.5}{Seguridad}{chapter.3}% 48
+\BOOKMARK [2][-]{subsection.3.5.1}{\277Qu\351 es Bcrypt?}{section.3.5}% 49
+\BOOKMARK [2][-]{subsection.3.5.2}{Ventajas de Bcrypt}{section.3.5}% 50
+\BOOKMARK [2][-]{subsection.3.5.3}{Funcionamiento}{section.3.5}% 51
+\BOOKMARK [2][-]{subsection.3.5.4}{Cifrado Blowfish}{section.3.5}% 52
+\BOOKMARK [1][-]{section.3.6}{Dise\361o de la arquitectura}{chapter.3}% 53
+\BOOKMARK [2][-]{subsection.3.6.1}{SPA}{section.3.6}% 54
+\BOOKMARK [2][-]{subsection.3.6.2}{Particularidades de JavaScript}{section.3.6}% 55
+\BOOKMARK [2][-]{subsection.3.6.3}{ Callbacks en JavaScript}{section.3.6}% 56
+\BOOKMARK [2][-]{subsection.3.6.4}{Patrones de dise\361o}{section.3.6}% 57
+\BOOKMARK [2][-]{subsection.3.6.5}{ Observer}{section.3.6}% 58
+\BOOKMARK [2][-]{subsection.3.6.6}{Factory Method}{section.3.6}% 59
+\BOOKMARK [2][-]{subsection.3.6.7}{ Proxy}{section.3.6}% 60
+\BOOKMARK [2][-]{subsection.3.6.8}{Data Mapper}{section.3.6}% 61
+\BOOKMARK [2][-]{subsection.3.6.9}{API REST}{section.3.6}% 62
+\BOOKMARK [2][-]{subsection.3.6.10}{Estructura de directorios}{section.3.6}% 63
+\BOOKMARK [1][-]{section.3.7}{Diagramas}{chapter.3}% 64
+\BOOKMARK [0][-]{chapter.4}{Implementaci\363n}{}% 65
+\BOOKMARK [1][-]{section.4.1}{Implementaci\363n del primer incremento}{chapter.4}% 66
+\BOOKMARK [1][-]{section.4.2}{Implementaci\363n del segundo incremento}{chapter.4}% 67
+\BOOKMARK [1][-]{section.4.3}{Implementaci\363n del tercer incremento}{chapter.4}% 68
+\BOOKMARK [0][-]{chapter.5}{Pruebas}{}% 69
+\BOOKMARK [1][-]{section.5.1}{Pruebas de contenido}{chapter.5}% 70
+\BOOKMARK [2][-]{subsection.5.1.1}{Incremento 1}{section.5.1}% 71
+\BOOKMARK [2][-]{subsection.5.1.2}{Incremento 2}{section.5.1}% 72
+\BOOKMARK [2][-]{subsection.5.1.3}{Incremento 3}{section.5.1}% 73
+\BOOKMARK [1][-]{section.5.2}{Pruebas de interfaz}{chapter.5}% 74
+\BOOKMARK [2][-]{subsection.5.2.1}{Incremento 1}{section.5.2}% 75
+\BOOKMARK [2][-]{subsection.5.2.2}{Incremento 2}{section.5.2}% 76
+\BOOKMARK [2][-]{subsection.5.2.3}{Incremento 3}{section.5.2}% 77
+\BOOKMARK [1][-]{section.5.3}{Pruebas de navegaci\363n}{chapter.5}% 78
+\BOOKMARK [2][-]{subsection.5.3.1}{Incremento 1}{section.5.3}% 79
+\BOOKMARK [2][-]{subsection.5.3.2}{Incremento 2}{section.5.3}% 80
+\BOOKMARK [2][-]{subsection.5.3.3}{Incremento 3}{section.5.3}% 81
+\BOOKMARK [1][-]{section.5.4}{Prueba de componente}{chapter.5}% 82
+\BOOKMARK [2][-]{subsection.5.4.1}{Incremento 1}{section.5.4}% 83
+\BOOKMARK [2][-]{subsection.5.4.2}{Incremento 2}{section.5.4}% 84
+\BOOKMARK [2][-]{subsection.5.4.3}{Incremento 3}{section.5.4}% 85
+\BOOKMARK [1][-]{section.5.5}{Pruebas seguridad y rendimiento}{chapter.5}% 86
+\BOOKMARK [2][-]{subsection.5.5.1}{Prueba de seguridad}{section.5.5}% 87
+\BOOKMARK [2][-]{subsection.5.5.2}{Prueba de rendimiento}{section.5.5}% 88
+\BOOKMARK [0][-]{chapter.6}{Conclusiones}{}% 89
+\BOOKMARK [1][-]{section.6.1}{Posibles ampliaciones}{chapter.6}% 90
+\BOOKMARK [0][-]{appendix.Alph1}{Anexo Pruebas}{}% 91
+\BOOKMARK [1][-]{section.Alph1.1}{Pruebas de contenido}{appendix.Alph1}% 92
+\BOOKMARK [2][-]{subsection.Alph1.1.1}{Incremento 1}{section.Alph1.1}% 93
+\BOOKMARK [2][-]{subsection.Alph1.1.2}{Incremento 2}{section.Alph1.1}% 94
+\BOOKMARK [2][-]{subsection.Alph1.1.3}{Incremento 3}{section.Alph1.1}% 95
+\BOOKMARK [1][-]{section.Alph1.2}{Pruebas de interfaz}{appendix.Alph1}% 96
+\BOOKMARK [2][-]{subsection.Alph1.2.1}{Incremento 1}{section.Alph1.2}% 97
+\BOOKMARK [2][-]{subsection.Alph1.2.2}{Incremento 2}{section.Alph1.2}% 98
+\BOOKMARK [2][-]{subsection.Alph1.2.3}{Incremento 3}{section.Alph1.2}% 99
+\BOOKMARK [1][-]{section.Alph1.3}{Pruebas de navegaci\363n}{appendix.Alph1}% 100
+\BOOKMARK [2][-]{subsection.Alph1.3.1}{Incrementos 1 y 2}{section.Alph1.3}% 101
+\BOOKMARK [2][-]{subsection.Alph1.3.2}{Incremento 3}{section.Alph1.3}% 102
+\BOOKMARK [0][-]{appendix.Alph2}{Manual de instalaci\363n}{}% 103

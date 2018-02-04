@@ -87,7 +87,7 @@ Para indicar al \$routeProvider dónde mostrar las templates se utiliza la sigui
 \centering
 \begin{tabular}{|l|l|}
 \hline
-\textit{\textbf{Template}}           & \textit{\textbf{Controller}}        \\ \hline
+\rowcolor[gray]{0.9}\textit{\textbf{Template}}           & \textit{\textbf{Controller}}        \\ \hline
 pacientes/cuestionarioPacientes.html & pacientes/cuestionarioController.js \\ \hline
 pacientes/pacientesResultados.html   & pacientes/perfilController.js       \\ \hline
 \end{tabular}
@@ -262,7 +262,7 @@ Los requisitos implementados en el segundo incremento son los asociados a la par
 \centering
 \begin{tabular}{|l|l|}
 \hline
-\textit{\textbf{Template}}           & \textit{\textbf{Controller}}        \\ \hline
+\rowcolor[gray]{0.9}\textit{\textbf{Template}}           & \textit{\textbf{Controller}}        \\ \hline
 inicio.html & pacientes/pacientesAccesoController.js \\ \hline
 pacientes/registroPacientes.html   & pacientes/pacientesRegistroController.js       \\ \hline
 pacientes/pacientesModificar.html   & pacientes/pacientesModificarController.js
@@ -474,15 +474,15 @@ Uno de los casos donde es necesario utilizar bcrypt es cuando es necesaria la co
 	}) 
 \end{lstlisting}
 
-Compara la contraseña con la que está tratando de acceder el usuario después de cifrarla con el hash que existe actualmente en la base de datos. El hash que se encuentra en la base de datos tiene almacenados el coste, la sal y la contraseña, por lo que bcrypt sabe cómo cifrar la nueva contraseña introducida.
+Compara la contraseña con la que está tratando de acceder el usuario después de cifrarla con el \textit{hash} que existe actualmente en la base de datos. El \textit{hash} que se encuentra en la base de datos tiene almacenados el coste, la sal y la contraseña, por lo que bcrypt sabe cómo cifrar la nueva contraseña introducida.
 
 
 \textit{Un ejemplo práctico:}
-El hash introducido en la base de datos podría ser el siguiente:
+El \textit{hash} introducido en la base de datos podría ser el siguiente:
 \texttt{\$2a\$10\$vI8aWBnW3fID.ZQ4/zo1G.q1lRps.9cGLcZEiGDMVr5yUP1KUOYTa}
 
 
-Este hash contiene tres cadenas concatenadas con el símbolo ``\$'':
+Este \textit{hash} contiene tres cadenas concatenadas con el símbolo ``\$'':
 \begin{itemize}
 \item \texttt{2a} identifica la versión del algoritmo bcrypt utilizado.
 \item \texttt{10} es el factor de coste: Se han utilizado $2^{10}$ iteraciones de la función de derivación de la key.
@@ -508,11 +508,11 @@ Otro de los casos donde es necesario utilizar bcrypt es al dar de alta a un usua
 \end{lstlisting}
 
 
-Primero se genera la sal con un factor de coste 10, y después, se crea el hash con la contraseña que ha introducido el paciente y la sal. Este hash será almacenado en la base de datos.
+Primero se genera la sal con un factor de coste 10, y después, se crea el \textit{hash} con la contraseña que ha introducido el paciente y la sal. Este \textit{hash} será almacenado en la base de datos.
 
 
 \paragraph*{Google Maps JavaScript API para el autocompletado de la localización en los formularios de registro y modificación.}
-Para autocompletar las localizaciones introducidas por el usuario tanto en el formulario de registro como en el de modificación, se ha utilizado la Autocompletado para direcciones y términos búsqueda de Google Maps JavaScript API. 
+Para autocompletar las localizaciones introducidas por el usuario tanto en el formulario de registro como en el de modificación, se ha utilizado el autocompletado para direcciones y términos búsqueda de Google Maps JavaScript API. 
 
 
 Por ejemplo, en el formulario de registro de usuarios de la \textit{template} pacientes/registroPacientes.html, fue incorporado al código HTML de la siguiente forma:
@@ -693,23 +693,31 @@ En el código de la aplicación, un ejemplo podría ser:
 	}); 
 \end{lstlisting}
 
+Los campos a validar en el formulario de acceso a la plataforma son \texttt{email} y \texttt{password}.
 
-Los campos a validar en el formulario de acceso a la plataforma son email y password.
 
-
-Para email, las reglas de validación son:
+Para \texttt{email}, las reglas de validación son:
 \begin{itemize}
 \item El campo no debe estar vacío.
-\item El formato debe ser de tipo email.
-\item La logitud máxima de carácteres permitidos es 50.
+\item El formato debe ser de tipo \texttt{email}.
+\item La longitud máxima de carácteres permitidos es 50.
 \end{itemize}
 
 
-Para password, las reglas de validación son:
+Para \texttt{password}, las reglas de validación son:
 \begin{itemize}
 \item El campo no debe estar vacío.
-\item La logitud máxima de carácteres permitidos es 50.
+\item La longitud máxima de carácteres permitidos es 50.
 \end{itemize}
+
+
+Para evaluar que se cumplen las condiciones especificadas, se utiliza la siguiente función:
+
+
+\medskip
+\begin{lstlisting}
+$('#access_form').form('is valid');
+\end{lstlisting}
 
 
 \section{Implementación del tercer incremento}
@@ -797,7 +805,7 @@ Este elemento es gestionado por el psicologosCalendarioController.js.
 \end{lstlisting}
 
 
-Para meter los eventos en el calendario se utiliza la función fullcalendar con el argumento \texttt{renderEvent}.
+Para meter los eventos en el calendario se utiliza la función \texttt{fullcalendar} con el argumento \texttt{renderEvent}.
 
 
 \medskip

@@ -2,47 +2,164 @@ This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: traballo.aux
 A level-1 auxiliary file: capitulos/em_diseno.aux
-I found no \bibdata command---while reading file traballo.aux
-I found no \bibstyle command---while reading file traballo.aux
-You've used 49 entries,
-            0 wiz_defined-function locations,
-            133 strings with 1216 characters,
-and the built_in function-call counts, 0 in all, are:
-= -- 0
-> -- 0
+A level-1 auxiliary file: capitulos/em_implem.aux
+The style file: plain.bst
+Database file #1: capitulos/biblio.bib
+Warning--entry type for "bootstrap_grid_basic" isn't style-file defined
+--line 5 of file capitulos/biblio.bib
+Warning--entry type for "lato" isn't style-file defined
+--line 12 of file capitulos/biblio.bib
+Warning--entry type for "merriweather" isn't style-file defined
+--line 19 of file capitulos/biblio.bib
+Warning--entry type for "eval_heuris" isn't style-file defined
+--line 41 of file capitulos/biblio.bib
+Warning--entry type for "iso_ergonomics" isn't style-file defined
+--line 49 of file capitulos/biblio.bib
+Warning--entry type for "aenor_req_acces" isn't style-file defined
+--line 57 of file capitulos/biblio.bib
+Warning--entry type for "mongodb_mean_stack" isn't style-file defined
+--line 96 of file capitulos/biblio.bib
+Warning--entry type for "mongodb_gest_datos" isn't style-file defined
+--line 104 of file capitulos/biblio.bib
+Warning--entry type for "express" isn't style-file defined
+--line 112 of file capitulos/biblio.bib
+Warning--entry type for "angular_docs" isn't style-file defined
+--line 119 of file capitulos/biblio.bib
+Warning--entry type for "angular_arch" isn't style-file defined
+--line 126 of file capitulos/biblio.bib
+Warning--entry type for "node_acerca" isn't style-file defined
+--line 133 of file capitulos/biblio.bib
+Warning--entry type for "bootstrap" isn't style-file defined
+--line 140 of file capitulos/biblio.bib
+Warning--entry type for "semantic_github" isn't style-file defined
+--line 147 of file capitulos/biblio.bib
+Warning--entry type for "css_mozilla" isn't style-file defined
+--line 154 of file capitulos/biblio.bib
+Warning--entry type for "html_mozilla" isn't style-file defined
+--line 161 of file capitulos/biblio.bib
+Warning--entry type for "javascript_mozilla" isn't style-file defined
+--line 168 of file capitulos/biblio.bib
+Warning--entry type for "google_api" isn't style-file defined
+--line 175 of file capitulos/biblio.bib
+Warning--entry type for "passport" isn't style-file defined
+--line 182 of file capitulos/biblio.bib
+Warning--entry type for "brackets" isn't style-file defined
+--line 189 of file capitulos/biblio.bib
+Warning--entry type for "git" isn't style-file defined
+--line 196 of file capitulos/biblio.bib
+Warning--entry type for "github" isn't style-file defined
+--line 203 of file capitulos/biblio.bib
+Warning--entry type for "grunt" isn't style-file defined
+--line 210 of file capitulos/biblio.bib
+Warning--entry type for "latex" isn't style-file defined
+--line 217 of file capitulos/biblio.bib
+Warning--entry type for "libreoffice" isn't style-file defined
+--line 224 of file capitulos/biblio.bib
+Warning--entry type for "pencil" isn't style-file defined
+--line 231 of file capitulos/biblio.bib
+Warning--entry type for "npm" isn't style-file defined
+--line 238 of file capitulos/biblio.bib
+Warning--entry type for "robomongo" isn't style-file defined
+--line 245 of file capitulos/biblio.bib
+Warning--entry type for "staruml" isn't style-file defined
+--line 252 of file capitulos/biblio.bib
+Warning--entry type for "fullcalendar" isn't style-file defined
+--line 259 of file capitulos/biblio.bib
+Warning--entry type for "mongoose" isn't style-file defined
+--line 266 of file capitulos/biblio.bib
+Warning--entry type for "promise_objeto" isn't style-file defined
+--line 287 of file capitulos/biblio.bib
+Warning--entry type for "promise_mozilla" isn't style-file defined
+--line 294 of file capitulos/biblio.bib
+Warning--entry type for "data_binding_w3s" isn't style-file defined
+--line 315 of file capitulos/biblio.bib
+Warning--entry type for "page_controller_microsoft" isn't style-file defined
+--line 329 of file capitulos/biblio.bib
+Warning--entry type for "mgechev" isn't style-file defined
+--line 336 of file capitulos/biblio.bib
+Warning--entry type for "depend_inject" isn't style-file defined
+--line 350 of file capitulos/biblio.bib
+Warning--entry type for "rest_spring" isn't style-file defined
+--line 371 of file capitulos/biblio.bib
+Warning--I didn't find a database entry for "angular_embraced"
+Warning--I didn't find a database entry for "ericfreemanelisabethfreemankathysierrabertbates2004"
+Warning--I didn't find a database entry for "martinfowlerdavidricematthewfoemmeledwardhieattrobertmeerandystafford2002"
+Warning--I didn't find a database entry for "praislee"
+Warning--to sort, need author or key in bootstrap_grid_basic
+Warning--to sort, need author or key in lato
+Warning--to sort, need author or key in merriweather
+Warning--to sort, need author or key in iso_ergonomics
+Warning--to sort, need author or key in aenor_req_acces
+Warning--to sort, need author or key in express
+Warning--to sort, need author or key in angular_docs
+Warning--to sort, need author or key in angular_arch
+Warning--to sort, need author or key in node_acerca
+Warning--to sort, need author or key in bootstrap
+Warning--to sort, need author or key in semantic_github
+Warning--to sort, need author or key in css_mozilla
+Warning--to sort, need author or key in html_mozilla
+Warning--to sort, need author or key in javascript_mozilla
+Warning--to sort, need author or key in mongoose
+Warning--to sort, need author or key in fullcalendar
+Warning--to sort, need author or key in google_api
+Warning--to sort, need author or key in passport
+Warning--to sort, need author or key in brackets
+Warning--to sort, need author or key in git
+Warning--to sort, need author or key in github
+Warning--to sort, need author or key in grunt
+Warning--to sort, need author or key in latex
+Warning--to sort, need author or key in libreoffice
+Warning--to sort, need author or key in pencil
+Warning--to sort, need author or key in npm
+Warning--to sort, need author or key in robomongo
+Warning--to sort, need author or key in staruml
+Warning--to sort, need author or key in promise_objeto
+Warning--to sort, need author or key in promise_mozilla
+Warning--to sort, need author or key in data_binding_w3s
+Warning--to sort, need author or key in page_controller_microsoft
+Warning--to sort, need author or key in mgechev
+Warning--to sort, need author or key in depend_inject
+Warning--to sort, need author or key in rest_spring
+Warning--empty publisher in ekberg
+You've used 45 entries,
+            2118 wiz_defined-function locations,
+            657 strings with 8590 characters,
+and the built_in function-call counts, 7871 in all, are:
+= -- 755
+> -- 105
 < -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 0
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
++ -- 66
+- -- 20
+* -- 291
+:= -- 1013
+add.period$ -- 100
+call.type$ -- 45
+change.case$ -- 139
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 0
-format.name$ -- 0
-if$ -- 0
+cite$ -- 81
+duplicate$ -- 350
+empty$ -- 1026
+format.name$ -- 20
+if$ -- 1898
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 0
-num.names$ -- 0
-pop$ -- 0
-preamble$ -- 0
-purify$ -- 0
+int.to.str$ -- 45
+missing$ -- 14
+newline$ -- 193
+num.names$ -- 20
+pop$ -- 359
+preamble$ -- 1
+purify$ -- 100
 quote$ -- 0
-skip$ -- 0
+skip$ -- 307
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
+substring$ -- 226
+swap$ -- 45
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 0
-(There were 2 error messages)
+type$ -- 166
+warning$ -- 36
+while$ -- 20
+width$ -- 47
+write$ -- 383
+(There were 78 warnings)

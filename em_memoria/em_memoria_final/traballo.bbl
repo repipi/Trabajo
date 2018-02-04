@@ -1,0 +1,227 @@
+\begin{thebibliography}{10}
+
+\bibitem{node_acerca}
+Acerca de {N}ode.js.
+\newblock \url{https://nodejs.org/es/about/}, Consultado de 29 de enero del
+  2018.
+
+\bibitem{angular_arch}
+Arquitectura {A}ngular{JS}.
+\newblock \url{https://angular.io/guide/architecture}, Consultado de 29 de
+  enero del 2018.
+
+\bibitem{css_mozilla}
+C{SS}.
+\newblock \url{https://developer.mozilla.org/es/docs/Web/CSS}, Consultado de 29
+  de enero del 2018.
+
+\bibitem{angular_docs}
+Documentación de {A}ngular{JS}.
+\newblock \url{https://angular.io/docs}, Consultado de 29 de enero del 2018.
+
+\bibitem{semantic_github}
+Github {S}emantic {UI}.
+\newblock \url{https://github.com/Semantic-Org/Semantic-UI}, Consultado de 29
+  de enero del 2018.
+
+\bibitem{html_mozilla}
+H{TML}.
+\newblock \url{https://developer.mozilla.org/es/docs/Web/HTML}, Consultado de
+  29 de enero del 2018.
+
+\bibitem{iso_ergonomics}
+{ISO} 9241-171:2008 {E}rgonomics of human-system interaction - {P}art 171:
+  {G}uidance on software accessibility.
+\newblock \url{https://www.iso.org/standard/39080.html}, Consultado de 29 de
+  enero del 2018.
+
+\bibitem{javascript_mozilla}
+Java{S}cript.
+\newblock \url{https://developer.mozilla.org/es/docs/Web/JavaScript},
+  Consultado de 29 de enero del 2018.
+
+\bibitem{promise_objeto}
+Objetos globales: {P}romise.
+\newblock
+  \url{https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promise
+  }, Consultado de 29 de enero del 2018.
+
+\bibitem{google_api}
+Places de {G}oogle {M}aps {J}ava{S}cript {API}.
+\newblock
+  \url{https://developers.google.com/maps/documentation/javascript/places-autocomplete?hl=es-419},
+  Consultado de 29 de enero del 2018.
+
+\bibitem{promise_mozilla}
+Promise.
+\newblock
+  \url{https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Usar_promesas
+  }, Consultado de 29 de enero del 2018.
+
+\bibitem{bootstrap}
+Página oficial de {B}ootstrap.
+\newblock \url{https://nodejs.org/es/about/}, Consultado de 29 de enero del
+  2018.
+
+\bibitem{brackets}
+Página oficial de {B}rackets.
+\newblock \url{http://brackets.io/}, Consultado de 29 de enero del 2018.
+
+\bibitem{express}
+Página oficial de {E}xpress{JS}.
+\newblock \url{http://expressjs.com/es/}, Consultado de 29 de enero del 2018.
+
+\bibitem{fullcalendar}
+Página oficial de {F}ull{C}alendar.
+\newblock \url{https://fullcalendar.io/}, Consultado de 29 de enero del 2018.
+
+\bibitem{git}
+Página oficial de {G}it.
+\newblock \url{https://git-scm.com/}, Consultado de 29 de enero del 2018.
+
+\bibitem{github}
+Página oficial de {G}it{H}ub.
+\newblock \url{https://github.com/}, Consultado de 29 de enero del 2018.
+
+\bibitem{grunt}
+Página oficial de {G}runt{JS}.
+\newblock \url{https://gruntjs.com/}, Consultado de 29 de enero del 2018.
+
+\bibitem{latex}
+Página oficial de {L}a{T}e{X}.
+\newblock \url{https://www.latex-project.org/}, Consultado de 29 de enero del
+  2018.
+
+\bibitem{libreoffice}
+Página oficial de {L}ibre{O}ffice.
+\newblock \url{https://es.libreoffice.org/}, Consultado de 29 de enero del
+  2018.
+
+\bibitem{mongoose}
+Página oficial de {M}ongoose.
+\newblock \url{http://mongoosejs.com/}, Consultado de 29 de enero del 2018.
+
+\bibitem{npm}
+Página oficial de {NPMJS}.
+\newblock \url{https://www.npmjs.com/}, Consultado de 29 de enero del 2018.
+
+\bibitem{passport}
+Página oficial de {P}asspor{JS}.
+\newblock \url{http://www.passportjs.org/}, Consultado de 29 de enero del 2018.
+
+\bibitem{pencil}
+Página oficial de {P}encil.
+\newblock \url{https://pencil.evolus.vn/}, Consultado de 29 de enero del 2018.
+
+\bibitem{robomongo}
+Página oficial de {R}obomongo.
+\newblock \url{https://robomongo.org/}, Consultado de 29 de enero del 2018.
+
+\bibitem{staruml}
+Página oficial de {S}tar{UML}.
+\newblock \url{http://staruml.io/}, Consultado de 29 de enero del 2018.
+
+\bibitem{aenor_req_acces}
+{UNE} 139803:2012 {R}equisitos de accesibilidad para contenidos en la {W}eb.
+\newblock \url{http://administracionelectronica.gob.es/
+  pae_Home/pae_Estrategias/pae_Accesibilidad/pae_normativa/pae_eInclusion_Normas_Accesibilidad.html#.WBbsEYVwZZ0},
+  Consultado de 29 de enero del 2018.
+
+\bibitem{mgechev}
+Angular{JS} in {P}atterns.
+\newblock \url{https://github.com/mgechev/angularjs-in-patterns}, Consultado
+  el: 29 de Enero del 2018.
+
+\bibitem{bootstrap_grid_basic}
+Bootstrap {G}rids. w3schools.
+\newblock \url{https://www.w3schools.com/bootstrap/bootstrap_grid _basic.asp},
+  Consultado el: 29 de Enero del 2018.
+
+\bibitem{data_binding_w3s}
+Data binding. w3schools.
+\newblock \url{https://www.w3schools.com/angular/angular_databinding.asp},
+  Consultado el: 29 de Enero del 2018.
+
+\bibitem{depend_inject}
+Dependency {I}njection in {J}ava{S}cript.
+\newblock \url{https://dzone.com/articles/dependency-injection-0}, Consultado
+  el: 29 de Enero del 2018.
+
+\bibitem{lato}
+Lato. {G}oogle {F}onts.
+\newblock \url{https://fonts.google.com/specimen/Lato}, Consultado el: 29 de
+  Enero del 2018.
+
+\bibitem{merriweather}
+Merriweather. {G}oogle {F}onts.
+\newblock \url{https://fonts.google.com/specimen/Merriweather}, Consultado el:
+  29 de Enero del 2018.
+
+\bibitem{page_controller_microsoft}
+Page {C}ontroller. {M}icrosoft.
+\newblock \url{https://msdn.microsoft.com/en-us/library/ff649595.aspx},
+  Consultado el: 29 de Enero del 2018.
+
+\bibitem{rest_spring}
+Understanding {REST}.
+\newblock \url{https://spring.io/understanding/REST}, Consultado el: 29 de
+  Enero del 2018.
+
+\bibitem{nordic_guidelines}
+Thorén C.
+\newblock {\em Nordic Guidelines for Computer Accessibility}.
+\newblock Nordic Cooperation on Disability, second edition, 1998.
+
+\bibitem{georgefield1845}
+George Field.
+\newblock {\em Chromatics: Or, the Analogy, Harmony, and Philosophy of
+  Colours}.
+\newblock David Bogue, Fleet Street, 1845.
+
+\bibitem{ekberg}
+Ekberg J.
+\newblock {\em Un paso adelante: Diseño para todos. Proyecto INCLUDE.}
+\newblock CEAPAT-IMSERSO, Madrid., 2000.
+
+\bibitem{keheliyagallabaalimesbahivanbeschastnikh2015}
+Ivan~Beschastnikh Keheliya~Gallaba, Ali~Mesbah.
+\newblock {\em Don't Call Us, We'll Call You: Characterizing Callbacks in
+  Javascript}.
+\newblock Empirical Software Engineering and Measurement (ESEM), 2015 ACM/IEEE
+  International Symposium on, 2015.
+
+\bibitem{mongodb_mean_stack}
+MongoDB.
+\newblock The {MEAN} {S}tack: {M}ongo{DB}, {E}xpress{JS}, {A}ngular{JS} and
+  {N}ode.js.
+\newblock
+  \url{https://www.mongodb.com/blog/post/the-mean-stack-mongodb-expressjs-angularjs-and},
+  Consultado de 29 de enero del 2018.
+
+\bibitem{mongodb_gest_datos}
+MongoDB.
+\newblock Reinventando la gestión de datos.
+\newblock \url{https://www.mongodb.com/es}, Consultado de 29 de enero del 2018.
+
+\bibitem{fernandomonteiro2014}
+Fernando Monteiro.
+\newblock {\em Learning Single-page Web Application Development}.
+\newblock PACKT PUBLISHING, 2014.
+
+\bibitem{eval_heuris}
+Afra Pascual y Jesús~Lorés Mª Paula~González.
+\newblock Evaluación heurística. {U}niversitat de {L}leida.
+\newblock \url{http://w.aipo.es/libro/pdf/15-Evaluacion-Heuristica.pdf},
+  Consultado de 29 de enero del 2018.
+
+\bibitem{addyosmani2012}
+Addy Osmani.
+\newblock {\em Learning JavaScript Design Patterns}.
+\newblock O'Reilly, 2012.
+
+\bibitem{stoyanstefanov2010}
+Stoyan Stefanov.
+\newblock {\em JavaScript Patterns}.
+\newblock O'Reilly, 2010.
+
+\end{thebibliography}

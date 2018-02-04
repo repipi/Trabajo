@@ -5,6 +5,16 @@ La ingeniería de requisitos proporciona el mecanismo apropiado para entender lo
 \subsection{Casos de uso}
 Para poder entender cómo los usuarios emplearán finalmente las funciones y características del software, se debe crear un conjunto de escenarios que identifiquen la naturaleza de los usos para el sistema que se va a construir. La descripción de la manera en la que se utilizará el sistema se la conoce como caso de uso.
 
+\subsubsection{Diagrama de casos de uso}
+Las relaciones entre los actores y los casos de uso viene dada por el diagrama de casos de uso\ref{fig:diag_casos_uso}.
+
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[width=1\textwidth]{figuras/diag_casos_uso.png}
+    \caption{Diagrama de casos de uso}
+    \label{fig:diag_casos_uso}
+\end{figure}	
+
 \subsubsection{Actores del sistema}
 Un actor\ref{tab_actores} es cualquier cosa que se comunica con el sistema o producto y que sea externo a este. 
 
@@ -12,7 +22,7 @@ Un actor\ref{tab_actores} es cualquier cosa que se comunica con el sistema o pro
 \centering
 \begin{tabularx}{\textwidth}{|l|X|X|}
 \hline
-\multicolumn{1}{|c|}{Identificador} & \multicolumn{1}{c|}{Nombre} & \multicolumn{1}{c|}{Descripción}                                 \\ \hline
+\rowcolor[gray]{0.9}\multicolumn{1}{|c|}{\textbf{Identificador}} & \multicolumn{1}{c|}{\textbf{Nombre}} & \multicolumn{1}{c|}{\textbf{Descripción}}                                 \\ \hline
 ACT-001                             & Usuario                     & Cualquier persona que acceda a nuestra plataforma web.           \\ \hline
 ACT-002                             & Paciente                    & Cualquier persona que desee ser evaluada por nuestra aplicación. \\ \hline
 ACT-003                             & Psicólogo                   & Cualquier persona que ejerza profesionalmente como psicólogo.    \\ \hline
@@ -25,13 +35,13 @@ ACT-005                             & Administrador               & Persona enca
 
 
 \subsubsection{Especificación de casos de uso}
-Para poder determinar y evaluar corréctamente cada caso de uso, tenemos una escala de la frecuencia de uso\ref{tab_frec_uso} y otra de la prioridad\ref{tab_prior}.
+Para poder determinar y evaluar correctamente cada caso de uso, tenemos una escala de la frecuencia de uso\ref{tab_frec_uso} y otra de la prioridad\ref{tab_prior}.
 
 \begin{table}[htpb]
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-\multicolumn{2}{|c|}{Frecuencia de uso}                                                   \\ \hline
+\rowcolor[gray]{0.9}\multicolumn{2}{|c|}{\textbf{Frecuencia de uso}}                                                   \\ \hline
 Ocasionalmente & Se utilizará en algunas ocasiones, no de forma habitual o por costumbre. \\ \hline
 Puntualmente   & Se utilizará en raras ocasiones.                                         \\ \hline
 Limitada       & Sólo podrá utilizarse en una única ocasión.                              \\ \hline
@@ -44,7 +54,7 @@ Limitada       & Sólo podrá utilizarse en una única ocasión.                
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-\multicolumn{2}{|c|}{Prioridad}                                                                          \\ \hline
+\rowcolor[gray]{0.9}\multicolumn{2}{|c|}{\textbf{Prioridad}}                                                                          \\ \hline
 Alta  & El caso de uso es imprescindible para el funcionamiento normal de la aplicación.                 \\ \hline
 Media & El caso de uso aporta funcionalidad necesaria en el sistema pero no aporta un valor fundamental. \\ \hline
 Baja  & El caso de uso aporta funcionalidades extra pero es totalmente prescindible.                     \\ \hline
@@ -61,17 +71,17 @@ Baja  & El caso de uso aporta funcionalidades extra pero es totalmente prescindi
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-CU-001                            & Iniciar sesión                                                                                                                                                                                                                                   \\ \hline
+\rowcolor[gray]{0.9}\textbf{CU-001}                            & \textbf{Iniciar sesión                                                                                                                                                                                                                                  } \\ \hline
 Actor principal                   & Usuario                                                                                                                                                                                                                                          \\ \hline
 Objetivo en contexto              & El actor desea acceder a una cuenta de usuario ya existente mediante sus claves de acceso.                                                                                                                                                       \\ \hline
 Precondiciones                    & Las claves de usuario deben ser válidas.                                                                                                                                                                                                         \\ \hline
 Disparador                        & El actor desea acceder a la plataforma para disfrutar de sus servicios.                                                                                                                                                                          \\ \hline
-Escenario                         & \begin{tabular}{p{0.5cm} p{6cm}}1. & El actor accede a Emozio.\\ 2. & El actor introduce sus clavesde acceso.\\ 3. & El actor pulsa el botón de acceso.\\ 4. & El sistema muestra el perfil del actor donde podrá acceder al resto de servicios.\end{tabular} \\ \hline
+Escenario                         & \begin{tabular}{p{0.5cm} p{6cm}}1. & El actor accede a Emozio.\\ 2. & El actor introduce sus claves de acceso.\\ 3. & El actor pulsa el botón de acceso.\\ 4. & El sistema muestra el perfil del actor donde podrá acceder al resto de servicios.\end{tabular} \\ \hline
 Excepciones                       & \begin{tabular}{p{0.5cm} p{6cm}}1. & Las claves de usuario son incorrectas.\\ 2. & El actor no estaba registrado en la plataforma en el momento que se realizó el acceso.\end{tabular}                                                                    \\ \hline
 Prioridad                         & Alta. El actor debe iniciar sesión en la aplicación para poder utilizar cualquiera de sus servicios.                                                                                                                                             \\ \hline
 Disponibilidad                    & En el segundo incremento                                                                                                                                                                                                                         \\ \hline
 Frecuencia de uso                 & Ocasionalmente                                                                                                                                                                                                                                   \\ \hline
-Canal del actor                   & A través de un navegador con acceso a internet.                                                                                                                                                                                                  \\ \hline
+Canal del actor                   & A través de un navegador con acceso a Internet.                                                                                                                                                                                                  \\ \hline
 Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-001\end{tabular}                                                                                                                                                                                 \\ \hline
 \end{tabularx}
 \caption{CU-001 Iniciar sesión}
@@ -86,7 +96,7 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-CU-002                            & Registrarse                                                                                                                                                                                                                                                                                                                                                                                                                    \\ \hline
+\rowcolor[gray]{0.9}\textbf{CU-002}                            & \textbf{Registrarse}                                                                                                                                                                                                                                                                                                                                                                                                                    \\ \hline
 Actor principal                   & Usuario                                                                                                                                                                                                                                                                                                                                                                                                                        \\ \hline
 Objetivo en contexto              & El actor desea registrarse en la plataforma cediendo sus datos personales para poder acceder a los servicios de la plataforma.                                                                                                                                                                                                                                                                                                 \\ \hline
 Precondiciones                    & Los datos introducidos en el formulario deben ser válidos.                                                                                                                                                                                                                                                                                                                                                                     \\ \hline
@@ -111,17 +121,17 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-CU-003                            & Realizar cuestionario                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \\ \hline
+\rowcolor[gray]{0.9}\textbf{CU-003}                            & \textbf{Realizar cuestionario                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   } \\ \hline
 Actor principal                   & Paciente                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 \\ \hline
 Objetivo en contexto              & El paciente desea conocer qué profesional es el más adecuado para tratar su dolencia realizando el cuestionario de emparejamiento.                                                                                                                                                                                                                                                                                                                                                                                       \\ \hline
 Precondiciones                    & El cuestionario debe estar cubierto.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     \\ \hline
-Disparador                        & El paciente debe haber pulsado el botón de “hacer el cuestionario”.                                                                                                                                                                                                                                                                                                                                                                                                                                                      \\ \hline
+Disparador                        & El paciente debe haber pulsado el botón de ``hacer el cuestionario''.                                                                                                                                                                                                                                                                                                                                                                                                                                                      \\ \hline
 Escenario                         & \begin{tabular} {p{0.5cm} p{5cm}} 1. & El  paciente accede a Emozio.\\ 2. & El paciente entra en su perfil de usuario ya sea por registro o acceso.\\  3. & El sistema le muestra su perfil de usuario.\\ 4. & El paciente pulsa el botón de hacer el cuestionario.\\ 5. & El sistema le muestra el formulario que debe cubrir.\\ 6. & El paciente cubre las respuestas del formulario.\\ 7. & El paciente pulsa el botón de conocerlos resultados.\\ 8. & El sistema le mostrará su perfil en el que se encuentran los resultados.\end{tabular} \\ \hline
 Excepciones                       & Los datos introducidos en el formulario son incorrectos.                                                                                                                                                                                                                                                                                                                                                                                                                                                                 \\ \hline
 Prioridad                         & Alta. Es la característica central de la plataforma.                                                                                                                                                                                                                                                                                                                                                                                                                                                                     \\ \hline
 Disponibilidad                    & En el primer incremento                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \\ \hline
 Frecuencia de uso                 & Puntualmente                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             \\ \hline
-Canal del actor                   & A través de un navegador con acceso a internet.                                                                                                                                                                                                                                                                                                                                                                                                                                                                          \\ \hline
+Canal del actor                   & A través de un navegador con acceso a Internet.                                                                                                                                                                                                                                                                                                                                                                                                                                                                          \\ \hline
 Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-002\\ RI-003\\ RF-001\\ RF-002\\  RF-005\end{tabular}                                                                                                                                                                                                                                                                                                                                                                                                                                       \\ \hline
 \end{tabularx}
 \caption{CU-003 Realizar cuestionario}
@@ -136,7 +146,7 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-002\\
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-CU-004                            & Consultar resultados                                                                                                                                                                                                                                                     \\ \hline
+\rowcolor[gray]{0.9}\textbf{CU-004}                            & \textbf{Consultar resultados}                                                                                                                                                                                                                                                     \\ \hline
 Actor principal                   & Paciente                                                                                                                                                                                                                                                                 \\ \hline
 Objetivo en contexto              & El paciente desea consultar el resultado del cuestionario de asignación.                                                                                                                                                                                                 \\ \hline
 Precondiciones                    & El cuestionario debe estar cubierto.                                                                                                                                                                                                                                     \\ \hline
@@ -146,7 +156,7 @@ Excepciones                       & El paciente no ha cubierto el test en ningun
 Prioridad                         & Alta. Es la característica central de la plataforma.                                                                                                                                                                                                                     \\ \hline
 Disponibilidad                    & En el primer incremento                                                                                                                                                                                                                                                  \\ \hline
 Frecuencia de uso                 & Ocasionalmente                                                                                                                                                                                                                                                           \\ \hline
-Canal del actor                   & A través de un navegador con acceso a internet.                                                                                                                                                                                                                          \\ \hline
+Canal del actor                   & A través de un navegador con acceso a Internet.                                                                                                                                                                                                                          \\ \hline
 Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-001\\ RF-002\\ RF-005\\ RF-006\end{tabular}                                                                                                                                                                                       \\ \hline
 \end{tabularx}
 \caption{CU-004 Consultar resultados}
@@ -161,7 +171,7 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-CU-005                            & Contactar psicólogo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        \\ \hline
+\rowcolor[gray]{0.9}\textbf{CU-005}                            & \textbf{Contactar psicólogo}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        \\ \hline
 Actor principal                   & Paciente                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
 Objetivo en contexto              & El paciente desea ponerse en contacto con uno de los psicólogos que le han sido asignados.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 \\ \hline
 Precondiciones                    & \begin{tabular}{p{0.5cm} p{5cm}}1.  &  El cuestionario debe estar cubierto.\\ 2.  &  Las respuestas del cuestionario no dieron resultados imprecisos.\end{tabular}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                \\ \hline
@@ -177,11 +187,11 @@ Excepciones                       & \begin{tabular}{p{0.5cm} p{5cm}}1.  &  El pa
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-CU-005                            & Contactar psicólogo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        \\ \hline
+\rowcolor[gray]{0.9}\textbf{CU-005}                            & \textbf{Contactar psicólogo}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        \\ \hline
 Prioridad                         & Moderada. Puede implementarse después de las funciones básicas.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            \\ \hline
 Disponibilidad                    & En el tercer incremento                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \\ \hline
 Frecuencia de uso                 & Puntualmente                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               \\ \hline
-Canal del actor                   & A través de un navegador con acceso a internet.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            \\ \hline
+Canal del actor                   & A través de un navegador con acceso a Internet.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            \\ \hline
 Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-001\\ RF-002\\ RF-005\end{tabular}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             \\ \hline
 \end{tabularx}
 \caption{CU-005 Contactar psicólogo - Parte 2}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
@@ -196,7 +206,7 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-CU-006                            & Modificar información                                                                                                                                                                                                                                                                                                                                                                                                                                                                                \\ \hline
+\rowcolor[gray]{0.9}\textbf{CU-006}                            & \textbf{Modificar información}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                \\ \hline
 Actor principal                   & Usuario                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              \\ \hline
 Objetivo en contexto              & El usuario desea cambiar sus datos porque en ese instante su información de usuario es incorrecta.                                                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
 Precondiciones                    & El usuario tiene acceso a la plataforma.                                                                                                                                                                                                                                                                                                                                                                                                                                                             \\ \hline
@@ -206,7 +216,7 @@ Excepciones                       & El usuario cancela la operación en curso.  
 Prioridad                         & Moderada. Puede implementarse después de las funciones básicas.                                                                                                                                                                                                                                                                                                                                                                                                                                      \\ \hline
 Disponibilidad                    & En el segundo incremento                                                                                                                                                                                                                                                                                                                                                                                                                                                                             \\ \hline
 Frecuencia de uso                 & Puntualmente                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         \\ \hline
-Canal del actor                   & A través de un navegador con acceso a internet.                                                                                                                                                                                                                                                                                                                                                                                                                                                      \\ \hline
+Canal del actor                   & A través de un navegador con acceso a Internet.                                                                                                                                                                                                                                                                                                                                                                                                                                                      \\ \hline
 Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-001\\ RF-002\end{tabular}                                                                                                                                                                                                                                                                                                                                                                                                                            \\ \hline
 \end{tabularx}
 \caption{CU-006 Modificar información}                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
@@ -221,7 +231,7 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-CU-007                            & Valorar psicólogo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \\ \hline
+\rowcolor[gray]{0.9}\textbf{CU-007}                            & \textbf{Valorar psicólogo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 } \\ \hline
 Actor principal                   & Paciente                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           \\ \hline
 Objetivo en contexto              & El paciente desea  valorar al psicólogo con el que se ha puesto en contacto.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       \\ \hline
 Precondiciones                    & El paciente se ha puesto en contacto previamente con el psicólogo en cuestión.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     \\ \hline
@@ -237,11 +247,11 @@ Excepciones                       & \begin{tabular}{p{0.5cm} p{5cm}}1. & El paci
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-CU-007                            & Valorar psicólogo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \\ \hline
+\rowcolor[gray]{0.9}\textbf{CU-007}                            & \textbf{Valorar psicólogo}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \\ \hline
 Prioridad                         & Moderada. Puede implementarse después de las funciones básicas.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \\ \hline
 Disponibilidad                    & En el tercer incremento                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            \\ \hline
 Frecuencia de uso                 & Puntualmente                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       \\ \hline
-Canal del actor                   & A través de un navegador con acceso a internet.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \\ \hline
+Canal del actor                   & A través de un navegador con acceso a Internet.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \\ \hline
 Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-002\\ RF-001\\ RF-002\\ RF-005\\ RF-007\end{tabular}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 \\ \hline
 \end{tabularx}
 \caption{CU-007 Valorar psicólogo - Parte 2}
@@ -256,7 +266,7 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-002\\
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-CU-008                            & Filtrar resultados cuestionario                                                                                                                                                                                                                                                                                                                                                                                                                                                               \\ \hline
+\rowcolor[gray]{0.9}\textbf{CU-008}                            & \textbf{Filtrar resultados cuestionario}                                                                                                                                                                                                                                                                                                                                                                                                                                                               \\ \hline
 Actor principal                   & Paciente                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      \\ \hline
 Objetivo en contexto              & El paciente desea filtrar su lista de psicólogos resultado en función de unos parámetros.                                                                                                                                                                                                                                                                                                                                                                                                     \\ \hline
 Precondiciones                    & \begin{tabular}{p{0.5cm} p{5cm}}1. & El cuestionario debe estar cubierto.\\ 2. & Las respuestas del cuestionario no dieron resultados imprecisos.\end{tabular}                                                                                                                                                                                                                                                                                                                                         \\ \hline
@@ -266,7 +276,7 @@ Excepciones                       & \begin{tabular}{p{0.5cm} p{5cm}}1. & El paci
 Prioridad                         & Moderada. Puede implementarse después de las funciones básicas.                                                                                                                                                                                                                                                                                                                                                                                                                               \\ \hline
 Disponibilidad                    & En el primer incremento                                                                                                                                                                                                                                                                                                                                                                                                                                                                       \\ \hline
 Frecuencia de uso                 & Ocasionalmente                                                                                                                                                                                                                                                                                                                                                                                                                                                                                \\ \hline
-Canal del actor                   & A través de un navegador con acceso a internet.                                                                                                                                                                                                                                                                                                                                                                                                                                               \\ \hline
+Canal del actor                   & A través de un navegador con acceso a Internet.                                                                                                                                                                                                                                                                                                                                                                                                                                               \\ \hline
 Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-001\\ RF-002\\ RF-005\end{tabular}                                                                                                                                                                                                                                                                                                                                                                                                                     \\ \hline
 \end{tabularx}
 \caption{CU-008 Filtrar resultados cuestionario}
@@ -281,7 +291,7 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-CU-009                            & Consultar perfil psicólogo                                                                                                                                                                                                                                                                                                                                                                                          \\ \hline
+\rowcolor[gray]{0.9}\textbf{CU-009}                            & \textbf{Consultar perfil psicólogo}                                                                                                                                                                                                                                                                                                                                                                                          \\ \hline
 Actor principal                   & Paciente                                                                                                                                                                                                                                                                                                                                                                                                            \\ \hline
 Objetivo en contexto              & El paciente desea consultar la información de perfil de uno de los psicólogos resultado.                                                                                                                                                                                                                                                                                                                            \\ \hline
 Precondiciones                    & \begin{tabular}{p{0.5cm} p{5cm}}1. & El cuestionario debe estar cubierto.\\ 2. & Las respuestas del cuestionario no dieron resultados imprecisos.\end{tabular}                                                                                                                                                                                                                                                               \\ \hline
@@ -306,7 +316,7 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-CU-010                            & Darse de baja                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+\rowcolor[gray]{0.9}\textbf{CU-010}                            & \textbf{Darse de baja}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
 Actor principal                   & Usuario                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         \\ \hline
 Objetivo en contexto              & El usuario desea darse debaja en la aplicación.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 \\ \hline
 Precondiciones                    & El usuario tiene acceso a la plataforma.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        \\ \hline
@@ -316,7 +326,7 @@ Excepciones                       & El usuario cancela la operación en curso.  
 Prioridad                         & Moderada. Puede implementarse después de las funciones básicas.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 \\ \hline
 Disponibilidad                    & En el segundo incremento                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        \\ \hline
 Frecuencia de uso                 & Limitada                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        \\ \hline
-Canal del actor                   & A través de un navegador con acceso a internet.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 \\ \hline
+Canal del actor                   & A través de un navegador con acceso a Internet.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 \\ \hline
 Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-001\\ RF-002\end{tabular}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                \\ \hline
 \end{tabularx}
 \caption{CU-010 Darse de baja}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
@@ -331,17 +341,17 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-CU-011                            & Consultar bandeja de entrada                                                                                                                                                                           \\ \hline
+\rowcolor[gray]{0.9}\textbf{CU-011}                            & \textbf{Consultar bandeja de entrada}                                                                                                                                                                           \\ \hline
 Actor principal                   & Psicólogo                                                                                                                                                                                              \\ \hline
 Objetivo en contexto              & El psicólogo desea consultar las peticiones que le han llegado a su bandeja de entrada.                                                                                                                \\ \hline
 Precondiciones                    & Estar registrado.                                                                                                                                                                                      \\ \hline
-Disparador                        & El psicologo accede a su perfil y quiere consultar su bandeja de entrada.                                                                                                                              \\ \hline
+Disparador                        & El psicólogo accede a su perfil y quiere consultar su bandeja de entrada.                                                                                                                              \\ \hline
 Escenario                         & \begin{tabular}{p{0.5cm} p{5cm}}1. & El psicólogo accede a Emozio.\\ 2. & El psicólogo accede a su perfil de usuario.\\ 3. & El sistema le muestra los mensajes pendientes de su bandeja de entrada.\end{tabular} \\ \hline
 Excepciones                       & -                                                                                                                                                                                                      \\ \hline
 Prioridad                         & Moderada. Puede implementarse después de las funciones básicas.                                                                                                                                        \\ \hline
 Disponibilidad                    & En el tercer incremento                                                                                                                                                                                \\ \hline
 Frecuencia de uso                 & Ocasionalmente                                                                                                                                                                                         \\ \hline
-Canal del actor                   & A través de un navegador con acceso a internet.                                                                                                                                                        \\ \hline
+Canal del actor                   & A través de un navegador con acceso a Internet.                                                                                                                                                        \\ \hline
 Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-001\\ RF-002\end{tabular}                                                                                                                                       \\ \hline
 \end{tabularx}
 \caption{CU-011 Consultar bandeja de entrada}
@@ -356,7 +366,7 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-CU-012                            & Responder solicitud paciente                                                                                                                                                                                                                                                                                                                                                \\ \hline
+\rowcolor[gray]{0.9}\textbf{CU-012}                            & \textbf{Responder solicitud paciente                                                                                                                                                                                                                                                                                                                                               } \\ \hline
 Actor principal                   & Psicólogo                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
 Objetivo en contexto              & El psicólogo desea responder a una de las peticiones que le han llegado a su bandeja de entrada.                                                                                                                                                                                                                                                                            \\ \hline
 Precondiciones                    & Tener peticiones pendientes en la bandeja de entrada.                                                                                                                                                                                                                                                                                                                       \\ \hline
@@ -366,7 +376,7 @@ Excepciones                       & -                                           
 Prioridad                         & Moderada. Puede implementarse después de las funciones básicas.                                                                                                                                                                                                                                                                                                             \\ \hline
 Disponibilidad                    & En el tercer incremento                                                                                                                                                                                                                                                                                                                                                     \\ \hline
 Frecuencia de uso                 & Ocasionalmente                                                                                                                                                                                                                                                                                                                                                              \\ \hline
-Canal del actor                   & A través de un navegador con acceso a internet.                                                                                                                                                                                                                                                                                                                             \\ \hline
+Canal del actor                   & A través de un navegador con acceso a Internet.                                                                                                                                                                                                                                                                                                                             \\ \hline
 Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-001\\ RF-002\end{tabular}                                                                                                                                                                                                                                                                                                            \\ \hline
 \end{tabularx}
 \caption{CU-012 Responder solicitud paciente}
@@ -381,17 +391,17 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-CU-013                            & Emparejamiento                                                                                                             \\ \hline
+\rowcolor[gray]{0.9}\textbf{CU-013}                            & \textbf{Emparejamiento                                                                                                            } \\ \hline
 Actor principal                   & Sistema                                                                                                                    \\ \hline
 Objetivo en contexto              & El sistema realiza el emparejamiento paciente-psicólogo.                                                                   \\ \hline
 Precondiciones                    & El paciente en cuestión se disponga a realizar el test.                                                                    \\ \hline
-Disparador                        & El paciente selecciona “Hacer el test”.                                                                                    \\ \hline
+Disparador                        & El paciente selecciona ``Hacer el test''.                                                                                    \\ \hline
 Escenario                         & Cuando se envíen los resultados del test de un paciente, el sistema hará la correspondiente asignación paciente-psicólogo. \\ \hline
 Excepciones                       & -                                                                                                                          \\ \hline
 Prioridad                         & Alta. Es la característica central de la plataforma.                                                                       \\ \hline
 Disponibilidad                    & En el primer incremento                                                                                                    \\ \hline
 Frecuencia de uso                 & Ocasionalmente                                                                                                             \\ \hline
-Canal del actor                   & A través de un navegador con acceso a internet.                                                                            \\ \hline
+Canal del actor                   & A través de un navegador con acceso a Internet.                                                                            \\ \hline
 Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-001\\ RF-002\\  RF-005\end{tabular}                                                  \\ \hline
 \end{tabularx}
 \caption{CU-013 Emparejamiento}                        
@@ -408,7 +418,7 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-CU-014                            & Dar alta a las preguntas                                                                  \\ \hline
+\rowcolor[gray]{0.9}\textbf{CU-014}                            & \textbf{Dar alta a las preguntas}                                                                  \\ \hline
 Actor principal                   & Administrador                                                                             \\ \hline
 Objetivo en contexto              & El administrador dará de alta a las preguntas asociadas a las patologías.                 \\ \hline
 Precondiciones                    & Tener nuevas preguntas para añadir al cuestionario.                                       \\ \hline
@@ -435,7 +445,7 @@ Dependencias (con los requisitos) & RI-002                                      
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-CU-015                            & Añadir la publicidad                                                                           \\ \hline
+\rowcolor[gray]{0.9}\textbf{CU-015}                            & \textbf{Añadir la publicidad}                                                                           \\ \hline
 Actor principal                   & Administrador                                                                                  \\ \hline
 Objetivo en contexto              & El administrador añadirá la publicidad necesaria a la aplicación en el momento que se precise. \\ \hline
 Precondiciones                    & -                                                                                              \\ \hline
@@ -462,7 +472,7 @@ Dependencias (con los requisitos) & -                                           
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-CU-016                            & Dar alta psicólogos                                                                            \\ \hline
+\rowcolor[gray]{0.9}\textbf{CU-016}                            & \textbf{Dar alta psicólogos                                                                           } \\ \hline
 Actor principal                   & Administrador                                                                                  \\ \hline
 Objetivo en contexto              & El administrador dará de alta a los psicólogos que hayan enviado el formulario de registro.    \\ \hline
 Precondiciones                    & El psicólogo que se va a dar de alta, ha de haber cubierto el formulario de registro.          \\ \hline
@@ -472,22 +482,12 @@ Excepciones                       & -                                           
 Prioridad                         & Moderada. Puede implementarse después de las funciones básicas.                                \\ \hline
 Disponibilidad                    & En el segundo incremento                                                                       \\ \hline
 Frecuencia de uso                 & Puntualmente                                                                                   \\ \hline
-Canal del actor                   & A través de un navegador con acceso a internet y una herramienta de gestión de bases de datos. \\ \hline
+Canal del actor                   & A través de un navegador con acceso a Internet y una herramienta de gestión de bases de datos. \\ \hline
 Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-003\\ RI-002\end{tabular}                                        \\ \hline
 \end{tabularx}
 \caption{CU-016 Dar alta psicólogos}                          
 %\label{my-label}
 \end{table}
-
-\subsubsection{Diagrama de casos de uso}
-Las relaciones entre los actores y los casos de uso viene dada por el diagrama de casos de uso\ref{fig:diag_casos_uso}.
-
-\begin{figure}[htbp] 
-    \centering
-    \includegraphics[width=1\textwidth]{figuras/diag_casos_uso.png}
-    \caption{Diagrama de casos de uso}
-    \label{fig:diag_casos_uso}
-\end{figure}	
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%MODELO DE DATOS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -507,13 +507,13 @@ En nuestro proyecto, los datos se encuentran almacenados en una MongoDB que cons
 Teniendo de referencia una base de datos SQL podemos comprender cómo MongoDB almacena la información con una pequeña analogía. En la gestión de sistemas de bases de datos relacionales, los datos se guardan en filas contenidas dentro de tablas. En cambio, en MongoDB los datos son guardados como documentos contenidos en colecciones.
 
 
-Una colección es un conjunto de documentos, como éstos son independientes, pueden contener distintos campos, lo que indica que su esquema es dinámico. A su vez, estos documentos son muy similares a los JSON Objects., son conocidos como BSON objects y la principal diferencia es que contienen a mayores el tipo ObjectID que sirve de identificador del documento. Aquí es donde resaltamos una de las ventajas de utilizar MongoDB dentro de MEAN Stack, puesto que la información manejada en el lado cliente se obtiene y representa del mismo modo en el lado servidor.
+Una colección es un conjunto de documentos, como éstos son independientes, pueden contener distintos campos, lo que indica que su esquema es dinámico. A su vez, estos documentos son muy similares a los \textit{JSON Objects}, son conocidos como \textit{BSON objects} y la principal diferencia es que contienen a mayores el tipo \textit{ObjectID} que sirve de identificador del documento. Aquí es donde resaltamos una de las ventajas de utilizar MongoDB dentro de MEAN Stack, puesto que la información manejada en el lado cliente se obtiene y representa del mismo modo en el lado servidor.
 
 
 En nuestro proyecto, las bases de datos son NoSQL, las cuales no tienen una representación estandarizada. Por tanto, y por entendimiento, se ha realizado a mayores una aproximación del modelo no relacional\ref{fig:mod_datos_mongoDB} al de un modelo entidad relación\ref{fig:mod_datos_mer}.
 
 \subsubsection{Modelo de datos NoSQL}
-En nuestro modelo de datos NoSQL la información está organizada en colecciones. Se debe resaltar que en algunas ocasiones, los documentos se encuentran embebidos dentro de otros. Como por ejemplo, en el caso de los comentarios de los psicólogos. Los comentarios son documentos embebidos (no tienen ObjectID) dentro de los documentos de la colección de psicólogos.
+En nuestro modelo de datos NoSQL la información está organizada en colecciones. Se debe resaltar que en algunas ocasiones, los documentos se encuentran embebidos dentro de otros. Como por ejemplo, en el caso de los comentarios de los psicólogos. Los comentarios son documentos embebidos (no tienen \textit{ObjectID}) dentro de los documentos de la colección de psicólogos.
 
 
 Por otra parte, están los documentos referenciados, que son independientes. Tomando el mismo ejemplo anterior, dentro de un documento embebido de comentarios hayamos una referencia a un documento de la colección de pacientes (\_idPaciente).
@@ -553,7 +553,7 @@ Por tanto, un diccionario de datos es una lista de nombres ordenada alfabéticam
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-Colección  & Descripción                                                                               \\ \hline
+\rowcolor[gray]{0.9}\textbf{Colección}  & \textbf{Descripción}                                                                               \\ \hline
 Mensajes   & Almacena toda la información referente a las comunicaciones entre psicólogos y pacientes. \\ \hline
 Pacientes  & Almacena toda la información sobre los pacientes del sistema.                             \\ \hline
 Patologías & Almacena todas las patologías registradas hasta el momento en el sistema.                 \\ \hline
@@ -568,8 +568,8 @@ Psicólogos & Almacena toda la información sobre los psicólogos del sistema.  
 \centering
 \begin{tabularx}{\textwidth}{|l|X|X|X|}
 \hline
-Documento         & Esquema BSON                                                                                    &                                                                                  &                                                                                                                                                                                                                                  \\ \hline
-                  & Campo                                                                                           & Tipo de dato                                                                     & Descripción                                                                                                                                                                                                                      \\ \hline
+\rowcolor[gray]{0.9}\textbf{Documento}         & \textbf{Esquema BSON                                                                                   } &                                                                                  &                                                                                                                                                                                                                                  \\ \hline
+                  & \textbf{Campo}                                                                                           &\textbf{ Tipo de dato}                                                                     & \textbf{Descripción}                                                                                                                                                                                                                      \\ \hline
 Mensaje           & \_id                                                                                            & ObjectID                                                                         & Identificador del documento                                                                                                                                                                                                      \\ \hline
 \multirow{6}{*}{} & acepta                                                                                          & Boolean                                                                          & El psicólogo acepta la solicitud de un paciente.                                                                                                                                                                                 \\ \cline{2-4} 
                   & \begin{tabular}[c]{@{}l@{}}mensajePaciente \\ - fecha \\ - preferencias \\ - texto\end{tabular} & \begin{tabular}[c]{@{}l@{}}JSON \\ - String \\ - String \\ - String\end{tabular} & Es la información del mensaje que le envía un paciente al psicólogo. Se guarda la fecha donde fue enviado el mensaje, las preferencias horarias que tendría el paciente y el comentario que quiera transmitirle el paciente.     \\ \cline{2-4} 
@@ -586,8 +586,8 @@ Mensaje           & \_id                                                        
 \centering
 \begin{tabularx}{\textwidth}{|l|X|X|X|X|}
 \hline
-Documento         & Esquema BSON                                                                       &                                                                          &                                                                                                                                                                                  \\ \hline
-                  & Campo                                                                              & Tipo de dato                                                             & Descripción                                                                                                                                                                      \\ \hline
+\rowcolor[gray]{0.9}\textbf{Documento}         & \textbf{Esquema BSON                                                                      } &                                                                          &                                                                                                                                                                                  \\ \hline
+                  & \textbf{Campo}                                                                              & \textbf{Tipo de dato}                                                             & \textbf{Descripción                                                                                                                                                                     } \\ \hline
 Paciente          & \_id                                                                               & ObjectID                                                                 & Identificador del documento.                                                                                                                                                     \\ \hline
 \multirow{8}{*}{} & edad                                                                               & String                                                                   & Fecha de nacimiento del psicólogo.                                                                                                                                               \\ \cline{2-4} 
                   & email                                                                              & String                                                                   & E-mail del paciente.                                                                                                                                                             \\ \cline{2-4} 
@@ -606,8 +606,8 @@ Paciente          & \_id                                                        
 \centering
 \begin{tabularx}{\textwidth}{|l|X|X|X|X|}
 \hline
-Documento         & Esquema BSON &              &                                                           \\ \hline
-                  & Campo        & Tipo de dato & Descripción                                               \\ \hline
+\rowcolor[gray]{0.9}\textbf{Documento}         & \textbf{Esquema BSON} &              &                                                           \\ \hline
+                  & \textbf{Campo}        & \textbf{Tipo de dato} & \textbf{Descripción                                              } \\ \hline
 Patología         & \_id         & ObjectID     & Identificador del documento.                              \\ \hline
 \multirow{3}{*}{} & nombre       & String       & Nombre de la patología.                                   \\ \cline{2-4} 
                   & preguntas    & Array String & Conjunto de preguntas sobre los síntomas de la patología. \\ \cline{2-4} 
@@ -621,8 +621,8 @@ Patología         & \_id         & ObjectID     & Identificador del documento. 
 \centering
 \begin{tabularx}{\textwidth}{|l|X|X|X|X|}
 \hline
-Documento          & Esquema BSON                                                                                                                                           &                                                                                                                            &                                                                                                                                                                                                                                                                             \\ \hline
-                   & Campo                                                                                                                                                  & Tipo de dato                                                                                                               & Descripción                                                                                                                                                                                                                                                                 \\ \hline
+\rowcolor[gray]{0.9}\textbf{Documento}          & \textbf{Esquema BSON                                                                                                                                          } &                                                                                                                            &                                                                                                                                                                                                                                                                             \\ \hline
+                   & \textbf{Campo                                                                                                                                                 } & \textbf{Tipo de dato                                                                                                              } & \textbf{Descripción}                                                                                                                                                                                                                                                                 \\ \hline
 Psicólogo         & \_id                                                                                                                                                   & ObjectID                                                                                                                   & Identificador del documento.                                                                                                                                                                                                                                                \\ \hline
 \multirow{18}{*}{} & aseguradora                                                                                                                                            & String                                                                                                                     & Aseguradora para la que trabaja el psicólogo.                                                                                                                                                                                                                               \\ \cline{2-4} 
                    & \begin{tabular}[c]{@{}l@{}}comentarios \\ - \_idPaciente\\ - fechaComentario\\ - fechaRespuesta \\ - respuesta \\ - texto \\ - valoracion\end{tabular} & \begin{tabular}[c]{@{}l@{}}Array JSON \\ - ObjectID \\ - String \\ - String \\ - String\\ - String\\ - Number\end{tabular} & Comentario del paciente y respuesta del psicólogo al comentario. Se guarda el identificador del paciente, la fecha en la que fue enviado, la fecha en la que fue respondido, la respuesta del psicólogo, el comentario del paciente y la valoración que le dá al psicólogo. \\ \cline{2-4} 
@@ -643,8 +643,8 @@ Psicólogo         & \_id                                                       
 \centering
 \begin{tabularx}{\textwidth}{|l|X|X|X|X|}
 \hline
-Documento          & Esquema BSON                                                                                                                                           &                                                                                                                            &                                                                                                                                                                                                                                                                             \\ \hline
-                   & Campo                                                                                                                                                  & Tipo de dato                                                                                                               & Descripción                                                                                                                                                                                                                                                                 \\ \hline
+\rowcolor[gray]{0.9}\textbf{Documento}          & \textbf{Esquema BSON                                                                                                                                          } &                                                                                                                            &                                                                                                                                                                                                                                                                             \\ \hline
+                   & \textbf{Campo}                                                                                                                                                  & \textbf{Tipo de dato}                                                                                                               & \textbf{Descripción                                                                                                                                                                                                                                                                } \\ \hline
 Psicólogo         & patologias                                                                                                                                             & Array String                                                                                                               & Conjunto de nombres de las patologías que trata el psicólogo.                                                                                                                                                                                                               
 \\ \cline{2-4} 
                    & ncolegiado                                                                                                                                             & String                                                                                                                     & Número de colegiado del psicólogo.                                                                                                                                                                                                                                          \\ \cline{2-4} 
@@ -677,7 +677,7 @@ Para poder evaluar corréctamente los requisitos, se debe definir su escala de e
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-ESCALA   & DESCRIPCIÓN                                                 \\ \hline
+\rowcolor[gray]{0.9}\textbf{Escala}   & \textbf{Descripción}                                                 \\ \hline
 Baja     & El requisito puede sufrir cambios con facilidad             \\ \hline
 Media    & Existe cierto grado de ocurrencia al cambio en el requisito \\ \hline
 Alta     & La probabilidad de cambios en el requisito es muy baja      \\ \hline
@@ -698,10 +698,10 @@ Los requisitos de información guardan toda la información que debe almacenar e
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-RI-001            & Paciente                                                                       \\ \hline
-Descripción       & El sistema deberá almacenar la información correspondiente a los pacientes.    \\ \hline
-Datos específicos & E-mail                                                                         \\ 
-\multirow{8}{*}{} & Contraseńa                                                                     \\ 
+\rowcolor[gray]{0.9}\textbf{RI-001}            & \textbf{Paciente}                                                                       \\ \hline
+\textbf{Descripción}       & El sistema deberá almacenar la información correspondiente a los pacientes.    \\ \hline
+\textbf{Datos específicos} & E-mail                                                                         \\ 
+\multirow{8}{*}{} & Contraseña                                                                     \\ 
                   & Género                                                                         \\ 
                   & Edad                                                                           \\ 
                   & Localización                                                                   \\ 
@@ -709,7 +709,7 @@ Datos específicos & E-mail                                                     
                   & Síntomas                                                                       \\ 
                   & Diagnóstico                                                                    \\  
                   & Psicólogos que pueden tratar su caso \\ \hline
-Estabilidad       & Media                                                                          \\ \hline
+\textbf{Estabilidad}       & Media                                                                          \\ \hline
 \end{tabularx}
 \caption{RI-001 Paciente}
 %\label{my-label}
@@ -720,11 +720,11 @@ Estabilidad       & Media                                                       
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-RI-002            & Patología                                                                    \\ \hline
-Descripción       & El sistema deberá almacenar la información correspondiente a las patologías. \\ \hline
-Datos específicos & Nombre                                                                       \\ 
+\rowcolor[gray]{0.9}\textbf{RI-002}            & \textbf{Patología                                                                   } \\ \hline
+\textbf{Descripción}       & El sistema deberá almacenar la información correspondiente a las patologías. \\ \hline
+\textbf{Datos específicos} & Nombre                                                                       \\ 
                   & Síntomas                                                                     \\ \hline
-Estabilidad       & Alta                                                                         \\ \hline
+\textbf{Estabilidad}       & Alta                                                                         \\ \hline
 \end{tabularx}
 \caption{RI-002 Patología}
 %\label{my-label}
@@ -735,11 +735,11 @@ Estabilidad       & Alta                                                        
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-RI-003             & Psicólogo                                                                    \\ \hline
-Descripción        & El sistema deberá almacenar la información correspondiente a los psicólogos. \\ \hline
-Datos específicos  & Nombre                                                                       \\ \hline
+\rowcolor[gray]{0.9}\textbf{RI-003}             & \textbf{Psicólogo}                                                                    \\ \hline
+\textbf{Descripción}        & El sistema deberá almacenar la información correspondiente a los psicólogos. \\ \hline
+\textbf{Datos específicos}  & Nombre                                                                       \\ \hline
 \multirow{18}{*}{} & E-mail                                                                       \\ 
-                   & Contraseńa                                                                   \\  
+                   & Contraseña                                                                   \\  
                    & Género                                                                       \\ 
                    & Edad                                                                         \\  
                    & Localización                                                                 \\ 
@@ -754,9 +754,9 @@ Datos específicos  & Nombre                                                    
                    & Patologías                                                                   \\  
                    & Valoración                                                                   \\ 
                    & Precio                                                                       \\ 
-                   & Tipo de consulta: Online o presencial                                        \\
+                   & Tipo de consulta: \textit{Online} o presencial                                        \\
                    & Gabinete                                                                     \\ \hline
-Estabilidad        & Media                                                                        \\ \hline
+\textbf{Estabilidad}        & Media                                                                        \\ \hline
 \end{tabularx}
 \caption{RI-003 Psicólogo}
 %\label{my-label}
@@ -776,10 +776,10 @@ Los requisitos funcionales son declaraciones de los servicios que debe proporcio
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-RF - 001                                & Acceso usuarios                                                                                              \\ \hline
-Descripción                             & Cualquier usuario registrado en la plataforma podrá acceder a la plataforma a través de la página de acceso. \\ \hline
-Estabilidad                             & Alta                                                                                                         \\ \hline
-Dependencias & \begin{tabular}[c]{@{}l@{}}RI-001 \\ RI-003 \\ RF-002\end{tabular}                                           \\ \hline
+\rowcolor[gray]{0.9}\textbf{RF - 001 }                               & \textbf{Acceso usuarios                                                                                             } \\ \hline
+\textbf{Descripción}                             & Cualquier usuario registrado en la plataforma podrá acceder a la plataforma a través de la página de acceso. \\ \hline
+\textbf{Estabilidad}                             & Alta                                                                                                         \\ \hline
+\textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}}RI-001 \\ RI-003 \\ RF-002\end{tabular}                                           \\ \hline
 \end{tabularx}
 \caption{RF-001 Acceso usuarios}
 %\label{my-label}
@@ -790,10 +790,10 @@ Dependencias & \begin{tabular}[c]{@{}l@{}}RI-001 \\ RI-003 \\ RF-002\end{tabular
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-RF - 002                                & Registro                                                                                                        \\ \hline
-Descripción                             & Cualquier usuario podrá acceder a los servicios de la plataforma tras haber cubierto el formulario de registro. \\ \hline
-Estabilidad                             & Alta                                                                                                            \\ \hline
-Dependencias & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\end{tabular}                                                         \\ \hline
+\rowcolor[gray]{0.9}\textbf{RF - 002}                                & \textbf{Registro                                                                                                       } \\ \hline
+\textbf{Descripción }                            & Cualquier usuario podrá acceder a los servicios de la plataforma tras haber cubierto el formulario de registro. \\ \hline
+\textbf{Estabilidad }                            & Alta                                                                                                            \\ \hline
+\textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\end{tabular}                                                         \\ \hline
 \end{tabularx}
 \caption{RF-002 Registro}
 %\label{my-label}
@@ -804,10 +804,10 @@ Dependencias & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\end{tabular}          
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-RF - 003                                & Baja                                                                                \\ \hline
-Descripción                             & Cualquier usuario registrado en la plataforma podrá darse de baja de la plataforma. \\ \hline
-Estabilidad                             & Alta                                                                                \\ \hline
-Dependencias & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-002\end{tabular}                    \\ \hline
+\rowcolor[gray]{0.9}\textbf{RF - 003}                                & \textbf{Baja                                                                               } \\ \hline
+\textbf{Descripción}                             & Cualquier usuario registrado en la plataforma podrá darse de baja de la plataforma. \\ \hline
+\textbf{Estabilidad}                             & Alta                                                                                \\ \hline
+\textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-002\end{tabular}                    \\ \hline
 \end{tabularx}
 \caption{RF-003 Baja}
 %\label{my-label}
@@ -818,10 +818,10 @@ Dependencias & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-002\end{tabular} 
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-RF - 004                                & Modificación de los datos                                                           \\ \hline
-Descripción                             & Cualquier usuario registrado en la plataforma podrá modificar sus datos de usuario. \\ \hline
-Estabilidad                             & Alta                                                                                \\ \hline
-Dependencias & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-001\\ RF-002\end{tabular}           \\ \hline
+\rowcolor[gray]{0.9}\textbf{RF - 004}                                & \textbf{Modificación de los datos                                                          } \\ \hline
+\textbf{Descripción}                             & Cualquier usuario registrado en la plataforma podrá modificar sus datos de usuario. \\ \hline
+\textbf{Estabilidad}                             & Alta                                                                                \\ \hline
+\textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-001\\ RF-002\end{tabular}           \\ \hline
 \end{tabularx}
 \caption{RF-004 Modificación de los datos}
 %\label{my-label}
@@ -834,10 +834,10 @@ Dependencias & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-001\\ RF-002\end{
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-RF - 005                                & Emparejamiento                                                                                                                                                                                                                                                                     \\ \hline
-Descripción                             & Se garantizará al paciente el emparejamiento con el psicólogo más adecuado para tratar su caso. Cualquier paciente registrado en la plataforma podrá especificar sus síntomas a través de un cuestionario asignándole al menos un psicólogo al paciente tras conocer su patología. \\ \hline
-Estabilidad                             & Alta                                                                                                                                                                                                                                                                               \\ \hline
-Dependencias & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-002\\ RI-003\\ RF-001\\ RF-002\end{tabular}                                                                                                                                                                                                 \\ \hline
+\rowcolor[gray]{0.9}\textbf{RF - 005}                               & \textbf{Emparejamiento                                                                                                                                                                                                                                                                    } \\ \hline
+\textbf{Descripción}                             & Se garantizará al paciente el emparejamiento con el psicólogo más adecuado para tratar su caso. Cualquier paciente registrado en la plataforma podrá especificar sus síntomas a través de un cuestionario asignándole al menos un psicólogo al paciente tras conocer su patología. \\ \hline
+\textbf{Estabilidad}                             & Alta                                                                                                                                                                                                                                                                               \\ \hline
+\textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-002\\ RI-003\\ RF-001\\ RF-002\end{tabular}                                                                                                                                                                                                 \\ \hline
 \end{tabularx}
 \caption{RF-005 Emparejamiento}
 %\label{my-label}
@@ -847,10 +847,10 @@ Dependencias & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-002\\ RI-003\\ RF-001\\ RF
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-RF - 006                                & Filtrado de los resultados en base a distintos criterios                                                                                                                                              \\ \hline
-Descripción                             & Cualquier paciente, que haya obtenido resultados concluyentes en el cuestionario, podrá  filtrarlos en base a distintos criterios como las características geográficas, el precio o su seguro médico. \\ \hline
-Estabilidad                             & Alta                                                                                                                                                                                                  \\ \hline
-Dependencias & \begin{tabular}[c]{@{}l@{}}RI-003\\ RF-001\\ RF-002\\ RF-005\end{tabular}                                                                                                                             \\ \hline
+\rowcolor[gray]{0.9}\textbf{RF - 006}                                & \textbf{Filtrado de los resultados en base a distintos criterios                                                                                                                                             } \\ \hline
+\textbf{Descripción}                             & Cualquier paciente, que haya obtenido resultados concluyentes en el cuestionario, podrá  filtrarlos en base a distintos criterios como las características geográficas, el precio o su seguro médico. \\ \hline
+\textbf{Estabilidad}                             & Alta                                                                                                                                                                                                  \\ \hline
+\textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}}RI-003\\ RF-001\\ RF-002\\ RF-005\end{tabular}                                                                                                                             \\ \hline
 \end{tabularx}
 \caption{RF-006 Filtrado de los resultados en base a distintos criterios}                                                                                                                                          
 %\label{my-label}
@@ -863,10 +863,10 @@ Dependencias & \begin{tabular}[c]{@{}l@{}}RI-003\\ RF-001\\ RF-002\\ RF-005\end{
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-RF - 007                                & Contacto del paciente con el psicólogo                                                                               \\ \hline
-Descripción                             & El paciente podrá contactar con cualquiera de los psicólogos que le fueron  asignados tras realizar el cuestionario. \\ \hline
-Estabilidad                             & Alta                                                                                                                 \\ \hline
-Dependencias & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-001\\ RF-002\\ RF-005\end{tabular}                                   \\ \hline
+\rowcolor[gray]{0.9}\textbf{RF - 007}                                & \textbf{Contacto del paciente con el psicólogo}                                                                               \\ \hline
+\textbf{Descripción}                             & El paciente podrá contactar con cualquiera de los psicólogos que le fueron  asignados tras realizar el cuestionario. \\ \hline
+\textbf{Estabilidad}                             & Alta                                                                                                                 \\ \hline
+\textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-001\\ RF-002\\ RF-005\end{tabular}                                   \\ \hline
 \end{tabularx}
 \caption{RF-007 Contacto del paciente con el psicólogo}                                                                                                                                          
 %\label{my-label}
@@ -878,10 +878,10 @@ Dependencias & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-001\\ RF-002\\ RF
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-RF - 008                                & Valoración del psicólogo por parte del paciente                                    \\ \hline
-Descripción                             & El paciente podrá valorar al psicólogo que le haya atendido.                       \\ \hline
-Estabilidad                             & Alta                                                                               \\ \hline
-Dependencias & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-001\\ RF-002\\ RF-005\end{tabular} \\ \hline
+\rowcolor[gray]{0.9}\textbf{RF - 008}                                & \textbf{Valoración del psicólogo por parte del paciente}                                    \\ \hline
+\textbf{Descripción}                             & El paciente podrá valorar al psicólogo que le haya atendido.                       \\ \hline
+\textbf{Estabilidad}                             & Alta                                                                               \\ \hline
+\textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-001\\ RF-002\\ RF-005\end{tabular} \\ \hline
 \end{tabularx}
 \caption{RF-008 Valoración del psicólogo por parte del paciente}                                                                                                                                                                            
 %\label{my-label}
@@ -897,10 +897,10 @@ Los requisitos no funcionales son restricciones de los servicios o funciones ofr
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-RNF - 001                               & Encriptado de datos                                                                                            \\ \hline
-Descripción                             & Los datos de los pacientes almacenados en la base de datos deberán estar cifrados con un algoritmo de cifrado. \\ \hline
-Estabilidad                             & Alta                                                                                                           \\ \hline
-Dependencias & (Es transversal)                                                                                               \\ \hline
+\rowcolor[gray]{0.9}\textbf{RNF - 001}                               & \textbf{Encriptado de datos}                                                                                            \\ \hline
+\textbf{Descripción}                             & Los datos de los pacientes almacenados en la base de datos deberán estar cifrados con un algoritmo de cifrado. \\ \hline
+\textbf{Estabilidad}                             & Alta                                                                                                           \\ \hline
+\textbf{Dependencias} & (Es transversal)                                                                                               \\ \hline
 \end{tabularx}
 \caption{RNF-001 Encriptado de datos}                                                                                                                                                                                                                                                                      
 %\label{my-label}
@@ -912,10 +912,10 @@ Dependencias & (Es transversal)                                                 
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-RNF - 002                               & Tiempo de respuesta de asignación                                                                                                                                            \\ \hline
-Descripción                             & El paciente tras enviar las respuestas del cuestionario, los resultados de asignación de psicólogo del mismo deberán tener un tiempo de respuesta de como máximo 5 segundos. \\ \hline
-Estabilidad                             & Alta                                                                                                                                                                         \\ \hline
-Dependencias & RF-005                                                                                                                                                                       \\ \hline
+\rowcolor[gray]{0.9}\textbf{RNF - 002}                               & \textbf{Tiempo de respuesta de asignación}                                                                                                                                            \\ \hline
+\textbf{Descripción}                             & El paciente tras enviar las respuestas del cuestionario, los resultados de asignación de psicólogo del mismo deberán tener un tiempo de respuesta de como máximo 5 segundos. \\ \hline
+\textbf{Estabilidad}                             & Alta                                                                                                                                                                         \\ \hline
+\textbf{Dependencias} & RF-005                                                                                                                                                                       \\ \hline
 \end{tabularx}
 \caption{RNF-002 Tiempo de respuesta de asignación}                                                                                                                                                                                                                                                                      
 %\label{my-label}
@@ -933,9 +933,9 @@ El rastreo es una propiedad de la especificación de requisitos que refleja la f
 \centering
 \begin{tabular}{|l|l|l|l|l|}
 \hline
-\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{3}{l|}{Requisitos de información} \\ \cline{3-5} 
+\rowcolor[gray]{0.9}\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{3}{l|}{\textbf{Requisitos de información}} \\ \cline{3-5} 
 \multicolumn{2}{|l|}{}                  & RI-001         & RI-002        & RI-003        \\ \hline
-Requisitos funcionales     & RF-001     & X              &               & X             \\ \hline
+\textbf{Requisitos funcionales}     & RF-001     & X              &               & X             \\ \hline
 \multirow{7}{*}{}          & RF-002     & X              &               & X             \\ \cline{2-5} 
                            & RF-003     & X              &               & X             \\ \cline{2-5} 
                            & RF-004     & X              &               & X             \\ \cline{2-5} 
@@ -955,9 +955,9 @@ Requisitos funcionales     & RF-001     & X              &               & X    
 \centering
 \begin{tabularx}{\textwidth}{|l|X|X|X|X|X|X|X|X|}
 \hline
-\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{7}{l|}{Requisitos funcionales}                  \\ \cline{3-9} 
+\rowcolor[gray]{0.9}\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{7}{l|}{\textbf{Requisitos funcionales}}                  \\ \cline{3-9} 
 \multicolumn{2}{|l|}{}                  & RF-001 & RF-002 & RF-003 & RF-004 & RF-005 & RF-006 & RF-007 \\ \hline
-Casos de uso             & CU-001       & X      &        &        &        &        &        &        \\ \hline
+\textbf{Casos de uso}             & CU-001       & X      &        &        &        &        &        &        \\ \hline
 \multirow{15}{*}{}       & CU-002       & X      & X      &        &        &        &        &        \\ \cline{2-9} 
                          & CU-003       & X      & X      &        &        & X      &        &        \\ \cline{2-9} 
                          & CU-004       & X      & X      &        &        & X      & X      &        \\ \cline{2-9} 
@@ -990,8 +990,9 @@ Para poder emparejar al psicólogo que puede tratar la patología de un paciente
 
 En nuestro proyecto, cada patología tendrá asociadas una serie de preguntas. La respuesta a todas las preguntas nos dará una ponderación de valor 1. En el conjunto de las posibles preguntas de una patología, existirá una pregunta principal cuyo valor es 0,5, y el valor de cada una del resto, viene dado por la siguiente fórmula:
 
+%\frac{1}{2}\times\frac{1}{n_{preguntas}-1}+\frac{1}{2}\times{valor_{preg_{princ}}} = 1
 \begin{equation}
-\frac{1}{2}\times\frac{1}{n_{preguntas}-1}+\frac{1}{2}\times{valor_{preg_{princ}}} = 1
+valor_pregunta = \frac{0,5}{n_{preguntas}-1}
 \label{mi_ecuacion}
 \end{equation}
 %
@@ -1011,7 +1012,7 @@ La segunda, muestra las preguntas restantes a las patologías marcadas en la pri
 Una vez enviado el formulario, sólo si el porcentaje es mayor o igual al 0,7, se determina que el paciente padece esa patología.
 
 
-\paragraph{Un ejemplo práctico\ref{ej_alg_match}}
+\paragraph{Un ejemplo práctico (figura \ref{ej_alg_match})}
 
 
 \begin{figure}[htbp] 
