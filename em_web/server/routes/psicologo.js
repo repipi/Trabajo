@@ -140,7 +140,7 @@ module.exports = function(app) {
 				service: 'gmail',
 				auth: {
 					user: 'emozio.info@gmail.com',
-					pass: 'Lanocheestrellada'
+					pass: '**************'
 				}
 			});
 

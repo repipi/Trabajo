@@ -124,7 +124,7 @@ pacienteSchema.methods.darAlta = function(paciente) {
 /* Metodo que actualiza los datos de un paciente */
 pacienteSchema.methods.update = function(paciente) {
 	return new Promise(function(resolve, reject){
-
+		
 		/* Consulta sobre el documento */
 		var query = {
 			_id: paciente._id
@@ -143,7 +143,7 @@ pacienteSchema.methods.update = function(paciente) {
 				edad : paciente.edad
 			}
 		}
-
+		
 		/* Busca un documento que cumpla la consulta y lo actualiza con los datos de usuario pasados por parametros */
 		Paciente.findOneAndUpdate(query, datosUsuario).exec(function(error, results){
 			if(error){

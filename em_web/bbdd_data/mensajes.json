@@ -1,6 +1,5 @@
 [
-	/**********************************************************************************+++++++****************************************************************** OBJECT 1 *********************************************************************************************************************************************************/
-
+	/* 1 */
 	{
 		"_id" : ObjectId("5a5208e6848622ba72328135"),
 		"acepta" : true,
@@ -72,8 +71,8 @@
 			"fecha" : "07/01/2018; 11:15:04"
 		}
 	},
-	/**********************************************************************************+++++++****************************************************************** OBJECT 2 *********************************************************************************************************************************************************/
 
+	/* 2 */
 	{
 		"_id" : ObjectId("5a64e3d1b20427f6884e3cda"),
 		"acepta" : true,
@@ -145,14 +144,15 @@
 			"fecha" : "22/01/2018; 16:52:51"
 		}
 	},
-	/**********************************************************************************+++++++****************************************************************** OBJECT 3 *********************************************************************************************************************************************************/
+
+	/* 3 */
 	{
 		"_id" : ObjectId("5a6519dbb20427f6884e4a97"),
 		"acepta" : false,
 		"mensajePaciente" : {
 			"fecha" : "21/01/2018; 21:53:15",
 			"preferencias" : "Sólo podría en horario de tarde-noche, a partir de las 19h.",
-			"texto" : "¡Buenas noches!\nLe escribo a razón de que últimamente no paro de discutir con mi pareja. Yo lo quiero mucho, pero me gustaría saber cómo llevar esta situación.\n\nUn saludo,\nElena.",
+			"texto" : "¡Buenas noches!\nLe escribo a razón de que últimamente no paro de discutir con mi pareja. Yo lo quiero mucho, pero me gustaría saber cómo llevar esta situación.\n\nUn saludo,\nPepe.",
 			"consulta" : "Online"
 		},
 		"paciente" : {
@@ -212,7 +212,8 @@
 		"rechaza" : false,
 		"__v" : 0
 	},
-	/**********************************************************************************+++++++****************************************************************** OBJECT 4 *********************************************************************************************************************************************************/
+
+	/* 4 */
 	{
 		"_id" : ObjectId("5a66231c04672ee1dc10320b"),
 		"acepta" : false,
@@ -279,7 +280,8 @@
 		"rechaza" : false,
 		"__v" : 0
 	},
-	/**********************************************************************************+++++++****************************************************************** OBJECT 4 *********************************************************************************************************************************************************/
+
+	/* 5 */
 	{
 		"_id" : ObjectId("5a70627747362399b861efa7"),
 		"acepta" : false,
@@ -297,107 +299,6 @@
 			"telefono" : 859235489,
 			"localizacion" : "La Gudiña",
 			"diagnostico" : [ 
-				{
-					"porcentaje" : 66.6,
-					"patologia" : {
-						"respuesta" : 0.083,
-						"preguntas" : [ 
-							"Tengo dificultades para mantener la atención en actividades de ocio", 
-							"Tengo dificultades para organizar tareas y actividades", 
-							"Evito o me disgusta iniciar tareas que requieren esfuerzo mental sostenido", 
-							"A menudo pierdo cosas necesarias para tareas o actividades", 
-							"A menudo me distraigo con estímulos externos", 
-							"A menudo olvido hacer las actividades cotidianas (tales como llamadas, acudir a citas, pagar facturas, etc)"
-						],
-						"nombre" : "TDAH (Trastorno por déficit de atención e hiperactividad)",
-						"_id" : "5a250f5bd8844097551fa6e5"
-					}
-				}, 
-				{
-					"porcentaje" : 78.4,
-					"patologia" : {
-						"respuesta" : 0.071,
-						"preguntas" : [ 
-							"A menudo me levanto cuando debiera estar sentado", 
-							"Soy incapaz de estar tranquilamente en actividades de ocio", 
-							"A menudo muevo o golpeo las manos, los pies o me retuerzo estando sentado", 
-							"A menudo hablo excesivamente", 
-							"A menudo respondo a una pregunta antes de que terminen de realizar la pregunta", 
-							"Tengo dificultad para esperar mi turno", 
-							"A menudo interrumpo conversaciones, juegos o actividades de otros"
-						],
-						"nombre" : "Hiperactividad",
-						"_id" : "5a250fcfd8844097551fa6f0"
-					}
-				}, 
-				{
-					"porcentaje" : 87.5,
-					"patologia" : {
-						"respuesta" : 0.125,
-						"preguntas" : [ 
-							"El malestar o comportamiento creo que es mayor de lo que debería ser respecto a esa situación", 
-							"El malestar o comportamiento ha provocado problemas en mis relaciones familiares, sociales o laborales", 
-							"He perdido alguna persona importante en mi vida en los últimos 6 meses", 
-							"Llevo más de 6 meses con este malestar o comportamiento"
-						],
-						"nombre" : "TA (Trastorno adaptativo)",
-						"_id" : "5a251039d8844097551fa6fa"
-					}
-				}
-			]
-		},
-		"psicologo" : {
-			"_id" : ObjectId("5a661e5c04672ee1dc102ac4"),
-			"nombre" : "José Manuel Míguez",
-			"genero" : "Masculino",
-			"edad" : "October 10, 1983",
-			"email" : "josemanuel@psico.com",
-			"telefono" : 123456789,
-			"localizacion" : "A Coruña",
-			"foto" : "/assets/images/alfonso.png"
-		},
-		"rechaza" : true,
-		"__v" : 0,
-		"mensajePsicologo" : {
-			"comentario" : "Sintiéndolo mucho, tengo esos días cubiertos. Un saludo.",
-			"fechaCita" : null,
-			"fecha" : "01/02/2018; 13:27:38"
-		}
-	},
-	/**********************************************************************************+++++++****************************************************************** OBJECT 5 *********************************************************************************************************************************************************/
-	{
-		"_id" : ObjectId("5a70627747362399b861efa7"),
-		"acepta" : false,
-		"mensajePaciente" : {
-			"fecha" : "30/01/2018; 11:17:59",
-			"preferencias" : "Por las tardes de miércoles a sábado.",
-			"texto" : "Buenas tardes, me ponía en contacto con usted porque tengo un problema y mis familiares me han aconsejado que tome un tratamiento ya que con el tiempo puede afectar a mis relaciones personales perjudicándoles en gran medida. Últimamente cada vez que alguien intenta entablar una conversación conmigo me muestro arisco e irritable, lo hago sin intención y sin darme cuenta de ello, mis familiares me han advertido varias veces de esto, y busco una solución.",
-			"consulta" : "Online"
-		},
-		"paciente" : {
-			"_id" : ObjectId("5a7060bd47362399b861ee6c"),
-			"genero" : "Masculino",
-			"edad" : "October 10, 1983",
-			"email" : "antonioMaside@gmail.com",
-			"telefono" : 859235489,
-			"localizacion" : "La Gudiña",
-			"diagnostico" : [ 
-				{
-					"porcentaje" : 66.6,
-					"patologia" : {
-						"respuesta" : 0.083,
-						"preguntas" : [ 
-							"Tengo dificultades para mantener la atención en actividades de ocio", 
-							"Tengo dificultades para organizar tareas y actividades", 
-							"Evito o me disgusta iniciar tareas que requieren esfuerzo mental sostenido", 
-							"A menudo pierdo cosas necesarias para tareas o actividades", 
-							"A menudo me distraigo con estímulos externos", 
-							"A menudo olvido hacer las actividades cotidianas (tales como llamadas, acudir a citas, pagar facturas, etc)"
-						],
-						"nombre" : "TDAH (Trastorno por déficit de atención e hiperactividad)",
-						"_id" : "5a250f5bd8844097551fa6e5"
-					}
-				}, 
 				{
 					"porcentaje" : 78.4,
 					"patologia" : {
@@ -450,7 +351,8 @@
 			"fecha" : "01/02/2018; 13:27:38"
 		}
 	},
-	/**********************************************************************************+++++++****************************************************************** OBJECT 6 *********************************************************************************************************************************************************/
+
+	/* 6 */
 	{
 		"_id" : ObjectId("5a70655b47362399b861f233"),
 		"acepta" : true,
@@ -488,23 +390,6 @@
 						"nombre" : "TAG (Trastorno de ansiedad generalizada)",
 						"_id" : "5a0c1237665533169c64fa6a"
 					}
-				}, 
-				{
-					"porcentaje" : 57.1,
-					"patologia" : {
-						"respuesta" : 0.071,
-						"preguntas" : [ 
-							"He perdido el interés por las cosas", 
-							"He perdido la confianza en mí mismo", 
-							"Me he sentido con poca energía", 
-							"He perdido peso (causado por falta de apetito)", 
-							"Me he estado despertando demasiado temprano", 
-							"Me he sentido enlentecido", 
-							"Tengo tendencia a encontrarme peor por las mañanas"
-						],
-						"nombre" : "Depresión",
-						"_id" : "5a0c1237665533169c64fa6c"
-					}
 				}
 			]
 		},
@@ -527,7 +412,8 @@
 			"fecha" : "30/01/2018; 11:56:35"
 		}
 	},
-	/**********************************************************************************+++++++****************************************************************** OBJECT 7 *********************************************************************************************************************************************************/
+
+	/* 7 */
 	{
 		"_id" : ObjectId("5a70672a47362399b861f3cc"),
 		"acepta" : true,
@@ -546,7 +432,7 @@
 			"localizacion" : "Monforte de Lemos",
 			"diagnostico" : [ 
 				{
-					"porcentaje" : 54.5,
+					"porcentaje" : 72.5,
 					"patologia" : {
 						"respuesta" : 0.045,
 						"preguntas" : [ 
@@ -564,53 +450,6 @@
 						],
 						"nombre" : "TAG (Trastorno de ansiedad generalizada)",
 						"_id" : "5a0c1237665533169c64fa6a"
-					}
-				}, 
-				{
-					"porcentaje" : 57.1,
-					"patologia" : {
-						"respuesta" : 0.071,
-						"preguntas" : [ 
-							"He perdido el interés por las cosas", 
-							"He perdido la confianza en mí mismo", 
-							"Me he sentido con poca energía", 
-							"He perdido peso (causado por falta de apetito)", 
-							"Me he estado despertando demasiado temprano", 
-							"Me he sentido enlentecido", 
-							"Tengo tendencia a encontrarme peor por las mañanas"
-						],
-						"nombre" : "Depresión",
-						"_id" : "5a0c1237665533169c64fa6c"
-					}
-				}, 
-				{
-					"porcentaje" : 66.6,
-					"patologia" : {
-						"respuesta" : 0.083,
-						"preguntas" : [ 
-							"Tengo dificultades para mantener la atención en actividades de ocio", 
-							"Tengo dificultades para organizar tareas y actividades", 
-							"Evito o me disgusta iniciar tareas que requieren esfuerzo mental sostenido", 
-							"A menudo pierdo cosas necesarias para tareas o actividades", 
-							"A menudo me distraigo con estímulos externos", 
-							"A menudo olvido hacer las actividades cotidianas (tales como llamadas, acudir a citas, pagar facturas, etc)"
-						],
-						"nombre" : "TDAH (Trastorno por déficit de atención e hiperactividad)",
-						"_id" : "5a250f5bd8844097551fa6e5"
-					}
-				}, 
-				{
-					"porcentaje" : 62.5,
-					"patologia" : {
-						"respuesta" : 0.125,
-						"preguntas" : [ 
-							"El malestar o comportamiento creo que es mayor de lo que debería ser respecto a esa situación", 
-							"El malestar o comportamiento ha provocado problemas en mis relaciones familiares, sociales o laborales", 
-							"He perdido alguna persona importante en mi vida en los últimos 6 meses", 
-							"Llevo más de 6 meses con este malestar o comportamiento"
-						],
-						"nombre" : "TA (Trastorno adaptativo)",
-						"_id" : "5a251039d8844097551fa6fa"
 					}
 				}
 			]
@@ -634,7 +473,8 @@
 			"fecha" : "30/01/2018; 11:58:18"
 		}
 	},
-	/**********************************************************************************+++++++****************************************************************** OBJECT 8 *********************************************************************************************************************************************************/
+
+	/* 8 */
 	{
 		"_id" : ObjectId("5a70688147362399b861f4fa"),
 		"acepta" : true,
@@ -653,27 +493,6 @@
 			"localizacion" : "Santiago de Compostela",
 			"diagnostico" : [ 
 				{
-					"porcentaje" : 63.5,
-					"patologia" : {
-						"respuesta" : 0.045,
-						"preguntas" : [ 
-							"La mayoría de los días me preocupo por más de una cosa", 
-							"La mayoría de los días no puedo parar de preocuparme", 
-							"La mayoría de los días me resulta difícil controlar mis preocupaciones", 
-							"Me siento inquieto/a, intraquilo/a, o con los nervios disparados", 
-							"Me siento cansado fácilmente", 
-							"Tengo problemas para concentrarme", 
-							"Me enfado o irrito fácilmente", 
-							"Mis músculos están tensos y agarrotados", 
-							"La mayoría de los días me siento nervioso", 
-							"Las cosas que ha señalado anteriomente, ¿afectaron a su vida diaria (en el hogar, en el tabajo, o en su tiempo libre) o le causaron mucho malestar?", 
-							"Las cosas que ha señalado anteriormente, ¿fueron suficientemente molestas como para que pensara en buscar ayuda para ellas?"
-						],
-						"nombre" : "TAG (Trastorno de ansiedad generalizada)",
-						"_id" : "5a0c1237665533169c64fa6a"
-					}
-				}, 
-				{
 					"porcentaje" : 71.3,
 					"patologia" : {
 						"respuesta" : 0.071,
@@ -688,53 +507,6 @@
 						],
 						"nombre" : "Depresión",
 						"_id" : "5a0c1237665533169c64fa6c"
-					}
-				}, 
-				{
-					"porcentaje" : 66.6,
-					"patologia" : {
-						"respuesta" : 0.083,
-						"preguntas" : [ 
-							"Tengo dificultades para mantener la atención en actividades de ocio", 
-							"Tengo dificultades para organizar tareas y actividades", 
-							"Evito o me disgusta iniciar tareas que requieren esfuerzo mental sostenido", 
-							"A menudo pierdo cosas necesarias para tareas o actividades", 
-							"A menudo me distraigo con estímulos externos", 
-							"A menudo olvido hacer las actividades cotidianas (tales como llamadas, acudir a citas, pagar facturas, etc)"
-						],
-						"nombre" : "TDAH (Trastorno por déficit de atención e hiperactividad)",
-						"_id" : "5a250f5bd8844097551fa6e5"
-					}
-				}, 
-				{
-					"porcentaje" : 50,
-					"patologia" : {
-						"respuesta" : 0.071,
-						"preguntas" : [ 
-							"A menudo me levanto cuando debiera estar sentado", 
-							"Soy incapaz de estar tranquilamente en actividades de ocio", 
-							"A menudo muevo o golpeo las manos, los pies o me retuerzo estando sentado", 
-							"A menudo hablo excesivamente", 
-							"A menudo respondo a una pregunta antes de que terminen de realizar la pregunta", 
-							"Tengo dificultad para esperar mi turno", 
-							"A menudo interrumpo conversaciones, juegos o actividades de otros"
-						],
-						"nombre" : "Hiperactividad",
-						"_id" : "5a250fcfd8844097551fa6f0"
-					}
-				}, 
-				{
-					"porcentaje" : 62.5,
-					"patologia" : {
-						"respuesta" : 0.125,
-						"preguntas" : [ 
-							"El malestar o comportamiento creo que es mayor de lo que debería ser respecto a esa situación", 
-							"El malestar o comportamiento ha provocado problemas en mis relaciones familiares, sociales o laborales", 
-							"He perdido alguna persona importante en mi vida en los últimos 6 meses", 
-							"Llevo más de 6 meses con este malestar o comportamiento"
-						],
-						"nombre" : "TA (Trastorno adaptativo)",
-						"_id" : "5a251039d8844097551fa6fa"
 					}
 				}
 			]

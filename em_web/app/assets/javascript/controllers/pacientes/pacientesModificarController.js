@@ -203,13 +203,15 @@ angular.module('Emozio').controller('PacientesModificarController', function(Pac
 
 			/* Se guarda el objeto paciente del formulario */
 			Paciente.Update({
+				_id: paciente._id,
 				email: paciente.email,
 				password: paciente.password,
 				genero: paciente.genero,
 				edad: edad,
 				localizacion: place.name,
 				telefono: paciente.telefono            
-			}).then(function(data){ /* Una vez ejecutada, se muestran los siguientes avisos */
+			})
+				.then(function(data){ /* Una vez ejecutada, se muestran los siguientes avisos */
 				if(data.data) { /* Si se ha modificado correctamente, se muestra el aviso de exito */
 					$scope.msj_exito_datos=true;	
 					$scope.msj_error_datos=false;

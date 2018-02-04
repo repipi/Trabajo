@@ -185,24 +185,28 @@ angular.module('Emozio').controller('CuestionarioController', function(Paciente,
 						/* Si la pregunta esta marcada */
 						if($scope.preguntas[j].respuesta==1 && $scope.preguntas[j].nombre == $scope.diagnostico[i].patologia.nombre){
 							/* Se sumara al porcentaje de ese diagnostico el valor de la respuesta de esa patologia */
-							$scope.paciente.diagnostico[i].porcentaje=$scope.paciente.diagnostico[i].porcentaje+$scope.diagnostico[i].patologia.respuesta;
+							$scope.diagnostico[i].porcentaje=$scope.diagnostico[i].porcentaje+$scope.diagnostico[i].patologia.respuesta;
 						}
 					}
-					/* Si el porcentaje de ese diagnostico del paciente es menor que el 50%, se descarta como posible patologia */
-					if($scope.paciente.diagnostico[i].porcentaje < 0.5){
-						/* Elimino en el array de diagnosticos ese diagnostico */
-						$scope.paciente.diagnostico.splice(i, 1);
-					} else {
-						/* Se redondea a 2 decimales */
-						$scope.paciente.diagnostico[i].porcentaje = Math.round($scope.paciente.diagnostico[i].porcentaje * 1000) / 10;
-					}
 
-					console.log($scope.paciente.diagnostico[i].porcentaje);
+					console.log($scope.paciente.diagnostico);
+
+					/* Si el porcentaje de ese diagnostico del paciente es menor que el 70%, se descarta como posible patologia */
+					if($scope.diagnostico[i].porcentaje < 0.7){
+						/* Elimino en el array de diagnosticos ese diagnostico */
+						$scope.diagnostico.splice(i, 1);
+					} 
 				}
 
+				for(var i=0, l=$scope.diagnostico.length; i<l; i++){
+					/* Se redondea a 2 decimales */
+					$scope.diagnostico[i].porcentaje = Math.round($scope.diagnostico[i].porcentaje * 1000) / 10;
+				}
+
+				$scope.paciente.diagnostico=$scope.diagnostico;
+				
 				/* Se actualiza la informacion del paciente */
 				Paciente.Update($scope.paciente);
-				// console.log($scope.paciente);
 
 
 				/* Se asigna al psicologo que puede tratar ese diagnostico */
