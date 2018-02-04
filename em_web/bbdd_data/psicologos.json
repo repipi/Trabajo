@@ -1,0 +1,209 @@
+[
+	/**********************************************************************************+++++++****************************************************************** OBJECT 1 *********************************************************************************************************************************************************/
+	{
+		"_id" : ObjectId("5a0c11f3665533169c64fa54"),
+		"patologias" : [ 
+			"Depresión", 
+			"Síntomas psicóticos"
+		],
+		"consulta" : {
+			"online" : false,
+			"presencial" : true
+		},
+		"comentarios" : [ 
+			{
+				"texto" : "¡Gracias por todo! Estoy muy contento, me ha ayudado mucho. :-)",
+				"fechaComentario" : "23/01/2018; 10:31:44",
+				"_idPaciente" : "5a3407b07d1e2efc133e644f",
+				"_idComentario" : "23/01/2018; 10:31:445a3407b07d1e2efc133e644f",
+				"valoracion" : 5
+			}, 
+			{
+				"valoracion" : 4,
+				"_idComentario" : "30/01/2018; 12:12:505a70680947362399b861f45d",
+				"_idPaciente" : "5a70680947362399b861f45d",
+				"fechaComentario" : "30/01/2018; 12:12:50",
+				"texto" : "Genial! Todo muy sencillo y muy intuitivo, el contacto serio y profesional, sin duda alguna lo recomiendo, una persona muy comprensiva y calmada, me ha ayudado mucho Emozio!"
+			}
+		],
+		"gabinete" : null,
+		"direccion" : "Rúa do Vilar, 15, 1º, CP. 15705, Santiago de Compostela",
+		"foto" : "/assets/images/alfonso.jpg",
+		"estrellas" : 5,
+		"aseguradora" : "DKV",
+		"especialidad" : "Trastorno de estados de animo",
+		"terapia" : "Terapia sistémica o familiar",
+		"formacion" : "Master en Psicopatológica infantil",
+		"experiencia" : "Tengo 6 años de experiencia ejerciendo en diferentes clínicas privadas",
+		"ncolegiado" : "123456789",
+		"tipo" : "Clínico (PIR)",
+		"precio" : 50,
+		"telefono" : 123456789,
+		"localizacion" : "Santiago de Compostela",
+		"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+		"email" : "alfonso@psico.com",
+		"edad" : "October 10, 1983",
+		"nombre" : "Alfonso Pena",
+		"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+		"genero" : "Masculino"
+	},
+	/**********************************************************************************+++++++****************************************************************** OBJECT 2 *********************************************************************************************************************************************************/
+	{
+		"_id" : ObjectId("5a661c1b04672ee1dc10296d"),
+		"patologias" : [ 
+			"Depresión", 
+			"TDAH (Trastorno por déficit de atención e hiperactividad)", 
+			"TAG (Transtorno de ansiedad generalizada)", 
+			"Trastorno del lenguaje", 
+			"Miedos infantiles", 
+			"Comportamientos infantiles"
+		],
+		"consulta" : {
+			"presencial" : true,
+			"online" : true
+		},
+		"comentarios" : [ 
+			{
+				"valoracion" : 3,
+				"_idComentario" : "23/01/2018; 12:33:275a3407b07d1e2efc133e644f",
+				"_idPaciente" : "5a3407b07d1e2efc133e644f",
+				"fechaComentario" : "23/01/2018; 12:33:27",
+				"texto" : "Es fenomenal :-D"
+			}, 
+			{
+				"valoracion" : 5,
+				"_idComentario" : "23/01/2018; 13:10:035a3407b07d1e2efc133e644f",
+				"_idPaciente" : "5a3407b07d1e2efc133e644f",
+				"fechaComentario" : "23/01/2018; 13:10:03",
+				"texto" : "Ha ido todo genial. ¡Muy recomendable!"
+			}, 
+			{
+				"valoracion" : 4,
+				"_idComentario" : "23/01/2018; 14:01:145a3407b07d1e2efc133e644f",
+				"_idPaciente" : "5a3407b07d1e2efc133e644f",
+				"fechaComentario" : "23/01/2018; 14:01:14",
+				"texto" : "Es una chica muy alegre y tranquila. Hablar con ella transmite paz."
+			}
+		],
+		"gabinete" : "Caligari",
+		"direccion" : "c/ Benito Blanco Rajoy, 9-2ºB, CP. 15006, A Coruña",
+		"foto" : "/assets/images/cristina.jpg",
+		"estrellas" : 5,
+		"aseguradora" : "Sanitas",
+		"especialidad" : "Clínica infantojuvenil y dificultades de aprendizaje",
+		"terapia" : "Terapia sistémica o familiar",
+		"formacion" : "Máster en Psicopatológica infantil",
+		"experiencia" : "Tengo 2 años de experiencia ejerciendo por cuenta propia",
+		"ncolegiado" : "123456789",
+		"tipo" : "Clínico infanto-juvenil (PIR)",
+		"precio" : 50,
+		"telefono" : 123456789,
+		"localizacion" : "A Coruña",
+		"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+		"email" : "cristina@psico.com",
+		"edad" : "October 10, 1983",
+		"nombre" : "Cristina Brandón",
+		"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+		"genero" : "Femenino"
+	},
+	/**********************************************************************************+++++++****************************************************************** OBJECT 3 *********************************************************************************************************************************************************/
+	{
+		"_id" : ObjectId("5a661e5c04672ee1dc102ac4"),
+		"patologias" : [ 
+			"Duelo", 
+			"TA (Trastorno adaptativo)", 
+			"TAG (Transtorno de ansiedad generalizada)", 
+			"Depresión", 
+			"Fobias", 
+			"Obsesiones", 
+			"Desarrollo personal"
+		],
+		"consulta" : {
+			"presencial" : false,
+			"online" : true
+		},
+		"comentarios" : [ 
+			{
+				"valoracion" : 4,
+				"_idComentario" : "23/01/2018; 13:10:525a3407b07d1e2efc133e644f",
+				"_idPaciente" : "5a3407b07d1e2efc133e644f",
+				"fechaComentario" : "23/01/2018; 13:10:52",
+				"texto" : "Todavía ha sido el primer día, pero de momento, me está yendo bien.\nEspero volver a vernos pronto."
+			}
+		],
+		"gabinete" : "Galiclari",
+		"direccion" : "c/ Pexigo de Abaixo, 9-2ºB, CP. 15703, Santiago de Compostela",
+		"foto" : "/assets/images/jose.jpg",
+		"estrellas" : 5,
+		"aseguradora" : "Mutua",
+		"especialidad" : "Programación Neurolingüística y Mindfulness",
+		"terapia" : "Terapia sistémica o familiar",
+		"formacion" : "Máster en Psicología General Sanitaria. Máster en Psicoterapia Breve Estratégica",
+		"experiencia" : "Tengo 8 años de experiencia ejerciendo por cuenta propia",
+		"ncolegiado" : "123456789",
+		"tipo" : "Psicología General Sanitaria (PGS)",
+		"precio" : 50,
+		"telefono" : 123456789,
+		"localizacion" : "A Coruña",
+		"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+		"email" : "josemanuel@psico.com",
+		"edad" : "October 10, 1983",
+		"nombre" : "José Manuel Míguez",
+		"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+		"genero" : "Masculino"
+	},
+	/**********************************************************************************+++++++****************************************************************** OBJECT 4 *********************************************************************************************************************************************************/
+	{
+		"_id" : ObjectId("5a0c11f3665533169c64fa56"),
+		"nombre" : "María Alegra",
+		"edad" : "October 10, 1983",
+		"genero" : "Femenino",
+		"email" : "maria@psico.com",
+		"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+		"localizacion" : "Santiago de Compostela",
+		"telefono" : 123456789,
+		"tipo" : "General Sanitaria (Master habilitante)",
+		"ncolegiado" : 234567891,
+		"precio" : 45,
+		"experiencia" : "Recién titulada",
+		"formacion" : "Formación en terapias de tercera generación (ACT, Mindfullnes, etc...)",
+		"terapia" : "Terapia cognitivo-conductual",
+		"especialidad" : null,
+		"patologias" : [ 
+			"TAG (Trastorno de ansiedad generalizada)"
+		],
+		"aseguradora" : "Mapfre",
+		"consulta" : {
+			"presencial" : true,
+			"online" : true
+		},
+		"estrellas" : 3,
+		"foto" : "/assets/images/maria.jpg",
+		"gabinete" : "Xuntos",
+		"direccion" : "c/ Sempre en Galiza, 9 - 2º E, CP. 15706, Santiago de Compostela",
+		"comentarios" : [ 
+			{
+				"valoracion" : 2,
+				"_idComentario" : "23/01/2018; 13:07:515a3407b07d1e2efc133e644f",
+				"_idPaciente" : "5a3407b07d1e2efc133e644f",
+				"fechaComentario" : "23/01/2018; 13:07:51",
+				"texto" : "¡Eres maravitupenda!"
+			}, 
+			{
+				"valoracion" : 4,
+				"_idComentario" : "30/01/2018; 12:07:425a70643847362399b861f10b",
+				"_idPaciente" : "5a70643847362399b861f10b",
+				"fechaComentario" : "30/01/2018; 12:07:42",
+				"texto" : "Me ha respondido muy rápido y con mucha seriedad, muy contenta con la aplicación y su funcionamiento."
+			}, 
+			{
+				"valoracion" : 5,
+				"_idComentario" : "30/01/2018; 12:10:385a70665247362399b861f2cc",
+				"_idPaciente" : "5a70665247362399b861f2cc",
+				"fechaComentario" : "30/01/2018; 12:10:38",
+				"texto" : "Genial!!! todo muy bien con ella, una persona muy amable, le doy 5 estrellas!"
+			}
+		],
+		"genero" : "Femenino"
+	}
+]

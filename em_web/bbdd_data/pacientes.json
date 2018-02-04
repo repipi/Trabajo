@@ -1,0 +1,1449 @@
+[
+	/**********************************************************************************+++++++****************************************************************** OBJECT 1 *********************************************************************************************************************************************************/
+	{
+		"_id" : ObjectId("5a3407b07d1e2efc133e644f"),
+		"email" : "rgm1@gmail.com",
+		"diagnostico" : [ 
+			{
+				"porcentaje" : 72.5,
+				"patologia" : {
+					"respuesta" : 0.045,
+					"preguntas" : [ 
+						"La mayoría de los días me preocupo por más de una cosa", 
+						"La mayoría de los días no puedo parar de preocuparme", 
+						"La mayoría de los días me resulta difícil controlar mis preocupaciones", 
+						"Me siento inquieto/a, intraquilo/a, o con los nervios disparados", 
+						"Me siento cansado fácilmente", 
+						"Tengo problemas para concentrarme", 
+						"Me enfado o irrito fácilmente", 
+						"Mis músculos están tensos y agarrotados", 
+						"La mayoría de los días me siento nervioso", 
+						"Las cosas que ha señalado anteriomente, ¿afectaron a su vida diaria (en el hogar, en el tabajo, o en su tiempo libre) o le causaron mucho malestar?", 
+						"Las cosas que ha señalado anteriormente, ¿fueron suficientemente molestas como para que pensara en buscar ayuda para ellas?"
+					],
+					"nombre" : "TAG (Trastorno de ansiedad generalizada)",
+					"_id" : "5a0c1237665533169c64fa6a"
+				}
+			}, 
+			{
+				"porcentaje" : 85.5,
+				"patologia" : {
+					"respuesta" : 0.071,
+					"preguntas" : [ 
+						"He perdido el interés por las cosas", 
+						"He perdido la confianza en mí mismo", 
+						"Me he sentido con poca energía", 
+						"He perdido peso (causado por falta de apetito)", 
+						"Me he estado despertando demasiado temprano", 
+						"Me he sentido enlentecido", 
+						"Tengo tendencia a encontrarme peor por las mañanas"
+					],
+					"nombre" : "Depresión",
+					"_id" : "5a0c1237665533169c64fa6c"
+				}
+			}, 
+			{
+				"porcentaje" : 75,
+				"patologia" : {
+					"respuesta" : 0.25,
+					"preguntas" : [ 
+						"Tengo tendencia a aislarme de las personas", 
+						"Me he sentido observado"
+					],
+					"nombre" : "Síntomas psicóticos",
+					"_id" : "5a0c1237665533169c64fa6e"
+				}
+			}, 
+			{
+				"porcentaje" : 91.5,
+				"patologia" : {
+					"respuesta" : 0.083,
+					"preguntas" : [ 
+						"Tengo dificultades para mantener la atención en actividades de ocio", 
+						"Tengo dificultades para organizar tareas y actividades", 
+						"Evito o me disgusta iniciar tareas que requieren esfuerzo mental sostenido", 
+						"A menudo pierdo cosas necesarias para tareas o actividades", 
+						"A menudo me distraigo con estímulos externos", 
+						"A menudo olvido hacer las actividades cotidianas (tales como llamadas, acudir a citas, pagar facturas, etc)"
+					],
+					"nombre" : "TDAH (Trastorno por déficit de atención e hiperactividad)",
+					"_id" : "5a250f5bd8844097551fa6e5"
+				}
+			}
+		],
+		"psicologos" : [ 
+			{
+				"patologias" : [ 
+					"Depresión", 
+					"Síntomas psicóticos"
+				],
+				"consulta" : {
+					"presencial" : true,
+					"online" : false
+				},
+				"comentarios" : [ 
+					{
+						"texto" : "¡Gracias por todo! Estoy muy contento, me ha ayudado mucho. :-)",
+						"fechaComentario" : "23/01/2018; 10:31:44",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"_idComentario" : "23/01/2018; 10:31:445a3407b07d1e2efc133e644f",
+						"valoracion" : 5
+					}, 
+					{
+						"texto" : "¡Holaaaaaaa!",
+						"fechaComentario" : "23/01/2018; 10:49:04",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"_idComentario" : "23/01/2018; 10:49:045a3407b07d1e2efc133e644f",
+						"valoracion" : 1
+					}, 
+					{
+						"texto" : "¡Hola!",
+						"fechaComentario" : "23/01/2018; 10:52:50",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"_idComentario" : "23/01/2018; 10:52:505a3407b07d1e2efc133e644f",
+						"valoracion" : 1
+					}, 
+					{
+						"texto" : "¡Holaaaaa!",
+						"fechaComentario" : "23/01/2018; 10:53:36",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"_idComentario" : "23/01/2018; 10:53:365a3407b07d1e2efc133e644f",
+						"valoracion" : 2
+					}, 
+					{
+						"texto" : "Hola.",
+						"fechaComentario" : "23/01/2018; 11:05:25",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"_idComentario" : "23/01/2018; 11:05:255a3407b07d1e2efc133e644f",
+						"valoracion" : 2
+					}, 
+					{
+						"texto" : "ewrtdfyghkj",
+						"fechaComentario" : "23/01/2018; 11:13:47",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"_idComentario" : "23/01/2018; 11:13:475a3407b07d1e2efc133e644f",
+						"valoracion" : 1,
+						"fechaRespuesta" : "23/01/2018; 14:59:06",
+						"respuesta" : "Holaaaaa, amiga :-D"
+					}, 
+					{
+						"texto" : "eoooooooooo",
+						"fechaComentario" : "23/01/2018; 11:11:01",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"_idComentario" : "23/01/2018; 11:11:015a3407b07d1e2efc133e644f",
+						"valoracion" : 1,
+						"fechaRespuesta" : "23/01/2018; 14:59:20",
+						"respuesta" : ":-P"
+					}, 
+					{
+						"texto" : "Eooooo",
+						"fechaComentario" : "26/01/2018; 20:58:43",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"_idComentario" : "26/01/2018; 20:58:435a3407b07d1e2efc133e644f",
+						"valoracion" : 3
+					}, 
+					{
+						"texto" : "hi, hello",
+						"fechaComentario" : "26/01/2018; 21:00:25",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"_idComentario" : "26/01/2018; 21:00:255a3407b07d1e2efc133e644f",
+						"valoracion" : 2
+					}, 
+					{
+						"texto" : "miii",
+						"fechaComentario" : "26/01/2018; 21:01:31",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"_idComentario" : "26/01/2018; 21:01:315a3407b07d1e2efc133e644f",
+						"valoracion" : 2
+					}, 
+					{
+						"valoracion" : 2,
+						"_idComentario" : "26/01/2018; 21:02:235a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "26/01/2018; 21:02:23",
+						"texto" : "helloooo"
+					}, 
+					{
+						"valoracion" : 1,
+						"_idComentario" : "26/01/2018; 21:04:325a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "26/01/2018; 21:04:32",
+						"texto" : "uahsbjnk"
+					}, 
+					{
+						"valoracion" : 2,
+						"_idComentario" : "26/01/2018; 21:05:105a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "26/01/2018; 21:05:10",
+						"texto" : "holaaaa"
+					}, 
+					{
+						"valoracion" : 2,
+						"_idComentario" : "26/01/2018; 21:05:275a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "26/01/2018; 21:05:27",
+						"texto" : "vamos a ver"
+					}
+				],
+				"nombre" : "Alfonso Pena",
+				"edad" : "October 10, 1983",
+				"email" : "alfonso@psico.com",
+				"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+				"localizacion" : "Santiago de Compostela",
+				"telefono" : 123456789,
+				"precio" : 50,
+				"tipo" : "Clínico (PIR)",
+				"ncolegiado" : "123456789",
+				"experiencia" : "Tengo 6 años de experiencia ejerciendo en diferentes clínicas privadas",
+				"formacion" : "Master en Psicopatológica infantil",
+				"terapia" : "Terapia sistémica o familiar",
+				"especialidad" : "Trastorno de estados de animo",
+				"aseguradora" : "DKV",
+				"estrellas" : 5,
+				"foto" : "/assets/images/alfonso.jpg",
+				"direccion" : "Rúa do Vilar, 15, 1º, CP. 15705, Santiago de Compostela",
+				"gabinete" : null,
+				"_id" : "5a0c11f3665533169c64fa54"
+			}, 
+			{
+				"patologias" : [ 
+					"Depresión", 
+					"TDAH (Trastorno por déficit de atención e hiperactividad)", 
+					"TAG (Transtorno de ansiedad generalizada)", 
+					"Trastorno del lenguaje", 
+					"Miedos infantiles", 
+					"Comportamientos infantiles"
+				],
+				"consulta" : {
+					"online" : true,
+					"presencial" : true
+				},
+				"comentarios" : [ 
+					{
+						"valoracion" : 3,
+						"_idComentario" : "23/01/2018; 12:33:275a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 12:33:27",
+						"texto" : "Es fenomenal :-D"
+					}, 
+					{
+						"valoracion" : 5,
+						"_idComentario" : "23/01/2018; 13:10:035a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 13:10:03",
+						"texto" : "Ha ido todo genial. ¡Muy recomendable!"
+					}, 
+					{
+						"valoracion" : 4,
+						"_idComentario" : "23/01/2018; 14:01:145a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 14:01:14",
+						"texto" : "Es una chica muy alegre y tranquila. Hablar con ella transmite paz."
+					}
+				],
+				"nombre" : "Cristina Brandón",
+				"edad" : "October 10, 1983",
+				"email" : "cristina@psico.com",
+				"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+				"localizacion" : "A Coruña",
+				"telefono" : 123456789,
+				"precio" : 50,
+				"tipo" : "Clínico infanto-juvenil (PIR)",
+				"ncolegiado" : "123456789",
+				"experiencia" : "Tengo 2 años de experiencia ejerciendo por cuenta propia",
+				"formacion" : "Máster en Psicopatológica infantil",
+				"terapia" : "Terapia sistémica o familiar",
+				"especialidad" : "Clínica infantojuvenil y dificultades de aprendizaje",
+				"aseguradora" : "Sanitas",
+				"estrellas" : 5,
+				"foto" : "/assets/images/cristina.jpg",
+				"direccion" : "c/ Benito Blanco Rajoy, 9-2ºB, CP. 15006, A Coruña",
+				"gabinete" : "Caligari",
+				"_id" : "5a661c1b04672ee1dc10296d"
+			}, 
+			{
+				"patologias" : [ 
+					"Duelo", 
+					"TA (Trastorno adaptativo)", 
+					"TAG (Transtorno de ansiedad generalizada)", 
+					"Depresión", 
+					"Fobias", 
+					"Obsesiones", 
+					"Desarrollo personal"
+				],
+				"consulta" : {
+					"online" : true,
+					"presencial" : false
+				},
+				"comentarios" : [ 
+					{
+						"valoracion" : 4,
+						"_idComentario" : "23/01/2018; 13:10:525a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 13:10:52",
+						"texto" : "Todavía ha sido el primer día, pero de momento, me está yendo bien.\nEspero volver a vernos pronto."
+					}
+				],
+				"nombre" : "José Manuel Míguez",
+				"edad" : "October 10, 1983",
+				"email" : "josemanuel@psico.com",
+				"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+				"localizacion" : "A Coruña",
+				"telefono" : 123456789,
+				"precio" : 50,
+				"tipo" : "Psicología General Sanitaria (PGS)",
+				"ncolegiado" : "123456789",
+				"experiencia" : "Tengo 8 años de experiencia ejerciendo por cuenta propia",
+				"formacion" : "Máster en Psicología General Sanitaria. Máster en Psicoterapia Breve Estratégica",
+				"terapia" : "Terapia sistémica o familiar",
+				"especialidad" : "Programación Neurolingüística y Mindfulness",
+				"aseguradora" : "Mutua",
+				"estrellas" : 5,
+				"foto" : "/assets/images/jose.jpg",
+				"direccion" : "c/ Pexigo de Abaixo, 9-2ºB, CP. 15703, Santiago de Compostela",
+				"gabinete" : "Galiclari",
+				"_id" : "5a661e5c04672ee1dc102ac4"
+			}, 
+			{
+				"patologias" : [ 
+					"TAG (Trastorno de ansiedad generalizada)"
+				],
+				"consulta" : {
+					"online" : true,
+					"presencial" : true
+				},
+				"comentarios" : [ 
+					{
+						"valoracion" : 2,
+						"_idComentario" : "23/01/2018; 13:07:515a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 13:07:51",
+						"texto" : "¡Eres maravitupenda!"
+					}
+				],
+				"direccion" : "c/ Sempre en Galiza, 9 - 2º E, CP. 15706, Santiago de Compostela",
+				"gabinete" : "Xuntos",
+				"foto" : "/assets/images/maria.jpg",
+				"estrellas" : 3,
+				"aseguradora" : "Mapfre",
+				"especialidad" : null,
+				"terapia" : "Terapia cognitivo-conductual",
+				"formacion" : "Formación en terapias de tercera generación (ACT, Mindfullnes, etc...)",
+				"experiencia" : "Recién titulada",
+				"precio" : 45,
+				"ncolegiado" : "234567891",
+				"tipo" : "General Sanitaria (Master habilitante)",
+				"telefono" : 123456789,
+				"localizacion" : "Santiago de Compostela",
+				"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+				"email" : "maria@psico.com",
+				"genero" : "Femenino",
+				"edad" : "October 1, 1995",
+				"nombre" : "María Alegra",
+				"_id" : "5a0c11f3665533169c64fa56"
+			}
+		],
+		"localizacion" : "Santiago de Compostela",
+		"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+		"telefono" : 123456789,
+		"__v" : 0,
+		"edad" : "October 10, 1983",
+		"genero" : "Hijra"
+	},
+	/**********************************************************************************+++++++****************************************************************** OBJECT 2 *********************************************************************************************************************************************************/
+	{
+		"_id" : ObjectId("5a7060bd47362399b861ee6c"),
+		"email" : "antonioMaside@gmail.com",
+		"telefono" : 859235489,
+		"edad" : "October 10, 1983",
+		"genero" : "Masculino",
+		"diagnostico" : [ 
+			{
+				"porcentaje" : 66.6,
+				"patologia" : {
+					"respuesta" : 0.083,
+					"preguntas" : [ 
+						"Tengo dificultades para mantener la atención en actividades de ocio", 
+						"Tengo dificultades para organizar tareas y actividades", 
+						"Evito o me disgusta iniciar tareas que requieren esfuerzo mental sostenido", 
+						"A menudo pierdo cosas necesarias para tareas o actividades", 
+						"A menudo me distraigo con estímulos externos", 
+						"A menudo olvido hacer las actividades cotidianas (tales como llamadas, acudir a citas, pagar facturas, etc)"
+					],
+					"nombre" : "TDAH (Trastorno por déficit de atención e hiperactividad)",
+					"_id" : "5a250f5bd8844097551fa6e5"
+				}
+			}, 
+			{
+				"porcentaje" : 78.4,
+				"patologia" : {
+					"respuesta" : 0.071,
+					"preguntas" : [ 
+						"A menudo me levanto cuando debiera estar sentado", 
+						"Soy incapaz de estar tranquilamente en actividades de ocio", 
+						"A menudo muevo o golpeo las manos, los pies o me retuerzo estando sentado", 
+						"A menudo hablo excesivamente", 
+						"A menudo respondo a una pregunta antes de que terminen de realizar la pregunta", 
+						"Tengo dificultad para esperar mi turno", 
+						"A menudo interrumpo conversaciones, juegos o actividades de otros"
+					],
+					"nombre" : "Hiperactividad",
+					"_id" : "5a250fcfd8844097551fa6f0"
+				}
+			}, 
+			{
+				"porcentaje" : 87.5,
+				"patologia" : {
+					"respuesta" : 0.125,
+					"preguntas" : [ 
+						"El malestar o comportamiento creo que es mayor de lo que debería ser respecto a esa situación", 
+						"El malestar o comportamiento ha provocado problemas en mis relaciones familiares, sociales o laborales", 
+						"He perdido alguna persona importante en mi vida en los últimos 6 meses", 
+						"Llevo más de 6 meses con este malestar o comportamiento"
+					],
+					"nombre" : "TA (Trastorno adaptativo)",
+					"_id" : "5a251039d8844097551fa6fa"
+				}
+			}
+		],
+		"psicologos" : [ 
+			{
+				"patologias" : [ 
+					"Depresión", 
+					"TDAH (Trastorno por déficit de atención e hiperactividad)", 
+					"TAG (Transtorno de ansiedad generalizada)", 
+					"Trastorno del lenguaje", 
+					"Miedos infantiles", 
+					"Comportamientos infantiles"
+				],
+				"consulta" : {
+					"online" : true,
+					"presencial" : true
+				},
+				"comentarios" : [ 
+					{
+						"valoracion" : 3,
+						"_idComentario" : "23/01/2018; 12:33:275a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 12:33:27",
+						"texto" : "Es fenomenal :-D"
+					}, 
+					{
+						"valoracion" : 5,
+						"_idComentario" : "23/01/2018; 13:10:035a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 13:10:03",
+						"texto" : "Ha ido todo genial. ¡Muy recomendable!"
+					}, 
+					{
+						"valoracion" : 4,
+						"_idComentario" : "23/01/2018; 14:01:145a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 14:01:14",
+						"texto" : "Es una chica muy alegre y tranquila. Hablar con ella transmite paz."
+					}
+				],
+				"genero" : "Femenino",
+				"nombre" : "Cristina Brandón",
+				"edad" : "October 1, 1995",
+				"email" : "cristina@psico.com",
+				"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+				"localizacion" : "A Coruña",
+				"telefono" : 123456789,
+				"precio" : 50,
+				"tipo" : "Clínico infanto-juvenil (PIR)",
+				"ncolegiado" : "123456789",
+				"experiencia" : "Tengo 2 años de experiencia ejerciendo por cuenta propia",
+				"formacion" : "Máster en Psicopatológica infantil",
+				"terapia" : "Terapia sistémica o familiar",
+				"especialidad" : "Clínica infantojuvenil y dificultades de aprendizaje",
+				"aseguradora" : "Sanitas",
+				"estrellas" : 5,
+				"foto" : "/assets/images/cristina.jpg",
+				"direccion" : "c/ Benito Blanco Rajoy, 9-2ºB, CP. 15006, A Coruña",
+				"gabinete" : "Caligari",
+				"_id" : "5a661c1b04672ee1dc10296d"
+			}, 
+			{
+				"patologias" : [ 
+					"Duelo", 
+					"TA (Trastorno adaptativo)", 
+					"TAG (Transtorno de ansiedad generalizada)", 
+					"Depresión", 
+					"Fobias", 
+					"Obsesiones", 
+					"Desarrollo personal"
+				],
+				"consulta" : {
+					"online" : true,
+					"presencial" : false
+				},
+				"comentarios" : [ 
+					{
+						"valoracion" : 4,
+						"_idComentario" : "23/01/2018; 13:10:525a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 13:10:52",
+						"texto" : "Todavía ha sido el primer día, pero de momento, me está yendo bien.\nEspero volver a vernos pronto."
+					}
+				],
+				"genero" : "Masculino",
+				"nombre" : "José Manuel Míguez",
+				"edad" : "October 10, 1983",
+				"email" : "josemanuel@psico.com",
+				"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+				"localizacion" : "A Coruña",
+				"telefono" : 123456789,
+				"precio" : 50,
+				"tipo" : "Psicología General Sanitaria (PGS)",
+				"ncolegiado" : "123456789",
+				"experiencia" : "Tengo 8 años de experiencia ejerciendo por cuenta propia",
+				"formacion" : "Máster en Psicología General Sanitaria. Máster en Psicoterapia Breve Estratégica",
+				"terapia" : "Terapia sistémica o familiar",
+				"especialidad" : "Programación Neurolingüística y Mindfulness",
+				"aseguradora" : "Mutua",
+				"estrellas" : 5,
+				"foto" : "/assets/images/jose.jpg",
+				"direccion" : "c/ Pexigo de Abaixo, 9-2ºB, CP. 15703, Santiago de Compostela",
+				"gabinete" : "Galiclari",
+				"_id" : "5a661e5c04672ee1dc102ac4"
+			}
+		],
+		"localizacion" : "La Gudiña",
+		"password" : "$2a$10$Vk7pyTZISsA0kH.NSvfoROzNbj.gfKmyNQ.zrQ31bXzoDjj/AgVqG",
+		"__v" : 0
+	},
+	/**********************************************************************************+++++++****************************************************************** OBJECT 3 *********************************************************************************************************************************************************/
+	{
+		"_id" : ObjectId("5a70643847362399b861f10b"),
+		"email" : "marielaD84@turfmail.com",
+		"telefono" : 999876678,
+		"edad" : "January 3, 1984",
+		"genero" : "Femenino",
+		"diagnostico" : [ 
+			{
+				"porcentaje" : 77,
+				"patologia" : {
+					"respuesta" : 0.045,
+					"preguntas" : [ 
+						"La mayoría de los días me preocupo por más de una cosa", 
+						"La mayoría de los días no puedo parar de preocuparme", 
+						"La mayoría de los días me resulta difícil controlar mis preocupaciones", 
+						"Me siento inquieto/a, intraquilo/a, o con los nervios disparados", 
+						"Me siento cansado fácilmente", 
+						"Tengo problemas para concentrarme", 
+						"Me enfado o irrito fácilmente", 
+						"Mis músculos están tensos y agarrotados", 
+						"La mayoría de los días me siento nervioso", 
+						"Las cosas que ha señalado anteriomente, ¿afectaron a su vida diaria (en el hogar, en el tabajo, o en su tiempo libre) o le causaron mucho malestar?", 
+						"Las cosas que ha señalado anteriormente, ¿fueron suficientemente molestas como para que pensara en buscar ayuda para ellas?"
+					],
+					"nombre" : "TAG (Trastorno de ansiedad generalizada)",
+					"_id" : "5a0c1237665533169c64fa6a"
+				}
+			}, 
+			{
+				"porcentaje" : 57.1,
+				"patologia" : {
+					"respuesta" : 0.071,
+					"preguntas" : [ 
+						"He perdido el interés por las cosas", 
+						"He perdido la confianza en mí mismo", 
+						"Me he sentido con poca energía", 
+						"He perdido peso (causado por falta de apetito)", 
+						"Me he estado despertando demasiado temprano", 
+						"Me he sentido enlentecido", 
+						"Tengo tendencia a encontrarme peor por las mañanas"
+					],
+					"nombre" : "Depresión",
+					"_id" : "5a0c1237665533169c64fa6c"
+				}
+			}
+		],
+		"psicologos" : [ 
+			{
+				"patologias" : [ 
+					"Depresión", 
+					"Síntomas psicóticos"
+				],
+				"consulta" : {
+					"presencial" : true,
+					"online" : false
+				},
+				"comentarios" : [ 
+					{
+						"texto" : "¡Gracias por todo! Estoy muy contento, me ha ayudado mucho. :-)",
+						"fechaComentario" : "23/01/2018; 10:31:44",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"_idComentario" : "23/01/2018; 10:31:445a3407b07d1e2efc133e644f",
+						"valoracion" : 5
+					}
+				],
+				"genero" : "Masculino",
+				"nombre" : "Alfonso Pena",
+				"edad" : "October 10, 1983",
+				"email" : "alfonso@psico.com",
+				"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+				"localizacion" : "Santiago de Compostela",
+				"telefono" : 123456789,
+				"precio" : 50,
+				"tipo" : "Clínico (PIR)",
+				"ncolegiado" : "123456789",
+				"experiencia" : "Tengo 6 años de experiencia ejerciendo en diferentes clínicas privadas",
+				"formacion" : "Master en Psicopatológica infantil",
+				"terapia" : "Terapia sistémica o familiar",
+				"especialidad" : "Trastorno de estados de animo",
+				"aseguradora" : "DKV",
+				"estrellas" : 5,
+				"foto" : "/assets/images/alfonso.jpg",
+				"direccion" : "Rúa do Vilar, 15, 1º, CP. 15705, Santiago de Compostela",
+				"gabinete" : null,
+				"_id" : "5a0c11f3665533169c64fa54"
+			}, 
+			{
+				"patologias" : [ 
+					"Depresión", 
+					"TDAH (Trastorno por déficit de atención e hiperactividad)", 
+					"TAG (Transtorno de ansiedad generalizada)", 
+					"Trastorno del lenguaje", 
+					"Miedos infantiles", 
+					"Comportamientos infantiles"
+				],
+				"consulta" : {
+					"online" : true,
+					"presencial" : true
+				},
+				"comentarios" : [ 
+					{
+						"valoracion" : 3,
+						"_idComentario" : "23/01/2018; 12:33:275a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 12:33:27",
+						"texto" : "Es fenomenal :-D"
+					}, 
+					{
+						"valoracion" : 5,
+						"_idComentario" : "23/01/2018; 13:10:035a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 13:10:03",
+						"texto" : "Ha ido todo genial. ¡Muy recomendable!"
+					}, 
+					{
+						"valoracion" : 4,
+						"_idComentario" : "23/01/2018; 14:01:145a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 14:01:14",
+						"texto" : "Es una chica muy alegre y tranquila. Hablar con ella transmite paz."
+					}
+				],
+				"genero" : "Femenino",
+				"nombre" : "Cristina Brandón",
+				"edad" : "October 10, 1983",
+				"email" : "cristina@psico.com",
+				"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+				"localizacion" : "A Coruña",
+				"telefono" : 123456789,
+				"precio" : 50,
+				"tipo" : "Clínico infanto-juvenil (PIR)",
+				"ncolegiado" : "123456789",
+				"experiencia" : "Tengo 2 años de experiencia ejerciendo por cuenta propia",
+				"formacion" : "Máster en Psicopatológica infantil",
+				"terapia" : "Terapia sistémica o familiar",
+				"especialidad" : "Clínica infantojuvenil y dificultades de aprendizaje",
+				"aseguradora" : "Sanitas",
+				"estrellas" : 5,
+				"foto" : "/assets/images/cristina.jpg",
+				"direccion" : "c/ Benito Blanco Rajoy, 9-2ºB, CP. 15006, A Coruña",
+				"gabinete" : "Caligari",
+				"_id" : "5a661c1b04672ee1dc10296d"
+			}, 
+			{
+				"patologias" : [ 
+					"Duelo", 
+					"TA (Trastorno adaptativo)", 
+					"TAG (Transtorno de ansiedad generalizada)", 
+					"Depresión", 
+					"Fobias", 
+					"Obsesiones", 
+					"Desarrollo personal"
+				],
+				"consulta" : {
+					"online" : true,
+					"presencial" : false
+				},
+				"comentarios" : [ 
+					{
+						"valoracion" : 4,
+						"_idComentario" : "23/01/2018; 13:10:525a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 13:10:52",
+						"texto" : "Todavía ha sido el primer día, pero de momento, me está yendo bien.\nEspero volver a vernos pronto."
+					}
+				],
+				"genero" : "Masculino",
+				"nombre" : "José Manuel Míguez",
+				"edad" : "October 10, 1983",
+				"email" : "josemanuel@psico.com",
+				"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+				"localizacion" : "A Coruña",
+				"telefono" : 123456789,
+				"precio" : 50,
+				"tipo" : "Psicología General Sanitaria (PGS)",
+				"ncolegiado" : "123456789",
+				"experiencia" : "Tengo 8 años de experiencia ejerciendo por cuenta propia",
+				"formacion" : "Máster en Psicología General Sanitaria. Máster en Psicoterapia Breve Estratégica",
+				"terapia" : "Terapia sistémica o familiar",
+				"especialidad" : "Programación Neurolingüística y Mindfulness",
+				"aseguradora" : "Mutua",
+				"estrellas" : 5,
+				"foto" : "/assets/images/jose.jpg",
+				"direccion" : "c/ Pexigo de Abaixo, 9-2ºB, CP. 15703, Santiago de Compostela",
+				"gabinete" : "Galiclari",
+				"_id" : "5a661e5c04672ee1dc102ac4"
+			}, 
+			{
+				"patologias" : [ 
+					"TAG (Trastorno de ansiedad generalizada)"
+				],
+				"consulta" : {
+					"online" : true,
+					"presencial" : true
+				},
+				"comentarios" : [ 
+					{
+						"valoracion" : 2,
+						"_idComentario" : "23/01/2018; 13:07:515a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 13:07:51",
+						"texto" : "¡Eres maravitupenda!"
+					}
+				],
+				"direccion" : "c/ Sempre en Galiza, 9 - 2º E, CP. 15706, Santiago de Compostela",
+				"gabinete" : "Xuntos",
+				"foto" : "/assets/images/maria.jpg",
+				"estrellas" : 3,
+				"aseguradora" : "Mapfre",
+				"especialidad" : null,
+				"terapia" : "Terapia cognitivo-conductual",
+				"formacion" : "Formación en terapias de tercera generación (ACT, Mindfullnes, etc...)",
+				"experiencia" : "Recién titulada",
+				"precio" : 45,
+				"ncolegiado" : "234567891",
+				"tipo" : "General Sanitaria (Master habilitante)",
+				"telefono" : 123456789,
+				"localizacion" : "Santiago de Compostela",
+				"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+				"email" : "maria@psico.com",
+				"genero" : "Femenino",
+				"edad" : "October 10, 1983",
+				"nombre" : "María Alegra",
+				"_id" : "5a0c11f3665533169c64fa56"
+			}
+		],
+		"localizacion" : "Santiago de Compostela",
+		"password" : "$2a$10$Gs4z5dKU5j6DMOcitJ8b4eRyNSqT0DgnaTDas8ngTi3WuE25PejUq",
+		"__v" : 0
+	},
+	/**********************************************************************************+++++++****************************************************************** OBJECT 4 *********************************************************************************************************************************************************/
+	{
+		"_id" : ObjectId("5a70665247362399b861f2cc"),
+		"email" : "curcurucho99@gmail.com",
+		"telefono" : 977252525,
+		"edad" : "December 27, 1970",
+		"genero" : "Masculino",
+		"diagnostico" : [ 
+			{
+				"porcentaje" : 54.5,
+				"patologia" : {
+					"respuesta" : 0.045,
+					"preguntas" : [ 
+						"La mayoría de los días me preocupo por más de una cosa", 
+						"La mayoría de los días no puedo parar de preocuparme", 
+						"La mayoría de los días me resulta difícil controlar mis preocupaciones", 
+						"Me siento inquieto/a, intraquilo/a, o con los nervios disparados", 
+						"Me siento cansado fácilmente", 
+						"Tengo problemas para concentrarme", 
+						"Me enfado o irrito fácilmente", 
+						"Mis músculos están tensos y agarrotados", 
+						"La mayoría de los días me siento nervioso", 
+						"Las cosas que ha señalado anteriomente, ¿afectaron a su vida diaria (en el hogar, en el tabajo, o en su tiempo libre) o le causaron mucho malestar?", 
+						"Las cosas que ha señalado anteriormente, ¿fueron suficientemente molestas como para que pensara en buscar ayuda para ellas?"
+					],
+					"nombre" : "TAG (Trastorno de ansiedad generalizada)",
+					"_id" : "5a0c1237665533169c64fa6a"
+				}
+			}, 
+			{
+				"porcentaje" : 57.1,
+				"patologia" : {
+					"respuesta" : 0.071,
+					"preguntas" : [ 
+						"He perdido el interés por las cosas", 
+						"He perdido la confianza en mí mismo", 
+						"Me he sentido con poca energía", 
+						"He perdido peso (causado por falta de apetito)", 
+						"Me he estado despertando demasiado temprano", 
+						"Me he sentido enlentecido", 
+						"Tengo tendencia a encontrarme peor por las mañanas"
+					],
+					"nombre" : "Depresión",
+					"_id" : "5a0c1237665533169c64fa6c"
+				}
+			}, 
+			{
+				"porcentaje" : 66.6,
+				"patologia" : {
+					"respuesta" : 0.083,
+					"preguntas" : [ 
+						"Tengo dificultades para mantener la atención en actividades de ocio", 
+						"Tengo dificultades para organizar tareas y actividades", 
+						"Evito o me disgusta iniciar tareas que requieren esfuerzo mental sostenido", 
+						"A menudo pierdo cosas necesarias para tareas o actividades", 
+						"A menudo me distraigo con estímulos externos", 
+						"A menudo olvido hacer las actividades cotidianas (tales como llamadas, acudir a citas, pagar facturas, etc)"
+					],
+					"nombre" : "TDAH (Trastorno por déficit de atención e hiperactividad)",
+					"_id" : "5a250f5bd8844097551fa6e5"
+				}
+			}, 
+			{
+				"porcentaje" : 62.5,
+				"patologia" : {
+					"respuesta" : 0.125,
+					"preguntas" : [ 
+						"El malestar o comportamiento creo que es mayor de lo que debería ser respecto a esa situación", 
+						"El malestar o comportamiento ha provocado problemas en mis relaciones familiares, sociales o laborales", 
+						"He perdido alguna persona importante en mi vida en los últimos 6 meses", 
+						"Llevo más de 6 meses con este malestar o comportamiento"
+					],
+					"nombre" : "TA (Trastorno adaptativo)",
+					"_id" : "5a251039d8844097551fa6fa"
+				}
+			}
+		],
+		"psicologos" : [ 
+			{
+				"patologias" : [ 
+					"Depresión", 
+					"Síntomas psicóticos"
+				],
+				"consulta" : {
+					"presencial" : true,
+					"online" : false
+				},
+				"comentarios" : [ 
+					{
+						"texto" : "¡Gracias por todo! Estoy muy contento, me ha ayudado mucho. :-)",
+						"fechaComentario" : "23/01/2018; 10:31:44",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"_idComentario" : "23/01/2018; 10:31:445a3407b07d1e2efc133e644f",
+						"valoracion" : 5
+					}
+				],
+				"genero" : "Masculino",
+				"nombre" : "Alfonso Pena",
+				"edad" : "October 10, 1983",
+				"email" : "alfonso@psico.com",
+				"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+				"localizacion" : "Santiago de Compostela",
+				"telefono" : 123456789,
+				"precio" : 50,
+				"tipo" : "Clínico (PIR)",
+				"ncolegiado" : "123456789",
+				"experiencia" : "Tengo 6 años de experiencia ejerciendo en diferentes clínicas privadas",
+				"formacion" : "Master en Psicopatológica infantil",
+				"terapia" : "Terapia sistémica o familiar",
+				"especialidad" : "Trastorno de estados de animo",
+				"aseguradora" : "DKV",
+				"estrellas" : 5,
+				"foto" : "/assets/images/alfonso.jpg",
+				"direccion" : "Rúa do Vilar, 15, 1º, CP. 15705, Santiago de Compostela",
+				"gabinete" : null,
+				"_id" : "5a0c11f3665533169c64fa54"
+			}, 
+			{
+				"patologias" : [ 
+					"Depresión", 
+					"TDAH (Trastorno por déficit de atención e hiperactividad)", 
+					"TAG (Transtorno de ansiedad generalizada)", 
+					"Trastorno del lenguaje", 
+					"Miedos infantiles", 
+					"Comportamientos infantiles"
+				],
+				"consulta" : {
+					"online" : true,
+					"presencial" : true
+				},
+				"comentarios" : [ 
+					{
+						"valoracion" : 3,
+						"_idComentario" : "23/01/2018; 12:33:275a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 12:33:27",
+						"texto" : "Es fenomenal :-D"
+					}, 
+					{
+						"valoracion" : 5,
+						"_idComentario" : "23/01/2018; 13:10:035a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 13:10:03",
+						"texto" : "Ha ido todo genial. ¡Muy recomendable!"
+					}, 
+					{
+						"valoracion" : 4,
+						"_idComentario" : "23/01/2018; 14:01:145a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 14:01:14",
+						"texto" : "Es una chica muy alegre y tranquila. Hablar con ella transmite paz."
+					}
+				],
+				"genero" : "Femenino",
+				"nombre" : "Cristina Brandón",
+				"edad" : "October 10, 1983",
+				"email" : "cristina@psico.com",
+				"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+				"localizacion" : "A Coruña",
+				"telefono" : 123456789,
+				"precio" : 50,
+				"tipo" : "Clínico infanto-juvenil (PIR)",
+				"ncolegiado" : "123456789",
+				"experiencia" : "Tengo 2 años de experiencia ejerciendo por cuenta propia",
+				"formacion" : "Máster en Psicopatológica infantil",
+				"terapia" : "Terapia sistémica o familiar",
+				"especialidad" : "Clínica infantojuvenil y dificultades de aprendizaje",
+				"aseguradora" : "Sanitas",
+				"estrellas" : 5,
+				"foto" : "/assets/images/cristina.jpg",
+				"direccion" : "c/ Benito Blanco Rajoy, 9-2ºB, CP. 15006, A Coruña",
+				"gabinete" : "Caligari",
+				"_id" : "5a661c1b04672ee1dc10296d"
+			}, 
+			{
+				"patologias" : [ 
+					"Duelo", 
+					"TA (Trastorno adaptativo)", 
+					"TAG (Transtorno de ansiedad generalizada)", 
+					"Depresión", 
+					"Fobias", 
+					"Obsesiones", 
+					"Desarrollo personal"
+				],
+				"consulta" : {
+					"online" : true,
+					"presencial" : false
+				},
+				"comentarios" : [ 
+					{
+						"valoracion" : 4,
+						"_idComentario" : "23/01/2018; 13:10:525a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 13:10:52",
+						"texto" : "Todavía ha sido el primer día, pero de momento, me está yendo bien.\nEspero volver a vernos pronto."
+					}
+				],
+				"genero" : "Masculino",
+				"nombre" : "José Manuel Míguez",
+				"edad" : "October 10, 1983",
+				"email" : "josemanuel@psico.com",
+				"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+				"localizacion" : "A Coruña",
+				"telefono" : 123456789,
+				"precio" : 50,
+				"tipo" : "Psicología General Sanitaria (PGS)",
+				"ncolegiado" : "123456789",
+				"experiencia" : "Tengo 8 años de experiencia ejerciendo por cuenta propia",
+				"formacion" : "Máster en Psicología General Sanitaria. Máster en Psicoterapia Breve Estratégica",
+				"terapia" : "Terapia sistémica o familiar",
+				"especialidad" : "Programación Neurolingüística y Mindfulness",
+				"aseguradora" : "Mutua",
+				"estrellas" : 5,
+				"foto" : "/assets/images/jose.jpg",
+				"direccion" : "c/ Pexigo de Abaixo, 9-2ºB, CP. 15703, Santiago de Compostela",
+				"gabinete" : "Galiclari",
+				"_id" : "5a661e5c04672ee1dc102ac4"
+			}, 
+			{
+				"patologias" : [ 
+					"TAG (Trastorno de ansiedad generalizada)"
+				],
+				"consulta" : {
+					"online" : true,
+					"presencial" : true
+				},
+				"comentarios" : [ 
+					{
+						"valoracion" : 2,
+						"_idComentario" : "23/01/2018; 13:07:515a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 13:07:51",
+						"texto" : "¡Eres maravitupenda!"
+					}
+				],
+				"direccion" : "c/ Sempre en Galiza, 9 - 2º E, CP. 15706, Santiago de Compostela",
+				"gabinete" : "Xuntos",
+				"foto" : "/assets/images/maria.jpg",
+				"estrellas" : 3,
+				"aseguradora" : "Mapfre",
+				"especialidad" : null,
+				"terapia" : "Terapia cognitivo-conductual",
+				"formacion" : "Formación en terapias de tercera generación (ACT, Mindfullnes, etc...)",
+				"experiencia" : "Recién titulada",
+				"precio" : 45,
+				"ncolegiado" : "234567891",
+				"tipo" : "General Sanitaria (Master habilitante)",
+				"telefono" : 123456789,
+				"localizacion" : "Santiago de Compostela",
+				"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+				"email" : "maria@psico.com",
+				"genero" : "Femenino",
+				"edad" : "October 10, 1983",
+				"nombre" : "María Alegra",
+				"_id" : "5a0c11f3665533169c64fa56"
+			}
+		],
+		"localizacion" : "Monforte de Lemos",
+		"password" : "$2a$10$HT7E0dnYtgPonZ4MqjR9cOjOQ2NvlOndB.3mJgkIkTozCCBNtI0uy",
+		"__v" : 0
+	},
+	/**********************************************************************************+++++++****************************************************************** OBJECT 5 *********************************************************************************************************************************************************/
+	{
+		"_id" : ObjectId("5a70680947362399b861f45d"),
+		"email" : "JesusGTI@outlook.es",
+		"telefono" : 777833833,
+		"edad" : "July 14, 1993",
+		"genero" : "Masculino",
+		"diagnostico" : [ 
+			{
+				"porcentaje" : 63.5,
+				"patologia" : {
+					"respuesta" : 0.045,
+					"preguntas" : [ 
+						"La mayoría de los días me preocupo por más de una cosa", 
+						"La mayoría de los días no puedo parar de preocuparme", 
+						"La mayoría de los días me resulta difícil controlar mis preocupaciones", 
+						"Me siento inquieto/a, intraquilo/a, o con los nervios disparados", 
+						"Me siento cansado fácilmente", 
+						"Tengo problemas para concentrarme", 
+						"Me enfado o irrito fácilmente", 
+						"Mis músculos están tensos y agarrotados", 
+						"La mayoría de los días me siento nervioso", 
+						"Las cosas que ha señalado anteriomente, ¿afectaron a su vida diaria (en el hogar, en el tabajo, o en su tiempo libre) o le causaron mucho malestar?", 
+						"Las cosas que ha señalado anteriormente, ¿fueron suficientemente molestas como para que pensara en buscar ayuda para ellas?"
+					],
+					"nombre" : "TAG (Trastorno de ansiedad generalizada)",
+					"_id" : "5a0c1237665533169c64fa6a"
+				}
+			}, 
+			{
+				"porcentaje" : 71.3,
+				"patologia" : {
+					"respuesta" : 0.071,
+					"preguntas" : [ 
+						"He perdido el interés por las cosas", 
+						"He perdido la confianza en mí mismo", 
+						"Me he sentido con poca energía", 
+						"He perdido peso (causado por falta de apetito)", 
+						"Me he estado despertando demasiado temprano", 
+						"Me he sentido enlentecido", 
+						"Tengo tendencia a encontrarme peor por las mañanas"
+					],
+					"nombre" : "Depresión",
+					"_id" : "5a0c1237665533169c64fa6c"
+				}
+			}, 
+			{
+				"porcentaje" : 66.6,
+				"patologia" : {
+					"respuesta" : 0.083,
+					"preguntas" : [ 
+						"Tengo dificultades para mantener la atención en actividades de ocio", 
+						"Tengo dificultades para organizar tareas y actividades", 
+						"Evito o me disgusta iniciar tareas que requieren esfuerzo mental sostenido", 
+						"A menudo pierdo cosas necesarias para tareas o actividades", 
+						"A menudo me distraigo con estímulos externos", 
+						"A menudo olvido hacer las actividades cotidianas (tales como llamadas, acudir a citas, pagar facturas, etc)"
+					],
+					"nombre" : "TDAH (Trastorno por déficit de atención e hiperactividad)",
+					"_id" : "5a250f5bd8844097551fa6e5"
+				}
+			}, 
+			{
+				"porcentaje" : 50,
+				"patologia" : {
+					"respuesta" : 0.071,
+					"preguntas" : [ 
+						"A menudo me levanto cuando debiera estar sentado", 
+						"Soy incapaz de estar tranquilamente en actividades de ocio", 
+						"A menudo muevo o golpeo las manos, los pies o me retuerzo estando sentado", 
+						"A menudo hablo excesivamente", 
+						"A menudo respondo a una pregunta antes de que terminen de realizar la pregunta", 
+						"Tengo dificultad para esperar mi turno", 
+						"A menudo interrumpo conversaciones, juegos o actividades de otros"
+					],
+					"nombre" : "Hiperactividad",
+					"_id" : "5a250fcfd8844097551fa6f0"
+				}
+			}, 
+			{
+				"porcentaje" : 62.5,
+				"patologia" : {
+					"respuesta" : 0.125,
+					"preguntas" : [ 
+						"El malestar o comportamiento creo que es mayor de lo que debería ser respecto a esa situación", 
+						"El malestar o comportamiento ha provocado problemas en mis relaciones familiares, sociales o laborales", 
+						"He perdido alguna persona importante en mi vida en los últimos 6 meses", 
+						"Llevo más de 6 meses con este malestar o comportamiento"
+					],
+					"nombre" : "TA (Trastorno adaptativo)",
+					"_id" : "5a251039d8844097551fa6fa"
+				}
+			}
+		],
+		"psicologos" : [ 
+			{
+				"patologias" : [ 
+					"Depresión", 
+					"Síntomas psicóticos"
+				],
+				"consulta" : {
+					"presencial" : true,
+					"online" : false
+				},
+				"comentarios" : [ 
+					{
+						"texto" : "¡Gracias por todo! Estoy muy contento, me ha ayudado mucho. :-)",
+						"fechaComentario" : "23/01/2018; 10:31:44",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"_idComentario" : "23/01/2018; 10:31:445a3407b07d1e2efc133e644f",
+						"valoracion" : 5
+					}
+				],
+				"genero" : "Masculino",
+				"nombre" : "Alfonso Pena",
+				"edad" : "October 10, 1983",
+				"email" : "alfonso@psico.com",
+				"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+				"localizacion" : "Santiago de Compostela",
+				"telefono" : 123456789,
+				"precio" : 50,
+				"tipo" : "Clínico (PIR)",
+				"ncolegiado" : "123456789",
+				"experiencia" : "Tengo 6 años de experiencia ejerciendo en diferentes clínicas privadas",
+				"formacion" : "Master en Psicopatológica infantil",
+				"terapia" : "Terapia sistémica o familiar",
+				"especialidad" : "Trastorno de estados de animo",
+				"aseguradora" : "DKV",
+				"estrellas" : 5,
+				"foto" : "/assets/images/alfonso.jpg",
+				"direccion" : "Rúa do Vilar, 15, 1º, CP. 15705, Santiago de Compostela",
+				"gabinete" : null,
+				"_id" : "5a0c11f3665533169c64fa54"
+			}, 
+			{
+				"patologias" : [ 
+					"Depresión", 
+					"TDAH (Trastorno por déficit de atención e hiperactividad)", 
+					"TAG (Transtorno de ansiedad generalizada)", 
+					"Trastorno del lenguaje", 
+					"Miedos infantiles", 
+					"Comportamientos infantiles"
+				],
+				"consulta" : {
+					"online" : true,
+					"presencial" : true
+				},
+				"comentarios" : [ 
+					{
+						"valoracion" : 3,
+						"_idComentario" : "23/01/2018; 12:33:275a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 12:33:27",
+						"texto" : "Es fenomenal :-D"
+					}, 
+					{
+						"valoracion" : 5,
+						"_idComentario" : "23/01/2018; 13:10:035a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 13:10:03",
+						"texto" : "Ha ido todo genial. ¡Muy recomendable!"
+					}, 
+					{
+						"valoracion" : 4,
+						"_idComentario" : "23/01/2018; 14:01:145a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 14:01:14",
+						"texto" : "Es una chica muy alegre y tranquila. Hablar con ella transmite paz."
+					}
+				],
+				"genero" : "Femenino",
+				"nombre" : "Cristina Brandón",
+				"edad" : "October 10, 1983",
+				"email" : "cristina@psico.com",
+				"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+				"localizacion" : "A Coruña",
+				"telefono" : 123456789,
+				"precio" : 50,
+				"tipo" : "Clínico infanto-juvenil (PIR)",
+				"ncolegiado" : "123456789",
+				"experiencia" : "Tengo 2 años de experiencia ejerciendo por cuenta propia",
+				"formacion" : "Máster en Psicopatológica infantil",
+				"terapia" : "Terapia sistémica o familiar",
+				"especialidad" : "Clínica infantojuvenil y dificultades de aprendizaje",
+				"aseguradora" : "Sanitas",
+				"estrellas" : 5,
+				"foto" : "/assets/images/cristina.jpg",
+				"direccion" : "c/ Benito Blanco Rajoy, 9-2ºB, CP. 15006, A Coruña",
+				"gabinete" : "Caligari",
+				"_id" : "5a661c1b04672ee1dc10296d"
+			}, 
+			{
+				"patologias" : [ 
+					"Duelo", 
+					"TA (Trastorno adaptativo)", 
+					"TAG (Transtorno de ansiedad generalizada)", 
+					"Depresión", 
+					"Fobias", 
+					"Obsesiones", 
+					"Desarrollo personal"
+				],
+				"consulta" : {
+					"online" : true,
+					"presencial" : false
+				},
+				"comentarios" : [ 
+					{
+						"valoracion" : 4,
+						"_idComentario" : "23/01/2018; 13:10:525a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 13:10:52",
+						"texto" : "Todavía ha sido el primer día, pero de momento, me está yendo bien.\nEspero volver a vernos pronto."
+					}
+				],
+				"genero" : "Masculino",
+				"nombre" : "José Manuel Míguez",
+				"edad" : "October 10, 1983",
+				"email" : "josemanuel@psico.com",
+				"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+				"localizacion" : "A Coruña",
+				"telefono" : 123456789,
+				"precio" : 50,
+				"tipo" : "Psicología General Sanitaria (PGS)",
+				"ncolegiado" : "123456789",
+				"experiencia" : "Tengo 8 años de experiencia ejerciendo por cuenta propia",
+				"formacion" : "Máster en Psicología General Sanitaria. Máster en Psicoterapia Breve Estratégica",
+				"terapia" : "Terapia sistémica o familiar",
+				"especialidad" : "Programación Neurolingüística y Mindfulness",
+				"aseguradora" : "Mutua",
+				"estrellas" : 5,
+				"foto" : "/assets/images/jose.jpg",
+				"direccion" : "c/ Pexigo de Abaixo, 9-2ºB, CP. 15703, Santiago de Compostela",
+				"gabinete" : "Galiclari",
+				"_id" : "5a661e5c04672ee1dc102ac4"
+			}, 
+			{
+				"patologias" : [ 
+					"TAG (Trastorno de ansiedad generalizada)"
+				],
+				"consulta" : {
+					"online" : true,
+					"presencial" : true
+				},
+				"comentarios" : [ 
+					{
+						"valoracion" : 2,
+						"_idComentario" : "23/01/2018; 13:07:515a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 13:07:51",
+						"texto" : "¡Eres maravitupenda!"
+					}
+				],
+				"direccion" : "c/ Sempre en Galiza, 9 - 2º E, CP. 15706, Santiago de Compostela",
+				"gabinete" : "Xuntos",
+				"foto" : "/assets/images/maria.jpg",
+				"estrellas" : 3,
+				"aseguradora" : "Mapfre",
+				"especialidad" : null,
+				"terapia" : "Terapia cognitivo-conductual",
+				"formacion" : "Formación en terapias de tercera generación (ACT, Mindfullnes, etc...)",
+				"experiencia" : "Recién titulada",
+				"precio" : 45,
+				"ncolegiado" : "234567891",
+				"tipo" : "General Sanitaria (Master habilitante)",
+				"telefono" : 123456789,
+				"localizacion" : "Santiago de Compostela",
+				"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+				"email" : "maria@psico.com",
+				"genero" : "Femenino",
+				"edad" : "October 10, 1983",
+				"nombre" : "María Alegra",
+				"_id" : "5a0c11f3665533169c64fa56"
+			}
+		],
+		"localizacion" : "Santiago de Compostela",
+		"password" : "$2a$10$RsjOl/3uyJhwB.SCPHaHD.UftsltcoTR9dr0TF6ncYQmg7qOL2kGC",
+		"__v" : 0
+	},
+	/**********************************************************************************+++++++****************************************************************** OBJECT 6 *********************************************************************************************************************************************************/
+	{
+		"_id" : ObjectId("5a732558d14c2d9f3263b309"),
+		"email" : "rgm@gmail.com",
+		"telefono" : 741852963,
+		"edad" : "May 7, 1991",
+		"genero" : "Masculino",
+		"diagnostico" : [ 
+			{
+				"porcentaje" : 72.5,
+				"patologia" : {
+					"respuesta" : 0.045,
+					"preguntas" : [ 
+						"La mayoría de los días me preocupo por más de una cosa", 
+						"La mayoría de los días no puedo parar de preocuparme", 
+						"La mayoría de los días me resulta difícil controlar mis preocupaciones", 
+						"Me siento inquieto/a, intraquilo/a, o con los nervios disparados", 
+						"Me siento cansado fácilmente", 
+						"Tengo problemas para concentrarme", 
+						"Me enfado o irrito fácilmente", 
+						"Mis músculos están tensos y agarrotados", 
+						"La mayoría de los días me siento nervioso", 
+						"Las cosas que ha señalado anteriomente, ¿afectaron a su vida diaria (en el hogar, en el tabajo, o en su tiempo libre) o le causaron mucho malestar?", 
+						"Las cosas que ha señalado anteriormente, ¿fueron suficientemente molestas como para que pensara en buscar ayuda para ellas?"
+					],
+					"nombre" : "TAG (Trastorno de ansiedad generalizada)",
+					"_id" : "5a0c1237665533169c64fa6a"
+				}
+			}, 
+			{
+				"porcentaje" : 50,
+				"patologia" : {
+					"respuesta" : 0.25,
+					"preguntas" : [ 
+						"Tengo tendencia a aislarme de las personas", 
+						"Me he sentido observado"
+					],
+					"nombre" : "Síntomas psicóticos",
+					"_id" : "5a0c1237665533169c64fa6e"
+				}
+			}, 
+			{
+				"porcentaje" : 57.1,
+				"patologia" : {
+					"respuesta" : 0.071,
+					"preguntas" : [ 
+						"A menudo me levanto cuando debiera estar sentado", 
+						"Soy incapaz de estar tranquilamente en actividades de ocio", 
+						"A menudo muevo o golpeo las manos, los pies o me retuerzo estando sentado", 
+						"A menudo hablo excesivamente", 
+						"A menudo respondo a una pregunta antes de que terminen de realizar la pregunta", 
+						"Tengo dificultad para esperar mi turno", 
+						"A menudo interrumpo conversaciones, juegos o actividades de otros"
+					],
+					"nombre" : "Hiperactividad",
+					"_id" : "5a250fcfd8844097551fa6f0"
+				}
+			}
+		],
+		"psicologos" : [ 
+			{
+				"patologias" : [ 
+					"Depresión", 
+					"Síntomas psicóticos"
+				],
+				"consulta" : {
+					"presencial" : true,
+					"online" : false
+				},
+				"comentarios" : [ 
+					{
+						"texto" : "¡Gracias por todo! Estoy muy contento, me ha ayudado mucho. :-)",
+						"fechaComentario" : "23/01/2018; 10:31:44",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"_idComentario" : "23/01/2018; 10:31:445a3407b07d1e2efc133e644f",
+						"valoracion" : 5
+					}, 
+					{
+						"valoracion" : 4,
+						"_idComentario" : "30/01/2018; 12:12:505a70680947362399b861f45d",
+						"_idPaciente" : "5a70680947362399b861f45d",
+						"fechaComentario" : "30/01/2018; 12:12:50",
+						"texto" : "Genial! Todo muy sencillo y muy intuitivo, el contacto serio y profesional, sin duda alguna lo recomiendo, una persona muy comprensiva y calmada, me ha ayudado mucho Emozio!"
+					}
+				],
+				"genero" : "Masculino",
+				"nombre" : "Alfonso Pena",
+				"edad" : "October 10, 1983",
+				"email" : "alfonso@psico.com",
+				"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+				"localizacion" : "Santiago de Compostela",
+				"telefono" : 123456789,
+				"precio" : 50,
+				"tipo" : "Clínico (PIR)",
+				"ncolegiado" : "123456789",
+				"experiencia" : "Tengo 6 años de experiencia ejerciendo en diferentes clínicas privadas",
+				"formacion" : "Master en Psicopatológica infantil",
+				"terapia" : "Terapia sistémica o familiar",
+				"especialidad" : "Trastorno de estados de animo",
+				"aseguradora" : "DKV",
+				"estrellas" : 5,
+				"foto" : "/assets/images/alfonso.jpg",
+				"direccion" : "Rúa do Vilar, 15, 1º, CP. 15705, Santiago de Compostela",
+				"gabinete" : null,
+				"_id" : "5a0c11f3665533169c64fa54"
+			}, 
+			{
+				"patologias" : [ 
+					"TAG (Trastorno de ansiedad generalizada)"
+				],
+				"consulta" : {
+					"online" : true,
+					"presencial" : true
+				},
+				"comentarios" : [ 
+					{
+						"valoracion" : 2,
+						"_idComentario" : "23/01/2018; 13:07:515a3407b07d1e2efc133e644f",
+						"_idPaciente" : "5a3407b07d1e2efc133e644f",
+						"fechaComentario" : "23/01/2018; 13:07:51",
+						"texto" : "¡Eres maravitupenda!"
+					}, 
+					{
+						"valoracion" : 4,
+						"_idComentario" : "30/01/2018; 12:07:425a70643847362399b861f10b",
+						"_idPaciente" : "5a70643847362399b861f10b",
+						"fechaComentario" : "30/01/2018; 12:07:42",
+						"texto" : "Me ha respondido muy rápido y con mucha seriedad, muy contenta con la aplicación y su funcionamiento."
+					}, 
+					{
+						"valoracion" : 5,
+						"_idComentario" : "30/01/2018; 12:10:385a70665247362399b861f2cc",
+						"_idPaciente" : "5a70665247362399b861f2cc",
+						"fechaComentario" : "30/01/2018; 12:10:38",
+						"texto" : "Genial!!! todo muy bien con ella, una persona muy amable, le doy 5 estrellas!"
+					}
+				],
+				"direccion" : "c/ Sempre en Galiza, 9 - 2º E, CP. 15706, Santiago de Compostela",
+				"gabinete" : "Xuntos",
+				"foto" : "/assets/images/maria.jpg",
+				"estrellas" : 3,
+				"aseguradora" : "Mapfre",
+				"especialidad" : null,
+				"terapia" : "Terapia cognitivo-conductual",
+				"formacion" : "Formación en terapias de tercera generación (ACT, Mindfullnes, etc...)",
+				"experiencia" : "Recién titulada",
+				"precio" : 45,
+				"ncolegiado" : "234567891",
+				"tipo" : "General Sanitaria (Master habilitante)",
+				"telefono" : 123456789,
+				"localizacion" : "Santiago de Compostela",
+				"password" : "$2a$10$.zqGcljGYlR6PhfD2BlwLuL7vlm2DSaxrwSNCB4.1V.kj6SqhQaxm",
+				"email" : "maria@psico.com",
+				"genero" : "Femenino",
+				"edad" : "October 10, 1983",
+				"nombre" : "María Alegra",
+				"_id" : "5a0c11f3665533169c64fa56"
+			}
+		],
+		"localizacion" : "Orense",
+		"password" : "$2a$10$hHyB/1hHEmbX8AMx77LONe3I68TJ/9S0a1Fpgu8sfV1MbTC5N7VZK",
+		"__v" : 0
+	}
+]

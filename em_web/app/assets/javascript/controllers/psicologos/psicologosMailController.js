@@ -74,16 +74,34 @@ angular.module('Emozio').controller('PsicologosMailController', function(Psicolo
 			$scope.aceptadas="item";
 			$scope.rechazadas="item";
 			$scope.mensajes = $scope.mensajesPendientes.slice(); /* Los mensajes mostrados son los pendientes */
+			/* Si no hay mensajes, se muestra un aviso */
+			if (!$scope.mensajes.length) {
+				$scope.sin_mensajes = true;
+			} else {
+				$scope.sin_mensajes = false;
+			}
 		} else if (numero == 2) { /* Si se trata de la segunda opcion del menu */
 			$scope.pendientes="item";
 			$scope.aceptadas="active teal item";  /* La opcion de mensajes aceptados esta activada y el resto desactivadas */
 			$scope.rechazadas="item";
 			$scope.mensajes = $scope.mensajesAceptados.slice(); /* Los mensajes mostrados son los aceptados */
+			/* Si no hay mensajes, se muestra un aviso */
+			if (!$scope.mensajes.length) {
+				$scope.sin_mensajes = true;
+			} else {
+				$scope.sin_mensajes = false;
+			}
 		} else if (numero == 3) { /* Si se trata de la tercera opcion del menu */
 			$scope.pendientes="item";
 			$scope.aceptadas="item";
 			$scope.rechazadas="active teal item";  /* La opcion de mensajes rechazados esta activada y el resto desactivadas */
 			$scope.mensajes = $scope.mensajesRechazados.slice(); /* Los mensajes mostrados son los rechazados */
+			/* Si no hay mensajes, se muestra un aviso */
+			if (!$scope.mensajes.length) {
+				$scope.sin_mensajes = true;
+			} else {
+				$scope.sin_mensajes = false;
+			}
 		}
 	}
 
@@ -142,8 +160,9 @@ angular.module('Emozio').controller('PsicologosMailController', function(Psicolo
 
 	$scope.mensaje = {}; /* Mensaje seleccionado */
 	/* Establece cual es el mensaje que ha sido seleccionado */
-	$scope.mensajeSeleccionado = function(mensaje) {
+	$scope.mensajeSeleccionado = function(mensaje){
 		$scope.mensaje._id = mensaje._id;
+		console.log($scope.mensaje._id);
 	}
 
 	/* Funcion que envia un mensaje de aceptacion a la peticion del paciente que ha enviado el mensaje seleccionado */

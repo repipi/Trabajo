@@ -1,0 +1,761 @@
+[
+	/**********************************************************************************+++++++****************************************************************** OBJECT 1 *********************************************************************************************************************************************************/
+
+	{
+		"_id" : ObjectId("5a5208e6848622ba72328135"),
+		"acepta" : true,
+		"mensajePaciente" : {
+			"fecha" : "07/01/2018; 10:47:50",
+			"preferencias" : "Traballo de mañá, polo que só podería ser de tarde.",
+			"texto" : "Ola, qué tal? Gustaríame ter unha cita para probar su terapia. Grazas.",
+			"consulta" : "Presencial"
+		},
+		"paciente" : {
+			"_id" : ObjectId("5a3407b07d1e2efc133e644f"),
+			"genero" : "Hijra",
+			"edad" : "October 10, 1983",
+			"email" : "rgm1@gmail.com",
+			"telefono" : 123456789,
+			"localizacion" : "Santiago de Compostela",
+			"diagnostico" : [ 
+				{
+					"porcentaje" : 72.5,
+					"patologia" : {
+						"respuesta" : 0.0417,
+						"preguntas" : [ 
+							"La mayoría de los días me preocupo por más de una cosa", 
+							"La mayoría de los días no puedo parar de preocuparme", 
+							"La mayoría de los días me resulta difícil controlar mis preocupaciones", 
+							"Me siento inquieto/a, intraquilo/a, o con los nervios disparados", 
+							"Me siento cansado fácilmente", 
+							"Tengo problemas para concentrarme", 
+							"Me enfado o irrito fácilmente", 
+							"Mis músculos están tensos y agarrotados", 
+							"La mayoría de los días me siento nervioso", 
+							"Las cosas que ha señalado anteriomente, ¿afectaron a su vida diaria (en el hogar, en el tabajo, o en su tiempo libre) o le causaron mucho malestar?", 
+							"Las cosas que ha señalado anteriormente, ¿fueron suficientemente molestas como para que pensara en buscar ayuda para ellas?"
+						],
+						"nombre" : "TAD (Trastorno de ansiedad generalizada)",
+						"_id" : "5a0c1237665533169c64fa6a"
+					}
+				}, 
+				{
+					"porcentaje" : 75,
+					"patologia" : {
+						"respuesta" : 0.1667,
+						"preguntas" : [ 
+							"Tengo tendencia a aislarme de las personas", 
+							"Me he sentido observado"
+						],
+						"nombre" : "Síntomas psicóticos",
+						"_id" : "5a0c1237665533169c64fa6e"
+					}
+				}
+			]
+		},
+		"psicologo" : {
+			"_id" : ObjectId("5a0c11f3665533169c64fa54"),
+			"nombre" : "Alfonso Pena",
+			"genero" : "Masculino",
+			"edad" : "October 10, 1983",
+			"email" : "alfonso@psico.com",
+			"telefono" : 123456789,
+			"localizacion" : "Santiago de Compostela",
+			"foto" : "/assets/images/alfonso.jpg",
+			"direccion" : "Rúa do Vilar, 15, 1º, CP. 15705, Santiago de Compostela"
+		},
+		"rechaza" : false,
+		"__v" : 0,
+		"mensajePsicologo" : {
+			"comentario" : "Por suposto. Agárdote na miña consulta en Santiago.",
+			"fechaCita" : "23/01/2018;  09:35:00",
+			"fecha" : "07/01/2018; 11:15:04"
+		}
+	},
+	/**********************************************************************************+++++++****************************************************************** OBJECT 2 *********************************************************************************************************************************************************/
+
+	{
+		"_id" : ObjectId("5a64e3d1b20427f6884e3cda"),
+		"acepta" : true,
+		"mensajePaciente" : {
+			"fecha" : "21/01/2018; 18:02:41",
+			"preferencias" : "Los martes de mañana podría.",
+			"texto" : "¡Hola otra vez!\n\nMe gustaría volver a citarnos, he tenido una recaída.\n\nUn saludo,\nPepe.",
+			"consulta" : "Presencial"
+		},
+		"paciente" : {
+			"_id" : ObjectId("5a3407b07d1e2efc133e644f"),
+			"genero" : "Hijra",
+			"edad" : "October 10, 1983",
+			"email" : "rgm1@gmail.com",
+			"telefono" : 123456789,
+			"localizacion" : "Santiago de Compostela",
+			"diagnostico" : [ 
+				{
+					"porcentaje" : 72.5,
+					"patologia" : {
+						"respuesta" : 0.045,
+						"preguntas" : [ 
+							"La mayoría de los días me preocupo por más de una cosa", 
+							"La mayoría de los días no puedo parar de preocuparme", 
+							"La mayoría de los días me resulta difícil controlar mis preocupaciones", 
+							"Me siento inquieto/a, intraquilo/a, o con los nervios disparados", 
+							"Me siento cansado fácilmente", 
+							"Tengo problemas para concentrarme", 
+							"Me enfado o irrito fácilmente", 
+							"Mis músculos están tensos y agarrotados", 
+							"La mayoría de los días me siento nervioso", 
+							"Las cosas que ha señalado anteriomente, ¿afectaron a su vida diaria (en el hogar, en el tabajo, o en su tiempo libre) o le causaron mucho malestar?", 
+							"Las cosas que ha señalado anteriormente, ¿fueron suficientemente molestas como para que pensara en buscar ayuda para ellas?"
+						],
+						"nombre" : "TAG (Trastorno de ansiedad generalizada)",
+						"_id" : "5a0c1237665533169c64fa6a"
+					}
+				}, 
+				{
+					"porcentaje" : 75,
+					"patologia" : {
+						"respuesta" : 0.25,
+						"preguntas" : [ 
+							"Tengo tendencia a aislarme de las personas", 
+							"Me he sentido observado"
+						],
+						"nombre" : "Síntomas psicóticos",
+						"_id" : "5a0c1237665533169c64fa6e"
+					}
+				}
+			]
+		},
+		"psicologo" : {
+			"_id" : ObjectId("5a0c11f3665533169c64fa54"),
+			"nombre" : "Alfonso Pena",
+			"direccion" : "Rúa do Vilar, 15, 1º, CP. 15705, Santiago de Compostela",
+			"genero" : "Masculino",
+			"edad" : "October 10, 1983",
+			"email" : "alfonso@psico.com",
+			"telefono" : 123456789,
+			"localizacion" : "Santiago de Compostela",
+			"foto" : "/assets/images/alfonso.jpg"
+		},
+		"rechaza" : false,
+		"__v" : 0,
+		"mensajePsicologo" : {
+			"comentario" : "¡Claro que sí! \n\nUn saludo cordial,\nAlfonso.",
+			"fechaCita" : "31/01/2018;  13:30:00",
+			"fecha" : "22/01/2018; 16:52:51"
+		}
+	},
+	/**********************************************************************************+++++++****************************************************************** OBJECT 3 *********************************************************************************************************************************************************/
+	{
+		"_id" : ObjectId("5a6519dbb20427f6884e4a97"),
+		"acepta" : false,
+		"mensajePaciente" : {
+			"fecha" : "21/01/2018; 21:53:15",
+			"preferencias" : "Sólo podría en horario de tarde-noche, a partir de las 19h.",
+			"texto" : "¡Buenas noches!\nLe escribo a razón de que últimamente no paro de discutir con mi pareja. Yo lo quiero mucho, pero me gustaría saber cómo llevar esta situación.\n\nUn saludo,\nElena.",
+			"consulta" : "Online"
+		},
+		"paciente" : {
+			"_id" : ObjectId("5a3407b07d1e2efc133e644f"),
+			"genero" : "Hijra",
+			"edad" : "October 10, 1983",
+			"email" : "rgm1@gmail.com",
+			"telefono" : 123456789,
+			"localizacion" : "Santiago de Compostela",
+			"diagnostico" : [ 
+				{
+					"porcentaje" : 72.5,
+					"patologia" : {
+						"respuesta" : 0.045,
+						"preguntas" : [ 
+							"La mayoría de los días me preocupo por más de una cosa", 
+							"La mayoría de los días no puedo parar de preocuparme", 
+							"La mayoría de los días me resulta difícil controlar mis preocupaciones", 
+							"Me siento inquieto/a, intraquilo/a, o con los nervios disparados", 
+							"Me siento cansado fácilmente", 
+							"Tengo problemas para concentrarme", 
+							"Me enfado o irrito fácilmente", 
+							"Mis músculos están tensos y agarrotados", 
+							"La mayoría de los días me siento nervioso", 
+							"Las cosas que ha señalado anteriomente, ¿afectaron a su vida diaria (en el hogar, en el tabajo, o en su tiempo libre) o le causaron mucho malestar?", 
+							"Las cosas que ha señalado anteriormente, ¿fueron suficientemente molestas como para que pensara en buscar ayuda para ellas?"
+						],
+						"nombre" : "TAG (Trastorno de ansiedad generalizada)",
+						"_id" : "5a0c1237665533169c64fa6a"
+					}
+				}, 
+				{
+					"porcentaje" : 75,
+					"patologia" : {
+						"respuesta" : 0.25,
+						"preguntas" : [ 
+							"Tengo tendencia a aislarme de las personas", 
+							"Me he sentido observado"
+						],
+						"nombre" : "Síntomas psicóticos",
+						"_id" : "5a0c1237665533169c64fa6e"
+					}
+				}
+			]
+		},
+		"psicologo" : {
+			"_id" : ObjectId("5a0c11f3665533169c64fa56"),
+			"nombre" : "María Alegra",
+			"genero" : "Femenino",
+			"edad" : "October 10, 1983",
+			"direccion" : "c/ Sempre en Galiza, 9 - 2º E, CP. 15706, Santiago de Compostela",
+			"email" : "maria@psico.com",
+			"telefono" : 123456789,
+			"localizacion" : "Santiago de Compostela",
+			"foto" : "/assets/images/maria.jpg"
+		},
+		"rechaza" : false,
+		"__v" : 0
+	},
+	/**********************************************************************************+++++++****************************************************************** OBJECT 4 *********************************************************************************************************************************************************/
+	{
+		"_id" : ObjectId("5a66231c04672ee1dc10320b"),
+		"acepta" : false,
+		"mensajePaciente" : {
+			"fecha" : "22/01/2018; 16:45:00",
+			"preferencias" : "Sólo podría los viernes de 10h a 13h.",
+			"texto" : "¡Hola, Alfonso!\n\nSoy Pepe, el que tiene una finca en Manzaneda. ¿Podríamos volver a citarnos? Todavía no he solucionado mi problemilla...\n\nUn abrazo,\nPepe.",
+			"consulta" : "Presencial"
+		},
+		"paciente" : {
+			"_id" : ObjectId("5a3407b07d1e2efc133e644f"),
+			"genero" : "Hijra",
+			"edad" : "October 10, 1983",
+			"email" : "rgm1@gmail.com",
+			"telefono" : 123456789,
+			"localizacion" : "Santiago de Compostela",
+			"diagnostico" : [ 
+				{
+					"porcentaje" : 99.5,
+					"patologia" : {
+						"respuesta" : 0.045,
+						"preguntas" : [ 
+							"La mayoría de los días me preocupo por más de una cosa", 
+							"La mayoría de los días no puedo parar de preocuparme", 
+							"La mayoría de los días me resulta difícil controlar mis preocupaciones", 
+							"Me siento inquieto/a, intraquilo/a, o con los nervios disparados", 
+							"Me siento cansado fácilmente", 
+							"Tengo problemas para concentrarme", 
+							"Me enfado o irrito fácilmente", 
+							"Mis músculos están tensos y agarrotados", 
+							"La mayoría de los días me siento nervioso", 
+							"Las cosas que ha señalado anteriomente, ¿afectaron a su vida diaria (en el hogar, en el tabajo, o en su tiempo libre) o le causaron mucho malestar?", 
+							"Las cosas que ha señalado anteriormente, ¿fueron suficientemente molestas como para que pensara en buscar ayuda para ellas?"
+						],
+						"nombre" : "TAG (Trastorno de ansiedad generalizada)",
+						"_id" : "5a0c1237665533169c64fa6a"
+					}
+				}, 
+				{
+					"porcentaje" : 100,
+					"patologia" : {
+						"respuesta" : 0.25,
+						"preguntas" : [ 
+							"Tengo tendencia a aislarme de las personas", 
+							"Me he sentido observado"
+						],
+						"nombre" : "Síntomas psicóticos",
+						"_id" : "5a0c1237665533169c64fa6e"
+					}
+				}
+			]
+		},
+		"psicologo" : {
+			"_id" : ObjectId("5a0c11f3665533169c64fa54"),
+			"nombre" : "Alfonso Pena",
+			"genero" : "Masculino",
+			"direccion" : "Rúa do Vilar, 15, 1º, CP. 15705, Santiago de Compostela",
+			"edad" : "October 10, 1983",
+			"email" : "alfonso@psico.com",
+			"telefono" : 123456789,
+			"localizacion" : "Santiago de Compostela",
+			"foto" : "/assets/images/alfonso.jpg"
+		},
+		"rechaza" : false,
+		"__v" : 0
+	},
+	/**********************************************************************************+++++++****************************************************************** OBJECT 4 *********************************************************************************************************************************************************/
+	{
+		"_id" : ObjectId("5a70627747362399b861efa7"),
+		"acepta" : false,
+		"mensajePaciente" : {
+			"fecha" : "30/01/2018; 11:17:59",
+			"preferencias" : "Por las tardes de miércoles a sábado.",
+			"texto" : "Buenas tardes, me ponía en contacto con usted porque tengo un problema y mis familiares me han aconsejado que tome un tratamiento ya que con el tiempo puede afectar a mis relaciones personales perjudicándoles en gran medida. Últimamente cada vez que alguien intenta entablar una conversación conmigo me muestro arisco e irritable, lo hago sin intención y sin darme cuenta de ello, mis familiares me han advertido varias veces de esto, y busco una solución.",
+			"consulta" : "Online"
+		},
+		"paciente" : {
+			"_id" : ObjectId("5a7060bd47362399b861ee6c"),
+			"genero" : "Masculino",
+			"edad" : "October 10, 1983",
+			"email" : "antonioMaside@gmail.com",
+			"telefono" : 859235489,
+			"localizacion" : "La Gudiña",
+			"diagnostico" : [ 
+				{
+					"porcentaje" : 66.6,
+					"patologia" : {
+						"respuesta" : 0.083,
+						"preguntas" : [ 
+							"Tengo dificultades para mantener la atención en actividades de ocio", 
+							"Tengo dificultades para organizar tareas y actividades", 
+							"Evito o me disgusta iniciar tareas que requieren esfuerzo mental sostenido", 
+							"A menudo pierdo cosas necesarias para tareas o actividades", 
+							"A menudo me distraigo con estímulos externos", 
+							"A menudo olvido hacer las actividades cotidianas (tales como llamadas, acudir a citas, pagar facturas, etc)"
+						],
+						"nombre" : "TDAH (Trastorno por déficit de atención e hiperactividad)",
+						"_id" : "5a250f5bd8844097551fa6e5"
+					}
+				}, 
+				{
+					"porcentaje" : 78.4,
+					"patologia" : {
+						"respuesta" : 0.071,
+						"preguntas" : [ 
+							"A menudo me levanto cuando debiera estar sentado", 
+							"Soy incapaz de estar tranquilamente en actividades de ocio", 
+							"A menudo muevo o golpeo las manos, los pies o me retuerzo estando sentado", 
+							"A menudo hablo excesivamente", 
+							"A menudo respondo a una pregunta antes de que terminen de realizar la pregunta", 
+							"Tengo dificultad para esperar mi turno", 
+							"A menudo interrumpo conversaciones, juegos o actividades de otros"
+						],
+						"nombre" : "Hiperactividad",
+						"_id" : "5a250fcfd8844097551fa6f0"
+					}
+				}, 
+				{
+					"porcentaje" : 87.5,
+					"patologia" : {
+						"respuesta" : 0.125,
+						"preguntas" : [ 
+							"El malestar o comportamiento creo que es mayor de lo que debería ser respecto a esa situación", 
+							"El malestar o comportamiento ha provocado problemas en mis relaciones familiares, sociales o laborales", 
+							"He perdido alguna persona importante en mi vida en los últimos 6 meses", 
+							"Llevo más de 6 meses con este malestar o comportamiento"
+						],
+						"nombre" : "TA (Trastorno adaptativo)",
+						"_id" : "5a251039d8844097551fa6fa"
+					}
+				}
+			]
+		},
+		"psicologo" : {
+			"_id" : ObjectId("5a661e5c04672ee1dc102ac4"),
+			"nombre" : "José Manuel Míguez",
+			"genero" : "Masculino",
+			"edad" : "October 10, 1983",
+			"email" : "josemanuel@psico.com",
+			"telefono" : 123456789,
+			"localizacion" : "A Coruña",
+			"foto" : "/assets/images/alfonso.png"
+		},
+		"rechaza" : true,
+		"__v" : 0,
+		"mensajePsicologo" : {
+			"comentario" : "Sintiéndolo mucho, tengo esos días cubiertos. Un saludo.",
+			"fechaCita" : null,
+			"fecha" : "01/02/2018; 13:27:38"
+		}
+	},
+	/**********************************************************************************+++++++****************************************************************** OBJECT 5 *********************************************************************************************************************************************************/
+	{
+		"_id" : ObjectId("5a70627747362399b861efa7"),
+		"acepta" : false,
+		"mensajePaciente" : {
+			"fecha" : "30/01/2018; 11:17:59",
+			"preferencias" : "Por las tardes de miércoles a sábado.",
+			"texto" : "Buenas tardes, me ponía en contacto con usted porque tengo un problema y mis familiares me han aconsejado que tome un tratamiento ya que con el tiempo puede afectar a mis relaciones personales perjudicándoles en gran medida. Últimamente cada vez que alguien intenta entablar una conversación conmigo me muestro arisco e irritable, lo hago sin intención y sin darme cuenta de ello, mis familiares me han advertido varias veces de esto, y busco una solución.",
+			"consulta" : "Online"
+		},
+		"paciente" : {
+			"_id" : ObjectId("5a7060bd47362399b861ee6c"),
+			"genero" : "Masculino",
+			"edad" : "October 10, 1983",
+			"email" : "antonioMaside@gmail.com",
+			"telefono" : 859235489,
+			"localizacion" : "La Gudiña",
+			"diagnostico" : [ 
+				{
+					"porcentaje" : 66.6,
+					"patologia" : {
+						"respuesta" : 0.083,
+						"preguntas" : [ 
+							"Tengo dificultades para mantener la atención en actividades de ocio", 
+							"Tengo dificultades para organizar tareas y actividades", 
+							"Evito o me disgusta iniciar tareas que requieren esfuerzo mental sostenido", 
+							"A menudo pierdo cosas necesarias para tareas o actividades", 
+							"A menudo me distraigo con estímulos externos", 
+							"A menudo olvido hacer las actividades cotidianas (tales como llamadas, acudir a citas, pagar facturas, etc)"
+						],
+						"nombre" : "TDAH (Trastorno por déficit de atención e hiperactividad)",
+						"_id" : "5a250f5bd8844097551fa6e5"
+					}
+				}, 
+				{
+					"porcentaje" : 78.4,
+					"patologia" : {
+						"respuesta" : 0.071,
+						"preguntas" : [ 
+							"A menudo me levanto cuando debiera estar sentado", 
+							"Soy incapaz de estar tranquilamente en actividades de ocio", 
+							"A menudo muevo o golpeo las manos, los pies o me retuerzo estando sentado", 
+							"A menudo hablo excesivamente", 
+							"A menudo respondo a una pregunta antes de que terminen de realizar la pregunta", 
+							"Tengo dificultad para esperar mi turno", 
+							"A menudo interrumpo conversaciones, juegos o actividades de otros"
+						],
+						"nombre" : "Hiperactividad",
+						"_id" : "5a250fcfd8844097551fa6f0"
+					}
+				}, 
+				{
+					"porcentaje" : 87.5,
+					"patologia" : {
+						"respuesta" : 0.125,
+						"preguntas" : [ 
+							"El malestar o comportamiento creo que es mayor de lo que debería ser respecto a esa situación", 
+							"El malestar o comportamiento ha provocado problemas en mis relaciones familiares, sociales o laborales", 
+							"He perdido alguna persona importante en mi vida en los últimos 6 meses", 
+							"Llevo más de 6 meses con este malestar o comportamiento"
+						],
+						"nombre" : "TA (Trastorno adaptativo)",
+						"_id" : "5a251039d8844097551fa6fa"
+					}
+				}
+			]
+		},
+		"psicologo" : {
+			"_id" : ObjectId("5a661e5c04672ee1dc102ac4"),
+			"nombre" : "José Manuel Míguez",
+			"genero" : "Masculino",
+			"edad" : "October 10, 1983",
+			"email" : "josemanuel@psico.com",
+			"telefono" : 123456789,
+			"localizacion" : "A Coruña",
+			"foto" : "/assets/images/jose.jpg",
+			"direccion" : "c/ Pexigo de Abaixo, 9-2ºB, CP. 15703, Santiago de Compostela"
+		},
+		"rechaza" : true,
+		"__v" : 0,
+		"mensajePsicologo" : {
+			"comentario" : "Sintiéndolo mucho, tengo esos días cubiertos. Un saludo.",
+			"fechaCita" : null,
+			"fecha" : "01/02/2018; 13:27:38"
+		}
+	},
+	/**********************************************************************************+++++++****************************************************************** OBJECT 6 *********************************************************************************************************************************************************/
+	{
+		"_id" : ObjectId("5a70655b47362399b861f233"),
+		"acepta" : true,
+		"mensajePaciente" : {
+			"fecha" : "30/01/2018; 11:30:19",
+			"preferencias" : "Trabajo todos los días por las mañanas, y por las tardes voy a clases, los lunes de 18:00 a 20:00 estoy disponible, así como los jueves de 16:00 a 19:00",
+			"texto" : "Hola! Nunca he ido a un psicólogo, y estos días tengo muchos exámenes en la facultad, además estoy trabajando en una empresa que me requieren mucho compromiso, lo cual me está generando mucha ansiedad, buscaba una ayuda y unos ejercicios que me facilitaran llevar la carga a la que estoy sometida. Muchas Gracias, un saludo.",
+			"consulta" : "Presencial"
+		},
+		"paciente" : {
+			"_id" : ObjectId("5a70643847362399b861f10b"),
+			"genero" : "Femenino",
+			"edad" : "January 3, 1984",
+			"email" : "marielaD84@turfmail.com",
+			"telefono" : 999876678,
+			"localizacion" : "Santiago de Compostela",
+			"diagnostico" : [ 
+				{
+					"porcentaje" : 77,
+					"patologia" : {
+						"respuesta" : 0.045,
+						"preguntas" : [ 
+							"La mayoría de los días me preocupo por más de una cosa", 
+							"La mayoría de los días no puedo parar de preocuparme", 
+							"La mayoría de los días me resulta difícil controlar mis preocupaciones", 
+							"Me siento inquieto/a, intraquilo/a, o con los nervios disparados", 
+							"Me siento cansado fácilmente", 
+							"Tengo problemas para concentrarme", 
+							"Me enfado o irrito fácilmente", 
+							"Mis músculos están tensos y agarrotados", 
+							"La mayoría de los días me siento nervioso", 
+							"Las cosas que ha señalado anteriomente, ¿afectaron a su vida diaria (en el hogar, en el tabajo, o en su tiempo libre) o le causaron mucho malestar?", 
+							"Las cosas que ha señalado anteriormente, ¿fueron suficientemente molestas como para que pensara en buscar ayuda para ellas?"
+						],
+						"nombre" : "TAG (Trastorno de ansiedad generalizada)",
+						"_id" : "5a0c1237665533169c64fa6a"
+					}
+				}, 
+				{
+					"porcentaje" : 57.1,
+					"patologia" : {
+						"respuesta" : 0.071,
+						"preguntas" : [ 
+							"He perdido el interés por las cosas", 
+							"He perdido la confianza en mí mismo", 
+							"Me he sentido con poca energía", 
+							"He perdido peso (causado por falta de apetito)", 
+							"Me he estado despertando demasiado temprano", 
+							"Me he sentido enlentecido", 
+							"Tengo tendencia a encontrarme peor por las mañanas"
+						],
+						"nombre" : "Depresión",
+						"_id" : "5a0c1237665533169c64fa6c"
+					}
+				}
+			]
+		},
+		"psicologo" : {
+			"_id" : ObjectId("5a0c11f3665533169c64fa56"),
+			"nombre" : "María Alegra",
+			"genero" : "Femenino",
+			"edad" : "October 10, 1983",
+			"direccion" : "c/ Sempre en Galiza, 9 - 2º E, CP. 15706, Santiago de Compostela",
+			"email" : "maria@psico.com",
+			"telefono" : 123456789,
+			"localizacion" : "Santiago de Compostela",
+			"foto" : "/assets/images/maria.jpg"
+		},
+		"rechaza" : false,
+		"__v" : 0,
+		"mensajePsicologo" : {
+			"comentario" : "Buenas tardes, te enseñaré métodos para relajarte y llevar todas las actividades de tu día a buen puerto. No debes de preocuparte, conozco los ejercicios que te ayudarán a llegar al final del día de forma positiva y con energía.\n\nMaria Alegra",
+			"fechaCita" : "08/02/2018;  17:20:00",
+			"fecha" : "30/01/2018; 11:56:35"
+		}
+	},
+	/**********************************************************************************+++++++****************************************************************** OBJECT 7 *********************************************************************************************************************************************************/
+	{
+		"_id" : ObjectId("5a70672a47362399b861f3cc"),
+		"acepta" : true,
+		"mensajePaciente" : {
+			"fecha" : "30/01/2018; 11:38:02",
+			"preferencias" : "A cualquier hora de horario laboral es buena hora ya que trabajo desde casa.",
+			"texto" : "Buenas noches, recientemente he sufrido la pérdida de un familiar muy cercano y no estoy asimilando bien la situación, cualquier pequeño recuerdo me hace llorar y necesito alguien que me guíe para superar esta perdida.",
+			"consulta" : "Online"
+		},
+		"paciente" : {
+			"_id" : ObjectId("5a70665247362399b861f2cc"),
+			"genero" : "Masculino",
+			"edad" : "December 27, 1970",
+			"email" : "curcurucho99@gmail.com",
+			"telefono" : 977252525,
+			"localizacion" : "Monforte de Lemos",
+			"diagnostico" : [ 
+				{
+					"porcentaje" : 54.5,
+					"patologia" : {
+						"respuesta" : 0.045,
+						"preguntas" : [ 
+							"La mayoría de los días me preocupo por más de una cosa", 
+							"La mayoría de los días no puedo parar de preocuparme", 
+							"La mayoría de los días me resulta difícil controlar mis preocupaciones", 
+							"Me siento inquieto/a, intraquilo/a, o con los nervios disparados", 
+							"Me siento cansado fácilmente", 
+							"Tengo problemas para concentrarme", 
+							"Me enfado o irrito fácilmente", 
+							"Mis músculos están tensos y agarrotados", 
+							"La mayoría de los días me siento nervioso", 
+							"Las cosas que ha señalado anteriomente, ¿afectaron a su vida diaria (en el hogar, en el tabajo, o en su tiempo libre) o le causaron mucho malestar?", 
+							"Las cosas que ha señalado anteriormente, ¿fueron suficientemente molestas como para que pensara en buscar ayuda para ellas?"
+						],
+						"nombre" : "TAG (Trastorno de ansiedad generalizada)",
+						"_id" : "5a0c1237665533169c64fa6a"
+					}
+				}, 
+				{
+					"porcentaje" : 57.1,
+					"patologia" : {
+						"respuesta" : 0.071,
+						"preguntas" : [ 
+							"He perdido el interés por las cosas", 
+							"He perdido la confianza en mí mismo", 
+							"Me he sentido con poca energía", 
+							"He perdido peso (causado por falta de apetito)", 
+							"Me he estado despertando demasiado temprano", 
+							"Me he sentido enlentecido", 
+							"Tengo tendencia a encontrarme peor por las mañanas"
+						],
+						"nombre" : "Depresión",
+						"_id" : "5a0c1237665533169c64fa6c"
+					}
+				}, 
+				{
+					"porcentaje" : 66.6,
+					"patologia" : {
+						"respuesta" : 0.083,
+						"preguntas" : [ 
+							"Tengo dificultades para mantener la atención en actividades de ocio", 
+							"Tengo dificultades para organizar tareas y actividades", 
+							"Evito o me disgusta iniciar tareas que requieren esfuerzo mental sostenido", 
+							"A menudo pierdo cosas necesarias para tareas o actividades", 
+							"A menudo me distraigo con estímulos externos", 
+							"A menudo olvido hacer las actividades cotidianas (tales como llamadas, acudir a citas, pagar facturas, etc)"
+						],
+						"nombre" : "TDAH (Trastorno por déficit de atención e hiperactividad)",
+						"_id" : "5a250f5bd8844097551fa6e5"
+					}
+				}, 
+				{
+					"porcentaje" : 62.5,
+					"patologia" : {
+						"respuesta" : 0.125,
+						"preguntas" : [ 
+							"El malestar o comportamiento creo que es mayor de lo que debería ser respecto a esa situación", 
+							"El malestar o comportamiento ha provocado problemas en mis relaciones familiares, sociales o laborales", 
+							"He perdido alguna persona importante en mi vida en los últimos 6 meses", 
+							"Llevo más de 6 meses con este malestar o comportamiento"
+						],
+						"nombre" : "TA (Trastorno adaptativo)",
+						"_id" : "5a251039d8844097551fa6fa"
+					}
+				}
+			]
+		},
+		"psicologo" : {
+			"_id" : ObjectId("5a0c11f3665533169c64fa56"),
+			"nombre" : "María Alegra",
+			"genero" : "Femenino",
+			"edad" : "October 10, 1983",
+			"direccion" : "c/ Sempre en Galiza, 9 - 2º E, CP. 15706, Santiago de Compostela",
+			"email" : "maria@psico.com",
+			"telefono" : 123456789,
+			"localizacion" : "Santiago de Compostela",
+			"foto" : "/assets/images/maria.jpg"
+		},
+		"rechaza" : false,
+		"__v" : 0,
+		"mensajePsicologo" : {
+			"comentario" : "Buenas tardes, la pérdida de un familiar siempre es algo difícil de superar, con una pequeña guía le ayudaré a sobreponerse y pasar juntos las etapas de duelo. \n\nMaria Alegra",
+			"fechaCita" : "31/01/2018;  20:00:00",
+			"fecha" : "30/01/2018; 11:58:18"
+		}
+	},
+	/**********************************************************************************+++++++****************************************************************** OBJECT 8 *********************************************************************************************************************************************************/
+	{
+		"_id" : ObjectId("5a70688147362399b861f4fa"),
+		"acepta" : true,
+		"mensajePaciente" : {
+			"fecha" : "30/01/2018; 11:43:45",
+			"preferencias" : "Cuanto antes mejor, estoy disponible a cualquier hora.",
+			"texto" : "Buenas noches, quería realizar una consulta con una persona que comprenda la situación que estoy pasando, hace dos días rompí con el amor de mi vida y no soy capaz de dejar de pensar en él cada minuto que pasa, intento con todas mis fuerzas no llamarla, pero no me veo capaz de sobre llevar esta situación, espero que puedan ayudarme.",
+			"consulta" : "Presencial"
+		},
+		"paciente" : {
+			"_id" : ObjectId("5a70680947362399b861f45d"),
+			"genero" : "Masculino",
+			"edad" : "July 14, 1993",
+			"email" : "JesusGTI@outlook.es",
+			"telefono" : 777833833,
+			"localizacion" : "Santiago de Compostela",
+			"diagnostico" : [ 
+				{
+					"porcentaje" : 63.5,
+					"patologia" : {
+						"respuesta" : 0.045,
+						"preguntas" : [ 
+							"La mayoría de los días me preocupo por más de una cosa", 
+							"La mayoría de los días no puedo parar de preocuparme", 
+							"La mayoría de los días me resulta difícil controlar mis preocupaciones", 
+							"Me siento inquieto/a, intraquilo/a, o con los nervios disparados", 
+							"Me siento cansado fácilmente", 
+							"Tengo problemas para concentrarme", 
+							"Me enfado o irrito fácilmente", 
+							"Mis músculos están tensos y agarrotados", 
+							"La mayoría de los días me siento nervioso", 
+							"Las cosas que ha señalado anteriomente, ¿afectaron a su vida diaria (en el hogar, en el tabajo, o en su tiempo libre) o le causaron mucho malestar?", 
+							"Las cosas que ha señalado anteriormente, ¿fueron suficientemente molestas como para que pensara en buscar ayuda para ellas?"
+						],
+						"nombre" : "TAG (Trastorno de ansiedad generalizada)",
+						"_id" : "5a0c1237665533169c64fa6a"
+					}
+				}, 
+				{
+					"porcentaje" : 71.3,
+					"patologia" : {
+						"respuesta" : 0.071,
+						"preguntas" : [ 
+							"He perdido el interés por las cosas", 
+							"He perdido la confianza en mí mismo", 
+							"Me he sentido con poca energía", 
+							"He perdido peso (causado por falta de apetito)", 
+							"Me he estado despertando demasiado temprano", 
+							"Me he sentido enlentecido", 
+							"Tengo tendencia a encontrarme peor por las mañanas"
+						],
+						"nombre" : "Depresión",
+						"_id" : "5a0c1237665533169c64fa6c"
+					}
+				}, 
+				{
+					"porcentaje" : 66.6,
+					"patologia" : {
+						"respuesta" : 0.083,
+						"preguntas" : [ 
+							"Tengo dificultades para mantener la atención en actividades de ocio", 
+							"Tengo dificultades para organizar tareas y actividades", 
+							"Evito o me disgusta iniciar tareas que requieren esfuerzo mental sostenido", 
+							"A menudo pierdo cosas necesarias para tareas o actividades", 
+							"A menudo me distraigo con estímulos externos", 
+							"A menudo olvido hacer las actividades cotidianas (tales como llamadas, acudir a citas, pagar facturas, etc)"
+						],
+						"nombre" : "TDAH (Trastorno por déficit de atención e hiperactividad)",
+						"_id" : "5a250f5bd8844097551fa6e5"
+					}
+				}, 
+				{
+					"porcentaje" : 50,
+					"patologia" : {
+						"respuesta" : 0.071,
+						"preguntas" : [ 
+							"A menudo me levanto cuando debiera estar sentado", 
+							"Soy incapaz de estar tranquilamente en actividades de ocio", 
+							"A menudo muevo o golpeo las manos, los pies o me retuerzo estando sentado", 
+							"A menudo hablo excesivamente", 
+							"A menudo respondo a una pregunta antes de que terminen de realizar la pregunta", 
+							"Tengo dificultad para esperar mi turno", 
+							"A menudo interrumpo conversaciones, juegos o actividades de otros"
+						],
+						"nombre" : "Hiperactividad",
+						"_id" : "5a250fcfd8844097551fa6f0"
+					}
+				}, 
+				{
+					"porcentaje" : 62.5,
+					"patologia" : {
+						"respuesta" : 0.125,
+						"preguntas" : [ 
+							"El malestar o comportamiento creo que es mayor de lo que debería ser respecto a esa situación", 
+							"El malestar o comportamiento ha provocado problemas en mis relaciones familiares, sociales o laborales", 
+							"He perdido alguna persona importante en mi vida en los últimos 6 meses", 
+							"Llevo más de 6 meses con este malestar o comportamiento"
+						],
+						"nombre" : "TA (Trastorno adaptativo)",
+						"_id" : "5a251039d8844097551fa6fa"
+					}
+				}
+			]
+		},
+		"psicologo" : {
+			"_id" : ObjectId("5a0c11f3665533169c64fa54"),
+			"nombre" : "Alfonso Pena",
+			"genero" : "Masculino",
+			"edad" : "October 10, 1983",
+			"email" : "alfonso@psico.com",
+			"telefono" : 123456789,
+			"localizacion" : "Santiago de Compostela",
+			"foto" : "/assets/images/alfonso.jpg",
+			"direccion" : "Rúa do Vilar, 15, 1º, CP. 15705, Santiago de Compostela"
+		},
+		"rechaza" : false,
+		"__v" : 0,
+		"mensajePsicologo" : {
+			"comentario" : "Buenas noches, con unas pocas directrices conseguirás solucionar esa pérdida que te  entristece, tengo métodos que te ayudarán mucho, te daré una cita y lo solucionaremos juntos. Un saludo. \n\nAlfonso Pena.",
+			"fechaCita" : "01/02/2018;  12:00:00",
+			"fecha" : "30/01/2018; 11:50:36"
+		}
+	}
+]

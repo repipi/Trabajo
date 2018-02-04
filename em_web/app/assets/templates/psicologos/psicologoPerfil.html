@@ -76,7 +76,7 @@
 					<div class="content" id="perfil_psicologo_contenido">
 						<div class="header">{{psicologo.nombre}}</div>
 						<!--						<div class="ui right floated star rating valoraciones" ng-init="iniciarRating(psicologo.estrellas)"></div>-->
-						<div class="ui right floated meta">{{psicologo.estrellas}}<i class="yellow star icon"></i> </div>
+<!--						<div class="ui right floated meta">{{psicologo.estrellas}}<i class="yellow star icon"></i> </div>-->
 						<div class="meta"><i class="certificate teal icon"></i> {{psicologo.ncolegiado}} </div>
 						<div class="description"><i class="birthday teal icon"></i> {{psicologo.edad}} </div>
 						<div class="description"><i class="teal user outline icon"></i> {{psicologo.genero}} </div>
@@ -281,7 +281,7 @@
 					<!-- Cuerpo del formulario -->
 					<div class="modal-body">
 						<form class="ui reply form" ng-show="paciente" id="comentar_form">
-							<div class="field">
+							<div class="required field">
 								<label>Comentario</label>
 								<textarea rows="2" name="comentario" ng-model="mensaje.texto" placeholder="Escribe aquí tu comentario"></textarea>
 							</div>
@@ -326,8 +326,8 @@
 								<label>Preferencias horarias</label> 
 								<textarea name="preferencias" rows="4" required class="form-control" placeholder="¿Cuando te vendría bien tener la cita? ¿Que días tienes disponibles? ¿Que franja horaria no podría ser?" ng-model="mensaje.preferencias"></textarea> 
 							</div> 
-							<div class="grouped inline fields">
-								<label>Consulta</label>
+							<div class="required grouped inline fields">
+								<label>Lugar de la consulta</label>
 								<div class="field" ng-show="psicologo.consulta.presencial">
 									<div class="ui slider checkbox">
 										<input aria-label="Consulta presencial" type="radio" name="consulta" checked="checked" value="presencial" ng-model="mensaje.consulta">

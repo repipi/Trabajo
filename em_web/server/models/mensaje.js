@@ -48,8 +48,8 @@ var mensajeSchema = new Schema(
 /* Metodo que crea y guarda el mensaje de un paciente */
 mensajeSchema.methods.crearMensajePaciente = function(mensajePaciente, paciente) {
 	return new Promise(function(resolve, reject){
-		
-//		¡Hola, Cristina! \nEs la primera vez que utilizo la página. Me gustaría quedar contigo porque tengo problemas de insomnio. Hace semanas que no duermo bien, y en el trabajo no rindo.\n\nMuchas gracias.\n\nUn saludo,\nRebeca.
+
+		//		¡Hola, Cristina! \nEs la primera vez que utilizo la página. Me gustaría quedar contigo porque tengo problemas de insomnio. Hace semanas que no duermo bien, y en el trabajo no rindo.\n\nMuchas gracias.\n\nUn saludo,\nRebeca.
 
 		/* Formato de la fecha de hoy */
 		var fecha = new Date();
@@ -130,6 +130,9 @@ mensajeSchema.methods.crearMensajePsicologo = function(mensajePsicologo) {
 				}
 			}
 		}
+		
+		console.log(query);
+		console.log(mensaje);
 
 		/* Se busca el documento que cumpla la consulta y se actualiza con los datos proporcionados por el JSON mensaje */
 		Mensaje.findOneAndUpdate(query, mensaje).exec(function(error, results){
@@ -138,6 +141,7 @@ mensajeSchema.methods.crearMensajePsicologo = function(mensajePsicologo) {
 				reject({error: error});
 			}else{
 				resolve(results);
+				console.log(results);
 			}
 		});
 	});
