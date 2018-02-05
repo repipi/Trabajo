@@ -130,27 +130,27 @@ Las fases que se van a realizar en este proyecto son:
 \end{enumerate}
 
 \subsubsection{Fase incremental}
-En esta sección se describirán con mayor detalle en qué consisten los tres incrementos del proceso. Donde cada uno de ellos tendrá sus propias fases de diseño, implementación, pruebas y revisión.
+En esta sección se describirán con mayor detalle en qué consisten los tres incrementos del proceso. Donde cada uno de ellos tendrá sus propias fases de diseño, implementación, pruebas y revisión. \newline
 
-\textbf{Incremento 1}
+\textbf{Incremento 1}\newline
 
 
 El primer incremento se realizará justo después de la fase inicial, y se corresponde con el subsistema del cuestionario de emparejamiento paciente-psicólogo.
 
 
-Según la planificación temporal descrita en la gestión de tiempos, se prevé que el incremento 1 comience el día 9 de noviembre y finalice el 6 de diciembre. Esta previsión tiene en cuenta que es el primer contacto directo con las tecnologías utilizadas por lo que es predecible que se trabaje de forma más pautada y se produzcan muchos ensayo-error. Además de que en él se implementa la complejidad algorítmica relacionada con el emparejamiento.
+Según la planificación temporal descrita en la gestión de tiempos, se prevé que el incremento 1 comience el día 9 de noviembre y finalice el 6 de diciembre. Esta previsión tiene en cuenta que es el primer contacto directo con las tecnologías utilizadas por lo que es predecible que se trabaje de forma más pautada y se produzcan muchos ensayo-error. Además de que en él se implementa la complejidad algorítmica relacionada con el emparejamiento.\newline
 
 
-\textbf{Incremento 2}
+\textbf{Incremento 2}\newline
 
 
 Tras finalizar el primer incremento, se procede a realizar este segundo que se corresponde con el subsistema de gestión de usuarios.
 
 
-Según la planificación prevista, estará comprendido entre el 7 de diciembre y el 20 de diciembre.
+Según la planificación prevista, estará comprendido entre el 7 de diciembre y el 20 de diciembre.\newline
 
 
-\textbf{Incremento 3}
+\textbf{Incremento 3}\newline
 
 
 El último incremento es el subsistema de comunicación. 
@@ -208,11 +208,12 @@ La estructura de información que se encuentra en el repositorio viene definida 
 \centering
 \begin{tabularx}{\textwidth}{|l|l|X|}
 \hline
-\rowcolor[gray]{0.9}\multicolumn{2}{|c|}{\textbf{Carpeta}}                     & \multicolumn{1}{c|}{\textbf{Descripción del contenido}}                                                                             \\ \hline
+\multicolumn{2}{|c|}{\textbf{Carpeta}}                     & \multicolumn{1}{c|}{\textbf{Descripción del contenido}}                                                                             \\ \hline
 \multicolumn{2}{|X|}{em\_diagramas}               & Contiene el archivo de StarUML que contiene todos los diagramas del proyecto: Casos de uso, modelo de datos, patrón MVC... \\ \hline
-\multirow{7}{*}{em\_memoria} & em\_analisis       & Contiene todos los archivos referentes al análisis.                                                                        \\ \cline{2-3} 
+\multirow{8}{*}{em\_memoria} & em\_analisis       & Contiene todos los archivos referentes al análisis.                                                                        \\ \cline{2-3} 
                              & em\_anexos         & Contiene todos los anexos de la memoria del proyecto.                                                                      \\ \cline{2-3} 
                              & em\_diseño         & Contiene todos los archivos referentes al diseño.                                                                          \\ \cline{2-3} 
+                             & em\_implem         & Contiene todos los archivos referentes a la implementación.                                                                          \\ \cline{2-3} 
                              & em\_gest\_proy     & Contiene todos los archivos referentes a la gestión del proyecto.                                                          \\ \cline{2-3} 
                              & em\_introducción   & Contiene la introducción de la memoria del proyecto.                                                                       \\ \cline{2-3} 
                              & em\_memoria\_final & Se trata del documento en LaTeX que contiene la memoria a entregar.                                                        \\ \cline{2-3} 
@@ -252,6 +253,180 @@ Contendrá la última versión validada del código fuente, es decir, tras pasar
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Gestión de costes}
+
+En esta sección nos centraremos en los costes que engloba el proyecto. Para poder llevar a cabo la estimación de los costes, los cálculos se realizarán por estimación paramétrica\cite{pmbok}, que tiene en cuenta los datos históricos relevantes y otras variables, para calcular una estimación del coste del trabajo del proyecto.
+
+
+Las estimaciones son evaluaciones cuantitativas de los costes probables que se requieren para completar el trabajo del proyecto, que involucran a todos los recursos incluídos, entre otros, el trabajo directo, los materiales, el equipamiento y la tecnología de la información. En nuestras estimaciones, no se tendrán en cuenta aquellos costes que sean indirectos.
+
+
+A continuación, se encuentran dispuestas por categorías las diferentes estimaciones de costes.
+
+
+\subsection{Costes del personal}
+Para calcular los costes asociados a los recursos humanos del proyecto, se tendrá como referencia al estudio realizado por Vitae Consultores que ha dado como resultado la Guía Salarial del Sector TI en Galicia 2015-2016\cite{vitae}.
+
+
+Como datos principales para nuestros cálculos, el estudio muestra que una analista programadora que tenga entre 0 o 2 años de experiencia, cobra de media 1600 \euro brutos.
+
+
+Para realizar los cálculos referentes a los recursos humanos, se ha empleado la calculadora de contratos para la Gestión de actividad I+D de la Oficina de Investigación y Tecnología de la USC\cite{calculadoracontratos}.
+
+
+Los datos introducidos para hacer los cálculos fueron los siguientes:
+\begin{itemize}
+\item \textbf{Salario bruto mensual:} 16000 \euro
+\item \textbf{Periodo de contrato:} 16/10/2017 a 21/01/2018
+\item \textbf{Número de pagas:} 14
+\item \textbf{Tipo de contrato:} Obra y servicio
+\item \textbf{Jornada laboral:} Tiempo completo
+\item \textbf{Horas semanales:} 37,5
+\item \textbf{Categoría cotización:} Ingeniera – Licenciada – Grado; Técnico administrativo
+\end{itemize}
+
+
+Los resultados obtenidos son los que aparecen en la tabla\ref{fig:calc_cont}.
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+\hline
+\multirow{2}{*}{\textbf{Mes}}      & 1            & 2              & 3              & 4          \\ \cline{2-5} 
+                                   & Octubre 2017 & Noviembre 2017 & Diciembre 2017 & Enero 2018 \\ \hline
+\textbf{Días trabajados}           & 16           & 30             & 31             & 21         \\ \hline
+\textbf{Retribución Bruta Mensual} & 1.600,00 €   & 1.600,00 €     & 1.600,00 €     & 1.600,00 € \\ \hline
+\textbf{Base de Cotización}        & 963,44 €     & 1.866,67 €     & 1.866,67 €     & 1.264,52 € \\ \hline
+\textbf{Salario Bruto}             & 825,81 €     & 1.600,00 €     & 1.600,00 €     & 1.083,87 € \\ \hline
+\textbf{Pagas Extras}              & 0,00 €       & 0,00 €         & 402,19 €       & 457,15 €   \\ \hline
+\textbf{Cota Patronal}             & 309,27 €     & 599,20 €       & 599,20 €       & 405,91 €   \\ \hline
+\textbf{Liquidación}               & 32,28 €      & 60,53 €        & 62,55 €        & 42,37 €    \\ \hline
+\end{tabularx}
+\caption{Calculadora de contratos}
+\label{fig:calc_cont}
+\end{table}
+
+
+El resumen anual sería el que se muestra en la tabla\ref{fig:res_anual}.
+
+\begin{table}[htpb]
+\centering
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\textbf{}                 & 2017       & 2018       & \multicolumn{2}{l|}{\multirow{3}{*}{}} \\ \cline{1-3}
+\textbf{Bruto}            & 4.025,81 € & 1.083,87 € & \multicolumn{2}{l|}{}                  \\ \cline{1-3}
+\textbf{Pagas extras}     & 402,19 €   & 457,15 €   & \multicolumn{2}{l|}{}                  \\ \hline
+\textbf{Liquidación}      & -          & 197,73 €   & \textbf{Liquidación}    &              \\ \hline
+\textbf{Coste contrato}   & 4.428,00 € & 1.738,75 € & 197,73 €                & 6.166,75 €   \\ \hline
+\textbf{Seguridad Social} & 1.507,67 € & 405,91 €   &                         & 1.913,58 €   \\ \hline
+\textbf{TOTAL}            & 5.935,67 € & 2.144,66 € &                         & 8.080,33 €   \\ \hline
+\end{tabular}
+\caption{Resumen anual}
+\label{fig:res_anual}
+\end{table}
+
+
+\subsection{Costes de \textit{hardware}}
+Para calcular los costes asociados al \textit{hardware} empleado en el proyecto primero vemos los dispositivos que empleamos en el mismo. Después, su coste asociado, y por último, calculamos su depreciación debido al tiempo que tienen y a las horas de trabajo que lo hemos empleado.
+
+
+El ordenador portátil empleado para el proyecto ha sido un Sony Vaio Modelo SVF1521N6EW con tres años de vida. El cálculo de uso medio del portátil es de 300 horas de trabajo al año. Según este cálculo, el tiempo de vida útil del mismo, su costo de compra, y el trabajo del proyecto hemos generado la siguiente tabla\ref{fig:coste_hw}.
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Coste de compra}             & 640,00 \euro     \\ \hline
+\textbf{Vida útil}                   & 4 años       \\ \hline
+\textbf{Antigüedad}                  & 3 años       \\ \hline
+\textbf{Horas de uso en el proyecto} & 400 h        \\ \hline
+\textbf{Depreciación}                & 160,00 \euro/año \\ \hline
+\textbf{Valor Actual}                & 160,00 \euro     \\ \hline
+\textbf{Coste asociado al hardware}  & 120,00 \euro     \\ \hline
+\end{tabular}
+\caption{Coste del \textit{hardware}}
+\label{fig:coste_hw}
+\end{table}
+
+
+\subsection{Costes del \textit{software} y formación}
+Como podemos ver en el apartado de herramientas utilizadas, todas las empleadas son de código libre, debido a este factor no corresponden coste alguno para el proyecto en lo relativo a su uso para la realización del mismo.
+
+
+Estas tecnologías usadas no incrementan coste por su simple uso, sin embargo, para la correcta y eficiente realización del proyecto con las tecnologías escogidas se ha seguido un curso que sí ha supuesto un coste a tener en cuenta.
+
+
+Se ha realizado un curso \textit{online} para el correcto aprendizaje de las tecnologías utilizadas que se pueden ver en el apartado del mismo nombre. Este curso se ha realizado durante los meses del proyecto y sus costes asociados se pueden ver en la siguiente tabla\ref{fig:coste_sw}.
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Meses cursados} & \textbf{Coste por mes} \\ \hline
+Octubre                 & 25,00 \euro                \\ \hline
+Noviembre               & 25,00 \euro                \\ \hline
+Diciembre               & 25,00 \euro                \\ \hline
+Enero                   & 25,00 \euro                \\ \hline
+\textbf{Coste total}    & 100,00 \euro               \\ \hline
+\end{tabular}
+\caption{Costes de formación relacionados con el \textit{software}}
+\label{fig:coste_sw}
+\end{table}
+
+
+\subsection{Costes indirectos}
+En lo referido a los costes indirectos del proyecto se incluyen aquellos paralelos a la realización del proyecto, que, sin tener directa relación con el contenido del trabajo, sí son necesarios para poder llevarlos a cabo. Los costes indirectos identificados son los siguientes:
+\begin{itemize}
+\item Gasto de electricidad
+\item Gasto de desplazamiento
+\item Gasto de tarifas telefónicas de datos
+\end{itemize}
+
+
+Estos gastos indirectos no se pueden añadir en su totalidad a los costes totales del proyecto debido a que su uso no ha sido centrado únicamente en la realización de nuestro proyecto.
+
+
+Para calcular por tanto estos costes indirectos se refleja un porcentaje de los costes de personal y activos anteriores del 10 \%. El resultado se puede ver en la tabla\ref{fig:coste_indirecto}.
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Costes del personal}            & 8.080,33 \euro \\ \hline
+\textbf{Costes de Hardware}             & 120 \euro      \\ \hline
+\textbf{Costes de Software y formación} & 100 \euro      \\ \hline
+\textbf{Porcentaje}                     & 10\%       \\ \hline
+\textbf{Costes indirectos}              & 830,03 \euro   \\ \hline
+\end{tabular}
+\caption{Costes indirectos}
+\label{fig:coste_indirecto}
+\end{table}
+
+
+\subsection{Resumen de los costes totales}
+En la tabla\ref{fig:coste_total}, vemos el desglose y suma total de cada uno de los costes asociados al proyecto.
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Costes del personal}            & 8.080,33 \euro \\ \hline
+\textbf{Costes de Hardware}             & 120 \euro      \\ \hline
+\textbf{Costes de Software y formación} & 100 \euro      \\ \hline
+\textbf{Costes indirectos}              & 830,03 \euro   \\ \hline
+\textbf{TOTAL}                          & 9.130,36 \euro \\ \hline
+\end{tabular}
+\caption{Resumen de los costes totales}
+\label{fig:coste_total}
+\end{table}
+
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -364,7 +539,7 @@ La matriz de exposición de los riesgos \ref{tab_mat_exp_riesgo} da a conocer la
 \centering
 \begin{tabular}{|c|c|l|l|l|}
 \hline
-\rowcolor[gray]{0.9}\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{3}{c|}{\textbf{Probabilidad}}                                                                                                      \\ \cline{3-5} 
+\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{3}{c|}{\textbf{Probabilidad}}                                                                                                      \\ \cline{3-5} 
 \multicolumn{2}{|l|}{}                  & \multicolumn{1}{c|}{Alta} & \multicolumn{1}{c|}{Media} & \multicolumn{1}{c|}{Baja}                                                     \\ \hline
 \multirow{3}{*}{Impacto}     & Alto     & RSG-003                   & RSG-001                    & \begin{tabular}[c]{@{}l@{}}RSG-004\\ RSG-006\\ RSG-007\\ RSG-008\end{tabular} \\ \cline{2-5} 
                              & Medio    & RSG-002                   &                            & RSG-005                                                                       \\ \cline{2-5} 
@@ -481,7 +656,7 @@ Acción de corrección & Se rehará el trabajo a partir de la última versión g
 
 \begin{table}[htpb]
 \centering
-\begin{tabularx}{\textwidth}{|X|l|}
+\begin{tabularx}{\textwidth}{|l|X|}
 \hline
 \rowcolor[gray]{0.9}\textbf{RSG-008}              & \textbf{Ataques maliciosos en el equipo de trabajo}                                                                                                                                                              \\ \hline
 Estrategia & Evitar. No descargar recursos de fuentes no fiables, no utilizar el ordenador de trabajo como ordenador personal, no dejar la sesión abierta en caso de ausencia y que ésta posea contraseña de acceso. \\ \hline

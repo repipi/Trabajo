@@ -1,8 +1,20 @@
 This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: traballo.aux
+A level-1 auxiliary file: capitulos/titulo.aux
+A level-1 auxiliary file: capitulos/certificacion.aux
+A level-1 auxiliary file: capitulos/introducion.aux
+A level-1 auxiliary file: capitulos/em_lean_startup.aux
+A level-1 auxiliary file: capitulos/em_gest_proy.aux
+A level-1 auxiliary file: capitulos/em_analisis.aux
 A level-1 auxiliary file: capitulos/em_diseno.aux
 A level-1 auxiliary file: capitulos/em_implem.aux
+A level-1 auxiliary file: capitulos/em_pruebas.aux
+A level-1 auxiliary file: capitulos/conclusion.aux
+A level-1 auxiliary file: capitulos/apendice_pruebas.aux
+A level-1 auxiliary file: capitulos/apendice_man_instalacion.aux
+A level-1 auxiliary file: capitulos/apendice_man_usuario.aux
+A level-1 auxiliary file: capitulos/apendice_resumen_ejecutivo.aux
 The style file: plain.bst
 Database file #1: capitulos/biblio.bib
 Warning--entry type for "bootstrap_grid_basic" isn't style-file defined
@@ -71,20 +83,34 @@ Warning--entry type for "promise_objeto" isn't style-file defined
 --line 287 of file capitulos/biblio.bib
 Warning--entry type for "promise_mozilla" isn't style-file defined
 --line 294 of file capitulos/biblio.bib
+Warning--entry type for "angular_embrace" isn't style-file defined
+--line 301 of file capitulos/biblio.bib
 Warning--entry type for "data_binding_w3s" isn't style-file defined
 --line 315 of file capitulos/biblio.bib
 Warning--entry type for "page_controller_microsoft" isn't style-file defined
 --line 329 of file capitulos/biblio.bib
 Warning--entry type for "mgechev" isn't style-file defined
 --line 336 of file capitulos/biblio.bib
+Warning--entry type for "paislee" isn't style-file defined
+--line 343 of file capitulos/biblio.bib
 Warning--entry type for "depend_inject" isn't style-file defined
 --line 350 of file capitulos/biblio.bib
 Warning--entry type for "rest_spring" isn't style-file defined
 --line 371 of file capitulos/biblio.bib
-Warning--I didn't find a database entry for "angular_embraced"
-Warning--I didn't find a database entry for "ericfreemanelisabethfreemankathysierrabertbates2004"
-Warning--I didn't find a database entry for "martinfowlerdavidricematthewfoemmeledwardhieattrobertmeerandystafford2002"
-Warning--I didn't find a database entry for "praislee"
+Warning--entry type for "vitae" isn't style-file defined
+--line 393 of file capitulos/biblio.bib
+Warning--entry type for "calculadoracontratos" isn't style-file defined
+--line 400 of file capitulos/biblio.bib
+Warning--entry type for "mongodb_traspas" isn't style-file defined
+--line 421 of file capitulos/biblio.bib
+Warning--entry type for "bcrypt_ejemplo" isn't style-file defined
+--line 463 of file capitulos/biblio.bib
+Warning--entry type for "ortografo" isn't style-file defined
+--line 470 of file capitulos/biblio.bib
+Warning--to sort, need author or key in github
+Warning--to sort, need author or key in vitae
+Warning--to sort, need author or key in calculadoracontratos
+Warning--to sort, need author or key in mongodb_traspas
 Warning--to sort, need author or key in bootstrap_grid_basic
 Warning--to sort, need author or key in lato
 Warning--to sort, need author or key in merriweather
@@ -105,7 +131,6 @@ Warning--to sort, need author or key in google_api
 Warning--to sort, need author or key in passport
 Warning--to sort, need author or key in brackets
 Warning--to sort, need author or key in git
-Warning--to sort, need author or key in github
 Warning--to sort, need author or key in grunt
 Warning--to sort, need author or key in latex
 Warning--to sort, need author or key in libreoffice
@@ -115,51 +140,55 @@ Warning--to sort, need author or key in robomongo
 Warning--to sort, need author or key in staruml
 Warning--to sort, need author or key in promise_objeto
 Warning--to sort, need author or key in promise_mozilla
+Warning--to sort, need author or key in angular_embrace
 Warning--to sort, need author or key in data_binding_w3s
 Warning--to sort, need author or key in page_controller_microsoft
 Warning--to sort, need author or key in mgechev
+Warning--to sort, need author or key in paislee
 Warning--to sort, need author or key in depend_inject
 Warning--to sort, need author or key in rest_spring
+Warning--to sort, need author or key in bcrypt_ejemplo
+Warning--to sort, need author or key in ortografo
 Warning--empty publisher in ekberg
-You've used 45 entries,
+You've used 58 entries,
             2118 wiz_defined-function locations,
-            657 strings with 8590 characters,
-and the built_in function-call counts, 7871 in all, are:
-= -- 755
-> -- 105
+            714 strings with 10312 characters,
+and the built_in function-call counts, 10314 in all, are:
+= -- 983
+> -- 154
 < -- 0
-+ -- 66
-- -- 20
-* -- 291
-:= -- 1013
-add.period$ -- 100
-call.type$ -- 45
-change.case$ -- 139
++ -- 93
+- -- 32
+* -- 383
+:= -- 1368
+add.period$ -- 132
+call.type$ -- 58
+change.case$ -- 179
 chr.to.int$ -- 0
-cite$ -- 81
-duplicate$ -- 350
-empty$ -- 1026
-format.name$ -- 20
-if$ -- 1898
+cite$ -- 101
+duplicate$ -- 471
+empty$ -- 1319
+format.name$ -- 32
+if$ -- 2463
 int.to.chr$ -- 0
-int.to.str$ -- 45
-missing$ -- 14
-newline$ -- 193
-num.names$ -- 20
-pop$ -- 359
+int.to.str$ -- 58
+missing$ -- 26
+newline$ -- 251
+num.names$ -- 32
+pop$ -- 462
 preamble$ -- 1
-purify$ -- 100
+purify$ -- 132
 quote$ -- 0
-skip$ -- 307
+skip$ -- 392
 stack$ -- 0
-substring$ -- 226
-swap$ -- 45
+substring$ -- 293
+swap$ -- 58
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 166
-warning$ -- 36
-while$ -- 20
-width$ -- 47
-write$ -- 383
-(There were 78 warnings)
+type$ -- 206
+warning$ -- 43
+while$ -- 32
+width$ -- 60
+write$ -- 500
+(There were 88 warnings)

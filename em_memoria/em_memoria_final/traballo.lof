@@ -1,35 +1,57 @@
 \select@language {spanish}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Estructura de descomposici\IeC {\'o}n de tareas del proyecto}}{5}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagrama de Gantt}}{9}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagrama de casos de uso}}{21}{figure.2.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Modelo de datos MongoDB}}{42}{figure.2.4}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Modelo entidad-relaci\IeC {\'o}n}}{42}{figure.2.5}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Ejemplo algoritmo de \textit {matching}}}{57}{figure.2.6}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Metodolog\IeC {\'\i }a \textit {Lean Startup}}}{7}{figure.2.1}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces USN-001}}{66}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces USN-002}}{66}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces USN-003}}{67}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces USN-004}}{67}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces USN-005}}{68}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces USN-006}}{68}{figure.3.6}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces USN-007}}{69}{figure.3.7}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces USN-008}}{69}{figure.3.8}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces USN-009}}{70}{figure.3.9}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces USN-010}}{70}{figure.3.10}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces USN-011 (Paciente)}}{71}{figure.3.11}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces USN-011 (Psic\IeC {\'o}logo)}}{71}{figure.3.12}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces USN-012}}{71}{figure.3.13}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Mapa de navegaci\IeC {\'o}n}}{72}{figure.3.14}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Mean STACK - MVC y MVVM}}{83}{figure.3.15}
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Esquema \textit {data-binding}}}{85}{figure.3.16}
-\contentsline {figure}{\numberline {3.17}{\ignorespaces \textit {Proxy pattern}\cite {stoyanstefanov2010}}}{87}{figure.3.17}
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Estructura de directorios}}{89}{figure.3.18}
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Patr\IeC {\'o}n MVC-MVVM}}{90}{figure.3.19}
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Data mapper}}{91}{figure.3.20}
-\contentsline {figure}{\numberline {3.21}{\ignorespaces Diagrama de secuencia del CU-003}}{92}{figure.3.21}
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Diagrama de secuencia del CU-005}}{93}{figure.3.22}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Estructura de descomposici\IeC {\'o}n de tareas del proyecto}}{11}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Diagrama de Gantt}}{15}{figure.3.2}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagrama de casos de uso}}{30}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Modelo de datos MongoDB}}{51}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Modelo entidad-relaci\IeC {\'o}n}}{54}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Ejemplo algoritmo de \textit {matching}}}{65}{figure.4.4}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces P\IeC {\'a}gina de inicio}}{73}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces P\IeC {\'a}gina Cuestionario}}{73}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces P\IeC {\'a}gina Resultados}}{74}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces \textit {Pop-up} Pedir cita}}{74}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces P\IeC {\'a}gina Perfil psic\IeC {\'o}logo}}{75}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces \textit {Pop-up} Comentar}}{75}{figure.5.6}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces P\IeC {\'a}gina Registro}}{76}{figure.5.7}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces P\IeC {\'a}gina Modificar}}{76}{figure.5.8}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces P\IeC {\'a}gina Mis solicitudes pendientes}}{77}{figure.5.9}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces P\IeC {\'a}gina Mis solicitudes aceptadas}}{77}{figure.5.10}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces P\IeC {\'a}gina Mis solicitudes rechazadas}}{78}{figure.5.11}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces P\IeC {\'a}gina Mis solicitudes pendientes}}{78}{figure.5.12}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces P\IeC {\'a}gina Mis solicitudes aceptadas}}{79}{figure.5.13}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces P\IeC {\'a}gina Mis solicitudes rechazadas}}{79}{figure.5.14}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces P\IeC {\'a}gina Registro Paso 1}}{80}{figure.5.15}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces P\IeC {\'a}gina Registro Paso 2}}{80}{figure.5.16}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces P\IeC {\'a}gina Registro Paso 3}}{81}{figure.5.17}
+\contentsline {figure}{\numberline {5.18}{\ignorespaces USN-001}}{82}{figure.5.18}
+\contentsline {figure}{\numberline {5.19}{\ignorespaces USN-002}}{83}{figure.5.19}
+\contentsline {figure}{\numberline {5.20}{\ignorespaces USN-003}}{83}{figure.5.20}
+\contentsline {figure}{\numberline {5.21}{\ignorespaces USN-004}}{84}{figure.5.21}
+\contentsline {figure}{\numberline {5.22}{\ignorespaces USN-005}}{84}{figure.5.22}
+\contentsline {figure}{\numberline {5.23}{\ignorespaces USN-006}}{85}{figure.5.23}
+\contentsline {figure}{\numberline {5.24}{\ignorespaces USN-007}}{85}{figure.5.24}
+\contentsline {figure}{\numberline {5.25}{\ignorespaces USN-008}}{86}{figure.5.25}
+\contentsline {figure}{\numberline {5.26}{\ignorespaces USN-009}}{86}{figure.5.26}
+\contentsline {figure}{\numberline {5.27}{\ignorespaces USN-010}}{87}{figure.5.27}
+\contentsline {figure}{\numberline {5.28}{\ignorespaces USN-011 (Paciente)}}{87}{figure.5.28}
+\contentsline {figure}{\numberline {5.29}{\ignorespaces USN-011 (Psic\IeC {\'o}logo)}}{87}{figure.5.29}
+\contentsline {figure}{\numberline {5.30}{\ignorespaces USN-012}}{88}{figure.5.30}
+\contentsline {figure}{\numberline {5.31}{\ignorespaces Mapa de navegaci\IeC {\'o}n}}{88}{figure.5.31}
+\contentsline {figure}{\numberline {5.32}{\ignorespaces Mean STACK - MVC y MVVM}}{99}{figure.5.32}
+\contentsline {figure}{\numberline {5.33}{\ignorespaces Esquema \textit {data-binding}}}{101}{figure.5.33}
+\contentsline {figure}{\numberline {5.34}{\ignorespaces \textit {Proxy pattern}\cite {stoyanstefanov2010}}}{103}{figure.5.34}
+\contentsline {figure}{\numberline {5.35}{\ignorespaces Estructura de directorios}}{105}{figure.5.35}
+\contentsline {figure}{\numberline {5.36}{\ignorespaces Patr\IeC {\'o}n MVC-MVVM}}{106}{figure.5.36}
+\contentsline {figure}{\numberline {5.37}{\ignorespaces Data mapper}}{107}{figure.5.37}
+\contentsline {figure}{\numberline {5.38}{\ignorespaces Diagrama de secuencia del CU-003}}{108}{figure.5.38}
+\contentsline {figure}{\numberline {5.39}{\ignorespaces Diagrama de secuencia del CU-005}}{109}{figure.5.39}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

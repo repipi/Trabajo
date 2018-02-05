@@ -1,11 +1,11 @@
-\section{Análisis}
+\chapter{Análisis}
 
 La ingeniería de requisitos proporciona el mecanismo apropiado para entender lo que dice el cliente, analizar las necesidades, evaluar la factibilidad, negociar una solución, especificar la solución sin ambigüedades, validar la especificación y administrar los requisitos a medida que se transforman en un sistema funcional\cite{pressman}.
 
-\subsection{Casos de uso}
+\section{Casos de uso}
 Para poder entender cómo los usuarios emplearán finalmente las funciones y características del software, se debe crear un conjunto de escenarios que identifiquen la naturaleza de los usos para el sistema que se va a construir. La descripción de la manera en la que se utilizará el sistema se la conoce como caso de uso.
 
-\subsubsection{Diagrama de casos de uso}
+\subsection{Diagrama de casos de uso}
 Las relaciones entre los actores y los casos de uso viene dada por el diagrama de casos de uso\ref{fig:diag_casos_uso}.
 
 \begin{figure}[htbp] 
@@ -15,7 +15,7 @@ Las relaciones entre los actores y los casos de uso viene dada por el diagrama d
     \label{fig:diag_casos_uso}
 \end{figure}	
 
-\subsubsection{Actores del sistema}
+\subsection{Actores del sistema}
 Un actor\ref{tab_actores} es cualquier cosa que se comunica con el sistema o producto y que sea externo a este. 
 
 \begin{table}[htpb]
@@ -34,7 +34,7 @@ ACT-005                             & Administrador               & Persona enca
 \end{table}
 
 
-\subsubsection{Especificación de casos de uso}
+\subsection{Especificación de casos de uso}
 Para poder determinar y evaluar correctamente cada caso de uso, tenemos una escala de la frecuencia de uso\ref{tab_frec_uso} y otra de la prioridad\ref{tab_prior}.
 
 \begin{table}[htpb]
@@ -73,12 +73,12 @@ Baja  & El caso de uso aporta funcionalidades extra pero es totalmente prescindi
 \hline
 \rowcolor[gray]{0.9}\textbf{CU-001}                            & \textbf{Iniciar sesión                                                                                                                                                                                                                                  } \\ \hline
 Actor principal                   & Usuario                                                                                                                                                                                                                                          \\ \hline
-Objetivo en contexto              & El actor desea acceder a una cuenta de usuario ya existente mediante sus claves de acceso.                                                                                                                                                       \\ \hline
+Objetivo en contexto              & El usuario desea acceder a una cuenta de usuario ya existente mediante sus claves de acceso.                                                                                                                                                       \\ \hline
 Precondiciones                    & Las claves de usuario deben ser válidas.                                                                                                                                                                                                         \\ \hline
-Disparador                        & El actor desea acceder a la plataforma para disfrutar de sus servicios.                                                                                                                                                                          \\ \hline
-Escenario                         & \begin{tabular}{p{0.5cm} p{6cm}}1. & El actor accede a Emozio.\\ 2. & El actor introduce sus claves de acceso.\\ 3. & El actor pulsa el botón de acceso.\\ 4. & El sistema muestra el perfil del actor donde podrá acceder al resto de servicios.\end{tabular} \\ \hline
-Excepciones                       & \begin{tabular}{p{0.5cm} p{6cm}}1. & Las claves de usuario son incorrectas.\\ 2. & El actor no estaba registrado en la plataforma en el momento que se realizó el acceso.\end{tabular}                                                                    \\ \hline
-Prioridad                         & Alta. El actor debe iniciar sesión en la aplicación para poder utilizar cualquiera de sus servicios.                                                                                                                                             \\ \hline
+Disparador                        & El usuario desea acceder a la plataforma para disfrutar de sus servicios.                                                                                                                                                                          \\ \hline
+Escenario                         & \begin{tabular}{p{0.5cm} p{6cm}}1. & El usuario accede a Emozio.\\ 2. & El usuario introduce sus claves de acceso.\\ 3. & El usuario pulsa el botón de acceso.\\ 4. & El sistema muestra el perfil del usuario donde podrá acceder al resto de servicios.\end{tabular} \\ \hline
+Excepciones                       & \begin{tabular}{p{0.5cm} p{6cm}}1. & Las claves de usuario son incorrectas.\\ 2. & El usuario no estaba registrado en la plataforma en el momento que se realizó el acceso.\end{tabular}                                                                    \\ \hline
+Prioridad                         & Alta. El usuario debe iniciar sesión en la aplicación para poder utilizar cualquiera de sus servicios.                                                                                                                                             \\ \hline
 Disponibilidad                    & En el segundo incremento                                                                                                                                                                                                                         \\ \hline
 Frecuencia de uso                 & Ocasionalmente                                                                                                                                                                                                                                   \\ \hline
 Canal del actor                   & A través de un navegador con acceso a Internet.                                                                                                                                                                                                  \\ \hline
@@ -97,13 +97,13 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
 \rowcolor[gray]{0.9}\textbf{CU-002}                            & \textbf{Registrarse}                                                                                                                                                                                                                                                                                                                                                                                                                    \\ \hline
-Actor principal                   & Usuario                                                                                                                                                                                                                                                                                                                                                                                                                        \\ \hline
-Objetivo en contexto              & El actor desea registrarse en la plataforma cediendo sus datos personales para poder acceder a los servicios de la plataforma.                                                                                                                                                                                                                                                                                                 \\ \hline
+Actor principal                   & Paciente                                                                                                                                                                                                                                                                                                                                                                                                                        \\ \hline
+Objetivo en contexto              & El paciente desea registrarse en la plataforma cediendo sus datos personales para poder acceder a los servicios de la plataforma.                                                                                                                                                                                                                                                                                                 \\ \hline
 Precondiciones                    & Los datos introducidos en el formulario deben ser válidos.                                                                                                                                                                                                                                                                                                                                                                     \\ \hline
-Disparador                        & El actor desea registrarse en la plataforma para disfrutar de sus servicios.                                                                                                                                                                                                                                                                                                                                                   \\ \hline
-Escenario                         & \begin{tabular}{p{0.5cm} p{6cm}} 1. & El actor accede a Emozio. \\ 2. & El actor introduce sus datos en un formulario de registro.\\ 3. & El actor pulsa el botón de registro.\\ 4. & Se completa el registro.\\ 4.1. & Si es paciente, el sistema muestra el perfil del usuario donde podrá acceder al resto de servicios.\\ 4.2. & Si es psicólogo, sus datos son enviados por correo para que el administrador pueda validarlos.\end{tabular} \\ \hline
+Disparador                        & El paciente desea registrarse en la plataforma para disfrutar de sus servicios.                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+Escenario                         & \begin{tabular}{p{0.5cm} p{6cm}} 1. & El paciente accede a Emozio. \\ 2. & El paciente introduce sus datos en un formulario de registro.\\ 3. & El paciente pulsa el botón de registro.\\ 4. & Se completa el registro.\\ 5. & El sistema muestra el perfil del usuario donde podrá acceder al resto de servicios. \end{tabular} \\ \hline
 Excepciones                       & \begin{tabular}{p{0.5cm} p{6cm}}1. & Los datos introducidos en el formulario son incorrectos.\\ 2. & Ya existe el usuario dentro de la plataforma.\end{tabular}                                                                                                                                                                                                                                                                         \\ \hline
-Prioridad                         & Alta. El actor debe estar registrado en la aplicación para poder utilizar cualquiera de sus servicios.                                                                                                                                                                                                                                                                                                                         \\ \hline
+Prioridad                         & Alta. El paciente debe estar registrado en la aplicación para poder utilizar cualquiera de sus servicios.                                                                                                                                                                                                                                                                                                                         \\ \hline
 Disponibilidad                    & En el segundo incremento                                                                                                                                                                                                                                                                                                                                                                                                       \\ \hline
 Frecuencia de uso                 & Limitada                                                                                                                                                                                                                                                                                                                                                                                                                       \\ \hline
 Canal del actor                   & A través de un navegador con acceso a internet.                                                                                                                                                                                                                                                                                                                                                                                \\ \hline
@@ -207,12 +207,12 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
 \rowcolor[gray]{0.9}\textbf{CU-006}                            & \textbf{Modificar información}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                \\ \hline
-Actor principal                   & Usuario                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              \\ \hline
-Objetivo en contexto              & El usuario desea cambiar sus datos porque en ese instante su información de usuario es incorrecta.                                                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
-Precondiciones                    & El usuario tiene acceso a la plataforma.                                                                                                                                                                                                                                                                                                                                                                                                                                                             \\ \hline
-Disparador                        & El usuario debe acceder a su página principal.                                                                                                                                                                                                                                                                                                                                                                                                                                                       \\ \hline
-Escenario                         & \begin{tabular}{p{0.5cm} p{5cm}}1. & El usuario accede a Emozio.\\ 2. & El usuario entra en su página principal ya sea por registro o acceso.\\ 3. & El sistema le muestra su página principal.\\ 4. & El usuario pulsa el botón de modificación de datos.\\ 5. & El sistema le muestra un formulario con sus datos actuales.\\ 6. & El usuario cubre el formulario con los datos correctos.\\ 7. & El usuario pulsa el botón de enviar.\\ 8. & El sistema muestra un mensaje con el estado de la operación.\end{tabular} \\ \hline
-Excepciones                       & El usuario cancela la operación en curso.                                                                                                                                                                                                                                                                                                                                                                                                                                                            \\ \hline
+Actor principal                   & Paciente                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             \\ \hline
+Objetivo en contexto              & El paciente desea cambiar sus datos porque en ese instante su información de usuario es incorrecta.                                                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+Precondiciones                    & El paciente tiene acceso a la plataforma.                                                                                                                                                                                                                                                                                                                                                                                                                                                             \\ \hline
+Disparador                        & El paciente debe acceder a su página principal.                                                                                                                                                                                                                                                                                                                                                                                                                                                       \\ \hline
+Escenario                         & \begin{tabular}{p{0.5cm} p{5cm}}1. & El paciente accede a Emozio.\\ 2. & El paciente entra en su página principal ya sea por registro o acceso.\\ 3. & El sistema le muestra su página principal.\\ 4. & El paciente pulsa el botón de modificación de datos.\\ 5. & El sistema le muestra un formulario con sus datos actuales.\\ 6. & El paciente cubre el formulario con los datos correctos.\\ 7. & El paciente pulsa el botón de enviar.\\ 8. & El sistema le devolverá un mensaje de éxito. \end{tabular} \\ \hline
+Excepciones                       & El paciente cancela la operación en curso.                                                                                                                                                                                                                                                                                                                                                                                                                                                            \\ \hline
 Prioridad                         & Moderada. Puede implementarse después de las funciones básicas.                                                                                                                                                                                                                                                                                                                                                                                                                                      \\ \hline
 Disponibilidad                    & En el segundo incremento                                                                                                                                                                                                                                                                                                                                                                                                                                                                             \\ \hline
 Frecuencia de uso                 & Puntualmente                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         \\ \hline
@@ -383,6 +383,8 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 %\label{my-label}
 \end{table}
 
+\clearpage
+
 %%
 %%CU-013
 %%
@@ -489,21 +491,42 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-003\\ RI-002\e
 %\label{my-label}
 \end{table}
 
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\rowcolor[gray]{0.9}\textbf{CU-017}                            & \textbf{Modificar la información de los psicólogos                                                                           } \\ \hline
+Actor principal                   & Administrador                                                                                  \\ \hline
+Objetivo en contexto              & El administrador modificará la información de los psicólogos que hayan enviado el formulario de modificación de datos.    \\ \hline
+Precondiciones                    & El psicólogo ha de enviar el formulario cubierto.          \\ \hline
+Disparador                        & El administrador desea actualizar la colección de psicólogos de la base de datos.              \\ \hline
+Escenario                         & El administrador modifica la información del psicólogo a la base de datos.                        \\ \hline
+Excepciones                       & -                                                                                              \\ \hline
+Prioridad                         & Moderada. Puede implementarse después de las funciones básicas.                                \\ \hline
+Disponibilidad                    & En el segundo incremento                                                                       \\ \hline
+Frecuencia de uso                 & Puntualmente                                                                                   \\ \hline
+Canal del actor                   & A través de un navegador con acceso a Internet y una herramienta de gestión de bases de datos. \\ \hline
+Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-003\\ RI-002\end{tabular}                                        \\ \hline
+\end{tabularx}
+\caption{CU-017 Dar alta psicólogos}                          
+%\label{my-label}
+\end{table}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%MODELO DE DATOS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Modelado de datos}
-Si los requisitos del \textit{software} incluyen la necesidad de crear, ampliar o hacer interfaz con una base de datos, o si deben construirse y manipularse estructuras de datos complejas, se debe crear un modelo de datos como parte del modelado general de los requisitos.\cite{pressman}
+\section{Modelado de datos}
+Si los requisitos del \textit{software} incluyen la necesidad de crear, ampliar o hacer interfaz con una base de datos, o si deben construirse y manipularse estructuras de datos complejas, se debe crear un modelo de datos como parte del modelado general de los requisitos\cite{pressman}.
 
 
-Los modelos semánticos de datos son la definición de la forma lógica de los datos procesados por el sistema. \cite{sommerville}
+Los modelos semánticos de datos son la definición de la forma lógica de los datos procesados por el sistema\cite{sommerville}. 
 
 
-\subsubsection{¿Por qué MongoDB?}
-En nuestro proyecto, los datos se encuentran almacenados en una MongoDB que consiste en una base de datos NoSQL\footnote{Las bases de datos NoSQL son aquellas que generalmente no son relacionales y no tienen un lenguaje de consulta como SQL.} de código abierto, orientada a documentos y a mantener datos desestructurados, sobretodo cuando esta crece exponencialmente. \cite{mongodb_traspas}
+\subsection{¿Por qué MongoDB?}
+En nuestro proyecto, los datos se encuentran almacenados en una MongoDB que consiste en una base de datos NoSQL\footnote{Las bases de datos NoSQL son aquellas que generalmente no son relacionales y no tienen un lenguaje de consulta como SQL.} de código abierto, orientada a documentos y a mantener datos desestructurados, sobretodo cuando esta crece exponencialmente\cite{mongodb_traspas}. 
 
-\subsubsection{Comparativa MongoDB con SQL}
+\subsection{Comparativa MongoDB con SQL}
 Teniendo de referencia una base de datos SQL podemos comprender cómo MongoDB almacena la información con una pequeña analogía. En la gestión de sistemas de bases de datos relacionales, los datos se guardan en filas contenidas dentro de tablas. En cambio, en MongoDB los datos son guardados como documentos contenidos en colecciones.
 
 
@@ -512,11 +535,11 @@ Una colección es un conjunto de documentos, como éstos son independientes, pue
 
 En nuestro proyecto, las bases de datos son NoSQL, las cuales no tienen una representación estandarizada. Por tanto, y por entendimiento, se ha realizado a mayores una aproximación del modelo no relacional\ref{fig:mod_datos_mongoDB} al de un modelo entidad relación\ref{fig:mod_datos_mer}.
 
-\subsubsection{Modelo de datos NoSQL}
+\subsection{Modelo de datos NoSQL}
 En nuestro modelo de datos NoSQL la información está organizada en colecciones. Se debe resaltar que en algunas ocasiones, los documentos se encuentran embebidos dentro de otros. Como por ejemplo, en el caso de los comentarios de los psicólogos. Los comentarios son documentos embebidos (no tienen \textit{ObjectID}) dentro de los documentos de la colección de psicólogos.
 
 
-Por otra parte, están los documentos referenciados, que son independientes. Tomando el mismo ejemplo anterior, dentro de un documento embebido de comentarios hayamos una referencia a un documento de la colección de pacientes (\_idPaciente).
+Por otra parte, están los documentos referenciados, que son independientes. Tomando el mismo ejemplo anterior, dentro de un documento embebido de comentarios hayamos una referencia a un documento de la colección de pacientes (\texttt{\_idPaciente}).
 
 
 La estructura se ha creado de este modo porque embebiendo documentos sólo se necesitaría una única consulta, el documento en cuestión se accedería con su documento padre y las escrituras serían atómicas (no se tendrían que escribir en múltiples documentos). Pero en el caso de que el documento sea de gran relevancia y obtenga gran cantidad de información, se hará referencia a él.
@@ -529,7 +552,7 @@ La estructura se ha creado de este modo porque embebiendo documentos sólo se ne
     \label{fig:mod_datos_mongoDB}
 \end{figure}	
 
-\subsubsection{Modelo entidad-relación (MER)}
+\subsection{Modelo entidad-relación (MER)}
 El modelo entidad-relación-atributo\ref{fig:mod_datos_mer} muestra las entidades de datos sus atributos asociados y las relaciones entre estas entidades. 
 
 
@@ -540,14 +563,14 @@ El modelo entidad-relación-atributo\ref{fig:mod_datos_mer} muestra las entidade
     \label{fig:mod_datos_mer}
 \end{figure}
 
-\subsubsection{Diccionario de datos}
+\subsection{Diccionario de datos}
 Para mantener descripciones más detalladas de las entidades incluidas en el modelo se utilizan diccionarios de datos para gestionar toda la información.
 
 
 Por tanto, un diccionario de datos es una lista de nombres ordenada alfabéticamente incluido en los modelos del sistema. Este nos proporciona un mecanismo de gestión e inventariado de nombres y sirve como un almacén de información.
 
 
-\paragraph{Colecciones\ref{fig:dic_datos_colecciones}}
+Las colecciones vienen descritas en la tabla\ref{fig:dic_datos_colecciones}.
 
 \begin{table}[htpb]
 \centering
@@ -563,7 +586,8 @@ Psicólogos & Almacena toda la información sobre los psicólogos del sistema.  
 \label{fig:dic_datos_colecciones}
 \end{table}
 
-\paragraph{BSON de los documentos\ref{fig:dic_datos_BSON_1}\ref{fig:dic_datos_BSON_2}\ref{fig:dic_datos_BSON_3}\ref{fig:dic_datos_BSON_4}}
+Los objetos BSON de los documentos se pueden ver en las tablas \ref{fig:dic_datos_BSON_1},  \ref{fig:dic_datos_BSON_2}, \ref{fig:dic_datos_BSON_3} y \ref{fig:dic_datos_BSON_4}.
+
 \begin{table}[htpb]
 \centering
 \begin{tabularx}{\textwidth}{|l|X|X|X|}
@@ -664,7 +688,7 @@ Psicólogo         & patologias                                                 
 %%ANÁLISIS DE REQUISITOS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Análisis de requisitos}
+\section{Análisis de requisitos}
 
 
 Los requisitos para un sistema son la descripción de los servicios proporcionados por el sistema sus restricciones operativas y reflejan las necesidades de los clientes \cite{sommerville}.
@@ -688,7 +712,7 @@ Muy Alta & La probabilidad de cambios es casi nula                     \\ \hline
 \end{table}
 
 
-\subsubsection{Requisitos de información}
+\subsection{Requisitos de información}
 
 
 Los requisitos de información guardan toda la información que debe almacenar el sistema para poder cumplir con sus objetivos. Identifican el concepto relevante sobre el que guardar información así como qué datos específicos del concepto son importantes.
@@ -706,7 +730,6 @@ Los requisitos de información guardan toda la información que debe almacenar e
                   & Edad                                                                           \\ 
                   & Localización                                                                   \\ 
                   & Teléfono                                                                       \\  
-                  & Síntomas                                                                       \\ 
                   & Diagnóstico                                                                    \\  
                   & Psicólogos que pueden tratar su caso \\ \hline
 \textbf{Estabilidad}       & Media                                                                          \\ \hline
@@ -745,7 +768,7 @@ Los requisitos de información guardan toda la información que debe almacenar e
                    & Localización                                                                 \\ 
                    & Teléfono                                                                     \\ 
                    & Tipo                                                                         \\ 
-                   & Número                                                                       \\  
+                   & Número de colegiado                                                                        \\  
                    & Experiencia                                                                  \\ 
                    & Formación                                                                    \\ 
                    & Terapia                                                                      \\ 
@@ -755,7 +778,11 @@ Los requisitos de información guardan toda la información que debe almacenar e
                    & Valoración                                                                   \\ 
                    & Precio                                                                       \\ 
                    & Tipo de consulta: \textit{Online} o presencial                                        \\
-                   & Gabinete                                                                     \\ \hline
+                   & Gabinete                                                                     \\
+                   & Dirección 
+\\
+				   & Comentarios
+\\ \hline
 \textbf{Estabilidad}        & Media                                                                        \\ \hline
 \end{tabularx}
 \caption{RI-003 Psicólogo}
@@ -763,7 +790,7 @@ Los requisitos de información guardan toda la información que debe almacenar e
 \end{table}
 
 
-\subsubsection{Requisitos funcionales}
+\subsection{Requisitos funcionales}
 
 
 Los requisitos funcionales son declaraciones de los servicios que debe proporcionar el sistema. Los requisitos funcionales se encuentran divididos en función de los incrementos donde vayan a implementarse\cite{sommerville}.
@@ -791,7 +818,7 @@ Los requisitos funcionales son declaraciones de los servicios que debe proporcio
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
 \rowcolor[gray]{0.9}\textbf{RF - 002}                                & \textbf{Registro                                                                                                       } \\ \hline
-\textbf{Descripción }                            & Cualquier usuario podrá acceder a los servicios de la plataforma tras haber cubierto el formulario de registro. \\ \hline
+\textbf{Descripción }                            & Cualquier paciente podrá acceder a los servicios de la plataforma tras haber cubierto el formulario de registro. \\ \hline
 \textbf{Estabilidad }                            & Alta                                                                                                            \\ \hline
 \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\end{tabular}                                                         \\ \hline
 \end{tabularx}
@@ -819,7 +846,7 @@ Los requisitos funcionales son declaraciones de los servicios que debe proporcio
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
 \rowcolor[gray]{0.9}\textbf{RF - 004}                                & \textbf{Modificación de los datos                                                          } \\ \hline
-\textbf{Descripción}                             & Cualquier usuario registrado en la plataforma podrá modificar sus datos de usuario. \\ \hline
+\textbf{Descripción}                             & Cualquier paciente registrado en la plataforma podrá modificar sus datos de usuario. \\ \hline
 \textbf{Estabilidad}                             & Alta                                                                                \\ \hline
 \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-001\\ RF-002\end{tabular}           \\ \hline
 \end{tabularx}
@@ -835,7 +862,7 @@ Los requisitos funcionales son declaraciones de los servicios que debe proporcio
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
 \rowcolor[gray]{0.9}\textbf{RF - 005}                               & \textbf{Emparejamiento                                                                                                                                                                                                                                                                    } \\ \hline
-\textbf{Descripción}                             & Se garantizará al paciente el emparejamiento con el psicólogo más adecuado para tratar su caso. Cualquier paciente registrado en la plataforma podrá especificar sus síntomas a través de un cuestionario asignándole al menos un psicólogo al paciente tras conocer su patología. \\ \hline
+\textbf{Descripción}                             & Se garantizará al paciente el emparejamiento con el psicólogo más adecuado para tratar su caso. Cualquier paciente registrado en la plataforma podrá especificar sus síntomas a través de un cuestionario y éste determinará la patología, o patologías, que padece. Si el resultado es concluyente, se le asigna el psicólogo, o los psicólogos, al paciente que traten esa, o esas patologías. En caso de no ser concluyente, se le avisará por medio de un mensaje. \\ \hline
 \textbf{Estabilidad}                             & Alta                                                                                                                                                                                                                                                                               \\ \hline
 \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-002\\ RI-003\\ RF-001\\ RF-002\end{tabular}                                                                                                                                                                                                 \\ \hline
 \end{tabularx}
@@ -888,7 +915,7 @@ Los requisitos funcionales son declaraciones de los servicios que debe proporcio
 \end{table}
 
 
-\subsubsection{Requisitos no funcionales}
+\subsection{Requisitos no funcionales}
 
 
 Los requisitos no funcionales son restricciones de los servicios o funciones ofrecidos por el sistema. Incluyen restrucciones de tiempo, sobre el proceso de desarrollo y estándares\cite{sommerville}.
@@ -898,7 +925,7 @@ Los requisitos no funcionales son restricciones de los servicios o funciones ofr
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
 \rowcolor[gray]{0.9}\textbf{RNF - 001}                               & \textbf{Encriptado de datos}                                                                                            \\ \hline
-\textbf{Descripción}                             & Los datos de los pacientes almacenados en la base de datos deberán estar cifrados con un algoritmo de cifrado. \\ \hline
+\textbf{Descripción}                             & La contraseña de los usuarios almacenados en la base de datos deberá estar cifrada con un algoritmo de cifrado. \\ \hline
 \textbf{Estabilidad}                             & Alta                                                                                                           \\ \hline
 \textbf{Dependencias} & (Es transversal)                                                                                               \\ \hline
 \end{tabularx}
@@ -922,18 +949,18 @@ Los requisitos no funcionales son restricciones de los servicios o funciones ofr
 \end{table}
 
 
-\subsubsection{Matrices de rastreabilidad}
+\subsection{Matrices de rastreabilidad}
 
 El rastreo es una propiedad de la especificación de requisitos que refleja la facilidad de encontrar requisitos relacionados. Es importante ya que nos da a conocer las relaciones que hay entre éstos y el diseño del sistema, y así, si se proponen cambios, se podrá rastrear cuál es el impacto de esos cambios en los otros requisitos y en el diseño del sistema.
 
 
-\paragraph{Matriz de rastreabilidad: RF / RI\ref{mat_rast_rf_ri}}
+La matriz de rastreabilidad: RF / RI se muestra en la tabla \ref{mat_rast_rf_ri}.
 
 \begin{table}[htpb]
 \centering
 \begin{tabular}{|l|l|l|l|l|}
 \hline
-\rowcolor[gray]{0.9}\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{3}{l|}{\textbf{Requisitos de información}} \\ \cline{3-5} 
+\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{3}{l|}{\textbf{Requisitos de información}} \\ \cline{3-5} 
 \multicolumn{2}{|l|}{}                  & RI-001         & RI-002        & RI-003        \\ \hline
 \textbf{Requisitos funcionales}     & RF-001     & X              &               & X             \\ \hline
 \multirow{7}{*}{}          & RF-002     & X              &               & X             \\ \cline{2-5} 
@@ -949,13 +976,13 @@ El rastreo es una propiedad de la especificación de requisitos que refleja la f
 \end{table}
 
 
-\paragraph{Matriz de rastreabilidad: CU / RF\ref{mat_rast_cu_rf}}
+La matriz de rastreabilidad: CU / RF se muestra en la tabla \ref{mat_rast_cu_rf}.
 
 \begin{table}[htpb]
 \centering
 \begin{tabularx}{\textwidth}{|l|X|X|X|X|X|X|X|X|}
 \hline
-\rowcolor[gray]{0.9}\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{7}{l|}{\textbf{Requisitos funcionales}}                  \\ \cline{3-9} 
+\multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{7}{l|}{\textbf{Requisitos funcionales}}                  \\ \cline{3-9} 
 \multicolumn{2}{|l|}{}                  & RF-001 & RF-002 & RF-003 & RF-004 & RF-005 & RF-006 & RF-007 \\ \hline
 \textbf{Casos de uso}             & CU-001       & X      &        &        &        &        &        &        \\ \hline
 \multirow{15}{*}{}       & CU-002       & X      & X      &        &        &        &        &        \\ \cline{2-9} 
@@ -972,7 +999,8 @@ El rastreo es una propiedad de la especificación de requisitos que refleja la f
                          & CU-013       & X      & X      &        &        & X      &        &        \\ \cline{2-9} 
                          & CU-014       &        &        &        &        &        &        &        \\ \cline{2-9} 
                          & CU-015       &        &        &        &        &        &        &        \\ \cline{2-9} 
-                         & CU-016       &        &        &        &        &        &        &        \\ \hline
+                         & CU-016       &        &        &        &        &        &        &        \\ \cline{2-9}
+                         & CU-017       &        &        &        &        &        &        &        \\ \hline
 \end{tabularx}
 \caption{Matriz de rastreabilidad: CU / RF}
 \label{mat_rast_cu_rf}
@@ -982,7 +1010,7 @@ El rastreo es una propiedad de la especificación de requisitos que refleja la f
 %ALGORITMO MATCHING%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Algoritmo de \textit{matching}}
+\section{Algoritmo de \textit{matching}}
 
 
 Para poder emparejar al psicólogo que puede tratar la patología de un paciente, se ha diseñado el algoritmo descrito a continuación. Como el estudio del test validado científicamente que determina cómo se van a evaluar las patologías, pacientes y psicólogos en cuestión no está diseñado todavía, se ha tenido que realizar una breve y pequeña aproximación de cómo sería el funcionamiento aparente del cuestionario.
@@ -992,7 +1020,7 @@ En nuestro proyecto, cada patología tendrá asociadas una serie de preguntas. L
 
 %\frac{1}{2}\times\frac{1}{n_{preguntas}-1}+\frac{1}{2}\times{valor_{preg_{princ}}} = 1
 \begin{equation}
-valor_pregunta = \frac{0,5}{n_{preguntas}-1}
+valor_{pregunta} = \frac{0,5}{n_{preguntas}-1}
 \label{mi_ecuacion}
 \end{equation}
 %

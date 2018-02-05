@@ -1,5 +1,7 @@
 \chapter{Pruebas}
 
+A continuación, se desarrollan las pruebas según Pressman\cite{pressman} en su libro Ingeniería del \textit{software}: un enfoque práctico, donde hay un capítulo especializado únicamente en pruebas para aplicaciones web.
+
 \section{Pruebas de contenido}
 
 Se evalúa el diseño del contenido buscando errores de tipo:
@@ -38,7 +40,7 @@ La manera de tratar este tipo de errores podría ser mediante la formulación de
 \item \textbf{De organización o estructura de contenido}
 
 
-El error consiste en que los objetos existentes dentro del contenido no se corresponden con los que dicen ser. Por ejemplo, el objeto x muestra la foto del objeto y.
+El error consiste en que los objetos existentes dentro del contenido no se corresponden con los que dicen ser. Por ejemplo, el objeto $x$ muestra la foto del objeto $y$.
 Para identificarlos se debe revisar detenidamente la página.
 
 
@@ -979,11 +981,10 @@ El requisito no funcional RNF-001: Encriptado de datos del proyecto pretende ase
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{PS-001}                                     & \textbf{Prueba del requisito RF-008}                                                           \\ \hline
-\textbf{Descripción del requisito}                 & El paciente podrá valorar al psicólogo que le haya atendido.                                   \\ \hline
-\multirow{2}{*}{\textbf{Descripción de la prueba}} & 1. El paciente enviará su valoración a través de un formulario.                                \\ \cline{2-2} 
-                                                   & 2. El paciente seleccionará el botón ``Enviar''.                                                 \\ \hline
-\textbf{Criterios de paso/fallo}                   & El sistema publicará la valoración en el perfil del psicólogo, y mostrará un mensaje de éxito. \\ \hline
+\rowcolor[gray]{0.9}\textbf{PS-001}                                     & \textbf{Prueba del requisito RNF-001}                                                           \\ \hline
+\textbf{Descripción del requisito}                 & La contraseña de los usuarios almacenados en la base de datos deberá estar cifrada con un algoritmo de cifrado.                                    \\ \hline
+\multirow{2}{*}{\textbf{Descripción de la prueba}} & Se comprobará que en la base de datos aparece cifrada.                                                 \\ \hline
+\textbf{Criterios de paso/fallo}                   & La contraseña en la base de datos aparece cifrada. \\ \hline
 \textbf{Estado}                                    & Correcto                                                                                       \\ \hline
 \end{tabularx}
 \caption{PS-001}

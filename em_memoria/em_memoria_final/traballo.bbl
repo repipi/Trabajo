@@ -10,6 +10,11 @@ Arquitectura {A}ngular{JS}.
 \newblock \url{https://angular.io/guide/architecture}, Consultado de 29 de
   enero del 2018.
 
+\bibitem{bcrypt_ejemplo}
+bcrypt-ruby. {G}it{H}ub.
+\newblock \url{https://github.com/codahale/bcrypt-ruby}, Consultado de 29 de
+  enero del 2018.
+
 \bibitem{css_mozilla}
 C{SS}.
 \newblock \url{https://developer.mozilla.org/es/docs/Web/CSS}, Consultado de 29
@@ -23,6 +28,11 @@ Documentación de {A}ngular{JS}.
 Github {S}emantic {UI}.
 \newblock \url{https://github.com/Semantic-Org/Semantic-UI}, Consultado de 29
   de enero del 2018.
+
+\bibitem{angular_embrace}
+How {A}ngular embraced tradicional {OOP} design patterns.
+\newblock \url{https://www.slideshare.net/ranm8/how-angularjs-embraced},
+  Consultado de 29 de enero del 2018.
 
 \bibitem{html_mozilla}
 H{TML}.
@@ -45,6 +55,11 @@ Objetos globales: {P}romise.
 \newblock
   \url{https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promise
   }, Consultado de 29 de enero del 2018.
+
+\bibitem{ortografo}
+Ortógrafo.
+\newblock \url{http://lenguaje.com/herramientas/ortografo.html}, Consultado de
+  29 de enero del 2018.
 
 \bibitem{google_api}
 Places de {G}oogle {M}aps {J}ava{S}cript {API}.
@@ -121,6 +136,12 @@ Página oficial de {R}obomongo.
 Página oficial de {S}tar{UML}.
 \newblock \url{http://staruml.io/}, Consultado de 29 de enero del 2018.
 
+\bibitem{mongodb_traspas}
+The \textit{Magical} \textit{Marvels} of \textit{MongoDB}.
+\newblock
+  \url{http://courseware.codeschool.com/the-magical-marvels-of-mongodb/the-magical-marvels-of-mongodb-slides.pdf},
+  Consultado de 29 de enero del 2018.
+
 \bibitem{aenor_req_acces}
 {UNE} 139803:2012 {R}equisitos de accesibilidad para contenidos en la {W}eb.
 \newblock \url{http://administracionelectronica.gob.es/
@@ -137,6 +158,18 @@ Bootstrap {G}rids. w3schools.
 \newblock \url{https://www.w3schools.com/bootstrap/bootstrap_grid _basic.asp},
   Consultado el: 29 de Enero del 2018.
 
+\bibitem{calculadoracontratos}
+Calculadora de contratos para la {G}estión de actividad {I+D} de la {O}ficina
+  de {I}nvestigación y {T}ecnología de la {USC}.
+\newblock
+  \url{http://imaisd.usc.es/ferramentas/calculadora/calculadoracontratos.asp},
+  Consultado el: 29 de Enero del 2018.
+
+\bibitem{paislee}
+A {C}onceptual {I}ntroduction to {A}ngular{JS}.
+\newblock \url{http://paislee.io/a-conceptual-introduction-to-angularjs/},
+  Consultado el: 29 de Enero del 2018.
+
 \bibitem{data_binding_w3s}
 Data binding. w3schools.
 \newblock \url{https://www.w3schools.com/angular/angular_databinding.asp},
@@ -146,6 +179,12 @@ Data binding. w3schools.
 Dependency {I}njection in {J}ava{S}cript.
 \newblock \url{https://dzone.com/articles/dependency-injection-0}, Consultado
   el: 29 de Enero del 2018.
+
+\bibitem{vitae}
+Guía {S}alarial {S}ector {TI} {G}alicia 2015 - 2016.
+\newblock
+  \url{https://es.scribd.com/document/288511179/Guia-Salarial-Sector-TI-Galicia-2015-2016},
+  Consultado el: 29 de Enero del 2018.
 
 \bibitem{lato}
 Lato. {G}oogle {F}onts.
@@ -172,11 +211,21 @@ Thorén C.
 \newblock {\em Nordic Guidelines for Computer Accessibility}.
 \newblock Nordic Cooperation on Disability, second edition, 1998.
 
+\bibitem{ericfreemanelisabethfreemanbertbates2004}
+Elisabeth~Freeman Eric~Freeman.
+\newblock {\em Head First Design Patterns}.
+\newblock O'Reilly Media, 2004.
+
 \bibitem{georgefield1845}
 George Field.
 \newblock {\em Chromatics: Or, the Analogy, Harmony, and Philosophy of
   Colours}.
 \newblock David Bogue, Fleet Street, 1845.
+
+\bibitem{martinfowler2002}
+Martin Fowler.
+\newblock {\em Patterns of enterprise application architecture}.
+\newblock Addison Wesley, 2002.
 
 \bibitem{ekberg}
 Ekberg J.
@@ -189,6 +238,12 @@ Ivan~Beschastnikh Keheliya~Gallaba, Ali~Mesbah.
   Javascript}.
 \newblock Empirical Software Engineering and Measurement (ESEM), 2015 ACM/IEEE
   International Symposium on, 2015.
+
+\bibitem{pmbok}
+Project {M}anagement {I}nstitute.
+\newblock {\em PMBOK: {A} {G}uide to the {P}roject {M}anagement {B}ody of
+  {K}nowledge ({P}mbok Guide)}.
+\newblock Project Management Institute, fifth edition, 2013.
 
 \bibitem{mongodb_mean_stack}
 MongoDB.
@@ -218,6 +273,21 @@ Afra Pascual y Jesús~Lorés Mª Paula~González.
 Addy Osmani.
 \newblock {\em Learning JavaScript Design Patterns}.
 \newblock O'Reilly, 2012.
+
+\bibitem{pressman}
+Roger~S. Pressman.
+\newblock {\em Ingeniería del software : un enfoque práctico}.
+\newblock McGraw-Hill, 2010.
+
+\bibitem{ericries2011}
+Eric {R}ies.
+\newblock {\em El método {L}ean {S}tartup}.
+\newblock Crown Publishing Group, 2011.
+
+\bibitem{sommerville}
+Ian Sommerville.
+\newblock {\em Ingeniería de software}.
+\newblock Addison Wesley, 2011.
 
 \bibitem{stoyanstefanov2010}
 Stoyan Stefanov.

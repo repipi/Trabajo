@@ -3,152 +3,161 @@
 \contentsline {section}{\numberline {1.1}Contexto}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Objetivos}{2}{section.1.2}
 \contentsline {section}{\numberline {1.3}Estructura de la memoria}{2}{section.1.3}
-\contentsline {chapter}{\numberline {2}Gesti\IeC {\'o}n del proyecto}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}Alcance del proyecto}{3}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Enunciado del alcance}{3}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Criterios de aceptaci\IeC {\'o}n}{4}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Entregables del proyecto}{4}{subsection.2.1.3}
-\contentsline {subsection}{\numberline {2.1.4}Exclusiones del proyecto}{4}{subsection.2.1.4}
-\contentsline {subsection}{\numberline {2.1.5}Restricciones del proyecto}{5}{subsection.2.1.5}
-\contentsline {subsection}{\numberline {2.1.6}Supuestos del proyecto}{5}{subsection.2.1.6}
-\contentsline {subsection}{\numberline {2.1.7}Estructura de descomposici\IeC {\'o}n de tareas (EDT/WBS) del proyecto}{5}{subsection.2.1.7}
-\contentsline {subsubsection}{Diccionario EDT/WBS}{5}{figure.2.1}
-\contentsline {section}{\numberline {2.2}Metodolog\IeC {\'\i }a de desarrollo}{6}{section.2.2}
-\contentsline {subsubsection}{Fase incremental}{7}{Item.3}
-\contentsline {section}{\numberline {2.3}Planificaci\IeC {\'o}n temporal}{8}{section.2.3}
-\contentsline {section}{\numberline {2.4}Gesti\IeC {\'o}n de la configuraci\IeC {\'o}n}{10}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}L\IeC {\'\i }nea base}{10}{subsection.2.4.1}
-\contentsline {subsubsection}{Creaci\IeC {\'o}n de l\IeC {\'\i }neas base}{10}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Repositorio para la gesti\IeC {\'o}n de la configuraci\IeC {\'o}n}{10}{subsection.2.4.2}
-\contentsline {subsubsection}{Repositorio escogido}{10}{subsection.2.4.2}
-\contentsline {subsubsection}{Metamodelo}{11}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}Sistema de gesti\IeC {\'o}n de la configuraci\IeC {\'o}n}{11}{subsection.2.4.3}
-\contentsline {section}{\numberline {2.5}Gesti\IeC {\'o}n de costes}{12}{section.2.5}
-\contentsline {section}{\numberline {2.6}Gesti\IeC {\'o}n de riesgos}{12}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}Plan de gesti\IeC {\'o}n de riesgos}{12}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}Identificaci\IeC {\'o}n de riesgos}{14}{subsection.2.6.2}
-\contentsline {subsection}{\numberline {2.6.3}An\IeC {\'a}lisis cualitativo de riesgos}{14}{subsection.2.6.3}
-\contentsline {subsection}{\numberline {2.6.4}Plan de respuesta a los riesgos}{14}{subsection.2.6.4}
-\contentsline {section}{\numberline {2.7}An\IeC {\'a}lisis}{21}{section.2.7}
-\contentsline {subsection}{\numberline {2.7.1}Casos de uso}{21}{subsection.2.7.1}
-\contentsline {subsubsection}{Diagrama de casos de uso}{21}{subsection.2.7.1}
-\contentsline {subsubsection}{Actores del sistema}{21}{figure.2.3}
-\contentsline {subsubsection}{Especificaci\IeC {\'o}n de casos de uso}{22}{table.2.16}
-\contentsline {subsection}{\numberline {2.7.2}Modelado de datos}{40}{subsection.2.7.2}
-\contentsline {subsubsection}{\IeC {\textquestiondown }Por qu\IeC {\'e} MongoDB?}{40}{subsection.2.7.2}
-\contentsline {subsubsection}{Comparativa MongoDB con SQL}{41}{subsection.2.7.2}
-\contentsline {subsubsection}{Modelo de datos NoSQL}{41}{subsection.2.7.2}
-\contentsline {subsubsection}{Modelo entidad-relaci\IeC {\'o}n (MER)}{41}{figure.2.4}
-\contentsline {subsubsection}{Diccionario de datos}{43}{figure.2.5}
-\contentsline {paragraph}{Colecciones\ref {fig:dic_datos_colecciones}}{43}{figure.2.5}
-\contentsline {paragraph}{BSON de los documentos\ref {fig:dic_datos_BSON_1}\ref {fig:dic_datos_BSON_2}\ref {fig:dic_datos_BSON_3}\ref {fig:dic_datos_BSON_4}}{43}{table.2.37}
-\contentsline {subsection}{\numberline {2.7.3}An\IeC {\'a}lisis de requisitos}{43}{subsection.2.7.3}
-\contentsline {subsubsection}{Requisitos de informaci\IeC {\'o}n}{43}{table.2.43}
-\contentsline {subsubsection}{Requisitos funcionales}{43}{table.2.46}
-\contentsline {subsubsection}{Requisitos no funcionales}{53}{table.2.54}
-\contentsline {subsubsection}{Matrices de rastreabilidad}{54}{table.2.56}
-\contentsline {paragraph}{Matriz de rastreabilidad: RF / RI\ref {mat_rast_rf_ri}}{54}{table.2.56}
-\contentsline {paragraph}{Matriz de rastreabilidad: CU / RF\ref {mat_rast_cu_rf}}{54}{table.2.57}
-\contentsline {subsection}{\numberline {2.7.4}Algoritmo de \textit {matching}}{54}{subsection.2.7.4}
-\contentsline {paragraph}{Un ejemplo pr\IeC {\'a}ctico (figura \ref {ej_alg_match})}{56}{equation.2.7.1}
-\contentsline {chapter}{\numberline {3}Dise\IeC {\~n}o}{59}{chapter.3}
-\contentsline {section}{\numberline {3.1}Dise\IeC {\~n}o de la interfaz}{59}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Principios de dise\IeC {\~n}o de la experiencia de usuario}{59}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Principios de dise\IeC {\~n}o de la interfaz de usuario}{59}{subsection.3.1.2}
-\contentsline {subsubsection}{\textit {Layout}}{59}{subsection.3.1.2}
-\contentsline {subsubsection}{Colores}{61}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Fuentes y tipograf\IeC {\'\i }a}{61}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}Interacci\IeC {\'o}n persona-ordenador}{62}{subsection.3.1.4}
-\contentsline {subsubsection}{Sociedad de la informaci\IeC {\'o}n}{62}{subsection.3.1.4}
-\contentsline {subsubsection}{Diversidad funcional}{62}{subsection.3.1.4}
-\contentsline {subsubsection}{Accesibilidad}{62}{subsection.3.1.4}
-\contentsline {subsubsection}{Usabilidad}{62}{subsection.3.1.4}
-\contentsline {subsubsection}{Dise\IeC {\~n}o universal}{63}{subsection.3.1.4}
-\contentsline {subsubsection}{Principios heur\IeC {\'\i }sticos}{63}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}\textit {Mockup}}{64}{subsection.3.1.5}
-\contentsline {section}{\numberline {3.2}Dise\IeC {\~n}o de la navegaci\IeC {\'o}n}{64}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Sem\IeC {\'a}ntica de la navegaci\IeC {\'o}n}{64}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Sintaxis de navegaci\IeC {\'o}n}{65}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Tecnolog\IeC {\'\i }as utilizadas}{65}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Frameworks}{65}{subsection.3.3.1}
-\contentsline {subsubsection}{MEAN Stack}{73}{subsection.3.3.1}
-\contentsline {subsubsection}{Bootstrap}{74}{subsection.3.3.1}
-\contentsline {subsubsection}{Semantic UI}{74}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Lenguajes de programaci\IeC {\'o}n}{74}{subsection.3.3.2}
-\contentsline {subsubsection}{CSS3}{74}{subsection.3.3.2}
-\contentsline {subsubsection}{HTML}{74}{subsection.3.3.2}
-\contentsline {subsubsection}{JavaScript}{74}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3} \textit {Modules}}{75}{subsection.3.3.3}
-\contentsline {subsubsection}{Mongoose}{75}{subsection.3.3.3}
-\contentsline {subsubsection}{Bcrypt}{75}{subsection.3.3.3}
-\contentsline {subsubsection}{NodeMailer}{75}{subsection.3.3.3}
-\contentsline {subsubsection}{FullCalendar}{75}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Librer\IeC {\'\i }as}{75}{subsection.3.3.4}
-\contentsline {subsubsection}{Places de Google Maps JavaScript API}{75}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5} \textit {Middleware}}{76}{subsection.3.3.5}
-\contentsline {subsubsection}{Passport}{76}{subsection.3.3.5}
-\contentsline {section}{\numberline {3.4}Herramientas utilizadas}{76}{section.3.4}
-\contentsline {section}{\numberline {3.5}Seguridad}{77}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}\IeC {\textquestiondown }Qu\IeC {\'e} es Bcrypt?}{77}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Ventajas de Bcrypt}{78}{subsection.3.5.2}
-\contentsline {subsection}{\numberline {3.5.3}Funcionamiento}{79}{subsection.3.5.3}
-\contentsline {subsection}{\numberline {3.5.4}Cifrado Blowfish}{79}{subsection.3.5.4}
-\contentsline {section}{\numberline {3.6}Dise\IeC {\~n}o de la arquitectura}{79}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}SPA}{79}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}Particularidades de JavaScript}{79}{subsection.3.6.2}
-\contentsline {subsubsection}{En JavaSCript no existen las clases}{79}{subsection.3.6.2}
-\contentsline {subsection}{\numberline {3.6.3} \textit {Callbacks} en JavaScript}{80}{subsection.3.6.3}
-\contentsline {subsubsection}{Implementando patrones de dise\IeC {\~n}o con JavaScript}{81}{subsection.3.6.3}
-\contentsline {subsection}{\numberline {3.6.4}Patrones de dise\IeC {\~n}o}{81}{subsection.3.6.4}
-\contentsline {subsubsection}{MVC y MVVM}{81}{subsection.3.6.4}
-\contentsline {subsubsection}{\textit {Page Controller}}{82}{figure.3.15}
-\contentsline {subsection}{\numberline {3.6.5} \textit {Observer}}{84}{subsection.3.6.5}
-\contentsline {subsubsection}{\textit {Data-binding}}{84}{subsection.3.6.5}
-\contentsline {subsubsection}{\textit {Dependency Injection}}{86}{figure.3.16}
-\contentsline {subsection}{\numberline {3.6.6}\textit {Factory Method}}{86}{subsection.3.6.6}
-\contentsline {subsection}{\numberline {3.6.7} \textit {Proxy}}{86}{subsection.3.6.7}
-\contentsline {subsection}{\numberline {3.6.8}\textit {Data Mapper}}{86}{subsection.3.6.8}
-\contentsline {subsection}{\numberline {3.6.9}API REST}{87}{subsection.3.6.9}
-\contentsline {subsection}{\numberline {3.6.10}Estructura de directorios}{87}{subsection.3.6.10}
-\contentsline {section}{\numberline {3.7}Diagramas}{90}{section.3.7}
-\contentsline {chapter}{\numberline {4}Implementaci\IeC {\'o}n}{95}{chapter.4}
-\contentsline {section}{\numberline {4.1}Implementaci\IeC {\'o}n del primer incremento}{95}{section.4.1}
-\contentsline {section}{\numberline {4.2}Implementaci\IeC {\'o}n del segundo incremento}{98}{section.4.2}
-\contentsline {section}{\numberline {4.3}Implementaci\IeC {\'o}n del tercer incremento}{107}{section.4.3}
-\contentsline {chapter}{\numberline {5}Pruebas}{109}{chapter.5}
-\contentsline {section}{\numberline {5.1}Pruebas de contenido}{109}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Incremento 1}{110}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Incremento 2}{110}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Incremento 3}{114}{subsection.5.1.3}
-\contentsline {section}{\numberline {5.2}Pruebas de interfaz}{114}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Incremento 1}{118}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Incremento 2}{119}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Incremento 3}{119}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}Pruebas de navegaci\IeC {\'o}n}{123}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Incremento 1}{124}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Incremento 2}{124}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Incremento 3}{124}{subsection.5.3.3}
-\contentsline {section}{\numberline {5.4}Prueba de componente}{126}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Incremento 1}{126}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}Incremento 2}{126}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}Incremento 3}{130}{subsection.5.4.3}
-\contentsline {section}{\numberline {5.5}Pruebas seguridad y rendimiento}{130}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}Prueba de seguridad}{130}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}Prueba de rendimiento}{131}{subsection.5.5.2}
-\contentsline {chapter}{\numberline {6}Conclusiones}{133}{chapter.6}
-\contentsline {section}{\numberline {6.1}Posibles ampliaciones}{134}{section.6.1}
-\contentsline {chapter}{\numberline {A}Anexo Pruebas}{135}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Pruebas de contenido}{135}{section.Alph1.1}
-\contentsline {subsection}{\numberline {A.1.1}Incremento 1}{135}{subsection.Alph1.1.1}
-\contentsline {subsection}{\numberline {A.1.2}Incremento 2}{135}{subsection.Alph1.1.2}
-\contentsline {subsection}{\numberline {A.1.3}Incremento 3}{135}{subsection.Alph1.1.3}
-\contentsline {section}{\numberline {A.2}Pruebas de interfaz}{135}{section.Alph1.2}
-\contentsline {subsection}{\numberline {A.2.1}Incremento 1}{135}{subsection.Alph1.2.1}
-\contentsline {subsection}{\numberline {A.2.2}Incremento 2}{135}{subsection.Alph1.2.2}
-\contentsline {subsection}{\numberline {A.2.3}Incremento 3}{152}{subsection.Alph1.2.3}
-\contentsline {subsubsection}{Test de usabilidad de los pacientes}{160}{table.Alph1.28}
-\contentsline {subsubsection}{Test de usabilidad de los psic\IeC {\'o}logos}{169}{table.Alph1.28}
-\contentsline {section}{\numberline {A.3}Pruebas de navegaci\IeC {\'o}n}{178}{section.Alph1.3}
-\contentsline {subsection}{\numberline {A.3.1}Incrementos 1 y 2}{178}{subsection.Alph1.3.1}
-\contentsline {subsection}{\numberline {A.3.2}Incremento 3}{178}{subsection.Alph1.3.2}
-\contentsline {chapter}{\numberline {B}Manual de instalaci\IeC {\'o}n}{185}{appendix.Alph2}
+\contentsline {chapter}{\numberline {2}\textit {Lean Startup}}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}\IeC {\textquestiondown }Qu\IeC {\'e} es una \textit {Startup}?}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}El m\IeC {\'e}todo \textit {Lean Startup}}{5}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Crear}{6}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Medir}{6}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Aprender}{6}{subsection.2.2.3}
+\contentsline {chapter}{\numberline {3}Gesti\IeC {\'o}n del proyecto}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}Alcance del proyecto}{9}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Enunciado del alcance}{9}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Criterios de aceptaci\IeC {\'o}n}{10}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Entregables del proyecto}{10}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Exclusiones del proyecto}{10}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}Restricciones del proyecto}{11}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}Supuestos del proyecto}{11}{subsection.3.1.6}
+\contentsline {subsection}{\numberline {3.1.7}Estructura de descomposici\IeC {\'o}n de tareas (EDT/WBS) del proyecto}{11}{subsection.3.1.7}
+\contentsline {subsubsection}{Diccionario EDT/WBS}{11}{figure.3.1}
+\contentsline {section}{\numberline {3.2}Metodolog\IeC {\'\i }a de desarrollo}{12}{section.3.2}
+\contentsline {subsubsection}{Fase incremental}{13}{Item.6}
+\contentsline {section}{\numberline {3.3}Planificaci\IeC {\'o}n temporal}{14}{section.3.3}
+\contentsline {section}{\numberline {3.4}Gesti\IeC {\'o}n de la configuraci\IeC {\'o}n}{16}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}L\IeC {\'\i }nea base}{16}{subsection.3.4.1}
+\contentsline {subsubsection}{Creaci\IeC {\'o}n de l\IeC {\'\i }neas base}{16}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Repositorio para la gesti\IeC {\'o}n de la configuraci\IeC {\'o}n}{16}{subsection.3.4.2}
+\contentsline {subsubsection}{Repositorio escogido}{16}{subsection.3.4.2}
+\contentsline {subsubsection}{Metamodelo}{17}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Sistema de gesti\IeC {\'o}n de la configuraci\IeC {\'o}n}{17}{subsection.3.4.3}
+\contentsline {section}{\numberline {3.5}Gesti\IeC {\'o}n de costes}{18}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Costes del personal}{18}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Costes de \textit {hardware}}{20}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Costes del \textit {software} y formaci\IeC {\'o}n}{20}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}Costes indirectos}{21}{subsection.3.5.4}
+\contentsline {subsection}{\numberline {3.5.5}Resumen de los costes totales}{21}{subsection.3.5.5}
+\contentsline {section}{\numberline {3.6}Gesti\IeC {\'o}n de riesgos}{22}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Plan de gesti\IeC {\'o}n de riesgos}{22}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Identificaci\IeC {\'o}n de riesgos}{23}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}An\IeC {\'a}lisis cualitativo de riesgos}{23}{subsection.3.6.3}
+\contentsline {subsection}{\numberline {3.6.4}Plan de respuesta a los riesgos}{23}{subsection.3.6.4}
+\contentsline {chapter}{\numberline {4}An\IeC {\'a}lisis}{29}{chapter.4}
+\contentsline {section}{\numberline {4.1}Casos de uso}{29}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Diagrama de casos de uso}{29}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Actores del sistema}{29}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Especificaci\IeC {\'o}n de casos de uso}{29}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Modelado de datos}{48}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}\IeC {\textquestiondown }Por qu\IeC {\'e} MongoDB?}{48}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Comparativa MongoDB con SQL}{50}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Modelo de datos NoSQL}{50}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Modelo entidad-relaci\IeC {\'o}n (MER)}{51}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}Diccionario de datos}{51}{subsection.4.2.5}
+\contentsline {section}{\numberline {4.3}An\IeC {\'a}lisis de requisitos}{57}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Requisitos de informaci\IeC {\'o}n}{57}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Requisitos funcionales}{57}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Requisitos no funcionales}{61}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Matrices de rastreabilidad}{62}{subsection.4.3.4}
+\contentsline {section}{\numberline {4.4}Algoritmo de \textit {matching}}{62}{section.4.4}
+\contentsline {paragraph}{Un ejemplo pr\IeC {\'a}ctico (figura \ref {ej_alg_match})}{64}{equation.4.4.1}
+\contentsline {chapter}{\numberline {5}Dise\IeC {\~n}o}{67}{chapter.5}
+\contentsline {section}{\numberline {5.1}Dise\IeC {\~n}o de la interfaz}{67}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Principios de dise\IeC {\~n}o de la experiencia de usuario}{67}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Principios de dise\IeC {\~n}o de la interfaz de usuario}{67}{subsection.5.1.2}
+\contentsline {subsubsection}{\textit {Layout}}{67}{subsection.5.1.2}
+\contentsline {subsubsection}{Colores}{69}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Fuentes y tipograf\IeC {\'\i }a}{69}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Interacci\IeC {\'o}n persona-ordenador}{70}{subsection.5.1.4}
+\contentsline {subsubsection}{Sociedad de la informaci\IeC {\'o}n}{70}{subsection.5.1.4}
+\contentsline {subsubsection}{Diversidad funcional}{70}{subsection.5.1.4}
+\contentsline {subsubsection}{Accesibilidad}{70}{subsection.5.1.4}
+\contentsline {subsubsection}{Usabilidad}{70}{subsection.5.1.4}
+\contentsline {subsubsection}{Dise\IeC {\~n}o universal}{71}{subsection.5.1.4}
+\contentsline {subsubsection}{Principios heur\IeC {\'\i }sticos}{71}{subsection.5.1.4}
+\contentsline {subsection}{\numberline {5.1.5}\textit {Mockup}}{72}{subsection.5.1.5}
+\contentsline {section}{\numberline {5.2}Dise\IeC {\~n}o de la navegaci\IeC {\'o}n}{72}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Sem\IeC {\'a}ntica de la navegaci\IeC {\'o}n}{72}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Sintaxis de navegaci\IeC {\'o}n}{81}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}Tecnolog\IeC {\'\i }as utilizadas}{89}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Frameworks}{89}{subsection.5.3.1}
+\contentsline {subsubsection}{MEAN Stack}{89}{subsection.5.3.1}
+\contentsline {subsubsection}{Bootstrap}{90}{subsection.5.3.1}
+\contentsline {subsubsection}{Semantic UI}{90}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Lenguajes de programaci\IeC {\'o}n}{90}{subsection.5.3.2}
+\contentsline {subsubsection}{CSS3}{90}{subsection.5.3.2}
+\contentsline {subsubsection}{HTML}{90}{subsection.5.3.2}
+\contentsline {subsubsection}{JavaScript}{91}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3} \textit {Modules}}{91}{subsection.5.3.3}
+\contentsline {subsubsection}{Mongoose}{91}{subsection.5.3.3}
+\contentsline {subsubsection}{Bcrypt}{91}{subsection.5.3.3}
+\contentsline {subsubsection}{NodeMailer}{91}{subsection.5.3.3}
+\contentsline {subsubsection}{FullCalendar}{91}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Librer\IeC {\'\i }as}{91}{subsection.5.3.4}
+\contentsline {subsubsection}{Places de Google Maps JavaScript API}{92}{subsection.5.3.4}
+\contentsline {subsection}{\numberline {5.3.5} \textit {Middleware}}{92}{subsection.5.3.5}
+\contentsline {subsubsection}{Passport}{92}{subsection.5.3.5}
+\contentsline {section}{\numberline {5.4}Herramientas utilizadas}{92}{section.5.4}
+\contentsline {section}{\numberline {5.5}Seguridad}{94}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}\IeC {\textquestiondown }Qu\IeC {\'e} es Bcrypt?}{94}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Ventajas de Bcrypt}{94}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}Funcionamiento}{95}{subsection.5.5.3}
+\contentsline {subsection}{\numberline {5.5.4}Cifrado Blowfish}{95}{subsection.5.5.4}
+\contentsline {section}{\numberline {5.6}Dise\IeC {\~n}o de la arquitectura}{96}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1} \textit {Single page aplication}}{96}{subsection.5.6.1}
+\contentsline {subsection}{\numberline {5.6.2}Particularidades de JavaScript}{96}{subsection.5.6.2}
+\contentsline {subsubsection}{En JavaSCript no existen las clases}{96}{subsection.5.6.2}
+\contentsline {subsection}{\numberline {5.6.3} \textit {Callbacks} en JavaScript}{96}{subsection.5.6.3}
+\contentsline {subsubsection}{Implementando patrones de dise\IeC {\~n}o con JavaScript}{98}{subsection.5.6.3}
+\contentsline {subsection}{\numberline {5.6.4}Patrones de dise\IeC {\~n}o}{98}{subsection.5.6.4}
+\contentsline {subsubsection}{MVC y MVVM}{98}{subsection.5.6.4}
+\contentsline {subsubsection}{\textit {Page Controller}}{99}{figure.5.32}
+\contentsline {subsection}{\numberline {5.6.5} \textit {Observer}}{100}{subsection.5.6.5}
+\contentsline {subsubsection}{\textit {Data-binding}}{100}{subsection.5.6.5}
+\contentsline {subsubsection}{\textit {Dependency Injection}}{102}{figure.5.33}
+\contentsline {subsection}{\numberline {5.6.6}\textit {Factory Method}}{102}{subsection.5.6.6}
+\contentsline {subsection}{\numberline {5.6.7} \textit {Proxy}}{102}{subsection.5.6.7}
+\contentsline {subsection}{\numberline {5.6.8}\textit {Data Mapper}}{102}{subsection.5.6.8}
+\contentsline {subsection}{\numberline {5.6.9}API REST}{103}{subsection.5.6.9}
+\contentsline {subsection}{\numberline {5.6.10}Estructura de directorios}{103}{subsection.5.6.10}
+\contentsline {section}{\numberline {5.7}Diagramas}{105}{section.5.7}
+\contentsline {chapter}{\numberline {6}Implementaci\IeC {\'o}n}{111}{chapter.6}
+\contentsline {section}{\numberline {6.1}Implementaci\IeC {\'o}n del primer incremento}{111}{section.6.1}
+\contentsline {section}{\numberline {6.2}Implementaci\IeC {\'o}n del segundo incremento}{114}{section.6.2}
+\contentsline {section}{\numberline {6.3}Implementaci\IeC {\'o}n del tercer incremento}{123}{section.6.3}
+\contentsline {chapter}{\numberline {7}Pruebas}{125}{chapter.7}
+\contentsline {section}{\numberline {7.1}Pruebas de contenido}{125}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Incremento 1}{126}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Incremento 2}{128}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Incremento 3}{128}{subsection.7.1.3}
+\contentsline {section}{\numberline {7.2}Pruebas de interfaz}{128}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Incremento 1}{135}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Incremento 2}{135}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}Incremento 3}{136}{subsection.7.2.3}
+\contentsline {section}{\numberline {7.3}Pruebas de navegaci\IeC {\'o}n}{136}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Incremento 1}{137}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}Incremento 2}{140}{subsection.7.3.2}
+\contentsline {subsection}{\numberline {7.3.3}Incremento 3}{140}{subsection.7.3.3}
+\contentsline {section}{\numberline {7.4}Prueba de componente}{141}{section.7.4}
+\contentsline {subsection}{\numberline {7.4.1}Incremento 1}{141}{subsection.7.4.1}
+\contentsline {subsection}{\numberline {7.4.2}Incremento 2}{141}{subsection.7.4.2}
+\contentsline {subsection}{\numberline {7.4.3}Incremento 3}{141}{subsection.7.4.3}
+\contentsline {section}{\numberline {7.5}Pruebas seguridad y rendimiento}{143}{section.7.5}
+\contentsline {subsection}{\numberline {7.5.1}Prueba de seguridad}{143}{subsection.7.5.1}
+\contentsline {subsection}{\numberline {7.5.2}Prueba de rendimiento}{146}{subsection.7.5.2}
+\contentsline {chapter}{\numberline {8}Conclusiones}{149}{chapter.8}
+\contentsline {section}{\numberline {8.1}Posibles ampliaciones}{150}{section.8.1}
+\contentsline {chapter}{\numberline {A}Anexo Pruebas}{151}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Pruebas de contenido}{151}{section.Alph1.1}
+\contentsline {subsection}{\numberline {A.1.1}Incremento 1}{151}{subsection.Alph1.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Incremento 2}{151}{subsection.Alph1.1.2}
+\contentsline {subsection}{\numberline {A.1.3}Incremento 3}{151}{subsection.Alph1.1.3}
+\contentsline {section}{\numberline {A.2}Pruebas de interfaz}{151}{section.Alph1.2}
+\contentsline {subsection}{\numberline {A.2.1}Incremento 1}{151}{subsection.Alph1.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Incremento 2}{151}{subsection.Alph1.2.2}
+\contentsline {subsection}{\numberline {A.2.3}Incremento 3}{168}{subsection.Alph1.2.3}
+\contentsline {subsubsection}{Test de usabilidad de los pacientes}{176}{table.Alph1.28}
+\contentsline {subsubsection}{Test de usabilidad de los psic\IeC {\'o}logos}{185}{table.Alph1.28}
+\contentsline {section}{\numberline {A.3}Pruebas de navegaci\IeC {\'o}n}{194}{section.Alph1.3}
+\contentsline {subsection}{\numberline {A.3.1}Incrementos 1 y 2}{194}{subsection.Alph1.3.1}
+\contentsline {subsection}{\numberline {A.3.2}Incremento 3}{194}{subsection.Alph1.3.2}
+\contentsline {chapter}{\numberline {B}Manual de instalaci\IeC {\'o}n}{203}{appendix.Alph2}
+\contentsline {chapter}{\numberline {C}Manuales de usuario}{205}{appendix.Alph3}
+\contentsline {chapter}{\numberline {D}Resumen ejecutivo}{233}{appendix.Alph4}

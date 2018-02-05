@@ -173,8 +173,133 @@ Aunque es mejor si el sistema se pueda usar sin documentación, puede ser necesa
 
 
 \subsection{\textit{Mockup}}
+El \textit{mockup} es un prototipo de lo que será la aplicación final.
 
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[width=1\textwidth]{figuras/mockup_pacientes/inicio.png}
+    \caption{Página de inicio}
+    %\label{fig:usn-001}
+\end{figure}	
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%PACIENTES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[width=1\textwidth]{figuras/mockup_pacientes/cuestionario.png}
+    \caption{Página Cuestionario}
+    %\label{fig:usn-001}
+\end{figure}	
+
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[width=1\textwidth]{figuras/mockup_pacientes/mis_resultados.png}
+    \caption{Página Resultados}
+    %\label{fig:usn-001}
+\end{figure}	
+
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[width=1\textwidth]{figuras/mockup_pacientes/pedir_cita.png}
+    \caption{\textit{Pop-up} Pedir cita}
+    %\label{fig:usn-001}
+\end{figure}	
+
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[width=1\textwidth]{figuras/mockup_pacientes/perfil_psicologo.png}
+    \caption{Página Perfil psicólogo}
+    %\label{fig:usn-001}
+\end{figure}	
+
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[width=1\textwidth]{figuras/mockup_pacientes/comentar.png}
+    \caption{\textit{Pop-up} Comentar}
+    %\label{fig:usn-001}
+\end{figure}	
+
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[width=1\textwidth]{figuras/mockup_pacientes/registro.png}
+    \caption{Página Registro}
+    %\label{fig:usn-001}
+\end{figure}	
+
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[width=1\textwidth]{figuras/mockup_pacientes/modificar.png}
+    \caption{Página Modificar}
+    %\label{fig:usn-001}
+\end{figure}	
+
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[width=1\textwidth]{figuras/mockup_pacientes/mailpendientes.png}
+    \caption{Página Mis solicitudes pendientes}
+    %\label{fig:usn-001}
+\end{figure}	
+
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[width=1\textwidth]{figuras/mockup_pacientes/mailaceptadas.png}
+    \caption{Página Mis solicitudes aceptadas}
+    %\label{fig:usn-001}
+\end{figure}	
+
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[width=1\textwidth]{figuras/mockup_pacientes/mailrechazadas.png}
+    \caption{Página Mis solicitudes rechazadas}
+    %\label{fig:usn-001}
+\end{figure}	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%PSICOLOGOS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[width=1\textwidth]{figuras/mockup_psicologos/mailpendientes.png}
+    \caption{Página Mis solicitudes pendientes}
+    %\label{fig:usn-001}
+\end{figure}	
+
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[width=1\textwidth]{figuras/mockup_psicologos/mailaceptadas.png}
+    \caption{Página Mis solicitudes aceptadas}
+    %\label{fig:usn-001}
+\end{figure}	
+
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[width=1\textwidth]{figuras/mockup_psicologos/mailrechazadas.png}
+    \caption{Página Mis solicitudes rechazadas}
+    %\label{fig:usn-001}
+\end{figure}	
+
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[width=1\textwidth]{figuras/mockup_psicologos/registro1.png}
+    \caption{Página Registro Paso 1}
+    %\label{fig:usn-001}
+\end{figure}	
+
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[width=1\textwidth]{figuras/mockup_psicologos/registro2.png}
+    \caption{Página Registro Paso 2}
+    %\label{fig:usn-001}
+\end{figure}	
+
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[width=1\textwidth]{figuras/mockup_psicologos/registro3.png}
+    \caption{Página Registro Paso 3}
+    %\label{fig:usn-001}
+\end{figure}	
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -553,8 +678,8 @@ Bruce Schneier en 1993 diseña un codificador de bloques simétricos de 64 bits,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Diseño de la arquitectura}
 
-\subsection{SPA}
-\textit{Single page aplication}, de ahora en adelante SPA, es una aplicación o sitio web que cabe en una sóla página web con el objeto de proveer una experiencia de usuario más fluida y una interfaz más enriquecida. Una de las ventajas de este tipo de aplicaciones es que son capaces de actualizar una parte de la interfaz, sin necesidad de enviar o recibir una petición de \textit{full-page}.
+\subsection{	\textit{Single page aplication}}
+\textit{Single page aplication}, de ahora en adelante SPA, es una aplicación o sitio web que cabe en una sóla página web con el objeto de proveer una experiencia de usuario más fluida y una interfaz más enriquecida. Una de las ventajas de este tipo de aplicaciones es que son capaces de actualizar una parte de la interfaz, sin necesidad de enviar o recibir una petición de \textit{full-page}\cite{fernandomonteiro2014}.
 
 
 \subsection{Particularidades de JavaScript}
@@ -607,7 +732,7 @@ Una \textit{promise} es un \textit{proxy} para un valor no necesariamente conoci
 En la mayoría de lenguajes tradicionales orientados a objetos existen las clases, las interfaces, la herencia, la encapsulación y el polimorfismo. Pero JavaScript, no, puesto que es muy sencillo: Trabaja por medio de callbacks (funciones).
 
 
-Un objeto es la unidad responsable de proporcionar estados y comportamiento; y la declaración de las funciones en JavaScript proporcionan ambas\cite{angular_embraced}.
+Un objeto es la unidad responsable de proporcionar estados y comportamiento; y la declaración de las funciones en JavaScript proporcionan ambas\cite{angular_embrace}.
 
 
 \subsection{Patrones de diseño}
@@ -615,7 +740,7 @@ Un objeto es la unidad responsable de proporcionar estados y comportamiento; y l
 El patrón Modelo Vista Controlador, de ahora en adelante MVC, es un patrón de arquitectura software que permite separar la representación visual de la información, de la interacción del usuario. 
 
 
-MVC es un patrón \textit{composite}. Los patrones \textit{composite} son aquellos patrones capaces de trabajar juntos para darle solución a un problema en común\cite{ericfreemanelisabethfreemankathysierrabertbates2004}. 
+MVC es un patrón \textit{composite}. Los patrones \textit{composite} son aquellos patrones capaces de trabajar juntos para darle solución a un problema en común\cite{ericfreemanelisabethfreemanbertbates2004}. 
 
 
 El patrón de diseño MVC está compuesto por:
@@ -652,7 +777,7 @@ En MEAN STACK, estos dos patrones se pueden aparecen combinados como se muestra 
 
 
 \subsubsection{\textit{Page Controller}}
-\textit{Page Controller} tiene un único \textit{controller} por cada página lógica de la página web\cite{martinfowlerdavidricematthewfoemmeledwardhieattrobertmeerandystafford2002}.
+\textit{Page Controller} tiene un único \textit{controller} por cada página lógica de la página web\cite{martinfowler2002}.
 
 
 Las responsabilidades del \textit{Page Controller} son:
@@ -692,7 +817,7 @@ Debida a la inmediata sincronización entre el modelo y la vista, el controlador
 
 
 El mostrado en la figura \ref{fig:data_binding} representa el funcionamiento descrito a continuación. El \textit{module} es el objeto de mayor nivel en Angular. Una aplicación Angular es especificada por la directiva ng-app siempre correspondiente a un módulo.
-Config es un objeto que configura la aplicación Angular, permite configurar las rutas (\textit{routes}) necesarias en la SPA porque gestionan las \textit{templates}. En Angular se empareja cada \textit{template} con un \textit{controller}. La <view> representa la parte \textit{front-end} y el \textit{controller} y la \textit{factory}  representan el \textit{back-end}. \$scope vive entre ambos, y Angular permite asegurar que ambos tengan la última versión de la aplicación. El bucle de eventos y \$scope permiten a Angular \textit{two way data binding}, y como resultado es que ya no es necesario acceder al DOM desde JavaScript\cite{praislee}.   
+Config es un objeto que configura la aplicación Angular, permite configurar las rutas (\textit{routes}) necesarias en la SPA porque gestionan las \textit{templates}. En Angular se empareja cada \textit{template} con un \textit{controller}. La <view> representa la parte \textit{front-end} y el \textit{controller} y la \textit{factory}  representan el \textit{back-end}. \$scope vive entre ambos, y Angular permite asegurar que ambos tengan la última versión de la aplicación. El bucle de eventos y \$scope permiten a Angular \textit{two way data binding}, y como resultado es que ya no es necesario acceder al DOM desde JavaScript\cite{paislee}.   
 
 
 \begin{figure}[htbp] 
@@ -778,55 +903,55 @@ A continuación, se describen (por orden de aparición) los distintos directorio
 
 
 \begin{itemize}
-\item app
+\item \texttt{app}
 Contiene la parte \textit{frontend} de la aplicación.
-\item assets
+\item \texttt{assets}
 Contiene algunos de los recursos de la aplicación.
-\item images
+\item \texttt{images}
 Contiene las imágenes utilizadas en la aplicación.
-\item javascript
+\item \texttt{javascript}
 Contiene todos los archivos JavaScript de la parte \textit{frontend} de la aplicación.
-\item app.js
+\item \texttt{app.js}
 Es nuestro fichero de inicio.
-\item controllers
+\item \texttt{controllers}
 Contiene los \textit{controllers} de los \textit{templates}.
-\item routes.js
+\item \texttt{routes.js}
 Archivo que determina el enrutado de nuestra aplicación.
-\item factories
+\item \texttt{factories}
 Contiene los \textit{factories}.
-\item vendor
+\item \texttt{vendor}
 Contiene algunas librerías JavaScript utilizadas en la aplicación.
-\item semantic
+\item \texttt{semantic}
 Contiene todos los archivos del paquete semantic-ui.
-\item styles
+\item \texttt{styles}
 Contiene algunas librerías CSS utilizadas en la aplicación.
-\item templates
+\item \texttt{templates}
 Contiene los \textit{templates} de la aplicación.
-\item views
+\item \texttt{views}
 Contiene la view de nuestra aplicación.
-\item app.js
+\item \texttt{app.js}
 Archivo de configuración del arranque del servidor.
-\item node\_modules
+\item \texttt{node\_modules}
 Contiene todos los paquetes Node.js utilizados en la aplicación.
-\item npm-shrinkwrap.json
+\item \texttt{npm-shrinkwrap.json}
 Archivo que mantiene un registro de versiones de los paquetes. 
-\item package.json
+\item \texttt{package.json}
 Archivo que mantiene una lista de los paquetes de los que depende la aplicación.
-\item README.md
+\item \texttt{README.md}
 Archivo que describe brevemente la aplicación.
-\item semantic.json
+\item \texttt{semantic.json}
 Archivo que contiene configuraciones de compilación para Gulp.
-\item server
+\item \texttt{server}
 Contiene la parte \textit{backend} de la aplicación.
-\item config
+\item \texttt{config}
 Contiene ficheros de configuración de la aplicación.
-\item expressConfig.js
+\item \texttt{expressConfig.js}
 Archivo que contiene configuración de Express.js.
-\item models
+\item \texttt{models}
 Contiene los models de la aplicación.
-\item routes
+\item \texttt{routes}
 Contiene las rutas API REST de la aplicación.
-\item routes.js
+\item \texttt{routes.js}
 Archivo que configura los módulos y enrutamiento de la aplicación.
 \end{itemize}
 

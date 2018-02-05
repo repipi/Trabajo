@@ -23,7 +23,9 @@ Las tareas más trascendentales realizadas en este incremento son las descritas 
 
 
  
-\paragraph*{Configuración Angular}
+\paragraph*{Configuración Angular} 
+
+
 Todos los archivos Angular utilizados deben importarse en la \textit{root view} (app/views/index.html en el proyecto): Librerías JavaScript, app.js, route.js, controllers y factories.\newline
 
 
@@ -68,7 +70,7 @@ Entre corchetes se encuentran las dependencias que tiene nuestro módulo Emozio:
   'remove': {method:'DELETE'}, 
   'delete': {method:'DELETE'} };
 \end{lstlisting}
-
+\medskip
 
 
 Llamar a estos métodos invoca a \$http con el método http especificado, destino y parámetros.
@@ -216,7 +218,7 @@ app.use(bodyParser.json());
 \end{lstlisting}
 
 
-Mediante el paquete Body-parser, podemos tratar los objetos en formato JSON sin necesidad de manipularlos, o cambiar su tipo.
+Mediante el paquete Body-parser, podemos tratar los objetos en formato JSON sin necesidad de manipularlos, o cambiar su tipo.\newline
 
  
 \paragraph*{Especificación del arranque del servidor y se establece cuál es la vista raíz en el archivo routes.js. También, se vinculan todos los archivos que va utilizar el servidor: Archivos de configuración, de conexiones al modelo...}
@@ -276,8 +278,10 @@ psicologos/registroPsicologo.html         & psicologos/psicologosRegistroControl
 \end{table}
 
  
-\paragraph*{Gestión de sesiones de usuario con PassportJS y Express-session.}
-\textit{La configuración de PassportJS se realizó en el directorio server/config/passport.js}
+\paragraph*{Gestión de sesiones de usuario con PassportJS y Express-session\cite{passport}.}
+
+
+La configuración de PassportJS se realizó en el directorio server/config/passport.js
 
 
 Las credenciales utilizadas para autenticar a un usuario sólo son transmitidas durante la petición de acceso (\textit{login request}). Si la autenticación se realiza con éxito, la sesión será establecida y mantenida vía una cookie en el navegador del usuario.
@@ -457,6 +461,8 @@ Se determina que passport utilice las sesiones.
 
 
 \paragraph*{Encriptación bcrypt de las contraseñas}
+
+
 En la aplicación, el paquete bcrypt es utilizado para encriptar las contraseñas de usuario.
 
 
@@ -477,7 +483,7 @@ Uno de los casos donde es necesario utilizar bcrypt es cuando es necesaria la co
 Compara la contraseña con la que está tratando de acceder el usuario después de cifrarla con el \textit{hash} que existe actualmente en la base de datos. El \textit{hash} que se encuentra en la base de datos tiene almacenados el coste, la sal y la contraseña, por lo que bcrypt sabe cómo cifrar la nueva contraseña introducida.
 
 
-\textit{Un ejemplo práctico:}
+\textit{Un ejemplo práctico\cite{bcrypt_ejemplo}:}
 El \textit{hash} introducido en la base de datos podría ser el siguiente:
 \texttt{\$2a\$10\$vI8aWBnW3fID.ZQ4/zo1G.q1lRps.9cGLcZEiGDMVr5yUP1KUOYTa}
 
@@ -511,7 +517,9 @@ Otro de los casos donde es necesario utilizar bcrypt es al dar de alta a un usua
 Primero se genera la sal con un factor de coste 10, y después, se crea el \textit{hash} con la contraseña que ha introducido el paciente y la sal. Este \textit{hash} será almacenado en la base de datos.
 
 
-\paragraph*{Google Maps JavaScript API para el autocompletado de la localización en los formularios de registro y modificación.}
+\paragraph*{Google Maps JavaScript API para el autocompletado de la localización en los formularios de registro y modificación\cite{google_api}.}
+
+
 Para autocompletar las localizaciones introducidas por el usuario tanto en el formulario de registro como en el de modificación, se ha utilizado el autocompletado para direcciones y términos búsqueda de Google Maps JavaScript API. 
 
 
@@ -592,6 +600,8 @@ La función \texttt{initAutocomplete} se encuentra en el \textit{controller}.
 
 
 \paragraph*{Nodemailer.js}
+
+
 Cuando un psicólogo cubre el formulario de registro, sus datos son mandados al correo electrónico de Emozio para poder valorarlos antes de formar parte de nuestra base de datos. Para enviar los e-mails se ha utilizado Nodemailer. Algunas particularidades son descritas a continuación.
 
 
@@ -640,6 +650,8 @@ Se envía el \textit{email} con la función \texttt{sendMail} a través del \tex
 
 
 \paragraph*{Validación de formularios con SemanticUI}
+
+
 Para la validación de formularios se utilizó SemanticUI que funciona de la siguiente forma:
 
 
@@ -758,6 +770,8 @@ psicologos/psicologoCalendario.html  & psicologos/psicologosCalendarioController
 
 
 \paragraph*{Visualización de las citas agendadas por medio de FullCalendar}
+
+
 En la \textit{template} psicologoCalendario.html, el calendario es dispuesto de la siguiente forma:
 
 
@@ -767,12 +781,12 @@ En la \textit{template} psicologoCalendario.html, el calendario es dispuesto de 
 \end{lstlisting}
 
 
-Este elemento es gestionado por el psicologosCalendarioController.js.
+Este elemento es gestionado por el psicologosCalendarioController.js. 
 
 
 \medskip
 \begin{lstlisting}
-	$('#calendar').fullCalendar({
+	$('#calendar').fullCalendar({ /* Se inicializa el calendario. */
 		header: { /* Opciones de la barra de herramientas */
 				left: 'prev,next today', /* A la izquierda: Anterior, siguiente y hoy */
 				center: 'title', /* En el centro: Nombre del mes */
@@ -798,7 +812,7 @@ Este elemento es gestionado por el psicologosCalendarioController.js.
 			themeSystem:'bootstrap3', /* Establece el tipo de tema */
 			eventColor: '#ffffff', /* Establece el color del fondo de los eventos */
 			eventTextColor: '#008080', /* Establece el color del texto de los eventos */
-			eventClick: function (calEvent) { . . . },
+			eventClick: function (calEvent) { . . . }, /* Funcion que se ejecuta cuando se hace click en un evento y lo muestra. */
 
 			height: 600 /* Establece la altura del calendario */
 		});
@@ -814,11 +828,11 @@ $('#calendar').fullCalendar('renderEvent', cita, true);
 \end{lstlisting}
 
 
-\begin{itemize}
-\item Se inicializa el calendario.
-\item Opciones mostradas en los botones del calendario.
-\item Traducción de los mensajes de los botones (que traen por defecto) al castellano.
-\item Indica el día donde comienza la semana.
-\item Traducción de los días, abreviaturas de los días, meses y abreviaturas de los meses al castellano.
-\item Función que se ejecuta cuando se hace \textit{click} en un evento y lo muestra.
-\end{itemize}
+%\begin{itemize}
+%\item Se inicializa el calendario.
+%\item Opciones mostradas en los botones del calendario.
+%\item Traducción de los mensajes de los botones (que traen por defecto) al castellano.
+%\item Indica el día donde comienza la semana.
+%\item Traducción de los días, abreviaturas de los días, meses y abreviaturas de los meses al castellano.
+%\item Función que se ejecuta cuando se hace click en un evento y lo muestra.
+%\end{itemize}
