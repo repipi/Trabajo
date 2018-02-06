@@ -35,13 +35,13 @@ Se deben seguir los siguientes pasos:
 	\end{lstlisting}
 \item Se cargan los datos en la base de datos ejecutando:
 	\begin{lstlisting}[style=consola, numbers=none]
-$ mongoimport -dab emozio -collection pacientes -type json -file server/sports/seed.json -jsonArray --drop
+$ mongoimport -dab emozio -collection pacientes -type json -file bbdd_data/pacientes.json -jsonArray --drop
 	
-$ mongoimport -dab emozio -collection patologias -type json -file server/sports/seed.json -jsonArray --drop
+$ mongoimport -dab emozio -collection patologias -type json -file bbdd_data/patologias.json -jsonArray --drop
 	
-$ mongoimport -dab emozio -collection psicologos -type json -file server/sports/seed.json -jsonArray -drop
+$ mongoimport -dab emozio -collection psicologos -type json -file bbdd_data/psicologos.json -jsonArray -drop
 	
-$ mongoimport -dab emozio -collection mensajes -type json -file server/sports/seed.json -jsonArray --drop
+$ mongoimport -dab emozio -collection mensajes -type json -file bbdd_data/mensajes.json -jsonArray --drop
 	\end{lstlisting}
 \end{enumerate}
 \end{enumerate}

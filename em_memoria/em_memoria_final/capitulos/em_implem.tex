@@ -19,18 +19,18 @@ Los requisitos implementados en el primer incremento son los asociados a la part
 
 
 
-Las tareas más trascendentales realizadas en este incremento son las descritas a continuación:
+Las tareas más trascendentales realizadas en este incremento son las descritas a continuación:\newline
 
 
  
-\paragraph*{Configuración Angular} 
+\textbf{Configuración Angular} 
 
 
-Todos los archivos Angular utilizados deben importarse en la \textit{root view} (app/views/index.html en el proyecto): Librerías JavaScript, app.js, route.js, controllers y factories.\newline
+Todos los archivos Angular utilizados deben importarse en la \textit{root view} \\ (\texttt{app/views/index.html} en el proyecto): Librerías JavaScript, \texttt{app.js}, \texttt{route.js}, \textit{controllers} y \textit{factories}.\newline
 
 
 
-Para indicar a la aplicación que se trata de una aplicación Angular se debe especificar en la etiqueta <html> de la \textit{root view} (app/views/index.html) de la siguiente forma:
+Para indicar a la aplicación que se trata de una aplicación Angular se debe especificar en la etiqueta \texttt{<html>} de la \textit{root view} (\texttt{app/views/index.html}) de la siguiente forma:
 
 
 
@@ -41,7 +41,7 @@ Para indicar a la aplicación que se trata de una aplicación Angular se debe es
 
 
 
-Se define el módulo principal de la aplicación en el archivo app/assets/javascript/app.js:
+Se define el módulo principal de la aplicación en el archivo \\ \texttt{app/assets/javascript/app.js}:
 
 
 
@@ -57,7 +57,7 @@ Entre corchetes se encuentran las dependencias que tiene nuestro módulo Emozio:
 
 
 \begin{itemize}
-\item \texttt{ngRoute}: Permite a la aplicación convertirse en una SPA, permitiendo la navegación ente distintas páginas sin necesidad de recargar. W3 angular-routing
+\item \texttt{ngRoute}: Permite a la aplicación convertirse en una SPA, permitiendo la navegación ente distintas páginas sin necesidad de recargar.
 \item \texttt{ngResource}: Permite crear objetos para interactuar con los datos RESTful del lado servidor. El objeto devuelto tiene métodos de acción que proporcionan comportamiento sin necesidad de interactuar con el servicio \$http a bajo nivel. Las acciones por defecto son:
 \end{itemize}
 
@@ -77,19 +77,18 @@ Llamar a estos métodos invoca a \$http con el método http especificado, destin
 
 
 
-Para indicar al \$routeProvider dónde mostrar las templates se utiliza la siguiente directiva: \texttt{<div ui-view></div>}
+Para indicar al \texttt{\$routeProvider} dónde mostrar las templates se utiliza la siguiente directiva: \texttt{<div ui-view></div>}\newline
 
 
  
-\paragraph*{Implementación de las \textit{templates} y \textit{controllers} de los requisitos. Éstos se encuentran dentro del directorio app/assets.}
-
+\textbf{Implementación de las \textit{templates} y \textit{controllers} de los requisitos.} Éstos se encuentran dentro del directorio \texttt{app/assets}.\newline
 
 
 \begin{table}[H]
 \centering
 \begin{tabular}{|l|l|}
 \hline
-\rowcolor[gray]{0.9}\textit{\textbf{Template}}           & \textit{\textbf{Controller}}        \\ \hline
+\textit{\textbf{Template}}           & \textit{\textbf{Controller}}        \\ \hline
 pacientes/cuestionarioPacientes.html & pacientes/cuestionarioController.js \\ \hline
 pacientes/pacientesResultados.html   & pacientes/perfilController.js       \\ \hline
 \end{tabular}
@@ -99,11 +98,11 @@ pacientes/pacientesResultados.html   & pacientes/perfilController.js       \\ \h
 
 
  
-\paragraph*{Creación de las \textit{factories}, \textit{routes} y \textit{models} de: Paciente, Psicologo y Patologia.}
+\textbf{Creación de las \textit{factories}, \textit{routes} y \textit{models} de: Paciente, Psicologo y Patologia.}\newline
 
 
  
-\paragraph*{Configuración de la conexión con la BBDD en un archivo aparte: server/config/dbConnection.js}
+\textbf{Configuración de la conexión con la BBDD en un archivo aparte: \texttt{server/config/dbConnection.js}.}
 
 
 
@@ -178,11 +177,11 @@ Función de conexión de Mongoose a la base de datos con las opciones especifica
 
 
 
-Se abren las conexiones a la base de datos.
+Se abren las conexiones a la base de datos.\newline
 
 
  
-\paragraph*{Configuración ExpressJS en server/expressConfig.js}
+\textbf{Configuración ExpressJS en server/expressConfig.js}
 
 
 \medskip
@@ -191,7 +190,7 @@ app.use("/", express.static("app/"));
 \end{lstlisting}
 
 
-Con express.static se especifican los directorios donde se encuentran los archivos que Express va a leer. Facilita el acceso a los \textit{assets} (bienes) de la carpeta app desde el servidor. Lo que nos permite tener la parte cliente separada del servidor. 
+Con \texttt{express.static} se especifican los directorios donde se encuentran los archivos que Express van a leer. Facilita el acceso a los \textit{assets} (bienes) de la carpeta \texttt{app} desde el servidor. Lo que nos permite tener la parte cliente separada del servidor. 
 
 
 \medskip
@@ -200,7 +199,7 @@ app.set('views', __dirname + '/../app/views');
 \end{lstlisting}
 
 
-Define que las routes a las templates se rendericen con el render method dentro del directorio views.
+Determina que \textit{routes} renderice con el \textit{render method} a las \textit{templates} dentro del directorio \texttt{views}.
 
 
 \medskip
@@ -221,7 +220,7 @@ app.use(bodyParser.json());
 Mediante el paquete Body-parser, podemos tratar los objetos en formato JSON sin necesidad de manipularlos, o cambiar su tipo.\newline
 
  
-\paragraph*{Especificación del arranque del servidor y se establece cuál es la vista raíz en el archivo routes.js. También, se vinculan todos los archivos que va utilizar el servidor: Archivos de configuración, de conexiones al modelo...}
+\textbf{Especificación del arranque del servidor y se establece cuál es la vista raíz en el archivo \texttt{routes.js}. También, se vinculan todos los archivos que va utilizar el servidor: Archivos de configuración, de conexiones al modelo...}
 
 
 \medskip
@@ -230,7 +229,7 @@ var app = express();
 \end{lstlisting}
 
 
-Se inicializa el servidor express.
+Se inicializa el servidor \texttt{express}.
 
 
 \medskip
@@ -244,7 +243,7 @@ Se inicializa el servidor express.
 Express establece cuál va a ser la \textit{view} raíz (\textit{root}) enviada tras el inicio del servidor.
 
 
-Además, se importan los archivos de server/routes que sirven como \textit{endpoint} (punto medio) entre la parte cliente y servidor, de esta forma durante la implementación, logramos mantener la parte del \textit{frontend} independiente del \textit{backend} haciéndola funcional.
+Además, se importan los archivos de \texttt{server/routes} que sirven como \textit{endpoint} (punto medio) entre la parte cliente y servidor, de esta forma durante la implementación, logramos mantener la parte del \textit{frontend} independiente del \textit{backend} haciéndola funcional.
 
 
 \section{Implementación del segundo incremento}
@@ -256,7 +255,7 @@ Los requisitos implementados en el segundo incremento son los asociados a la par
 \item RF-002: Registro
 \item RF-003: Baja
 \item RF-004: Modificación de los datos
-\item RNF-001: Encriptado de datos
+\item RNF-001: Encriptado de datos\newline
 \end{itemize}
 
 
@@ -264,7 +263,7 @@ Los requisitos implementados en el segundo incremento son los asociados a la par
 \centering
 \begin{tabular}{|l|l|}
 \hline
-\rowcolor[gray]{0.9}\textit{\textbf{Template}}           & \textit{\textbf{Controller}}        \\ \hline
+\textit{\textbf{Template}}           & \textit{\textbf{Controller}}        \\ \hline
 inicio.html & pacientes/pacientesAccesoController.js \\ \hline
 pacientes/registroPacientes.html   & pacientes/pacientesRegistroController.js       \\ \hline
 pacientes/pacientesModificar.html   & pacientes/pacientesModificarController.js
@@ -278,10 +277,10 @@ psicologos/registroPsicologo.html         & psicologos/psicologosRegistroControl
 \end{table}
 
  
-\paragraph*{Gestión de sesiones de usuario con PassportJS y Express-session\cite{passport}.}
+\textbf{Gestión de sesiones de usuario con PassportJS y Express-session\cite{passport}.}
 
 
-La configuración de PassportJS se realizó en el directorio server/config/passport.js
+La configuración de PassportJS se realizó en el directorio \\ \texttt{server/config/passport.js}.
 
 
 Las credenciales utilizadas para autenticar a un usuario sólo son transmitidas durante la petición de acceso (\textit{login request}). Si la autenticación se realiza con éxito, la sesión será establecida y mantenida vía una cookie en el navegador del usuario.
@@ -297,7 +296,7 @@ passport.serializeUser(function(usuarios, done){
 \end{lstlisting}
 
 
-Sólo el ID de usuario es “creado” en la sesión, manteniendo mínima la cantidad de datos guardados. Cuando las siguientes peticiones sean recibidas, este ID será el utilizado para encontrar al usuario, el cual fue guardado en \texttt{req.user}.
+Sólo el ID de usuario es ``creado'' en la sesión, manteniendo mínima la cantidad de datos guardados. Cuando las siguientes peticiones sean recibidas, este ID será el utilizado para encontrar al usuario, el cual fue guardado en \texttt{req.user}.
 
 
 \medskip
@@ -357,7 +356,7 @@ passport.use(new LocalStrategy(
 \end{lstlisting}
 
 
-Para poder utilizar la autenticación por \texttt{username}  y \texttt{password}, Passport utiliza el mecanismo proporcionado por su módulo passport-local. 
+Para poder utilizar la autenticación por \texttt{username}  y \texttt{password}, Passport utiliza el mecanismo proporcionado por su módulo \texttt{passport-local}. 
 \begin{itemize}
 \item \texttt{UsernameField} y \texttt{PassworfField} son los obtenidos del cuerpo de la petición (\texttt{req.body}) recibida cuando un usuario quiere acceder.
 \item Se busca al paciente que posea esos datos; y se pueden dar dos casos:
@@ -387,7 +386,7 @@ exports.estaAutenticado = function (req, res, next){
 Función que comprueba si el usuario que está realizando una petición, está autenticado.
 
 
-En la route de Pacientes del directorio server/routes/paciente.js:
+En la \textit{route} de Pacientes del directorio \texttt{server/routes/paciente.js}:
 
 
 \medskip
@@ -415,10 +414,10 @@ app.route('/pacientes/acceso')
 \end{lstlisting}
 
 
-El formulario de acceso es enviado por el servidor a través del método POST. Utilizando \texttt{authenticate()} es como gestionamos la petición de acceso: En el caso de que el paciente exista, hacemos el \texttt{login}.
+El formulario de acceso es enviado por el servidor a través del método POST. Utilizando \texttt{authenticate()} es como gestionamos la petición de acceso: En el caso de que el paciente exista, hacemos el \texttt{login}.\newline
 
 
-\paragraph*{La configuración de Express-session se realizó en el directorio server/config/session.js}
+\textbf{La configuración de Express-session se realizó en el directorio \\ \texttt{server/config/session.js}}
 
 
 \medskip
@@ -457,10 +456,10 @@ Se inicializa PassportJS.
 \end{lstlisting}
 
 
-Se determina que passport utilice las sesiones.
+Se determina que passport utilice las sesiones.\newline
 
 
-\paragraph*{Encriptación bcrypt de las contraseñas}
+\textbf{Encriptación bcrypt de las contraseñas}
 
 
 En la aplicación, el paquete bcrypt es utilizado para encriptar las contraseñas de usuario.
@@ -514,16 +513,16 @@ Otro de los casos donde es necesario utilizar bcrypt es al dar de alta a un usua
 \end{lstlisting}
 
 
-Primero se genera la sal con un factor de coste 10, y después, se crea el \textit{hash} con la contraseña que ha introducido el paciente y la sal. Este \textit{hash} será almacenado en la base de datos.
+Primero se genera la sal con un factor de coste 10, y después, se crea el \textit{hash} con la contraseña que ha introducido el paciente y la sal. Este \textit{hash} será almacenado en la base de datos.\newline
 
 
-\paragraph*{Google Maps JavaScript API para el autocompletado de la localización en los formularios de registro y modificación\cite{google_api}.}
+\textbf{Google Maps JavaScript API para el autocompletado de la localización en los formularios de registro y modificación\cite{google_api}.}
 
 
 Para autocompletar las localizaciones introducidas por el usuario tanto en el formulario de registro como en el de modificación, se ha utilizado el autocompletado para direcciones y términos búsqueda de Google Maps JavaScript API. 
 
 
-Por ejemplo, en el formulario de registro de usuarios de la \textit{template} pacientes/registroPacientes.html, fue incorporado al código HTML de la siguiente forma:
+Por ejemplo, en el formulario de registro de usuarios de la \textit{template} \\ \texttt{pacientes/registroPacientes.html}, fue incorporado al código HTML de la siguiente forma:
 
 
 \medskip
@@ -537,10 +536,10 @@ Por ejemplo, en el formulario de registro de usuarios de la \textit{template} pa
 \end{lstlisting}
 
 
-Donde ng-focus ng-focus es una directiva que indica que cuando el input esté señalado, se ejecute la función \texttt{geolocate()}.
+Donde \texttt{ng-focus} es una directiva que indica que cuando el \texttt{input} esté señalado, se ejecute la función \texttt{geolocate()}.
 
 
-La función \texttt{geolocate} se encuentra en pacientes/pacientesRegistroController.js y viene definida por Google de la siguiente forma:
+La función \texttt{geolocate} se encuentra en \\ \texttt{pacientes/pacientesRegistroController.js} y viene definida por Google de la siguiente forma:
 
 
 \medskip
@@ -558,7 +557,7 @@ La función \texttt{geolocate} se encuentra en pacientes/pacientesRegistroContro
 \end{lstlisting}
 
 
-Esta función, simplemente toma la ubicación donde se sitúa el usuario en ese momento. \$scope se utiliza para pasar la función del \textit{controller} a la \textit{template}.
+Esta función, simplemente toma la ubicación donde se sitúa el usuario en ese momento. \texttt{\$scope} se utiliza para pasar la función del \textit{controller} a la \textit{template}.
 
 
 Por otra parte, la página se encuentra contenida bajo la siguiente etiqueta:
@@ -570,7 +569,7 @@ Por otra parte, la página se encuentra contenida bajo la siguiente etiqueta:
 \end{lstlisting}
 
 
-La directiva ng-init ng-init evalúa \texttt{initAutocomplete()} al inicializar la aplicación.
+La directiva \texttt{ng-init} evalúa \texttt{initAutocomplete()} al inicializar la aplicación.
 
 
 La función \texttt{initAutocomplete} se encuentra en el \textit{controller}.
@@ -596,10 +595,10 @@ La función \texttt{initAutocomplete} se encuentra en el \textit{controller}.
 \end{lstlisting}
 
 
-\texttt{google.maps.places.Autocomplete} crea un objeto tomando como argumentos el \texttt{input} donde se quiere autocompletar y una serie de opciones. Para la aplicación, se han restringido las opciones a ciudades españolas.
+\texttt{google.maps.places.Autocomplete} crea un objeto tomando como argumentos el \texttt{input} donde se quiere autocompletar y una serie de opciones. Para la aplicación, se han restringido las opciones a ciudades españolas.\newline
 
 
-\paragraph*{Nodemailer.js}
+\textbf{Nodemailer.js}
 
 
 Cuando un psicólogo cubre el formulario de registro, sus datos son mandados al correo electrónico de Emozio para poder valorarlos antes de formar parte de nuestra base de datos. Para enviar los e-mails se ha utilizado Nodemailer. Algunas particularidades son descritas a continuación.
@@ -646,10 +645,10 @@ Se especifican las opciones de \textit{email} que se quieren enviar.
 \end{lstlisting}
 
 
-Se envía el \textit{email} con la función \texttt{sendMail} a través del \texttt{transporter}. 
+Se envía el \textit{email} con la función \texttt{sendMail} a través del \texttt{transporter}. \newline
 
 
-\paragraph*{Validación de formularios con SemanticUI}
+\textbf{Validación de formularios con SemanticUI}
 
 
 Para la validación de formularios se utilizó SemanticUI que funciona de la siguiente forma:
@@ -745,10 +744,10 @@ Los requisitos implementados en el segundo incremento son los asociados a la par
 Además, aunque en primera instancia no estuviese contemplado, surgió la idea de gestionar la comunicación como un sistema de citas. Por ello, se incorporó a posteriori un calendario mensual donde el psicólogo pudiese ver las citas que tiene agendadas con una vista por mes, por semana y por día.
 
 
-Las tareas más trascendentales realizadas en este incremento son las descritas a continuación:
+Las tareas más trascendentales realizadas en este incremento son las descritas a continuación:\newline
 
 
-\paragraph*{Implementación de las \textit{templates} y \textit{controllers} de los requisitos. Éstos se encuentran dentro del directorio app/assets.}
+\textbf{Implementación de las \textit{templates} y \textit{controllers} de los requisitos. Éstos se encuentran dentro del directorio \texttt{app/assets}.}\newline
 
 
 \begin{table}[H]
@@ -766,13 +765,13 @@ psicologos/psicologoCalendario.html  & psicologos/psicologosCalendarioController
 \end{table}
 
 
-\paragraph*{Creación de la \textit{factories}, \textit{routes} y \textit{models} de Mensaje.}
+\textbf{Creación de la \textit{factories}, \textit{routes} y \textit{models} de Mensaje.}\newline
 
 
-\paragraph*{Visualización de las citas agendadas por medio de FullCalendar}
+\textbf{Visualización de las citas agendadas por medio de FullCalendar}
 
 
-En la \textit{template} psicologoCalendario.html, el calendario es dispuesto de la siguiente forma:
+En la \textit{template} \texttt{psicologoCalendario.html}, el calendario es dispuesto de la siguiente forma:
 
 
 \medskip
@@ -781,7 +780,7 @@ En la \textit{template} psicologoCalendario.html, el calendario es dispuesto de 
 \end{lstlisting}
 
 
-Este elemento es gestionado por el psicologosCalendarioController.js. 
+Este elemento es gestionado por el \texttt{psicologosCalendarioController.js}. 
 
 
 \medskip

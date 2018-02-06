@@ -107,6 +107,14 @@ Warning--entry type for "bcrypt_ejemplo" isn't style-file defined
 --line 463 of file capitulos/biblio.bib
 Warning--entry type for "ortografo" isn't style-file defined
 --line 470 of file capitulos/biblio.bib
+Warning--entry type for "canva" isn't style-file defined
+--line 477 of file capitulos/biblio.bib
+Warning--entry type for "texmaker" isn't style-file defined
+--line 484 of file capitulos/biblio.bib
+Warning--entry type for "google_audits" isn't style-file defined
+--line 491 of file capitulos/biblio.bib
+Warning--entry type for "google_forms" isn't style-file defined
+--line 498 of file capitulos/biblio.bib
 Warning--to sort, need author or key in github
 Warning--to sort, need author or key in vitae
 Warning--to sort, need author or key in calculadoracontratos
@@ -130,14 +138,18 @@ Warning--to sort, need author or key in fullcalendar
 Warning--to sort, need author or key in google_api
 Warning--to sort, need author or key in passport
 Warning--to sort, need author or key in brackets
+Warning--to sort, need author or key in canva
+Warning--to sort, need author or key in google_forms
 Warning--to sort, need author or key in git
 Warning--to sort, need author or key in grunt
+Warning--to sort, need author or key in google_audits
 Warning--to sort, need author or key in latex
 Warning--to sort, need author or key in libreoffice
 Warning--to sort, need author or key in pencil
 Warning--to sort, need author or key in npm
 Warning--to sort, need author or key in robomongo
 Warning--to sort, need author or key in staruml
+Warning--to sort, need author or key in texmaker
 Warning--to sort, need author or key in promise_objeto
 Warning--to sort, need author or key in promise_mozilla
 Warning--to sort, need author or key in angular_embrace
@@ -150,45 +162,45 @@ Warning--to sort, need author or key in rest_spring
 Warning--to sort, need author or key in bcrypt_ejemplo
 Warning--to sort, need author or key in ortografo
 Warning--empty publisher in ekberg
-You've used 58 entries,
+You've used 62 entries,
             2118 wiz_defined-function locations,
-            714 strings with 10312 characters,
-and the built_in function-call counts, 10314 in all, are:
-= -- 983
-> -- 154
+            726 strings with 10629 characters,
+and the built_in function-call counts, 10966 in all, are:
+= -- 1047
+> -- 158
 < -- 0
-+ -- 93
++ -- 97
 - -- 32
-* -- 383
-:= -- 1368
-add.period$ -- 132
-call.type$ -- 58
-change.case$ -- 179
+* -- 407
+:= -- 1440
+add.period$ -- 140
+call.type$ -- 62
+change.case$ -- 191
 chr.to.int$ -- 0
-cite$ -- 101
-duplicate$ -- 471
-empty$ -- 1319
+cite$ -- 109
+duplicate$ -- 499
+empty$ -- 1411
 format.name$ -- 32
-if$ -- 2463
+if$ -- 2627
 int.to.chr$ -- 0
-int.to.str$ -- 58
+int.to.str$ -- 62
 missing$ -- 26
-newline$ -- 251
+newline$ -- 267
 num.names$ -- 32
-pop$ -- 462
+pop$ -- 494
 preamble$ -- 1
-purify$ -- 132
+purify$ -- 140
 quote$ -- 0
-skip$ -- 392
+skip$ -- 420
 stack$ -- 0
-substring$ -- 293
-swap$ -- 58
+substring$ -- 313
+swap$ -- 62
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 206
-warning$ -- 43
+type$ -- 222
+warning$ -- 47
 while$ -- 32
-width$ -- 60
-write$ -- 500
-(There were 88 warnings)
+width$ -- 64
+write$ -- 532
+(There were 96 warnings)

@@ -6,7 +6,7 @@ La ingeniería de requisitos proporciona el mecanismo apropiado para entender lo
 Para poder entender cómo los usuarios emplearán finalmente las funciones y características del software, se debe crear un conjunto de escenarios que identifiquen la naturaleza de los usos para el sistema que se va a construir. La descripción de la manera en la que se utilizará el sistema se la conoce como caso de uso.
 
 \subsection{Diagrama de casos de uso}
-Las relaciones entre los actores y los casos de uso viene dada por el diagrama de casos de uso\ref{fig:diag_casos_uso}.
+Las relaciones entre los actores y los casos de uso viene dada por el diagrama de casos de uso \ref{fig:diag_casos_uso}.
 
 \begin{figure}[htbp] 
     \centering
@@ -22,7 +22,7 @@ Un actor\ref{tab_actores} es cualquier cosa que se comunica con el sistema o pro
 \centering
 \begin{tabularx}{\textwidth}{|l|X|X|}
 \hline
-\rowcolor[gray]{0.9}\multicolumn{1}{|c|}{\textbf{Identificador}} & \multicolumn{1}{c|}{\textbf{Nombre}} & \multicolumn{1}{c|}{\textbf{Descripción}}                                 \\ \hline
+\multicolumn{1}{|c|}{\textbf{Identificador}} & \multicolumn{1}{c|}{\textbf{Nombre}} & \multicolumn{1}{c|}{\textbf{Descripción}}                                 \\ \hline
 ACT-001                             & Usuario                     & Cualquier persona que acceda a nuestra plataforma web.           \\ \hline
 ACT-002                             & Paciente                    & Cualquier persona que desee ser evaluada por nuestra aplicación. \\ \hline
 ACT-003                             & Psicólogo                   & Cualquier persona que ejerza profesionalmente como psicólogo.    \\ \hline
@@ -41,7 +41,7 @@ Para poder determinar y evaluar correctamente cada caso de uso, tenemos una esca
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-\rowcolor[gray]{0.9}\multicolumn{2}{|c|}{\textbf{Frecuencia de uso}}                                                   \\ \hline
+\multicolumn{2}{|c|}{\textbf{Frecuencia de uso}}                                                   \\ \hline
 Ocasionalmente & Se utilizará en algunas ocasiones, no de forma habitual o por costumbre. \\ \hline
 Puntualmente   & Se utilizará en raras ocasiones.                                         \\ \hline
 Limitada       & Sólo podrá utilizarse en una única ocasión.                              \\ \hline
@@ -54,7 +54,7 @@ Limitada       & Sólo podrá utilizarse en una única ocasión.                
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-\rowcolor[gray]{0.9}\multicolumn{2}{|c|}{\textbf{Prioridad}}                                                                          \\ \hline
+\multicolumn{2}{|c|}{\textbf{Prioridad}}                                                                          \\ \hline
 Alta  & El caso de uso es imprescindible para el funcionamiento normal de la aplicación.                 \\ \hline
 Media & El caso de uso aporta funcionalidad necesaria en el sistema pero no aporta un valor fundamental. \\ \hline
 Baja  & El caso de uso aporta funcionalidades extra pero es totalmente prescindible.                     \\ \hline
@@ -71,7 +71,7 @@ Baja  & El caso de uso aporta funcionalidades extra pero es totalmente prescindi
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{CU-001}                            & \textbf{Iniciar sesión                                                                                                                                                                                                                                  } \\ \hline
+\textbf{CU-001}                            & \textbf{Iniciar sesión                                                                                                                                                                                                                                  } \\ \hline
 Actor principal                   & Usuario                                                                                                                                                                                                                                          \\ \hline
 Objetivo en contexto              & El usuario desea acceder a una cuenta de usuario ya existente mediante sus claves de acceso.                                                                                                                                                       \\ \hline
 Precondiciones                    & Las claves de usuario deben ser válidas.                                                                                                                                                                                                         \\ \hline
@@ -96,7 +96,7 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{CU-002}                            & \textbf{Registrarse}                                                                                                                                                                                                                                                                                                                                                                                                                    \\ \hline
+\textbf{CU-002}                            & \textbf{Registrarse}                                                                                                                                                                                                                                                                                                                                                                                                                    \\ \hline
 Actor principal                   & Paciente                                                                                                                                                                                                                                                                                                                                                                                                                        \\ \hline
 Objetivo en contexto              & El paciente desea registrarse en la plataforma cediendo sus datos personales para poder acceder a los servicios de la plataforma.                                                                                                                                                                                                                                                                                                 \\ \hline
 Precondiciones                    & Los datos introducidos en el formulario deben ser válidos.                                                                                                                                                                                                                                                                                                                                                                     \\ \hline
@@ -121,7 +121,7 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{CU-003}                            & \textbf{Realizar cuestionario                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   } \\ \hline
+\textbf{CU-003}                            & \textbf{Realizar cuestionario                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   } \\ \hline
 Actor principal                   & Paciente                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 \\ \hline
 Objetivo en contexto              & El paciente desea conocer qué profesional es el más adecuado para tratar su dolencia realizando el cuestionario de emparejamiento.                                                                                                                                                                                                                                                                                                                                                                                       \\ \hline
 Precondiciones                    & El cuestionario debe estar cubierto.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     \\ \hline
@@ -146,7 +146,7 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-002\\
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{CU-004}                            & \textbf{Consultar resultados}                                                                                                                                                                                                                                                     \\ \hline
+\textbf{CU-004}                            & \textbf{Consultar resultados}                                                                                                                                                                                                                                                     \\ \hline
 Actor principal                   & Paciente                                                                                                                                                                                                                                                                 \\ \hline
 Objetivo en contexto              & El paciente desea consultar el resultado del cuestionario de asignación.                                                                                                                                                                                                 \\ \hline
 Precondiciones                    & El cuestionario debe estar cubierto.                                                                                                                                                                                                                                     \\ \hline
@@ -171,7 +171,7 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{CU-005}                            & \textbf{Contactar psicólogo}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        \\ \hline
+\textbf{CU-005}                            & \textbf{Contactar psicólogo}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        \\ \hline
 Actor principal                   & Paciente                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
 Objetivo en contexto              & El paciente desea ponerse en contacto con uno de los psicólogos que le han sido asignados.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 \\ \hline
 Precondiciones                    & \begin{tabular}{p{0.5cm} p{5cm}}1.  &  El cuestionario debe estar cubierto.\\ 2.  &  Las respuestas del cuestionario no dieron resultados imprecisos.\end{tabular}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                \\ \hline
@@ -187,7 +187,7 @@ Excepciones                       & \begin{tabular}{p{0.5cm} p{5cm}}1.  &  El pa
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{CU-005}                            & \textbf{Contactar psicólogo}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        \\ \hline
+\textbf{CU-005}                            & \textbf{Contactar psicólogo}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        \\ \hline
 Prioridad                         & Moderada. Puede implementarse después de las funciones básicas.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            \\ \hline
 Disponibilidad                    & En el tercer incremento                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \\ \hline
 Frecuencia de uso                 & Puntualmente                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               \\ \hline
@@ -206,7 +206,7 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{CU-006}                            & \textbf{Modificar información}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                \\ \hline
+\textbf{CU-006}                            & \textbf{Modificar información}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                \\ \hline
 Actor principal                   & Paciente                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             \\ \hline
 Objetivo en contexto              & El paciente desea cambiar sus datos porque en ese instante su información de usuario es incorrecta.                                                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
 Precondiciones                    & El paciente tiene acceso a la plataforma.                                                                                                                                                                                                                                                                                                                                                                                                                                                             \\ \hline
@@ -231,7 +231,7 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{CU-007}                            & \textbf{Valorar psicólogo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 } \\ \hline
+\textbf{CU-007}                            & \textbf{Valorar psicólogo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 } \\ \hline
 Actor principal                   & Paciente                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           \\ \hline
 Objetivo en contexto              & El paciente desea  valorar al psicólogo con el que se ha puesto en contacto.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       \\ \hline
 Precondiciones                    & El paciente se ha puesto en contacto previamente con el psicólogo en cuestión.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     \\ \hline
@@ -247,7 +247,7 @@ Excepciones                       & \begin{tabular}{p{0.5cm} p{5cm}}1. & El paci
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{CU-007}                            & \textbf{Valorar psicólogo}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \\ \hline
+\textbf{CU-007}                            & \textbf{Valorar psicólogo}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \\ \hline
 Prioridad                         & Moderada. Puede implementarse después de las funciones básicas.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \\ \hline
 Disponibilidad                    & En el tercer incremento                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            \\ \hline
 Frecuencia de uso                 & Puntualmente                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       \\ \hline
@@ -266,7 +266,7 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-002\\
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{CU-008}                            & \textbf{Filtrar resultados cuestionario}                                                                                                                                                                                                                                                                                                                                                                                                                                                               \\ \hline
+\textbf{CU-008}                            & \textbf{Filtrar resultados cuestionario}                                                                                                                                                                                                                                                                                                                                                                                                                                                               \\ \hline
 Actor principal                   & Paciente                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      \\ \hline
 Objetivo en contexto              & El paciente desea filtrar su lista de psicólogos resultado en función de unos parámetros.                                                                                                                                                                                                                                                                                                                                                                                                     \\ \hline
 Precondiciones                    & \begin{tabular}{p{0.5cm} p{5cm}}1. & El cuestionario debe estar cubierto.\\ 2. & Las respuestas del cuestionario no dieron resultados imprecisos.\end{tabular}                                                                                                                                                                                                                                                                                                                                         \\ \hline
@@ -291,7 +291,7 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{CU-009}                            & \textbf{Consultar perfil psicólogo}                                                                                                                                                                                                                                                                                                                                                                                          \\ \hline
+\textbf{CU-009}                            & \textbf{Consultar perfil psicólogo}                                                                                                                                                                                                                                                                                                                                                                                          \\ \hline
 Actor principal                   & Paciente                                                                                                                                                                                                                                                                                                                                                                                                            \\ \hline
 Objetivo en contexto              & El paciente desea consultar la información de perfil de uno de los psicólogos resultado.                                                                                                                                                                                                                                                                                                                            \\ \hline
 Precondiciones                    & \begin{tabular}{p{0.5cm} p{5cm}}1. & El cuestionario debe estar cubierto.\\ 2. & Las respuestas del cuestionario no dieron resultados imprecisos.\end{tabular}                                                                                                                                                                                                                                                               \\ \hline
@@ -316,12 +316,12 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{CU-010}                            & \textbf{Darse de baja}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+\textbf{CU-010}                            & \textbf{Darse de baja}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
 Actor principal                   & Usuario                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         \\ \hline
 Objetivo en contexto              & El usuario desea darse debaja en la aplicación.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 \\ \hline
 Precondiciones                    & El usuario tiene acceso a la plataforma.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        \\ \hline
 Disparador                        & El usuario debe acceder a su página principal.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \\ \hline
-Escenario                         & \begin{tabular}{p{0.5cm} p{5cm}}1. & El usuario accede a Emozio.\\ 2. & El usuario entra en su página principal ya sea por registro o acceso.\\ 3. & El sistema le muestra su página principal.\\ 4. & El usuario pulsa el botón de modificación de datos.\\ 5. & El sistema le muestra un formulario con sus datos actuales, y un botón para darse de baja.\\ 6. & El usuario pulsa el botón de darse de baja.\\ 7. & El sistema muestra un pop-up pidiendo confirmación para ejecutar la operación.\\ 8. & El sistema elimina al usuario de la base de datos.\\ 9. & El sistema muestra al usuario la página de inicio.\end{tabular} \\ \hline
+Escenario                         & \begin{tabular}{p{0.5cm} p{5cm}}1. & El usuario accede a Emozio.\\ 2. & El usuario entra en su página principal ya sea por registro o acceso.\\ 3. & El sistema le muestra su página principal.\\ 4. & El usuario pulsa el botón de modificación de datos.\\ 5. & El sistema le muestra un formulario con sus datos actuales, y un botón para darse de baja.\\ 6. & El usuario pulsa el botón de darse de baja.\\ 7. & El sistema muestra un \textit{pop-up} pidiendo confirmación para ejecutar la operación.\\ 8. & El sistema elimina al usuario de la base de datos.\\ 9. & El sistema muestra al usuario la página de inicio.\end{tabular} \\ \hline
 Excepciones                       & El usuario cancela la operación en curso.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       \\ \hline
 Prioridad                         & Moderada. Puede implementarse después de las funciones básicas.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 \\ \hline
 Disponibilidad                    & En el segundo incremento                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        \\ \hline
@@ -341,7 +341,7 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{CU-011}                            & \textbf{Consultar bandeja de entrada}                                                                                                                                                                           \\ \hline
+\textbf{CU-011}                            & \textbf{Consultar bandeja de entrada}                                                                                                                                                                           \\ \hline
 Actor principal                   & Psicólogo                                                                                                                                                                                              \\ \hline
 Objetivo en contexto              & El psicólogo desea consultar las peticiones que le han llegado a su bandeja de entrada.                                                                                                                \\ \hline
 Precondiciones                    & Estar registrado.                                                                                                                                                                                      \\ \hline
@@ -366,7 +366,7 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{CU-012}                            & \textbf{Responder solicitud paciente                                                                                                                                                                                                                                                                                                                                               } \\ \hline
+\textbf{CU-012}                            & \textbf{Responder solicitud paciente                                                                                                                                                                                                                                                                                                                                               } \\ \hline
 Actor principal                   & Psicólogo                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
 Objetivo en contexto              & El psicólogo desea responder a una de las peticiones que le han llegado a su bandeja de entrada.                                                                                                                                                                                                                                                                            \\ \hline
 Precondiciones                    & Tener peticiones pendientes en la bandeja de entrada.                                                                                                                                                                                                                                                                                                                       \\ \hline
@@ -393,7 +393,7 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{CU-013}                            & \textbf{Emparejamiento                                                                                                            } \\ \hline
+\textbf{CU-013}                            & \textbf{Emparejamiento                                                                                                            } \\ \hline
 Actor principal                   & Sistema                                                                                                                    \\ \hline
 Objetivo en contexto              & El sistema realiza el emparejamiento paciente-psicólogo.                                                                   \\ \hline
 Precondiciones                    & El paciente en cuestión se disponga a realizar el test.                                                                    \\ \hline
@@ -420,7 +420,7 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{CU-014}                            & \textbf{Dar alta a las preguntas}                                                                  \\ \hline
+\textbf{CU-014}                            & \textbf{Dar alta a las preguntas}                                                                  \\ \hline
 Actor principal                   & Administrador                                                                             \\ \hline
 Objetivo en contexto              & El administrador dará de alta a las preguntas asociadas a las patologías.                 \\ \hline
 Precondiciones                    & Tener nuevas preguntas para añadir al cuestionario.                                       \\ \hline
@@ -447,7 +447,7 @@ Dependencias (con los requisitos) & RI-002                                      
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{CU-015}                            & \textbf{Añadir la publicidad}                                                                           \\ \hline
+\textbf{CU-015}                            & \textbf{Añadir la publicidad}                                                                           \\ \hline
 Actor principal                   & Administrador                                                                                  \\ \hline
 Objetivo en contexto              & El administrador añadirá la publicidad necesaria a la aplicación en el momento que se precise. \\ \hline
 Precondiciones                    & -                                                                                              \\ \hline
@@ -474,7 +474,7 @@ Dependencias (con los requisitos) & -                                           
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{CU-016}                            & \textbf{Dar alta psicólogos                                                                           } \\ \hline
+\textbf{CU-016}                            & \textbf{Dar alta psicólogos                                                                           } \\ \hline
 Actor principal                   & Administrador                                                                                  \\ \hline
 Objetivo en contexto              & El administrador dará de alta a los psicólogos que hayan enviado el formulario de registro.    \\ \hline
 Precondiciones                    & El psicólogo que se va a dar de alta, ha de haber cubierto el formulario de registro.          \\ \hline
@@ -495,7 +495,7 @@ Dependencias (con los requisitos) & \begin{tabular}[c]{@{}l@{}}RI-003\\ RI-002\e
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{CU-017}                            & \textbf{Modificar la información de los psicólogos                                                                           } \\ \hline
+\textbf{CU-017}                            & \textbf{Modificar la información de los psicólogos                                                                           } \\ \hline
 Actor principal                   & Administrador                                                                                  \\ \hline
 Objetivo en contexto              & El administrador modificará la información de los psicólogos que hayan enviado el formulario de modificación de datos.    \\ \hline
 Precondiciones                    & El psicólogo ha de enviar el formulario cubierto.          \\ \hline
@@ -524,7 +524,7 @@ Los modelos semánticos de datos son la definición de la forma lógica de los d
 
 
 \subsection{¿Por qué MongoDB?}
-En nuestro proyecto, los datos se encuentran almacenados en una MongoDB que consiste en una base de datos NoSQL\footnote{Las bases de datos NoSQL son aquellas que generalmente no son relacionales y no tienen un lenguaje de consulta como SQL.} de código abierto, orientada a documentos y a mantener datos desestructurados, sobretodo cuando esta crece exponencialmente\cite{mongodb_traspas}. 
+En nuestro proyecto, los datos se encuentran almacenados en una MongoDB que consiste en una base de datos NoSQL\footnote{Las bases de datos NoSQL son aquellas que generalmente no son relacionales y no tienen un lenguaje de consulta como SQL.} de código abierto, orientada a documentos y a mantener datos desestructurados, sobretodo cuando ésta crece exponencialmente\cite{mongodb_traspas}. 
 
 \subsection{Comparativa MongoDB con SQL}
 Teniendo de referencia una base de datos SQL podemos comprender cómo MongoDB almacena la información con una pequeña analogía. En la gestión de sistemas de bases de datos relacionales, los datos se guardan en filas contenidas dentro de tablas. En cambio, en MongoDB los datos son guardados como documentos contenidos en colecciones.
@@ -570,13 +570,13 @@ Para mantener descripciones más detalladas de las entidades incluidas en el mod
 Por tanto, un diccionario de datos es una lista de nombres ordenada alfabéticamente incluido en los modelos del sistema. Este nos proporciona un mecanismo de gestión e inventariado de nombres y sirve como un almacén de información.
 
 
-Las colecciones vienen descritas en la tabla\ref{fig:dic_datos_colecciones}.
+Las colecciones vienen descritas en la tabla \ref{fig:dic_datos_colecciones}.
 
 \begin{table}[htpb]
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{Colección}  & \textbf{Descripción}                                                                               \\ \hline
+\textbf{Colección}  & \textbf{Descripción}                                                                               \\ \hline
 Mensajes   & Almacena toda la información referente a las comunicaciones entre psicólogos y pacientes. \\ \hline
 Pacientes  & Almacena toda la información sobre los pacientes del sistema.                             \\ \hline
 Patologías & Almacena todas las patologías registradas hasta el momento en el sistema.                 \\ \hline
@@ -592,15 +592,33 @@ Los objetos BSON de los documentos se pueden ver en las tablas \ref{fig:dic_dato
 \centering
 \begin{tabularx}{\textwidth}{|l|X|X|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{Documento}         & \textbf{Esquema BSON                                                                                   } &                                                                                  &                                                                                                                                                                                                                                  \\ \hline
-                  & \textbf{Campo}                                                                                           &\textbf{ Tipo de dato}                                                                     & \textbf{Descripción}                                                                                                                                                                                                                      \\ \hline
-Mensaje           & \_id                                                                                            & ObjectID                                                                         & Identificador del documento                                                                                                                                                                                                      \\ \hline
-\multirow{6}{*}{} & acepta                                                                                          & Boolean                                                                          & El psicólogo acepta la solicitud de un paciente.                                                                                                                                                                                 \\ \cline{2-4} 
-                  & \begin{tabular}[c]{@{}l@{}}mensajePaciente \\ - fecha \\ - preferencias \\ - texto\end{tabular} & \begin{tabular}[c]{@{}l@{}}JSON \\ - String \\ - String \\ - String\end{tabular} & Es la información del mensaje que le envía un paciente al psicólogo. Se guarda la fecha donde fue enviado el mensaje, las preferencias horarias que tendría el paciente y el comentario que quiera transmitirle el paciente.     \\ \cline{2-4} 
-                  & paciente                                                                                        & JSON                                                                             & Guarda información necesaria del documento del paciente que envió el mensaje.                                                                                                                                                    \\ \cline{2-4} 
-                  & psicólogo                                                                                       & JSON                                                                             & Guarda información necesaria del documento del psicólogo que recibió el mensaje.                                                                                                                                                 \\ \cline{2-4} 
-                  & rechaza                                                                                         & Boolean                                                                          & El psicólogo rechaza la solicitud de un paciente.                                                                                                                                                                                \\ \cline{2-4} 
-                  & mensajePsicologo - comentario - fecha - fechaCita                                               & JSON - String - String - String                                                  & Mensaje que envía un psicólogo como respuesta a la solicitud de un paciente. Se guarda el comentario que quiera transmitirle el psicólogo, la fecha en que fué enviado el mensaje y la fecha de la cita en caso de que se la dé. \\ \hline
+\multirow{2}{*}{\textbf{Documento}} & \multicolumn{3}{l|}{\textbf{Esquema BSON}}                                                                                                                                                                                                                                                                                                                               \\ \cline{2-4} 
+                                    & \textbf{Campo}                                        & \textbf{Tipo de dato}                    & \textbf{Descripción}                                                                                                                                                                                                                                                  \\ \hline
+\multirow{7}{*}{\textbf{Mensaje}}   & \_id                                                  & ObjectID                                 & Identificador del documento                                                                                                                                                                                                                                           \\ \cline{2-4} 
+                                    & acepta                                                & Boolean                                  & El psicólogo acepta la solicitud de un paciente.                                                                                                                                                                                                                      \\ \cline{2-4} 
+                                    & mensajePaciente \begin{itemize}
+                                    \item consulta
+                                    \item fecha
+                                    \item preferencias
+                                    \item texto
+                                    \end{itemize} & JSON \begin{itemize}
+                                    \item String
+                                    \item String
+                                    \item String
+                                    \item String
+                                    \end{itemize} & Es la información del mensaje que le envía un paciente al psicólogo. Se guarda la fecha donde fue enviado el mensaje, las preferencias horarias que tendría el paciente, el comentario que quiera transmitirle el paciente y dónde quiere que se realice la consulta. \\ \cline{2-4} 
+                                    & paciente                                              & JSON                                     & Guarda información necesaria del documento del paciente que envió el mensaje.                                                                                                                                                                                         \\ \cline{2-4} 
+                                    & psicólogo                                             & JSON                                     & Guarda información necesaria del documento del psicólogo que recibió el mensaje.                                                                                                                                                                                      \\ \cline{2-4} 
+                                    & rechaza                                               & Boolean                                  & El psicólogo rechaza la solicitud de un paciente.                                                                                                                                                                                                                     \\ \cline{2-4} 
+                                    & mensajePsicologo \begin{itemize}
+                                    \item comentario
+                                    \item fecha
+                                    \item fechaCita
+\end{itemize}                       & JSON \begin{itemize}
+\item String 
+\item String 
+\item String 
+\end{itemize}          & Mensaje que envía un psicólogo como respuesta a la solicitud de un paciente. Se guarda el comentario que quiera transmitirle el psicólogo, la fecha en que fué enviado el mensaje y la fecha de la cita en caso de que se la dé.                                      \\ \hline
 \end{tabularx}
 \caption{Diccionario de datos: BSON Documento Mensaje}
 \label{fig:dic_datos_BSON_1}
@@ -610,17 +628,23 @@ Mensaje           & \_id                                                        
 \centering
 \begin{tabularx}{\textwidth}{|l|X|X|X|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{Documento}         & \textbf{Esquema BSON                                                                      } &                                                                          &                                                                                                                                                                                  \\ \hline
-                  & \textbf{Campo}                                                                              & \textbf{Tipo de dato}                                                             & \textbf{Descripción                                                                                                                                                                     } \\ \hline
-Paciente          & \_id                                                                               & ObjectID                                                                 & Identificador del documento.                                                                                                                                                     \\ \hline
-\multirow{8}{*}{} & edad                                                                               & String                                                                   & Fecha de nacimiento del psicólogo.                                                                                                                                               \\ \cline{2-4} 
-                  & email                                                                              & String                                                                   & E-mail del paciente.                                                                                                                                                             \\ \cline{2-4} 
-                  & Genero                                                                             & String                                                                   & Género del paciente.                                                                                                                                                             \\ \cline{2-4} 
-                  & \begin{tabular}[c]{@{}l@{}}diagnostico \\ - porcentaje \\ - patologia\end{tabular} & \begin{tabular}[c]{@{}l@{}}Array JSON \\ - Number \\ - BSON\end{tabular} & Diagnóstico resultado del cuestionario. Cada documento embebido en el array está definido por el porcentaje que tiene en una patología e información necesaria de esa patología. \\ \cline{2-4} 
-                  & localizacion                                                                       & String                                                                   & Ciudad donde reside el paciente.                                                                                                                                                 \\ \cline{2-4} 
-                  & password                                                                           & String                                                                   & Contraseńa de la cuenta de usuario del paciente.                                                                                                                                 \\ \cline{2-4} 
-                  & psicologos                                                                         & Array BSON                                                               & Conjunto de información de los psicólogos que le son asignados al paciente.                                                                                                      \\ \cline{2-4} 
-                  & telefono                                                                           & Number                                                                   & Teléfono del paciente.                                                                                                                                                           \\ \hline
+\multirow{2}{*}{\textbf{Documento}} & \multicolumn{3}{l|}{\textbf{Esquema BSON}}                                                                                                                                                                                                           \\ \cline{2-4} 
+                                    & \textbf{Campo}                       & \textbf{Tipo de dato}      & \textbf{Descripción}                                                                                                                                                             \\ \hline
+\multirow{9}{*}{\textbf{Paciente}}  & \_id                                 & ObjectID                   & Identificador del documento.                                                                                                                                                     \\ \cline{2-4} 
+                                    & edad                                 & String                     & Fecha de nacimiento del psicólogo.                                                                                                                                               \\ \cline{2-4} 
+                                    & email                                & String                     & E-mail del paciente.                                                                                                                                                             \\ \cline{2-4} 
+                                    & genero                               & String                     & Género del paciente.                                                                                                                                                             \\ \cline{2-4} 
+                                    & diagnostico \begin{itemize}
+                                    \item porcentaje
+                                    \item patologia
+                                    \end{itemize}   & Array JSON \begin{itemize}
+             \item Number
+             \item BSON                     
+\end{itemize}   & Diagnóstico resultado del cuestionario. Cada documento embebido en el array está definido por el porcentaje que tiene en una patología e información necesaria de esa patología. \\ \cline{2-4} 
+                                    & localizacion                         & String                     & Ciudad donde reside el paciente.                                                                                                                                                 \\ \cline{2-4} 
+                                    & password                             & String                     & Contraseña de la cuenta de usuario del paciente.                                                                                                                                 \\ \cline{2-4} 
+                                    & psicologos                           & Array BSON                 & Conjunto de información de los psicólogos que le son asignados al paciente.                                                                                                      \\ \cline{2-4} 
+                                    & telefono                             & Number                     & Teléfono del paciente.                                                                                                                                                           \\ \hline
 \end{tabularx}
 \caption{Diccionario de datos: BSON Documento Paciente}
 \label{fig:dic_datos_BSON_2}
@@ -630,10 +654,10 @@ Paciente          & \_id                                                        
 \centering
 \begin{tabularx}{\textwidth}{|l|X|X|X|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{Documento}         & \textbf{Esquema BSON} &              &                                                           \\ \hline
-                  & \textbf{Campo}        & \textbf{Tipo de dato} & \textbf{Descripción                                              } \\ \hline
-Patología         & \_id         & ObjectID     & Identificador del documento.                              \\ \hline
-\multirow{3}{*}{} & nombre       & String       & Nombre de la patología.                                   \\ \cline{2-4} 
+\multirow{2}{*}{\textbf{Documento}} & \multicolumn{3}{l|}{\textbf{Esquema BSON}}                                                                                                                                                                                                           \\ \cline{2-4} 
+                                    & \textbf{Campo}                       & \textbf{Tipo de dato}      & \textbf{Descripción}                                                                                                                                                             \\ \hline
+\multirow{4}{*}{Patología}         & \_id         & ObjectID     & Identificador del documento.                              \\ \cline{2-4}
+ & nombre       & String       & Nombre de la patología.                                   \\ \cline{2-4} 
                   & preguntas    & Array String & Conjunto de preguntas sobre los síntomas de la patología. \\ \cline{2-4} 
                   & respuesta    & Number       & Valor de una pregunta.                                    \\ \hline
 \end{tabularx}
@@ -645,19 +669,35 @@ Patología         & \_id         & ObjectID     & Identificador del documento. 
 \centering
 \begin{tabularx}{\textwidth}{|l|X|X|X|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{Documento}          & \textbf{Esquema BSON                                                                                                                                          } &                                                                                                                            &                                                                                                                                                                                                                                                                             \\ \hline
-                   & \textbf{Campo                                                                                                                                                 } & \textbf{Tipo de dato                                                                                                              } & \textbf{Descripción}                                                                                                                                                                                                                                                                 \\ \hline
-Psicólogo         & \_id                                                                                                                                                   & ObjectID                                                                                                                   & Identificador del documento.                                                                                                                                                                                                                                                \\ \hline
-\multirow{18}{*}{} & aseguradora                                                                                                                                            & String                                                                                                                     & Aseguradora para la que trabaja el psicólogo.                                                                                                                                                                                                                               \\ \cline{2-4} 
-                   & \begin{tabular}[c]{@{}l@{}}comentarios \\ - \_idPaciente\\ - fechaComentario\\ - fechaRespuesta \\ - respuesta \\ - texto \\ - valoracion\end{tabular} & \begin{tabular}[c]{@{}l@{}}Array JSON \\ - ObjectID \\ - String \\ - String \\ - String\\ - String\\ - Number\end{tabular} & Comentario del paciente y respuesta del psicólogo al comentario. Se guarda el identificador del paciente, la fecha en la que fue enviado, la fecha en la que fue respondido, la respuesta del psicólogo, el comentario del paciente y la valoración que le dá al psicólogo. \\ \cline{2-4} 
-                   & \begin{tabular}[c]{@{}l@{}}consulta \\ - online \\ - presencial\end{tabular}                                                                           & \begin{tabular}[c]{@{}l@{}}JSON \\ - Boolean\\ - Boolean\end{tabular}                                                      & Indica si el psicólogo hace consultas presenciales, a distancia o ambas.                                                                                                                                                                                                    \\ \cline{2-4} 
-                   & edad                                                                                                                                                   & String                                                                                                                     & Fecha de nacimiento del psicólogo.                                                                                                                                                                                                                                          \\ \cline{2-4} 
-                   & email                                                                                                                                                  & String                                                                                                                     & E-mail del psicólogo.                                                                                                                                                                                                                                                       \\ \cline{2-4} 
-                   & estrellas                                                                                                                                              & Number                                                                                                                     & Valoración media de los pacientes del psicólogo.                                                                                                                                                                                                                            \\ \cline{2-4} 
-                   & experiencia                                                                                                                                            & String                                                                                                                     & Experiencia laboral del psicólogo.                                                                                                                                                                                                                                          \\ \cline{2-4} 
-                   & formacion                                                                                                                                              & String                                                                                                                     & Formación del psicólogo.                                                                                                                                                                                                                                                    \\ \cline{2-4} 
-                   & foto                                                                                                                                                   & String                                                                                                                     & Foto del psicólogo.                                                                                                                                                                                                                                                         \\ \cline{2-4} 
-                   & localizacion                                                                                                                                           & String                                                                                                                     & Ciudad donde reside el psicólogo.                                                                                                                                                                                                                                            \\ \hline
+\multirow{2}{*}{\textbf{Documento}}  & \multicolumn{3}{l|}{\textbf{Esquema BSON}}                                                                                                                                                                                                                                                                                                                                                                                                        \\ \cline{2-4} 
+                                     & \textbf{Campo}                                                                                 & \textbf{Tipo de dato}                                              & \textbf{Descripción}                                                                                                                                                                                                                                                        \\ \hline
+\multirow{7}{*}{\textbf{Psicólogo}} & \_id                                                                                           & ObjectID                                                           & Identificador del documento.                                                                                                                                                                                                                                                \\ \cline{2-4} 
+                                     & aseguradora                                                                                    & String                                                             & Aseguradora para la que trabaja el psicólogo.                                                                                                                                                                                                                               \\ \cline{2-4} 
+                                     & comentarios \begin{itemize}
+                                     \item \_idPaciente
+                                     \item fechaComent
+                                     \item fechaResp
+                                     \item respuesta
+                                     \item texto
+                                     \item valoracion
+                                     \end{itemize} & Array JSON \begin{itemize}
+             \item ObjectID
+             \item String 
+             \item String 
+             \item String                 
+             \item String
+             \item Number
+\end{itemize}                         & Comentario del paciente y respuesta del psicólogo al comentario. Se guarda el identificador del paciente, la fecha en la que fue enviado, la fecha en la que fue respondido, la respuesta del psicólogo, el comentario del paciente y la valoración que le dá al psicólogo. \\ \cline{2-4} 
+                                     & consulta \begin{itemize}
+                                     \item online
+                                     \item presencial                                                                
+\end{itemize}                        & JSON \begin{itemize}
+\item Boolean
+\item Boolean                                          
+\end{itemize}   & Indica si el psicólogo hace consultas presenciales, a distancia o ambas.                                                                                                                                                                                                    \\ \cline{2-4} 
+                                     & direccion                                                                                      & String                                                             & Dirección de su gabinete.                                                                                                                                                                                                                                                   \\ \cline{2-4} 
+                                     & edad                                                                                           & String                                                             & Fecha de nacimiento del psicólogo.                                                                                                                                                                                                                                          \\ \cline{2-4} 
+                                     & email                                                                                          & String                                                             & E-mail del psicólogo.                                                                                                                                                                                                                                                       \\ \hline
 \end{tabularx}
 \caption{Diccionario de datos: BSON Documento Psicólogo - Parte 1}
 \label{fig:dic_datos_BSON_4}
@@ -667,18 +707,23 @@ Psicólogo         & \_id                                                       
 \centering
 \begin{tabularx}{\textwidth}{|l|X|X|X|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{Documento}          & \textbf{Esquema BSON                                                                                                                                          } &                                                                                                                            &                                                                                                                                                                                                                                                                             \\ \hline
-                   & \textbf{Campo}                                                                                                                                                  & \textbf{Tipo de dato}                                                                                                               & \textbf{Descripción                                                                                                                                                                                                                                                                } \\ \hline
-Psicólogo         & patologias                                                                                                                                             & Array String                                                                                                               & Conjunto de nombres de las patologías que trata el psicólogo.                                                                                                                                                                                                               
-\\ \cline{2-4} 
-                   & ncolegiado                                                                                                                                             & String                                                                                                                     & Número de colegiado del psicólogo.                                                                                                                                                                                                                                          \\ \cline{2-4} 
-                   & nombre                                                                                                                                                 & String                                                                                                                     & Nombre del psicólogo.                                                                                                                                                                                                                                                       \\ \cline{2-4} 
-                   & password                                                                                                                                               & String                                                                                                                     & Contraseńa de la cuenta de usuario del psicólogo.                                                                                                                                                                                                                          
-\\ \cline{2-4} 
-                   & precio                                                                                                                                                 & Number                                                                                                                     & Precio de la primera consulta que dé el psicólogo.                                                                                                                                                                                                                          \\ \cline{2-4} 
-                   & telefono                                                                                                                                               & Number                                                                                                                     & Teléfono del psicólogo.                                                                                                                                                                                                                                                     \\ \cline{2-4} 
-                   & terapia                                                                                                                                                & String                                                                                                                     & Tipo de terapia que realiza el psicólogo.                                                                                                                                                                                                                                   \\ \cline{2-4} 
-                   & tipo                                                                                                                                                   & String                                                                                                                     & Tipo del psicólogo.                                                                                                                                                                                                                                                         \\ \hline
+\multirow{2}{*}{\textbf{Documento}}   & \multicolumn{3}{l|}{\textbf{Esquema BSON}}                                                             \\ \cline{2-4} 
+                                      & \textbf{Campo} & \textbf{Tipo de dato} & \textbf{Descripción}                                          \\ \hline
+\multirow{15}{*}{\textbf{Psicólogo}} & estrellas      & Number                & Valoración media de los pacientes del psicólogo.              \\ \cline{2-4} 
+                                      & experiencia    & String                & Experiencia laboral del psicólogo.                            \\ \cline{2-4} 
+                                      & formacion      & String                & Formación del psicólogo.                                      \\ \cline{2-4} 
+                                      & foto           & String                & Foto del psicólogo.                                           \\ \cline{2-4} 
+                                      & gabinete       & String                & Nombre del gabinete de psicólogos al que pertenece.           \\ \cline{2-4} 
+                                      & genero         & String                & Género del psicólogo.                                         \\ \cline{2-4} 
+                                      & localizacion   & String                & Ciudad donde reside el psicólogo.                             \\ \cline{2-4} 
+                                      & ncolegiado     & String                & Número de colegiado del psicólogo.                            \\ \cline{2-4} 
+                                      & nombre         & String                & Nombre del psicólogo.                                         \\ \cline{2-4} 
+                                      & password       & String                & Contraseña de la cuenta de usuario del psicólogo.             \\ \cline{2-4} 
+                                      & patologias     & Array String          & Conjunto de nombres de las patologías que trata el psicólogo. \\ \cline{2-4} 
+                                      & precio         & Number                & Precio de la primera consulta que dé el psicólogo.            \\ \cline{2-4} 
+                                      & telefono       & Number                & Teléfono del psicólogo.                                       \\ \cline{2-4} 
+                                      & terapia        & String                & Tipo de terapia que realiza el psicólogo.                     \\ \cline{2-4} 
+                                      & tipo           & String                & Tipo del psicólogo.                                           \\ \hline
 \end{tabularx}
 \caption{Diccionario de datos: BSON Documento Psicólogo - Parte 2}
 \label{fig:dic_datos_BSON_4}
@@ -701,7 +746,7 @@ Para poder evaluar corréctamente los requisitos, se debe definir su escala de e
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{Escala}   & \textbf{Descripción}                                                 \\ \hline
+\textbf{Escala}   & \textbf{Descripción}                                                 \\ \hline
 Baja     & El requisito puede sufrir cambios con facilidad             \\ \hline
 Media    & Existe cierto grado de ocurrencia al cambio en el requisito \\ \hline
 Alta     & La probabilidad de cambios en el requisito es muy baja      \\ \hline
@@ -715,14 +760,14 @@ Muy Alta & La probabilidad de cambios es casi nula                     \\ \hline
 \subsection{Requisitos de información}
 
 
-Los requisitos de información guardan toda la información que debe almacenar el sistema para poder cumplir con sus objetivos. Identifican el concepto relevante sobre el que guardar información así como qué datos específicos del concepto son importantes.
+Los requisitos de información guardan toda la información que debe almacenar el sistema para poder cumplir con sus objetivos. Identifican los conceptos relevantes sobre los que guardar información así como qué datos específicos de cada concepto son importantes.
 
 
 \begin{table}[htpb]
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{RI-001}            & \textbf{Paciente}                                                                       \\ \hline
+\textbf{RI-001}            & \textbf{Paciente}                                                                       \\ \hline
 \textbf{Descripción}       & El sistema deberá almacenar la información correspondiente a los pacientes.    \\ \hline
 \textbf{Datos específicos} & E-mail                                                                         \\ 
 \multirow{8}{*}{} & Contraseña                                                                     \\ 
@@ -743,7 +788,7 @@ Los requisitos de información guardan toda la información que debe almacenar e
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{RI-002}            & \textbf{Patología                                                                   } \\ \hline
+\textbf{RI-002}            & \textbf{Patología                                                                   } \\ \hline
 \textbf{Descripción}       & El sistema deberá almacenar la información correspondiente a las patologías. \\ \hline
 \textbf{Datos específicos} & Nombre                                                                       \\ 
                   & Síntomas                                                                     \\ \hline
@@ -758,7 +803,7 @@ Los requisitos de información guardan toda la información que debe almacenar e
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{RI-003}             & \textbf{Psicólogo}                                                                    \\ \hline
+\textbf{RI-003}             & \textbf{Psicólogo}                                                                    \\ \hline
 \textbf{Descripción}        & El sistema deberá almacenar la información correspondiente a los psicólogos. \\ \hline
 \textbf{Datos específicos}  & Nombre                                                                       \\ \hline
 \multirow{18}{*}{} & E-mail                                                                       \\ 
@@ -803,7 +848,7 @@ Los requisitos funcionales son declaraciones de los servicios que debe proporcio
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{RF - 001 }                               & \textbf{Acceso usuarios                                                                                             } \\ \hline
+\textbf{RF - 001 }                               & \textbf{Acceso usuarios                                                                                             } \\ \hline
 \textbf{Descripción}                             & Cualquier usuario registrado en la plataforma podrá acceder a la plataforma a través de la página de acceso. \\ \hline
 \textbf{Estabilidad}                             & Alta                                                                                                         \\ \hline
 \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}}RI-001 \\ RI-003 \\ RF-002\end{tabular}                                           \\ \hline
@@ -817,7 +862,7 @@ Los requisitos funcionales son declaraciones de los servicios que debe proporcio
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{RF - 002}                                & \textbf{Registro                                                                                                       } \\ \hline
+\textbf{RF - 002}                                & \textbf{Registro                                                                                                       } \\ \hline
 \textbf{Descripción }                            & Cualquier paciente podrá acceder a los servicios de la plataforma tras haber cubierto el formulario de registro. \\ \hline
 \textbf{Estabilidad }                            & Alta                                                                                                            \\ \hline
 \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\end{tabular}                                                         \\ \hline
@@ -831,7 +876,7 @@ Los requisitos funcionales son declaraciones de los servicios que debe proporcio
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{RF - 003}                                & \textbf{Baja                                                                               } \\ \hline
+\textbf{RF - 003}                                & \textbf{Baja                                                                               } \\ \hline
 \textbf{Descripción}                             & Cualquier usuario registrado en la plataforma podrá darse de baja de la plataforma. \\ \hline
 \textbf{Estabilidad}                             & Alta                                                                                \\ \hline
 \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-002\end{tabular}                    \\ \hline
@@ -845,7 +890,7 @@ Los requisitos funcionales son declaraciones de los servicios que debe proporcio
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{RF - 004}                                & \textbf{Modificación de los datos                                                          } \\ \hline
+\textbf{RF - 004}                                & \textbf{Modificación de los datos                                                          } \\ \hline
 \textbf{Descripción}                             & Cualquier paciente registrado en la plataforma podrá modificar sus datos de usuario. \\ \hline
 \textbf{Estabilidad}                             & Alta                                                                                \\ \hline
 \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-001\\ RF-002\end{tabular}           \\ \hline
@@ -861,7 +906,7 @@ Los requisitos funcionales son declaraciones de los servicios que debe proporcio
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{RF - 005}                               & \textbf{Emparejamiento                                                                                                                                                                                                                                                                    } \\ \hline
+\textbf{RF - 005}                               & \textbf{Emparejamiento                                                                                                                                                                                                                                                                    } \\ \hline
 \textbf{Descripción}                             & Se garantizará al paciente el emparejamiento con el psicólogo más adecuado para tratar su caso. Cualquier paciente registrado en la plataforma podrá especificar sus síntomas a través de un cuestionario y éste determinará la patología, o patologías, que padece. Si el resultado es concluyente, se le asigna el psicólogo, o los psicólogos, al paciente que traten esa, o esas patologías. En caso de no ser concluyente, se le avisará por medio de un mensaje. \\ \hline
 \textbf{Estabilidad}                             & Alta                                                                                                                                                                                                                                                                               \\ \hline
 \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-002\\ RI-003\\ RF-001\\ RF-002\end{tabular}                                                                                                                                                                                                 \\ \hline
@@ -874,7 +919,7 @@ Los requisitos funcionales son declaraciones de los servicios que debe proporcio
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{RF - 006}                                & \textbf{Filtrado de los resultados en base a distintos criterios                                                                                                                                             } \\ \hline
+\textbf{RF - 006}                                & \textbf{Filtrado de los resultados en base a distintos criterios                                                                                                                                             } \\ \hline
 \textbf{Descripción}                             & Cualquier paciente, que haya obtenido resultados concluyentes en el cuestionario, podrá  filtrarlos en base a distintos criterios como las características geográficas, el precio o su seguro médico. \\ \hline
 \textbf{Estabilidad}                             & Alta                                                                                                                                                                                                  \\ \hline
 \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}}RI-003\\ RF-001\\ RF-002\\ RF-005\end{tabular}                                                                                                                             \\ \hline
@@ -890,7 +935,7 @@ Los requisitos funcionales son declaraciones de los servicios que debe proporcio
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{RF - 007}                                & \textbf{Contacto del paciente con el psicólogo}                                                                               \\ \hline
+\textbf{RF - 007}                                & \textbf{Contacto del paciente con el psicólogo}                                                                               \\ \hline
 \textbf{Descripción}                             & El paciente podrá contactar con cualquiera de los psicólogos que le fueron  asignados tras realizar el cuestionario. \\ \hline
 \textbf{Estabilidad}                             & Alta                                                                                                                 \\ \hline
 \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-001\\ RF-002\\ RF-005\end{tabular}                                   \\ \hline
@@ -905,7 +950,7 @@ Los requisitos funcionales son declaraciones de los servicios que debe proporcio
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{RF - 008}                                & \textbf{Valoración del psicólogo por parte del paciente}                                    \\ \hline
+\textbf{RF - 008}                                & \textbf{Valoración del psicólogo por parte del paciente}                                    \\ \hline
 \textbf{Descripción}                             & El paciente podrá valorar al psicólogo que le haya atendido.                       \\ \hline
 \textbf{Estabilidad}                             & Alta                                                                               \\ \hline
 \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}}RI-001\\ RI-003\\ RF-001\\ RF-002\\ RF-005\end{tabular} \\ \hline
@@ -924,7 +969,7 @@ Los requisitos no funcionales son restricciones de los servicios o funciones ofr
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{RNF - 001}                               & \textbf{Encriptado de datos}                                                                                            \\ \hline
+\textbf{RNF - 001}                               & \textbf{Encriptado de datos}                                                                                            \\ \hline
 \textbf{Descripción}                             & La contraseña de los usuarios almacenados en la base de datos deberá estar cifrada con un algoritmo de cifrado. \\ \hline
 \textbf{Estabilidad}                             & Alta                                                                                                           \\ \hline
 \textbf{Dependencias} & (Es transversal)                                                                                               \\ \hline
@@ -939,7 +984,7 @@ Los requisitos no funcionales son restricciones de los servicios o funciones ofr
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{RNF - 002}                               & \textbf{Tiempo de respuesta de asignación}                                                                                                                                            \\ \hline
+\textbf{RNF - 002}                               & \textbf{Tiempo de respuesta de asignación}                                                                                                                                            \\ \hline
 \textbf{Descripción}                             & El paciente tras enviar las respuestas del cuestionario, los resultados de asignación de psicólogo del mismo deberán tener un tiempo de respuesta de como máximo 5 segundos. \\ \hline
 \textbf{Estabilidad}                             & Alta                                                                                                                                                                         \\ \hline
 \textbf{Dependencias} & RF-005                                                                                                                                                                       \\ \hline
@@ -1031,7 +1076,7 @@ valor_{pregunta} = \frac{0,5}{n_{preguntas}-1}
 Teniendo en cuenta esto, el test de la plataforma está dividido en dos partes:
 
 
-La primera, muestra la pregunta más relevante de cada patología estimada por nuestro experto psicólogo. En el momento que el paciente indica que tiene el síntoma especificado en la pregunta A (correspondiente a la patología A), se le diagnosticará que posee la patología A con una ponderación del 0,5.
+La primera, muestra la pregunta más relevante de cada patología estimada por nuestro experto psicólogo. En el momento que el paciente indica que tiene el síntoma especificado en la pregunta $A$ (correspondiente a la patología $A$), se le diagnosticará que posee la patología $A$ con una ponderación del 0,5.
 
 
 La segunda, muestra las preguntas restantes a las patologías marcadas en la primera parte, es decir, aquellas patologías que le han sido diagnosticadas con una ponderación del 0,5. Por cada pregunta marcada en la segunda parte, se sumará el valor de esa pregunta al porcentaje actual.

@@ -21,7 +21,7 @@ En nuestra plataforma, tenemos dos tipos de perfiles: Los pacientes\ref{perf_pac
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-\rowcolor[gray]{0.9}\multicolumn{2}{|c|}{\textbf{Pacientes}}                                                                                                                                                                               \\ \hline
+\multicolumn{2}{|c|}{\textbf{Pacientes}}                                                                                                                                                                               \\ \hline
 \textbf{Demografía}                                & España                                                                                                                                                            \\ \hline
 \textbf{Edad}                                      & Mayores de 16 años                                                                                                                                                \\ \hline
 \textbf{Experiencia laboral}                       & Estudios mínimos                                                                                                                                                  \\ \hline
@@ -39,7 +39,7 @@ En nuestra plataforma, tenemos dos tipos de perfiles: Los pacientes\ref{perf_pac
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-\rowcolor[gray]{0.9}\multicolumn{2}{|c|}{\textbf{Psicólogos}}                                                                                                                                 \\ \hline
+\multicolumn{2}{|c|}{\textbf{Psicólogos}}                                                                                                                                 \\ \hline
 \textbf{Demografía}                                & España                                                                                                               \\ \hline
 \textbf{Edad}                                      & Mayoría de edad                                                                                                      \\ \hline
 \textbf{Experiencia laboral}                       & Estudios superiores                                                                                                  \\ \hline
@@ -115,7 +115,7 @@ La diversidad funcional es inherente al ser humano: Una persona experimenta vari
 
 
 \subsubsection{Accesibilidad}
-La accesibilidad la interacción persona-ordenador es el conjunto de propiedades que debe incorporar un producto, servicio o sistema, de forma que el mayor número posible de personas, en el mayor número posible de circunstancias, que sea comercialmente práctico tener en cuenta, puede acceder a él y usarlo.\cite{nordic_guidelines}
+La accesibilidad en la interacción persona-ordenador es el conjunto de propiedades que debe incorporar un producto, servicio o sistema, de forma que el mayor número posible de personas, en el mayor número posible de circunstancias, que sea comercialmente práctico tener en cuenta, puede acceder a él y usarlo.\cite{nordic_guidelines}
 
 
 Un producto es accesible si, por mucho tiempo o esfuerzo que requiera, la tarea puede realizarse.
@@ -150,24 +150,44 @@ Aplicar los principios heurísticos nos sirve de guía para el proceso de diseñ
 
 \begin{enumerate}
 \item Visibilidad del estado del sistema
+
+
 El sistema debe siempre mantener a los usuarios informados del estado del sistema, con una realimentación apropiada y en un tiempo razonable.
 \item Lenguaje de los usuarios
+
+
 El sistema debe hablar el lenguaje de los usuarios, utilizando convenciones del mundo real, disponiendo la información en un orden natural y lógico.
 \item Control y libertad para el usuario
+
+
 Los usuarios eligen a veces funciones del sistema por error y necesitan una salida del estado indeseado sin tener que pasar por un diálogo extendido.
 \item Consistencia y estándares
+
+
 Se deben seguir las normas y convenios de la plataforma para las que se implementa el sistema.
 \item Ayuda a los usuarios para reconocimiento, diagnóstico y recuperación de errores
+
+
 Los mensajes de error deben expresarse en un lenguaje claro y explicativo.
 \item Prevención de errores
-Se debe prevenir la aparición de errores que mejor que generar buenos mensajes de error.
+
+
+Se debe prevenir la aparición de errores mejor que generar buenos mensajes de error.
 \item Reconocimiento antes de cancelación
+
+
 El usuario no debería tener que recordar la información de una parte del diálogo a la otra.
 \item Flexibilidad y eficiencia de uso
+
+
 Las instrucciones para el uso del sistema deben ser visibles o fácilmente accesibles siempre que se necesiten.
 \item Estética de diálogos y diseño minimalista
+
+
 No deben contener la información que sea inaplicable o se necesite raramente. Cada unidad adicional de la información en un diálogo compite con las unidades relevantes de la información y disminuye su visibilidad.
 \item Ayuda general y documentación
+
+
 Aunque es mejor si el sistema se pueda usar sin documentación, puede ser necesario disponer de ayuda y documentación. Ésta ha de ser fácil de buscar, centrada en las tareas del usuario, tener información de las etapas a realizar y que no sea muy extensa. \cite{eval_heuris}
 \end{enumerate}
 
@@ -315,7 +335,7 @@ Para definir las rutas de navegación que permiten a los usuarios acceder al con
 Se define a partir del rol que toma un actor dentro de un caso de uso, ya que cada actor tiene distintos requisitos de navegación. A medida que un usuario interactúa con la web, encuentra una serie de unidades semánticas de navegación (USN) que son un conjunto de estructuras de información y navegación relacionadas que colaboran para el cumplimiento de un subconjunto de requisitos de dicho usuario.
 
 
-Una USN está compuesta por un conjunto de elementos de navegación llamados formas de navegar (FdN) que representan la mejor ruta de navegación para lograr una meta específica. Está formada por un conjunto de nodos de navegación conectados por vínculos, que en algún pueden tratarse de otra USN.
+Una USN está compuesta por un conjunto de elementos de navegación llamados formas de navegar (FdN) que representan la mejor ruta de navegación para lograr una meta específica. Está formada por un conjunto de nodos de navegación conectados por vínculos, que en algunos casos pueden tratarse de otra USN.
 
 
 Para cada caso de uso, se procede a diseñar su USN. Las correspondencias se pueden apreciar en la tabla\ref{cu_usn}.
@@ -325,7 +345,7 @@ Para cada caso de uso, se procede a diseñar su USN. Las correspondencias se pue
 \centering
 \begin{tabular}{|l|l|}
 \hline
-\rowcolor[gray]{0.9}\textbf{Caso de uso}    & \textbf{Unidad semántica de navegación} \\ \hline
+\textbf{Caso de uso}    & \textbf{Unidad semántica de navegación} \\ \hline
 CU-001                  & USN-001 (Paciente)                      \\ \hline
 CU-002                  & USN-002                                 \\ \hline
 CU-003                  & USN-003                                 \\ \hline
@@ -452,7 +472,7 @@ La sintaxis de navegación refleja la mecánica de la navegación para cada USN.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Tecnologías utilizadas}
 
-\subsection{Frameworks}
+\subsection{\textit{Frameworks}}
 Un \textit{framework} es una arquitectura de \textit{software} que modela las relaciones generales de las entidades del dominio, y provee una estructura y una especial metodología de trabajo, la cual extiende o utiliza las aplicaciones del dominio.
 
 
@@ -476,25 +496,33 @@ Los componentes que forman el \textit{framework} son:
 
 
 \begin{itemize}
-\item \textbf{MongoDB}
+\item \textbf{MongoDB} 
+
+
 MongoDB es una base de datos ágil NoSQL orientada a documentos que permite que los esquemas cambien rápidamente a medida que las aplicaciones evolucionan, proporcionando siempre la funcionalidad que los desarrolladores esperan de las bases de datos tradicionales, tales como índices secundarios, un lenguaje completo de búsquedas y consistencia. En resumen, MongoDB brinda escalabilidad, rendimiento y gran disponibilidad\cite{mongodb_gest_datos}. 
-\item \textbf{ExpressJS}
-ExpressJS es una middleware de aplicaciones web Node.js minimalista y flexible que proporciona un conjunto sólido de características para aplicaciones web y móviles\cite{express}. Se trata de una API REST que utiliza métodos HTTP para obtener datos o generar operaciones sobre esos datos.
+\item \textbf{ExpressJS} 
+
+
+ExpressJS es una \textit{middleware} de aplicaciones web Node.js minimalista y flexible que proporciona un conjunto sólido de características para aplicaciones web y móviles\cite{express}. Se trata de una API REST que utiliza métodos HTTP para obtener datos o generar operaciones sobre esos datos.
 \item \textbf{AngularJS}
-AngularJS es un framework para construir client applications en HTML y Javascript, aunque también puede ser otro lenguaje como TypeScript que sea compilado a JavaScript. El framework posee un conjunto de librerías funcionales, y otras opcionales\cite{angular_docs}.
 
 
-Angular permite fácilmente construir aplicaciones web, ya que combina declarative templates, dependency injection y end to end tooling, e integra buenas prácticas de programación. Las aplicaciones desarrolladas con Angular funcionan tanto para web, móvil o escritorio\cite{angular_arch}. 
+AngularJS es un \textit{framework} para construir \textit{client applications} en HTML y Javascript, aunque también puede ser otro lenguaje como TypeScript que sea compilado a JavaScript. El \textit{framework} posee un conjunto de librerías funcionales, y otras opcionales\cite{angular_docs}.
+
+
+Angular permite fácilmente construir aplicaciones web, ya que combina \textit{declarative templates}, \textit{dependency injection} y \textit{end to end tooling}, e integra buenas prácticas de programación. Las aplicaciones desarrolladas con Angular funcionan tanto para web, móvil o escritorio\cite{angular_arch}. 
 \item \textbf{NodeJS}
+
+
 NodeJS es un entorno de ejecución para JavaScript construido con el motor de JavaScript V8 de Chrome. Node.js usa un modelo de operaciones entrada/salida sin bloqueo (asíncrono) y orientado a eventos, que lo hace liviano y eficiente, ya que nunca se bloquea. 
 
 
-Node está diseñado sin hilos, este presenta un bucle de eventos como un entorno en vez de una librería. Node simplemente ingresa el bucle de eventos después de ejecutar el \textit{script} de entrada. Node sale del bucle de eventos cuando no hay más callbacks que ejecutar\cite{node_acerca}.
+Node está diseñado sin hilos, este presenta un bucle de eventos del que sale cuando no hay más \textit{callbacks} que ejecutar\cite{node_acerca}.
 \end{itemize}
 
 
 \subsubsection{Bootstrap}
-Bootstrap es un \textit{framework} de código abierto para desarrollar con HTML, CSS y JS. Contiene características como un grid responsive, docenas de componentes, JavaScript plugins, tipografía, control de formularios y capacidad de personalización\cite{bootstrap}.
+Bootstrap es un \textit{framework} de código abierto para desarrollar con HTML, CSS y JS. Contiene características como un \textit{grid responsive}, docenas de componentes, JavaScript \textit{plugins}, tipografía, control de formularios y capacidad de personalización\cite{bootstrap}.
 
 
 \subsubsection{Semantic UI}
@@ -506,7 +534,7 @@ Los principales lenguajes de programación utilizados son:
 
 
 \subsubsection{CSS3}
-Hojas de Estilo en Cascada (Cascading Style Sheets) es el lenguaje utilizado para describir la presentación de documentos HTML o XML CSS describe como debe ser renderizado el elemento estructurado en pantalla, en papel, hablado o en otros medios\cite{css_mozilla}.
+Hojas de Estilo en Cascada (Cascading Style Sheets) es el lenguaje utilizado para describir la presentación de documentos HTML o XML. CSS describe como debe ser renderizado el elemento estructurado en pantalla, en papel, hablado o en otros medios\cite{css_mozilla}.
 
 
 \subsubsection{HTML}
@@ -517,7 +545,7 @@ HTML, que significa Lenguaje de Marcado para Hipertextos (HyperText Markup Langu
 Es un lenguaje ligero e interpretado, orientado a objetos con funciones de primera clase, más conocido como el lenguaje de \textit{script} para páginas web, pero también usado en muchos entornos sin navegador, tales como node.js.
 
 
-Es un lenguaje script multi-paradigma, basado en prototipos\footnote{La programación basada en prototipos es un estilo de programación orientada a objetos que reutiliza comportamientos de objetos existentes.}, dinámico, soporta estilos de programación funcional, orientada a objetos e imperativa\cite{javascript_mozilla}.
+Es un lenguaje \textit{script} multi-paradigma, basado en prototipos\footnote{La programación basada en prototipos es un estilo de programación orientada a objetos que reutiliza comportamientos de objetos existentes.}, dinámico, soporta estilos de programación funcional, orientada a objetos e imperativa\cite{javascript_mozilla}.
 
 
 \subsection{	\textit{Modules}}
@@ -565,6 +593,16 @@ Las herramientas utilizadas en este trabajo fueron:
 \item \textit{Descripción: }Brackets es un editor de texto de código abierto\cite{brackets}.
 \item \textit{Uso: }Desarrollo software de la aplicación.
 \end{itemize}
+\item \textbf{Canva}
+\begin{itemize}
+\item \textit{Descripción:} Canva es una herramienta de diseño \textit{online}\cite{canva}.
+\item \textit{Uso: }Algunos gráficos de la memoria.
+\end{itemize}
+\item \textbf{Google Forms}
+\begin{itemize}
+\item \textit{Descripción: } Google Forms es una herramienta para crear y analizar encuestas\cite{google_forms}.
+\item \textit{Uso: }Test de usabilidad.
+\end{itemize}
 \item \textbf{Git}
 \begin{itemize}
 \item \textit{Descripción: }Git es un sistema de código abierto de control de versiones distribuído diseñado para manipular cualquier tipo de proyectos con rapidez y eficacia\cite{git}.
@@ -579,6 +617,11 @@ Las herramientas utilizadas en este trabajo fueron:
 \begin{itemize}
 \item \textit{Descripción: }Es una herramienta que permite simplificar el proceso de construcción (build) de proyectos en JavaScript. Sirven para automatizar tareas repetitivas como minificación, compilación, testeo unitario...\cite{grunt}
 \item \textit{Uso: }Durante el desarrollo de la aplicación.
+\end{itemize}
+\item \textbf{Lighthouse}
+\begin{itemize}
+\item \textit{Descripción: }Lighthouse, disponible en Google Chrome Audits, es una herramienta automatizada de código abierto diseñada para mejorar la calidad de tus apps web\cite{google_audits}.
+\item \textit{Uso: }En las pruebas de accesibilidad.
 \end{itemize}
 \item \textbf{\LaTeX}
 \begin{itemize}
@@ -610,6 +653,11 @@ Las herramientas utilizadas en este trabajo fueron:
 \item \textit{Descripción: }StarUML es una herramienta de modelado UML que permite hacer multitud de tipos de diagramas como de clase, de objeto, de casos de uso, de componente, entre otros\cite{staruml}. 
 \item \textit{Uso: }Diseño de los diagramas del proyecto.
 \end{itemize}
+\item \textbf{TEXMaker}
+\begin{itemize}
+\item \textit{Descripción: }Es un editor \LaTeX   libre, moderno y multiplataforma para Linux, MacOS y Windows\cite{texmaker}.
+\item \textit{Uso: }Elaboración de la memoria final.
+\end{itemize}
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -625,14 +673,14 @@ Niels Provos y David Maxieres diseñaron Bcrypt, una función de \textit{hashing
 Cuando se genera un \textit{hash} asociado a la contraseña por lo general los algoritmos comunes (md5, sha-1,…) incorporan un valor de \textit{salt}, este fragmento se emplea para generar dicho \textit{hash}, de esta forma se consigue que dos contraseñas iguales que generarían el mismo \textit{hash} no lo hagan, algo muy importante para luchar contra ataques de fuerza bruta, así como para dificultar los ataques de Rainbow table.
 
 
-Los ataque de Rainbow table son efectivos cuando las contraseñas son ``hasheadas'' de la misma manera, de esta forma para dos contraseñas iguales el hash sería el mismo. Así es como surge el \textit{salt}, añadir un \textit{hash} a cada contraseña nos devuelve dos \textit{hashes} distintos para la misma contraseña. Es importante evitar la \textit{reutilización} de \textit{salt}. Sin embargo no es suficiente el uso de \textit{salt} para el almacenamiento de contraseñas debido a que \textit{salt} pasa a ser inútil para ataques de fuerza bruta o de diccionario.
+Los ataque de Rainbow table son efectivos cuando las contraseñas son ``hasheadas'' de la misma manera, de esta forma para dos contraseñas iguales el hash sería el mismo. Así es como surge el \textit{salt}, añadir un \textit{hash} a cada contraseña nos devuelve dos \textit{hashes} distintos para la misma contraseña. Es importante evitar la reutilización de \textit{salt}. Sin embargo no es suficiente el uso de \textit{salt} para el almacenamiento de contraseñas debido a que \textit{salt} pasa a ser inútil para ataques de fuerza bruta o de diccionario.
 
 
 \subsection{Ventajas de Bcrypt}
 En este punto es donde entra Bcrypt, para solucionar el problema en el que nos hallamos debemos hablar del número de iteraciones. Esto mejora a los \textit{hashes} comunes gracias a su lentitud. ¿Qué quiere decir esto? Empleando una variante de cifrado Blowfish se introduce un factor de trabajo que permite controlar el coste de la función \textit{hash}. Mediante este factor Bcrypt se actualiza de acuerdo a la ley de Moore con la evolución de la tecnología.
 
 
-Para verlo más concretamente podemos ver la tabla de comparación siguiente, y recalcar que aunque las contraseñas no requieran de una protección tan elevada, gracias al factor de trabajo la optimización de bcrypt se consigue con un buen equilibrio entre velocidad y seguridad. El sacrificio de un poco de rendimiento se traduce en un aumento de la seguridad. 
+Para verlo más concretamente podemos ver la comparativa siguiente, y recalcar que aunque las contraseñas no requieran de una protección tan elevada, gracias al factor de trabajo la optimización de bcrypt se consigue con un buen equilibrio entre velocidad y seguridad. El sacrificio de un poco de rendimiento se traduce en un aumento de la seguridad. 
 Esta tabla muestra una prueba de la fuerza de bcrypt, que ha sido lanzado en un clúster de 25 GPU para la rotura de contraseñas en \textit{hash}, han resultado los siguientes datos:
 
 
@@ -664,7 +712,7 @@ Esta tabla muestra una prueba de la fuerza de bcrypt, que ha sido lanzado en un 
 La librería bcrypt nos permite crear el \textit{hash} de una contraseña mediante \textit{saltRounds}, este valor nos da control sobre el factor de coste de procesado de datos. A mayor valor de \textit{saltRound} mayor coste de cálculo del \textit{hash} asociado a una contraseña.  Por defecto este valor viene situado en 10. 
 
 
-En el caso del registro de usuario se envía la contraseña y el valor del parámetro \textit{saltRounds} a la librería para que la cifre, esta nos devuelve el \textit{hash} asociado a la contraseña en el usuario de la base de datos. Cuando el usuario quiere entrar la contraseña introducida se cifra, para ello se busca el \textit{salt} asociado al usuario de la base de datos. Una vez cifrada con el \textit{salt} se comparan los \textit{hashes}. La librería nos devuelve un booleano que indica si las contraseñas coinciden o no, con lo cual podemos dejar entrar el usuario o devolver un error.
+En el caso del registro de usuario se envía la contraseña y el valor del parámetro \textit{saltRounds} a la librería para que la cifre, esta nos devuelve el \textit{hash} asociado a la contraseña en el usuario de la base de datos. Cuando el usuario quiere entrar, la contraseña introducida se cifra, para ello se busca el \textit{salt} asociado al usuario de la base de datos. Una vez cifrada con el \textit{salt} se comparan los \textit{hashes}. La librería nos devuelve un booleano que indica si las contraseñas coinciden o no, con lo cual podemos dejar entrar el usuario o devolver un error.
 
 
 \subsection{Cifrado Blowfish}
@@ -694,7 +742,7 @@ Para poder entender cuáles son las diferencias entre un lenguaje orientado a ob
 \centering
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
-\rowcolor[gray]{0.9}\textbf{Basados en clases (Java)}                                                                                                                                       & \textbf{Basados en prototipos (JavaScript)}                                                                                                                                                  \\ \hline
+\textbf{Basados en clases (Java)}                                                                                                                                       & \textbf{Basados en prototipos (JavaScript)}                                                                                                                                                  \\ \hline
 La clase y su instancia son entidades distintas                                                                                                                         & Todos los objetos pueden heredar de otro objeto                                                                                                                                              \\ \hline
 Define una clase en la definición de clase; se instancia una clase con los métodos constructores.                                                                       & Define y crea un conjunto de objetos con funciones constructoras.                                                                                                                            \\ \hline
 Se crea un objeto con el operador new.                                                                                                                                  & Igual.                                                                                                                                                                                       \\ \hline
@@ -722,14 +770,14 @@ Las \textit{callbacks} pueden ser vistas como una forma de ``\textit{continuatio
 
 JavaScript utiliza un modelo \textit{event-driven} con un único hilo de ejecución. Programar con \textit{callbacks} es especialmente útil cuando el llamador no quiere esperar hasta que la llamada se complete. Para conseguirlo, la operación no bloqueante (\textit{non-blocking operation}) es agendada (\textit{scheduled}) como una \textit{callback} y el hilo principal continua su síncrona ejecución. Cuando la operación se completa, un mensaje es encolado en una cola de tareas según la \textit{callback} que lo provee. El bucle de eventos (\textit{event loop}) en JavaScript prioriza que el hilo ejecute la pila de llamadas primero; cuando la pila está vacía, el bucle de eventos desencola un mensaje para la cola de tareas y ejecuta la correspondiente función \textit{callback}.
 En JavaScript, las \textit{callbacks} pueden llamarse ``funciones'' o ``funciones anónimas''.
-En el proyecto, para gestionar las \textit{callbacks} se han utilizado promises. Las \textit{promise} son una extensión del lenguaje JavaScript \cite{keheliyagallabaalimesbahivanbeschastnikh2015}.
+En el proyecto, para gestionar las \textit{callbacks} se han utilizado \textit{promises}. Las \textit{promise} son una extensión del lenguaje JavaScript \cite{keheliyagallabaalimesbahivanbeschastnikh2015}.
 
 
 Una \textit{promise} es un \textit{proxy} para un valor no necesariamente conocido en el momento que es creada. Permite asociar manejadores que actuarán asincrónicamente sobre un eventual valor en caso de éxito, o la razón del fallo. Esto permite que métodos asíncronos devuelvan valores como si fueran síncronos: en vez de inmediatamente retornar el valor final, el método asíncrono devuelve una \textit{promise} y suministra su valor en algún momento en el futuro\cite{promise_objeto}. Al objeto le enganchas las funciones \textit{callback}, en vez de pasar funciones \textit{callback} a una función\cite{promise_mozilla}. Nos permiten mejorar la legibilidad de nuestro código y evitar tener que pasar el contenido de las funciones directamente como argumentos a nuestra llamada. Las \textit{promise} en JavaScript sirven para evitar el ``\textit{callback-hell}'' que surge de llamar a una función asíncrona en JavaScript. 
 
 
 \subsubsection{Implementando patrones de diseño con JavaScript}
-En la mayoría de lenguajes tradicionales orientados a objetos existen las clases, las interfaces, la herencia, la encapsulación y el polimorfismo. Pero JavaScript, no, puesto que es muy sencillo: Trabaja por medio de callbacks (funciones).
+En la mayoría de lenguajes tradicionales orientados a objetos existen las clases, las interfaces, la herencia, la encapsulación y el polimorfismo. Pero JavaScript, no, puesto que es muy sencillo: Trabaja por medio de \textit{callbacks} (funciones).
 
 
 Un objeto es la unidad responsable de proporcionar estados y comportamiento; y la declaración de las funciones en JavaScript proporcionan ambas\cite{angular_embrace}.
@@ -747,9 +795,9 @@ El patrón de diseño MVC está compuesto por:
 
 
 \begin{itemize}
-\item Modelo: Almacena toda la información, estados y lógica de la aplicación.
-\item Vista: Se trata de a interfaz de usuario que muestra una representación del modelo. La vista informa al controlador qué trata de hacer el usuario. 
-\item Controlador: Toma la entrada del usuario, la gestiona y le transmite lo que ha interpretado al modelo. También, manipula cómo se debe ver la vista.
+\item \textbf{Modelo:} Almacena toda la información, estados y lógica de la aplicación.
+\item \textbf{Vista:} Se trata de la interfaz de usuario que muestra una representación del modelo. La vista informa al controlador qué trata de hacer el usuario. 
+\item \textbf{Controlador:} Toma la entrada del usuario, la gestiona y le transmite lo que ha interpretado al modelo. También, manipula cómo se debe ver la vista.
 \end{itemize}
 
 
@@ -760,9 +808,9 @@ Los componentes de los patrones MVVM son:
 
 
 \begin{itemize}
-\item Modelo: Representa los datos específicos del dominio o información con la que nuestra aplicación debe trabajar. Almacena información, pero comúnmente no posee ningún tipo de comportamiento. No formatean la información ni influencian en cómo los datos aparecen en el navegador, ya que no es su responsabilidad.
-\item Vista: Es la única parte de la aplicación con la que el usuario interactúa. Contiene la información obtenida de la sincronización entre la vista y el modelo (\textit{data binding}\cite{data_binding_w3s}), los eventos y comportamientos. Es una interfaz de usuario interactiva que representa el estado de la VistaModelo. La vista no es la encargada de gestionar su estado, sólo se mantiene sincronizada con la VistaModelo.
-\item VistaModelo: Se puede considerar como un Controlador especializado que actúa como un conversor de datos. Transforma la información del Modelo en la información de la Vista\cite{fernandomonteiro2014}. 
+\item \textbf{Modelo:} Representa los datos específicos del dominio o información con la que nuestra aplicación debe trabajar. Almacena información, pero comúnmente no posee ningún tipo de comportamiento. No formatean la información ni influencian en cómo los datos aparecen en el navegador, ya que no es su responsabilidad.
+\item \textbf{Vista:} Es la única parte de la aplicación con la que el usuario interactúa. Contiene la información obtenida de la sincronización entre la vista y el modelo (\textit{data binding}\cite{data_binding_w3s}), los eventos y comportamientos. Es una interfaz de usuario interactiva que representa el estado de la VistaModelo. La vista no es la encargada de gestionar su estado, sólo se mantiene sincronizada con la VistaModelo.
+\item \textbf{VistaModelo:} Se puede considerar como un Controlador especializado que actúa como un conversor de datos. Transforma la información del Modelo en la información de la Vista\cite{fernandomonteiro2014}. 
 \end{itemize}
 
 En MEAN STACK, estos dos patrones se pueden aparecen combinados como se muestra en la figura\ref{fig:mvc_mvvm}.
@@ -793,10 +841,10 @@ Las responsabilidades del \textit{Page Controller} son:
 El patrón \textit{Page Controller} acepta entradas desde la petición de una página, invoca las acciones pedidas en el modelo, y determina la vista que se ha de usar como página resultante\cite{page_controller_microsoft}.
 
 
-En AngularJS, tenemos \textit{controllers} los cuales tienen unas responsabilidades limitadas: Ellos no aceptan las peticiones del usuario porque es la responsabilidad de los \textit{services} \$route o \$state y la renderización de la página es responsabilidad de la directiva ng-view. Para determinar qué vista ha de ser mostrada utiliza el \textit{service} \$location.
+En AngularJS, tenemos \textit{controllers} los cuales tienen unas responsabilidades limitadas: Ellos no aceptan las peticiones del usuario porque es la responsabilidad de los \textit{services} \texttt{\$route} o \texttt{\$state} y la renderización de la página es responsabilidad de la directiva ng-view. Para determinar qué vista ha de ser mostrada utiliza el \textit{service} \$location.
 
 
-Al igual que \textit{page controllers}, los \textit{controllers} de AngularJS gestionan las interacciones de usuario, proveen y actualizan los modelos. El modelo está unido a la vista a través de \$scope\cite{mgechev}.
+Al igual que \textit{page controllers}, los \textit{controllers} de AngularJS gestionan las interacciones de usuario, proveen y actualizan los modelos. El modelo está unido a la vista a través de \texttt{\$scope}\cite{mgechev}.
 
 
 \subsection{	\textit{Observer}}
@@ -816,8 +864,10 @@ Cuando la información en el modelo cambia, la vista refleja dicho cambio, y cua
 Debida a la inmediata sincronización entre el modelo y la vista, el controlador puede estar completamente separado de la vista, y simplemente concentrarse en el modelo de datos\cite{data_binding_w3s}.
 
 
-El mostrado en la figura \ref{fig:data_binding} representa el funcionamiento descrito a continuación. El \textit{module} es el objeto de mayor nivel en Angular. Una aplicación Angular es especificada por la directiva ng-app siempre correspondiente a un módulo.
-Config es un objeto que configura la aplicación Angular, permite configurar las rutas (\textit{routes}) necesarias en la SPA porque gestionan las \textit{templates}. En Angular se empareja cada \textit{template} con un \textit{controller}. La <view> representa la parte \textit{front-end} y el \textit{controller} y la \textit{factory}  representan el \textit{back-end}. \$scope vive entre ambos, y Angular permite asegurar que ambos tengan la última versión de la aplicación. El bucle de eventos y \$scope permiten a Angular \textit{two way data binding}, y como resultado es que ya no es necesario acceder al DOM desde JavaScript\cite{paislee}.   
+El mostrado en la figura \ref{fig:data_binding} representa el funcionamiento descrito a continuación. El \textit{module} es el objeto de mayor nivel en Angular. Una aplicación Angular es especificada por la directiva \texttt{ng-app} siempre correspondiente a un módulo.
+
+
+\texttt{config} es un objeto que configura la aplicación Angular, permite configurar las rutas (\textit{routes}) necesarias en la SPA porque gestionan las \textit{templates}. En Angular se empareja cada \textit{template} con un \textit{controller}. La \texttt{<view>} representa la parte \textit{front-end} y el \textit{controller} y la \textit{factory}  representan el \textit{back-end}. \texttt{\$scope} vive entre ambos, y Angular permite asegurar que ambos tengan la última versión de la aplicación. El bucle de eventos y \texttt{\$scope} permiten a Angular \textit{two way data binding}, y como resultado es que ya no es necesario acceder al DOM desde JavaScript\cite{paislee}.   
 
 
 \begin{figure}[htbp] 
@@ -874,7 +924,7 @@ La imagen \ref{fig:proxy}, muestra el posible escenario de cuando un cliente rea
 Un \textit{Data Mapper} es una capa de acceso a datos (\textit{Data Access Layer}) que permite la transferencia bidireccional de datos entre el lugar de almacenamiento de los datos persistentes y la representación en memoria de esos datos, manteniéndolos independientes\cite{mgechev}.
 
 
-En Angular a través del módulo ngResource, nos permite realizar conexiones REST a nuestra API para enviar y recibir información mediante el servicio \$http. Sin embargo, los datos pasados desde el servidor se encuentran en un formato apropiado gracias a la librería Mongoose.
+En Angular a través del módulo \texttt{ngResource}, nos permite realizar conexiones REST a nuestra API para enviar y recibir información mediante el servicio \$http. Sin embargo, los datos pasados desde el servidor se encuentran en un formato apropiado gracias a la librería Mongoose.
 
 
 Mongoose proporciona por un lado el esquema que da formato a los datos obtenidos de la base de datos, y por otro lado, el acceso a los mismos. 
@@ -970,23 +1020,45 @@ Para una mayor comprensión de la composición del sistema, se han desarrollado 
 En la figura \ref{fig:mvc_mvvm_sist} se muestra cómo interactúa el sistema a grandes rasgos a través del patrón MVC-MVVM. No se trata de un diagrama de clases, pero sirve para tener visión general de los distintos elementos que componen el sistema. En amarillo, aparecen elementos de Angular utilizados y se podrían interpretar como los patrones (en azul) que se indican a su lado.
 
 
+%\begin{figure}[htbp] 
+%    \centering
+%    \includegraphics[width=1\textwidth]{figuras/diagrama/MVC.png}
+%    \caption{Patrón MVC-MVVM}
+%    \label{fig:mvc_mvvm_sist}
+%\end{figure}	
+
+\begin{landscape}
+
 \begin{figure}[htbp] 
     \centering
-    \includegraphics[width=1\textwidth]{figuras/diagrama/MVC.png}
+    \includegraphics[height=\textwidth,keepaspectratio]{figuras/diagrama/MVC.png}
     \caption{Patrón MVC-MVVM}
     \label{fig:mvc_mvvm_sist}
 \end{figure}	
+
+\end{landscape}
 
 
 En la figura \ref{fig:data_mapper}, se muestra cómo se implementa la capa de datos \textit{Data mapper} con ayuda de los \textit{schemas} y funciones propias de la librería \textit{Moongoose}.
 
 
+%\begin{figure}[htbp] 
+%    \centering
+%    \includegraphics[width=1\textwidth]{figuras/diagrama/Schema_data_mapper.png}
+%    \caption{Data mapper}
+%    \label{fig:data_mapper}
+%\end{figure}
+
+\begin{landscape}
+
 \begin{figure}[htbp] 
     \centering
-    \includegraphics[width=1\textwidth]{figuras/diagrama/Schema_data_mapper.png}
+    \includegraphics[height=\textwidth,keepaspectratio]{figuras/diagrama/Schema_data_mapper.png}
     \caption{Data mapper}
-    \label{fig:data_mapper}
+	    \label{fig:data_mapper}
 \end{figure}	
+
+\end{landscape}	
 
 
 Para ejemplificar las interacciones entre los distintos componentes del sistema, se han creado dos diagramas de secuencia: Uno referente al caso de uso CU-003 Realizar cuestionario\ref{fig:diag_sec_cu003} y otro del CU-005 Contactar psicólogo\ref{fig:diag_sec_cu005}.
