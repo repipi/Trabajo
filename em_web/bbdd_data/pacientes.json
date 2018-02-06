@@ -1,5 +1,5 @@
 [
-	/**********************************************************************************+++++++****************************************************************** OBJECT 1 *********************************************************************************************************************************************************/
+	/* 1 */
 	{
 		"_id" : ObjectId("5a3407b07d1e2efc133e644f"),
 		"email" : "rgm1@gmail.com",
@@ -350,7 +350,8 @@
 		"edad" : "October 10, 1983",
 		"genero" : "Hijra"
 	},
-	/**********************************************************************************+++++++****************************************************************** OBJECT 2 *********************************************************************************************************************************************************/
+
+	/* 2 */
 	{
 		"_id" : ObjectId("5a7060bd47362399b861ee6c"),
 		"email" : "antonioMaside@gmail.com",
@@ -358,22 +359,6 @@
 		"edad" : "October 10, 1983",
 		"genero" : "Masculino",
 		"diagnostico" : [ 
-			{
-				"porcentaje" : 66.6,
-				"patologia" : {
-					"respuesta" : 0.083,
-					"preguntas" : [ 
-						"Tengo dificultades para mantener la atención en actividades de ocio", 
-						"Tengo dificultades para organizar tareas y actividades", 
-						"Evito o me disgusta iniciar tareas que requieren esfuerzo mental sostenido", 
-						"A menudo pierdo cosas necesarias para tareas o actividades", 
-						"A menudo me distraigo con estímulos externos", 
-						"A menudo olvido hacer las actividades cotidianas (tales como llamadas, acudir a citas, pagar facturas, etc)"
-					],
-					"nombre" : "TDAH (Trastorno por déficit de atención e hiperactividad)",
-					"_id" : "5a250f5bd8844097551fa6e5"
-				}
-			}, 
 			{
 				"porcentaje" : 78.4,
 				"patologia" : {
@@ -513,7 +498,8 @@
 		"password" : "$2a$10$Vk7pyTZISsA0kH.NSvfoROzNbj.gfKmyNQ.zrQ31bXzoDjj/AgVqG",
 		"__v" : 0
 	},
-	/**********************************************************************************+++++++****************************************************************** OBJECT 3 *********************************************************************************************************************************************************/
+
+	/* 3 */
 	{
 		"_id" : ObjectId("5a70643847362399b861f10b"),
 		"email" : "marielaD84@turfmail.com",
@@ -540,23 +526,6 @@
 					],
 					"nombre" : "TAG (Trastorno de ansiedad generalizada)",
 					"_id" : "5a0c1237665533169c64fa6a"
-				}
-			}, 
-			{
-				"porcentaje" : 57.1,
-				"patologia" : {
-					"respuesta" : 0.071,
-					"preguntas" : [ 
-						"He perdido el interés por las cosas", 
-						"He perdido la confianza en mí mismo", 
-						"Me he sentido con poca energía", 
-						"He perdido peso (causado por falta de apetito)", 
-						"Me he estado despertando demasiado temprano", 
-						"Me he sentido enlentecido", 
-						"Tengo tendencia a encontrarme peor por las mañanas"
-					],
-					"nombre" : "Depresión",
-					"_id" : "5a0c1237665533169c64fa6c"
 				}
 			}
 		],
@@ -744,7 +713,8 @@
 		"password" : "$2a$10$Gs4z5dKU5j6DMOcitJ8b4eRyNSqT0DgnaTDas8ngTi3WuE25PejUq",
 		"__v" : 0
 	},
-	/**********************************************************************************+++++++****************************************************************** OBJECT 4 *********************************************************************************************************************************************************/
+
+	/* 4 */
 	{
 		"_id" : ObjectId("5a70665247362399b861f2cc"),
 		"email" : "curcurucho99@gmail.com",
@@ -753,7 +723,7 @@
 		"genero" : "Masculino",
 		"diagnostico" : [ 
 			{
-				"porcentaje" : 54.5,
+				"porcentaje" : 72.5,
 				"patologia" : {
 					"respuesta" : 0.045,
 					"preguntas" : [ 
@@ -771,53 +741,6 @@
 					],
 					"nombre" : "TAG (Trastorno de ansiedad generalizada)",
 					"_id" : "5a0c1237665533169c64fa6a"
-				}
-			}, 
-			{
-				"porcentaje" : 57.1,
-				"patologia" : {
-					"respuesta" : 0.071,
-					"preguntas" : [ 
-						"He perdido el interés por las cosas", 
-						"He perdido la confianza en mí mismo", 
-						"Me he sentido con poca energía", 
-						"He perdido peso (causado por falta de apetito)", 
-						"Me he estado despertando demasiado temprano", 
-						"Me he sentido enlentecido", 
-						"Tengo tendencia a encontrarme peor por las mañanas"
-					],
-					"nombre" : "Depresión",
-					"_id" : "5a0c1237665533169c64fa6c"
-				}
-			}, 
-			{
-				"porcentaje" : 66.6,
-				"patologia" : {
-					"respuesta" : 0.083,
-					"preguntas" : [ 
-						"Tengo dificultades para mantener la atención en actividades de ocio", 
-						"Tengo dificultades para organizar tareas y actividades", 
-						"Evito o me disgusta iniciar tareas que requieren esfuerzo mental sostenido", 
-						"A menudo pierdo cosas necesarias para tareas o actividades", 
-						"A menudo me distraigo con estímulos externos", 
-						"A menudo olvido hacer las actividades cotidianas (tales como llamadas, acudir a citas, pagar facturas, etc)"
-					],
-					"nombre" : "TDAH (Trastorno por déficit de atención e hiperactividad)",
-					"_id" : "5a250f5bd8844097551fa6e5"
-				}
-			}, 
-			{
-				"porcentaje" : 62.5,
-				"patologia" : {
-					"respuesta" : 0.125,
-					"preguntas" : [ 
-						"El malestar o comportamiento creo que es mayor de lo que debería ser respecto a esa situación", 
-						"El malestar o comportamiento ha provocado problemas en mis relaciones familiares, sociales o laborales", 
-						"He perdido alguna persona importante en mi vida en los últimos 6 meses", 
-						"Llevo más de 6 meses con este malestar o comportamiento"
-					],
-					"nombre" : "TA (Trastorno adaptativo)",
-					"_id" : "5a251039d8844097551fa6fa"
 				}
 			}
 		],
@@ -1005,7 +928,8 @@
 		"password" : "$2a$10$HT7E0dnYtgPonZ4MqjR9cOjOQ2NvlOndB.3mJgkIkTozCCBNtI0uy",
 		"__v" : 0
 	},
-	/**********************************************************************************+++++++****************************************************************** OBJECT 5 *********************************************************************************************************************************************************/
+
+	/* 5 */
 	{
 		"_id" : ObjectId("5a70680947362399b861f45d"),
 		"email" : "JesusGTI@outlook.es",
@@ -1013,27 +937,6 @@
 		"edad" : "July 14, 1993",
 		"genero" : "Masculino",
 		"diagnostico" : [ 
-			{
-				"porcentaje" : 63.5,
-				"patologia" : {
-					"respuesta" : 0.045,
-					"preguntas" : [ 
-						"La mayoría de los días me preocupo por más de una cosa", 
-						"La mayoría de los días no puedo parar de preocuparme", 
-						"La mayoría de los días me resulta difícil controlar mis preocupaciones", 
-						"Me siento inquieto/a, intraquilo/a, o con los nervios disparados", 
-						"Me siento cansado fácilmente", 
-						"Tengo problemas para concentrarme", 
-						"Me enfado o irrito fácilmente", 
-						"Mis músculos están tensos y agarrotados", 
-						"La mayoría de los días me siento nervioso", 
-						"Las cosas que ha señalado anteriomente, ¿afectaron a su vida diaria (en el hogar, en el tabajo, o en su tiempo libre) o le causaron mucho malestar?", 
-						"Las cosas que ha señalado anteriormente, ¿fueron suficientemente molestas como para que pensara en buscar ayuda para ellas?"
-					],
-					"nombre" : "TAG (Trastorno de ansiedad generalizada)",
-					"_id" : "5a0c1237665533169c64fa6a"
-				}
-			}, 
 			{
 				"porcentaje" : 71.3,
 				"patologia" : {
@@ -1049,53 +952,6 @@
 					],
 					"nombre" : "Depresión",
 					"_id" : "5a0c1237665533169c64fa6c"
-				}
-			}, 
-			{
-				"porcentaje" : 66.6,
-				"patologia" : {
-					"respuesta" : 0.083,
-					"preguntas" : [ 
-						"Tengo dificultades para mantener la atención en actividades de ocio", 
-						"Tengo dificultades para organizar tareas y actividades", 
-						"Evito o me disgusta iniciar tareas que requieren esfuerzo mental sostenido", 
-						"A menudo pierdo cosas necesarias para tareas o actividades", 
-						"A menudo me distraigo con estímulos externos", 
-						"A menudo olvido hacer las actividades cotidianas (tales como llamadas, acudir a citas, pagar facturas, etc)"
-					],
-					"nombre" : "TDAH (Trastorno por déficit de atención e hiperactividad)",
-					"_id" : "5a250f5bd8844097551fa6e5"
-				}
-			}, 
-			{
-				"porcentaje" : 50,
-				"patologia" : {
-					"respuesta" : 0.071,
-					"preguntas" : [ 
-						"A menudo me levanto cuando debiera estar sentado", 
-						"Soy incapaz de estar tranquilamente en actividades de ocio", 
-						"A menudo muevo o golpeo las manos, los pies o me retuerzo estando sentado", 
-						"A menudo hablo excesivamente", 
-						"A menudo respondo a una pregunta antes de que terminen de realizar la pregunta", 
-						"Tengo dificultad para esperar mi turno", 
-						"A menudo interrumpo conversaciones, juegos o actividades de otros"
-					],
-					"nombre" : "Hiperactividad",
-					"_id" : "5a250fcfd8844097551fa6f0"
-				}
-			}, 
-			{
-				"porcentaje" : 62.5,
-				"patologia" : {
-					"respuesta" : 0.125,
-					"preguntas" : [ 
-						"El malestar o comportamiento creo que es mayor de lo que debería ser respecto a esa situación", 
-						"El malestar o comportamiento ha provocado problemas en mis relaciones familiares, sociales o laborales", 
-						"He perdido alguna persona importante en mi vida en los últimos 6 meses", 
-						"Llevo más de 6 meses con este malestar o comportamiento"
-					],
-					"nombre" : "TA (Trastorno adaptativo)",
-					"_id" : "5a251039d8844097551fa6fa"
 				}
 			}
 		],
@@ -1283,7 +1139,8 @@
 		"password" : "$2a$10$RsjOl/3uyJhwB.SCPHaHD.UftsltcoTR9dr0TF6ncYQmg7qOL2kGC",
 		"__v" : 0
 	},
-	/**********************************************************************************+++++++****************************************************************** OBJECT 6 *********************************************************************************************************************************************************/
+
+	/* 6 */
 	{
 		"_id" : ObjectId("5a732558d14c2d9f3263b309"),
 		"email" : "rgm@gmail.com",
@@ -1313,7 +1170,7 @@
 				}
 			}, 
 			{
-				"porcentaje" : 50,
+				"porcentaje" : 75,
 				"patologia" : {
 					"respuesta" : 0.25,
 					"preguntas" : [ 
@@ -1322,23 +1179,6 @@
 					],
 					"nombre" : "Síntomas psicóticos",
 					"_id" : "5a0c1237665533169c64fa6e"
-				}
-			}, 
-			{
-				"porcentaje" : 57.1,
-				"patologia" : {
-					"respuesta" : 0.071,
-					"preguntas" : [ 
-						"A menudo me levanto cuando debiera estar sentado", 
-						"Soy incapaz de estar tranquilamente en actividades de ocio", 
-						"A menudo muevo o golpeo las manos, los pies o me retuerzo estando sentado", 
-						"A menudo hablo excesivamente", 
-						"A menudo respondo a una pregunta antes de que terminen de realizar la pregunta", 
-						"Tengo dificultad para esperar mi turno", 
-						"A menudo interrumpo conversaciones, juegos o actividades de otros"
-					],
-					"nombre" : "Hiperactividad",
-					"_id" : "5a250fcfd8844097551fa6f0"
 				}
 			}
 		],
@@ -1443,7 +1283,7 @@
 			}
 		],
 		"localizacion" : "Orense",
-		"password" : "$2a$10$hHyB/1hHEmbX8AMx77LONe3I68TJ/9S0a1Fpgu8sfV1MbTC5N7VZK",
+		"password" : "$2a$10$EHEdUIWpifvlb10Tr1L09OP/0Z4.t8mGPHx1doWzoHumH2.YFFe6a",
 		"__v" : 0
 	}
 ]
